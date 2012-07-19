@@ -70,6 +70,8 @@ NDSTOOL   := "$(DEVKITPRO)/devkitARM/bin/ndstool"
 # 
 #============================================================================
 
+HEADERS   += $(patsubst %,%.h,$(LIBS))
+
 # Assume all sources depend on all headers, the linkerscript, and the Makefile
 DEPEND    := $(HEADERS) $(LNK) Makefile
 %.cpp::   $(DEPEND)
@@ -134,6 +136,7 @@ LSS       := $(PROJECT).lss
 NDS       := $(PROJECT).nds
 EXE       := $(PROJECT).exe
 OBJ       := $(patsubst %.cpp,%.o,$(patsubst %.s,%.o,$(SOURCES)))
+OBJ       += $(patsubst %,%.o,$(LIBS))
              
              
 #============================================================================
