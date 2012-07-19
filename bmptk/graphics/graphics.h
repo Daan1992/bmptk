@@ -1,15 +1,12 @@
 // ==========================================================================
 //
+// file: bmptk/graphics/graphics.h
+//
 // This file contains its own documentation in Doxygen format.
 //
 //! \mainpage
 //!
-//! This is a portable lightweight C++ graphics and widgets library.
-//!
-//! \author        W.O. van Ooijen (wouter@voti.nl)
-//! \version       V00.01 (work-in-progress at 2011-03-18)
-//!
-//! \par Introduction
+//! \par Graphics
 //!
 //! GraWiLi is a C++ graphics and widgets library for bare-metal use on 
 //! 32-bit embedded systems. 
@@ -116,13 +113,13 @@
 //! IN THE SOFTWARE.
 //
 
-#ifndef _graphics_include_
-#define _graphics_include_
+#ifndef _GRAPHICS_H_
+#define _GRAPHICS_H_
 
 #include <iostream>
 #include <limits>
 
-//! GraWiLi: a portable lightweight C++ graphics and widgets library 
+namespace bmptk { namespace graphics {
 
 	
 // ==========================================================================
@@ -361,7 +358,8 @@ public:
    color( int r, int g, int b, bool t = 0 ):
       t( t ), r( clip( r )), g( clip( g )), b( clip( b ))
    {
-      if( t ){ r = g = b = 0; }}
+      if( t ){ r = g = b = 0; }
+   }
       
    //! constructs a color from a three-byte value
    //
@@ -1734,6 +1732,6 @@ public:
    void run( void );
 };
 
-// } // namespace gwlib  
+}} // namespace bmptk { namespace graphics {
 
-#endif                             
+#endif // #ifdef _GRAPHICS_H_                            

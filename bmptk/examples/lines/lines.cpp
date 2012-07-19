@@ -5,6 +5,7 @@
 #include <nds/touch.h>
 
 using namespace bmptk;
+using namespace bmptk::graphics;
 
 class nintendo_screen : public frame {
 public:

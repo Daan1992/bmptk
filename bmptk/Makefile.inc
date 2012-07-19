@@ -1,6 +1,8 @@
 #############################################################################
 #
-# Makefile for C++ projects
+# file: bmptk/Makefile.inc
+#
+# Makefile for bare metal C++ projects
 #
 # (c) Wouter van Ooijen (www.voti.nl) 2012
 # 

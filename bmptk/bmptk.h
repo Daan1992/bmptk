@@ -1,6 +1,6 @@
 //***************************************************************************
 //
-// file : bmptk.h
+// file : bmptk/bmptk.h
 //
 // LICENSE (zlib license)
 //
@@ -36,22 +36,25 @@
    //
    // =======================================================================
 
-      // The macro HERE transates to a newline, the file-name, ":", and
-      // the line-number of the place where the HERE macro appears.
-      // This can be used for debug logging.
-   #define HERE_STR( X ) #X
-   #define HERE2( F, L ) ( "\n" F ":" HERE_STR( L ))
-   #define HERE HERE2( __FILE__, __LINE__ )
+      //! file-name : line-number macro
+      //
+      //! The macro BMPTK_HERE transates to a newline, the file-name, ":",
+      //! and the line-number of the place where the BMPTK_HERE macro
+      //! appears. This is usefull for debug logging.
+   #define BMPTK_HERE_STR( X ) #X
+   #define BMPTK_HERE2( F, L ) ( "\n" F ":" BMPTK_HERE_STR( L ))
+   #define BMPTK_HERE BMPTK_HERE2( __FILE__, __LINE__ )
 
       //! use instead of cout; prepends source file name and line number
       //
-      //! Printing to trace (instead of cout) prepends HERE and a space,
-      //! which makes it easy to locate the line in your sources.
+      //! Printing to trace (instead of cout) prepends BMPTK_HERE and a
+      //! space, which makes it easy to locate the line in your sources.
       //! The output is also flushed, which can be usefull when the
       //! program will shortly crash, which might leave the output buffer
       //! not written. 
-      //! Trace can simply be used standalone as a statementm, just 'trace;'
-   #define trace ( std::cout << HERE << " " << std::flush )
+      //! Trace can simply be used standalone as a statement, just 'trace;'.
+      //! Note that trace is a macro, not an object.
+   #define trace ( std::cout << BMPTK_HERE << " " << std::flush )
 
 
    // =======================================================================

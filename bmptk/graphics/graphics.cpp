@@ -4,46 +4,7 @@
 //
 // ==========================================================================
 
-// ==========================================================================
-// ToDo
-// ====
-// packer/grid/placer
-// mouse-style pointer needed for trackballs
-// subframe boundaries
-// circle, also filled
-// ignore repeated mouse @ same place
-// compressed color = 1 byte per pixel
-// arithmetic for text format
-// standard font(s)
-// draw rounded rectangle
-// text format ook direction (-> <- etc ?)
-// STL-style iterator for position
-// line::draw width
-// text::draw scale, twice?
-// drawable::draw_pixel moet beter
-// doxygen the TRACE macro's, can't be done??
-// rectangle, line: size or boundaries??
-// add chapter 'design notes'
-// wit lijntje in de button corners is best leuk!
-// version is now in two places :(
-// rotate operator on a vector!
-//
-// ! put this in a reference section?
-// http://dlib.net/api.html#gui_widgets
-// http://en.wikipedia.org/wiki/FLTK
-// http://en.wikipedia.org/wiki/FOX_toolkit
-// http://www.psa-software.com/zinc_widgets.html
-// http://www.webpagepublicity.com/free-fonts.html
-// http://www.alvit.de/blog/article/25-best-license-free-pixelfonts
-// http://04.jp.org/
-// http://www.lowing.org/fonts/
-// http://www.yolinux.com/TUTORIALS/LinuxTutorialC++CodingStyle.html
-// http://api.haiku-os.org/apidoc.html
-// http://www.qzx.com/pc-gpe/
-// http://escience.anu.edu.au/lecture/cg/Circle/printNotes.en.html
-// http://homepage.smc.edu/kennedy_john/bcircle.pdf
 
-//
 
 #include <cstdlib>
 #include <iostream>
@@ -51,7 +12,7 @@
 #include "graphics.h"
 // #include "font.h"
 
-// namespace gwlib {	
+namespace bmptk { namespace graphics {
 
 // ==========================================================================
 //
@@ -662,4 +623,4 @@ void wtoplevel :: run( void ){
    }      
 }
 
-// } // namespace gwlib                             
+}} // namespace bmptk { namespace graphics {                         

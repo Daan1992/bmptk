@@ -1,17 +1,12 @@
 file: bmptk/examples/README
 
-Bare Metal Programming Tool Kit main directory
+Bare Metal Programming Tool Kit eaxmples directory
 
 This directory contains :
 
-files
-- Makefile : template for a bmptk project(s) makefile, includes Makefile.inc
-- Makefile.inc : included by the project makefile, does all the work
-- bmptk.h : top-level header file for bmptk
-
 subdirectories
-- targets : basic chip and board specific stuff
-- graphics : stuff for pixel-accessible graphics
-- examples : example directories
+- lines   : draws random lines
+- paint   : paints pixels
+- reversi : two-person graphics reversi game
 
 
