@@ -1,0 +1,17 @@
+file: bmptk/teadme.txt
+
+Bare Metal Programming Tool Kit main directory
+
+This directory contains :
+
+files
+- Makefile : template for a bmptk project(s) makefile, includes Makefile.inc
+- Makefile.inc : included by the project makefile, does all the work
+- bmptk.h : top-level header file for bmptk
+
+subdirectories
+- targets : basic chip and board specific stuff
+- graphics : stuff for pixel-accessible graphics
+- examples : example directories
+
+

@@ -1,0 +1,11 @@
+file: bmptk/README
+
+Bare Metal Programming Tool Kit eaxmples directory
+
+This directory contains :
+
+subdirectories
+- lines : graphics example that draws random lines
+
+
+
