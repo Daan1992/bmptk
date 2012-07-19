@@ -19,6 +19,7 @@ subdirectories
 - examples : example directories
 
 pending work list:
+- graphics.h start text
 - License
 - Doxygen
 - console/windows target

@@ -139,11 +139,10 @@ class frame;
 //! A vector is a pair of 16-bit integer values that are the x and y 
 //! coordinates of an absolute or relative location on an integer grid. 
 //! A vector can be constructed from its x and y values. 
-//! After construction the x and y values of a vector are accessible 
-//! and can be changed. 
 //!
 //! Vectors are intended to represent a location, displacement, or
-//! size on an screen. 16-bits should be more than enough for this purpose.
+//! size on a garphics screen. 
+//! 16 bits should be more than enough for this purpose.
 //!
 //! When a vector is used to identify a pixel on a screen (0,0)
 //! is the top-left pixel.
@@ -304,8 +303,7 @@ std::ostream & operator<< ( std::ostream &s, const vector p );
 //! Transparency is recessive: when a transparent color is combined with 
 //! a non-transparent color the result is a non-transparent color. 
 //!
-//! The r, g and b components and the t flag are all accessible 
-//! and can be changed. A color can be constructed from is three components, 
+//! A color can be constructed from is three components, 
 //! or from a 3-byte value (as is commonly used in for instance HTML). 
 //! Two colors can be added or subtracted, or be compared for equality. 
 //! A color can be multiplied or divided by an integer.
@@ -328,31 +326,12 @@ private:
    static int clip( int x ){
       return ( x < 0 ) ? 0 : std::min( x, 0xFF ); }        
 
-public:      
-    
-   //! transparency flag; can be read or written
-   //
-   //! When set, the color is transparent, and the color
-   //! components are irrelevent.
-   bool t;
-   
-   //! red component; can be read or written
-   //
-   //! The r, g and b attributes are relevant iff the t 
-   //! (transparency) is not set.
+   bool transp;
    unsigned char r; 
-   
-   //! green component; can be read or written
-   //
-   //! The r, g and b attributes are relevant iff the t 
-   //! (transparency) is not set.
    unsigned char g;
-   
-   //! blue component; can be read or written
-   //
-   //! The r, g and b attributes are relevant iff the t 
-   //! (transparency) is not set.
    unsigned char b; 
+   
+public:      
    
    //! constructs a color object from its three components
    //
@@ -362,7 +341,7 @@ public:
    //! Note that the arguments are integers, but they are clipped
    //! to the 0..255 range by the constructor.
    color( int r, int g, int b, bool t = 0 ):
-      t( t ), r( clip( r )), g( clip( g )), b( clip( b ))
+      transp( t ), r( clip( r )), g( clip( g )), b( clip( b ))
    {
       if( t ){ r = g = b = 0; }
    }
@@ -371,7 +350,7 @@ public:
    //
    //! For instance, color( 0xFF00FF ) is magenta.   
    color( unsigned int rgb = 0 ):
-      t( 0 ),  
+      transp( 0 ),  
       r( clip( ( rgb & 0xFF0000 ) >> 16 )), 
       g( clip( ( rgb & 0x00FF00 ) >>  8 )), 
       b( clip( ( rgb & 0x0000FF ) >>  0 )){}
@@ -384,44 +363,79 @@ public:
        | (( b  > 31 ? 31 : b  ) << 10 )
       );
    }      
+   
+   //! transparency indicator
+   //
+   //! When a color is transparent its colors are irrelevant.
+   bool is_transparent() const { return transp; }
+   
+   //! return the red component
+   //
+   //! The returned component is relevant only when the
+   //! color is not transparent.
+   unsigned char red_get() const { return r; } 
+   
+   //! return the green component
+   //
+   //! The returned component is relevant only when the
+   //! color is not transparent.
+   unsigned char green_get() const { return g; }
+   
+   //! return the blue component
+   //
+   //! The returned component is relevant only when the
+   //! color is not transparent.
+   unsigned char blue_get() const { return b; }    
 
    //! adds two colors; addition works towards white
    color operator + ( const color c ) const {
-      return color( r + (int)c.r, g + (int)c.g, b + (int)c.b, t && t ); }
+      return color( 
+         r + (int)c.r, 
+         g + (int)c.g, 
+         b + (int)c.b, 
+         transp && c.transp ); }
       
    //! adds a color to an existing color   
    const color & operator += ( const color c ){
       r = clip( r + (int)c.r ); 
       g = clip( g + (int)c.g ); 
       b = clip( b + (int)c.b ); 
-      t = t && c.t; 
+      transp = transp && c.transp; 
       return *this;
    }
       
    //! returns a color unmodified   
    color operator + ( void ) const {
-      return color( r, g, b, t ); }          
+      return color( r, g, b, transp ); }          
       
    //! subtracts two colors; subtraction works towards black      
    color operator - ( const color c ) const {
-      return color( r - (int)c.r, g - (int)c.g, b - (int)c.b, t && c.t ); }
+      return color( 
+         r - (int)c.r, 
+         g - (int)c.g, 
+         b - (int)c.b, 
+         transp && c.transp ); }
       
    //! subtracts a color from an existing color   
    const color & operator -= ( const color c ){
       r = clip( r - (int)c.r ); 
       g = clip( g - (int)c.g );
       b = clip( b - (int)c.b );
-      t = t && c.t; 
+      transp = transp && c.transp; 
       return *this;
    }          
       
    //! returns the negative of a color   
    color operator - ( void ) const {
-      return color( 0xFF - (int)r, 0xFF - (int)g, 0xFF -  (int)b, t ); }
+      return color( 
+         0xFF - (int)r, 
+         0xFF - (int)g, 
+         0xFF - (int)b, 
+         transp ); }
       
    //! divides a color by an integer; division works towards black   
    color operator / ( unsigned int n ) const {
-      return color( r / n, g / n, b / n, t ); }
+      return color( r / n, g / n, b / n, transp ); }
       
    //! divides an exiting color by an integer   
    const color & operator /= ( unsigned int n ){
@@ -433,7 +447,7 @@ public:
       
    //! muliplies a color by an integer; multiplication works towards white   
    color operator * ( unsigned int n ) const {
-      return color( r * n, g * n, b * n, t ); }
+      return color( r * n, g * n, b * n, transp ); }
    
    //! multiplies an existing color by an integer 
    const color & operator *= ( unsigned int n ){
@@ -445,8 +459,8 @@ public:
       
    //! reports whether two colors are equal   
    bool operator == ( const color c ) const {
-      return t ? c.t : 
-         ( ! c.t ) && ( r == c.r ) && ( g == c.g ) && ( b == c.b ); }
+      return transp ? c.transp : 
+         ( ! c.transp ) && ( r == c.r ) && ( g == c.g ) && ( b == c.b ); }
 
    //! reports whether two colors are unequal
    bool operator != ( const color c ) const {
@@ -454,7 +468,11 @@ public:
    
    //! returns the mix of the current color and the argument   
    color mix( const color c ){
-      return color( ( r + c.r ) / 2, ( g + c.g ) / 2, ( b + c.b ) / 2 ); }          
+      return color( 
+         ( r + c.r ) / 2, 
+         ( g + c.g ) / 2, 
+         ( b + c.b ) / 2,
+         transp && c.transp ); }          
 
    //! some basic colors
    //
@@ -571,7 +589,7 @@ std::ostream & operator<<( std::ostream &s, const event_type &e );
 //
 //! An event is a something that happens at a specific position on 
 //! a screen. A typical event would be the user touching the screen
-//! with a stylus.
+//! with a stylus, or clicking on a certain position with a mouse.
 //!
 //! When a user 
 //! - touches the screen at (10,10);
@@ -1419,7 +1437,7 @@ public:
    //! Only when both checks succeed it will call checked_write
    //! to do the actual writing.
    void write( const vector p, const color c ){
-      if( valid( p ) && ( c != color::transparent )){
+      if( valid( p ) && ( ! c.is_transparent() )){
          checked_write( p, c ); }}
          
    //! write one pixel, address specified by x and y
@@ -1665,7 +1683,7 @@ public:
    void handle( const event &e ){
       //trace << e;  
       if( e.e == event_down ){
-         bg = color( bg.r, bg.g, bg.b ^ 0xFFFF );   
+         bg = color( bg.red_get(), bg.green_get(), bg.blue_get() ^ 0xFFFF );   
          border = flip( border );
          //trace << border;
          changed = 1;

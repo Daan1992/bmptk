@@ -37,9 +37,9 @@ std::ostream & operator<<( std::ostream &s, const color c ){
       s << "( transparent  )";
    } else {
       s << std::hex << std::setfill( '0' ) << "(" 
-        << std::setw( 2 ) << c.r << "," 
-        << std::setw( 2 ) << c.g << "," 
-        << std::setw( 2 ) << c.b 
+        << std::setw( 2 ) << c.red_get() << "," 
+        << std::setw( 2 ) << c.green_get() << "," 
+        << std::setw( 2 ) << c.blue_get() 
         << std::setfill( ' ' ) << ")";
    }        
    return s;
