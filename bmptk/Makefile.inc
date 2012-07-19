@@ -112,7 +112,7 @@ ifeq ($(TARGET),console)
 endif
 
 ifeq ($(PREFIX),)
-   $(error invalid target specified)
+   $(error invalid or no target specified: "$(TARGET)")
 endif
    
 DEFINES   += -DTARGET=$(TARGET)

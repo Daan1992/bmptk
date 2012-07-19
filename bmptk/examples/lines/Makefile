@@ -7,17 +7,17 @@
 #############################################################################
 
 # Specify the project name, this is also the main .cpp file to compile
-PROJECT   := lines
+PROJECT   := main-paint1
 
 # Specify target chip or board or system
-TARGET    := 
+TARGET    := nds
 
 # Specify the location of the bmptk library
-BMPTK     := 
+BMPTK     := ../..
 
 # Specify project files (other than $(PROJECT).cpp) (if any)
-SOURCES   := 
-HEADERS   := 
+SOURCES   := lcd.cpp 
+HEADERS   := lcd.h
 
 # specify (extra) results you want to get (if any)
 RESULTS   := 
