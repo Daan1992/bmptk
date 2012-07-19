@@ -23,11 +23,11 @@ SOURCES   += $(PROJECT).cpp
 
 VPATH     += $(BMPTK)
 VPATH     += $(BMPTK)/targets
-VPATH     += $(BMPTK)/pins
+VPATH     += $(BMPTK)/graphics
 
 INCLUDES  += -I$(BMPTK)
 INCLUDES  += -I$(BMPTK)/targets
-INCLUDES  += -I$(BMPTK)/pins
+INCLUDES  += -I$(BMPTK)/graphics
 
 
 #============================================================================
@@ -90,7 +90,7 @@ ifeq ($(TARGET),nds)
    PREFIX      := $(DEVKITPRO)/devkitARM/bin/arm-eabi-
    CORE-FLAGS  := -march=armv5te -mtune=arm946e-s -fomit-frame-pointer 
    CORE-FLAGS  += -ffast-math -mthumb -mthumb-interwork -DARM9
-   INCLUDES    := -I$(DEVKITPRO)/libnds/include 
+   INCLUDES    += -I$(DEVKITPRO)/libnds/include 
    LIBRARIES   += -L$(DEVKITPRO)/libnds/lib -lnds9
    LDFLAGS	   += -g -mthumb -mthumb-interwork -specs=ds_arm9.specs
    RESULTS     = $(ELF) $(NDS)
@@ -101,7 +101,7 @@ ifeq ($(TARGET),console)
    CHIP        := Intel
    PREFIX      := $(DEVCPP)/bin/
    CORE-FLAGS  :=    
-   INCLUDES    := -I"$(DEVCPPLIB)/lib/gcc/mingw32/3.4.2/include"  
+   INCLUDES    += -I"$(DEVCPPLIB)/lib/gcc/mingw32/3.4.2/include"  
    INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2/backward" 
    INCLUDES    += -I"$(DEVCPP)/lib/gcc/mingw32"
    INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2"

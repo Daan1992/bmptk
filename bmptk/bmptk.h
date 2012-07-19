@@ -30,20 +30,52 @@
 #ifndef _BMPTK_H_
 #define _BMPTK_H_
 
+   // =======================================================================
+   // 
+   //! debug macro's
+   //
+   // =======================================================================
+
+      // The macro HERE transates to a newline, the file-name, ":", and
+      // the line-number of the place where the HERE macro appears.
+      // This can be used for debug logging.
+   #define HERE_STR( X ) #X
+   #define HERE2( F, L ) ( "\n" F ":" HERE_STR( L ))
+   #define HERE HERE2( __FILE__, __LINE__ )
+
+      //! use instead of cout; prepends source file name and line number
+      //
+      //! Printing to trace (instead of cout) prepends HERE and a space,
+      //! which makes it easy to locate the line in your sources.
+      //! The output is also flushed, which can be usefull when the
+      //! program will shortly crash, which might leave the output buffer
+      //! not written. 
+      //! Trace can simply be used standalone as a statementm, just 'trace;'
+   #define trace ( std::cout << HERE << " " << std::flush )
+
+
+   // =======================================================================
+   // 
    //! bmptk namespace
    //
    //! This namespace contains all bmptk declarations.
+   //
+   // =======================================================================
+   
    namespace bmptk {
-   	
-   	  //! time units
-   	  //
-   	  //! These units are used by all methods that require a time argument.
-   	  //! For instance, to pass half a second, use 
-   	  //!
-   	  //!    500 * bmptk::ms
-   	  //!
-   	  //! Please do not make your code depend on the exact values, they
-   	  //! might change in future versions!
+   
+      //! bmtkp version
+      const char version[] = "V00.01 ( work-in-progress @ 2012-07-19)";   
+      
+        //! time units
+        //
+        //! These units are used by all methods that require a time argument.
+        //! For instance, to pass half a second, use 
+        //!
+        //!    500 * bmptk::ms
+        //!
+        //! Please do not make your code depend on the exact values, they
+        //! might change in future versions!
       enum bmptk_time_units { 
          s  = 1000 * 1000, 
          ms = 1000,
@@ -55,7 +87,8 @@
       
    };  
 
-   #include "pins/pins.h"
-   #include "targets/target.h"
+   // #include "pins/pins.h"
+   // #include "targets/target.h"
+   // #include "graphics/graphics.h"
 
 #endif
