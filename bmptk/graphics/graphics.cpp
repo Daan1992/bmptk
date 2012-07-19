@@ -22,7 +22,7 @@ namespace bmptk { namespace graphics {
 const vector vector::origin = vector( 0, 0 );
 
 std::ostream & operator<<( std::ostream &s, const vector p ){
-   s << std::dec << "(" << p.x << "," << p.y << ")";
+   s << std::dec << "(" << p.x_get() << "," << p.y_get() << ")";
    return s;
 }
 
@@ -137,8 +137,8 @@ void line::draw(
    
    int x0 = 0;
    int y0 = 0;
-   int x1 = size.x;
-   int y1 = size.y;
+   int x1 = size.x_get();
+   int y1 = size.y_get();
    int Dx = x1 - x0; 
    int Dy = y1 - y0;
    int steep = (abs(Dy) >= abs(Dx));
@@ -218,7 +218,7 @@ void rectangle::draw(
 ) const {
     
    // don't draw anything that should be invisible
-   if( scale == 0 || size.x == 0 || size.y == 0 ){
+   if( scale == 0 || size.x_get() == 0 || size.y_get() == 0 ){
       return;       
    }
 
@@ -366,8 +366,8 @@ void circle::draw(
 //
 
 void photo::draw( frame &f, const vector position, unsigned int scale ) const {
-   for( int x = 0; x < size.x; x++  ){
-      for( int y = 0; y < size.y; y++ ){
+   for( int x = 0; x < size.x_get(); x++  ){
+      for( int y = 0; y < size.y_get(); y++ ){
          vector a( x, y );            
          drawable_draw_pixel( f, position, scale, a, read( a )); } } } 
 
@@ -378,12 +378,12 @@ void photo::draw( frame &f, const vector position, unsigned int scale ) const {
 //
 
 color inline_rgb_photo :: checked_read( const vector p ) const {
-   int base = 3 * ( p.x + p.y * size.x );    
+   int base = 3 * ( p.x_get() + p.y_get() * size.x_get() );    
    return color( data[ base ], data[ base + 1 ], data[ base + 2 ] );    
 }
 
 bool inline_bw_photo :: bool_read( const vector p ) const {
-   int a = p.x + p.y * size.x;
+   int a = p.x_get() + p.y_get() * size.x_get();
    return ( data[ a / 8 ] ) & ( 1 << ( a % 8 ));   
 }
 
@@ -395,7 +395,7 @@ bool inline_bw_photo :: bool_read( const vector p ) const {
 
 vector inline_font :: char_size( char c ) const {
    if( ! has( c )){
-      return vector( 0, font_char_size.y ); 
+      return vector( 0, font_char_size.y_get() ); 
              
    } else if( fixed ){
       return font_char_size;      
@@ -403,7 +403,7 @@ vector inline_font :: char_size( char c ) const {
    } else {           
       return vector( 
          start[ 1 + (int)c ] - start[ (int)c ],
-         font_char_size.y );
+         font_char_size.y_get() );
    }
 }   
 
@@ -456,8 +456,8 @@ int line_count(
          count++;
          x = 0;
       } else {
-         int char_size = fm.f->char_size( *s ).x * fm.scale + fm.spacing.x;
-         if(( x + char_size > size.x ) && fm.wrap ){
+         int char_size = fm.f->char_size( *s ).x_get() * fm.scale + fm.spacing.x_get();
+         if(( x + char_size > size.x_get() ) && fm.wrap ){
             count++;    
             x = char_size;                
          } else {
@@ -485,8 +485,9 @@ int line_width(
       if( *s == '\n' ){
          return length;
       } else {
-         int char_size = fm.f->char_size( *s ).x * fm.scale + fm.spacing.x;
-         if( length + char_size > size.x ){
+         int char_size = fm.f->char_size( *s ).x_get() 
+            * fm.scale + fm.spacing.x_get();
+         if( length + char_size > size.x_get() ){
             return length;                 
          } else {
             length += char_size;                
@@ -508,8 +509,9 @@ int line_chars(
       if( *s == '\n' ){
          return chars;
       } else {
-         int char_size = fm.f->char_size( *s ).x * fm.scale + fm.spacing.x;
-         if( length + char_size > size.x ){
+         int char_size = fm.f->char_size( *s ).x_get() 
+            * fm.scale + fm.spacing.x_get();
+         if( length + char_size > size.x_get() ){
             return chars;                 
          } else {
             length += char_size;                
@@ -529,7 +531,7 @@ void draw_text_line(
    const char **s 
 ){   
    int width = line_width( *s, sz, fm );
-   int extra = sz.x - width;
+   int extra = sz.x_get() - width;
    int spaces = line_chars(  *s, sz, fm ) + 1;
    int missing = 0;
    if( fm.h == align_far ){
@@ -543,11 +545,11 @@ void draw_text_line(
       if( fm.h == align_fill ){    
          missing += extra; 
          int adjust = missing / spaces;
-         p.x += adjust;
+         p += vector( adjust, 0 );
          missing -= adjust * spaces;
       }
       fr.draw( p, fc );
-      p.x += fc.size.x +fm.spacing.x;
+      p += vector( fc.size.x_get() +fm.spacing.x_get(), 0 );
    }          
 }
 
@@ -561,14 +563,16 @@ void text::draw(
    vector p = vector::origin;
    int spaces = line_count( s, scale, f ) + 1;
    int extra = std::max( 
-      0, f.f->font_char_size.y - ( spaces - 1 )* f.f->font_char_size.y );
+      0, 
+      f.f->font_char_size.y_get() 
+         - ( spaces - 1 ) * f.f->font_char_size.y_get() );
    int missing = 0;
    // trace << spaces << " " << extra;
    if( f.v == align_far ){
-      p.y += extra;
+      p += vector( 0, extra);
    } 
    if( f.v == align_centre ){
-      p.y += extra / 2;
+      p += vector( 0, extra / 2 );
    } 
    const char *ss = s;
    for( ; *ss != '\0'; ){
@@ -576,14 +580,13 @@ void text::draw(
          missing += extra;   
          int adjust = missing / spaces; 
          // trace << extra << " " << missing << " " << adjust;
-         p.y += adjust;
+         p += vector( 0, adjust );
          missing -= adjust * spaces;
       }
       draw_text_line( fr, p, size, f, &ss );   
       if( *ss == '\n' ){ 
          ss++;
-         p.x = 0;    
-         p.y += f.f->font_char_size.y + f.spacing.y;         
+         p = vector( 0, f.f->font_char_size.y_get() + f.spacing.y_get() );         
       }   
    }               
 }
@@ -597,8 +600,8 @@ void text::draw(
 void frame::clear( const color c ){
    if( c != color::transparent ){  
       vector step = size.direction() ;
-      for( int x = 0; x != size.x; x += step.x  ){
-         for( int y = 0; y != size.y; y += step.y ){
+      for( int x = 0; x != size.x_get(); x += step.x_get()  ){
+         for( int y = 0; y != size.y_get(); y += step.y_get() ){
             write( x, y, c ); } } } }    
 
          

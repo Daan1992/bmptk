@@ -173,34 +173,39 @@ private:
    static bool is_within( short int x, short int m ){
       return (( x >= 0 ) && ( x < m )) || (( x <= 0 ) && ( x > m )); }
 
-public:      
-   
    //! the x coordinate, can be read and changed 
    short int x;
   
    //! the y coordinate, can be read and changed 
    short int y;
 
-   //! constructs a vector from its x and y coordinates
+public:      
+   //! get the x component
+   short int x_get() const { return x; }
+   
+   //! get the y component
+   short int y_get() const { return y; }
+   
+   //! construct a vector from its x and y coordinates
    vector( short int x = 0, short int y = 0 ): x( x ), y( y ) {}   
      
-   //! adds two vectors by adding the x and y coordinates
+   //! add two vectors by adding the x and y coordinates
    vector operator + ( const vector p ) const {
       return vector( x + p.x, y + p.y ); }          
       
-   //! adds a vector to an existing vector   
+   //! add a vector to an existing vector   
    vector operator += ( const vector p ){
       return vector( x += p.x, y += p.y ); }          
       
-   //! returns the vector unmodified   
+   //! return the vector unmodified   
    vector operator + ( void ) const {
       return vector( x, y ); }
    
-   //! subtracts two vectors by subtracting the coordinates
+   //! subtract two vectors by subtracting the coordinates
    vector operator - ( const vector p ) const {
       return vector( x - p.x, y - p.y ); }          
       
-   //! subtracts a vector from an existing vector   
+   //! subtract a vector from an existing vector   
    vector operator -= ( const vector p ){
       return vector( x -= p.x, y -= p.y ); }          
       
@@ -235,7 +240,8 @@ public:
    //! returns the direction of a vector      
    //
    //! The direction of a vector is a vector that, 
-   //! for both its x and y component, has the same sign
+   //! for both its x and y component, has the 
+   //! value 1 or -1, and the same sign
    //! as the original vector.
    vector direction( void ) const {
       return vector( sign( x ), sign( y )); }           
@@ -1505,8 +1511,12 @@ public:
    //! translate a subframe coordinate to a master frame coordinate      
    vector translate( const vector p ) const {
       return vector( 
-         top_left.x < bottom_right.x ? top_left.x + p.x : top_left.x - p.x,
-         top_left.y < bottom_right.y ? top_left.y + p.y : top_left.y - p.y
+         top_left.x_get() < bottom_right.x_get()
+            ? top_left.x_get() + p.x_get() 
+            : top_left.x_get() - p.x_get(),
+         top_left.y_get() < bottom_right.y_get()  
+            ? top_left.y_get() + p.y_get()
+            : top_left.y_get() - p.y_get()
        ); }       
       
    //! create a subframe, endpoints specified as vectors

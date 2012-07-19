@@ -49,7 +49,7 @@ void nintendo_screen :: checked_write(
    const vector v,
    const color c 
 ){
-   VRAM_A[ v.x + ( v.y * 256 ) ] = c.rgb15();
+   VRAM_A[ v.x_get() + ( v.y_get() * 256 ) ] = c.rgb15();
 }
 
 color nintendo_screen :: checked_read( const vector v ) const {
