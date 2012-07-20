@@ -1,0 +1,14 @@
+file: bmptk/tools/README
+
+Bare Metal Programming Tool Kit tools directory
+
+more information:
+   http:-www.voti.nl/bmptk
+   ./html/index.html
+
+This directory contains :
+
+files
+- lpc21isp.exe : serial bootloader for philips LPC chips
+
+

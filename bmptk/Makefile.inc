@@ -236,6 +236,7 @@ run: $(PROJECT)
 # Cleanup
 CLEAN += $(RESULTS)
 CLEAN += $(OBJ)
+CLEAN += $(MAP)
 clean:
 		-$(RM) $(CLEAN)
 
