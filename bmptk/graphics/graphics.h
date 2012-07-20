@@ -630,7 +630,7 @@ std::ostream & operator<<( std::ostream &s, const event &e );
 //
 //! an object that can be drawn in a frame
 //
-//! A drawable is an abstract object that can be drawn on a frame.
+//! A drawable is an abstract object that can be drawn in a frame.
 //! A drawable has has a forgeground and background color, 
 //! and a (line) width.
 //! What these properties exactly mean depends on the specific drawable.
@@ -696,7 +696,16 @@ public:
    color bg_get() const { return bg; }
       
   //! get the width
-   color width_get() const { return width; }
+   unsigned int width_get() const { return width; }
+      
+  //! set the forgeround color
+   void fg_set( const color c ){ fg = c; }
+      
+   //! set the background color
+   void bg_set( const color c ){ bg = c; }
+      
+   //! set the width
+   void width_set( unsigned int w ){ width = w; }
       
 } ;
 
