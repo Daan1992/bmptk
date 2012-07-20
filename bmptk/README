@@ -1,4 +1,4 @@
-file: bmptk/examples/README
+file: bmptk/README
 
 Bare Metal Programming Tool Kit main directory
 
@@ -28,6 +28,7 @@ pending work list:
 - http://en.wikipedia.org/wiki/Poka-yoke
 
 notes, references, links:
+- http://www.google.com/webfonts
 - packer/grid/placer
 - mouse-style pointer needed for trackballs
 - subframe boundaries

@@ -89,9 +89,14 @@
       void wait( unsigned int t );      
       
    };  
+                 
+
+   #ifdef TARGET_nds
+      #include "bmptk-nds.h"
+   #endif              
 
    // #include "pins/pins.h"
-   // #include "targets/target.h"
-   // #include "graphics/graphics.h"
+
+   #include "graphics.h"
 
 #endif

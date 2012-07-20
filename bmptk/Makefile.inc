@@ -68,20 +68,6 @@ NDSTOOL   := "$(DEVKITPRO)/devkitARM/bin/ndstool"
 
 #============================================================================
 #
-# Dependencies
-# 
-#============================================================================
-
-HEADERS   += $(patsubst %,%.h,$(LIBS))
-
-# Assume all sources depend on all headers, the linkerscript, and the Makefile
-DEPEND    := $(HEADERS) $(LNK) Makefile
-%.cpp::   $(DEPEND)
-%.s::     $(DEPEND)
-
-
-#============================================================================
-#
 # target-dependent parts
 # 
 #============================================================================
@@ -99,6 +85,7 @@ ifeq ($(TARGET),nds)
    LDFLAGS	   += -g -mthumb -mthumb-interwork -specs=ds_arm9.specs
    RESULTS     = $(ELF) $(NDS)
    RUN         = "$(DEVKITPRO)/emulators/desmume/DeSmuME" $(NDS)
+   LIBS        += bmptk-nds
 endif
 
 ifeq ($(TARGET),console)
@@ -120,7 +107,22 @@ ifeq ($(PREFIX),)
 endif
    
 DEFINES   += -DTARGET=$(TARGET)
+DEFINES   += -DTARGET_$(TARGET)
 DEFINES   += -DCHIP=$(CHIP)
+
+
+#============================================================================
+#
+# Dependencies
+# 
+#============================================================================
+
+HEADERS   += $(patsubst %,%.h,$(LIBS))
+
+# Assume all sources depend on all headers, the linkerscript, and the Makefile
+DEPEND    := $(HEADERS) $(LNK) Makefile
+%.cpp::   $(DEPEND)
+%.s::     $(DEPEND)
 
 
 #============================================================================

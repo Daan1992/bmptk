@@ -796,7 +796,7 @@ public:
 //! The top-left and bottom-right vectors can be reversed to get a 
 //! subframe that appears rotated and/or mirrored within the master.
 //!
-//! The default scale is 1, which cause the subframe to appear
+//! The default scale is 1, which causes the subframe to appear
 //! 1:1 in the master frame. When the scale is 0 it does not appear,
 //! and reading a pixel from the subframe will always 
 //! return color::transparent.
@@ -870,8 +870,6 @@ protected:
 };
 
 
-
-
 // ==========================================================================
 //
 // class line
@@ -919,14 +917,14 @@ public:
 //!   
 //! \relates rectangle
 enum relief {  
-	
+
    //! the border is drawn flat, using the fg color
    relief_flat,
-	 
-	 //! the border is drawn raised, using the bright and shadow colors
+ 
+   //! the border is drawn raised, using the bright and shadow colors
    relief_raised, 
    
-	 //! the border is drawn raised, using the shadow and bright colors
+   //! the border is drawn raised, using the shadow and bright colors
    relief_sunken
 }; 
    
@@ -935,7 +933,7 @@ enum relief {
 //! \relates rectangle
 relief flip( const relief r );   
 
-//! prints an event type
+//! prints a relief value
 //!   
 //! \relates rectangle
 std::ostream & operator<<( std::ostream &s, const relief &r );
@@ -1070,7 +1068,7 @@ public:
 class photo : public drawable {
 protected:
 
-   //! the size of the phote
+   //! the size of the photo
    //
    //! A concrete photo might have functions that change the size,
    //! but otherwise it is read-only.
