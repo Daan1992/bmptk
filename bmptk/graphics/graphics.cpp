@@ -101,11 +101,10 @@ std::ostream & operator<<( std::ostream &s, const event &e ){
 void drawable::drawable_draw_pixel( 
    frame &f, 
    const vector position, 
-   unsigned int scale,
    const vector address, 
    const color c 
 ){
-   f.write( position + address * scale, c );   
+   f.write( position + address, c );   
 }
 
 
@@ -116,13 +115,12 @@ void drawable::drawable_draw_pixel(
 
 void line::draw( 
    frame &f, 
-   const vector position, 
-   unsigned int scale 
+   const vector position
 ) const {
     
    // don't bother to draw anything 
    // when the size would be 0 or the color transparent
-   if( width < 1 || scale == 0 || fg == color::transparent ){
+   if( width < 1 || fg == color::transparent ){
       return;       
    }
               
@@ -175,7 +173,11 @@ void line::draw(
          yDraw = y;
       }
       for( int i = i0; i < i1; i++ ){
-         drawable_draw_pixel( f, position + offset * i, scale, xDraw, yDraw, fg );
+         drawable_draw_pixel( 
+           f, 
+           position + offset * i,
+           vector( xDraw, yDraw ), 
+           fg );
       }   
       // trace << xDraw << " " << yDraw;
       if( E > 0 ){
@@ -213,12 +215,11 @@ std::ostream & operator<<( std::ostream &s, const relief &r ){
    
 void rectangle::draw( 
    frame &f, 
-   const vector position, 
-   unsigned int scale 
+   const vector position
 ) const {
     
    // don't draw anything that should be invisible
-   if( scale == 0 || size.x_get() == 0 || size.y_get() == 0 ){
+   if( size.x_get() == 0 || size.y_get() == 0 ){
       return;       
    }
 
@@ -234,9 +235,9 @@ void rectangle::draw(
    }
 
    // draw the borders
-   for( unsigned int i = 0; i < width * scale; i++ ){
+   for( unsigned int i = 0; i < width; i++ ){
       vector s = size.direction() * i;  
-      vector d = ( size * scale ) - ( s * 2 );   
+      vector d = size - ( s * 2 );   
       f.draw( position + s,                    line( d.x_projection(),   c1 ));       
       f.draw( position + s + d.x_projection(), line( d.y_projection(),   c2 ));       
       f.draw( position + s + d,                line( - d.x_projection(), c2 ));       
@@ -244,11 +245,11 @@ void rectangle::draw(
    }   
    
    // draw the inner region
-   vector margin = size.direction() * width * scale;
+   vector margin = size.direction() * width;
    subframe( 
       f, 
       position + margin, 
-      position + ( size + size.direction() ) * scale - margin ).clear( bg ); 
+      position + ( size + size.direction() ) - margin ).clear( bg ); 
 }   
 
 
@@ -259,12 +260,11 @@ void rectangle::draw(
 
 void circle::draw( 
    frame &f, 
-   const vector position, 
-   unsigned int scale 
+   const vector position
 ) const {
     
    // don't draw anything when the size would be 0 
-   if( scale * radius < 1 ){
+   if( radius < 1 ){
       return;       
    }
 
@@ -284,18 +284,18 @@ void circle::draw(
    
 /*   
    // outer circle top and bottom
-   drawable_draw_pixel( f, position, scale,        0, + radius, fg );
-   drawable_draw_pixel( f, position, scale,        0, - radius, fg );
+   drawable_draw_pixel( f, position,        0, + radius, fg );
+   drawable_draw_pixel( f, position,        0, - radius, fg );
  
    // inner circle top and bottom
-   drawable_draw_pixel( f, position, scale,        0, + radius1, fg );
-   drawable_draw_pixel( f, position, scale,        0, - radius1, fg );
+   drawable_draw_pixel( f, position,        0, + radius1, fg );
+   drawable_draw_pixel( f, position,        0, - radius1, fg );
 */
    
    // y-axis lines
-   line( 0, width, fg ).draw( f, position - vector( 0, radius ), scale );
-   line( 0, radius1 * 2, bg ).draw( f, position - vector( 0, radius1 ), scale );
-   line( 0, width, fg ).draw( f, position + vector( 0, radius1 ), scale );
+   line( 0, width, fg ).draw( f, position - vector( 0, radius ) );
+   line( 0, radius1 * 2, bg ).draw( f, position - vector( 0, radius1 ) );
+   line( 0, width, fg ).draw( f, position + vector( 0, radius1 ) );
  
    for( int x = 1; x < y; x++  ){
       
@@ -320,40 +320,40 @@ void circle::draw(
       if( x <= y1 ){
             
          int w = 1 + y - y1;
-         line( 0, + w, fg ).draw( f, position + vector( + x, - y ), scale );
-         line( 0, - w, fg ).draw( f, position + vector( + x, + y ), scale );            
+         line( 0, + w, fg ).draw( f, position + vector( + x, - y ) );
+         line( 0, - w, fg ).draw( f, position + vector( + x, + y ) );            
 
-         line( 0, + w, fg ).draw( f, position + vector( - x , - y ), scale );
-         line( 0, - w, fg ).draw( f, position + vector( - x , + y ), scale );            
+         line( 0, + w, fg ).draw( f, position + vector( - x , - y ) );
+         line( 0, - w, fg ).draw( f, position + vector( - x , + y ) );            
                
-         line( 0, y1 * 2, bg ).draw( f, position + vector( + x, - y1 ), scale );
-         line( 0, y1 * 2, bg ).draw( f, position + vector( - x, - y1 ), scale );  
+         line( 0, y1 * 2, bg ).draw( f, position + vector( + x, - y1 ) );
+         line( 0, y1 * 2, bg ).draw( f, position + vector( - x, - y1 ) );  
          
          // int w2 = x;
-         line( 0, + w, fg ).draw( f, position + vector( + x, - y ), scale );
-         line( 0, - w, fg ).draw( f, position + vector( + x, + y ), scale );            
+         line( 0, + w, fg ).draw( f, position + vector( + x, - y ) );
+         line( 0, - w, fg ).draw( f, position + vector( + x, + y ) );            
 
-         line( 0, + w, fg ).draw( f, position + vector( - x , - y ), scale );
-         line( 0, - w, fg ).draw( f, position + vector( - x , + y ), scale ); 
+         line( 0, + w, fg ).draw( f, position + vector( - x , - y ) );
+         line( 0, - w, fg ).draw( f, position + vector( - x , + y ) ); 
                
-         line( 0, x * 2, bg ).draw( f, position + vector( + y1, - x ), scale );
-         line( 0, x * 2, bg ).draw( f, position + vector( - y1, - x ), scale );  
+         line( 0, x * 2, bg ).draw( f, position + vector( + y1, - x ) );
+         line( 0, x * 2, bg ).draw( f, position + vector( - y1, - x ) );  
                       
       } else {
             
          int w = 1 + 2 * y;
-         line( 0, w, color::gray ).draw( f, position + vector(   x, - y ), scale );
-         line( 0, 1 + 2 * x, color::black ).draw( f, position + vector(   y, - x ), scale );
-         // line( 0, - w, fg ).draw( f, position + vector( - x, y ), scale );
+         line( 0, w, color::gray ).draw( f, position + vector(   x, - y ) );
+         line( 0, 1 + 2 * x, color::black ).draw( f, position + vector(   y, - x ) );
+         // line( 0, - w, fg ).draw( f, position + vector( - x, y ) );
 /*      
-      drawable_draw_pixel( f, position, scale, + x, + y, fg );
-      drawable_draw_pixel( f, position, scale, - x, + y, fg );
-      drawable_draw_pixel( f, position, scale, + x, - y, fg );
-      drawable_draw_pixel( f, position, scale, - x, - y, fg );
-      drawable_draw_pixel( f, position, scale, + y, + x, fg );
-      drawable_draw_pixel( f, position, scale, - y, + x, fg );
-      drawable_draw_pixel( f, position, scale, + y, - x, fg );
-      drawable_draw_pixel( f, position, scale, - y, - x, fg );
+      drawable_draw_pixel( f, position, + x, + y, fg );
+      drawable_draw_pixel( f, position, - x, + y, fg );
+      drawable_draw_pixel( f, position, + x, - y, fg );
+      drawable_draw_pixel( f, position, - x, - y, fg );
+      drawable_draw_pixel( f, position, + y, + x, fg );
+      drawable_draw_pixel( f, position, - y, + x, fg );
+      drawable_draw_pixel( f, position, + y, - x, fg );
+      drawable_draw_pixel( f, position, - y, - x, fg );
 */      
       }
    }
@@ -365,11 +365,11 @@ void circle::draw(
 // photo
 //
 
-void photo::draw( frame &f, const vector position, unsigned int scale ) const {
+void photo::draw( frame &f, const vector position ) const {
    for( int x = 0; x < size.x_get(); x++  ){
       for( int y = 0; y < size.y_get(); y++ ){
          vector a( x, y );            
-         drawable_draw_pixel( f, position, scale, a, read( a )); } } } 
+         drawable_draw_pixel( f, position, a, read( a )); } } } 
 
          
 // ==========================================================================
@@ -456,7 +456,7 @@ int line_count(
          count++;
          x = 0;
       } else {
-         int char_size = fm.f->char_size( *s ).x_get() * fm.scale + fm.spacing.x_get();
+         int char_size = fm.f->char_size( *s ).x_get() * fm.spacing.x_get();
          if(( x + char_size > size.x_get() ) && fm.wrap ){
             count++;    
             x = char_size;                
@@ -486,7 +486,7 @@ int line_width(
          return length;
       } else {
          int char_size = fm.f->char_size( *s ).x_get() 
-            * fm.scale + fm.spacing.x_get();
+            + fm.spacing.x_get();
          if( length + char_size > size.x_get() ){
             return length;                 
          } else {
@@ -510,7 +510,7 @@ int line_chars(
          return chars;
       } else {
          int char_size = fm.f->char_size( *s ).x_get() 
-            * fm.scale + fm.spacing.x_get();
+            + fm.spacing.x_get();
          if( length + char_size > size.x_get() ){
             return chars;                 
          } else {
@@ -556,12 +556,11 @@ void draw_text_line(
 // draws the text
 void text::draw( 
    frame &fr, 
-   const vector position, 
-   unsigned int scale 
+   const vector position
 ) const {
 
    vector p = vector::origin;
-   int spaces = line_count( s, scale, f ) + 1;
+   int spaces = 1; // line_count( s, f ) + 1; // wovo somethng wrong!!!
    int extra = std::max( 
       0, 
       f.f->font_char_size.y_get() 
@@ -602,7 +601,7 @@ void frame::clear( const color c ){
       vector step = size.direction() ;
       for( int x = 0; x != size.x_get(); x += step.x_get()  ){
          for( int y = 0; y != size.y_get(); y += step.y_get() ){
-            write( x, y, c ); } } } }    
+            write( vector( x, y ), c ); } } } }    
 
          
 // ==========================================================================

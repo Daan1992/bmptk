@@ -121,15 +121,6 @@
 
 namespace bmptk { namespace graphics {
 
-	
-// ==========================================================================
-// 
-// forward declarations
-//
-
-class frame;   
-
-
 // ==========================================================================
 //
 // class vector
@@ -639,10 +630,9 @@ std::ostream & operator<<( std::ostream &s, const event &e );
 //
 //! an object that can be drawn in a frame
 //
-//! A drawable is an abstract object that can be drawn on a screen.
+//! A drawable is an abstract object that can be drawn on a frame.
 //! A drawable has has a forgeground and background color, 
 //! and a (line) width.
-//!
 //! What these properties exactly mean depends on the specific drawable.
 //! 
 //! A drawable object does not contain or specify the frame on which it is
@@ -653,17 +643,31 @@ std::ostream & operator<<( std::ostream &s, const event &e );
 //! It has no references to other objects.
 //
 
+class frame;
+
 class drawable {
-public:    
-   //! foreground color; can be read or written
+protected:
+
+   //! foreground color
    color fg;
    
-   //! background color; can be read or written
+   //! background color
    color bg;
    
-   //! width of (for instance) lines; can be read or written
-   unsigned int width;
+   //! width of (for instance) lines
+   unsigned int width;  
    
+   //! draw one pixel on f, at position
+   //
+   //! This is the function that the draw function in a concrete drawable
+   //! should use to draw each pixel of itself.
+   //! The f and position are the parameters supplied to the draw
+   //! call. Address is the location of the pixel that is to be drawn 
+   //! (draw_pixel will draw it relative to position), c its color.
+   static void drawable_draw_pixel( 
+      frame &f, const vector position, const vector address, const color c );
+      
+public:    
    //! constructor, specifies the fg and bg colors, and the (line) width
    //
    //! The default is to draw in black forgeground, with transparent 
@@ -675,47 +679,188 @@ public:
       unsigned int width = 1
    ): fg( fg ), bg( bg ), width( width ) {}
       
-   //! draw the object on f, at position, and to scale
+   //! draw the object on f, at the indicated position
    //
    //! A concrete drawable must supply the draw function, that draws the
    //! object on the supplied frame, at the specified location, and to the
    //! specified scale. When scale==0 nothing will be drawn.   
    virtual void draw( 
       frame &f, 
-      const vector position = vector::origin, 
-      unsigned int scale = 1
+      const vector position = vector::origin
    ) const = 0;    
    
-   //! draw the object on f, at x, y, and to scale
-   //
-   //! @copydetails draw( frame, const vector, unsigned int scale )
-   void draw( 
-      frame &f, 
-      int x,
-      int y,
-      unsigned int scale = 1
-   ){ draw( f, vector( x, y ), scale ); }
-   
-protected:
-   //! draw one pixel on f, at position, and to scale
-   //
-   //! This is the function that the draw function in a concrete drawable
-   //! should use to draw each pixel of itself.
-   //! The f, position and scale are the parameters supplied to the draw
-   //! call. Address is the location of the pixel that is to be drawn 
-   //! (draw_pixel will draw it relative to position), c its color.
-   static void drawable_draw_pixel( 
-      frame &f, const vector position, unsigned int scale,
-      const vector address, const color c );
+   //! get the forgeround color
+   color fg_get() const { return fg; }
       
-   //! draw one pixel on f, at x, y, and to scale
-   //
-   //! @copydetails drawable_draw_pixel
-   static void drawable_draw_pixel( 
-      frame &f, const vector position, unsigned int scale,
-      int x, int y, const color c 
-    ){ drawable_draw_pixel( f, position, scale, vector( x, y ), c ); }
+   //! get the background color
+   color bg_get() const { return bg; }
+      
+  //! get the width
+   color width_get() const { return width; }
+      
 } ;
+
+
+// ==========================================================================
+//
+// class frame
+//
+//! a rectangular block of writable pixels
+//
+//! A frame is an abstract class, representing a rectangle block of pixels.
+//! Pixels are addressed by vectors.
+//! By convention, (0,0) is the upper left pixel (origin).
+//! Each pixel has a color, which can be written.
+//!
+//! The pixel operation checked_write is pure virtual. 
+//! This operations must be implemented by a concrete frame.
+//
+
+class frame {
+private:
+
+protected:
+    
+   //! frame size
+   const vector size;
+   
+   //! write one pixel 
+   //
+   //! A concrete frame class must implement this function.
+   //! It can safely assume that the address is within the frame, and
+   //! that the colcor is not transparent.
+   virtual void checked_write( const vector p, const color c ) = 0;  
+   
+public:          
+
+   //! create a frame of specified size
+   frame( const vector size ): size( size ) {}
+   
+   //! get the size of the frame
+   vector size_get() const { return size; }
+            
+   virtual vector translate( const vector p ) const {
+      return p; }   
+   
+   //! whether p is within the frame   
+   bool is_valid( vector p ){
+      return p.is_within( size ); }   
+   
+   //! write one pixel, address specified by vector
+   //
+   //! This function checks for transparancy (which is interpreted
+   //! as 'do not write') and checks wether the p is valid
+   //! (writing to a pixel outside the frame is ignored).
+   //! Only when both checks succeed it will call checked_write
+   //! to do the actual writing.
+   void write( const vector p, const color c ){
+      if( is_valid( p ) && ( ! c.is_transparent() )){
+         checked_write( p, c ); }}  
+         
+   //! draw the drawable object at the indicated position.
+   //
+   //! This function is just a convenient way to call the drawable::draw
+   //! operation.
+   void draw( const vector position, const drawable &object ){
+      object.draw( *this, position ); }        
+         
+   //! draw the drawable object at the origin
+   //
+   //! This function is just a convenient way to call the drawable::draw
+   //! operation.
+   void draw( const drawable &object ){
+      object.draw( *this, vector::origin ); }     
+   
+   //! fill the full frame with the indicated color
+   virtual void clear( const color c = color::white );
+};
+
+
+// ==========================================================================
+//
+// class subframe
+//
+//! frame that represents a rectangular part of another (master) frame
+//!
+//! A subframe is created by specifying the master frame, and the top-left 
+//! and bottom-right vectors of the subframe corners within the master.
+//! The top-left and bottom-right vectors can be reversed to get a 
+//! subframe that appears rotated and/or mirrored within the master.
+//!
+//! The default scale is 1, which cause the subframe to appear
+//! 1:1 in the master frame. When the scale is 0 it does not appear,
+//! and reading a pixel from the subframe will always 
+//! return color::transparent.
+//!
+//! When the scale factor is larger than 1, the subframe will expand its 
+//! use of the area in the master by the scale factor, starting from
+//! the upperleft (as supplied to the subframe constructor). 
+//! In other words, the size inside the subframe remains the same,
+//! but the area it occupies in the master frame is larger.
+//!
+//! When the scale is large than 1, the topleft pixel of the subframe
+//! still occupies the pixel at the original place in the master frame,
+//! but also its neigbouring pixels in the direction towards the bottopright
+//! pixel.
+//
+
+class subframe : public frame {
+public:
+
+   //! the master of this subframe
+   frame & master;              
+   
+   //! location within the master of this subframes topleft pixel
+   const vector top_left;
+   
+   //! location within the master of this subframes topleft pixel
+   const vector bottom_right;
+   
+   //! the scale at which this subframe appears in its master
+   const unsigned int scale;
+         
+   //! translate a subframe coordinate to a master frame coordinate      
+   vector translate( const vector p ) const {
+      return vector( 
+         top_left.x_get() < bottom_right.x_get()
+            ? top_left.x_get() + p.x_get() 
+            : top_left.x_get() - p.x_get(),
+         top_left.y_get() < bottom_right.y_get()  
+            ? top_left.y_get() + p.y_get()
+            : top_left.y_get() - p.y_get()
+       ); }       
+      
+   //! create a subframe, endpoints specified as vectors
+   subframe( 
+      frame &f, 
+      vector top_left, 
+      vector bottom_right,
+      unsigned int scale = 1 
+   ):
+      frame(( top_left - bottom_right ).abs() ),
+      master( f ), 
+      top_left( top_left ), 
+      bottom_right( bottom_right ),
+      scale( scale ) {}
+  
+protected:
+
+   //! checked_write implementation as requiredby frame
+   //
+   //! When scale == 0 checke_write will do nothing, hence the
+   //! subframe will not appear in the master frame.
+   //! 
+   void checked_write( const vector p, const color c ){
+      if( scale == 0 ) return; 
+      if( is_valid( p )){
+         for( unsigned int x = 0; x < scale; x++ ){
+            for( unsigned int y = 0; y < scale; y++ ){       
+               master.write( translate( p * scale + vector( x, y )), c ); 
+            }}}}
+                          
+};
+
+
 
 
 // ==========================================================================
@@ -753,7 +898,7 @@ public:
       drawable( fg, color::transparent, width ), size( vector( x, y )){}     
       
    //! draw the line on f, at position, and to scale   
-   void draw( frame &f, const vector position, unsigned int scale ) const;
+   void draw( frame &f, const vector position ) const;
 };    
 
 
@@ -854,8 +999,8 @@ public:
       border( relief_flat ),
       size( vector( x, y )){}     
 
-   //! draw the rectangle on f, at position, and to scale         
-   void draw( frame &f, const vector position, unsigned int scale ) const;
+   //! draw the rectangle on f, at position
+   void draw( frame &f, const vector position ) const;
 };  
     
     
@@ -891,8 +1036,8 @@ public:
    ):
       drawable( fg, bg, width ), radius( radius ){}        
       
-   //! draw the circle on f, at position, and to scale         
-   void draw( frame &f, const vector position, unsigned int scale ) const; 
+   //! draw the circle on f, at position
+   void draw( frame &f, const vector position ) const; 
 };    
 
 
@@ -968,8 +1113,8 @@ public:
    color read( int x, int y ) const { 
       return read( vector( x, y )); }     
    
-   //! draw the picture on f, at position, and to scale         
-   void draw( frame &f, const vector position, unsigned int scale ) const;
+   //! draw the picture on f, at position     
+   void draw( frame &f, const vector position ) const;
 };
 
 
@@ -1377,219 +1522,14 @@ public:
    ):
       drawable( f.fg, f.bg, f.scale ), s( s ), size( size ), f( f ){}        
       
-   //! draw the text on f, at position, and to scale 
+   //! draw the text on f, at position
    //
    //! The text is drawn according to the current format 
    //! (the \ref f attribute), and the text that is drawn is the 
    //! current string (whatever the \ref s attribute points to).
-   //! The format and this call both specify a scale: these scales
-   //! both apply (they are effectively multiplied).
-   void draw( frame &f, const vector position, unsigned int scale ) const; 
+   void draw( frame &f, const vector position ) const; 
 };    
 
-
-// ==========================================================================
-//
-// class frame
-//
-//! a rectangular block of readable and writabel pixels
-//
-//! A frame is an abstract class, representing a rectangle block of pixels.
-//! Pixels are addressed by vectors (or direcly by x and y values).
-//! By convention, (0,0) is the upper left pixel (origin).
-//! Each pixel has a color, which can be read from or written.
-//!
-//! The pixel operations checked_read and checked_write are pure virtual. 
-//! These operations must be implemented by a concrete frame.
-//!
-//! Note that functions and attributes that relate to reading pixels
-//! are iherited from \ref photo.
-//
-
-class frame : public photo {
-protected:
-    
-   //! write one pixel 
-   //
-   //! A concrete frame class must implement this function.
-   //! It can safely assume that the address is within the frame, and
-   //! that the colcor is not color::transparent.
-   virtual void checked_write( const vector p, const color c ) = 0;  
-   
-public:          
-	 
-   //! create a frame, size specified by vector
-   frame( const vector size ): 
-      photo( size ) {}
-      
-   //! create a frame, size specified by x and y values
-   frame( int x, int y ): 
-      photo( vector( x, y )) {}
-      
-   virtual vector translate( const vector p ) const {
-      return p; }   
-   
-   //! write one pixel, address specified by vector
-   //
-   //! This function checks for transparancy (which is interpreted
-   //! as 'do not write') and checks wether the p is valid
-   //! (writing to a pixel outside the frame is ignored).
-   //! Only when both checks succeed it will call checked_write
-   //! to do the actual writing.
-   void write( const vector p, const color c ){
-      if( valid( p ) && ( ! c.is_transparent() )){
-         checked_write( p, c ); }}
-         
-   //! write one pixel, address specified by x and y
-   //
-   //! @copydetails frame::write( const vector p, const color c )
-   void write( int x, int y, const color c ){ 
-      write( vector( x, y ), c ); }      
-      
-   //! draw the drawable object at the indicated position and scale
-   //
-   //! This function is just a convenient way to call the drawable::draw
-   //! operation.
-   void draw( 
-      const vector position,
-      const drawable &object,
-      unsigned int scale = 1 
-   ){
-      object.draw( *this, position, scale ); }        
-      
-   //! draw the drawable object at the indicated x, y and scale
-   //
-   //! This function is just a convenient way to call the drawable::draw
-   //! operation.
-   void draw( 
-      int x, int y, 
-      const drawable &object,
-      unsigned int scale = 1 
-   ){
-      object.draw( *this, vector( x, y ), scale ); }     
-   
-   //! draw the drawable object at the origin, to the indicated scale
-   //
-   //! This function is just a convenient way to call the drawable::draw
-   //! operation.
-   void draw( 
-      const drawable &object,
-      unsigned int scale = 1 
-   ){
-      object.draw( *this, vector::origin, scale ); }     
-   
-   //! fill the full frame with the indicated color
-   virtual void clear( const color c = color::white );
-};
-
-
-// ==========================================================================
-//
-// class subframe
-//
-//! frame that represents a rectangular part of another (master) frame
-//!
-//! A subframe is created by specifying the master frame, and the top-left 
-//! and bottom-right vectors of the subframe corners within the master.
-//! The top-left and bottom-right vectors can be reversed to get a 
-//! subframe that appears rotated and/or mirrored within the master.
-//!
-//! The default scale is 1, which cause the subframe to appear
-//! 1:1 in the master frame. When the scale is 0 it does not appear,
-//! and reading a pixel from the subframe will always 
-//! return color::transparent.
-//!
-//! When the scale factor is larger than 1, the subframe will expand its 
-//! use of the area in the master by the scale factor, starting from
-//! the upperleft (as supplied to the subframe constructor). 
-//! In other words, the size inside the subframe remains the same,
-//! but the area it occupies in the master frame is larger.
-//!
-//! When the scale is large than 1, the topleft pixel of the subframe
-//! still occupies the pixel at the original place in the master frame,
-//! but also its neigbouring pixels in the direction towards the bottopright
-//! pixel.
-//
-
-class subframe : public frame {
-public:
-
-   //! the master of this subframe
-   frame & master;              
-   
-   //! location within the master of this subframes topleft pixel
-   const vector top_left;
-   
-   //! location within the master of this subframes topleft pixel
-   const vector bottom_right;
-   
-   //! the scale at which this subframe appears in its master
-   const unsigned int scale;
-         
-   //! translate a subframe coordinate to a master frame coordinate      
-   vector translate( const vector p ) const {
-      return vector( 
-         top_left.x_get() < bottom_right.x_get()
-            ? top_left.x_get() + p.x_get() 
-            : top_left.x_get() - p.x_get(),
-         top_left.y_get() < bottom_right.y_get()  
-            ? top_left.y_get() + p.y_get()
-            : top_left.y_get() - p.y_get()
-       ); }       
-      
-   //! create a subframe, endpoints specified as vectors
-   subframe( 
-      frame &f, 
-      vector top_left, 
-      vector bottom_right,
-      unsigned int scale = 1 
-   ):
-      frame(( top_left - bottom_right ).abs() ),
-      master( f ), 
-      top_left( top_left ), 
-      bottom_right( bottom_right ),
-      scale( scale ) {}
-
-/*      
-   //! create a subframe, endpoints specified as x,y pairs
-   subframe( 
-      frame &f, 
-      int x1, int y1, 
-      int x2, int y2, 
-      unsigned int scale = 1 
-   ):
-      frame( abs( x2 - x1 ), abs( y2 - y1 )),  
-      master( f ), 
-      top_left( x1, y1 ), 
-      bottom_right( x2, y2 ),
-      scale( scale ) {}              
-*/
-   
-protected:
-
-   //! checked_write implementation as requiredby frame
-   //
-   //! When scale == 0 checke_write will do nothing, hence the
-   //! subframe will not appear in the master frame.
-   //! 
-   void checked_write( const vector p, const color c ){
-      if( scale == 0 ) return; 
-      if( valid( p )){
-         for( unsigned int x = 0; x < scale; x++ ){
-            for( unsigned int y = 0; y < scale; y++ ){       
-               master.write( translate( p * scale + vector( x, y )), c ); 
-            }}}}
-           
-   //! checked_read implementation as required by frame   
-   //
-   //! When scale == 0 checked_read will return color::transparent.
-   //! When scale > 1 checked_read will read and return the master's pixel 
-   //! that is closest to the subframe's top_left.
-   color checked_read( const vector p ) const {
-      if( scale == 0 ) return color::transparent;
-      return master.read( translate( p )); }
-                          
-};
 
 
 // ==========================================================================
@@ -1639,7 +1579,7 @@ public:
    virtual void handle( const event &e ){
       for( widget *w = children; w != 0; w = w->next_child ){    
          event ew( w->inner->translate( e.location ), e.e );
-         if( ew.location.is_within( w->inner->size )){   
+         if( ew.location.is_within( w->inner->size_get() )){   
             w->handle( ew ); 
          }   
       }           

@@ -15,7 +15,7 @@ public:
 };
 
 nintendo_screen :: nintendo_screen( void ):
-   frame( 255, 191 )
+   frame( vector( 255, 191 ))
 {
 
 if(0){
@@ -65,7 +65,7 @@ int main( void ){
       int held = keysHeld();
       if( held & KEY_TOUCH ){
          touchRead( & position );
-         lcd.write( position.px, position.py, color::black );
+         lcd.write( vector( position.px, position.py ), color::black );
       }
       swiWaitForVBlank();
    }
