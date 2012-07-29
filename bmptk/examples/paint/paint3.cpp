@@ -4,9 +4,9 @@
 #include <nds/touch.h>
 
 using namespace bmptk;
-using namespace bmptk::graphics;
+using namespace graphics;
 
-nintendo_screen lcd;
+target_screen lcd;
 
 int position_is_in_rectangle( int x, int y, int x0, int y0, int x1, int y1 ){
    return( x > x0 && x < x1 && y > y0 && y < y1 );

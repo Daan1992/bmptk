@@ -22,7 +22,8 @@ This directory contains :
       - tools              : tools (executables)
 
 pending work list:
-   - paint beter structureren
+   - paint beter structureren: event in screen? => window
+   - 2478 target?
    - graphics.h start text
    - License
    - Doxygen cleanup

@@ -1,6 +1,9 @@
 #include "bmptk.h"
 
-nintendo_screen :: nintendo_screen( void ):
+using namespace bmptk;
+using namespace bmptk::graphics;
+
+target_screen :: target_screen( void ):
    frame( vector( 255, 191 ))
 {
 
@@ -18,7 +21,7 @@ nintendo_screen :: nintendo_screen( void ):
 
 }
 
-void nintendo_screen :: checked_write( 
+void target_screen :: checked_write( 
    const vector v,
    const color c 
 ){

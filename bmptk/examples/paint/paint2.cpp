@@ -4,7 +4,7 @@
 #include <nds/touch.h>
 
 using namespace bmptk;
-using namespace bmptk::graphics;
+using namespace graphics;
 
 #define rx0 10
 #define ry0 10
@@ -17,7 +17,7 @@ int position_is_in_rectangle( int x, int y, int x0, int y0, int x1, int y1 ){
 
 int main( void ){
    struct touchPosition position;
-   nintendo_screen lcd;
+   target_screen lcd;
    lcd.clear( color::red );
    lcd.draw( vector( rx0, ry0 ), rectangle( vector( rx1, ry1 )));
    for(;;){

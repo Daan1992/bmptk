@@ -6,7 +6,7 @@ This directory contains :
 
 subdirectories
 - lines   : draws random lines
-- paint   : paints pixels
+- paint   : paints pixels, multiple versions
 - reversi : two-person graphics reversi game
 
 

@@ -4,11 +4,11 @@
 #include <nds/touch.h>
 
 using namespace bmptk;
-using namespace bmptk::graphics;
+using namespace graphics;
 
 int main( void ){
    struct touchPosition position;
-   nintendo_screen lcd;
+   target_screen lcd;
    lcd.clear( color::red );
    for(;;){
       scanKeys();
