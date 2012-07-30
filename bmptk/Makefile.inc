@@ -102,6 +102,35 @@ ifeq ($(TARGET),console)
    RUN         = ./$(EXE)
 endif
 
+ifeq ($(TARGET),olimex-mod-lcd43)
+   DEFINES     += -DTARGET_OLIMEX_MOD_43
+   XTAL        += 
+   CHIP        := lpc2478
+   PREFIX      := $(DEVCPP)/bin/
+   CORE-FLAGS  :=    
+   INCLUDES    += -I"$(DEVCPPLIB)/lib/gcc/mingw32/3.4.2/include"  
+   INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2/backward" 
+   INCLUDES    += -I"$(DEVCPP)/lib/gcc/mingw32"
+   INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2"
+   INCLUDES    += -I"$(DEVCPP)/include"
+   LIBRARIES   += -L"$(DEVCPP)/lib" 
+   RESULTS     = $(EXE)
+   RUN         = ./$(EXE)
+endif
+
+ifeq ($(CHIP),lpc2478)
+   DEFINES     += -DCHIP_LPC2478
+   XTAL        := 12000000
+   DEFINES     += -DCLCK=$(XTAL)
+   PREFIX      := $(ARMTOOLS)/bin/arm-none-eabi-
+   # PREFIX      := $(ARMDEVENV)/bin/arm-thumb-elf-
+   CORE-FLAGS  := -mcpu=arm7tdmi -mtune=arm7tdmi -nostartfiles -fno-exceptions -fno-threadsafe-statics -fno-use-cxa-get-exception-ptr
+   LDFLAGS	   += -T$(BMPTK)/targets/$(CHIP).ld -nostartfiles
+   SOURCES     += $(CHIP).cpp $(CHIP)-startup.s
+   HEADERS     += $(CHIP).h
+   RESULTS     = $(ELF) $(BIN) $(MAP) $(HEX) $(DMP) $(LSS)
+endif
+
 ifeq ($(PREFIX),)
    $(error invalid or no target specified: "$(TARGET)")
 endif
