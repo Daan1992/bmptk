@@ -22,6 +22,9 @@ This directory contains :
       - tools              : tools (executables)
 
 pending work list:
+   - rectangle and circle : draw background
+   - #pragma once
+   - iostrem.h : why is it not found??
    - paint beter structureren: event in screen? => window
    - 2478 target?
    - graphics.h start text

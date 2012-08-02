@@ -103,25 +103,12 @@ ifeq ($(TARGET),console)
 endif
 
 ifeq ($(TARGET),olimex-mod-lcd43)
-   DEFINES     += -DTARGET_OLIMEX_MOD_43
-   XTAL        += 
+   XTAL        := 12000000
    CHIP        := lpc2478
-   PREFIX      := $(DEVCPP)/bin/
-   CORE-FLAGS  :=    
-   INCLUDES    += -I"$(DEVCPPLIB)/lib/gcc/mingw32/3.4.2/include"  
-   INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2/backward" 
-   INCLUDES    += -I"$(DEVCPP)/lib/gcc/mingw32"
-   INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2"
-   INCLUDES    += -I"$(DEVCPP)/include"
-   LIBRARIES   += -L"$(DEVCPP)/lib" 
-   RESULTS     = $(EXE)
-   RUN         = ./$(EXE)
 endif
 
 ifeq ($(CHIP),lpc2478)
-   DEFINES     += -DCHIP_LPC2478
    XTAL        := 12000000
-   DEFINES     += -DCLCK=$(XTAL)
    PREFIX      := $(ARMTOOLS)/bin/arm-none-eabi-
    # PREFIX      := $(ARMDEVENV)/bin/arm-thumb-elf-
    CORE-FLAGS  := -mcpu=arm7tdmi -mtune=arm7tdmi -nostartfiles -fno-exceptions -fno-threadsafe-statics -fno-use-cxa-get-exception-ptr
@@ -136,8 +123,10 @@ ifeq ($(PREFIX),)
 endif
    
 DEFINES   += -DTARGET=$(TARGET)
-DEFINES   += -DTARGET_$(TARGET)
+DEFINES   += -DTARGET_$(TARGET)=X
 DEFINES   += -DCHIP=$(CHIP)
+DEFINES   += -DCHIP_$(CHIP)=X
+DEFINES   += -DXTAL=$(XTAL)
 
 
 #============================================================================
@@ -178,9 +167,10 @@ OBJ       += $(patsubst %,%.o,$(LIBS))
 # 
 #============================================================================
 
-CPPFLAGS    := $(CORE-FLAGS) $(INCLUDES) $(DEFINES) -I$(BMPTK) 
+CPPFLAGS    += $(CORE-FLAGS) $(INCLUDES) $(DEFINES) -I$(BMPTK) 
 CPPFLAGS    += -g -O2 -pipe -Wall -mstructure-size-boundary=32 -Wno-multichar 
 CPPFLAGS    += -fno-builtin -fno-rtti -fno-exceptions -std=c++0x 
+CPPFLAGS    += 
 
 ASFLAGS     := $(CORE-FLAGS) $(INCLUDES) $(DEFINES) -I$(BMPTK) 
 ASFLAGS     += -x assembler-with-cpp

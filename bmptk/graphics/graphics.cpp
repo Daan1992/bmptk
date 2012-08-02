@@ -88,7 +88,7 @@ std::ostream & operator<<( std::ostream &s, const event_type &e ){
 }
 
 std::ostream & operator<<( std::ostream &s, const event &e ){
-   s << e.location << ":" << e.e;
+   s << e.location_get() << ":" << e.event_type_get();
    return s;
 }
 
@@ -613,12 +613,12 @@ void wtoplevel :: run( void ){
    redraw();  
    for(;;){   
       event e = event_get();    
-      if( e.e == event_exit ) break;
-      if( e.e != event_none ){
+      if( e.event_type_get() == event_exit ) break;
+      if( e.event_type_get() != event_none ){
          // trace << e; 
          handle( e );
-         if( e.e == event_down){
-            handle( event( e.location, event_touch ));    
+         if( e.event_type_get() == event_down){
+            handle( event( e.location_get(), event_touch ));    
          }
          redraw();
       }

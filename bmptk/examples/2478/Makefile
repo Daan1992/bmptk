@@ -16,10 +16,10 @@ TARGET     := olimex-mod-lcd43
 BMPTK      := ../..
 
 # Specify project files (other than $(PROJECT).cpp) (if any)
-OBJECTS    := drv-glcd
+OBJECTS    := 
 SOURCES    := 
 HEADERS    := 
-LIBS       := graphics
+LIBS       := 
 
 # specify (extra) results you want to get (if any)
 RESULTS    := 
