@@ -203,6 +203,9 @@
    #ifdef TARGET_nds
       #include "bmptk-nds.h"
    #endif              
+   #ifdef TARGET_win
+      #include "bmptk-win.h"
+   #endif              
    #ifdef CHIP_lpc2478
       #include "lpc2478.h"
    #endif              

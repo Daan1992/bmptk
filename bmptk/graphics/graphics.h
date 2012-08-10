@@ -2,8 +2,21 @@
 //
 // file: bmptk/graphics/graphics.h
 //
-//! \page Graphics
-//!
+// ==========================================================================
+
+
+#ifndef _GRAPHICS_H_
+#define _GRAPHICS_H_
+
+#include <iostream>
+#include <limits>
+
+namespace bmptk { 
+
+// ==========================================================================
+//
+//! /page graphics
+//
 //! The graphics part of the library provides the interface to a 
 //! few LCD screens, and basic graphics functions of drawing lines, 
 //! circles, boxes, characters, and pictures on a graphic screen. 
@@ -68,13 +81,13 @@
 //! 
 //
 
-#ifndef _GRAPHICS_H_
-#define _GRAPHICS_H_
 
-#include <iostream>
-#include <limits>
+//==========================================================================
+//
+//! graphics library
+//
 
-namespace bmptk { namespace graphics {
+namespace graphics {
 
 // ==========================================================================
 //
@@ -173,6 +186,10 @@ public:
    //! multiplies an existing vector by an integer
    vector operator *= ( int n ){
       return vector( x *= n, y *= n ); }         
+      
+   //! multiplying two vectors multiplies their X and Y components
+   vector operator * ( const vector rhs ) const {
+      return vector( x * rhs.x, y * rhs.y ); }         
       
    //! reports whether two vectors are equal  
    bool operator == ( const vector p ) const {
@@ -754,10 +771,13 @@ public:
 //
 //! frame that represents a rectangular part of another (master) frame
 //!
-//! A subframe is created by specifying the master frame, and the top-left 
-//! and bottom-right vectors of the subframe corners within the master.
-//! The top-left and bottom-right vectors can be reversed to get a 
-//! subframe that appears rotated and/or mirrored within the master.
+//! A subframe is created by specifying the master frame, the top-left pixel
+//! of the subfram within the master frame, and the direction
+//! in which the subframe extends within the master frame.
+//! ( top_left + direction - direction.direction() ) == 
+//! bottom-right pixel of the subframe.
+//! The direction can point towards all four quadrants, hence
+//! the subframe can appear mirrored within the master frame.
 //!
 //! The default scale is 1, which causes the subframe to appear
 //! 1:1 in the master frame. When the scale is 0 it does not appear,
@@ -772,7 +792,7 @@ public:
 //!
 //! When the scale is large than 1, the topleft pixel of the subframe
 //! still occupies the pixel at the original place in the master frame,
-//! but also its neigbouring pixels in the direction towards the bottopright
+//! but also its neigbouring pixels in the direction towards the bottomright
 //! pixel.
 //
 
@@ -806,13 +826,13 @@ public:
    subframe( 
       frame &f, 
       vector top_left, 
-      vector bottom_right,
+      vector direction,
       unsigned int scale = 1 
    ):
-      frame(( top_left - bottom_right ).abs() ),
+      frame( direction.abs() ),
       master( f ), 
       top_left( top_left ), 
-      bottom_right( bottom_right ),
+      bottom_right( top_left + direction - direction.direction() ),
       scale( scale ) {}
   
 protected:
@@ -845,7 +865,7 @@ protected:
 //! The line will be drawn using the specified width, by drawing
 //! adjacent pixels.
 //! The size of a line is its lenghth in the x and y directions,
-//! \b not its endpoint.
+//! \b not its endpoint (it is one pixel beyond the end).
 //
 
 class line : public drawable {
@@ -863,7 +883,7 @@ public:
    line( const vector size, const color fg = color::black, int width = 1 ):
       drawable( fg, color::transparent, width ), size( size ){}     
       
-   //! constructs a line from its \size x and y, color, and width
+   //! constructs a line from its \ref size x and y, color, and width
    line( int x, int y, const color fg = color::black, int width = 1 ):
       drawable( fg, color::transparent, width ), size( vector( x, y )){}     
       
@@ -919,15 +939,15 @@ std::ostream & operator<<( std::ostream &s, const relief &r );
 class rectangle : public drawable {
 public:
 
-   //! bright border color; can be read or written; intitally gray
+   //! bright border color; can be read or written; intitally fg
    //
    //! This is the color used for the bright parts of teh border
    //! when its relief is raised or sunken.
    color bright;
    
-   //! dark border color; can be read or written; intially black
+   //! dark border color; can be read or written; intially fg
    //
-   //! This is the color used for the bright parts of teh border
+   //! This is the color used for the dark parts of the border
    //! when its relief is raised or sunken.
    color dark;
    
@@ -943,31 +963,19 @@ public:
    //! being the near corner.
    vector size;
    
-   //! constructs a rectangle from its far corner, bg, fg and width
+   //! constructs a rectangle from its far corner, bg, fg, width and relief
    rectangle(
       const vector size, 
       const color fg     = color::black,
       const color bg     = color::transparent,
-      int width = 1
+      int width          = 1,
+      relief rel         = relief_flat
    ):
       drawable( fg, bg, width ), 
-      bright( fg / 2 ), 
-      dark( fg ), 
-      border( relief_flat ),
-      size( size ){}     
-      
-  //! constructs a rectangle from its far corner x and y, bg, fg and width
-   rectangle(
-      int x, int y,
-      const color fg     = color::black,
-      const color bg     = color::transparent,      	
-      int width = 1 
-   ):
-      drawable( fg, bg, width ), 
-      bright( fg / 2 ), 
-      dark( fg ), 
-      border( relief_flat ),
-      size( vector( x, y )){}     
+      bright( fg ), 
+      dark( fg / 4 ), 
+      border( rel ),
+      size( size ){}       
 
    //! draw the rectangle on f, at position
    void draw( frame &f, const vector position ) const;
@@ -1084,7 +1092,7 @@ public:
       return read( vector( x, y )); }     
    
    //! draw the picture on f, at position     
-   void draw( frame &f, const vector position ) const;
+   void draw( frame &f, const vector position = vector::origin ) const;
 };
 
 
@@ -1115,8 +1123,8 @@ private:
 public:     
    
    //! create an inline_rgb_photo object   
-   inline_rgb_photo( int x, int y, const unsigned char *data ):
-      photo( vector( x, y )), data( data ){}        
+   inline_rgb_photo( vector location, const unsigned char *data ):
+      photo( location ), data( data ){}        
 
 };
 
@@ -1672,6 +1680,7 @@ public:
    void run( void );
 };
 
-}} // namespace bmptk { namespace graphics {
+} // namespace bmptks
+} // namespace graphics
 
 #endif // #ifdef _GRAPHICS_H_                            

@@ -64,6 +64,7 @@ OBJDUMP   = "$(PREFIX)objdump"
 SIZES     = "$(PREFIX)size"
 
 NDSTOOL   := "$(DEVKITPRO)/devkitARM/bin/ndstool"
+IMGTOCPP  := python $(BMPTK)/tool/cpp_to_img.py
 
 
 #============================================================================
@@ -88,7 +89,7 @@ ifeq ($(TARGET),nds)
    LIBS        += bmptk-nds
 endif
 
-ifeq ($(TARGET),console)
+ifeq ($(TARGET),win)
    CHIP        := Intel
    PREFIX      := $(DEVCPP)/bin/
    CORE-FLAGS  :=    
@@ -98,8 +99,10 @@ ifeq ($(TARGET),console)
    INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2"
    INCLUDES    += -I"$(DEVCPP)/include"
    LIBRARIES   += -L"$(DEVCPP)/lib" 
+   LDFLAGS     += -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
    RESULTS     = $(EXE)
    RUN         = ./$(EXE)
+   LIBS        += bmptk-win
 endif
 
 ifeq ($(TARGET),olimex-mod-lcd43)
@@ -168,9 +171,10 @@ OBJ       += $(patsubst %,%.o,$(LIBS))
 #============================================================================
 
 CPPFLAGS    += $(CORE-FLAGS) $(INCLUDES) $(DEFINES) -I$(BMPTK) 
-CPPFLAGS    += -g -O2 -pipe -Wall -mstructure-size-boundary=32 -Wno-multichar 
-CPPFLAGS    += -fno-builtin -fno-rtti -fno-exceptions -std=c++0x 
-CPPFLAGS    += 
+CPPFLAGS    += -g -O2 -pipe -Wall  -Wno-multichar 
+CPPFLAGS    += -fno-builtin -fno-rtti -fno-exceptions 
+# not for devcpp
+# CPPFLAGS    += -mstructure-size-boundary=32 -std=c++0x 
 
 ASFLAGS     := $(CORE-FLAGS) $(INCLUDES) $(DEFINES) -I$(BMPTK) 
 ASFLAGS     += -x assembler-with-cpp
@@ -191,6 +195,9 @@ LDFLAGS     +=  -Wl,-Map,$(MAP)
 # How to make object files?
 %.o: %.cpp; $(CPP) $(CPPFLAGS) -c -o $@ $<
 %.o: %.s;   $(AS)  $(ASFLAGS)  -c -o $@ $<
+
+## how to make source files from images
+#%.cpp : *.gif; $(IMGTOCPP) $@ $<
 
 # How to make a listing from a cpp file
 %.list: %.cpp; $(CPP) $(CPPFLAGS) -c -S -o $@ $<

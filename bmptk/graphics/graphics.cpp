@@ -12,7 +12,8 @@
 #include "graphics.h"
 // #include "font.h"
 
-namespace bmptk { namespace graphics {
+namespace bmptk { 
+namespace graphics {
 
 // ==========================================================================
 //
@@ -270,7 +271,6 @@ void circle::draw(
 
    // http://en.wikipedia.org/wiki/Midpoint_circle_algorithm
    
-       	
    int ff = 1 - radius;
    int ddFx = 1;
    int ddFy = -2 * radius;
@@ -625,4 +625,5 @@ void wtoplevel :: run( void ){
    }      
 }
 
-}} // namespace bmptk { namespace graphics {                         
+} // namespace bmptks
+} // namespace graphics

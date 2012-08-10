@@ -23,6 +23,8 @@ This directory contains :
 
 pending work list:
    - rectangle and circle : draw background
+   - rectangle, circle: private attributes?
+   - circle drawing is broken
    - #pragma once
    - iostrem.h : why is it not found??
    - paint beter structureren: event in screen? => window
