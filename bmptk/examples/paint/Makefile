@@ -7,7 +7,7 @@
 #############################################################################
 
 # Specify the project name, this is also the main .cpp file to compile
-PROJECT    := paint1
+PROJECT    := paint3
 
 # Specify target chip or board or system
 TARGET     := nds

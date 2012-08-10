@@ -1,10 +1,49 @@
 #include "bmptk.h"
 
-#include <nds.h>
-#include <nds/touch.h>
-
 using namespace bmptk;
 using namespace graphics;
+
+#ifdef TARGET_nds
+   #include <nds.h>
+   #include <nds/touch.h>
+   vector touched( void ){
+      struct touchPosition position;
+      swiWaitForVBlank();
+      scanKeys();
+      int held = keysHeld();   
+      if( held & KEY_TOUCH ){
+         touchRead( & position );
+         return vector( position.px, position.py );
+      } else {
+         return vector( -1, -1 );
+      }      
+    }   
+#endif
+
+#ifdef TARGET_win
+   #include "bmptk-win-graphics.h"
+   vector touched( void ){
+      int x, y;  
+      static bool down = 0;
+      getmouseclick( WM_LBUTTONDOWN, x, y );
+      if( x != -1 ){
+         down = 1;   
+         return vector( x, y );
+      }   
+      getmouseclick( WM_LBUTTONUP, x, y );
+      if( x != -1 ){
+         down = 0;   
+         return vector( -1, -1 );
+      }   
+      if( down ){
+         getmouseclick( WM_MOUSEMOVE, x, y );
+         if( x != -1 ){  
+         return vector( x, y );
+      }   
+   }
+   return vector( -1, -1 );
+}
+#endif
 
 target_screen lcd;
 
@@ -62,20 +101,16 @@ void select_blue( int x, int y, area *a ){
 }
 
 int main( void ){
-   struct touchPosition position;
    lcd.clear( color::yellow );
    area_add(  10, 10, 200, 180, color::white,  paint );
    area_add( 210, 10, 220,  20, color::red,    select_red );
    area_add( 210, 25, 220,  35, color::green,  select_green );
    area_add( 210, 40, 220,  50, color::blue,   select_blue );
    for(;;){
-      scanKeys();
-      int held = keysHeld();
-      if( held & KEY_TOUCH ){
-         touchRead( & position );
-         execute( position.px, position.py );
+      vector v = touched();
+      if( v.x_get() >= 0 ){
+         execute( v.x_get(), v.y_get() );
       }
-      swiWaitForVBlank();
    }
    return 0;
 }
