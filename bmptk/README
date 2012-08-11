@@ -22,6 +22,13 @@ This directory contains :
       - tools              : tools (executables)
 
 pending work list:
+   - depend klopt nog niet
+   - draw example: generate .h and .cpp
+   - draw example: cleanup .h and .cpp (!)
+   - font_default
+   - draw add font-from-fft example
+   - all files start with bmptk- ?
+
    - rectangle, circle: private attributes?
    - draw line width differently (circle brush)
    - draw circle swith differently too

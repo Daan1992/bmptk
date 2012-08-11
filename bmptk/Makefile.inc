@@ -64,7 +64,7 @@ OBJDUMP   = "$(PREFIX)objdump"
 SIZES     = "$(PREFIX)size"
 
 NDSTOOL   := "$(DEVKITPRO)/devkitARM/bin/ndstool"
-IMGTOCPP  := python $(BMPTK)/tool/cpp_to_img.py
+IMGTOCPP  := python $(BMPTK)/tools/img_to_cpp.py
 
 
 #============================================================================
@@ -134,21 +134,7 @@ DEFINES   += -DXTAL=$(XTAL)
 
 #============================================================================
 #
-# Dependencies
-# 
-#============================================================================
-
-HEADERS   += $(patsubst %,%.h,$(LIBS))
-
-# Assume all sources depend on all headers, the linkerscript, and the Makefile
-DEPEND    := $(HEADERS) $(LNK) Makefile
-%.cpp::   $(DEPEND)
-%.s::     $(DEPEND)
-
-
-#============================================================================
-#
-# Result files
+# Intermediate and result files
 # 
 #============================================================================
 
@@ -160,8 +146,24 @@ DMP       := $(PROJECT).dmp
 LSS       := $(PROJECT).lss
 NDS       := $(PROJECT).nds
 EXE       := $(PROJECT).exe
-OBJ       := $(patsubst %.cpp,%.o,$(patsubst %.s,%.o,$(SOURCES)))
+OBJ       := $(OBJECTS)
+OBJ       += $(patsubst %.cpp,%.o,$(patsubst %.s,%.o,$(SOURCES)))
 OBJ       += $(patsubst %,%.o,$(LIBS))
+OBJ       += $(patsubst %.jpg,%.o,$(IMAGES))
+
+
+#============================================================================
+#
+# Dependencies
+# 
+#============================================================================
+
+HEADERS   += $(patsubst %,%.h,$(LIBS))
+HEADERS   += $(patsubst %.jpg,%.h,$(IMAGES))
+
+# Assume all sources depend on all headers, the linkerscript, and the Makefile
+DEPEND    := $(HEADERS) $(LNK) Makefile
+$(OBJ): $(DEPEND)
              
              
 #============================================================================
@@ -194,10 +196,11 @@ LDFLAGS     +=  -Wl,-Map,$(MAP)
 
 # How to make object files?
 %.o: %.cpp; $(CPP) $(CPPFLAGS) -c -o $@ $<
-%.o: %.s;   $(AS)  $(ASFLAGS)  -c -o $@ $<
+%.o: %.s; $(AS)  $(ASFLAGS)  -c -o $@ $<
 
-## how to make source files from images
-#%.cpp : *.gif; $(IMGTOCPP) $@ $<
+## how to make source and header files from images
+%.cpp : %.jpg; $(IMGTOCPP) $< $@
+%.h   : %.jpg; $(IMGTOCPP) $< $@
 
 # How to make a listing from a cpp file
 %.list: %.cpp; $(CPP) $(CPPFLAGS) -c -S -o $@ $<
@@ -263,6 +266,7 @@ run: $(PROJECT)
 CLEAN += $(RESULTS)
 CLEAN += $(OBJ)
 CLEAN += $(MAP)
+CLEAN += $(patsubst %.jpg,%.h,$(IMAGES)) $(patsubst %.jpg,%.cpp,$(IMAGES))
 clean:
 		-$(RM) $(CLEAN)
 

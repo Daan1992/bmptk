@@ -16,10 +16,9 @@ TARGET     := nds
 BMPTK      := ../..
 
 # Specify project files (other than $(PROJECT).cpp) (if any)
-SOURCES    := wouter32.cpp wouter128.cpp
 HEADERS    := 
 LIBS       := graphics
-IMAGES     := 
+IMAGES     := wouter32.jpg wouter128.jpg
 
 # specify (extra) results you want to get (if any)
 RESULTS    := 
