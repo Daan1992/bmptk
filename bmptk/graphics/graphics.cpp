@@ -11,8 +11,10 @@
 #include <iomanip>
 #include "graphics.h"
 // #include "font.h"
+#include "bmptk-font-default.h"   
+#include "bmptk-font-default.cpp"
 
-namespace bmptk { 
+namespace bmptk {  
 namespace graphics {
 
 // ==========================================================================
@@ -274,9 +276,13 @@ void circle::circle_draw_pixel(
    const color c
 ) const {
    
-   for( unsigned int x = 0; x < width; x++ ){
-      for( unsigned int y = 0; y < width; y ++ ){
-         drawable_draw_pixel( fr, position, v + vector( x, y ), c );   
+   int start = width / 2;
+   int end = (int) width - start;
+   for( int x = - start; x < end; x++ ){
+      for( int y = - start; y < end; y ++ ){
+         if( abs( x ) + abs( y ) < (int) width ){
+            drawable_draw_pixel( fr, position, v + vector( x, y ), c );   
+         }   
       }
    }      
 }   
@@ -403,6 +409,7 @@ bool inline_font :: read( char c, const vector p ) const {
    return bool_read( p + vector( start[ (int) c ], 0 ));
 }
 
+
 // ==========================================================================
 //
 // format
@@ -419,8 +426,8 @@ std::ostream & operator<<( std::ostream &s, const font_alignment &a ){
    }         
    return s;
 }
-   
-// const format format_default( ff );
+
+const format format_default( font_default );
 
 
 // ==========================================================================
@@ -552,7 +559,7 @@ void text::draw(
 ) const {
 
    vector p = vector::origin;
-   int spaces = 1; // line_count( s, f ) + 1; // wovo somethng wrong!!!
+   int spaces = line_count( s, fr.size_get(), f ) + 1; 
    int extra = std::max( 
       0, 
       f.f->font_char_size.y_get() 
@@ -577,7 +584,9 @@ void text::draw(
       draw_text_line( fr, p, size, f, &ss );   
       if( *ss == '\n' ){ 
          ss++;
-         p = vector( 0, f.f->font_char_size.y_get() + f.spacing.y_get() );         
+         p = vector( 
+            0, 
+            p.y_get() + f.f->font_char_size.y_get() + f.spacing.y_get() );         
       }   
    }               
 }

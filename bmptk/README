@@ -22,8 +22,9 @@ This directory contains :
       - tools              : tools (executables)
 
 pending work list:
-   - rectangle and circle : draw background
    - rectangle, circle: private attributes?
+   - draw line width differently (circle brush)
+   - draw circle swith differently too
    - #pragma once
    - iostream.h : why is it not found??
    - paint beter structureren: event in screen? => window
@@ -43,7 +44,6 @@ pending work list:
    - draw rounded rectangle
    - text format ook direction (-> <- etc ?)
    - STL-style iterator for position
-   - line::draw width
    - text::draw scale, twice?
    - drawable::draw_pixel moet beter
    - rotate operator on a vector!
