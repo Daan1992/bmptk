@@ -5,10 +5,20 @@
 using namespace bmptk;
 using namespace bmptk::graphics;
 
+#ifndef XSIZE
+   #define XSIZE 256
+#endif
+#ifndef YSIZE
+   #define YSIZE 192
+#endif
+#ifndef SCALE
+   #define SCALE 1
+#endif   
+
 target_screen :: target_screen( void ):
-   frame( vector( 255, 191 ))
+   frame( vector( XSIZE, YSIZE ))
 {
-   initwindow( 255, 191, "wframe");
+   initwindow( SCALE * XSIZE - 1, SCALE * YSIZE - 1, "wframe" );
 }
 
 void target_screen :: checked_write( 
@@ -16,5 +26,9 @@ void target_screen :: checked_write(
    const color c 
 ){
    int z = COLOR( c.red_get(), c.green_get(), c.blue_get() );
-   putpixel ( v.x_get(), v.y_get(), z );
+   for( int x = 0; x < SCALE; x++ ){
+      for( int y = 0; y < SCALE; y++ ){
+         putpixel ( SCALE * v.x_get() + x, SCALE * v.y_get() + y, z );
+      }
+   }      
 }
