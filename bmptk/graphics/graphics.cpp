@@ -263,98 +263,90 @@ void circle::draw(
    frame &f, 
    const vector position
 ) const {
-    
+   circle_draw( f, position, bg, 1 );
+   circle_draw( f, position, fg, 0 );
+}
+
+void circle::circle_draw_pixel( 
+   frame &fr,
+   const vector position,
+   const vector v,
+   const color c
+) const {
+   
+   for( unsigned int x = 0; x < width; x++ ){
+      for( unsigned int y = 0; y < width; y ++ ){
+         drawable_draw_pixel( fr, position, v + vector( x, y ), c );   
+      }
+   }      
+}   
+
+void circle::circle_draw (
+   frame &fr, 
+   const vector position,
+   const color c,
+   bool fill
+) const {
+
    // don't draw anything when the size would be 0 
    if( radius < 1 ){
       return;       
    }
-
+   
    // http://en.wikipedia.org/wiki/Midpoint_circle_algorithm
    
-   int ff = 1 - radius;
+   int f = 1 - radius;
    int ddFx = 1;
    int ddFy = -2 * radius;
+   int x = 0;
    int y = radius;
- 
-   int radius1 = radius + 1 - width;
-   int ff1 = 1 - radius1;
-   int ddFx1 = 1;
-   int ddFy1 = -2 * radius1;
-   int y1 = radius1;
+    
+   if( fill ){
    
-/*   
-   // outer circle top and bottom
-   drawable_draw_pixel( f, position,        0, + radius, fg );
-   drawable_draw_pixel( f, position,        0, - radius, fg );
- 
-   // inner circle top and bottom
-   drawable_draw_pixel( f, position,        0, + radius1, fg );
-   drawable_draw_pixel( f, position,        0, - radius1, fg );
-*/
+      // top and bottom
+      drawable_draw_pixel( fr, position, vector( 0, + radius ), c );
+      drawable_draw_pixel( fr, position, vector( 0, - radius ), c );
+
+      // left and right
+      line( vector( 2 * radius, 0 ), c ).draw( fr, position - vector( radius, 0 ));
+      
+   } else {
    
-   // y-axis lines
-   line( 0, width, fg ).draw( f, position - vector( 0, radius ) );
-   line( 0, radius1 * 2, bg ).draw( f, position - vector( 0, radius1 ) );
-   line( 0, width, fg ).draw( f, position + vector( 0, radius1 ) );
- 
-   for( int x = 1; x < y; x++  ){
+      // top and bottom
+      circle_draw_pixel( fr, position, vector( 0, + radius ), c );
+      circle_draw_pixel( fr, position, vector( 0, - radius ), c );
+
+      // left and right 
+      circle_draw_pixel( fr, position, vector( + radius, 0 ), c );
+      circle_draw_pixel( fr, position, vector( - radius, 0 ), c );
+   }   
+    
+   while( x < y ){
       
       // calculate next outer circle point
-      if( ff >= 0 ){
+      if( f >= 0 ){
         y--;
         ddFy += 2;
-        ff += ddFy;
+        f += ddFy;
       }
+      x++;
       ddFx += 2;
-      ff += ddFx;   
-       
-      // calculate next inner circle point
-      if( ff1 >= 0 ){
-        y1--;
-        ddFy1 += 2;
-        ff1 += ddFy1;
-      }
-      ddFx1 += 2;
-      ff1 += ddFx1;          
-      
-      if( x <= y1 ){
-            
-         int w = 1 + y - y1;
-         line( 0, + w, fg ).draw( f, position + vector( + x, - y ) );
-         line( 0, - w, fg ).draw( f, position + vector( + x, + y ) );            
-
-         line( 0, + w, fg ).draw( f, position + vector( - x , - y ) );
-         line( 0, - w, fg ).draw( f, position + vector( - x , + y ) );            
-               
-         line( 0, y1 * 2, bg ).draw( f, position + vector( + x, - y1 ) );
-         line( 0, y1 * 2, bg ).draw( f, position + vector( - x, - y1 ) );  
-         
-         // int w2 = x;
-         line( 0, + w, fg ).draw( f, position + vector( + x, - y ) );
-         line( 0, - w, fg ).draw( f, position + vector( + x, + y ) );            
-
-         line( 0, + w, fg ).draw( f, position + vector( - x , - y ) );
-         line( 0, - w, fg ).draw( f, position + vector( - x , + y ) ); 
-               
-         line( 0, x * 2, bg ).draw( f, position + vector( + y1, - x ) );
-         line( 0, x * 2, bg ).draw( f, position + vector( - y1, - x ) );  
-                      
+      f += ddFx;   
+                    
+      if( fill ){
+         line( vector( 2 * x, 0 ), c ).draw( fr, position + vector( -x,  y ));
+         line( vector( 2 * x, 0 ), c ).draw( fr, position + vector( -x, -y ));
+         line( vector( 2 * y, 0 ), c ).draw( fr, position + vector( -y,  x ));
+         line( vector( 2 * y, 0 ), c ).draw( fr, position + vector( -y, -x ));
       } else {
-            
-         int w = 1 + 2 * y;
-         line( 0, w, color::gray ).draw( f, position + vector(   x, - y ) );
-         line( 0, 1 + 2 * x, color::black ).draw( f, position + vector(   y, - x ) );
-         // line( 0, - w, fg ).draw( f, position + vector( - x, y ) );
-/*      
-      drawable_draw_pixel( f, position, + x, + y, fg );
-      drawable_draw_pixel( f, position, - x, + y, fg );
-      drawable_draw_pixel( f, position, + x, - y, fg );
-      drawable_draw_pixel( f, position, - x, - y, fg );
-      drawable_draw_pixel( f, position, + y, + x, fg );
-      drawable_draw_pixel( f, position, - y, + x, fg );
-      drawable_draw_pixel( f, position, + y, - x, fg );
-      drawable_draw_pixel( f, position, - y, - x, fg );
-*/      
+         circle_draw_pixel( fr, position, vector( + x, + y ), c );
+         circle_draw_pixel( fr, position, vector( - x, + y ), c );
+         circle_draw_pixel( fr, position, vector( + x, - y ), c );
+         circle_draw_pixel( fr, position, vector( - x, - y ), c );
+         circle_draw_pixel( fr, position, vector( + y, + x ), c );
+         circle_draw_pixel( fr, position, vector( - y, + x ), c );
+         circle_draw_pixel( fr, position, vector( + y, - x ), c );
+         circle_draw_pixel( fr, position, vector( - y, - x ), c );
       }
    }
 }

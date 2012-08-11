@@ -24,21 +24,18 @@ This directory contains :
 pending work list:
    - rectangle and circle : draw background
    - rectangle, circle: private attributes?
-   - circle drawing is broken
    - #pragma once
-   - iostrem.h : why is it not found??
+   - iostream.h : why is it not found??
    - paint beter structureren: event in screen? => window
    - 2478 target?
    - graphics.h start text
    - License
    - Doxygen cleanup
-   - console/windows target
    - reversi example
    - std:cout replacement
    - packer/grid/placer
    - mouse-style pointer needed for trackballs
    - subframe boundaries
-   - circle, also filled
    - ignore repeated mouse @ same place
    - compressed color = 1 byte per pixel
    - arithmetic for text format

@@ -996,6 +996,22 @@ public:
 //
 
 class circle : public drawable {
+private:
+
+   void circle_draw(
+      frame &fr, 
+      const vector position,
+      const color c,
+      bool fill
+   ) const;
+   
+   void circle_draw_pixel( 
+      frame &fr,      
+      const vector position,   
+      const vector v,
+      const color c
+   ) const;
+
 public:    
 
    //! the radius of the circle
