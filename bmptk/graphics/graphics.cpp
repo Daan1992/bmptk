@@ -250,7 +250,7 @@ void rectangle::draw(
    subframe( 
       f, 
       position + margin, 
-      position + ( size + size.direction() ) - margin ).clear( bg ); 
+      ( size + size.direction() ) - margin * 2 ).clear( bg ); 
 }   
 
 
