@@ -159,7 +159,6 @@ OBJ       += $(patsubst %.jpg,%.o,$(IMAGES))
 #============================================================================
 
 HEADERS   += $(patsubst %,%.h,$(LIBS))
-HEADERS   += $(patsubst %.jpg,%.h,$(IMAGES))
 
 # Assume all sources depend on all headers, the linkerscript, and the Makefile
 DEPEND    := $(HEADERS) $(LNK) Makefile
@@ -197,10 +196,6 @@ LDFLAGS     +=  -Wl,-Map,$(MAP)
 # How to make object files?
 %.o: %.cpp; $(CPP) $(CPPFLAGS) -c -o $@ $<
 %.o: %.s; $(AS)  $(ASFLAGS)  -c -o $@ $<
-
-## how to make source and header files from images
-%.cpp : %.jpg; $(IMGTOCPP) $< $@
-%.h   : %.jpg; $(IMGTOCPP) $< $@
 
 # How to make a listing from a cpp file
 %.list: %.cpp; $(CPP) $(CPPFLAGS) -c -S -o $@ $<
@@ -266,7 +261,6 @@ run: $(PROJECT)
 CLEAN += $(RESULTS)
 CLEAN += $(OBJ)
 CLEAN += $(MAP)
-CLEAN += $(patsubst %.jpg,%.h,$(IMAGES)) $(patsubst %.jpg,%.cpp,$(IMAGES))
 clean:
 		-$(RM) $(CLEAN)
 

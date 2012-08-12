@@ -4,8 +4,7 @@
 using namespace bmptk;
 using namespace graphics;
 
-#include "wouter32.h"
-#include "wouter128.h"
+#include "wouter.h"
 
 int main( void ){
    target_screen lcd;
@@ -52,7 +51,6 @@ int main( void ){
       circle( radius, color::yellow, color::green, 5 ));   
       
    // draw a photo of me in four orientations   
-   photo &wouter = wouter32;
    current = vector( start.x_get(), ( current + margin + size / 2 ).y_get() );
    size = wouter.size;
    { wouter.draw( lcd, current );

@@ -26,6 +26,7 @@ pending work list:
    - font_default
    - draw add font-from-fft example
    - all files start with bmptk- ?
+   - make and make clean in main directory for documentation
 
    - rectangle, circle: private attributes?
    - draw line width differently (circle brush)

@@ -85,8 +85,8 @@ def Lines_From_Image( Image, Name, Invert = 0 ):
    Result += "};\n" 
    return ( x_size, y_size, Result )
    
-def Cpp_To_Img( Img_File_Name ):
-   Name = File_Base( os.path.basename( Img_File_Name ))
+def Cpp_To_Img( Img_File_Name, Cpp_File_Name ):
+   Name = File_Base( Cpp_File_Name )
    
    try:
       from PIL import Image
@@ -130,8 +130,8 @@ def Run():
    pass      
       
 if __name__ == '__main__':
-   if len( sys.argv ) < 2:
-      Raise( "usage: img_to_cpp <img-file-name>" )
-   Cpp_To_Img( sys.argv[ 1 ] )
+   if len( sys.argv ) != 3:
+      Raise( "usage: img_to_cpp <img-file-name> <cpp-and-h-file-name>" )
+   Cpp_To_Img( sys.argv[ 1 ], sys.argv[ 2 ] )
             
          

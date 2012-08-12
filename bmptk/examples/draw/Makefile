@@ -17,11 +17,16 @@ BMPTK      := ../..
 
 # Specify project files (other than $(PROJECT).cpp) (if any)
 HEADERS    := 
-LIBS       := graphics
-IMAGES     := wouter32.jpg wouter128.jpg
+LIBS       := graphics wouter
 
 # specify (extra) results you want to get (if any)
 RESULTS    := 
+
+# how to create the wouter.h and wouter.cpp inline image files
+wouter     := wouter32
+CLEAN      += wouter.cpp wouter.h
+wouter.cpp wouter.h: $(wouter).jpg
+		$(IMGTOCPP) $(wouter).jpg wouter
 
 # The Makefile.inc does all the work
 include $(BMPTK)/Makefile.inc
