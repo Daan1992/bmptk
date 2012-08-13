@@ -1,5 +1,10 @@
 import sys, os
 
+try:
+   import PIL
+ except:
+      Errors.Raise( "Error: the python PIL module is not installed." )  
+
 def Raise( T ):
    print( T )
    exit( 1 )
@@ -97,6 +102,7 @@ def Cpp_To_Img( Img_File_Name, Cpp_File_Name ):
       Image = Image.open( Img_File_Name )
    except:
       Raise( "Error: source file %s could not be opened" % Img_File_Name )    
+      
    X, Y, Data = Lines_From_Image( Image, Name )
 
    Cpp_File_Name = Name + ".cpp"

@@ -65,6 +65,7 @@ SIZES     = "$(PREFIX)size"
 
 NDSTOOL   := "$(DEVKITPRO)/devkitARM/bin/ndstool"
 IMGTOCPP  := python $(BMPTK)/tools/img_to_cpp.py
+FFTTOCPP  := python $(BMPTK)/tools/fft_to_cpp.py
 
 
 #============================================================================

@@ -22,7 +22,6 @@ This directory contains :
       - tools              : tools (executables)
 
 pending work list:
-   - depend klopt nog niet
    - font_default
    - draw add font-from-fft example
    - all files start with bmptk- ?
@@ -30,7 +29,7 @@ pending work list:
 
    - rectangle, circle: private attributes?
    - draw line width differently (circle brush)
-   - draw circle swith differently too
+   - draw circle with differently too
    - #pragma once
    - iostream.h : why is it not found??
    - paint beter structureren: event in screen? => window
@@ -52,7 +51,7 @@ pending work list:
    - STL-style iterator for position
    - text::draw scale, twice?
    - drawable::draw_pixel moet beter
-   - rotate operator on a vector!
+   - rotate operator on a vector! (multiply)
    - doxygen the TRACE macro's, can't be done??
 
 notes, references, links:
@@ -75,6 +74,7 @@ notes, references, links:
    - http:-www.qzx.com/pc-gpe/
    - http:-escience.anu.edu.au/lecture/cg/Circle/printNotes.en.html
    - http:-homepage.smc.edu/kennedy_john/bcircle.pdf
+   - http://www.dafont.com/new.php?page=2
 
 
 

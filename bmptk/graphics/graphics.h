@@ -1330,6 +1330,18 @@ public:
 //! This is likely to be the only way you will instantiate this class.
 //
 
+         // font type
+         // picture is a picture of the characters in the font, 
+         //    stored as one long line
+         // when list is NULL the characters 0x20 .. 0x7F are supported,
+         //    otherwise it is a (0-terminated) list of characters
+         // for a fixed-width font x_size is the width of a char,
+         //    and start is NULL
+         // for a proportional font x_size is 0, and
+         //    start points to an array with the x-offsets of each
+         //    character. The first offset is of course 0, but
+         //    still stored, and there are 0x61 offsets (not 0x60!)
+
 class inline_font : public font, public inline_bw_photo {
 public: 
     

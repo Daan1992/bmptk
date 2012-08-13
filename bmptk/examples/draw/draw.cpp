@@ -5,6 +5,7 @@ using namespace bmptk;
 using namespace graphics;
 
 #include "wouter.h"
+#include "bigfont.h"
 
 int main( void ){
    target_screen lcd;
@@ -68,7 +69,7 @@ int main( void ){
      wouter.draw( ff ); 
      current += ( size + margin ).x_projection(); }      
 
-   // and finally draw some text
+   // draw some text
    current = vector( start.x_get(), ( current + margin + size ).y_get() );
    vector text_size( 160, 28 );
    const char * mariner = 
@@ -81,6 +82,14 @@ int main( void ){
      text t( mariner, ff.size_get() );
      t.draw( ff, vector( 0, 0 ) ); } 
       
+   // draw some big letters
+   current = vector( 120, start.y_get() );
+   vector text_size( 80, 80 );
+   { subframe ff( lcd, current, text_size );
+     ff.clear( color::blue );
+     text t( "bmptk", ff.size_get() );
+     t.draw( ff, vector( 0, 0 ) ); } 
+
    for(;;);   
    return 0;
 }
