@@ -1,15 +1,16 @@
 #include "bmptk.h"
 #include <stdlib.h>
 
-using namespace bmptk;
-using namespace graphics;
-
 #include "wouter.h"
 #include "bigfont.h"
 
+using namespace bmptk;
+using namespace graphics;
+
+
 int main( void ){
    target_screen lcd;
-   lcd.clear( color::red );
+   lcd.clear( color::red() );
    vector margin( 8, 8 ), size, start( 10, 10 ), current;
    
    // draw some lines
@@ -18,29 +19,29 @@ int main( void ){
    lcd.draw( current,
       line( size ));
    lcd.draw( current += ( size + margin ).x_projection(),
-      line( size, color::blue ));
+      line( size, color::blue() ));
     lcd.draw( current += ( size + margin ).x_projection(),
-      line( size, color::purple, 5 ));
+      line( size, color::purple(), 5 ));
       
    // some rectangles   
    lcd.draw( current += ( size + margin ).x_projection(), 
-      rectangle( size, color::black ));   
+      rectangle( size, color::black() ));   
    lcd.draw( current += ( size + margin ).x_projection(), 
-      rectangle( size, color::black, color::purple, 3 ));   
+      rectangle( size, color::black(), color::purple(), 3 ));   
       
    // some rectangles woth different border reliefs   
    current = vector( start.x_get(), ( current + size + margin ).y_get() );
    size = vector( 12, 12 );
    lcd.draw( current,
-      rectangle( size, color::black, color::transparent, 3 ));     
+      rectangle( size, color::black(), color::transparent(), 3 ));     
    lcd.draw( current += ( size + margin ).x_projection(),
-      rectangle( size, color::gray, color::blue, 3, relief_raised ));
+      rectangle( size, color::gray(), color::blue(), 3, relief_raised ));
    lcd.draw( current += ( size + margin ).x_projection(),
-      rectangle( size, color::gray, color::blue, 3, relief_sunken ));         
+      rectangle( size, color::gray(), color::blue(), 3, relief_sunken ));         
    lcd.draw( current += ( size + margin ).x_projection(),
-      rectangle( size, color::blue, color::yellow, 3, relief_raised ));
+      rectangle( size, color::blue(), color::yellow(), 3, relief_raised ));
    lcd.draw( current += ( size + margin ).x_projection(), 
-      rectangle( size, color::blue, color::yellow, 3, relief_sunken ));   
+      rectangle( size, color::blue(), color::yellow(), 3, relief_sunken ));   
       
    // draw some circles   
    int radius = 15;
@@ -49,7 +50,7 @@ int main( void ){
    lcd.draw( current,
       circle( radius ));   
    lcd.draw( current += ( size + margin ).x_projection(),
-      circle( radius, color::yellow, color::green, 5 ));   
+      circle( radius, color::yellow(), color::green(), 5 ));   
       
    // draw a photo of me in four orientations   
    current = vector( start.x_get(), ( current + margin + size / 2 ).y_get() );
@@ -73,23 +74,28 @@ int main( void ){
    current = vector( start.x_get(), ( current + margin + size ).y_get() );
    vector text_size( 160, 28 );
    const char * mariner = 
-      "IT IS an ancient Mariner,\n"
+      "!IT IS an ancient Mariner,\n"
       "And he stoppeth one of three.\n"
       "'By thy long grey beard and glittering eye,\n"
       "Now wherefore stopp'st thou me?";
    { subframe ff( lcd, current, text_size );
-     ff.clear( color::yellow );
+     ff.clear( color::yellow() );
      text t( mariner, ff.size_get() );
      t.draw( ff, vector( 0, 0 ) ); } 
       
    // draw some big letters
    current = vector( 120, start.y_get() );
-   vector text_size( 80, 80 );
+   text_size = vector( 120, 32 );
    { subframe ff( lcd, current, text_size );
-     ff.clear( color::blue );
+     ff.clear( color::blue() );
      text t( "bmptk", ff.size_get() );
+     format f( bigfont );
+     t.f = f;
      t.draw( ff, vector( 0, 0 ) ); } 
-
+     
+   //lcd.draw( font_default );
+   //lcd.draw( bigfont );
+ 
    for(;;);   
    return 0;
 }

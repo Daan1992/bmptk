@@ -11,7 +11,7 @@
 #include <iomanip>
 #include "graphics.h"
 // #include "font.h"
-#include "bmptk-font-default.h"   
+#include "bmptk-font-default.h"    
 #include "bmptk-font-default.cpp"
 
 namespace bmptk {  
@@ -36,7 +36,7 @@ std::ostream & operator<<( std::ostream &s, const vector p ){
 //
 
 std::ostream & operator<<( std::ostream &s, const color c ){
-   if( c == color::transparent ){
+   if( c.is_transparent() ){
       s << "( transparent  )";
    } else {
       s << std::hex << std::setfill( '0' ) << "(" 
@@ -47,25 +47,6 @@ std::ostream & operator<<( std::ostream &s, const color c ){
    }        
    return s;
 }
-
-const color color::black( 0,       0,    0 );
-const color color::white( 0xFF, 0xFF, 0xFF );
-const color color::red  ( 0xFF,    0,    0 );
-const color color::green( 0,    0xFF,    0 );
-const color color::blue ( 0,       0, 0xFF );
-const color color::gray    = ( color::black  + color::white ) / 2;
-const color color::yellow  = color::red  + color::green;
-const color color::cyan    = color::blue + color::green;
-const color color::magenta = color::blue + color::red;
-const color color::transparent( 0, 0, 0, 1 );
-
-const color color::violet( 0xEE82EE );
-const color color::sienna( 0xA0522D );
-const color color::purple( 0x800080 );
-const color color::pink(   0xFFC8CB );
-const color color::silver( 0xC0C0C0 );
-const color color::brown(  0xA52A2A );
-const color color::salmon( 0xFA8072 );
 
 
 // ==========================================================================
@@ -123,7 +104,7 @@ void line::draw(
     
    // don't bother to draw anything 
    // when the size would be 0 or the color transparent
-   if( width < 1 || fg == color::transparent ){
+   if( width < 1 || fg.is_transparent() ){
       return;       
    }
               
@@ -376,12 +357,12 @@ void photo::draw( frame &f, const vector position ) const {
 //
 
 color inline_rgb_photo :: checked_read( const vector p ) const {
-   int base = 3 * ( p.x_get() + p.y_get() * size.x_get() );    
+   unsigned int base = 3 * ( p.x_get() + p.y_get() * size.x_get() );    
    return color( data[ base ], data[ base + 1 ], data[ base + 2 ] );    
 }
 
 bool inline_bw_photo :: bool_read( const vector p ) const {
-   int a = p.x_get() + p.y_get() * size.x_get();
+   unsigned int a = p.x_get() + p.y_get() * size.x_get();
    return ( data[ a / 8 ] ) & ( 1 << ( a % 8 ));   
 }
 
@@ -598,7 +579,7 @@ void text::draw(
 //
 
 void frame::clear( const color c ){
-   if( c != color::transparent ){  
+   if( ! c.is_transparent() ){  
       vector step = size.direction() ;
       for( int x = 0; x != size.x_get(); x += step.x_get()  ){
          for( int y = 0; y != size.y_get(); y += step.y_get() ){

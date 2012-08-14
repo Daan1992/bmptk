@@ -22,10 +22,15 @@ This directory contains :
       - tools              : tools (executables)
 
 pending work list:
-   - font_default
+   - font_default genereren
+   - font_default is nu een include...
+   - font does not depend on makefile??
    - draw add font-from-fft example
    - all files start with bmptk- ?
    - make and make clean in main directory for documentation
+   - letters lijken iets verschoven
+   - beperkte charsets
+   - stop bv een charset in een namespace, niet in bmptk : naam los van filenaam
 
    - rectangle, circle: private attributes?
    - draw line width differently (circle brush)

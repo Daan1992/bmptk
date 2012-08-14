@@ -34,9 +34,9 @@ wouter.cpp wouter.h: $(wouter).jpg
 # http://www.dafont.com/arturo-cedillo.d4028?fpp=50
 bigfont     := caty
 CLEAN       += bigfont.cpp bigfont.h
-LIBS        + bigfont
+LIBS        += bigfont
 bigfont.cpp bigfont.h: $(bigfont).ttf
-		$(FFTTOCPP) $(bigfont).ttf bigfont 48
+		$(FFTTOCPP) $(bigfont).ttf bigfont 30
 
 # The Makefile.inc does all the work
 include $(BMPTK)/Makefile.inc

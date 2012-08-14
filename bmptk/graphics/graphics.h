@@ -4,12 +4,12 @@
 //
 // ==========================================================================
 
+#include <iostream>
+#include <limits>
+#include "bmptk-font-default.h"
 
 #ifndef _GRAPHICS_H_
 #define _GRAPHICS_H_
-
-#include <iostream>
-#include <limits>
 
 namespace bmptk { 
 
@@ -436,30 +436,37 @@ public:
          ( g + c.g ) / 2, 
          ( b + c.b ) / 2,
          transp && c.transp ); }          
+         
+   static color blaack(){ return color( 0,       0,    0 ); }
+   static color transpaarent(){ return color( 0, 0, 0, 1 ); }
 
    //! some basic colors
    //
-   //! These constants for some common colors.
+   //! These static member functions return some common colors.
+   //! These are not plain constants to avoid the static
+   //! initialisation order problem: inline_font objects
+   //! would have a problem with the balck and white parameters
+   //! for their drawable subpart.
    //! \defgroup basic_colors basic colors
    //! @{
-   // these constants are delibreately NOT Doxygen-documented     
-   static const color black;            //!< ...
-   static const color white;            //!< ...
-   static const color red;              //!< ...
-   static const color green;            //!< ...
-   static const color blue;             //!< ...
-   static const color gray;             //!< ...
-   static const color yellow;           //!< ...
-   static const color cyan;             //!< ...
-   static const color magenta;          //!< ...
-   static const color transparent;      //!< ...
-   static const color violet;           //!< ...
-   static const color sienna;           //!< ...
-   static const color purple;           //!< ... 
-   static const color pink;             //!< ...
-   static const color silver;           //!< ...
-   static const color brown;            //!< ...
-   static const color salmon;           //!< ...
+   // these 'constants' are delibreately NOT Doxygen-documented     
+   static color black()       { return color( 0,       0,    0 ); }   //!< ...
+   static color white()       { return color( 0xFF, 0xFF, 0xFF ); }   //!< ...
+   static color red()         { return color( 0xFF,    0,    0 ); }   //!< ...
+   static color green()       { return color( 0,    0xFF,    0 ); }   //!< ...
+   static color blue()        { return color( 0,       0, 0xFF ); }   //!< ...
+   static color gray()        { return color( 0x80, 0x80, 0x80 ); }   //!< ...
+   static color yellow()      { return color( 0xFF, 0xFF,    0 ); }   //!< ...
+   static color cyan()        { return color(    0, 0xFF, 0xFF ); }   //!< ...
+   static color magenta()     { return color( 0xFF,    0, 0xFF ); }   //!< ...
+   static color transparent() { return color( 0, 0, 0, 1 );       }   //!< ...
+   static color violet()      { return color( 0xEE82EE );         }   //!< ...
+   static color sienna()      { return color( 0xA0522D );         }   //!< ...
+   static color purple()      { return color( 0x800080 );         }   //!< ... 
+   static color pink()        { return color( 0xFFC8CB );         }   //!< ...
+   static color silver()      { return color( 0xC0C0C0 );         }   //!< ...
+   static color brown()       { return color( 0xA52A2A );         }   //!< ...
+   static color salmon()      { return color( 0xFA8072 );         }   //!< ...
    //! @}
 };
 
@@ -651,11 +658,11 @@ public:
    //! constructor, specifies the fg and bg colors, and the (line) width
    //
    //! The default is to draw in black forgeground, with transparent 
-   //! (meaning: do not draw) backround, line width (when applicable)
+   //! (meaning: do not draw) background, line width (when applicable)
    //! 1 pixel.
    drawable( 
-      const color fg = color::black, 
-      const color bg = color::transparent,
+      const color fg = color::black(), 
+      const color bg = color::transparent(),
       unsigned int width = 1
    ): fg( fg ), bg( bg ), width( width ) {}
       
@@ -761,7 +768,7 @@ public:
       object.draw( *this, vector::origin ); }     
    
    //! fill the full frame with the indicated color
-   virtual void clear( const color c = color::white );
+   virtual void clear( const color c = color::white() );
 };
 
 
@@ -880,12 +887,12 @@ public:
    vector size;
    
    //! constructs a line from its \ref size, color, and width
-   line( const vector size, const color fg = color::black, int width = 1 ):
-      drawable( fg, color::transparent, width ), size( size ){}     
+   line( const vector size, const color fg = color::black(), int width = 1 ):
+      drawable( fg, color::transparent(), width ), size( size ){}     
       
    //! constructs a line from its \ref size x and y, color, and width
-   line( int x, int y, const color fg = color::black, int width = 1 ):
-      drawable( fg, color::transparent, width ), size( vector( x, y )){}     
+   line( int x, int y, const color fg = color::black(), int width = 1 ):
+      drawable( fg, color::transparent(), width ), size( vector( x, y )){}     
       
    //! draw the line on f, at position, and to scale   
    void draw( frame &f, const vector position ) const;
@@ -966,8 +973,8 @@ public:
    //! constructs a rectangle from its far corner, bg, fg, width and relief
    rectangle(
       const vector size, 
-      const color fg     = color::black,
-      const color bg     = color::transparent,
+      const color fg     = color::black(),
+      const color bg     = color::transparent(),
       int width          = 1,
       relief rel         = relief_flat
    ):
@@ -1024,8 +1031,8 @@ public:
    //! create a circle from a radius, fg and bg colcors, and line width
    circle( 
       unsigned int radius,
-      const color fg = color::black,
-      const color bg = color::transparent,
+      const color fg = color::black(),
+      const color bg = color::transparent(),
       unsigned int width = 1
    ):
       drawable( fg, bg, width ), radius( radius ){}        
@@ -1055,12 +1062,6 @@ public:
 class photo : public drawable {
 protected:
 
-   //! the size of the photo
-   //
-   //! A concrete photo might have functions that change the size,
-   //! but otherwise it is read-only.
-   const vector protected_size; 
-    
    //! get the color of the specified pixel    
    //
    //! This function must be provided by a concrete photo class.
@@ -1071,14 +1072,13 @@ protected:
 public:
     
    //! the size of the photo
-   //!
-   //! The size is also the position of the first pixel down-right 
-   //! beyond the bottom right pixel.
-   const vector &size;
-   
+   //
+   //! A concrete photo might have functions that change the size,
+   //! but otherwise it is read-only.
+   const vector size; 
+      
    //! construct a photo, specify its size
-   photo( const vector size ):
-      protected_size( size ), size( protected_size ) {}       
+   photo( const vector size ): size( size ){}       
       
    //! report whether p is within the photo   
    bool valid( const vector p ) const {
@@ -1097,7 +1097,7 @@ public:
       if( valid( p )){
          return checked_read( p );
       } else {
-         return color::transparent;
+         return color::transparent();
       }               
    }          
    
@@ -1200,7 +1200,9 @@ private:
         
    //! read one pixel, return color
    color checked_read( const vector p ) const {
+      // trace << fg << "\n";
       return bool_read( p ) ? fg : bg; }          
+//      return bool_read( p ) ? color::purple : color::green; }          
 };
 
 
@@ -1294,8 +1296,8 @@ public:
    char_photo( 
       const font &f,
       char c, 
-      const color &fg = color::black, 
-      const color &bg = color::transparent
+      const color fg = color::black(), 
+      const color bg = color::transparent()
    ):
       photo( f.char_size( c )),
       f( f ),
@@ -1464,8 +1466,8 @@ public:
       vector spacing = vector::origin,
       vector top_left_margin = vector( 2,2 ),
       vector bottom_right_margin = vector( 2,2 ),
-      color fg = color::black,
-      color bg = color::transparent
+      color fg = color::black(),
+      color bg = color::transparent()
    ): 
       f( &f ),         
       h( h ), 
@@ -1617,7 +1619,7 @@ public:
       widget &parent, 
       const vector size,
       const vector &origin = vector( 0, 0 ), 
-      const color &bg = color::red,
+      const color &bg = color::red(),
       const relief border = relief_raised
    ):
       widget( &parent, &subf ),
@@ -1662,8 +1664,8 @@ public:
       widget &parent, 
       const vector size,
       const vector origin = vector( 0, 0 ), 
-      const color &bg = color::red,
-      const color &fg = color::blue
+      const color &bg = color::red(),
+      const color &fg = color::blue()
    ):
       widget( &parent, &subf ),
       subf( *parent.inner, origin, origin + size ),
