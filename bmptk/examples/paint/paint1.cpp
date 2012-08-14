@@ -48,11 +48,11 @@ using namespace graphics;
 int main( void ){
 
    target_screen lcd;
-   lcd.clear( color::red );
+   lcd.clear( color::red() );
    for(;;){
       vector v = touched();
       if( v.x_get() >= 0 ){
-         lcd.write( v, color::black );
+         lcd.write( v, color::black() );
       }  
    }
    return 0;

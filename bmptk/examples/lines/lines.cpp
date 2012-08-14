@@ -20,11 +20,11 @@ vector random_vector_within( const vector size ){
 int main( void ){
    target_screen lcd;
    for(;;){
-      lcd.clear( color::red );
+      lcd.clear( color::red() );
       for( unsigned int n = 0; n < 500; n++ ){
          vector start = random_vector_within( lcd.size_get());
          vector end = random_vector_within( lcd.size_get());
-         lcd.draw( start, line( end - start, color::black ));
+         lcd.draw( start, line( end - start, color::black() ));
          #ifdef target_nds
             swiWaitForVBlank();
          #endif         

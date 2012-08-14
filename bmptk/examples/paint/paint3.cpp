@@ -68,12 +68,12 @@ void area_add( int x0, int y0, int x1, int y1, color fill, action f ){
    p->y0 = y0;
    p->y1 = y1;
    p->f = f;
-   lcd.draw( vector( x0, y0 ), rectangle( vector( x1, y1 ) - vector( x0, y0 ), color::black, fill )); 
+   lcd.draw( vector( x0, y0 ), rectangle( vector( x1, y1 ) - vector( x0, y0 ), color::black(), fill )); 
    p->next = first;
    first = p;
 }
 
-color active_color = color::red;
+color active_color = color::red();
 
 void execute( int x, int y ){
    area *p;
@@ -89,23 +89,23 @@ void paint( int x, int y, area *a ){
 }
 
 void select_red( int x, int y, area *a ){
-   active_color = color::red;
+   active_color = color::red();
 }
 
 void select_green( int x, int y, area *a ){
-   active_color = color::green;
+   active_color = color::green();
 }
 
 void select_blue( int x, int y, area *a ){
-   active_color = color::blue;
+   active_color = color::blue();
 }
 
 int main( void ){
-   lcd.clear( color::yellow );
-   area_add(  10, 10, 200, 180, color::white,  paint );
-   area_add( 210, 10, 220,  20, color::red,    select_red );
-   area_add( 210, 25, 220,  35, color::green,  select_green );
-   area_add( 210, 40, 220,  50, color::blue,   select_blue );
+   lcd.clear( color::yellow() );
+   area_add(  10, 10, 200, 180, color::white(),  paint );
+   area_add( 210, 10, 220,  20, color::red(),    select_red );
+   area_add( 210, 25, 220,  35, color::green(),  select_green );
+   area_add( 210, 40, 220,  50, color::blue(),   select_blue );
    for(;;){
       vector v = touched();
       if( v.x_get() >= 0 ){
