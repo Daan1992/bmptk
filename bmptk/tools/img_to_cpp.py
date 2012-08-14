@@ -71,22 +71,24 @@ def Lines_From_Image( Image, Name, Invert = 0 ):
    Result += "const unsigned char %s_data[] = { \n" % Name
    x_size, y_size = Image.size
    comma = " "
-#   P = Image.palette
-#   print( len( P.palette),  P.palette )
    for y in range( y_size ):
       S = "/* y = %03d */ " % y
       for x in range( x_size ):
          pixel = Image.getpixel((x,y))
-#         red = ord( P.palette[ pixel ] )
-#         green = ord( P.palette[ 256 + pixel ] )
-#         blue = ord( P.palette[ 512 + pixel ] )
-         red, green, blue = pixel
-         S += "%s 0x%02X, 0x%02X, 0x%02X" % ( comma, red, green, blue )
+         try:
+            red, green, blue = pixel
+         except:
+            P = Image.palette
+            red = ord( P.palette[ 3 * pixel ] )
+            green = ord( P.palette[ 3 * pixel + 1 ] )
+            blue = ord( P.palette[ 3 * pixel +2 ] )      
+         S += "%s 0x%02X,0x%02X,0x%02X" % ( comma, red, green, blue )
          comma = ","
          if len( S ) > 70:
             Result += "   %s\n" % S 
             S = ""
-   Result += "   %s\n" % S
+   if S != "":
+      Result += "   %s\n" % S
    Result += "};\n" 
    return ( x_size, y_size, Result )
    

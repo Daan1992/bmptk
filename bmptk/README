@@ -22,6 +22,9 @@ This directory contains :
       - tools              : tools (executables)
 
 pending work list:
+   - gif translate does not work, 33 -> 32 wel!
+   - gif transparency
+   - translate should not write same header
    - font_default genereren
    - font_default is nu een include...
    - font does not depend on makefile??

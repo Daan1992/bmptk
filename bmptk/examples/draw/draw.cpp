@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "wouter.h"
+#include "next.h"
 #include "bigfont.h"
 
 using namespace bmptk;
@@ -68,13 +69,16 @@ int main( void ){
      
    { subframe ff( lcd, current + size + vector( +1, -1 ), - size );
      wouter.draw( ff ); 
-     current += ( size + margin ).x_projection(); }      
+     current += ( size + margin ).x_projection(); }     
 
+   // draw the next arrow
+   next.draw( lcd, vector( 120, 50 ));
+    
    // draw some text
    current = vector( start.x_get(), ( current + margin + size ).y_get() );
    vector text_size( 160, 28 );
    const char * mariner = 
-      "!IT IS an ancient Mariner,\n"
+      "IT IS an ancient Mariner,\n"
       "And he stoppeth one of three.\n"
       "'By thy long grey beard and glittering eye,\n"
       "Now wherefore stopp'st thou me?";

@@ -26,8 +26,16 @@ RESULTS    :=
 wouter     := wouter32
 CLEAN      += wouter.cpp wouter.h
 LIBS       += wouter
-wouter.cpp wouter.h: $(wouter).jpg
+wouter.cpp wouter.h: $(wouter).jpg $(IMGTOCPP)
 		$(IMGTOCPP) $(wouter).jpg wouter
+      
+# how to create the next.h and next.cpp inline image files
+# the gif was taken from http://www.fg-a.com/arrows.htm
+next       += next
+CLEAN      += next.cpp next.h
+LIBS       += next
+next.cpp next.h: $(next).gif $(IMGTOCPP)
+		$(IMGTOCPP) $(next).gif next
       
 # how to create the bigfont.h and bigfont.cpp inline fonst files
 # the Caty font is by Arturo Cedillo, free for all use according to 
@@ -35,7 +43,7 @@ wouter.cpp wouter.h: $(wouter).jpg
 bigfont     := caty
 CLEAN       += bigfont.cpp bigfont.h
 LIBS        += bigfont
-bigfont.cpp bigfont.h: $(bigfont).ttf
+bigfont.cpp bigfont.h: $(bigfont).ttf $(FFTTOCPP)
 		$(FFTTOCPP) $(bigfont).ttf bigfont 30
 
 # The Makefile.inc does all the work
