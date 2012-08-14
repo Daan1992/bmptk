@@ -103,8 +103,7 @@ def Lines_From_Font( Font, Name, List ):
 
    return 0, ( Width, Height ), Image.size , Result
    
-def Ttf_To_Img( Img_File_Name, Cpp_File_Name, Size, List = None ):
-   Name = File_Base( Cpp_File_Name )
+def Ttf_To_Img( Img_File_Name, Code_File_Name, Name, Size, List = None, Namespace = None ):
    if List == None:   
       List = ""
       for x in range ( 0x00, 0x7F ):
@@ -118,13 +117,13 @@ def Ttf_To_Img( Img_File_Name, Cpp_File_Name, Size, List = None ):
    Fixed, ( Char_X, Char_Y ), ( Pic_X, Pic_Y ), Data = \
       Lines_From_Font( Font, Name, List )
 
-   Cpp_File_Name = Name + ".cpp"
+   Cpp_File_Name = Code_File_Name + ".cpp"
    try:
       Cpp = open( Cpp_File_Name, "w" )   
    except:
       Raise( "Error: destination file %s could not be opened" % Cpp_File_Name ) 
       
-   Hpp_File_Name = Name + ".h"
+   Hpp_File_Name = Code_File_Name + ".h"
    try:
       Hpp = open( Hpp_File_Name, "w" )   
    except:
@@ -133,10 +132,9 @@ def Ttf_To_Img( Img_File_Name, Cpp_File_Name, Size, List = None ):
    Cpp.write( '// source: %s \n' % Img_File_Name )
    Cpp.write( '// size: %d \n' % Size )
    Cpp.write( '#include "bmptk.h"\n' )
-   Cpp.write( '#include "%s.h"\n' % Name )
+   Cpp.write( '#include "%s"\n' % Hpp_File_Name )
 
    Cpp.write( 'namespace bmptk {\n' )
-   Cpp.write( 'namespace graphics {\n' )
    Cpp.write( 'extern const int %s_start[];\n' % Name )
    Cpp.write( 'extern const unsigned char %s_data[];\n' % Name )
    Cpp.write( 'const inline_font %s( \n' % Name )
@@ -146,35 +144,40 @@ def Ttf_To_Img( Img_File_Name, Cpp_File_Name, Size, List = None ):
    Cpp.write( '   %d, %d, %s_data\n' % ( Pic_X, Pic_Y, Name ))
    Cpp.write( ');\n' )   
    Cpp.write( Data )  
-   Cpp.write( '} // using namespace bmptk\n' )
-   Cpp.write( '} // using namespace graphics\n' )   
+   Cpp.write( '} // namespace bmptk\n' )
    Cpp.close()
    
    Hpp.write( '#include "bmptk.h"\n' )
-   Hpp.write( 'namespace bmptk {\n' )
-   Hpp.write( 'namespace graphics {\n' )
-   Hpp.write( 'extern const bmptk::graphics::inline_font %s;\n' % Name )
-   Hpp.write( '}}\n' )
+   if Namespace != None:
+      Hpp.write( 'namespace bmptk {\n' )
+   Hpp.write( 'extern const bmptk::inline_font %s;\n' % Name )
+   if Namespace != None:
+      Hpp.write( '}\n' ) 
    Hpp.close()
       
 def Run():
    pass      
       
 if __name__ == '__main__':
-   if not ( len( sys.argv ) in [ 4, 5 ] ):
+   if not ( len( sys.argv ) in [ 6, 7 ] ):
+      # print( len(sys.argv ))
       Raise( 'usage: \n' + 
-         'fft_to_cpp <fft-file> <cpp-or-h-file> <font-size> [ "<characters>" ]' )
+         'fft_to_cpp <fft-file> <cpp-or-h-file> <name> <font-size> "<characters>" [<namespace>]' )
       
    try:   
-      Size = int( sys.argv[ 3 ] )  
+      Size = int( sys.argv[ 4 ] )  
    except:   
       Raise( '<font-size> argument [%s] is not a valid integer' % sys.argv[ 3 ] )
       
+   List = sys.argv[ 5 ]
+   if List == "":
+      List = None   
+      
    try:
-      List = sys.argv[ 4 ]
+      Namespace = sys.argv[ 6 ]
    except:
       List = None    
       
-   Ttf_To_Img( sys.argv[ 1 ], sys.argv[ 2 ], Size, List )
+   Ttf_To_Img( sys.argv[ 1 ], sys.argv[ 2 ], sys.argv[ 3 ], Size, List, Namespace )
             
          

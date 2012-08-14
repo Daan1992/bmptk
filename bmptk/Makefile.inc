@@ -154,7 +154,7 @@ ifeq (bmptk_graphics,$(filter bmptk_graphics,$(LIBS)))
 endif
 
 bmptk_font_default.cpp bmptk_font_default.h: $(FONT-DEFAULT) $(FFTTOCPP-TOOL)
-		$(FFTTOCPP) $(FONT-DEFAULT) bmptk_font_default 8
+		$(FFTTOCPP) $(FONT-DEFAULT) bmptk_font_default font_default 8 "" bmptk
 
       
 #============================================================================
