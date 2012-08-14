@@ -147,7 +147,7 @@ def Ttf_To_Img( Img_File_Name, Code_File_Name, Name, Size, List = None, Namespac
    Cpp.write( ');\n' )   
    Cpp.write( Data )  
    if Namespace != None:
-      Hpp.write( '}\n' ) 
+      Cpp.write( '}\n' ) 
    Cpp.close()
    
    Hpp.write( '#include "bmptk.h"\n' )
