@@ -1,9 +1,9 @@
 #include "bmptk.h"
 
-#include "bmptk-win-graphics.h"
+// not a user level include file, hence not included by bmptk.h
+#include "bmptk_win_graphics.h"
 
 using namespace bmptk;
-using namespace bmptk::graphics;
 
 #ifndef XSIZE
    #define XSIZE 256
