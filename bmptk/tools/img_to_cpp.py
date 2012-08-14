@@ -25,48 +25,9 @@ def File_Base( File_Name ):
    "return the base name of File_Name (without the dot+extension)"
    Base = os.path.basename( File_Name )
    return Base.replace( "." + File_Extension( Base ), "" )        
-        
-# 1 bit per pixel        
-def Lines_From_Image_Old( Image, Name, Invert = 0 ):
-   Result = ""
-   Result += "const unsigned char %s_data[] = { \n" % Name
-   x_size, y_size = Image.size
-   comma = " "
-   for y in range( y_size ):
-      m = 0x80
-      d = 0
-      S = "/* y = %03d */ " % y
-      for x in range( x_size ):
-         pixel = Image.getpixel((x,y))
-         try:
-            red, green, blue = pixel
-            v = (( 255 - red ) + ( 255 - green ) + ( 255 - blue ))
-         except:
-            v = ( 255 - pixel )            
-         if Invert: 
-            if ( v > 0 ):
-               d = d + m         
-         else:
-            if ( v <= 0 ):
-               d = d + m
-         if 0: print( x, y, pixel, v, m, d )
-         m = m / 2
-         if( m == 0 ) | ( x == x_size-1):
-            # print( "====> %02X" % d )
-            S += ( "%s0x%02X" % ( comma, d ))
-            m = 0x80
-            d = 0
-            comma = ","
-         if len( S ) > 70:
-            Result += "   %s\n" % S 
-            S = ""
-      Result += "   /* */ %s\n" % S  # ???
-   Result += "   %s\n" % S
-   Result += "};\n" 
-   return ( x_size, y_size, Result )
-   
+          
 def Lines_From_Image( Image, Name, Invert = 0 ):
-   print( Image.getbands())
+   # print( Image.getbands())
    Result = ""
    Result += "const unsigned char %s_data[] = { \n" % Name
    x_size, y_size = Image.size
@@ -82,7 +43,7 @@ def Lines_From_Image( Image, Name, Invert = 0 ):
             red = ord( P.palette[ 3 * pixel ] )
             green = ord( P.palette[ 3 * pixel + 1 ] )
             blue = ord( P.palette[ 3 * pixel +2 ] )      
-         S += "%s 0x%02X,0x%02X,0x%02X" % ( comma, red, green, blue )
+         S += "%s 0x%02X, 0x%02X, 0x%02X" % ( comma, red, green, blue )
          comma = ","
          if len( S ) > 70:
             Result += "   %s\n" % S 
@@ -122,7 +83,6 @@ def Cpp_To_Img( Img_File_Name, Cpp_File_Name ):
    Cpp.write( '#include "bmptk.h"\n' )
    Cpp.write( '#include "%s.h"\n' % Name )
    Cpp.write( 'using namespace bmptk;\n' )
-   Cpp.write( 'using namespace graphics;\n' )
    Cpp.write( Data )
    Cpp.write( 'inline_rgb_photo %s(\n' % Name )   
    Cpp.write( '   vector( %d, %d ),\n' % ( X, Y ))   
@@ -131,7 +91,7 @@ def Cpp_To_Img( Img_File_Name, Cpp_File_Name ):
    Cpp.close()
    
    Hpp.write( '#include "bmptk.h"\n' )
-   Hpp.write( 'extern bmptk::graphics::inline_rgb_photo %s;\n' % Name )
+   Hpp.write( 'extern bmptk::inline_rgb_photo %s;\n' % Name )
    Hpp.close()
       
 def Run():

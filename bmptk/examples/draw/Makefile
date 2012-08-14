@@ -17,7 +17,7 @@ BMPTK      := ../..
 
 # Specify project files (other than $(PROJECT).cpp) (if any)
 HEADERS    := 
-LIBS       := graphics
+LIBS       := bmptk_graphics
 
 # specify (extra) results you want to get (if any)
 RESULTS    := 
@@ -44,7 +44,7 @@ bigfont     := caty
 CLEAN       += bigfont.cpp bigfont.h
 LIBS        += bigfont
 bigfont.cpp bigfont.h: $(bigfont).ttf $(FFTTOCPP-TOOL)
-		$(FFTTOCPP) $(bigfont).ttf bigfont 30
+		$(FFTTOCPP) $(bigfont).ttf bigfont bigfont 30 ""
 
 # The Makefile.inc does all the work
 include $(BMPTK)/Makefile.inc

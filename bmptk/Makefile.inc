@@ -65,8 +65,8 @@ OBJDUMP   = "$(PREFIX)objdump"
 SIZES     = "$(PREFIX)size"
 
 NDSTOOL   := "$(DEVKITPRO)/devkitARM/bin/ndstool"
-IMGTOCPP-TOOL := $(BMPTK)/tools/img_to_cpp.py
-FFTTOCPP-TOOL := $(BMPTK)/tools/ttf_to_cpp.py
+IMGTOCPP-TOOL = $(BMPTK)/tools/img_to_cpp.py
+FFTTOCPP-TOOL = $(BMPTK)/tools/ttf_to_cpp.py
 IMGTOCPP  := python $(IMGTOCPP-TOOL)
 FFTTOCPP  := python $(FFTTOCPP-TOOL)
 

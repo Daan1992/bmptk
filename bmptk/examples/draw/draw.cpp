@@ -6,8 +6,6 @@
 #include "bigfont.h"
 
 using namespace bmptk;
-using namespace graphics;
-
 
 int main( void ){
    target_screen lcd;

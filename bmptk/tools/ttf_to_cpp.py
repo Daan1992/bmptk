@@ -134,7 +134,9 @@ def Ttf_To_Img( Img_File_Name, Code_File_Name, Name, Size, List = None, Namespac
    Cpp.write( '#include "bmptk.h"\n' )
    Cpp.write( '#include "%s"\n' % Hpp_File_Name )
 
-   Cpp.write( 'namespace bmptk {\n' )
+   Cpp.write( 'using namespace bmptk; \n' )
+   if Namespace != None:
+      Cpp.write( 'namespace %s {\n' % Namespace )
    Cpp.write( 'extern const int %s_start[];\n' % Name )
    Cpp.write( 'extern const unsigned char %s_data[];\n' % Name )
    Cpp.write( 'const inline_font %s( \n' % Name )
@@ -144,12 +146,13 @@ def Ttf_To_Img( Img_File_Name, Code_File_Name, Name, Size, List = None, Namespac
    Cpp.write( '   %d, %d, %s_data\n' % ( Pic_X, Pic_Y, Name ))
    Cpp.write( ');\n' )   
    Cpp.write( Data )  
-   Cpp.write( '} // namespace bmptk\n' )
+   if Namespace != None:
+      Hpp.write( '}\n' ) 
    Cpp.close()
    
    Hpp.write( '#include "bmptk.h"\n' )
    if Namespace != None:
-      Hpp.write( 'namespace bmptk {\n' )
+      Hpp.write( 'namespace %s {\n' % Namespace )
    Hpp.write( 'extern const bmptk::inline_font %s;\n' % Name )
    if Namespace != None:
       Hpp.write( '}\n' ) 
@@ -176,7 +179,7 @@ if __name__ == '__main__':
    try:
       Namespace = sys.argv[ 6 ]
    except:
-      List = None    
+      Namespace = None    
       
    Ttf_To_Img( sys.argv[ 1 ], sys.argv[ 2 ], sys.argv[ 3 ], Size, List, Namespace )
             
