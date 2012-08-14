@@ -26,7 +26,7 @@ RESULTS    :=
 wouter     := wouter32
 CLEAN      += wouter.cpp wouter.h
 LIBS       += wouter
-wouter.cpp wouter.h: $(wouter).jpg $(IMGTOCPP)
+wouter.cpp wouter.h: $(wouter).jpg $(IMGTOCPP-TOOL)
 		$(IMGTOCPP) $(wouter).jpg wouter
       
 # how to create the next.h and next.cpp inline image files
@@ -34,7 +34,7 @@ wouter.cpp wouter.h: $(wouter).jpg $(IMGTOCPP)
 next       += next
 CLEAN      += next.cpp next.h
 LIBS       += next
-next.cpp next.h: $(next).gif $(IMGTOCPP)
+next.cpp next.h: $(next).gif $(IMGTOCPP-TOOL)
 		$(IMGTOCPP) $(next).gif next
       
 # how to create the bigfont.h and bigfont.cpp inline fonst files
@@ -43,7 +43,7 @@ next.cpp next.h: $(next).gif $(IMGTOCPP)
 bigfont     := caty
 CLEAN       += bigfont.cpp bigfont.h
 LIBS        += bigfont
-bigfont.cpp bigfont.h: $(bigfont).ttf $(FFTTOCPP)
+bigfont.cpp bigfont.h: $(bigfont).ttf $(FFTTOCPP-TOOL)
 		$(FFTTOCPP) $(bigfont).ttf bigfont 30
 
 # The Makefile.inc does all the work

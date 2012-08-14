@@ -1,15 +1,14 @@
 // ==========================================================================
 //
-// file: bmptk/graphics/graphics.h
+// file: bmptk/graphics/bmptk-graphics.h
 //
 // ==========================================================================
 
+#ifndef BMPTK_GRAPHICS_H
+#define BMPTK_GRAPHICS_H
+
 #include <iostream>
 #include <limits>
-#include "bmptk-font-default.h"
-
-#ifndef _GRAPHICS_H_
-#define _GRAPHICS_H_
 
 namespace bmptk { 
 
@@ -81,13 +80,6 @@ namespace bmptk {
 //! 
 //
 
-
-//==========================================================================
-//
-//! graphics library
-//
-
-namespace graphics {
 
 // ==========================================================================
 //
@@ -1397,7 +1389,6 @@ public:
 };
 
 
-
 // ==========================================================================
 //
 // class format
@@ -1710,7 +1701,6 @@ public:
    void run( void );
 };
 
-} // namespace bmptks
-} // namespace graphics
+} // namespace bmptk
 
-#endif // #ifdef _GRAPHICS_H_                            
+#endif // #ifdef BMPTK_GRAPHICS_H

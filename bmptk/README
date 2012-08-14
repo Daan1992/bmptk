@@ -22,7 +22,9 @@ This directory contains :
       - tools              : tools (executables)
 
 pending work list:
-   - gif translate does not work, 33 -> 32 wel!
+   - run from an IDE (N++ ?)
+   - vector::origin is not safe
+   - gif translate does not work, 33 -> 32 wel! (goed by veelvouden van 8?)
    - gif transparency
    - translate should not write same header
    - font_default genereren
@@ -34,6 +36,8 @@ pending work list:
    - letters lijken iets verschoven
    - beperkte charsets
    - stop bv een charset in een namespace, niet in bmptk : naam los van filenaam
+   - font bij ontbrekende: andere case proberen, dan ? proberen.
+   - format_default & font_default : afhankelijkheid !!
 
    - rectangle, circle: private attributes?
    - draw line width differently (circle brush)

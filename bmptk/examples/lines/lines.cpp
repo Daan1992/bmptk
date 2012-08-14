@@ -1,8 +1,7 @@
+// #include <stdlib.h>
 #include "bmptk.h"
-#include <stdlib.h>
 
 using namespace bmptk;
-using namespace graphics;
 
 unsigned int random_in_range( unsigned int min, unsigned int max ){
    unsigned int x = rand();
@@ -25,7 +24,7 @@ int main( void ){
          vector start = random_vector_within( lcd.size_get());
          vector end = random_vector_within( lcd.size_get());
          lcd.draw( start, line( end - start, color::black() ));
-         #ifdef target_nds
+         #ifdef TARGET_nds
             swiWaitForVBlank();
          #endif         
       }

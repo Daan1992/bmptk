@@ -4,18 +4,13 @@
 //
 // ==========================================================================
 
-
-
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
-#include "graphics.h"
-// #include "font.h"
-#include "bmptk-font-default.h"    
-#include "bmptk-font-default.cpp"
 
+#include "bmptk.h"
+ 
 namespace bmptk {  
-namespace graphics {
 
 // ==========================================================================
 //
@@ -607,5 +602,4 @@ void wtoplevel :: run( void ){
    }      
 }
 
-} // namespace bmptks
-} // namespace graphics
+} // namespace bmptk

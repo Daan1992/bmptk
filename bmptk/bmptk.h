@@ -134,10 +134,9 @@
 //! IN THE SOFTWARE.
 //
 
-
 #pragma once
-#ifndef _BMPTK_H_
-#define _BMPTK_H_
+#ifndef BMPTK_H
+#define BMPTK_H
 
    // =======================================================================
    // 
@@ -199,19 +198,20 @@
       
    };  
                  
-
+   #ifdef BMPTK_GRAPHICS
+      #include "bmptk_graphics.h"
+      #include "bmptk_font_default.h"
+   #endif
+   
    #ifdef TARGET_nds
-      #include "bmptk-nds.h"
+      #include "bmptk_nds.h"
    #endif              
    #ifdef TARGET_win
-      #include "bmptk-win.h"
+      #include "bmptk_win.h"
    #endif              
    #ifdef CHIP_lpc2478
       #include "lpc2478.h"
    #endif              
 
-   // #include "pins/pins.h"
 
-   #include "graphics.h"
-
-#endif
+#endif // #ifndef BMPTK_H

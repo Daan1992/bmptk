@@ -27,6 +27,7 @@ VPATH     += $(BMPTK)
 VPATH     += $(BMPTK)/targets
 VPATH     += $(BMPTK)/graphics
 
+INCLUDES  += -I.
 INCLUDES  += -I$(BMPTK)
 INCLUDES  += -I$(BMPTK)/targets
 INCLUDES  += -I$(BMPTK)/graphics
@@ -64,8 +65,10 @@ OBJDUMP   = "$(PREFIX)objdump"
 SIZES     = "$(PREFIX)size"
 
 NDSTOOL   := "$(DEVKITPRO)/devkitARM/bin/ndstool"
-IMGTOCPP  := python $(BMPTK)/tools/img_to_cpp.py
-FFTTOCPP  := python $(BMPTK)/tools/ttf_to_cpp.py
+IMGTOCPP-TOOL := $(BMPTK)/tools/img_to_cpp.py
+FFTTOCPP-TOOL := $(BMPTK)/tools/ttf_to_cpp.py
+IMGTOCPP  := python $(IMGTOCPP-TOOL)
+FFTTOCPP  := python $(FFTTOCPP-TOOL)
 
 
 #============================================================================
@@ -87,7 +90,7 @@ ifeq ($(TARGET),nds)
    LDFLAGS	   += -g -mthumb -mthumb-interwork -specs=ds_arm9.specs
    RESULTS     = $(ELF) $(NDS)
    RUN         = "$(DEVKITPRO)/emulators/desmume/DeSmuME" $(NDS)
-   LIBS        += bmptk-nds
+   LIBS        += bmptk_nds
 endif
 
 ifeq ($(TARGET),win)
@@ -103,7 +106,7 @@ ifeq ($(TARGET),win)
    LDFLAGS     += -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
    RESULTS     = $(EXE)
    RUN         = ./$(EXE)
-   LIBS        += bmptk-win
+   LIBS        += bmptk_win
 endif
 
 ifeq ($(TARGET),olimex-mod-lcd43)
@@ -127,12 +130,33 @@ ifeq ($(PREFIX),)
 endif
    
 DEFINES   += -DTARGET=$(TARGET)
-DEFINES   += -DTARGET_$(TARGET)=X
+DEFINES   += -DTARGET_$(TARGET)
 DEFINES   += -DCHIP=$(CHIP)
-DEFINES   += -DCHIP_$(CHIP)=X
+DEFINES   += -DCHIP_$(CHIP)
 DEFINES   += -DXTAL=$(XTAL)
 
 
+#============================================================================
+#
+# the default font, required by bmptk_graphics 
+#
+# The 04B_03__.ttf file (listed as freeware) was downloaded from
+# http://www.eaglefonts.com/04b03-ttf-131597.htm
+# 
+#============================================================================
+
+FONT-DEFAULT  := $(BMPTK)/graphics/04B_03__.TTF
+
+ifeq (bmptk_graphics,$(filter bmptk_graphics,$(LIBS)))
+   LIBS          += bmptk_font_default
+   CLEAN         += bmptk_font_default.cpp bmptk_font_default.h
+   DEFINES       += -DBMPTK_GRAPHICS
+endif
+
+bmptk_font_default.cpp bmptk_font_default.h: $(FONT-DEFAULT) $(FFTTOCPP-TOOL)
+		$(FFTTOCPP) $(FONT-DEFAULT) bmptk_font_default 8
+
+      
 #============================================================================
 #
 # Intermediate and result files
