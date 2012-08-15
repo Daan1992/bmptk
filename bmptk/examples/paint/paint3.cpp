@@ -1,7 +1,6 @@
 #include "bmptk.h"
 
 using namespace bmptk;
-using namespace graphics;
 
 #ifdef TARGET_nds
    #include <nds.h>
@@ -21,7 +20,7 @@ using namespace graphics;
 #endif
 
 #ifdef TARGET_win
-   #include "bmptk-win-graphics.h"
+   #include "bmptk_win_graphics.h"
    vector touched( void ){
       int x, y;  
       static bool down = 0;

@@ -10,7 +10,7 @@
 PROJECT    := paint3
 
 # Specify target chip or board or system
-TARGET     := win
+TARGET     := nds
 
 # Specify the location of the bmptk library
 BMPTK      := ../..
@@ -19,7 +19,7 @@ BMPTK      := ../..
 OBJECTS    :=
 SOURCES    := 
 HEADERS    := 
-LIBS       := graphics
+LIBS       := bmptk_graphics
 
 # specify (extra) results you want to get (if any)
 RESULTS    := 
