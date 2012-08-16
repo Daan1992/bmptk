@@ -811,7 +811,7 @@ public:
    //! location within the master of this subframes topleft pixel
    const vector top_left;
    
-   //! location within the master of this subframes topleft pixel
+   //! location within the master of this subframes bottomright pixel
    const vector bottom_right;
    
    //! the scale at which this subframe appears in its master
@@ -1107,7 +1107,7 @@ public:
       return read( vector( x, y )); }     
    
    //! draw the picture on f, at position     
-   void draw( frame &f, const vector position = vector::origin ) const;
+   void draw( frame &f, const vector position = vector::origin() ) const;
 };
 
 
@@ -1519,14 +1519,14 @@ public:
       //! Note: the string must still be availabe when the text is drawn
       const char *s,
       
-      //! teh size of the rectangle available for drawing the text
+      //! the size of the rectangle available for drawing the text
       const vector size,
       
       //! the format used to draw the text
       //
       //! This format is copied. You can change the 
       //! copy (the \ref f attribute) as you see fit.
-      const format f
+      const format f = format()
    ):
       drawable( f.fg, f.bg, f.scale ), s( s ), size( size ), f( f ){}        
       

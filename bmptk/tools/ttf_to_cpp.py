@@ -156,7 +156,7 @@ def Ttf_To_Img( Img_File_Name, Code_File_Name, Name, Size, List = None, Namespac
    Hpp.write( '#include "bmptk.h"\n' )
    if Namespace != None:
       Hpp.write( 'namespace %s {\n' % Namespace )
-   Hpp.write( 'const inline_font & %s();\n' % Name )
+   Hpp.write( 'const bmptk::inline_font & %s();\n' % Name )
    if Namespace != None:
       Hpp.write( '}\n' ) 
    Hpp.close()

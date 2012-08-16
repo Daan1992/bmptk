@@ -53,24 +53,24 @@ int main( void ){
       
    // draw a photo of me in four orientations   
    current = vector( start.x_get(), ( current + margin + size / 2 ).y_get() );
-   size = wouter.size;
-   { wouter.draw( lcd, current );
+   size = wouter().size;
+   { wouter().draw( lcd, current );
       current += ( size + margin ).x_projection(); }
       
    { subframe ff( lcd, current + size.x_projection(), size * vector( -1, 1 ) );
-     wouter.draw( ff ); 
+     wouter().draw( ff ); 
      current += ( size + margin ).x_projection(); }
      
    { subframe ff( lcd, current + size.y_projection() + vector( +1, -1 ), size * vector( 1, -1 ));
-     wouter.draw( ff ); 
+     wouter().draw( ff ); 
      current += ( size + margin ).x_projection(); }
      
    { subframe ff( lcd, current + size + vector( +1, -1 ), - size );
-     wouter.draw( ff ); 
+     wouter().draw( ff ); 
      current += ( size + margin ).x_projection(); }     
 
    // draw the next arrow
-   next.draw( lcd, vector( 120, 50 ));
+   next().draw( lcd, vector( 120, 50 ));
     
    // draw some text
    current = vector( start.x_get(), ( current + margin + size ).y_get() );
@@ -91,7 +91,7 @@ int main( void ){
    { subframe ff( lcd, current, text_size );
      ff.clear( color::blue() );
      text t( "bmptk", ff.size_get() );
-     format f( bigfont );
+     format f( bigfont() );
      t.f = f;
      t.draw( ff, vector( 0, 0 ) ); } 
      

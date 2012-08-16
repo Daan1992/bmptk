@@ -84,14 +84,17 @@ def Cpp_To_Img( Img_File_Name, Cpp_File_Name ):
    Cpp.write( '#include "%s.h"\n' % Name )
    Cpp.write( 'using namespace bmptk;\n' )
    Cpp.write( Data )
-   Cpp.write( 'inline_rgb_photo %s(\n' % Name )   
-   Cpp.write( '   vector( %d, %d ),\n' % ( X, Y ))   
-   Cpp.write( '   %s_data\n' % Name)   
-   Cpp.write( ');\n' )   
+   Cpp.write( 'const inline_rgb_photo & %s(){\n' % Name )   
+   Cpp.write( '   static inline_rgb_photo ph(\n' )
+   Cpp.write( '      vector( %d, %d ),\n' % ( X, Y ))   
+   Cpp.write( '      %s_data\n' % Name)   
+   Cpp.write( '   );\n' )   
+   Cpp.write( '   return ph;\n' )
+   Cpp.write( '}' )
    Cpp.close()
    
    Hpp.write( '#include "bmptk.h"\n' )
-   Hpp.write( 'extern bmptk::inline_rgb_photo %s;\n' % Name )
+   Hpp.write( 'const bmptk::inline_rgb_photo & %s();\n' % Name )
    Hpp.close()
       
 def Run():
