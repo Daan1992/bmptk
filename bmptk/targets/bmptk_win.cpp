@@ -12,7 +12,7 @@ using namespace bmptk;
    #define YSIZE 192
 #endif
 #ifndef SCALE
-   #define SCALE 1
+   #define SCALE 4
 #endif   
 
 target_screen :: target_screen( void ):

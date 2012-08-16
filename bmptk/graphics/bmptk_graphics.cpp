@@ -17,7 +17,8 @@ namespace bmptk {
 // vector
 //
 
-const vector vector::origin = vector( 0, 0 );
+vector operator * ( int n, const vector v ) {
+   return vector( v * n ); }  
 
 std::ostream & operator<<( std::ostream &s, const vector p ){
    s << std::dec << "(" << p.x_get() << "," << p.y_get() << ")";
@@ -403,8 +404,6 @@ std::ostream & operator<<( std::ostream &s, const font_alignment &a ){
    return s;
 }
 
-const format format_default( font_default );
-
 
 // ==========================================================================
 //
@@ -426,20 +425,19 @@ int line_count(
 ){
    int count = 1; 
    int x = 0;
-   for( ; *s != '\0'; s++ ){
+   for( ; *s != '\0'; s++ ){  
       if( *s == '\n' ){
          count++;
          x = 0;
       } else {
-         int char_size = fm.f->char_size( *s ).x_get() * fm.spacing.x_get();
+         int char_size = fm.f->char_size( *s ).x_get() + fm.spacing.x_get();
          if(( x + char_size > size.x_get() ) && fm.wrap ){
             count++;    
-            x = char_size;                
-         } else {
-            x += char_size;                
+            x = 0;                
          }
+         x += char_size;                
       }                  
-   }     
+   }        
    return count;
 }
 
@@ -507,19 +505,19 @@ void draw_text_line(
 ){   
    int width = line_width( *s, sz, fm );
    int extra = sz.x_get() - width;
-   int spaces = line_chars(  *s, sz, fm ) + 1;
+   int spaces = line_chars(  *s, sz, fm ) - 1;
    int missing = 0;
    if( fm.h == align_far ){
-      p += extra;
+      p += vector( extra, 0 );
    } 
    if( fm.h == align_centre ){
-      p += extra / 2;
+      p += vector( extra / 2, 0 );
    } 
    for( ; (**s != '\n') && (**s != '\0') ; (*s)++ ){           
       char_photo fc( *fm.f, **s, fm.fg, fm.bg );
       if( fm.h == align_fill ){    
          missing += extra; 
-         int adjust = missing / spaces;
+         int adjust = missing / std::max( spaces, 1 );
          p += vector( adjust, 0 );
          missing -= adjust * spaces;
       }
@@ -530,18 +528,18 @@ void draw_text_line(
 
 // draws the text
 void text::draw( 
-   frame &fr, 
-   const vector position
+   frame &fx, 
+   const vector fx_position
 ) const {
 
-   vector p = vector::origin;
-   int spaces = line_count( s, fr.size_get(), f ) + 1; 
+   subframe fr( fx, fx_position, fx.size_get() - fx_position, f.scale );
+
+   vector p( 0, 0 );
+   int lines = line_count( s, fr.size_get(), f ); 
    int extra = std::max( 
       0, 
-      f.f->font_char_size.y_get() 
-         - ( spaces - 1 ) * f.f->font_char_size.y_get() );
+      fr.size_get().y_get() - lines * f.f->font_char_size.y_get() );
    int missing = 0;
-   // trace << spaces << " " << extra;
    if( f.v == align_far ){
       p += vector( 0, extra);
    } 
@@ -552,16 +550,16 @@ void text::draw(
    for( ; *ss != '\0'; ){
       if( f.v == align_fill ){  
          missing += extra;   
-         int adjust = missing / spaces; 
+         int adjust = missing / lines; 
          // trace << extra << " " << missing << " " << adjust;
          p += vector( 0, adjust );
-         missing -= adjust * spaces;
+         missing -= adjust * lines;
       }
       draw_text_line( fr, p, size, f, &ss );   
       if( *ss == '\n' ){ 
          ss++;
          p = vector( 
-            0, 
+            0,
             p.y_get() + f.f->font_char_size.y_get() + f.spacing.y_get() );         
       }   
    }               

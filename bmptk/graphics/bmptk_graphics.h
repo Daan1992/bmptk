@@ -85,11 +85,12 @@ namespace bmptk {
 //
 // class vector
 //
-//! an absolute or relative location on a grid
+//! a relative or absolute (relaive to (0,0)) location on a grid
 //
 //! A vector is a pair of 16-bit integer values that are the x and y 
 //! coordinates of an absolute or relative location on an integer grid. 
 //! A vector can be constructed from its x and y values. 
+//! When no values are supplied a vector defaults to (0,0).
 //!
 //! Vectors are intended to represent a location, displacement, or
 //! size on a garphics screen. 
@@ -136,8 +137,11 @@ public:
    //! get the y component
    short int y_get() const { return y; }
    
+   //! construct a vector, the value defaults to (0,0)
+   vector(): x( 0 ), y( 0 ) {}   
+     
    //! construct a vector from its x and y coordinates
-   vector( short int x = 0, short int y = 0 ): x( x ), y( y ) {}   
+   vector( short int x, short int y ): x( x ), y( y ) {}   
      
    //! add two vectors by adding the x and y coordinates
    vector operator + ( const vector p ) const {
@@ -235,8 +239,11 @@ public:
       return is_within( x, p.x ) && is_within( y, p.y ); }
       
    //! the vector (0,0)   
-   static const vector origin;
+   static vector origin(){ return vector(0,0); }
 };
+
+//! multiplies a vector by an integer by multiplying the coordinates
+vector operator * ( int n, const vector v ); 
 
 //! prints a vector
 //
@@ -665,7 +672,7 @@ public:
    //! specified scale. When scale==0 nothing will be drawn.   
    virtual void draw( 
       frame &f, 
-      const vector position = vector::origin
+      const vector position = vector::origin()
    ) const = 0;    
    
    //! get the forgeround color
@@ -757,7 +764,7 @@ public:
    //! This function is just a convenient way to call the drawable::draw
    //! operation.
    void draw( const drawable &object ){
-      object.draw( *this, vector::origin ); }     
+      object.draw( *this, vector::origin() ); }     
    
    //! fill the full frame with the indicated color
    virtual void clear( const color c = color::white() );
@@ -1226,7 +1233,7 @@ public:
    //! the size of one character, x is valid for fixed fonts only 
    const vector font_char_size;
    
-   // create a font, specify its fixedness and 
+   //! create a font, specify its fixedness and character size
    font( bool fixed, const vector char_size ):
       fixed( fixed ), proportional( ! fixed ), font_char_size( char_size ){}     
     
@@ -1416,6 +1423,9 @@ enum font_alignment {
 //! \relates format
 std::ostream & operator<<( std::ostream &s, const font_alignment &a );
 
+//! returns the default font
+const inline_font & font_default();
+
 //
 //! how a text is rendered on a screen 
 //
@@ -1449,12 +1459,12 @@ public:
    color bg;
    
    format( 
-      const font &f,
+      const font &f = font_default(),
       font_alignment h = align_near, 
       font_alignment v = align_near, 
       bool wrap = 0,
       unsigned int scale = 1,
-      vector spacing = vector::origin,
+      vector spacing = vector::origin(),
       vector top_left_margin = vector( 2,2 ),
       vector bottom_right_margin = vector( 2,2 ),
       color fg = color::black(),
@@ -1471,9 +1481,8 @@ public:
       fg( fg ),
       bg( bg )
    {}
+   
 };    
-
-extern const format format_default;
 
 
 // ==========================================================================
@@ -1517,7 +1526,7 @@ public:
       //
       //! This format is copied. You can change the 
       //! copy (the \ref f attribute) as you see fit.
-      const format f = format_default
+      const format f
    ):
       drawable( f.fg, f.bg, f.scale ), s( s ), size( size ), f( f ){}        
       

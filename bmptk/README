@@ -22,6 +22,11 @@ This directory contains :
       - tools              : tools (executables)
 
 pending work list:
+   - font: top & right side 'empty' line can be eliminated?
+   - arithmetic with transparancy??
+   - scale=2 for text does not work
+   - spacing not OK?
+   - align example afmaken (oa. verticaal)
    - run from an IDE (N++ ?)
    - vector::origin is not safe
    - gif translate does not work, 33 -> 32 wel! (goed by veelvouden van 8?)
