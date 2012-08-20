@@ -22,6 +22,8 @@ This directory contains :
       - tools              : tools (executables)
 
 pending work list:
+   - tty
+   - get font from libnds?
    - text labels require 'flip' in subscreen
    - font: top & right side 'empty' line can be eliminated?
    - arithmetic with transparancy??
