@@ -513,9 +513,10 @@ void draw_text_line(
    if( fm.h == align_centre ){
       p += vector( extra / 2, 0 );
    } 
+   int n = 0;
    for( ; (**s != '\n') && (**s != '\0') ; (*s)++ ){           
       char_photo fc( *fm.f, **s, fm.fg, fm.bg );
-      if( fm.h == align_fill ){    
+      if( ( fm.h == align_fill ) && ( n++ > 0 ) ){    
          missing += extra; 
          int adjust = missing / std::max( spaces, 1 );
          p += vector( adjust, 0 );
@@ -550,10 +551,10 @@ void text::draw(
    for( ; *ss != '\0'; ){
       if( f.v == align_fill ){  
          missing += extra;   
-         int adjust = missing / lines; 
+         int adjust = missing / ( lines + 1 ); 
          // trace << extra << " " << missing << " " << adjust;
          p += vector( 0, adjust );
-         missing -= adjust * lines;
+         missing -= adjust * ( lines + 1 );
       }
       draw_text_line( fr, p, size, f, &ss );   
       if( *ss == '\n' ){ 

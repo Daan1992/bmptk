@@ -22,21 +22,18 @@ This directory contains :
       - tools              : tools (executables)
 
 pending work list:
+   - text labels require 'flip' in subscreen
    - font: top & right side 'empty' line can be eliminated?
    - arithmetic with transparancy??
-   - scale=2 for text does not work
-   - spacing not OK?
+   - scale=2 for text does not work very intuitively, maybe scale different?
+   - vertical spacing not OK?
    - align example afmaken (oa. verticaal)
    - run from an IDE (N++ ?)
-   - vector::origin is not safe
    - gif translate does not work, 33 -> 32 wel! (goed by veelvouden van 8?)
    - gif transparency
    - translate should not write same header
-   - font_default genereren
-   - font_default is nu een include...
    - font does not depend on makefile??
-   - draw add font-from-fft example
-   - all files start with bmptk- ?
+
    - make and make clean in main directory for documentation
    - letters lijken iets verschoven
    - beperkte charsets

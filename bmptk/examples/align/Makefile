@@ -10,7 +10,7 @@
 PROJECT    := align
 
 # Specify target chip or board or system
-TARGET     := win
+TARGET     := nds
 
 # Specify the location of the bmptk library
 BMPTK      := ../..

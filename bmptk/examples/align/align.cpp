@@ -32,8 +32,8 @@ int main( void ){
    lcd.clear( color::white() );
    
    const char *t = "Hello brave\nworld";
-   vector s( 55, 30 );
-   vector outer_margin( 3, 3 );
+   vector s( 55, 31 );
+   vector outer_margin( 2, 2 );
    vector sp( 0, 0 );   
    
    format fm;
@@ -44,7 +44,9 @@ int main( void ){
    lcd.draw( tx += ( s + outer_margin ).x_projection(), text( "far",    lcd.size_get(), fm ));
    lcd.draw( tx += ( s + outer_margin ).x_projection(), text( "fill",   lcd.size_get(), fm ));
    
-   vector d0( 20, 20 ), d= d0;
+   vector d0( 20, 20 ), d = d0;
+   subframe( lcd, d + s.y_projection() - vector( 10, 0 ), vector( 20, - s.y_get())).draw( 
+      text( "near", vector( 100, 100 )));   
    test_format_write( lcd, d, s, outer_margin, t, sp, align_near,   align_near );
    test_format_write( lcd, d, s, outer_margin, t, sp, align_centre, align_near );
    test_format_write( lcd, d, s, outer_margin, t, sp, align_far,    align_near );

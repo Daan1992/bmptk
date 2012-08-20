@@ -16,10 +16,10 @@ TARGET     := win
 BMPTK      := ../..
 
 # Specify project files (other than $(PROJECT).cpp) (if any)
-OBJECTS    :=
+OBJECTS    := 
 SOURCES    := 
 HEADERS    := 
-LIBS       := bmptk_graphics
+LIBS       := bmptk_graphics 
 
 # specify (extra) results you want to get (if any)
 RESULTS    := 

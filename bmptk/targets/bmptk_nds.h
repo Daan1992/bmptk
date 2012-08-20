@@ -15,6 +15,12 @@ public:
    void checked_write( const vector v, const color c );
 };
 
+class target_top_screen : public frame {
+public:
+   target_top_screen( void );
+   void checked_write( const vector v, const color c );
+};
+
 }
 
 #endif // #ifdef BMPTK_NDS_H

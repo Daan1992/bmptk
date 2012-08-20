@@ -845,17 +845,28 @@ protected:
 
    //! checked_write implementation as requiredby frame
    //
-   //! When scale == 0 checke_write will do nothing, hence the
+   //! When scale == 0 checked_write will do nothing, hence the
    //! subframe will not appear in the master frame.
    //! 
    void checked_write( const vector p, const color c ){
-      if( scale == 0 ) return; 
       if( is_valid( p )){
          for( unsigned int x = 0; x < scale; x++ ){
             for( unsigned int y = 0; y < scale; y++ ){       
                master.write( translate( p * scale + vector( x, y )), c ); 
             }}}}
                           
+};
+
+class frame_dummy : public frame {
+public:
+   frame_dummy( const vector size ): frame( size ){}
+protected:
+
+   //! checked_write implementation as requiredby frame
+   //
+   //! This method does nothing.
+   //! 
+   void checked_write( const vector p, const color c ){}
 };
 
 
