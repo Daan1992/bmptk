@@ -52,7 +52,7 @@ pending work list:
    - paint beter structureren: event in screen? => window
    - 2478 target?
    - graphics.h start text
-   - License
+   - License: check all files
    - Doxygen cleanup
    - reversi example
    - std:cout replacement
