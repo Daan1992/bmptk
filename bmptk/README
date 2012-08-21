@@ -11,6 +11,7 @@ This directory contains :
    files
       - bmptk.h            : top-level header file for bmptk
       - Doxygen            : settings file for doucmentation creation
+      - license.txt        : license (== MIT 'expat' license)
       - Makefile.template  : template for a bmptk project(s) makefile
       - Makefile.inc       : included by the project makefile
       - README             : this file
@@ -33,7 +34,7 @@ pending work list:
    - run from an IDE (N++ ?)
    - gif translate does not work, 33 -> 32 wel! (goed by veelvouden van 8?)
    - gif transparency
-   - translate should not write same header
+   - translate utilities should not write same header again
    - font does not depend on makefile??
 
    - make and make clean in main directory for documentation
@@ -58,7 +59,7 @@ pending work list:
    - packer/grid/placer
    - mouse-style pointer needed for trackballs
    - subframe boundaries
-   - ignore repeated mouse @ same place
+   - ignore repeated mouse @ same place?
    - compressed color = 1 byte per pixel
    - arithmetic for text format
    - standard font(s)
@@ -69,14 +70,14 @@ pending work list:
    - drawable::draw_pixel moet beter
    - rotate operator on a vector! (multiply)
    - doxygen the TRACE macro's, can't be done??
-
-notes, references, links:
-   - http://www.google.com/webfonts
-   - http://en.wikipedia.org/wiki/Poka-yoke
    - rectangle, line: size or boundaries??
    - add chapter 'design notes'
    - wit lijntje in de button corners is best leuk!
-   - ! put this in a reference section?
+   
+notes, references, links:
+   - http://www.google.com/webfonts
+   - http://en.wikipedia.org/wiki/Poka-yoke
+   - ! put next in a reference section?
    - http:-dlib.net/api.html#gui_widgets
    - http:-en.wikipedia.org/wiki/FLTK
    - http:-en.wikipedia.org/wiki/FOX_toolkit
@@ -91,6 +92,7 @@ notes, references, links:
    - http:-escience.anu.edu.au/lecture/cg/Circle/printNotes.en.html
    - http:-homepage.smc.edu/kennedy_john/bcircle.pdf
    - http://www.dafont.com/new.php?page=2
+   - http://forum.gbadev.org/viewtopic.php?t=14396&highlight read NDS stylus pressure
 
 
 
