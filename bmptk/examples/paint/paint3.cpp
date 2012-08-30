@@ -67,7 +67,14 @@ void area_add( int x0, int y0, int x1, int y1, color fill, action f ){
    p->y0 = y0;
    p->y1 = y1;
    p->f = f;
-   lcd.draw( vector( x0, y0 ), rectangle( vector( x1, y1 ) - vector( x0, y0 ), color::black(), fill )); 
+   rectangle( 
+      lcd, 
+	  vector( x0, y0 ), 
+	  vector( x1, y1 ) - vector( x0, y0 ),
+	  color::black(), 
+	  fill 
+   ).draw();
+
    p->next = first;
    first = p;
 }

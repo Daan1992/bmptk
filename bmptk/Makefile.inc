@@ -65,10 +65,13 @@ OBJDUMP   = "$(PREFIX)objdump"
 SIZES     = "$(PREFIX)size"
 
 NDSTOOL   := "$(DEVKITPRO)/devkitARM/bin/ndstool"
+PYTHON    := C:/PYTHON27/PYTHON
 IMGTOCPP-TOOL = $(BMPTK)/tools/img_to_cpp.py
 FFTTOCPP-TOOL = $(BMPTK)/tools/ttf_to_cpp.py
-IMGTOCPP  := python $(IMGTOCPP-TOOL)
-FFTTOCPP  := python $(FFTTOCPP-TOOL)
+TXTTOCPP-TOOL = $(BMPTK)/tools/txt_to_cpp.py
+IMGTOCPP  := $(PYTHON) $(IMGTOCPP-TOOL)
+FFTTOCPP  := $(PYTHON) $(FFTTOCPP-TOOL)
+TXTTOCPP  := $(PYTHON) $(TXTTOCPP-TOOL)
 
 
 #============================================================================
@@ -82,7 +85,7 @@ PREFIX     :=
 
 ifeq ($(TARGET),nds)
    CHIP        := ARMv7
-   PREFIX      := $(DEVKITPRO)/devkitARM/bin/arm-eabi-
+   PREFIX      := $(DEVKITPRO)/devkitARM/bin/arm-none-eabi-
    CORE-FLAGS  := -march=armv5te -mtune=arm946e-s -fomit-frame-pointer 
    CORE-FLAGS  += -ffast-math -mthumb -mthumb-interwork -DARM9
    INCLUDES    += -I$(DEVKITPRO)/libnds/include 

@@ -15,57 +15,85 @@ int main( void ){
    // draw some lines
    current = start;
    size = vector( 20, 20 );
-   lcd.draw( current,
-      line( size ));
-   lcd.draw( current += ( size + margin ).x_projection(),
-      line( size, color::blue() ));
-    lcd.draw( current += ( size + margin ).x_projection(),
-      line( size, color::purple(), 5 ));
+   line( lcd, current, size ).draw();
+   line( lcd, current += ( size + margin ).x_projection(),
+      size, color::blue() ).draw();
+   line( lcd, current += ( size + margin ).x_projection(),
+      size, color::purple(), 5 ).draw();
       
    // some rectangles   
-   lcd.draw( current += ( size + margin ).x_projection(), 
-      rectangle( size, color::black() ));   
-   lcd.draw( current += ( size + margin ).x_projection(), 
-      rectangle( size, color::black(), color::purple(), 3 ));   
+   rectangle( lcd, current += ( size + margin ).x_projection(), 
+      size, color::black() ).draw();
+   rectangle( lcd, current += ( size + margin ).x_projection(), 
+      size, color::black(), color::purple(), 3 ).draw();
       
    // some rectangles woth different border reliefs   
    current = vector( start.x_get(), ( current + size + margin ).y_get() );
    size = vector( 12, 12 );
-   lcd.draw( current,
-      rectangle( size, color::black(), color::transparent(), 3 ));     
-   lcd.draw( current += ( size + margin ).x_projection(),
-      rectangle( size, color::gray(), color::blue(), 3, relief_raised ));
-   lcd.draw( current += ( size + margin ).x_projection(),
-      rectangle( size, color::gray(), color::blue(), 3, relief_sunken ));         
-   lcd.draw( current += ( size + margin ).x_projection(),
-      rectangle( size, color::blue(), color::yellow(), 3, relief_raised ));
-   lcd.draw( current += ( size + margin ).x_projection(), 
-      rectangle( size, color::blue(), color::yellow(), 3, relief_sunken ));   
+   rectangle( 
+      lcd, current,
+      size, 
+	  color::black(), color::transparent(), 
+	  3 
+   ).draw();     
+   rectangle( 
+      lcd, current += ( size + margin ).x_projection(),
+      size, 
+	  color::gray(), color::blue(), 
+	  3, relief_raised 
+   ).draw();
+   rectangle( 
+      lcd, 
+	  current += ( size + margin ).x_projection(),
+      size, 
+	  color::gray(), color::blue(), 
+	  3, relief_sunken 
+   ).draw();         
+   rectangle( 
+      lcd, 
+	  current += ( size + margin ).x_projection(),
+      size, 
+	  color::blue(), color::yellow(), 
+	  3, relief_raised 
+   ).draw();
+   rectangle( 
+      lcd, current += ( size + margin ).x_projection(), 
+      size, 
+	  color::blue(), color::yellow(), 
+	  3, relief_sunken 
+   ).draw();   
       
    // draw some circles   
    int radius = 15;
-   current = vector( start.x_get() + radius, ( current + size + margin ).y_get() + radius );
+   current = vector( 
+      start.x_get() + radius, 
+     ( current + size + margin ).y_get() + radius );
    size = vector( 2 * radius, 2 * radius );
-   lcd.draw( current,
-      circle( radius ));   
-   lcd.draw( current += ( size + margin ).x_projection(),
-      circle( radius, color::yellow(), color::green(), 5 ));   
+   circle( lcd, current,
+      radius ).draw();   
+   circle( lcd, current += ( size + margin ).x_projection(),
+      radius, color::yellow(), color::green(), 5 ).draw();   
       
    // draw a photo of me in four orientations   
    current = vector( start.x_get(), ( current + margin + size / 2 ).y_get() );
-   size = wouter().size;
+   size = wouter().size_get();
    { wouter().draw( lcd, current );
       current += ( size + margin ).x_projection(); }
       
-   { subframe ff( lcd, current + size.x_projection(), size * vector( -1, 1 ) );
+   { subframe ff( lcd, 
+        current + size.x_projection(), 
+		size * vector( -1, 1 ) );
      wouter().draw( ff ); 
      current += ( size + margin ).x_projection(); }
      
-   { subframe ff( lcd, current + size.y_projection() + vector( +1, -1 ), size * vector( 1, -1 ));
+   { subframe ff( lcd, 
+       current + size.y_projection() + vector( +1, -1 ), 
+	   size * vector( 1, -1 ));
      wouter().draw( ff ); 
      current += ( size + margin ).x_projection(); }
      
-   { subframe ff( lcd, current + size + vector( +1, -1 ), - size );
+   { subframe ff( lcd, 
+        current + size + vector( +1, -1 ), - size );
      wouter().draw( ff ); 
      current += ( size + margin ).x_projection(); }     
 
@@ -95,8 +123,8 @@ int main( void ){
      t.f = f;
      t.draw( ff, vector( 0, 0 ) ); } 
      
-   //lcd.draw( font_default );
-   //lcd.draw( bigfont );
+   font_default().draw( lcd );
+   // bigfont().draw( lcd );
  
    for(;;);   
    return 0;

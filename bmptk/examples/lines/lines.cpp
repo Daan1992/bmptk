@@ -30,9 +30,9 @@ int main( void ){
          vector start = random_vector_within( lcd.size_get());
          vector end = random_vector_within( lcd.size_get());
          if( n % 2 ){
-            lcd.draw( start, line( end - start, color::blue() ));
+            line( lcd, start, end - start, color::blue() ).draw();
          } else {
-            lcd2.draw( start, line( end - start, color::red() ));
+            line( lcd2, start, end - start, color::red() ).draw();
          }         
          #ifdef TARGET_nds
             swiWaitForVBlank();

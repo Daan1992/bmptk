@@ -144,7 +144,7 @@ def Ttf_To_Img( Img_File_Name, Code_File_Name, Name, Size, List = None, Namespac
    Cpp.write( '      %d,\n' % Fixed )
    Cpp.write( '      vector( %d, %d ),\n' % ( Char_X, Char_Y ))
    Cpp.write( '      %s_start,\n' % Name )
-   Cpp.write( '      %d, %d, %s_data\n' % ( Pic_X, Pic_Y, Name ))
+   Cpp.write( '      vector( %d, %d ), %s_data\n' % ( Pic_X, Pic_Y, Name ))
    Cpp.write( '   );\n' )   
    Cpp.write( '   return fnt;\n' )
    Cpp.write( '}\n' )

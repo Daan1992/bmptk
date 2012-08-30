@@ -124,25 +124,26 @@ private:
    static bool is_within( short int x, short int m ){
       return (( x >= 0 ) && ( x < m )) || (( x <= 0 ) && ( x > m )); }
 
-   //! the x coordinate, can be read and changed 
+   //! the x coordinate
    short int x;
   
-   //! the y coordinate, can be read and changed 
+   //! the y coordinate
    short int y;
 
 public:      
-   //! get the x component
-   short int x_get() const { return x; }
-   
-   //! get the y component
-   short int y_get() const { return y; }
-   
+
    //! construct a vector, the value defaults to (0,0)
    vector(): x( 0 ), y( 0 ) {}   
      
    //! construct a vector from its x and y coordinates
    vector( short int x, short int y ): x( x ), y( y ) {}   
      
+   //! get the x component
+   short int x_get() const { return x; }
+   
+   //! get the y component
+   short int y_get() const { return y; }
+   
    //! add two vectors by adding the x and y coordinates
    vector operator + ( const vector p ) const {
       return vector( x + p.x, y + p.y ); }          
@@ -617,22 +618,27 @@ std::ostream & operator<<( std::ostream &s, const event &e );
 //! an object that can be drawn in a frame
 //
 //! A drawable is an abstract object that can be drawn in a frame.
-//! A drawable has has a forgeground and background color, 
+//! A drawable knows the frame the location (anchor point) within this
+//1 frame where it can draw itself, and
+//! it has has has a forgeground and background color
 //! and a (line) width.
 //! What these properties exactly mean depends on the specific drawable.
-//! 
-//! A drawable object does not contain or specify the frame on which it is
-//! to be drawn, nor the location within the screen wehere it is to be drawn.
-//! That information is supplied with the draw call.
 //!
 //! A drawable contains two colors and one integer. 
-//! It has no references to other objects.
+//! It has a reference to a frame.
+//! This frame must still exist when the drwabale is asked to draw itself.
 //
 
 class frame;
 
 class drawable {
 protected:
+
+   //! parent frame
+   frame &fr;
+   
+   //! the position
+   vector position;
 
    //! foreground color
    color fg;
@@ -647,44 +653,45 @@ protected:
    //
    //! This is the function that the draw function in a concrete drawable
    //! should use to draw each pixel of itself.
-   //! The f and position are the parameters supplied to the draw
-   //! call. Address is the location of the pixel that is to be drawn 
-   //! (draw_pixel will draw it relative to position), c its color.
-   static void drawable_draw_pixel( 
-      frame &f, const vector position, const vector address, const color c );
+   //! Address is the location of the pixel that is to be drawn, c its color.
+   void drawable_draw_pixel( 
+      const vector address, 
+      const color c 
+   ) const;
       
 public:    
-   //! constructor, specifies the fg and bg colors, and the (line) width
+   //! constructor, specify frame, position, fg, bg colors, (line) width
    //
    //! The default is to draw in black forgeground, with transparent 
    //! (meaning: do not draw) background, line width (when applicable)
    //! 1 pixel.
    drawable( 
+      frame &fr,
+      const vector position = vector::origin(),
       const color fg = color::black(), 
       const color bg = color::transparent(),
       unsigned int width = 1
-   ): fg( fg ), bg( bg ), width( width ) {}
-      
-   //! draw the object on f, at the indicated position
-   //
-   //! A concrete drawable must supply the draw function, that draws the
-   //! object on the supplied frame, at the specified location, and to the
-   //! specified scale. When scale==0 nothing will be drawn.   
-   virtual void draw( 
-      frame &f, 
-      const vector position = vector::origin()
-   ) const = 0;    
+   ): fr( fr ), position( position ), fg( fg ), bg( bg ), width( width ) {}
    
+   //! get the parent frame
+   frame &frame_get() const { return fr; }
+   
+   //! get the position
+   const vector position_get() const { return position; }
+     
    //! get the forgeround color
    color fg_get() const { return fg; }
       
    //! get the background color
    color bg_get() const { return bg; }
       
-  //! get the width
+   //! get the width
    unsigned int width_get() const { return width; }
+   
+   //! set the position
+   void position_set( const vector pos ){ position = pos; }
       
-  //! set the forgeround color
+   //! set the forgeround color
    void fg_set( const color c ){ fg = c; }
       
    //! set the background color
@@ -692,6 +699,9 @@ public:
       
    //! set the width
    void width_set( unsigned int w ){ width = w; }
+   
+   //! draw yourself
+   virtual void draw() const = 0;
       
 } ;
 
@@ -750,21 +760,7 @@ public:
    //! to do the actual writing.
    void write( const vector p, const color c ){
       if( is_valid( p ) && ( ! c.is_transparent() )){
-         checked_write( p, c ); }}  
-         
-   //! draw the drawable object at the indicated position.
-   //
-   //! This function is just a convenient way to call the drawable::draw
-   //! operation.
-   void draw( const vector position, const drawable &object ){
-      object.draw( *this, position ); }        
-         
-   //! draw the drawable object at the origin
-   //
-   //! This function is just a convenient way to call the drawable::draw
-   //! operation.
-   void draw( const drawable &object ){
-      object.draw( *this, vector::origin() ); }     
+         checked_write( p, c ); }}        
    
    //! fill the full frame with the indicated color
    virtual void clear( const color c = color::white() );
@@ -896,16 +892,19 @@ public:
    //! x and y directions (not the endpoint!).
    vector size;
    
-   //! constructs a line from its \ref size, color, and width
-   line( const vector size, const color fg = color::black(), int width = 1 ):
-      drawable( fg, color::transparent(), width ), size( size ){}     
+   //! constructs a line from its frame, position, size, color, and width
+   line( 
+      frame &frame,
+      const vector position,
+      const vector size, 
+      const color fg = color::black(), 
+      int width = 1 
+   ):
+      drawable( frame, position, fg, color::transparent(), width ), size( size ){}
       
-   //! constructs a line from its \ref size x and y, color, and width
-   line( int x, int y, const color fg = color::black(), int width = 1 ):
-      drawable( fg, color::transparent(), width ), size( vector( x, y )){}     
-      
+        
    //! draw the line on f, at position, and to scale   
-   void draw( frame &f, const vector position ) const;
+   void draw() const;
 };    
 
 
@@ -982,20 +981,22 @@ public:
    
    //! constructs a rectangle from its far corner, bg, fg, width and relief
    rectangle(
+      frame &frame,
+      const vector position,
       const vector size, 
       const color fg     = color::black(),
       const color bg     = color::transparent(),
       int width          = 1,
       relief rel         = relief_flat
    ):
-      drawable( fg, bg, width ), 
+      drawable( frame, position, fg, bg, width ), 
       bright( fg ), 
       dark( fg / 4 ), 
       border( rel ),
       size( size ){}       
 
    //! draw the rectangle on f, at position
-   void draw( frame &f, const vector position ) const;
+   void draw() const;
 };  
     
     
@@ -1016,15 +1017,11 @@ class circle : public drawable {
 private:
 
    void circle_draw(
-      frame &fr, 
-      const vector position,
       const color c,
       bool fill
    ) const;
    
-   void circle_draw_pixel( 
-      frame &fr,      
-      const vector position,   
+   void circle_draw_pixel(  
       const vector v,
       const color c
    ) const;
@@ -1040,85 +1037,106 @@ public:
    
    //! create a circle from a radius, fg and bg colcors, and line width
    circle( 
+      frame &frame,
+      const vector position,
       unsigned int radius,
       const color fg = color::black(),
       const color bg = color::transparent(),
       unsigned int width = 1
    ):
-      drawable( fg, bg, width ), radius( radius ){}        
+      drawable( frame, position, fg, bg, width ), radius( radius ){}        
       
    //! draw the circle on f, at position
-   void draw( frame &f, const vector position ) const; 
+   void draw() const; 
 };    
 
 
 // ==========================================================================
 //
-// class photo
+// class image
 //
-//! a recangular block of read-only pixels
+//! a recangular block that can be drawn in a frame
 //
-//! The abstract photo class is a read-only store of the colors of 
-//! all pixels in a rectangular area. 
-//! It is an abstract class, storing only the size of the area. 
+//! An image can draw itself in a frame.
+//
+class image {
+protected:	
+
+   //! the size of the (rectangular) block occupied by the image	
+   vector size;
+
+public:
+
+   //! constructor, specify the size
+   image( vector size ): size( size ){}	
+	   
+   //! get the size of the picture	   
+   vector size_get() const { return size; }	
+   
+   //! draw the picture in the frame at the position
+   virtual void draw( 
+      frame &frame, 
+      const vector position = vector::origin() ) const = 0;
+   
+   //! report whether p is within the image   
+   bool is_valid( const vector p ) const {
+      return p.is_within( size ); }       
+};
+
+
+// ==========================================================================
+//
+// class image_pixels
+//
+//! a recangular block of pixels that can reads, and be drawn in a frame
+//
+//! An image_pixels is an image, hence it can draw itself in a frame.
+//!
+//! Additionally, each pixel of the image_pixels can be read.
 //! A concrete child class must implement a \ref checked_read() 
 //! function that returns the color of the requested pixel. 
-//! The photo class itself provides a read() function that first 
+//! The pimage class itself provides a read() function that first 
 //! checks whether the requested pixel is within the area (otherwise 
 //! it returns color::transparent) and if so, calls \ref checked_read() 
 //! to do the real work. 
 //
-
-class photo : public drawable {
-protected:
-
+class image_pixels : public image {
+protected:	
+	
    //! get the color of the specified pixel    
    //
-   //! This function must be provided by a concrete photo class.
+   //! This function must be provided by a concrete photo class
+   //! that depends on the 
    //! It can assume that the requested pixel is valid (within
    //! the photo).
    virtual color checked_read( const vector p ) const = 0;
-           
+
 public:
-    
-   //! the size of the photo
-   //
-   //! A concrete photo might have functions that change the size,
-   //! but otherwise it is read-only.
-   const vector size; 
+
+   //! constructor, specify the size
+   image_pixels( vector size ): image( size ){}	
+	      
+   //! draw the picture in the frame at the position
+   //!
+   //! The default draw method reads each pixel and writes it in the frame.
+   //! A concrete image class might provide a more efficient draw method,
+   //! that draws only the pixels that are not transparent.
+   virtual void draw( 
+      frame &frame, 
+      const vector position = vector::origin() ) const;
       
-   //! construct a photo, specify its size
-   photo( const vector size ): size( size ){}       
-      
-   //! report whether p is within the photo   
-   bool valid( const vector p ) const {
-      return p.is_within( size ); }         
-      
-   //! report whether (x,y) is within the photo
-   bool valid( int x, int y ) const {
-      return valid( vector( x, y )); }        
-   
    //! read one pixel, address specified by vector
    //
    //! This function will return color::transparent
-   //! when the requested pixel is outside the picture.
+   //! when the requested pixel is outside the image.
    //! Otherwise it will call \ref protected_read.
    color read( const vector p ) const {
-      if( valid( p )){
+      if( is_valid( p )){
          return checked_read( p );
       } else {
          return color::transparent();
       }               
-   }          
-   
-   //! read one pixel, address specified in x,y form
-   //
-   //! @copydetails photo::read( const vector p )  
-   color read( int x, int y ) const { 
-      return read( vector( x, y )); }     
-   
-   //! draw the picture on f, at position     
-   void draw( frame &f, const vector position = vector::origin() ) const;
+   }       
 };
 
 
@@ -1137,7 +1155,7 @@ public:
 //! This is likely to be the only way you will instatiate this class.
 //
 
-class inline_rgb_photo : public photo {
+class inline_rgb_photo : public image_pixels {
 private:
 
    //! the pixel data     
@@ -1149,8 +1167,8 @@ private:
 public:     
    
    //! create an inline_rgb_photo object   
-   inline_rgb_photo( vector location, const unsigned char *data ):
-      photo( location ), data( data ){}        
+   inline_rgb_photo( vector size, const unsigned char *data ):
+      image_pixels( size ), data( data ){}        
 
 };
 
@@ -1177,11 +1195,13 @@ public:
 //! library to store fonts.
 //
 
-class inline_bw_photo : public photo {
+class inline_bw_photo : public image_pixels {
 private:
 
    //! the pixel data     
    const unsigned char *data;  
+
+   color fg, bg;
 
 public:        
     
@@ -1191,11 +1211,8 @@ public:
    //! create an inline_bw_photo object   
    inline_bw_photo( 
    
-      //! the x size of the photo
-      int x, 
-      
-      //! the y size of the photo
-      int y,    
+      //! the size of the photo
+      const vector size,   
       
       //! the pixel data
       //
@@ -1204,15 +1221,18 @@ public:
       //! The bits within a byte are stored LSB first.
       const unsigned char *data 
    ):
-      photo( vector( x, y )), data( data ){}        
+      image_pixels( size ), 
+	  data( data )
+   { 
+      fg = color::black(); 
+      bg = color::white(); 
+   }        
       
 private:
         
    //! read one pixel, return color
    color checked_read( const vector p ) const {
-      // trace << fg << "\n";
-      return bool_read( p ) ? fg : bg; }          
-//      return bool_read( p ) ? color::purple : color::green; }          
+      return bool_read( p ) ? fg : bg; }                    
 };
 
 
@@ -1287,7 +1307,7 @@ public:
 //! (readonly) object, so it can not become unavailable
 //
 
-class char_photo : public photo {   
+class char_photo : public image_pixels {   
 public:    
        
    //! the font     
@@ -1309,7 +1329,7 @@ public:
       const color fg = color::black(), 
       const color bg = color::transparent()
    ):
-      photo( f.char_size( c )),
+      image_pixels( f.char_size( c )),
       f( f ),
       c( c ), 
       fg( fg ), 
@@ -1372,17 +1392,14 @@ public:
       //! the x offset in the photo of each char, -1 for missing chars
       const int *start,
       
-      //! the x size of the photo
-      unsigned int x,
-      
-      //! the y size of the photo
-      unsigned int y,
-      
+      //! the size of the photo
+      const vector size,
+            
       //! the photo pixels, see \ref inline_bw_photo
       const unsigned char *data
    ):         
       font( fixed, char_size ), 
-      inline_bw_photo( x, y, data ),
+      inline_bw_photo( size, data ),
       start( start )
    {}        
            
@@ -1508,15 +1525,12 @@ public:
 //! so it must still be available when the text object is drawn.
 //!
 //
-class text : public drawable {
+class text : public image {
 public:    
 	
 	 //! the ASCII text string; can be changed
    const char *s;
-   
-   //! the size of the rectangle available for the text; can be changed
-   vector size;
-   
+     
    //! the format used to draw the text; can be changed
    format f;    
    
@@ -1539,16 +1553,39 @@ public:
       //! copy (the \ref f attribute) as you see fit.
       const format f = format()
    ):
-      drawable( f.fg, f.bg, f.scale ), s( s ), size( size ), f( f ){}        
+      image( size ), s( s ), f( f ){}        
       
    //! draw the text on f, at position
    //
    //! The text is drawn according to the current format 
    //! (the \ref f attribute), and the text that is drawn is the 
    //! current string (whatever the \ref s attribute points to).
-   void draw( frame &f, const vector position ) const; 
-};    
+   void draw( frame &f, const vector position = vector::origin() ) const; 
+};   
 
+// ==========================================================================
+//
+// A sheet is a graphical object, ultimately to be shown in a frame,
+// that can show ASCII text
+//
+
+#ifdef nono
+class sheet_base : public drawable {
+protected:
+   const char * buffer;
+   unsigned int size;   
+   sheet_base( ){}
+   void add( char c );
+   void clear(){}
+   void draw(){}
+} 
+
+template< unsigned int charsize > class sheet : public sheet_base {
+   char buffer[ charsize + 1 ];
+public:
+   sheet( ): sheet_base( , ){}
+}
+#endif
 
 
 // ==========================================================================
@@ -1720,6 +1757,7 @@ public:
    
    void run( void );
 };
+
 
 } // namespace bmptk
 
