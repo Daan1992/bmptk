@@ -1,0 +1,49 @@
+[Config]
+Relative path=1
+Compilator.FileName=build.bat
+Compilator.PSPar=
+Compilator.Log=
+Compilator.Run=
+Compilator.DefaultDir=
+Compilator.SaveAll=1
+Compilator.Capture=1
+Compilator.ParsLog=%F:%L:*
+Compilator.HideOutput=1
+Prog1=Clean,cmd /C "make clean "
+Prog2=Run,cmd /C "make run "
+Prog3=
+Prog4=
+Prog5=
+DefaultDir=
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+FileFormat=0
+DocumentRoot=
+HTServer=
+[Project tree]
+Project
+	+Files
+		-includes
+		+compile
+			paint1.cpp
+			paint2.cpp
+			paint3.cpp
+		+others
+			Makefile
+[Open project files]
+0=paint3.cpp
+1=Makefile
+2=..\..\targets\bmptk_win.cpp
+[Selected Project Files]
+Main=
+Selected=paint3.cpp
+[paint3.cpp]
+TopLine=1
+Caret=18,5
+[Makefile]
+TopLine=1
+Caret=1,1
+[..\..\targets\bmptk_win.cpp]
+TopLine=1
+Caret=19,15
