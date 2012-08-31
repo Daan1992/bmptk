@@ -230,6 +230,12 @@ public:
    vector y_projection( void ) const {
       return vector( 0, y ); }        
       
+   //! returns with x and y swapped
+   //
+   //! In other words, the return vector as mirrored in the y=x line.
+   vector mirrored( void ) const {
+      return vector( y, x ); }        
+      
    //! reports whether te vector is within the box [0,p>
    //   
    //! The call a.is_within(b) returns true iff a is within 
@@ -812,30 +818,40 @@ public:
    
    //! the scale at which this subframe appears in its master
    const unsigned int scale;
+   
+   //! whether the subframe coordinates are swapped
+   const bool swapped;
          
    //! translate a subframe coordinate to a master frame coordinate      
    vector translate( const vector p ) const {
-      return vector( 
+      vector x( 
          top_left.x_get() < bottom_right.x_get()
             ? top_left.x_get() + p.x_get() 
             : top_left.x_get() - p.x_get(),
          top_left.y_get() < bottom_right.y_get()  
             ? top_left.y_get() + p.y_get()
             : top_left.y_get() - p.y_get()
-       ); }       
+       );
+	   if( swapped ){
+          x = x.mirrored();
+	   }       
+	   return x;
+	}   
       
    //! create a subframe, endpoints specified as vectors
    subframe( 
       frame &f, 
       vector top_left, 
       vector direction,
-      unsigned int scale = 1 
+      unsigned int scale = 1,
+	  bool swapped = false
    ):
       frame( direction.abs() ),
       master( f ), 
       top_left( top_left ), 
       bottom_right( top_left + direction - direction.direction() ),
-      scale( scale ) {}
+      scale( scale ),
+	  swapped( swapped ){}
   
 protected:
 
@@ -846,9 +862,10 @@ protected:
    //! 
    void checked_write( const vector p, const color c ){
       if( is_valid( p )){
+         vector q = swapped ?  p.mirrored() : p;
          for( unsigned int x = 0; x < scale; x++ ){
             for( unsigned int y = 0; y < scale; y++ ){       
-               master.write( translate( p * scale + vector( x, y )), c ); 
+               master.write( translate( q * scale + vector( x, y )), c ); 
             }}}}
                           
 };
@@ -1060,27 +1077,12 @@ public:
 //! An image can draw itself in a frame.
 //
 class image {
-protected:	
-
-   //! the size of the (rectangular) block occupied by the image	
-   vector size;
-
 public:
-
-   //! constructor, specify the size
-   image( vector size ): size( size ){}	
 	   
-   //! get the size of the picture	   
-   vector size_get() const { return size; }	
-   
    //! draw the picture in the frame at the position
    virtual void draw( 
       frame &frame, 
-      const vector position = vector::origin() ) const = 0;
-   
-   //! report whether p is within the image   
-   bool is_valid( const vector p ) const {
-      return p.is_within( size ); }       
+      const vector position = vector::origin() ) const = 0;      
 };
 
 
@@ -1102,6 +1104,9 @@ public:
 //
 class image_pixels : public image {
 protected:	
+
+   //! the size of the (rectangular) block occupied by the objecy	
+   vector size;
 	
    //! get the color of the specified pixel    
    //
@@ -1114,8 +1119,15 @@ protected:
 public:
 
    //! constructor, specify the size
-   image_pixels( vector size ): image( size ){}	
+   image_pixels( vector size ): size( size ){}	
 	      
+   //! get the size of the picture	   
+   vector size_get() const { return size; }	
+   
+     //! report whether p is within the image   
+   bool is_valid( const vector p ) const {
+      return p.is_within( size ); }  
+   
    //! draw the picture in the frame at the position
    //!
    //! The default draw method reads each pixel and writes it in the frame.
@@ -1405,15 +1417,8 @@ public:
            
    //! report whether the font has a photo for char c        
    bool has( char c ) const { 
-   return     
-         true
-      #if CHAR_MIN < 0
-         && ( c >= 0 )
-      #endif
-      #if CHAR_MAX > 127
-         && ( c <= 127 ) 
-      #endif
-         && ( start[ (int) c ] >= 0); 
+      if( ( c < ' ' ) || ( c >= 127 ) ) return false;
+      return start[ (int) c - 32 ] >= 0; 
    }
       
    //! report the size of the photo for char c   
@@ -1512,6 +1517,9 @@ public:
    
 };    
 
+//! print a format
+std::ostream & operator<<( std::ostream &s, const format &f );
+
 
 // ==========================================================================
 //
@@ -1543,17 +1551,13 @@ public:
       //! pointer (the \ref s attribute), as you see fit.
       //! Note: the string must still be availabe when the text is drawn
       const char *s,
-      
-      //! the size of the rectangle available for drawing the text
-      const vector size,
-      
+           
       //! the format used to draw the text
       //
       //! This format is copied. You can change the 
       //! copy (the \ref f attribute) as you see fit.
       const format f = format()
-   ):
-      image( size ), s( s ), f( f ){}        
+   ): s( s ), f( f ){}        
       
    //! draw the text on f, at position
    //

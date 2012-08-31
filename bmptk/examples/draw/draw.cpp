@@ -110,20 +110,19 @@ int main( void ){
       "Now wherefore stopp'st thou me?";
    { subframe ff( lcd, current, text_size );
      ff.clear( color::yellow() );
-     text t( mariner, ff.size_get() );
-     t.draw( ff, vector( 0, 0 ) ); } 
+     text( mariner ).draw( ff ); } 
       
    // draw some big letters
    current = vector( 120, start.y_get() );
    text_size = vector( 120, 32 );
    { subframe ff( lcd, current, text_size );
      ff.clear( color::blue() );
-     text t( "bmptk", ff.size_get() );
+     text t( "bmptk" );
      format f( bigfont() );
      t.f = f;
-     t.draw( ff, vector( 0, 0 ) ); } 
+     t.draw( ff ); } 
      
-   font_default().draw( lcd );
+   // font_default().draw( lcd );
    // bigfont().draw( lcd );
  
    for(;;);   

@@ -75,6 +75,19 @@ std::ostream & operator<<( std::ostream &s, const event &e ){
 
 // ==========================================================================
 //
+// frame
+//
+
+void frame::clear( const color c ){
+   if( ! c.is_transparent() ){  
+      vector step = size.direction() ;
+      for( int x = 0; x != size.x_get(); x += step.x_get()  ){
+         for( int y = 0; y != size.y_get(); y += step.y_get() ){
+            write( vector( x, y ), c ); } } } }    
+
+
+// ==========================================================================
+//
 // drawable
 //
 
@@ -369,13 +382,13 @@ vector inline_font :: char_size( char c ) const {
       
    } else {           
       return vector( 
-         start[ 1 + (int)c ] - start[ (int)c ],
+         start[ 1 + (int)c - 32 ] - start[ (int)c - 32 ],
          font_char_size.y_get() );
    }
 }   
 
 bool inline_font :: read( char c, const vector p ) const {
-   return bool_read( p + vector( start[ (int) c ], 0 ));
+   return bool_read( p + vector( start[ (int) c - 32 ], 0 ));
 }
 
 
@@ -393,6 +406,18 @@ std::ostream & operator<<( std::ostream &s, const font_alignment &a ){
    } else {
       s << "invalid";
    }         
+   return s;
+}
+
+std::ostream & operator<<( std::ostream &s, const format &f ){
+   s << "{ f@" << std::hex << (unsigned long) &f.f;
+   s << " h=" << f.h << " v=" << f.v;
+   s << " w=" << f.wrap << " sc=" << f.scale;
+   s << " sp=" << f.spacing;
+   s << " tlm=" << f.top_left_margin;
+   s << " brm=" << f.top_left_margin;
+   s << " fg=" << f.fg << " bg=" << f.bg;
+   s << "}";
    return s;
 }
 
@@ -417,7 +442,7 @@ int line_count(
 ){
    int count = 1; 
    int x = 0;
-   for( ; *s != '\0'; s++ ){  
+   for( ; *s != '\0' ; s++ ){  
       if( *s == '\n' ){
          count++;
          x = 0;
@@ -433,7 +458,7 @@ int line_count(
    return count;
 }
 
-//! returns the length in pixels of the first formatted line from s 
+//! returns the length (width) in pixels of the first formatted line from s 
 //
 //! This function returns the width, in pixels, of the first
 //! line of characters from s, taking the size and format into account.
@@ -446,18 +471,15 @@ int line_width(
    const format &fm 
 ){
    int length = 0;
-   for( ; *s != '\0'; s++ ){
-      if( *s == '\n' ){
-         return length;
-      } else {
-         int char_size = fm.f->char_size( *s ).x_get() 
-            + fm.spacing.x_get();
-         if( length + char_size > size.x_get() ){
-            return length;                 
-         } else {
-            length += char_size;                
-         }      
-      }                  
+   int space = 0;
+   for( ; ( *s != '\0' ) && ( *s != '\n' ); s++ ){
+      int char_size = fm.f->char_size( *s ).x_get() + space; 
+      // trace << "len=" << length << "[" << *s << "] cs=" << char_size;
+      if( length + char_size > size.x_get() ){
+         return length;                 
+      }
+      length += char_size;
+      space = fm.spacing.x_get();               
    }     
    return length;
 }
@@ -469,20 +491,16 @@ int line_chars(
    const format &fm 
 ){
    int length = 0;
+   int space = 0;
    int chars = 0;
-   for( ; *s != '\0'; s++ ){
-      if( *s == '\n' ){
-         return chars;
-      } else {
-         int char_size = fm.f->char_size( *s ).x_get() 
-            + fm.spacing.x_get();
-         if( length + char_size > size.x_get() ){
-            return chars;                 
-         } else {
-            length += char_size;                
-            chars++;
-         }      
-      }                  
+   for( ; ( *s != '\0' ) && ( *s != '\n' ); s++ ){
+      int char_size = fm.f->char_size( *s ).x_get() + space;
+      if( length + char_size > size.x_get() ){
+         return chars;                 
+      }
+      length += char_size; 
+      space = fm.spacing.x_get(); 	            
+      chars++;
    }     
    return chars;
 }
@@ -491,14 +509,15 @@ int line_chars(
 void draw_text_line( 
    frame &fr, 
    vector &p, 
-   const vector sz, 
    const format &fm, 
    const char **s 
 ){   
-   int width = line_width( *s, sz, fm );
-   int extra = sz.x_get() - width;
-   int spaces = line_chars(  *s, sz, fm ) - 1;
+   trace << "[" << *s << "] in " << fr.size_get();
+   int width = line_width( *s, fr.size_get(), fm );
+   int extra = fr.size_get().x_get() - width;
+   int spaces = line_chars(  *s, fr.size_get(), fm ) - 1;
    int missing = 0;
+   trace << "w=" << width << " extra=" << extra << " spaces=" << spaces;
    if( fm.h == align_far ){
       p += vector( extra, 0 );
    } 
@@ -507,42 +526,31 @@ void draw_text_line(
    } 
    int n = 0;
    for( ; (**s != '\n') && (**s != '\0') ; (*s)++ ){           
-      char_photo fc( *fm.f, **s, fm.fg, fm.bg );
       if( ( fm.h == align_fill ) && ( n++ > 0 ) ){    
          missing += extra; 
          int adjust = missing / std::max( spaces, 1 );
          p += vector( adjust, 0 );
          missing -= adjust * spaces;
       }
+      char_photo fc( *fm.f, **s, fm.fg, fm.bg );
       fc.draw( fr, p );
-      p += vector( fc.size_get().x_get() +fm.spacing.x_get(), 0 );
+      p += vector( fc.size_get().x_get() + fm.spacing.x_get(), 0 );
    }          
 }
 
-// ==========================================================================
-//
-// frame
-//
-
-void frame::clear( const color c ){
-   if( ! c.is_transparent() ){  
-      vector step = size.direction() ;
-      for( int x = 0; x != size.x_get(); x += step.x_get()  ){
-         for( int y = 0; y != size.y_get(); y += step.y_get() ){
-            write( vector( x, y ), c ); } } } }    
-
-
-// ==========================================================================
-//
-// text
-//
-
+//! draw a text
 void text::draw( 
    frame &fx, 
    const vector fx_position
 ) const {
 
-   subframe fr( fx, fx_position, fx.size_get() - fx_position, f.scale );
+   trace << f << "[" << s << "]";
+   subframe fr( 
+     fx, 
+	 fx_position + f.top_left_margin, 
+	 fx.size_get() 
+	    - ( fx_position + f.top_left_margin + f.bottom_right_margin ), 
+	 f.scale );
 
    vector p( 0, 0 );
    int lines = line_count( s, fr.size_get(), f ); 
@@ -565,12 +573,11 @@ void text::draw(
          p += vector( 0, adjust );
          missing -= adjust * ( lines + 1 );
       }
-      draw_text_line( fr, p, size, f, &ss );   
+      trace << p << f.f->font_char_size << f.spacing;
+      draw_text_line( fr, p, f, &ss );   
       if( *ss == '\n' ){ 
          ss++;
-         p = vector( 
-            0,
-            p.y_get() + f.f->font_char_size.y_get() + f.spacing.y_get() );         
+         p = ( p + f.f->font_char_size + f.spacing ).y_projection();          
       }   
    }               
 }

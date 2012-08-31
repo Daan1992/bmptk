@@ -70,7 +70,7 @@ def Lines_From_Font( Font, Name, List ):
    Last = 0
    Mode = "1"
    
-   for n in range( 0, 128 ): 
+   for n in range( 32, 128 ): 
       c = chr( n )
       Chars += c    
       ( Total, Height ) = Font.getmask( Chars, mode = Mode ).size
@@ -116,6 +116,11 @@ def Ttf_To_Img( Img_File_Name, Code_File_Name, Name, Size, List = None, Namespac
       
    Fixed, ( Char_X, Char_Y ), ( Pic_X, Pic_Y ), Data = \
       Lines_From_Font( Font, Name, List )
+	  
+   # bugfix for small font
+   if Char_Y == 16:
+      Char_Y = 8
+      Pic_Y = 8
 
    Cpp_File_Name = Code_File_Name + ".cpp"
    try:

@@ -23,9 +23,10 @@ This directory contains :
       - tools              : tools (executables)
 
 pending work list:
+   - size=2 for win does not work with events
    - tty
    - get font from libnds?
-   - text labels require 'flip' in subscreen
+   - vertical text labels require 'flip' in subscreen
    - font: top & right side 'empty' line can be eliminated?
    - arithmetic with transparancy??
    - scale=2 for text does not work very intuitively, maybe scale different?
