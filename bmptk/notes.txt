@@ -1,0 +1,16 @@
+A global object must never depend on another global object
+Better: do not use global objects!
+
+
+PSPad
+
+- make entries in the ppr file for compile (=build), run and clear
+- build.bat, because it must be a command?
+- the open file must be in the project directory!!
+- tabs :(
+- open a second PSPad gives bizarre error messages
+- the PSPad file list is NOT used (the makefile rules)
+- on win7/64 the edit tabs do no show the file names..
+- the start dir for file open is the last used (can be by the previous PSPad)
+- edit Makefile: right-click, 'open as text'
+- :) "" and '' handling, or is that my PC?
