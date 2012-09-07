@@ -50,11 +50,9 @@ XTAL      := 12000
 # 
 #============================================================================
 
-PF        := C:/Program Files
-ARMTOOLS  := $(PF)/CodeSourcery/Sourcery_CodeBench_Lite_for_ARM_EABI
-ARMDEVENV := $(PF)/ARMDevEnv
-DEVKITPRO := C:/devkitPro
-DEVCPP    := C:/Dev-Cpp
+# include the locale-specific settings 
+# (locations of the various tools)
+include $(BMPTK)/Makefile.local
 
 CC        = "$(PREFIX)gcc"
 CPP       = "$(PREFIX)g++"
@@ -65,7 +63,6 @@ OBJDUMP   = "$(PREFIX)objdump"
 SIZES     = "$(PREFIX)size"
 
 NDSTOOL   := "$(DEVKITPRO)/devkitARM/bin/ndstool"
-PYTHON    := C:/PYTHON27/PYTHON
 IMGTOCPP-TOOL = $(BMPTK)/tools/img_to_cpp.py
 FFTTOCPP-TOOL = $(BMPTK)/tools/ttf_to_cpp.py
 TXTTOCPP-TOOL = $(BMPTK)/tools/txt_to_cpp.py

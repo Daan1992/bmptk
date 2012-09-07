@@ -10,8 +10,10 @@ This directory contains :
 
    files
       - bmptk.h            : top-level header file for bmptk
+      - documentation.h    : some documentation in Doxygen format
       - Doxygen            : settings file for doucmentation creation
       - license.txt        : license (== MIT 'expat' license)
+      - Makefile.local     : locations of the external tools (edit as needed)
       - Makefile.template  : template for a bmptk project(s) makefile
       - Makefile.inc       : included by the project makefile
       - README             : this file
@@ -94,6 +96,22 @@ notes, references, links:
    - http:-homepage.smc.edu/kennedy_john/bcircle.pdf
    - http://www.dafont.com/new.php?page=2
    - http://forum.gbadev.org/viewtopic.php?t=14396&highlight read NDS stylus pressure
+   
+A global object must never depend on another global object
+Better: do not use global objects!
+
+PSPad
+
+- make entries in the ppr file for compile (=build), run and clear
+- build.bat, because it must be a command?
+- the open file must be in the project directory!!
+- tabs :(
+- open a second PSPad gives bizarre error messages
+- the PSPad file list is NOT used (the makefile rules)
+- on win7/64 the edit tabs do no show the file names..
+- the start dir for file open is the last used (can be by the previous PSPad)
+- edit Makefile: right-click, 'open as text'
+- :) "" and '' handling, or is that my PC?   
 
 
 
