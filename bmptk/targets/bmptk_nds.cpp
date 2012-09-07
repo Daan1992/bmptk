@@ -1,8 +1,6 @@
 #include "bmptk.h"
 
-using namespace bmptk;
-
-target_screen :: target_screen( void ):
+bmptk::target_screen::target_screen( void ):
    frame( vector( 255, 191 ))
 {
     videoSetMode(MODE_5_2D);
@@ -11,14 +9,14 @@ target_screen :: target_screen( void ):
     lcdMainOnBottom();
 }
 
-void target_screen :: checked_write( 
+void bmptk::target_screen::checked_write( 
    const vector v,
    const color c 
 ){
    BG_GFX[ v.x_get() + ( v.y_get() * 256 ) ] = 0x8000 | c.rgb15();
 }
 
-target_top_screen :: target_top_screen( void ):
+bmptk::target_top_screen::target_top_screen( void ):
    frame( vector( 255, 191 ))
 {    
     videoSetModeSub(MODE_5_2D);
@@ -27,9 +25,20 @@ target_top_screen :: target_top_screen( void ):
     lcdMainOnBottom();
 }
 
-void target_top_screen :: checked_write( 
+void bmptk::target_top_screen::checked_write( 
    const vector v,
    const color c 
 ){
    BG_GFX_SUB[ v.x_get() + ( v.y_get() * 256 ) ] = 0x8000 | c.rgb15();
+}
+
+void bmptk::wait( unsigned int t ){
+   for(;;){
+      // Just a guess. 
+	  // I have not found anything better :(
+	  // Timing on DeSmuME will probably be wrong anyway :(
+      swiDelay( 10000 );
+	  if( t < bmptk::ms ) return;
+	  t -= bmptk::ms;
+   }	  
 }

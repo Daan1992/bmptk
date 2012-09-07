@@ -34,9 +34,7 @@ int main( void ){
          } else {
             line( lcd2, start, end - start, color::red() ).draw();
          }         
-         #ifdef TARGET_nds
-            swiWaitForVBlank();
-         #endif         
+         wait( 20 * ms );        
       }
    }
    return 0;

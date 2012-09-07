@@ -1,9 +1,9 @@
 #include "bmptk.h"
 
-// not a user level include file, hence not included by bmptk.h
-#include "bmptk_win_graphics.h"
 
-using namespace bmptk;
+// not user level include files, hence not included by bmptk.h
+#include "bmptk_win_graphics.h"
+#include "windows.h"
 
 #ifndef XSIZE
    #define XSIZE 256
@@ -15,13 +15,13 @@ using namespace bmptk;
    #define SCALE 1
 #endif   
 
-target_screen :: target_screen( void ):
+bmptk::target_screen::target_screen( void ):
    frame( vector( XSIZE, YSIZE ))
 {
    initwindow( SCALE * XSIZE - 1, SCALE * YSIZE - 1, "wframe" );
 }
 
-void target_screen :: checked_write( 
+void bmptk::target_screen::checked_write( 
    const vector v,
    const color c 
 ){
@@ -31,4 +31,8 @@ void target_screen :: checked_write(
          putpixel ( SCALE * v.x_get() + x, SCALE * v.y_get() + y, z );
       }
    }      
+}
+
+void bmptk::wait( unsigned int t ){
+   Sleep( 1 + t / bmptk::ms );
 }
