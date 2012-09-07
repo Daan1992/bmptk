@@ -103,7 +103,8 @@ ifeq ($(TARGET),win)
    INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2"
    INCLUDES    += -I"$(DEVCPP)/include"
    LIBRARIES   += -L"$(DEVCPP)/lib" 
-   LDFLAGS     += -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
+   LDFLAGS     += $(BMPTK)/targets/bmptk_win_libbgi.a 
+   LDFLAGS     += -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
    RESULTS     = $(EXE)
    RUN         = ./$(EXE)
    LIBS        += bmptk_win
