@@ -1,0 +1,23 @@
+#############################################################################
+#
+# file: bmptk/Makefile.local
+#
+# Local definitions for the bmptk makefile
+#
+# If you want to change the definitions below to match 
+# the situation on your PC:
+# COPY THIS FILE TO Makefile.custom AND CHANGE THAT FILE.
+# This way you can overwrite the bmptk files without erasing
+# your changes.
+# 
+#############################################################################
+
+PF32      := C:/Program Files
+PF64      := C:/Program Files (x86)
+
+ARMTOOLS  := $(PF32)/CodeSourcery/Sourcery_CodeBench_Lite_for_ARM_EABI
+ARMDEVENV := $(PF32)/ARMDevEnv
+DEVKITPRO := C:/devkitPro
+DEVCPP    := C:/Dev-Cpp
+PYTHON    := C:/PYTHON27/PYTHON
+
