@@ -34,21 +34,16 @@ pending work list:
    - scale=2 for text does not work very intuitively, maybe scale different?
    - vertical spacing not OK?
    - align example afmaken (oa. verticaal)
-   - run from an IDE (N++ ?)
+   - run from more editors
    - gif translate does not work, 33 -> 32 wel! (goed by veelvouden van 8?)
    - gif transparency
    - translate utilities should not write same header again
    - font does not depend on makefile??
-
-   - make and make clean in main directory for documentation
    - letters lijken iets verschoven
    - beperkte charsets
-   - stop bv een charset in een namespace, niet in bmptk : naam los van filenaam
    - font bij ontbrekende: andere case proberen, dan ? proberen.
-   - format_default & font_default : afhankelijkheid !!
-
    - rectangle, circle: private attributes?
-   - draw line width differently (circle brush)
+   - draw line width differently (circle brush?)
    - draw circle with differently too
    - #pragma once
    - iostream.h : why is it not found??
@@ -67,7 +62,6 @@ pending work list:
    - arithmetic for text format
    - standard font(s)
    - draw rounded rectangle
-   - text format ook direction (-> <- etc ?)
    - STL-style iterator for position
    - text::draw scale, twice?
    - drawable::draw_pixel moet beter

@@ -3,10 +3,12 @@ file: bmptk/examples/README
 Bare Metal Programming Tool Kit eaxmples directory
 
 This directory contains :
+- Makefile : supports 'clean' and 'build' targets
 
 subdirectories
 - lines   : draws random lines
 - paint   : the cursor draws pixels, multiple versions
+- draw    : draw various objects, including text
 
 
 

@@ -34,18 +34,22 @@ Project
 1=..\..\graphics\bmptk_graphics.h
 2=..\..\graphics\bmptk_graphics.cpp
 3=Makefile
+4=next.cpp
 [Selected Project Files]
 Main=
 Selected=draw.cpp
 [draw.cpp]
-TopLine=81
-Caret=19,123
+TopLine=40
+Caret=15,45
 [..\..\graphics\bmptk_graphics.h]
 TopLine=1299
 Caret=16,1328
 [..\..\graphics\bmptk_graphics.cpp]
-TopLine=548
-Caret=19,561
+TopLine=544
+Caret=7,547
 [Makefile]
 TopLine=1
-Caret=18,13
+Caret=1,14
+[next.cpp]
+TopLine=264
+Caret=2,301

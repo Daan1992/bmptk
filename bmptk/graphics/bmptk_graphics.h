@@ -14,78 +14,9 @@ namespace bmptk {
 
 // ==========================================================================
 //
-//! /page graphics
-//
-//! The graphics part of the library provides the interface to a 
-//! few LCD screens, and basic graphics functions of drawing lines, 
-//! circles, boxes, characters, and pictures on a graphic screen. 
-//!
-//! The widget part builds on the graphics part to provide a widget 
-//! toolkit with event processing and objects like button, 
-//! slider, and tab. 
-//!
-//! GraWiLi provides a command-line tool (the Python script inline.py) 
-//! that can be used to translate an image (.bmp or .jpg) or font (.ttf) 
-//! files to C++ code that can be included in an application. 
-//! A few pre-translated images and fonts are provided.
-//!
-//! Using GraWiLi requires an interface to a (presumably LCD) screen, 
-//! and for the widget part, a way to capture events. 
-//! Interfaces are available for Windows (to quickly test an application, 
-//! I use DevCpp), NintendoDS (using ??) 
-//! and the FriendlyARM micro2440 board with 2.5" LCD (using ??).
-//! 
-//! \par Class overview
-//! 
-//!    - \ref gwlib::vector    : x,y coordinates 
-//!    - \ref gwlib::color     : 3 * 8 bit RGB color
-//!    - \ref gwlib::event     : postion + type of a GUI event
-//! 
-//! Vector and color are basic classes that implement a 2-dimensional 
-//! integer coordinates, and a 3-byte (+ transparency) RGB color encoding.
-//! An event is something that the user caused at a specific location on the
-//! screen, typically a mouse click or a stylus touch.
-//!
-//!    - \ref gwlib::drawable  : things that can be drawn on a screen
-//!    - \ref gwlib::line      : a line
-//!    - \ref gwlib::rectangle : a rectangle (box)
-//!    - \ref gwlib::circle    : a circle
-//!    - \ref gwlib::photo     : a rectangle of pixels
-//!    - \ref gwlib::inline_rgb_photo : a color image stored in ROM
-//!    - \ref gwlib::inline_bw_photo  : a BW image stored in ROM
-//!    - \ref gwlib::font      : pictures for the set of ASCII characters
-//!    - \ref gwlib::format    : specified how a text is drawn
-//!    - \ref gwlib::text      : an ASCII string and a format
-//!
-//! Drawables are things that can be drawn. A drawable specifies its shape
-//! and size, but not its location (starting point), that is supplied
-//! when it is drawn. A photo is a rectangular block of (readonly) pixels.
-//! Inline_rgb_photo and inline_bw_photo are photo's that are stored in
-//! in-line code (in ROM).
-//! 
-//! The inline.py tool can be used to create such an in-line representation.
-//!
-//!     - \ref gwlib::frame     : something you can read and write by pixel
-//!     - \ref gwlib::subframe  : part of a frame
-//!
-//! A frame is the thing on which you can draw a drawable. 
-//! Frame inhertits from photo, so it is also a drawable, so you can draw
-//! the content of a frame on (a part of) another frame.
-//! A subframe is a rectangular part of another frame, which can be
-//! rotated, mirrored, or enlarged.
-//!    
-//!    - \ref gwlib::widget    : can handle events and can (re)draw itself
-//!    - \ref gwlib::wframe    : frame widget (has border and background)
-//!    - \ref gwlib::wtoplevel : widget that has a frame and an eventloop
-//! 
-//
-
-
-// ==========================================================================
-//
 // class vector
 //
-//! a relative or absolute (relaive to (0,0)) location on a grid
+//! a relative or absolute (= relative to (0,0)) location on a grid
 //
 //! A vector is a pair of 16-bit integer values that are the x and y 
 //! coordinates of an absolute or relative location on an integer grid. 
@@ -263,7 +194,7 @@ std::ostream & operator<< ( std::ostream &s, const vector p );
 //
 // class color
 //
-//! a color in the 3 * 8 bit RGB format
+//! a color (in the 3 * 8 bit RGB format + transparency)
 //
 //! A color is represented by three 8-bit values (0..255) for the 
 //! red, green and blue components, 
@@ -453,8 +384,7 @@ public:
    //! initialisation order problem: inline_font objects
    //! would have a problem with the balck and white parameters
    //! for their drawable subpart.
-   //! \defgroup basic_colors basic colors
-   //! @{
+
    // these 'constants' are delibreately NOT Doxygen-documented     
    static color black()       { return color( 0,       0,    0 ); }   //!< ...
    static color white()       { return color( 0xFF, 0xFF, 0xFF ); }   //!< ...
@@ -473,7 +403,7 @@ public:
    static color silver()      { return color( 0xC0C0C0 );         }   //!< ...
    static color brown()       { return color( 0xA52A2A );         }   //!< ...
    static color salmon()      { return color( 0xFA8072 );         }   //!< ...
-   //! @}
+
 };
 
 //! print a color
@@ -617,6 +547,11 @@ public:
 std::ostream & operator<<( std::ostream &s, const event &e );
 
 
+// forward declaration needed because drawable
+// must know its frame
+class frame;
+
+
 // ==========================================================================
 //
 // class drawable
@@ -634,9 +569,6 @@ std::ostream & operator<<( std::ostream &s, const event &e );
 //! It has a reference to a frame.
 //! This frame must still exist when the drwabale is asked to draw itself.
 //
-
-class frame;
-
 class drawable {
 protected:
 
@@ -775,10 +707,30 @@ public:
 
 // ==========================================================================
 //
+// class frame_dummy
+//
+//! writing to this frame does nothing
+//
+
+class frame_dummy : public frame {
+public:
+   frame_dummy( const vector size = vector::origin() ): frame( size ){}
+protected:
+
+   //! checked_write implementation as requiredby frame
+   //
+   //! This method does nothing.
+   //! 
+   void checked_write( const vector p, const color c ){}
+};
+
+
+// ==========================================================================
+//
 // class subframe
 //
-//! frame that represents a rectangular part of another (master) frame
-//!
+//! frame that represents a rectangular part of another frame
+//
 //! A subframe is created by specifying the master frame, the top-left pixel
 //! of the subfram within the master frame, and the direction
 //! in which the subframe extends within the master frame.
@@ -868,18 +820,6 @@ protected:
                master.write( translate( q * scale + vector( x, y )), c ); 
             }}}}
                           
-};
-
-class frame_dummy : public frame {
-public:
-   frame_dummy( const vector size ): frame( size ){}
-protected:
-
-   //! checked_write implementation as requiredby frame
-   //
-   //! This method does nothing.
-   //! 
-   void checked_write( const vector p, const color c ){}
 };
 
 
@@ -1072,7 +1012,7 @@ public:
 //
 // class image
 //
-//! a recangular block that can be drawn in a frame
+//! a recangular block that can be drawn at a position in a frame
 //
 //! An image can draw itself in a frame.
 //
@@ -1090,14 +1030,14 @@ public:
 //
 // class image_pixels
 //
-//! a recangular block of pixels that can reads, and be drawn in a frame
+//! an image that can be read pixel by pixel
 //
 //! An image_pixels is an image, hence it can draw itself in a frame.
 //!
 //! Additionally, each pixel of the image_pixels can be read.
 //! A concrete child class must implement a \ref checked_read() 
 //! function that returns the color of the requested pixel. 
-//! The pimage class itself provides a read() function that first 
+//! The image_pixels class itself provides a read() function that first 
 //! checks whether the requested pixel is within the area (otherwise 
 //! it returns color::transparent) and if so, calls \ref checked_read() 
 //! to do the real work. 
@@ -1302,7 +1242,7 @@ public:
 //
 // class char_photo
 //
-//! a photo of a single charv from a font
+//! a photo of a single char from a font
 //
 //! A char photo is the photo of one character from a \ref font.
 //! It is a photo, so it can be drawn.
@@ -1359,7 +1299,7 @@ public:
 //
 // class inline_font
 //
-//! a font stored in ROM
+//! a font stored as inline constant data (in ROM)
 //
 //! An inline_font is a photo of a line of characters, stored 
 //! in in-line data (in ROM).
@@ -1460,7 +1400,7 @@ std::ostream & operator<<( std::ostream &s, const font_alignment &a );
 const inline_font & font_default();
 
 //
-//! how a text is rendered on a screen 
+//! specifies how a text is rendered on a screen 
 //
 //! A format specifies how an ASCII text is shown on a screen.
 //! A format specifies the following aspects:
@@ -1589,7 +1529,7 @@ template< unsigned int charsize > class sheet : public sheet_base {
 public:
    sheet( ): sheet_base( , ){}
 }
-#endif
+
 
 
 // ==========================================================================
@@ -1761,7 +1701,7 @@ public:
    
    void run( void );
 };
-
+#endif
 
 } // namespace bmptk
 

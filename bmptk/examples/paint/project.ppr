@@ -39,8 +39,8 @@ Project
 Main=
 Selected=paint3.cpp
 [paint3.cpp]
-TopLine=1
-Caret=18,5
+TopLine=10
+Caret=32,30
 [Makefile]
 TopLine=1
 Caret=1,1

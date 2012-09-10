@@ -10,7 +10,7 @@
 PROJECT    := draw
 
 # Specify target chip or board or system
-TARGET     := nds
+TARGET     := win
 
 # Specify the location of the bmptk library
 BMPTK      := ../..

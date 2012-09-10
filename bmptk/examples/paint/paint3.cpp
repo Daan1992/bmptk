@@ -20,7 +20,7 @@ using namespace bmptk;
 #endif
 
 #ifdef TARGET_win
-   #include "bmptk_win_graphics.h"
+   #include "bmptk_win_graphics.hx"
    vector touched( void ){
       int x, y;  
       static bool down = 0;

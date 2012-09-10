@@ -8,6 +8,20 @@
 # 
 #############################################################################
 
+
+#============================================================================
+#
+# find the external tools
+# 
+#============================================================================
+
+ifneq ($(wildcard $(BMPTK)/Makefile.custom),)
+   include $(BMPTK)/Makefile.custom
+else   
+   include $(BMPTK)/Makefile.local
+endif
+
+
 #============================================================================
 #
 # the project source file is sure part of the project
@@ -50,9 +64,6 @@ XTAL      := 12000
 # 
 #============================================================================
 
-# include the locale-specific settings 
-# (locations of the various tools)
-include $(BMPTK)/Makefile.local
 
 CC        = "$(PREFIX)gcc"
 CPP       = "$(PREFIX)g++"

@@ -8,11 +8,13 @@
 
 .phony: clean doc build
 
-doc: build
-
-build:
+doc: 
 		Doxygen
+		
+build: doc
+		Doxygen
+		cd examples && make build
       
 clean:
 		cmd /c "del /s /q docs"
-
+		cd examples && make clean

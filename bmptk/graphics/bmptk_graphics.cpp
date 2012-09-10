@@ -512,12 +512,12 @@ void draw_text_line(
    const format &fm, 
    const char **s 
 ){   
-   trace << "[" << *s << "] in " << fr.size_get();
+   // trace << "[" << *s << "] in " << fr.size_get();
    int width = line_width( *s, fr.size_get(), fm );
    int extra = fr.size_get().x_get() - width;
    int spaces = line_chars(  *s, fr.size_get(), fm ) - 1;
    int missing = 0;
-   trace << "w=" << width << " extra=" << extra << " spaces=" << spaces;
+   // trace << "w=" << width << " extra=" << extra << " spaces=" << spaces;
    if( fm.h == align_far ){
       p += vector( extra, 0 );
    } 
@@ -544,7 +544,7 @@ void text::draw(
    const vector fx_position
 ) const {
 
-   trace << f << "[" << s << "]";
+   // trace << f << "[" << s << "]";
    subframe fr( 
      fx, 
 	 fx_position + f.top_left_margin, 
@@ -573,7 +573,7 @@ void text::draw(
          p += vector( 0, adjust );
          missing -= adjust * ( lines + 1 );
       }
-      trace << p << f.f->font_char_size << f.spacing;
+      // trace << p << f.f->font_char_size << f.spacing;
       draw_text_line( fr, p, f, &ss );   
       if( *ss == '\n' ){ 
          ss++;
@@ -582,7 +582,7 @@ void text::draw(
    }               
 }
 
-
+#ifdef notyet
          
 // ==========================================================================
 //
@@ -604,6 +604,8 @@ void wtoplevel :: run( void ){
       }
    }      
 }
+
+#endif
 
 
 } // namespace bmptk

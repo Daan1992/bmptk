@@ -38,8 +38,8 @@ Project
 Main=
 Selected=lines.cpp
 [lines.cpp]
-TopLine=16
-Caret=18,19
+TopLine=4
+Caret=50,12
 [..\text\Makefile]
 TopLine=1
 Caret=44,15
@@ -47,5 +47,5 @@ Caret=44,15
 TopLine=1
 Caret=18,13
 [..\..\targets\bmptk_win.cpp]
-TopLine=12
+TopLine=1
 Caret=5,36

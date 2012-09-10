@@ -2,7 +2,7 @@
 
 
 // not user level include files, hence not included by bmptk.h
-#include "bmptk_win_graphics.h"
+#include "bmptk_win_graphics.hx"
 #include "windows.h"
 
 #ifndef XSIZE
