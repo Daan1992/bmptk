@@ -15,10 +15,10 @@
 # 
 #============================================================================
 
-ifneq ($(wildcard $(BMPTK)/Makefile.custom),)
-   include $(BMPTK)/Makefile.custom
+ifneq ($(wildcard $(BMPTK2)/Makefile.custom),)
+   include $(BMPTK2)/Makefile.custom
 else   
-   include $(BMPTK)/Makefile.local
+   include $(BMPTK2)/Makefile.local
 endif
 
 
@@ -37,9 +37,9 @@ SOURCES   += $(PROJECT).cpp
 # 
 #============================================================================
 
-VPATH     += $(BMPTK)
-VPATH     += $(BMPTK)/targets
-VPATH     += $(BMPTK)/graphics
+VPATH     += $(BMPTK2)
+VPATH     += $(BMPTK2)/targets
+VPATH     += $(BMPTK2)/graphics
 
 INCLUDES  += -I.
 INCLUDES  += -I$(BMPTK)

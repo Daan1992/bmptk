@@ -33,19 +33,15 @@ Project
 0=lines.cpp
 1=..\text\Makefile
 2=Makefile
-3=..\..\targets\bmptk_win.cpp
 [Selected Project Files]
 Main=
-Selected=lines.cpp
+Selected=Makefile
 [lines.cpp]
-TopLine=4
-Caret=50,12
+TopLine=5
+Caret=20,37
 [..\text\Makefile]
 TopLine=1
 Caret=44,15
 [Makefile]
 TopLine=1
 Caret=18,13
-[..\..\targets\bmptk_win.cpp]
-TopLine=1
-Caret=5,36

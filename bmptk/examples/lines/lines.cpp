@@ -34,7 +34,7 @@ int main( void ){
          } else {
             line( lcd2, start, end - start, color::red() ).draw();
          }         
-         wait( 20 * ms );        
+         wait( 2000 * ms );        
       }
    }
    return 0;

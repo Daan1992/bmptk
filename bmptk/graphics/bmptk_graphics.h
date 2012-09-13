@@ -596,8 +596,7 @@ protected:
       const vector address, 
       const color c 
    ) const;
-      
-public:    
+         
    //! constructor, specify frame, position, fg, bg colors, (line) width
    //
    //! The default is to draw in black forgeground, with transparent 
@@ -611,7 +610,9 @@ public:
       unsigned int width = 1
    ): fr( fr ), position( position ), fg( fg ), bg( bg ), width( width ) {}
    
-   //! get the parent frame
+public:    
+
+      //! get the parent frame
    frame &frame_get() const { return fr; }
    
    //! get the position
@@ -641,7 +642,7 @@ public:
    //! draw yourself
    virtual void draw() const = 0;
       
-} ;
+};
 
 
 // ==========================================================================
