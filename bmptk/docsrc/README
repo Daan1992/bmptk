@@ -1,0 +1,16 @@
+file: bmptk/docsrc/README
+
+Bare Metal Programming Tool Kit documentation sources directory
+
+This directory contains .h files and pictures that are input
+to the Doxygen documentation generation.
+
+This directory contains :
+
+   files
+      - start.h            : getting statrted
+	  - editors.h          : using editors and IDEs with bmptk
+	  - targets.h          : using the different bmptk targts
+      - README             : this file
+
+

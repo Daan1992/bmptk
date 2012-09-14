@@ -1,95 +1,11 @@
 //***************************************************************************
 //
-// file : bmptk/documentation.h
+// file : bmptk/editors.h
 //
 // This file contains Doxygen-format bmptk documentation that is not
-// related to specific source code. It could be in bmptk.h, but that might
-// slow down compilation.
+// related to specific source code. 
 //
 //***************************************************************************
-
-// ==========================================================================
-//
-//! \mainpage
-//!
-//! Bmptk is a C++ library and build tool for bare-metal use on 32-bit 
-//! embedded systems. 
-//! Bare-metal refers to the situation that there is only the application. 
-//! The application has full control of the hardware, and is running 
-//! without the support of a separate operating system. 
-//! Operating system functionality can still be present, but must be in the 
-//! form of libraries, which are statically linked into the application.
-//! Bmptk does not include a toolchain (compiler, linker etc.). 
-//! Instead it relies on an external toolchain that is invoked
-//! by the bmptk makefile.
-//!
-//! This version supports the targets 
-//!    - win: uses DevCpp to create windows executables
-//!    - nds: uses DevKitPro and DeSmuME to create (and run) NDS applications
-//!
-//! The bmptk makefile can be used from the command line, or it
-//! can be called from an editor or IDE. 
-//
-// ==========================================================================
-
-// ==========================================================================
-//
-//! \page start Getting Started
-//!
-//! To start using bmptk you must first get bmptk itself and
-//! place it somwehere on your PC. It does not care where, but I'll assume
-//! you put it in C:\\bmptk.
-//! 
-//! Assuming you will use the bmptk graphics library you must
-//! install Python and a matching PIL. Check \ref tools for details.
-//!
-//! Next you must install the toolchain for your taget:
-//! - for NinendoDS install DevKitPro and DeSmuME (check \ref nds)
-//! - for Windows install DevCpp (check \ref win)
-//!
-//! You can use bmptk from the command line, but it is probably
-//! easier to use an editor, if only to jump to the source line where
-//! the compiler found an error. Install the editor of your
-//! choice:
-//! - \ref pspad
-//! - \ref geany
-//!
-//! The file C:\\bmptk\\Makefile.local contains the paths where
-//! bmptk will look for your tools. If you installed any of the tools
-//! in a non-standard location (or when you use 64-bit windows, which 
-//! installs 32-bit applications in a different directory, sigh...)
-//! this Makefile.local must be copied to Makefile.custom
-//! and edited to reflect to reflect your situation.
-//!
-//! For a first test you can take one of the examples, for instance
-//! C:\\bmptk\\examples\\lines. 
-//!
-//! To start a new bmptk project you can either copy an example,
-//! or copy the Makefile.template to your_directory/Makefile.
-//! In both cases you will have to edit your new Makefile
-//! to reflect your project.
-// 
-// ==========================================================================
-
-// ==========================================================================
-//
-//! \page cmd Command Line
-//!
-//! Bmptk is 'driven' by its makefile(s).
-//! Each project has its own makefile, that specifies
-//! - the project name. Bmptk assumes that the project name, 
-//!   with a .cpp extension, is a source file of the project.
-//! - the target. This must be one of the supported targets, currently
-//!   'win' and 'nds' (without the quotes).
-//! - the location of the bmptk files. The examples are part of the
-//!   bmptk files, so they know the bmptk root is at ../.. 
-//!   Your own projects will probably be outside the bmptk tree, and
-//!   you might want to move hem around, so I suggest you specify the 
-//!   bmptk root as an absolute location like C:\\bmptk (assuming
-//!   you installed it there).
-//! 
-//
-// ==========================================================================
 
 
 // ==========================================================================
@@ -204,7 +120,6 @@
 //! Likewise you can create 'make run' and 'make clean'.
 //!
 //! 
-
 //!
 //! http://sourceforge.net/apps/mediawiki/notepad-plus/index.php?title=Compiling_Source_Code
 //! 
