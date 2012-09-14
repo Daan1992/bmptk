@@ -8,13 +8,13 @@
 
 .phony: clean doc docs documentation build all examples
 
-all: doc examples
 docs : doc
 documentation: doc
+all: doc examples
 build: examples
 
 doc: 
-		Doxygen
+		Doxygen docsrc/Doxyfile
 		
 examples:
 		cd examples && make build

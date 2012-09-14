@@ -47,12 +47,13 @@
 //! - for NinendoDS install DevKitPro and DeSmuME (check \ref nds)
 //! - for Windows install DevCpp (check \ref win)
 //!
-//! You can use bmptk from the command line, but it is probably
+//! You can use bmptk from the \ref cmd, but it is probably
 //! easier to use an editor, if only to jump to the source line where
 //! the compiler found an error. Install the editor of your
 //! choice:
 //! - \ref pspad
 //! - \ref geany
+//! - \ref notepadpp
 //!
 //! The file C:\\bmptk\\Makefile.local contains the paths where
 //! bmptk will look for your tools. If you installed any of the tools

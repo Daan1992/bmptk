@@ -69,7 +69,7 @@
    namespace bmptk {
    
       //! bmtkp version
-      const char version[] = "V01.00 ( work-in-progress @ 2012-09-06)";   
+      const char version[] = "V01.01 ( work-in-progress @ 2012-09-14)";   
       
         //! time units
         //

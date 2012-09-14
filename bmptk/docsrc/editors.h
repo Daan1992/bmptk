@@ -64,8 +64,14 @@
 //! - view => Special Chars : toggle showing tabs, newlines, etc
 //! - Tools => EyeDropper : get the 16-bit color value of a 
 //!    pixel on our screen
-//! - Opening a second copy of PSPad will give you a number of very
-//!   weird error messages.
+//! - Opening a second copy of PSPad by clicking on a .ppr file
+//!   will give you a number of very
+//!   weird error messages. Eventually the new project will be opened.
+//! - Running bmptk's make completely ignores the project file list as
+//!   maintained by PSPad.
+//! - By default PSPad replaces TABs with spaces. This is OK, except when
+//!   editng makefiles. You can insert a TAB in a makefile by cut-n-pasting
+//!   an existing TAB.
 //
 // ==========================================================================
 
@@ -98,20 +104,30 @@
 
 // ==========================================================================
 //
-//! \page notepad++ Notepad++
+//! \page notepadpp Notepad++
 //!
 //! Notepad++ (http://notepad-plus-plus.org/) is a free 
 //! lightweight text editor.
-//! With the NppExec plugin Notepad++ can call an external 
+//! With the NppExec plugin Notepad++ can call do the basic chores of an IDE:
+//! call an external tool, capture the output, and jump to the source line
+//! that corresponds to an error message.
 //!
 //! To install the NppExec choose Plugins => Plugin Manager 
-//! => Show Plugin Manager. Check the box for NppExec and click Install,
-//! and let Nopetapd++ restart itself. Now F6 will open a window
-//! in which you can type the command you want to be executed:
+//! => Show Plugin Manager. 
+//! @image html npp-plugin-manager.gif
 //!
+//! Check the box for NppExec and click Install, and let 
+//! Notepad++ restart itself. 
+//! @image html npp-install-nppexec.gif
+//!
+//! Now F6 will open a window
+//! in which you can type the command you want to be executed:
+//! \code
 //!    npp_save
 //!    CD $(CURRENT_DIRECTORY)
 //!    make build
+//! \endcode
+//! @image html npp-f6-window.gif
 //!
 //! You can save it, I suggest the name 'make build'. 
 //! This script will save all files, CD to the directory of the
@@ -119,11 +135,32 @@
 //! in an output window at the bottom of the screen.
 //! Likewise you can create 'make run' and 'make clean'.
 //!
-//! 
+//! The next step is to get the NppExec to recognise the source 
+//! references in the output.
+//! Open Plugins => NppExec => Console Output Filters (.
+//! @image html npp-open-filters.gif
 //!
+//! In the filters window you must specify the pattern for
+//! errors, and I suggest the pattern for warnings too.
+//! Select B for the errors to make them stand out.
+//! \code
+//!    %FILE%:%LINE%: error:*
+//!    %FILE%:%LINE%: warning:*
+//! \endcode
+//! @image html npp-filters.gif
+//!
+//! Now you can use F6 to open the command window, change the command,
+//! and run it, or CTRL-F6 to run the previous command without
+//! getting the command window. The result will appear in the
+//! command result window at the bootom, with the errors in bold.
+//! Click on an error to jump to the coresponding source line.
+//! @image html npp-build.gif
+//!
+//! When you have a succesfull build you can use run (F5) to 
+//! run 'make run'.
+//! 
+//! More information about the command language can be found at
 //! http://sourceforge.net/apps/mediawiki/notepad-plus/index.php?title=Compiling_Source_Code
-//! 
-//! 
 //
 // ==========================================================================
 

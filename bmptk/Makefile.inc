@@ -46,6 +46,19 @@ INCLUDES  += -I$(BMPTK)
 INCLUDES  += -I$(BMPTK)/targets
 INCLUDES  += -I$(BMPTK)/graphics
 
+bmptk_graphics.h:
+	# You specified an absolute path ($(BMPTK)) for the bmptk location.
+	# The make you use has a bug in handling absolute paths that
+	# prevents the bmptk makefile from finding some source files.
+	# Two solutions are: 
+	# 1) Use a make that does not have this bug.
+	#    The gnu make available from www.gnu.org/software/make/ does
+	#    not have this bug, nor does the cs-make that is part of the 
+	#    CodesSourcery distribution. 
+	# 2) Use a relative path to specify the bmptk location. 
+	#    This almost forces you to locate your project inside the bmptk 
+	#    tree,(a subdirectory of) the examples directory is a 
+	#    reasonable choice.
 
 #============================================================================
 #

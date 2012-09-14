@@ -8,10 +8,13 @@ to the Doxygen documentation generation.
 This directory contains :
 
    files
-      - start.h            : getting statrted
-	  - editors.h          : using editors and IDEs with bmptk
-	  - targets.h          : using the different bmptk targts
+      - Doxyfile           : settings file for documentation generation
+ 	  - editors.h          : using editors and IDEs with bmptk
       - README             : this file
-      - Doxygen            : settings file for documentation generation
+      - start.h            : getting statrted
+	  - targets.h          : using the different bmptk targts
+	  
+   directories
+      - pics               : pictures used in the documentation
 
 
