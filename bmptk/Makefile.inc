@@ -279,6 +279,8 @@ sizes: $(OBJ)
 
 .PHONY: $(PROJECT) all build new fresh run clean
 
+.DEFAULT_GOAL := build
+
 # Build the project
 $(PROJECT): $(RESULTS) sizes
 

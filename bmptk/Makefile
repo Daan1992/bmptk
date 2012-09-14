@@ -6,15 +6,19 @@
 # 
 #############################################################################
 
-.phony: clean doc build
+.phony: clean doc docs documentation build all examples
+
+all: doc examples
+docs : doc
+documentation: doc
+build: examples
 
 doc: 
 		Doxygen
 		
-build: doc
-		Doxygen
+examples:
 		cd examples && make build
       
 clean:
 		cmd /c "del /s /q docs"
-		cd examples && make clean
+		cd examples && make clean	

@@ -28,8 +28,7 @@
 //!    - nds: uses DevKitPro and DeSmuME to create (and run) NDS applications
 //!
 //! The bmptk makefile can be used from the command line, or it
-//! can be called from an editor. 
-//! Currently this has been tested and documented for one editor: PSPad.
+//! can be called from an editor or IDE. 
 //
 // ==========================================================================
 
@@ -51,8 +50,9 @@
 //! You can use bmptk from the command line, but it is probably
 //! easier to use an editor, if only to jump to the source line where
 //! the compiler found an error. Install the editor of your
-//! choice (currently only one..):
+//! choice:
 //! - \ref pspad
+//! - \ref geany
 //!
 //! The file C:\\bmptk\\Makefile.local contains the paths where
 //! bmptk will look for your tools. If you installed any of the tools
@@ -96,8 +96,8 @@
 //
 //! \page pspad PSPad
 //!
-//! PSPad (www.pspad.com) is a code editor that can be configured to work
-//! with bmptk. 
+//! PSPad (www.pspad.com) is a free code editor that can be configured 
+//! to work with bmptk. 
 //! This is done by including a few lines in the .ppr file to attach
 //! external commands to two buttons, and by including a build.bat file
 //! in the work dircetory
@@ -150,6 +150,65 @@
 //!    pixel on our screen
 //! - Opening a second copy of PSPad will give you a number of very
 //!   weird error messages.
+//
+// ==========================================================================
+
+// ==========================================================================
+//
+//! \page geany Geany
+//!
+//! Geany (www.geany.org) is a free code editor that can call
+//! an external makefile. This works 'out-of-the-box' with bmptk.
+//! You can use Build => Make (Shift-F9) to build the project
+//! in the directory of the currently active file.
+//! To run or clean you can use Build => Make Custom Target 
+//! (Shift-Control-F9) and type the target you want to 'build'.
+//! 
+//! While the make is running the editor is totally blocked, and no 
+//! progress is shown untill the make has finished. (When you called for
+//! a 'make run' this means: untill you stop the executable or emulator!)
+//! 
+//! You can use Build => Set Build Commands to add new commands, for instance
+//! 'run' to call 'make run' directly. Such options appear in the Build menu 
+//! item, but not in the Build dropdown list.
+//! These customizations seem to be stored globally, so you 
+//! have to customize geany only once.
+//!
+//! By default Geany does NOT save the edited files before starting an
+//! external command, which is a bit counter-intuitive. I suppose
+//! this behaviour can be changed, but I have not yet found how.
+//
+// ==========================================================================
+
+// ==========================================================================
+//
+//! \page notepad++ Notepad++
+//!
+//! Notepad++ (http://notepad-plus-plus.org/) is a free 
+//! lightweight text editor.
+//! With the NppExec plugin Notepad++ can call an external 
+//!
+//! To install the NppExec choose Plugins => Plugin Manager 
+//! => Show Plugin Manager. Check the box for NppExec and click Install,
+//! and let Nopetapd++ restart itself. Now F6 will open a window
+//! in which you can type the command you want to be executed:
+//!
+//!    npp_save
+//!    CD $(CURRENT_DIRECTORY)
+//!    make build
+//!
+//! You can save it, I suggest the name 'make build'. 
+//! This script will save all files, CD to the directory of the
+//! active file, and run 'make build'. The output will be captured
+//! in an output window at the bottom of the screen.
+//! Likewise you can create 'make run' and 'make clean'.
+//!
+//! 
+
+//!
+//! http://sourceforge.net/apps/mediawiki/notepad-plus/index.php?title=Compiling_Source_Code
+//! 
+//! 
 //
 // ==========================================================================
 

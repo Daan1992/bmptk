@@ -23,8 +23,8 @@ int main( void ){
    #else
       frame_dummy lcd2( vector( 192,256 ));   
    #endif      
-   for(;;){
-      lcd.clear( color::red() );
+   for(;;){ 
+      lcd.clear( color::red() ); x
       lcd2.clear( color::blue() );
       for( unsigned int n = 0; n < 500; n++ ){
          vector start = random_vector_within( lcd.size_get());
@@ -34,7 +34,7 @@ int main( void ){
          } else {
             line( lcd2, start, end - start, color::red() ).draw();
          }         
-         wait( 2000 * ms );        
+         wait( 200 * ms );        
       }
    }
    return 0;
