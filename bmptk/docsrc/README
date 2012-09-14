@@ -12,5 +12,6 @@ This directory contains :
 	  - editors.h          : using editors and IDEs with bmptk
 	  - targets.h          : using the different bmptk targts
       - README             : this file
+      - Doxygen            : settings file for documentation generation
 
 
