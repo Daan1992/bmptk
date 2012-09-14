@@ -15,6 +15,7 @@ build: examples
 
 doc: 
 		Doxygen docsrc/Doxyfile
+		echo "<META HTTP-EQUIV='refresh' CONTENT='0;URL=./html/index.html'>" >docs/index.html
 		
 examples:
 		cd examples && make build
