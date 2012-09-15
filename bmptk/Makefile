@@ -23,5 +23,5 @@ examples:
 		cd examples && make build
       
 clean:
-		cmd /c "del /s /q docs index.html"
+		rm -rf index.html docs
 		cd examples && make clean	
