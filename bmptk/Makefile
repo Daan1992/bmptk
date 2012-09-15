@@ -13,13 +13,15 @@ documentation: doc
 all: doc examples
 build: examples
 
+REDIRECT := <META HTTP-EQUIV='refresh' CONTENT='0;URL=./docs/index.html'>
+
 doc: 
 		Doxygen docsrc/Doxyfile
-		echo "<META HTTP-EQUIV='refresh' CONTENT='0;URL=./html/index.html'>" >docs/index.html
+		echo "$(REDIRECT)" >index.html
 		
 examples:
 		cd examples && make build
       
 clean:
-		cmd /c "del /s /q docs"
+		cmd /c "del /s /q docs index.html"
 		cd examples && make clean	

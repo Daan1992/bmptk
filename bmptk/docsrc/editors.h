@@ -1,6 +1,6 @@
 //***************************************************************************
 //
-// file : bmptk/editors.h
+// file : bmptk/docsrc/editors.h
 //
 // This file contains Doxygen-format bmptk documentation that is not
 // related to specific source code. 
@@ -11,6 +11,8 @@
 // ==========================================================================
 //
 //! \page pspad PSPad
+//!
+//! \image html pspad-logo.gif
 //!
 //! PSPad (www.pspad.com) is a free code editor that can be configured 
 //! to work with bmptk. 
@@ -79,6 +81,8 @@
 //
 //! \page geany Geany
 //!
+//! \image html geany-logo.gif
+//!
 //! Geany (www.geany.org) is a free code editor that can call
 //! an external makefile. This works 'out-of-the-box' with bmptk.
 //! You can use Build => Make (Shift-F9) to build the project
@@ -106,6 +110,8 @@
 //
 //! \page notepadpp Notepad++
 //!
+//! \image html npp-logo.gif
+//!
 //! Notepad++ (http://notepad-plus-plus.org/) is a free 
 //! lightweight text editor.
 //! With the NppExec plugin Notepad++ can call do the basic chores of an IDE:
@@ -114,20 +120,20 @@
 //!
 //! To install the NppExec choose Plugins => Plugin Manager 
 //! => Show Plugin Manager. 
-//! @image html npp-plugin-manager.gif
+//! \image html npp-plugin-manager.gif
 //!
 //! Check the box for NppExec and click Install, and let 
 //! Notepad++ restart itself. 
-//! @image html npp-install-nppexec.gif
+//! \image html npp-install-nppexec.gif
 //!
 //! Now F6 will open a window
 //! in which you can type the command you want to be executed:
 //! \code
-//!    npp_save
+//!    npp_saveall
 //!    CD $(CURRENT_DIRECTORY)
 //!    make build
 //! \endcode
-//! @image html npp-f6-window.gif
+//! \image html npp-f6-window.gif
 //!
 //! You can save it, I suggest the name 'make build'. 
 //! This script will save all files, CD to the directory of the
@@ -138,7 +144,7 @@
 //! The next step is to get the NppExec to recognise the source 
 //! references in the output.
 //! Open Plugins => NppExec => Console Output Filters (.
-//! @image html npp-open-filters.gif
+//! \image html npp-open-filters.gif
 //!
 //! In the filters window you must specify the pattern for
 //! errors, and I suggest the pattern for warnings too.
@@ -147,80 +153,20 @@
 //!    %FILE%:%LINE%: error:*
 //!    %FILE%:%LINE%: warning:*
 //! \endcode
-//! @image html npp-filters.gif
+//! \image html npp-filters.gif
 //!
 //! Now you can use F6 to open the command window, change the command,
 //! and run it, or CTRL-F6 to run the previous command without
 //! getting the command window. The result will appear in the
 //! command result window at the bootom, with the errors in bold.
 //! Click on an error to jump to the coresponding source line.
-//! @image html npp-build.gif
+//! \image html npp-build.gif
 //!
 //! When you have a succesfull build you can use run (F5) to 
 //! run 'make run'.
 //! 
 //! More information about the command language can be found at
 //! http://sourceforge.net/apps/mediawiki/notepad-plus/index.php?title=Compiling_Source_Code
-//
-// ==========================================================================
-
-// ==========================================================================
-//
-//! \page win target win
-//!
-//! The win target is used to create a windows executable.
-//! This target provides a quick way to run a bmptk application.
-//! it is not meant to be used to create full-blown windows applications.
-//!
-//! To support this target the DevCpp environment must be installed.
-//! When it is not installed in the default installation directory
-//! (C:\\Dev-Cpp) the Makefile.local must be copied to Makefile.custom
-//! and edited to reflect the directory DevCpp is installed in. 
-//! The libbga library (included in bmptk) is used by the graphics
-//! classes to draw pixels and get mouse events.
-//!
-//! Some tips:
-//! - linking while the application is still running will fail
-//!      because the .exe file is locked
-//! 
-//
-// ==========================================================================
-
-// ==========================================================================
-//
-//! \page nds target nds
-//!
-//! The nds target is used to create a .nds file that can be run on 
-//! a real NintendoDS or DSLite (using an R4 card or similar), or 
-//! be run on a PC using the DeSmuME emulator.
-//!
-//! To support this target DevKitPro must be installed.
-//! When it is not installed in its default location (C:\\devkitPro)
-//! the Makefile.local must be copied to Makefile.custom and 
-//! edited to reflect the directory
-//! it devkitPro installed in. The DeSmuME emulator must be placed in
-//! devkitPro/emulators/desmume.
-//!
-//
-// ==========================================================================
-
-// ==========================================================================
-//
-//! \page tools other external tools
-//!
-//! The font and image conversion tools used by bmptk are Python scripts,
-//! and use PIL (Python Imaging Library).
-//! Hence you must install both Python and (a matching) PIL.
-//!  Note that not for all Python 
-//! versions are ready-made PIL version can be found.
-//! The PIL for Python 3.2 seems to have a bug.
-//! I use Python 2.7 with the matching PIL. 
-//!
-//! Multiple Python versions can coexits on your machine.
-//! When your Python is not installed in it default directory (e.g.
-//! C:\\Python27) the Makefile.local must be copied to Makefile.custom
-//! and edited to reflect the directory python is installed in.
-//!
 //
 // ==========================================================================
 

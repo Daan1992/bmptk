@@ -210,7 +210,9 @@ std::ostream & operator<< ( std::ostream &s, const vector p );
 //!
 //! For debugging, a << operator is provided to print a color.
 //!
-//! Constants are provided for some \ref basic_colors basic colors. 
+//! Static methods are provided that return some basic colors,
+//! including tranparent. (These static methods instead of constants
+//! to avoid global initialization order problems.)
 //!
 //! This color format is emissive: when colors are added (or multiplied
 //! by an integer >1), they add up towards white. Likewise subtracting 
@@ -373,9 +375,6 @@ public:
          ( g + c.g ) / 2, 
          ( b + c.b ) / 2,
          transp && c.transp ); }          
-         
-   static color blaack(){ return color( 0,       0,    0 ); }
-   static color transpaarent(){ return color( 0, 0, 0, 1 ); }
 
    //! some basic colors
    //
@@ -683,7 +682,12 @@ public:
    //! get the size of the frame
    vector size_get() const { return size; }
             
-   virtual vector translate( const vector p ) const {
+   //! translate a subframe coordinate to a master frame coordinate
+   virtual vector translate_outfrom( const vector p ) const {
+      return p; }   
+   
+   //! translate a master frame coordinate to a subframe coordinate
+   virtual vector translate_into( const vector p ) const {
       return p; }   
    
    //! whether p is within the frame   
@@ -715,7 +719,16 @@ public:
 
 class frame_dummy : public frame {
 public:
+
+   //! construct a dummy frame
+   //
+   //! This constror creates a dummy frame. 
+   //! All writes to this frame are ignored.
+   //! Hence the specified size is not important
+   //! (out-of-bounds writes are equally ignored), except
+   //! that it is the size reported by size_get().
    frame_dummy( const vector size = vector::origin() ): frame( size ){}
+   
 protected:
 
    //! checked_write implementation as requiredby frame
@@ -740,6 +753,7 @@ protected:
 //! The direction can point towards all four quadrants, hence
 //! the subframe can appear mirrored within the master frame.
 //!
+#ifdef notyet
 //! The default scale is 1, which causes the subframe to appear
 //! 1:1 in the master frame. When the scale is 0 it does not appear,
 //! and reading a pixel from the subframe will always 
@@ -755,6 +769,7 @@ protected:
 //! still occupies the pixel at the original place in the master frame,
 //! but also its neigbouring pixels in the direction towards the bottomright
 //! pixel.
+#endif
 //
 
 class subframe : public frame {
@@ -769,14 +784,16 @@ public:
    //! location within the master of this subframes bottomright pixel
    const vector bottom_right;
    
+#ifdef notyet   
    //! the scale at which this subframe appears in its master
    const unsigned int scale;
+#endif
    
    //! whether the subframe coordinates are swapped
    const bool swapped;
-         
-   //! translate a subframe coordinate to a master frame coordinate      
-   vector translate( const vector p ) const {
+   
+   //! translate a subframe coordinate to a master frame coordinate
+   vector translate_outfrom( const vector p ) const {
       vector x( 
          top_left.x_get() < bottom_right.x_get()
             ? top_left.x_get() + p.x_get() 
@@ -791,19 +808,39 @@ public:
 	   return x;
 	}   
       
+   //! translate a master frame coordinate to a subframe coordinate
+   vector translate_into( const vector p ) const {
+      vector x( 
+         top_left.x_get() < bottom_right.x_get()
+            ? p.x_get() - top_left.x_get()
+            :  ( - p.x_get()) - top_left.x_get(),
+         top_left.y_get() < bottom_right.y_get()  
+            ? + p.y_get()- top_left.y_get() 
+            : ( - p.y_get()) - top_left.y_get()
+       );
+	   if( swapped ){
+          x = x.mirrored();
+	   }       
+	   return x;
+	}   
+      
    //! create a subframe, endpoints specified as vectors
    subframe( 
       frame &f, 
       vector top_left, 
       vector direction,
+#ifdef notyet  
       unsigned int scale = 1,
+#endif	  
 	  bool swapped = false
    ):
       frame( direction.abs() ),
       master( f ), 
       top_left( top_left ), 
       bottom_right( top_left + direction - direction.direction() ),
+#ifdef notyet  	  
       scale( scale ),
+#endif	  
 	  swapped( swapped ){}
   
 protected:
@@ -816,11 +853,17 @@ protected:
    void checked_write( const vector p, const color c ){
       if( is_valid( p )){
          vector q = swapped ?  p.mirrored() : p;
+#ifdef notyet  		 
          for( unsigned int x = 0; x < scale; x++ ){
             for( unsigned int y = 0; y < scale; y++ ){       
                master.write( translate( q * scale + vector( x, y )), c ); 
             }}}}
-                          
+#else
+         master.write( translate_outfrom( q ), c ); 
+      }		 
+   }		  
+#endif			
+                   
 };
 
 
@@ -1082,7 +1125,7 @@ public:
    //
    //! This function will return color::transparent
    //! when the requested pixel is outside the image.
-   //! Otherwise it will call \ref protected_read.
+   //! Otherwise it will call \ref checked_read.
    color read( const vector p ) const {
       if( is_valid( p )){
          return checked_read( p );
@@ -1421,17 +1464,45 @@ const inline_font & font_default();
 
 class format {
 public:
+   //! the font, default is the default font
    const font *f;
+   
+   //! the horizontal alignment, default is near
    font_alignment h;
+   
+   //! the vertical alignment, default is near
    font_alignment v;
+   
+   //! wrapping: true for wraparound, false for cutoff (default).
    bool wrap;
+   
+   //! scale: 1 is default, 2 is doubole size, etc.
    unsigned int scale;
+   
+   //! extra spacing between the characters. default is 0.
    vector spacing;
+   
+   //! top-left margin, default is (2,2)
    vector top_left_margin;
+   
+   //! bottom-right margin, default is (0,0)
    vector bottom_right_margin;
+   
+   //! foreground, default is black
    color fg;
+   
+   //! background, default is transparent
    color bg;
    
+   //! create a format specification
+   //!
+   //! All parameters have suitable default values:
+   //! - default font
+   //! - black-on-transparent
+   //! - top-left aligned 
+   //! - no wrapping
+   //! - no extra spacing between the characters
+   //! - 2 pixels all-around margin
    format( 
       const font &f = font_default(),
       font_alignment h = align_near, 

@@ -69,6 +69,8 @@ pending work list:
    - add chapter 'design notes'
    - wit lijntje in de button corners is best leuk!
    - try geany IDE
+   - canvas, is a drawable, and can be written to a .tiff (or gif?) ppm!
+   - http://www.imagemagick.org/
    
 notes, references, links:
    - http://www.google.com/webfonts

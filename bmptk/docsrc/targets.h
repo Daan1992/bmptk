@@ -1,6 +1,6 @@
 //***************************************************************************
 //
-// file : bmptk/targets.h
+// file : bmptk/docsrc/targets.h
 //
 // This file contains Doxygen-format bmptk documentation that is not
 // related to specific source code. 
@@ -10,6 +10,8 @@
 // ==========================================================================
 //
 //! \page win target win
+//!
+//! \image html win-lines.gif
 //!
 //! The win target is used to create a windows executable.
 //! This target provides a quick way to run a bmptk application.
@@ -32,6 +34,8 @@
 // ==========================================================================
 //
 //! \page nds target nds
+//!
+//! \image html nds-red.jpg
 //!
 //! The nds target is used to create a .nds file that can be run on 
 //! a real NintendoDS or DSLite (using an R4 card or similar), or 

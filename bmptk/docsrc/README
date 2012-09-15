@@ -13,6 +13,7 @@ This directory contains :
       - README             : this file
       - start.h            : getting statrted
 	  - targets.h          : using the different bmptk targts
+	  - graphics.h         : describes the graphics library
 	  
    directories
       - pics               : pictures used in the documentation

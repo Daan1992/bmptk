@@ -13,7 +13,7 @@ PROJECT    := lines
 TARGET     := win
 
 # Specify the location of the bmptk library
-BMPTK      := C:/bmptk/bmptk/bmptk
+BMPTK      := ../..
 
 # Specify project files (other than $(PROJECT).cpp) (if any)
 OBJECTS    := 
