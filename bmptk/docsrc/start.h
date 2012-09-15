@@ -19,15 +19,16 @@
 //! without the support of a separate operating system. 
 //! Operating system functionality can still be present, but must be in the 
 //! form of libraries, which are statically linked into the application.
+//!
 //! Bmptk does not include a toolchain (compiler, linker etc.). 
 //! Instead it relies on an external toolchain that is invoked
 //! by the bmptk makefile.
 //!
 //! This version supports the targets 
-//!    - win: uses DevCpp to create windows executables
-//!    - nds: uses DevKitPro and DeSmuME to create (and run) NDS applications
+//!    - \ref win : uses \ref DevCpp to create windows executables
+//!    - \ref nds : uses \ref DevKitPro and \ref DeSmuME to create (and run) NDS applications
 //!
-//! The bmptk makefile can be used from the command line, or it
+//! The bmptk makefile can be used from the \ref cmd, or it
 //! can be called from an editor or IDE. 
 //
 // ==========================================================================
