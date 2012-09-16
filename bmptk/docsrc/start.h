@@ -31,6 +31,12 @@
 //!
 //! The bmptk makefile can be used from the \ref cmd, or it
 //! can be called from an editor or IDE. 
+//!
+//! The bmptk license is the MIT license, which basically means that
+//! you can do everything you want with this software, except that
+//! when you re-distribute the source, it must be under that same license.
+//! What you do with your application that uses bmptk is completely 
+//! up to you, without any strings attached.
 //
 // ==========================================================================
 

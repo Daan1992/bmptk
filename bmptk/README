@@ -77,18 +77,17 @@ pending work list:
    - git push uses credentials, make push does not??
    - create release notes
    - rewrite docsrc/graphics.h (and why is it not Doxygenned?)
+   - ftp CRC restore still does not work
    
-notes, references, links:
+notes, references, links, put in a reference sections?
    - http://www.google.com/webfonts
    - http://en.wikipedia.org/wiki/Poka-yoke
-   - ! put next in a reference section?
    - http:-dlib.net/api.html#gui_widgets
    - http:-en.wikipedia.org/wiki/FLTK
    - http:-en.wikipedia.org/wiki/FOX_toolkit
    - http:-www.psa-software.com/zinc_widgets.html
    - http:-www.webpagepublicity.com/free-fonts.html
    - http:-www.alvit.de/blog/article/25-best-license-free-pixelfonts
-   - http:-04.jp.org/
    - http:-www.lowing.org/fonts/
    - http:-www.yolinux.com/TUTORIALS/LinuxTutorialC++CodingStyle.html
    - http:-api.haiku-os.org/apidoc.html
