@@ -178,6 +178,9 @@ public:
       
    //! the vector (0,0)   
    static vector origin(){ return vector(0,0); }
+   
+   //! the vector (1,1)   
+   static vector one(){ return vector(1,1); }
 };
 
 //! multiplies a vector by an integer by multiplying the coordinates
@@ -186,7 +189,7 @@ vector operator * ( int n, const vector v );
 //! prints a vector
 //
 //! \relates vector
-//! This operator prints a vector in the (\%d,\%d) format
+//! This operator prints a vector in the (\%d,\%d) format.
 std::ostream & operator<< ( std::ostream &s, const vector p );
 
 
@@ -422,7 +425,8 @@ std::ostream & operator << ( std::ostream &s, const color c );
 //
 //! \relates event
 //!
-//! This type represents a user action on the screen.
+//! This type represents an action the user performs on the screen, 
+//! using a mouse or stylus (on a touch screen).
 //
 enum event_type { 
 
@@ -569,6 +573,14 @@ class frame;
 //! This frame must still exist when the drwabale is asked to draw itself.
 //
 class drawable {
+private:
+
+   //! private copy constructor: prevent copying
+   drawable( const drawable &rhs );
+   
+   //! private assignment: prevent assignment
+   drawable & operator=( const drawable &rhs );
+
 protected:
 
    //! parent frame
@@ -585,6 +597,7 @@ protected:
    
    //! width of (for instance) lines
    unsigned int width;  
+   
    
    //! draw one pixel on f, at position
    //
@@ -661,6 +674,12 @@ public:
 
 class frame {
 private:
+
+   //! private copy constructor: prevent copying
+   frame( const frame &rhs );
+   
+   //! private assignment: prevent assignment
+   frame & operator=( const frame &rhs );
 
 protected:
     
@@ -1061,7 +1080,18 @@ public:
 //! An image can draw itself in a frame.
 //
 class image {
+private:
+
+   //! private copy constructor: prevent copying
+   image( const image &rhs );
+   
+   //! private assignment: prevent assignment
+   image & operator=( const image &rhs );
+   
 public:
+
+   //! default constructor
+   image(){}
 	   
    //! draw the picture in the frame at the position
    virtual void draw( 

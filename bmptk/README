@@ -11,16 +11,19 @@ This directory contains :
    files
       - bmptk.h            : top-level header file for bmptk
       - license.txt        : license (== MIT 'expat' license)
+	  - Makefile           : makes 
       - Makefile.local     : locations of the external tools (edit as needed)
       - Makefile.template  : template for a bmptk project(s) makefile
       - Makefile.inc       : included by the project makefile
       - README             : this file
 
    subdirectories
-      - targets            : basic chip and board specific stuff
-      - graphics           : stuff for pixel-accessible graphics
+      - doc                : documentation (run 'make doc', requires Doxygen)
+      - docsrc             : input for Doxygen documentation generation
       - examples           : example directories
-      - tools              : tools (executables)
+      - graphics           : stuff for pixel-accessible graphics
+      - targets            : basic chip and board specific stuff
+      - tools              : tools (executables and scripts)
 
 pending work list:
    - size=2 for win does not work with events
@@ -32,7 +35,7 @@ pending work list:
    - scale=2 for text does not work very intuitively, maybe scale different?
    - vertical spacing not OK?
    - align example afmaken (oa. verticaal)
-   - run from more editors
+   - run from UltraEdit
    - gif translate does not work, 33 -> 32 wel! (goed by veelvouden van 8?)
    - gif transparency
    - translate utilities should not write same header again
@@ -49,7 +52,6 @@ pending work list:
    - 2478 target?
    - graphics.h start text
    - License: check all files
-   - Doxygen cleanup
    - reversi example
    - std:cout replacement
    - packer/grid/placer
@@ -68,9 +70,9 @@ pending work list:
    - rectangle, line: size or boundaries??
    - add chapter 'design notes'
    - wit lijntje in de button corners is best leuk!
-   - try geany IDE
    - canvas, is a drawable, and can be written to a .tiff (or gif?) ppm!
    - http://www.imagemagick.org/
+   - use other (free) zip instead of pkzip25 (and add to tools)
    
 notes, references, links:
    - http://www.google.com/webfonts

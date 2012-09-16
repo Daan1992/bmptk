@@ -39,7 +39,7 @@
 //!
 //! The nds target is used to create a .nds file that can be run on 
 //! a real NintendoDS or DSLite (using an R4 card or similar), or 
-//! be run on a PC using the DeSmuME emulator.
+//! on a PC using the DeSmuME emulator.
 //!
 //! To support this target DevKitPro must be installed.
 //! When it is not installed in its default location (C:\\devkitPro)
