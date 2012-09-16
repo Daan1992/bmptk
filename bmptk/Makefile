@@ -46,7 +46,7 @@ push:
 		
 ftp: zip
 		mkdir transfer
-		cd . || cp ../_ftp_crc_s transfer
+		-cp ../_ftp_crc_s transfer
 		cp -R docsrc/www/* transfer
 		cp bmptk.zip transfer
 		cp -R docs transfer/docs
