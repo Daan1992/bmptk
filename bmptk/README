@@ -76,6 +76,7 @@ pending work list:
    - use other (free) zip instead of pkzip25 (and add to tools)
    - git push uses credentials, make push does not??
    - create release notes
+   - rewrite docsrc/graphics.h (and why is it not Doxygenned?)
    
 notes, references, links:
    - http://www.google.com/webfonts
@@ -99,11 +100,3 @@ notes, references, links:
    
 A global object must never depend on another global object
 Better: do not use global objects!
-
-
-
-
-   
-
-
-
