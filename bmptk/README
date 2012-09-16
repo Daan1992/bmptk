@@ -72,6 +72,7 @@ pending work list:
    - wit lijntje in de button corners is best leuk!
    - canvas, is a drawable, and can be written to a .tiff (or gif?) ppm!
    - http://www.imagemagick.org/
+   - http://en.wikipedia.org/wiki/Portable_Pixmap_File_Format
    - use other (free) zip instead of pkzip25 (and add to tools)
    
 notes, references, links:

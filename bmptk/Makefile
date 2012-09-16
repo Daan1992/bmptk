@@ -8,13 +8,15 @@
 #    clean                     : total cleanup 
 #    doc, docs, documentation  : create documentation (docs subdir)
 #    build, examples           : build all examples
+#    push                      : clean and git push
 #    zip                       : create bmptk.zip, includes documentation
 #    www                       : create webpages (www subdir, includes zip)
 #    ftp                       : create webpages and ftp to website
+#                                (won't work from your PC)
 # 
 #############################################################################
 
-.PHONY: clean doc docs documentation build all examples zip
+.PHONY: clean doc docs documentation build all examples zip push
 
 docs : doc
 documentation: doc
@@ -35,6 +37,18 @@ zip: clean doc
 		pkzip25 -add -path=relative -recurse bmptk.zip 
 		
 clean:
-		rm -rf index.html docs bmptk.zip
+		rm -rf index.html docs bmptk.zip transfer
 		cd examples && make clean	
 		
+push:
+		make clean
+		git push
+		
+ftp: zip
+		mkdir transfer
+		cd . || cp ../_ftp_crc_s transfer
+		cp -R docsrc/www/* transfer
+		cp bmptk.zip transfer
+		cp -R docs transfer/docs
+		python \ftpbmptk.py
+		cp transfer/_ftp_crc_s ..
