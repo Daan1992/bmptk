@@ -104,16 +104,22 @@ public:
       return vector( x / n, y / n ); }          
       
    //! divides an existing vector by an integer   
-   vector operator /= ( int n ){
-      return vector( x /= n, y /= n ); }          
+   vector & operator /= ( int n ){
+      x /= n; 
+	  y /= n;
+	  return *this;
+   }	  
       
    //! multiplies a vector by an integer by multiplying the coordinates
    vector operator * ( int n ) const {
       return vector( x * n, y * n ); }         
       
    //! multiplies an existing vector by an integer
-   vector operator *= ( int n ){
-      return vector( x *= n, y *= n ); }         
+   vector & operator *= ( int n ){
+      x *= n;
+	  y *= n;
+      return *this;
+   }         
       
    //! multiplying two vectors multiplies their X and Y components
    vector operator * ( const vector rhs ) const {
@@ -322,7 +328,7 @@ public:
          transp && c.transp ); }
       
    //! subtracts a color from an existing color   
-   const color & operator -= ( const color c ){
+   color & operator -= ( const color c ){
       r = clip( r - (int)c.r ); 
       g = clip( g - (int)c.g );
       b = clip( b - (int)c.b );
@@ -343,7 +349,7 @@ public:
       return color( r / n, g / n, b / n, transp ); }
       
    //! divides an exiting color by an integer   
-   const color & operator /= ( unsigned int n ){
+   color & operator /= ( unsigned int n ){
       r = clip( r / n ); 
       g = clip( g / n ); 
       b = clip( b / n ); 
@@ -355,7 +361,7 @@ public:
       return color( r * n, g * n, b * n, transp ); }
    
    //! multiplies an existing color by an integer 
-   const color & operator *= ( unsigned int n ){
+   color & operator *= ( unsigned int n ){
       r = clip( r * n ); 
       g = clip( g * n ); 
       b = clip( b * n ); 
@@ -372,7 +378,7 @@ public:
       return ! ( *this == c );  }   
    
    //! returns the mix of the current color and the argument   
-   color mix( const color c ){
+   color mixed_with( const color c ){
       return color( 
          ( r + c.r ) / 2, 
          ( g + c.g ) / 2, 

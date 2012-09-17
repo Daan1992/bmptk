@@ -90,7 +90,7 @@ def Cpp_To_Img( Img_File_Name, Cpp_File_Name ):
    Cpp.write( '      %s_data\n' % Name)   
    Cpp.write( '   );\n' )   
    Cpp.write( '   return ph;\n' )
-   Cpp.write( '}' )
+   Cpp.write( '}\n' )
    Cpp.close()
    
    Hpp.write( '#include "bmptk.h"\n' )

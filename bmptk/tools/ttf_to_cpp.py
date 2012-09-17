@@ -154,6 +154,7 @@ def Ttf_To_Img( Img_File_Name, Code_File_Name, Name, Size, List = None, Namespac
    Cpp.write( '   return fnt;\n' )
    Cpp.write( '}\n' )
    Cpp.write( Data )  
+   Cpp.write( '\n' )
    if Namespace != None:
       Cpp.write( '}\n' ) 
    Cpp.close()
