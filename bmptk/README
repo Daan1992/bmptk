@@ -78,6 +78,7 @@ pending work list:
    - create release notes
    - rewrite docsrc/graphics.h (and why is it not Doxygenned?)
    - ftp: .zip is always transferred
+   - align example not OK
    
 notes, references, links, put in a reference sections?
    - http://www.google.com/webfonts

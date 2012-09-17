@@ -447,7 +447,7 @@ int line_count(
          count++;
          x = 0;
       } else {
-         int char_size = fm.f->char_size( *s ).x_get() + fm.spacing.x_get();
+         int char_size = fm.f.char_size( *s ).x_get() + fm.spacing.x_get();
          if(( x + char_size > size.x_get() ) && fm.wrap ){
             count++;    
             x = 0;                
@@ -473,7 +473,7 @@ int line_width(
    int length = 0;
    int space = 0;
    for( ; ( *s != '\0' ) && ( *s != '\n' ); s++ ){
-      int char_size = fm.f->char_size( *s ).x_get() + space; 
+      int char_size = fm.f.char_size( *s ).x_get() + space; 
       // trace << "len=" << length << "[" << *s << "] cs=" << char_size;
       if( length + char_size > size.x_get() ){
          return length;                 
@@ -494,7 +494,7 @@ int line_chars(
    int space = 0;
    int chars = 0;
    for( ; ( *s != '\0' ) && ( *s != '\n' ); s++ ){
-      int char_size = fm.f->char_size( *s ).x_get() + space;
+      int char_size = fm.f.char_size( *s ).x_get() + space;
       if( length + char_size > size.x_get() ){
          return chars;                 
       }
@@ -532,7 +532,7 @@ void draw_text_line(
          p += vector( adjust, 0 );
          missing -= adjust * spaces;
       }
-      char_photo fc( *fm.f, **s, fm.fg, fm.bg );
+      char_photo fc( fm.f, **s, fm.fg, fm.bg );
       fc.draw( fr, p );
       p += vector( fc.size_get().x_get() + fm.spacing.x_get(), 0 );
    }          
@@ -556,7 +556,7 @@ void text::draw(
    int lines = line_count( s, fr.size_get(), f ); 
    int extra = std::max( 
       0, 
-      fr.size_get().y_get() - lines * f.f->font_char_size.y_get() );
+      fr.size_get().y_get() - lines * f.f.font_char_size.y_get() );
    int missing = 0;
    if( f.v == align_far ){
       p += vector( 0, extra);
@@ -577,7 +577,7 @@ void text::draw(
       draw_text_line( fr, p, f, &ss );   
       if( *ss == '\n' ){ 
          ss++;
-         p = ( p + f.f->font_char_size + f.spacing ).y_projection();          
+         p = ( p + f.f.font_char_size + f.spacing ).y_projection();          
       }   
    }               
 }

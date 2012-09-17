@@ -117,9 +117,8 @@ int main( void ){
    text_size = vector( 120, 32 );
    { subframe ff( lcd, current, text_size );
      ff.clear( color::blue() );
-     text t( "bmptk" );
      format f( bigfont() );
-     t.f = f;
+     text t( "bmptk", f );
      t.draw( ff ); } 
      
    // font_default().draw( lcd );

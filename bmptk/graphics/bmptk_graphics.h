@@ -1495,7 +1495,7 @@ const inline_font & font_default();
 class format {
 public:
    //! the font, default is the default font
-   const font *f;
+   const font &f;
    
    //! the horizontal alignment, default is near
    font_alignment h;
@@ -1545,7 +1545,7 @@ public:
       color fg = color::black(),
       color bg = color::transparent()
    ): 
-      f( &f ),         
+      f( f ),         
       h( h ), 
       v( v ), 
       wrap( wrap ),
@@ -1556,7 +1556,20 @@ public:
       fg( fg ),
       bg( bg )
    {}
-   
+
+   //! create a format from an existing format and a font
+   format( const format &fmt, const font &fr ):
+      f( fr ),
+      h( fmt.h ), 
+      v( fmt.v ), 
+      wrap( fmt.wrap ),
+      scale( fmt.scale ),
+      spacing( fmt.spacing ),
+      top_left_margin( fmt.top_left_margin ),
+      bottom_right_margin( fmt.bottom_right_margin ),
+      fg( fmt.fg ),
+      bg( fmt.bg )
+   {}	  
 };    
 
 //! print a format
