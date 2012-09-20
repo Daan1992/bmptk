@@ -13,9 +13,11 @@ build:
 		cd draw && make build
 		cd paint && make build
 		cd align && make build
+		cd clock && make build
       
 clean:
 		cd lines && make clean
 		cd draw && make clean
 		cd paint && make clean
 		cd align && make clean
+		cd clock && make clean

@@ -1,0 +1,55 @@
+[Config]
+Relative path=1
+Compilator.FileName=build.bat
+Compilator.PSPar=
+Compilator.Log=
+Compilator.Run=
+Compilator.DefaultDir=
+Compilator.SaveAll=1
+Compilator.Capture=1
+Compilator.ParsLog=%F:%L:*
+Compilator.HideOutput=1
+Prog1=Clean,cmd /C "make clean "
+Prog2=Run,cmd /C "make run "
+Prog3=
+Prog4=
+Prog5=
+DefaultDir=
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+FileFormat=0
+DocumentRoot=
+HTServer=
+[Project tree]
+Project
+	+Files
+		-includes
+		+compile
+			clock.cpp
+		+others
+			Makefile
+[Open project files]
+0=Makefile
+1=clock.cpp
+2=..\..\bmptk.h
+3=..\..\graphics\bmptk_graphics.h
+4=..\..\graphics\bmptk_graphics.cpp
+[Selected Project Files]
+Main=
+Selected=clock.cpp
+[Makefile]
+TopLine=1
+Caret=18,13
+[clock.cpp]
+TopLine=17
+Caret=14,34
+[..\..\bmptk.h]
+TopLine=103
+Caret=1,1
+[..\..\graphics\bmptk_graphics.h]
+TopLine=1
+Caret=18,11
+[..\..\graphics\bmptk_graphics.cpp]
+TopLine=15
+Caret=26,24
