@@ -389,7 +389,7 @@ public:
       return ! ( *this == c );  }   
    
    //! returns the mix of the current color and the argument   
-   color mixed_with( const color c ){
+   color mixed_with( const color c ) const {
       return color( 
          ( r + c.r ) / 2, 
          ( g + c.g ) / 2, 
@@ -907,8 +907,8 @@ public:
 
 class frame_tee : public frame {
 private:
-
    frame &f1, &f2;
+   
 public:
 
    //! construct a frame_tee from two underlying frames
@@ -927,6 +927,12 @@ public:
    void flush(){
       f1.flush();
 	  f2.flush();
+   }   
+   
+   //! clear both underlying frames
+   void clear( const color c = color::white() ){
+      f1.clear( c ); 
+      f2.clear( c ); 
    }   
 };
 

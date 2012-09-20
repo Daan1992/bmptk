@@ -23,9 +23,11 @@ void draw_analog_clock( frame &f, unsigned long long int t ){
    int m = t % 60;
    t = t / 60;
    int h = t % 12;   
-   f.clear( color::white() );
+   
    vector centre = f.size_get() / 2;
    int radius = f.size_get().x_get() / 2 - 2;
+   
+   f.clear( color::white() );
    circle( f, centre, radius, color::black(), color::transparent()).draw();
    line( f, centre, radial( s, radius - 3 )).draw();
    line( f, centre, radial( m, radius - 10 ), color::black(), 2 ).draw();
@@ -47,12 +49,44 @@ void draw_digital_clock( frame &f, unsigned long long int t ){
       << dec << setw(2) << setfill('0') << h    
       << ":" << dec << setw(2) << m 
       << ":" << dec << setw(2) << s;
-    std::string strx =  tt.str();
-    const char* ct = strx.c_str();      
-    f.clear( color::red() );
-    text( ct ).draw( f );   
-    f.flush();
+   std::string strx =  tt.str();
+   const char* ct = strx.c_str();      
+   
+   f.clear( color::red() );
+   text( ct ).draw( f );   
+   f.flush();
 }
+
+class fat : public frame {
+public:
+   frame &f;
+   fat( frame &fr ): frame( fr.size_get()), f( fr ){}
+   void checked_write( const vector p, const color c ){
+      for( int dx = -1; dx < 2; dx++ ){
+	     for( int dy = -1; dy < 2; dy++ ){
+	        f.write( p + vector( dx, dy ), c );
+		 }
+      } 
+   }
+   void clear( const color c = color::white() ){
+       f.clear( c ); 
+   }
+};
+
+class shadow : public frame {
+public:
+   frame &f;
+   color bg;
+   shadow( frame &fr ): frame( fr.size_get()), f( fr ){}
+   void checked_write( const vector p, const color c ){
+      f.write( p, c );
+      f.write( p + vector( 2,2 ), c.mixed_with( bg ) );
+   }
+   void clear( const color c = color::white() ){
+     bg = c;
+     f.clear( c ); 
+   }
+};
 
 int main( void ){
 
@@ -61,7 +95,8 @@ int main( void ){
    subframe a2( lcd, vector( 120, 10 ), vector( 100, 100 ) );
    subframe d( lcd, vector( 11, 120 ), vector( 38, 11 ) );
    frame_buffer a1_buffered( a1 );
-   frame_tee a( a1_buffered, a2 );
+   shadow f2( a2 );
+   frame_tee a( a1_buffered, f2 );
    for(;;){
       unsigned long long int t = time_since_startup();
       draw_analog_clock( a, t );
