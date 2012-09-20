@@ -1,6 +1,5 @@
 #include "bmptk.h"
 
-
 // not user level include files, hence not included by bmptk.h
 #include "bmptk_win_graphics.hx"
 #include "windows.h"
@@ -14,6 +13,14 @@
 #ifndef SCALE
    #define SCALE 1
 #endif   
+
+void xxwait( unsigned long long int t ){
+   Sleep( 1 + t / bmptk::ms );
+}
+
+unsigned long long int bmptk::time_since_startup(){
+   return GetTickCount() * 1000ULL;
+}
 
 bmptk::target_screen::target_screen( void ):
    frame( vector( XSIZE, YSIZE ))
@@ -31,8 +38,4 @@ void bmptk::target_screen::checked_write(
          putpixel ( SCALE * v.x_get() + x, SCALE * v.y_get() + y, z );
       }
    }      
-}
-
-void bmptk::wait( unsigned int t ){
-   Sleep( 1 + t / bmptk::ms );
 }

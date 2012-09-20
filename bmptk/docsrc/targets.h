@@ -48,5 +48,13 @@
 //! it devkitPro installed in. The DeSmuME emulator must be placed in
 //! devkitPro/emulators/desmume.
 //!
+//! All publicly available Nintendo DS documentation is essentially
+//! reverse-engineered by hobbyists. There are lots of resources on
+//! the web, but no single place where you can find it all. 
+//! Some places to check:
+//!
+//! - http://libnds.devkitpro.org/
+//! - http://osdl.sourceforge.net/main/documentation/misc/nintendo-DS/homebrew-guide/HomebrewForDS.html
+//!
 //
 // ==========================================================================

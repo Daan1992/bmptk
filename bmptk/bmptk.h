@@ -80,14 +80,86 @@
         //!
         //! Please do not make your code depend on the exact values, 
         //! they! might change in future versions!
-      enum bmptk_time_units { 
-         s  = 1000 * 1000, 
-         ms = 1000,
-         us = 1
+      enum time_units { 
+         s  = 1000ULL * 1000ULL, 
+         ms = 1000ULL,
+         us = 1ULL
       };    
+	  
+	  //! the elapsed time since startup
+	  //!
+	  //! This function returns the amount of time
+	  //! (in \ref time_units) since startup.
+	  //! 
+	  //! On some targets the ime-since-startup only starts
+	  //! running with the first call to this function.
+	  //!
+	  //! On most targets this function (and hence all the wait functions 
+	  //! that rely use it) must be called at least once every x time.
+	  //! In practice this will seldom be a problem: applications that
+	  //! use timing tend to do so on a sub-second basis.
+	  //! On an NDS x is 130 seconds. 
+	  //!
+	  //! On windows this function (and hence all timing related functions)
+	  //! returns the time since windows started, with a resolution of 1 ms.
+	  //! 49 Days after windows was last started it will wrap around to 0.
+	  //! Don't blame me, I am just the piano player..
+	  unsigned long long int time_since_startup();
       
-      //! wait implementation
-      void wait( unsigned int t );      
+      //! busy wait until a moment in time
+	  //
+	  //! This function waits until the specified moment in time
+	  //! (in \ref time_units since startup)
+	  //! It uses busy waiting, polling \ref time_since_startup().
+	  //!
+	  //! When task switching (which can result in a longer delay) is not a 
+	  //! problem \ref wait_until() or an RTOS time function should be used 
+	  //! instead, to avoid locking up the other tasks.
+      void wait_busy_until( unsigned long long int t );      
+ 
+      //! wait until a moment in time
+	  //
+	  //! This function waits until the specified moment in time
+	  //! (in \ref time_units since startup)
+	  //! It uses busy waiting, polling \ref time_since_startup().
+	  //!
+	  //! By default this function calls \ref wait_busy_until, but
+	  //! when an RTOS is used it will switch to another task.
+	  //! When the extra delay that might be caused by task switching
+	  //! is not acceptable \ref wait_busy should be used instead.
+      void wait_until( unsigned long long int t );      
+ 
+      //! busy wait an amount of time
+	  //
+	  //! This function waits the requested amount of time 
+	  //! (in \ref time_units) before returning. 
+	  //! It uses busy waiting, polling \ref time_since_startup() to check
+	  //! whether the request amount of time has elapsed.
+	  //!
+	  //!
+	  //! When this function is used to measure time over 
+	  //! multiple calls using \ref busy_wait_until should be considered
+	  //! beacuse it can avoid the 'accumulated error' problem.	
+	  //!
+	  //! When task switching (which can result in a longer delay) is not a 
+	  //! problem \ref wait() should be used instead, because it does not
+	  //! lock up the other tasks.
+      void wait_busy( unsigned long long int t );      
+      
+      //! wait an amount of time
+	  //!
+ 	  //! This function waits at leas the requested amount of time 
+	  //! (in \ref time_units) before returning. 
+	  //!
+	  //! When this function is used to measure time over 
+	  //! multiple calls using \ref wait_until should be considered
+	  //! beacuse it can avoid the 'accumulated error' problem.	  
+	  //!
+	  //! By default this function calls \ref wait_busy, but
+	  //! when an RTOS is used it will switch to another task.
+	  //! When the extra delay that might be caused by task switching
+	  //! is not acceptable \ref wait_busy should be used instead.
+      void wait( unsigned long long int t );      
       
    };  
            
@@ -107,6 +179,5 @@
    #ifdef CHIP_lpc2478
       #include "lpc2478.h"
    #endif              
-
 
 #endif // #ifndef BMPTK_H

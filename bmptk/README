@@ -79,6 +79,7 @@ pending work list:
    - rewrite docsrc/graphics.h (and why is it not Doxygenned?)
    - ftp: .zip is always transferred
    - align example not OK
+   - win use http://forums.codeguru.com/showthread.php?379581-Visual-C-Debugging-How-do-I-evaluate-the-time-difference-between-two-events
    
 notes, references, links, put in a reference sections?
    - http://www.google.com/webfonts
