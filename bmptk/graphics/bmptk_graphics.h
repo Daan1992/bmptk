@@ -732,6 +732,13 @@ public:
    
    //! fill the full frame with the indicated color
    virtual void clear( const color c = color::white() );
+   
+   //! for buffered frames: write the changes to the underlying frame
+   //
+   //! For buffered frames this method must be called to write
+   //! the canges 'through' to the underlying frame. Most frames
+   //! are not buffered, for such frames an empty default is provided.
+   virtual void flush(){}
 };
 
 
@@ -761,6 +768,121 @@ protected:
    //! This method does nothing.
    //! 
    void checked_write( const vector p, const color c ){}
+};
+
+
+// ==========================================================================
+//
+// class frame_buffer
+//
+//! in-memory frame buffer that can be written in one go
+//
+//! A frame_buffer catches and buffers the writes to the underlying frame
+//! in an in-memmory buffer. The flush() call writes the buffer to the
+//! underlying frame.
+//!
+//! A frame_buffer can be used to prevent flickering while a frame
+//! is updated. The downside is the memory use and the extra CPU time
+//! for writing the changed pixels to the underlying frame.
+//! To do this all buffered pixels must be checked.
+//!
+//! The buffer is allocated on the heap. 
+
+class frame_buffer : public frame {
+private:
+   //! the underlying frame
+   frame &f;
+   
+   //! the in-memory pixel buffer
+   color *pixels;
+   
+   //! return the specified pixel in the buffer
+   //
+   //! This function does no range checking. 
+   //! Calling it with an invalid p will give unpredicatble results.
+   color & pixel( vector p ){
+      return pixels[ p.x_get() + f.size_get().x_get() * p.y_get() ];
+   }
+   
+   color pixel( vector p ) const {
+      return pixels[ p.x_get() + f.size_get().x_get() * p.y_get() ];
+   }
+   
+public:   
+
+   //! construct a frame_buffer from an underlying frame
+   //
+   //! This constructor allocates the pixel buffer on the heap.
+   //! The size is the number of pixels in the underlying frame *
+   //! 4 bytes for each pixel.
+   frame_buffer( frame &fr ):
+      frame( fr.size_get()),
+	  f( fr )
+   {
+      pixels = new color[ f.size_get().x_get() * f.size_get().y_get() ];
+      for( int x = 0; x < f.size_get().x_get(); x++ ){
+         for( int y = 0; y < f.size_get().y_get(); y++ ){
+			pixel( vector( x, y )) = color::transparent();
+         }
+      }	  
+   }
+   
+   //! copy constructor: create a new buffer to the same underlying frame
+   frame_buffer( const frame_buffer &rhs ):
+      frame( rhs.size_get()),
+	  f( rhs.f )
+   {
+      pixels = new color[ f.size_get().x_get() * f.size_get().y_get() ];
+      for( int x = 0; x < f.size_get().x_get(); x++ ){
+         for( int y = 0; y < f.size_get().y_get(); y++ ){
+		    vector p( x, y );
+			pixel( p ) = rhs.pixel( p );
+         }
+      }	      
+   }
+   
+    //! assignment:  create an independent buffer to the same underlying frame
+   frame_buffer &  operator=( const frame_buffer &rhs ){
+      if( this != &rhs ){
+	     delete[] pixels;
+		 pixels = new color[ f.size_get().x_get() * f.size_get().y_get() ];
+		 for( int x = 0; x < f.size_get().x_get(); x++ ){
+            for( int y = 0; y < f.size_get().y_get(); y++ ){
+		       vector p( x, y );
+			   pixel( p ) = rhs.pixel( p );
+            }
+         }	
+	  }
+	  return *this;
+   }
+   
+   //! destruct a frame buffer, freeing the allocated pixel buffer
+   virtual ~frame_buffer(){
+      delete[] pixels;
+   }
+   
+   //! write to the pixel buffer
+   void checked_write( const vector p, const color c ){
+      pixel( p ) = c;
+   }
+  
+   //! write the pixel buffer to the underlying frame
+   //
+   //! This method writes all changed pixels in the buffer to the
+   //! underlying frame, and flushes that frame.
+   void flush(){
+      for( int x = 0; x < f.size_get().x_get(); x++ ){
+         for( int y = 0; y < f.size_get().y_get(); y++ ){
+            vector p( x, y );
+			if( ! pixel( p ).is_transparent() ){
+               f.write( p, pixel( p ));
+			   pixel( p ) = color::transparent();
+			}   
+         }
+      }		              
+	  f.flush();
+   }
+
 };
 
 

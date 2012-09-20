@@ -25,8 +25,8 @@
 //! by the bmptk makefile.
 //!
 //! This version supports the targets 
-//!    - \ref win : uses \ref DevCpp to create windows executables
-//!    - \ref nds : uses \ref DevKitPro and \ref DeSmuME to create 
+//!    - \ref win : uses DevCpp to create windows executables
+//!    - \ref nds : uses DevKitPro and DeSmuME to create 
 //!      (and run) NDS applications
 //!
 //! The bmptk makefile can be used from the \ref cmd, or it

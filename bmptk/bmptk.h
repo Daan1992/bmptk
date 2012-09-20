@@ -138,7 +138,7 @@
 	  //!
 	  //!
 	  //! When this function is used to measure time over 
-	  //! multiple calls using \ref busy_wait_until should be considered
+	  //! multiple calls using \ref wait_busy_until should be considered
 	  //! beacuse it can avoid the 'accumulated error' problem.	
 	  //!
 	  //! When task switching (which can result in a longer delay) is not a 
