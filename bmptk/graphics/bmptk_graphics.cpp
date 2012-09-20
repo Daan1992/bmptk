@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
+#include <algorithm>
 
 #include "bmptk.h"
  
@@ -19,6 +20,16 @@ namespace bmptk {
 
 vector operator * ( int n, const vector v ) {
    return vector( v * n ); }  
+   
+unsigned int max( unsigned int a, unsigned int b ){
+   return a > b ? a : b; }
+   
+vector max( vector a, vector b ){
+   return vector( 
+      max( a.x_get(), b.x_get() ),
+      max( a.y_get(), b.y_get() )
+   );
+} 
 
 std::ostream & operator<<( std::ostream &s, const vector p ){
    s << std::dec << "(" << p.x_get() << "," << p.y_get() << ")";

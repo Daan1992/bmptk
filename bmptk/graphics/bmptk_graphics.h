@@ -189,6 +189,17 @@ public:
    static vector one(){ return vector(1,1); }
 };
 
+//! returns the vector that is the maximum of a and b on each axis
+//
+//! The returned vector is
+//! \code
+//!    return vector( 
+//!      max( a.x_get(), b.x_get() ),
+//!      max( a.y_get(), b.y_get() )
+//!   );
+//! \endcode
+vector max( vector a, vector b );
+
 //! multiplies a vector by an integer by multiplying the coordinates
 vector operator * ( int n, const vector v ); 
 
@@ -883,6 +894,40 @@ public:
 	  f.flush();
    }
 
+};
+
+
+// ==========================================================================
+//
+// class frame_tee
+//
+//! writes to both underlying frames
+//
+//! A frame_tee is a frame that forwards writes to two underlying frames. 
+
+class frame_tee : public frame {
+private:
+
+   frame &f1, &f2;
+public:
+
+   //! construct a frame_tee from two underlying frames
+   frame_tee( frame &f1, frame &f2 ): 
+      frame( max( f1.size_get(), f2.size_get() )),
+	  f1( f1 ), 
+	  f2( f2 ){}
+   	  
+   //! write to both underlying frames
+   void checked_write( const vector p, const color c ){
+      f1.write( p, c );
+	  f2.write( p, c );
+   }
+   
+   //! flush both underlying frames
+   void flush(){
+      f1.flush();
+	  f2.flush();
+   }   
 };
 
 
