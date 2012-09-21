@@ -68,8 +68,8 @@
    
    namespace bmptk {
    
-      //! bmtkp version
-      const char version[] = "V01.01 ( work-in-progress @ 2012-09-14)";   
+      //! bmtkp version, determined by Makefile.inc
+      const char version[] = "BMPTK_VERSION";   
       
         //! time units
         //
@@ -170,13 +170,13 @@
    #endif
    
    // include the target-specific header files
-   #ifdef TARGET_nds
+   #ifdef BMPTK_TARGET_nds
       #include "bmptk_nds.h"
    #endif              
-   #ifdef TARGET_win
+   #ifdef BMPTK_TARGET_win
       #include "bmptk_win.h"
    #endif              
-   #ifdef CHIP_lpc2478
+   #ifdef BMPTK_CHIP_lpc2478
       #include "lpc2478.h"
    #endif              
 

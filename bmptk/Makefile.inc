@@ -9,6 +9,9 @@
 #############################################################################
 
 
+VERSION := "V01.02 ( work-in-progress @ 2012-09-21)"
+
+
 #============================================================================
 #
 # find the external tools
@@ -154,11 +157,12 @@ ifeq ($(PREFIX),)
    $(error invalid or no target specified: "$(TARGET)")
 endif
    
-DEFINES   += -DTARGET=$(TARGET)
-DEFINES   += -DTARGET_$(TARGET)
-DEFINES   += -DCHIP=$(CHIP)
-DEFINES   += -DCHIP_$(CHIP)
-DEFINES   += -DXTAL=$(XTAL)
+DEFINES   += -DBMPTK_TARGET=$(TARGET)
+DEFINES   += -DBMPTK_TARGET_$(TARGET)
+DEFINES   += -DBMPTK_CHIP=$(CHIP)
+DEFINES   += -DBMPTK_CHIP_$(CHIP)
+DEFINES   += -DBMPTK_XTAL=$(XTAL)
+DEFINES   += -DBMPTK_VERSION=$(VERSION)
 
 
 #============================================================================

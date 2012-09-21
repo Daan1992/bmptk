@@ -98,7 +98,7 @@ int main( void ){
      current += ( size + margin ).x_projection(); }     
 
    // draw the next arrow
-   next().draw( lcd, vector( 120, 50 ));
+   next().draw( lcd, vector( 120, 50 )); 
     
    // draw some text
    current = vector( start.x_get(), ( current + margin + size ).y_get() );
@@ -110,8 +110,14 @@ int main( void ){
       "Now wherefore stopp'st thou me?";
    { subframe ff( lcd, current, text_size );
      ff.clear( color::yellow() );
-     text( mariner ).draw( ff ); } 
+     text( mariner ).draw( ff ); 
+	 current += ( text_size + margin ).y_projection(); } 
       
+   // show the BMPTK version 
+   subframe version_frame( lcd, current, vector( 100, 12 ));
+   version_frame.clear( color::blue());
+   text( bmptk::version ).draw( version_frame );   
+   
    // draw some big letters
    current = vector( 120, start.y_get() );
    text_size = vector( 120, 32 );
@@ -123,6 +129,8 @@ int main( void ){
      
    // font_default().draw( lcd );
    // bigfont().draw( lcd );
+   
+
  
    for(;;);   
    return 0;

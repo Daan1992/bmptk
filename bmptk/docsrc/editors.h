@@ -172,6 +172,47 @@
 
 // ==========================================================================
 //
+//! \page pn Programmer's Notepad
+//!
+//! \image html pn-logo.gif
+//!
+//! Programmer's Notepad (http://notepad-plus-plus.org/) is a free 
+//! lightweight text editor, designed for editing source code.
+//! With a tille customization PN can call do the basic chores of an IDE:
+//! call an external tool, capture the output, and jump to the source line
+//! that corresponds to an error message.
+//!
+//! OPen a C++ file, and Select Tools => Options => Tools. 
+//! \image html pn-tools-empty.gif
+//!
+//! Click Add. Create an entry for 'make build':
+//! \image html pn-make-build.gif
+//!
+//! You can leave the Console I/O tab unchanged.
+//! The shortcut key can be configured by selected the field and
+//! pressing the key (or combination) you prefer. 
+//! I choose F6 for building, F8 for running, no shortcut  for cleaning.
+//! Likewise make the entry for cleaning:
+//! \image html pn-make-clean.gif
+//! And for runnung:
+//! \image html pn-make-run.gif
+//! You can activate the make commands either by their shortcut or
+//! from the Tools menu. 
+//! \image html pn-tools-configured.gif
+//!
+//! As shown the make commands will first save all modified files.
+//!
+//! Tips:
+//! - enable View => Line Numbers  
+//! - the make commands will be executed in the directory of the
+//!   selected file, hence you must select a file in your 
+//!   project directory!
+//!
+//
+// ==========================================================================
+
+// ==========================================================================
+//
 //! /page graphics
 //
 //! The graphics part of the library provides the interface to a 

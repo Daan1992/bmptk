@@ -22,7 +22,7 @@ void draw_analog_clock( frame &f, unsigned long long int t ){
    t = t / 60;
    int m = t % 60;
    t = t / 60;
-   int h = t % 12;   
+   int h = t % 12; 
    
    vector centre = f.size_get() / 2;
    int radius = f.size_get().x_get() / 2 - 2;
@@ -37,7 +37,7 @@ void draw_analog_clock( frame &f, unsigned long long int t ){
 }
 
 void draw_digital_clock( frame &f, unsigned long long int t ){
-   t = t / bmptk::s;
+   t = t / bmptk::s; 
    int s = t % 60;
    t = t / 60;
    int m = t % 60;
