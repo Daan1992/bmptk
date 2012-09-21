@@ -176,7 +176,7 @@
 //!
 //! \image html pn-logo.gif
 //!
-//! Programmer's Notepad (http://notepad-plus-plus.org/) is a free 
+//! Programmer's Notepad (http://www.pnotepad.org/) is a free 
 //! lightweight text editor, designed for editing source code.
 //! With a tille customization PN can call do the basic chores of an IDE:
 //! call an external tool, capture the output, and jump to the source line

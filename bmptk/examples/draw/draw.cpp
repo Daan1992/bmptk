@@ -15,7 +15,7 @@ int main( void ){
    // draw some lines
    current = start;
    size = vector( 20, 20 );
-   line( lcd, current, size ).draw();
+   line( lcd, current, size ).draw(); 
    line( lcd, current += ( size + margin ).x_projection(),
       size, color::blue() ).draw();
    line( lcd, current += ( size + margin ).x_projection(),
@@ -114,7 +114,7 @@ int main( void ){
 	 current += ( text_size + margin ).y_projection(); } 
       
    // show the BMPTK version 
-   subframe version_frame( lcd, current, vector( 100, 12 ));
+   subframe version_frame( lcd, current, vector( 200, 12 ));
    version_frame.clear( color::blue());
    text( bmptk::version ).draw( version_frame );   
    

@@ -69,7 +69,7 @@
    namespace bmptk {
    
       //! bmtkp version, determined by Makefile.inc
-      const char version[] = "BMPTK_VERSION";   
+      const char version[] = BMPTK_VERSION;   
       
         //! time units
         //

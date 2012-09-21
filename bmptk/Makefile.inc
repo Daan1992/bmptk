@@ -162,7 +162,7 @@ DEFINES   += -DBMPTK_TARGET_$(TARGET)
 DEFINES   += -DBMPTK_CHIP=$(CHIP)
 DEFINES   += -DBMPTK_CHIP_$(CHIP)
 DEFINES   += -DBMPTK_XTAL=$(XTAL)
-DEFINES   += -DBMPTK_VERSION=$(VERSION)
+DEFINES   += -D'BMPTK_VERSION=$(VERSION)'
 
 
 #============================================================================
