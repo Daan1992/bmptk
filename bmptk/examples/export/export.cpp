@@ -50,7 +50,6 @@ int main( void ){
    buf.write_to_bmp_file( "clock.bmp" );
    buf.flush();
    wait( 3 * s );
-   for(;;);
    return 0;
 }
 

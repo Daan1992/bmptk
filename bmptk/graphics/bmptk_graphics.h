@@ -278,8 +278,8 @@ public:
       g( clip( ( rgb & 0x00FF00 ) >>  8 )), 
       b( clip( ( rgb & 0x0000FF ) >>  0 )){}
       
-   //! the color in RGB15 format
-   unsigned int rgb15( void ) const {
+   //! the color in RGB15 (NintendoDS) format
+   unsigned int rgb15_get( void ) const {
       return (
            ((unsigned int)( r & 0xF8 ) >>  3 )
          | ((unsigned int)( g & 0xF8 ) <<  2 )
@@ -909,6 +909,12 @@ public:
       frame::clear( c );
    }   
    
+   //! write to a .bmp file
+   //
+   //! This method writes the buffer content to the indicated
+   //! filename in .bmp format (uncompressed, 24 bits/pixel).
+   //! This works on the win target, it won't be usefull
+   //! on targets that don't have a filesystem.
    void write_to_bmp_file( const char *file_name );
 
 };
@@ -1457,7 +1463,7 @@ public:
 //! (\ref inline_bw_photo uses 1 bit per pixel). 
 //! The inline.py tool can be used to convert a .jpg or .bmp file into the 
 //! .h and .cpp file for an inline_rgb_photo.
-//! This is likely to be the only way you will instatiate this class.
+//! This is likely to be the only way you will instantiate this class.
 //
 
 class inline_rgb_photo : public image_pixels {
@@ -1627,7 +1633,7 @@ public:
    //! the background colcor (default: transparent)
    const color bg;
 
-   //! instatiate a char_photo, specfy font, char, forgeground and background
+   //! instantiate a char_photo, specfy font, char, forgeground and background
    char_photo( 
       const font &f,
       char c, 
@@ -1876,7 +1882,7 @@ public:
    //! the format used to draw the text; can be changed
    format f;    
    
-   //! instatiate a text object
+   //! instantiate a text object
    text( 
       //! pointer to the 0-terminated character string
       //

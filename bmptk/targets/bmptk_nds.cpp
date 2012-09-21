@@ -60,7 +60,7 @@ void bmptk::target_screen::checked_write(
    const color c 
 ){
    if( c.is_transparent() ){ return; }
-   BG_GFX[ v.x_get() + ( v.y_get() * 256 ) ] = 0x8000 | c.rgb15();
+   BG_GFX[ v.x_get() + ( v.y_get() * 256 ) ] = 0x8000 | c.rgb15_get();
 }
 
 bmptk::target_top_screen::target_top_screen( void ):
@@ -76,5 +76,5 @@ void bmptk::target_top_screen::checked_write(
    const vector v,
    const color c 
 ){
-   BG_GFX_SUB[ v.x_get() + ( v.y_get() * 256 ) ] = 0x8000 | c.rgb15();
+   BG_GFX_SUB[ v.x_get() + ( v.y_get() * 256 ) ] = 0x8000 | c.rgb15_get();
 }
