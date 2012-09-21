@@ -25,6 +25,7 @@ unsigned long long int bmptk::time_since_startup(){
 bmptk::target_screen::target_screen( void ):
    frame( vector( XSIZE, YSIZE ))
 {
+
    initwindow( SCALE * XSIZE - 1, SCALE * YSIZE - 1, "wframe" );
 }
 
@@ -32,6 +33,7 @@ void bmptk::target_screen::checked_write(
    const vector v,
    const color c 
 ){
+   if( c.is_transparent() ){ return; }   
    int z = COLOR( c.red_get(), c.green_get(), c.blue_get() );
    for( int x = 0; x < SCALE; x++ ){
       for( int y = 0; y < SCALE; y++ ){

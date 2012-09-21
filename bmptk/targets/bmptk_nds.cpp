@@ -59,6 +59,7 @@ void bmptk::target_screen::checked_write(
    const vector v,
    const color c 
 ){
+   if( c.is_transparent() ){ return; }
    BG_GFX[ v.x_get() + ( v.y_get() * 256 ) ] = 0x8000 | c.rgb15();
 }
 

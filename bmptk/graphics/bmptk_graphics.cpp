@@ -8,6 +8,7 @@
 #include <iostream>
 #include <iomanip>
 #include <algorithm>
+#include <fstream>
 
 #include "bmptk.h"
  
@@ -24,10 +25,24 @@ vector operator * ( int n, const vector v ) {
 unsigned int max( unsigned int a, unsigned int b ){
    return a > b ? a : b; }
    
+unsigned int max( 
+   unsigned int a, unsigned int b,
+   unsigned int c, unsigned int d 
+){
+   return max( a, max ( b, max( c, d )));
+}
+   
 vector max( vector a, vector b ){
    return vector( 
       max( a.x_get(), b.x_get() ),
       max( a.y_get(), b.y_get() )
+   );
+} 
+
+vector max( vector a, vector b, vector c, vector d ){
+   return vector( 
+      max( a.x_get(), b.x_get(), c.x_get(), d.x_get() ),
+      max( a.y_get(), b.y_get(), c.y_get(), d.y_get() )
    );
 } 
 
@@ -90,11 +105,93 @@ std::ostream & operator<<( std::ostream &s, const event &e ){
 //
 
 void frame::clear( const color c ){
+   bg = c;
    if( ! c.is_transparent() ){  
       vector step = size.direction() ;
       for( int x = 0; x != size.x_get(); x += step.x_get()  ){
          for( int y = 0; y != size.y_get(); y += step.y_get() ){
-            write( vector( x, y ), c ); } } } }    
+            write( vector( x, y ), c ); } } } }   
+
+			
+// ==========================================================================
+//
+// frame_buffer
+//
+
+typedef unsigned short int WORD;
+typedef unsigned int DWORD;
+typedef int LONG;
+
+typedef struct __attribute__ ((__packed__)) {
+   WORD    bfType;        // must be 'BM' 
+   DWORD   bfSize;        // size of the whole .bmp file
+   WORD    bfReserved1;   // must be 0
+   WORD    bfReserved2;   // must be 0
+   DWORD   bfOffBits;     
+} BITMAPFILEHEADER; 
+ 
+typedef struct __attribute__ ((__packed__)) {
+   DWORD  biSize;            // size of the structure
+   LONG   biWidth;           // image width
+   LONG   biHeight;          // image height
+   WORD   biPlanes;          // bitplanes
+   WORD   biBitCount;        // resolution 
+   DWORD  biCompression;     // compression
+   DWORD  biSizeImage;       // size of the image
+   LONG   biXPelsPerMeter;   // pixels per meter X
+   LONG   biYPelsPerMeter;   // pixels per meter Y
+   DWORD  biClrUsed;         // colors used
+   DWORD  biClrImportant;    // important colors
+} BITMAPINFOHEADER;
+
+void frame_buffer::write_to_bmp_file( const char *file_name ){
+    int row_byte_size = 4 * (( 3 * size_get().x_get() + 3 ) / 4);
+    int padded_size = row_byte_size * size_get().y_get();
+
+    std::ofstream bmp( file_name );
+
+	BITMAPFILEHEADER bmfh;	
+	bmfh.bfType = 0x4d42;       // 0x4d42 = 'BM'
+	bmfh.bfReserved1 = 0;
+	bmfh.bfReserved2 = 0;
+	bmfh.bfSize = 
+	   sizeof(BITMAPFILEHEADER) 
+	   + sizeof(BITMAPINFOHEADER) 
+	   + padded_size;
+	bmfh.bfOffBits = 0x36;	
+    bmp.write( (char*)& bmfh, sizeof(BITMAPFILEHEADER) );
+	
+	BITMAPINFOHEADER info;
+	info.biSize = sizeof(BITMAPINFOHEADER);
+	info.biWidth = size_get().x_get();
+	info.biHeight = size_get().y_get();
+	info.biPlanes = 1;	
+	info.biBitCount = 24;
+	info.biCompression = 0; // BI_RGB
+	info.biSizeImage = 0;
+	info.biXPelsPerMeter = 0x0ec4;  
+	info.biYPelsPerMeter = 0x0ec4;     
+	info.biClrUsed = 0;	
+	info.biClrImportant = 0; 	
+    bmp.write( (char*)& info, sizeof(BITMAPINFOHEADER) );
+	
+    for( int y = size_get().y_get() - 1; y >= 0; y-- ){
+	   for( int x = 0; x < size_get().x_get(); x++ ){
+	       color c = pixel( vector( x, y ));
+		   unsigned char r = c.red_get();
+		   unsigned char g = c.green_get();
+		   unsigned char b = c.blue_get();
+		   bmp.write( (char*)& b, 1 );
+		   bmp.write( (char*)& g, 1 );
+		   bmp.write( (char*)& r, 1 );
+	   }
+	   int pad = ( 4 - size_get().x_get() % 4 ) % 4;
+	   bmp.write( (char*)& pad, pad );
+    }	   
+	
+	bmp.close();
+}
+			
 
 
 // ==========================================================================

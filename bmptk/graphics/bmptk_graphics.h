@@ -189,9 +189,9 @@ public:
    static vector one(){ return vector(1,1); }
 };
 
-//! returns the vector that is the maximum of a and b on each axis
+//! returns the vector that is the maximum of the arguments on each axis
 //
-//! The returned vector is
+//! For two vectors the returned vector is
 //! \code
 //!    return vector( 
 //!      max( a.x_get(), b.x_get() ),
@@ -199,6 +199,7 @@ public:
 //!   );
 //! \endcode
 vector max( vector a, vector b );
+vector max( vector a, vector b, vector c, vector d = vector::origin() );
 
 //! multiplies a vector by an integer by multiplying the coordinates
 vector operator * ( int n, const vector v ); 
@@ -697,23 +698,26 @@ private:
    
    //! private assignment: prevent assignment
    frame & operator=( const frame &rhs );
+   
 
 protected:
     
    //! frame size
    const vector size;
    
+   //! most recently applied background color (as used in clear())
+   color bg;
+   
    //! write one pixel 
    //
    //! A concrete frame class must implement this function.
-   //! It can safely assume that the address is within the frame, and
-   //! that the colcor is not transparent.
+   //! It can safely assume that the address is within the frame.
    virtual void checked_write( const vector p, const color c ) = 0;  
    
 public:          
 
    //! create a frame of specified size
-   frame( const vector size ): size( size ) {}
+   frame( const vector size ): size( size ), bg( color::white()) {}
    
    //! get the size of the frame
    vector size_get() const { return size; }
@@ -729,19 +733,24 @@ public:
    //! whether p is within the frame   
    bool is_valid( vector p ){
       return p.is_within( size ); }   
+      
+   //! get the backround color
+   //
+   //! This method retruns the argument used in the most recentlt
+   //! clear method call.
+   color bg_get(){ return bg; }      
    
    //! write one pixel, address specified by vector
    //
-   //! This function checks for transparancy (which is interpreted
-   //! as 'do not write') and checks wether the p is valid
+   //! This function checks wether the p is valid
    //! (writing to a pixel outside the frame is ignored).
-   //! Only when both checks succeed it will call checked_write
-   //! to do the actual writing.
    void write( const vector p, const color c ){
-      if( is_valid( p ) && ( ! c.is_transparent() )){
-         checked_write( p, c ); }}        
+      if( is_valid( p ) ){ checked_write( p, c ); }}        
    
    //! fill the full frame with the indicated color
+   //
+   //! This method fills the screen with the indicated color
+   //! and save this color for \ref bg_get().
    virtual void clear( const color c = color::white() );
    
    //! for buffered frames: write the changes to the underlying frame
@@ -774,7 +783,7 @@ public:
    
 protected:
 
-   //! checked_write implementation as requiredby frame
+   //! checked_write implementation as required by frame
    //
    //! This method does nothing.
    //! 
@@ -816,9 +825,9 @@ private:
    }
    
    color pixel( vector p ) const {
-      return pixels[ p.x_get() + f.size_get().x_get() * p.y_get() ];
+      return pixels[ p.x_get() + f.size_get().x_get() * p.y_get() ]; 
    }
-   
+      
 public:   
 
    //! construct a frame_buffer from an underlying frame
@@ -893,6 +902,14 @@ public:
       }		              
 	  f.flush();
    }
+   
+   //! clear the buffer, and rember the color used
+   void clear( const color c = color::white() ){
+      bg = c;
+      frame::clear( c );
+   }   
+   
+   void write_to_bmp_file( const char *file_name );
 
 };
 
@@ -901,38 +918,121 @@ public:
 //
 // class frame_tee
 //
-//! writes to both underlying frames
+//! writes to the (2..4) underlying frames
 //
-//! A frame_tee is a frame that forwards writes to two underlying frames. 
+//! A frame_tee is a frame that forwards writes to the underlying frames. 
 
 class frame_tee : public frame {
 private:
-   frame &f1, &f2;
+   frame &f1, &f2, &f3, &f4;
+   
+   static frame & frame_dummy_ref(){
+      static frame_dummy dummy;
+      return dummy;
+   }
    
 public:
-
-   //! construct a frame_tee from two underlying frames
-   frame_tee( frame &f1, frame &f2 ): 
-      frame( max( f1.size_get(), f2.size_get() )),
+  	  
+    //! construct a frame_tee from underlying frames
+   frame_tee( 
+      frame &f1, 
+	  frame &f2,
+      frame &f3 = frame_dummy_ref(), 
+	  frame &f4 = frame_dummy_ref() 
+   ): 
+      frame( max( 
+	     f1.size_get(), 
+		 f2.size_get(),
+	     f3.size_get(), 
+		 f4.size_get() )),
 	  f1( f1 ), 
-	  f2( f2 ){}
+	  f2( f2 ),
+	  f3( f3 ),
+	  f4( f4 ){}
    	  
    //! write to both underlying frames
    void checked_write( const vector p, const color c ){
       f1.write( p, c );
 	  f2.write( p, c );
+      f3.write( p, c );
+	  f4.write( p, c );
    }
    
    //! flush both underlying frames
    void flush(){
       f1.flush();
 	  f2.flush();
+      f3.flush();
+	  f4.flush();
    }   
    
-   //! clear both underlying frames
+   //! clear both underlying frames, and remember the color used
    void clear( const color c = color::white() ){
+      bg = c;
       f1.clear( c ); 
       f2.clear( c ); 
+      f3.clear( c ); 
+      f4.clear( c ); 
+   }   
+};
+
+
+// ==========================================================================
+//
+// class frame_filter
+//
+//! apply a function to the color before writing 
+//
+//! When a frame_filter is consructed a filter function is specified that
+//! will be applied to the color of each pixel before it is written.
+//!
+//! Alternatively, a writer function can be specified that is called
+//! to write a pixel. Besides changing the color, it can for instance
+//! write to one or more (different) points.
+
+class frame_filter : public frame {
+private:
+   frame &f;
+   color (&filter)(color);
+   void (&writer)(frame &f, vector p, color c, color bg );
+   
+   static color default_filter( color c ){ return c; }
+   static void default_writer( frame &f, vector p, color c, color bg ){ 
+      f.write( p, c ); }
+   
+public:
+
+   //! construct a frame_filter from the underlying frame and a filter function
+   frame_filter( frame &f, color (&filter)(color) ): 
+      frame( f.size_get()),
+      f( f ),
+	  filter( filter ),
+	  writer( frame_filter::default_writer ){}
+   	  
+   //! construct a frame_filter from the underlying frame and a writer function
+   frame_filter( 
+      frame &f, 
+	  void (&writer)(frame &f, vector p, color c, color bg ) 
+   ): 
+      frame( f.size_get()),
+      f( f ),
+	  filter( frame_filter::default_filter ),
+	  writer( writer ){}
+   	  
+   //! apply the filter function, write the result to the underlying frame
+   void checked_write( const vector p, const color c ){
+      writer( f, p, filter( c ), bg );
+   }
+   
+   //! flush the underlying frame
+   void flush(){
+      f.flush();
+   }   
+   
+   //! clear the underlying frame with the filtered color, and remember it
+   void clear( const color c = color::white() ){
+      bg = filter( c );
+      f.clear( bg ); 
    }   
 };
 

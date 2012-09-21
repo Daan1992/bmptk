@@ -72,7 +72,6 @@ pending work list:
    - wit lijntje in de button corners is best leuk!
    - canvas, is a drawable, and can be written to a .tiff (or gif?) ppm! - frame_buffer is dit al??
    - http://www.imagemagick.org/
-   - http://en.wikipedia.org/wiki/Portable_Pixmap_File_Format
    - use other (free) zip instead of pkzip25 (and add to tools)
    - git push uses credentials, make push does not??
    - create release notes
@@ -82,6 +81,8 @@ pending work list:
    - win use http://forums.codeguru.com/showthread.php?379581-Visual-C-Debugging-How-do-I-evaluate-the-time-difference-between-two-events
    - target_screen is 2 x in doxygen, inherts 2 x from frame
    - version in Makefile.inc
+   - frame_buffer should have separate bool array for pixels-to-be-written?
+   - clock wijzers kloppen niet? (export)
    
 notes, references, links, put in a reference sections?
    - http://www.google.com/webfonts
@@ -102,4 +103,4 @@ notes, references, links, put in a reference sections?
    - http://forum.gbadev.org/viewtopic.php?t=14396&highlight read NDS stylus pressure
    
 A global object must never depend on another global object
-Better: do not use global objects!
+Better: do not use global objects! => function that returns an object

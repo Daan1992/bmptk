@@ -7,7 +7,7 @@
 #############################################################################
 
 # Specify the project name, this is also the main .cpp file to compile
-PROJECT    := clock
+PROJECT    := export
 
 # Specify target chip or board or system
 TARGET     := win
