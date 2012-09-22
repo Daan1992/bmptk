@@ -84,7 +84,7 @@ pending work list:
    - clock wijzers kloppen niet? (export)
    - document the inline.py tools - refs in bmptk_graphics.h
    - larger font for inline pictures in documentation
-   - 
+   - make docs always re-generates the pictures??
    
 notes, references, links, put in a reference sections?
    - http://www.google.com/webfonts

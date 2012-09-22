@@ -37,6 +37,21 @@
 //! when you re-distribute the source, it must be under that same license.
 //! What you do with your application that uses bmptk is completely 
 //! up to you, without any strings attached.
+//!
+//! Bmptk is very much 'work in progress'. 
+//! You can download the bleeding edge code from 
+//! <A HREF="http://code.google.com/p/bmptk" target="_blank">
+//! google code</A>, 
+//! or get it as a git repository:
+//! \code
+//!    git clone https://code.google.com/p/bmptk
+//! \endcode
+//! or you can download the latest release as 
+//! <A HREF="http://www.voti.nl/bmptk/bmptk.zip">zip file</A>.
+//! The documentation you are reading now is in the zip file, 
+//! or you can read it 
+//! <A HREF="http://www.voti.nl/bmptk/docs/index.html" 
+//! target="_blank">online</A>.
 //
 // ==========================================================================
 
@@ -116,6 +131,24 @@
 //! When your Python is not installed in it default directory (e.g.
 //! C:\\Python27) the Makefile.local must be copied to Makefile.custom
 //! and edited to reflect the directory python is installed in.
+//!
+//
+// ==========================================================================
+
+// ==========================================================================
+//
+//! \page background Background
+//!
+//! Around 1995 I got interested in microcontrollers, more specifically in
+//! the Microchip 16C84, then the only easily-available 
+//! microcontroller that could be re-programmed electronically. 
+//! The 16C84 is primitive and expensive at todays standards, but for me 
+//! it opened a whole new world. There were some hurdles.
+//! You could either buy an expensive programmer, or build your own
+//! (unreliable) serial-port controlled programmer.
+//! Toolchains were expensive, except the free but assembler-only MPLAB. 
+//!
+//! ToBeContinued
 //!
 //
 // ==========================================================================
