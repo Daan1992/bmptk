@@ -1,0 +1,51 @@
+[Config]
+Relative path=1
+Compilator.FileName=build.bat
+Compilator.PSPar=
+Compilator.Log=
+Compilator.Run=
+Compilator.DefaultDir=
+Compilator.SaveAll=1
+Compilator.Capture=1
+Compilator.ParsLog=%F:%L:*
+Compilator.HideOutput=1
+Prog1=Clean,cmd /C "make clean "
+Prog2=Run,cmd /C "make run "
+Prog3=
+Prog4=
+Prog5=
+DefaultDir=
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+FileFormat=0
+DocumentRoot=
+HTServer=
+[Project tree]
+Project
+	+Files
+		-includes
+		+compile
+			generate.cpp
+		+others
+			Makefile
+[Open project files]
+0=Makefile
+1=generate.cpp
+2=..\..\graphics\bmptk_graphics.cpp
+3=..\..\graphics\bmptk_graphics.h
+[Selected Project Files]
+Main=
+Selected=generate.cpp
+[Makefile]
+TopLine=1
+Caret=23,31
+[generate.cpp]
+TopLine=1
+Caret=4,36
+[..\..\graphics\bmptk_graphics.cpp]
+TopLine=638
+Caret=6,662
+[..\..\graphics\bmptk_graphics.h]
+TopLine=1188
+Caret=7,1217
