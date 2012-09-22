@@ -620,7 +620,7 @@ void draw_text_line(
    const format &fm, 
    const char **s 
 ){   
-   // trace << "[" << *s << "] in " << fr.size_get();
+   // trace << "[" << *s << "]@" << p << " in " << fr.size_get();
    int width = line_width( *s, fr.size_get(), fm );
    int extra = fr.size_get().x_get() - width;
    int spaces = line_chars(  *s, fr.size_get(), fm ) - 1;
@@ -658,7 +658,8 @@ void text::draw(
 	 fx_position + f.top_left_margin, 
 	 fx.size_get() 
 	    - ( fx_position + f.top_left_margin + f.bottom_right_margin ), 
-	 f.scale );
+	 false ); // f.scale );
+   // fr.clear( color::red() ); 
 
    vector p( 0, 0 );
    int lines = line_count( s, fr.size_get(), f ); 

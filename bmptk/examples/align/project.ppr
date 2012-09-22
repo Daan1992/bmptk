@@ -37,11 +37,11 @@ Project
 Main=
 Selected=align.cpp
 [..\..\graphics\bmptk_graphics.cpp]
-TopLine=464
-Caret=35,502
+TopLine=588
+Caret=7,623
 [align.cpp]
-TopLine=68
-Caret=23,74
+TopLine=67
+Caret=23,76
 [Makefile]
 TopLine=1
 Caret=30,26

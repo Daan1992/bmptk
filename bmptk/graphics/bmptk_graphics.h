@@ -183,10 +183,13 @@ public:
       return is_within( x, p.x ) && is_within( y, p.y ); }
       
    //! the vector (0,0)   
-   static vector origin(){ return vector(0,0); }
+   static vector origin(){ return vector( 0, 0 ); }
+   
+   //! the vector (0,0)   
+   static vector zero(){ return vector( 0, 0 ); }
    
    //! the vector (1,1)   
-   static vector one(){ return vector(1,1); }
+   static vector one(){ return vector( 1, 1 ); }
 };
 
 //! returns the vector that is the maximum of the arguments on each axis
@@ -1205,7 +1208,13 @@ public:
       const color fg = color::black(), 
       int width = 1 
    ):
-      drawable( frame, position, fg, color::transparent(), width ), size( size ){}
+      drawable( 
+	     frame, 
+		 position, 
+		 fg, 
+		 color::transparent(), 
+		 width 
+	  ), size( size ){}
       
         
    //! draw the line on f, at position, and to scale   
