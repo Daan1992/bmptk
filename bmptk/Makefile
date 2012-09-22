@@ -26,6 +26,7 @@ build: examples
 REDIRECT := <META HTTP-EQUIV='refresh' CONTENT='0;URL=./docs/index.html'>
 
 doc: 
+		cd docsrc/generate && make pictures
 		Doxygen docsrc/Doxyfile
 		echo "$(REDIRECT)" >index.html
 		
@@ -34,10 +35,12 @@ examples:
 
 zip: clean doc		
 		rm -rf index.html 
+		cd docsrc/generate && make clean
 		pkzip25 -add -path=relative -recurse bmptk.zip 
 		
 clean:
 		rm -rf index.html docs bmptk.zip transfer
+		cd docsrc/generate && make clean
 		cd examples && make clean	
 		
 push:

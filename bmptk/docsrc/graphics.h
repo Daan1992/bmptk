@@ -13,7 +13,7 @@
 //
 //! The graphics part of the library provides the interface to a 
 //! few LCD screens, and basic graphics functions of drawing lines, 
-//! circles, boxes, characters, and pictures on a graphic screen. 
+//! circles, boxes, characters, and pictures on a graphic screen.
 //!
 //! The widget part builds on the graphics part to provide a widget 
 //! toolkit with event processing and objects like button, 

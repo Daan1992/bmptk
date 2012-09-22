@@ -83,6 +83,8 @@ pending work list:
    - frame_buffer should have separate bool array for pixels-to-be-written?
    - clock wijzers kloppen niet? (export)
    - document the inline.py tools - refs in bmptk_graphics.h
+   - larger font for inline pictures in documentation
+   - 
    
 notes, references, links, put in a reference sections?
    - http://www.google.com/webfonts

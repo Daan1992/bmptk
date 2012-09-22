@@ -30,6 +30,8 @@ namespace bmptk {
 //! When a vector is used to identify a pixel on a screen (0,0)
 //! is the top-left pixel.
 //!
+//! \image html lcd-pixel-coordinates.gif 
+//!
 //! Two vectors can be added or subtracted to yield a new vector. 
 //! A vector can be multiplied or divided by an integer to yield a new vector. 
 //! Vectors can be compared for equality and inequality. 
@@ -809,6 +811,11 @@ protected:
 //! for writing the changed pixels to the underlying frame.
 //! To do this all buffered pixels must be checked.
 //!
+//! Note that buffering the writing to a screen that itself does
+//! fancy things (for instance shadowing) can change what appears on a 
+//! screen because the order in which pixels are written is changed.
+//! The safest is to buffer directly above the target screen.
+//!
 //! The buffer is allocated on the heap. 
 
 class frame_buffer : public frame {
@@ -831,6 +838,12 @@ private:
       return pixels[ p.x_get() + f.size_get().x_get() * p.y_get() ]; 
    }
       
+   //! private copy constructor: prevent copying
+   frame_buffer( const frame_buffer &rhs );
+   
+     //! private assignment: prevent assignment
+   void operator=( const frame_buffer &rhs );
+   
 public:   
 
    //! construct a frame_buffer from an underlying frame
@@ -850,36 +863,7 @@ public:
       }	  
    }
    
-   //! copy constructor: create a new buffer to the same underlying frame
-   frame_buffer( const frame_buffer &rhs ):
-      frame( rhs.size_get()),
-	  f( rhs.f )
-   {
-      pixels = new color[ f.size_get().x_get() * f.size_get().y_get() ];
-      for( int x = 0; x < f.size_get().x_get(); x++ ){
-         for( int y = 0; y < f.size_get().y_get(); y++ ){
-		    vector p( x, y );
-			pixel( p ) = rhs.pixel( p );
-         }
-      }	      
-   }
-   
-    //! assignment:  create an independent buffer to the same underlying frame
-   frame_buffer &  operator=( const frame_buffer &rhs ){
-      if( this != &rhs ){
-	     delete[] pixels;
-		 pixels = new color[ f.size_get().x_get() * f.size_get().y_get() ];
-		 for( int x = 0; x < f.size_get().x_get(); x++ ){
-            for( int y = 0; y < f.size_get().y_get(); y++ ){
-		       vector p( x, y );
-			   pixel( p ) = rhs.pixel( p );
-            }
-         }	
-	  }
-	  return *this;
-   }
-   
-   //! destruct a frame buffer, freeing the allocated pixel buffer
+   //! destruct a frame_buffer, freeing the allocated pixel buffer
    virtual ~frame_buffer(){
       delete[] pixels;
    }
@@ -903,6 +887,90 @@ public:
 			}   
          }
       }		              
+	  f.flush();
+   }
+   
+   //! clear the buffer, and rember the color used
+   void clear( const color c = color::white() ){
+      bg = c;
+      frame::clear( c );
+   }   
+   
+};
+
+
+// ==========================================================================
+//
+// class frame_snapshot
+//
+//! in-memory write-through frame buffer that can be written to a .bmp file
+//
+//! A frame_bsnapshot remembers the writes to the underlying frame
+//! in an in-memmory buffer. The write_to_bsmp_file method writes
+//! the content of the buffer to a .bmp file.
+//!
+//! The buffer is allocated on the heap. 
+
+class frame_snapshot : public frame {
+private:
+   //! the underlying frame
+   frame &f;
+   
+   //! the in-memory pixel buffer
+   color *pixels;
+   
+   //! return the specified pixel in the buffer
+   //
+   //! This function does no range checking. 
+   //! Calling it with an invalid p will give unpredicatble results.
+   color & pixel( vector p ){
+      return pixels[ p.x_get() + f.size_get().x_get() * p.y_get() ];
+   }
+   
+   color pixel( vector p ) const {
+      return pixels[ p.x_get() + f.size_get().x_get() * p.y_get() ]; 
+   }
+      
+   //! private copy constructor: prevent copying
+   frame_snapshot( const frame_snapshot &rhs );
+   
+     //! private assignment: prevent assignment
+   void operator=( const frame_snapshot &rhs );
+   
+public:   
+
+   //! construct a frame_snapshot from an underlying frame
+   //
+   //! This constructor allocates the pixel buffer on the heap.
+   //! The size is the number of pixels in the underlying frame *
+   //! 4 bytes for each pixel.
+   frame_snapshot( frame &fr ):
+      frame( fr.size_get()),
+	  f( fr )
+   {
+      pixels = new color[ f.size_get().x_get() * f.size_get().y_get() ];
+      for( int x = 0; x < f.size_get().x_get(); x++ ){
+         for( int y = 0; y < f.size_get().y_get(); y++ ){
+			pixel( vector( x, y )) = color::transparent();
+         }
+      }	  
+   }
+   
+   //! destruct a frame_snapshot, freeing the allocated pixel buffer
+   virtual ~frame_snapshot(){
+      delete[] pixels;
+   }
+   
+   //! write to the pixel buffer and the underlying frame
+   void checked_write( const vector p, const color c ){
+      if( ! c.is_transparent() ){
+         pixel( p ) = c;
+      }		 
+	  f.write( p, c );
+   }
+  
+   //! flush the underlying frame
+   void flush(){              
 	  f.flush();
    }
    

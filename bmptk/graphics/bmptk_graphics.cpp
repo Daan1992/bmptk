@@ -115,7 +115,7 @@ void frame::clear( const color c ){
 			
 // ==========================================================================
 //
-// frame_buffer
+// frame_snapshot
 //
 
 typedef unsigned short int WORD;
@@ -144,7 +144,7 @@ typedef struct __attribute__ ((__packed__)) {
    DWORD  biClrImportant;    // important colors
 } BITMAPINFOHEADER;
 
-void frame_buffer::write_to_bmp_file( const char *file_name ){
+void frame_snapshot::write_to_bmp_file( const char *file_name ){
     int row_byte_size = 4 * (( 3 * size_get().x_get() + 3 ) / 4);
     int padded_size = row_byte_size * size_get().y_get();
 
