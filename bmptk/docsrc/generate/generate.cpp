@@ -34,7 +34,7 @@ void coordinates( frame & lcd ){
    text( "(xmax,ymax)" ).draw( sub, vector( 35, 75 ));
    line( sub, vector( 85, 85 ), vector( 10, 10 ), color::blue(), 3 ).draw();
    
-   sub.write_to_bmp_file( "lcd-pixel-coordinates.bmp" );
+   sub.write_to_bmp_file( "lcd_pixel_coordinates.bmp" );
 }
 
 int main( void ){

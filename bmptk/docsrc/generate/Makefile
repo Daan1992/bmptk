@@ -20,7 +20,7 @@ HEADERS    :=
 LIBS       := bmptk_graphics
 
 # specify (extra) results you want to get (if any)
-PICTURES   += lcd-pixel-coordinates
+PICTURES   += lcd_pixel_coordinates
 GIFS       := $(patsubst %,%.gif,$(PICTURES))
 BMPS       := $(patsubst %,%.bmp,$(PICTURES))
 CLEAN      += $(GIFS) $(BMPS)
@@ -31,7 +31,7 @@ $(BMPS): run
 pictures: $(GIFS)
 
 # how to make a gif from a bmp
-%.gif: %.bmp; convert $< $@
+%.gif: %.bmp; rm -rf $@ && convert $< $@
 
 # The Makefile.inc does all the work
 include $(BMPTK)/Makefile.inc
