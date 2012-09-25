@@ -35,8 +35,6 @@ void draw_analog_clock( frame &f, unsigned long long int t ){
    circle( f, centre, 3, color::black(), color::black()).draw();
 }
 
-
-
 int main( void ){
 
    target_screen lcd;

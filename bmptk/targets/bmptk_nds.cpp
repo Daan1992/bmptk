@@ -46,8 +46,15 @@ unsigned long long int bmptk::time_since_startup(){
    return (( low | high ) / 67 ) * 2;
 }
 
+void bmptk::fatal_error_detected( const char *msg  ){
+   bmptk::target_screen lcd;
+   lcd.clear( color::blue());
+   bmptk::text( msg ).draw( lcd );
+   for(;;);
+}
+
 bmptk::target_screen::target_screen( void ):
-   frame( vector( 255, 191 ))
+   frame( vector( 256, 192 ))
 {
    videoSetMode(MODE_5_2D);
    vramSetBankA(VRAM_A_MAIN_BG);
@@ -64,7 +71,7 @@ void bmptk::target_screen::checked_write(
 }
 
 bmptk::target_top_screen::target_top_screen( void ):
-   frame( vector( 255, 191 ))
+   frame( vector( 256, 192 ))
 {    
    videoSetModeSub(MODE_5_2D);
    vramSetBankC(VRAM_C_SUB_BG);

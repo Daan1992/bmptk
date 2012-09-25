@@ -1,6 +1,6 @@
 // ==========================================================================
 //
-// file: bmptk/graphics/bmptk-graphics.h
+// file: bmptk/graphics/bmptk_rtos.h
 //
 // ==========================================================================
 
@@ -20,13 +20,6 @@
 //!    - Marten Wensink (marten.wensink@hu.nl)
 //!    - Wouter van Ooijen (wouter@voti.nl)
 //!
-//! \version
-//!    V3.02 (2011-05-24)
-//! \if never
-//!    The version is also available as the macro RTOS_VERSION,
-//!    don't for get to updata that macro too!
-//! \endif
-//!
 //! \par Introduction
 //!
 //! This RTOS provides a simple coroutine-based tasking service with
@@ -36,181 +29,19 @@
 //! (Realtime System Programming) and V2TH08 
 //! (Themaopdracht 8 Technische Informatica). 
 //!
-//! The RTOS consist of the files pRTOS.h and pRTOS.cpp. 
-//! It is meant to be compiled by the mkt.py application builder, 
-//! and uses some features provided by mkt.py, like chip initialization, 
-//! stack allocation, and context switching. 
-//! Mkt.py uses the GCC compiler to produce an executable (.hex file) 
-//! for the Armboard V4.1, and download it to the board (using the 
-//! serial-port-over-USB emulator), run it, and show whatever the 
-//! board writes over the emeulated serial port. 
-//! The executable is downloaded to Flash, so once downloaded it can be 
-//! restarted by powering up the board or hitting the reset button. 
-//! The Armboard has an LPC2148 ARM chip, running (by default) at 60 MHz. 
-//! This chip has 512 kB FLASH and 32 kB RAM available for the application. 
-//! (It has 8 kB more RAM, but this is dedicated to the USB interface, 
-//! and not used by mkt.py.)
-//!
 //! whenever this documentation states that something is or produces an 
-//! error this means that mkt_fatal will be called, which will
-//! (when the default error handler is left in place) show the error on 
-//! the serial port and on the LCD, and will blink the left and right 4 LEDs.
+//! error this means that bmptk::fatal will be called.
+//! Which effectv this has depends on the target.
 //!
-//! Note that the mkt.py application builder supports dynamic allocation of 
-//! memory, but not deallocation. 
-//! Hence the C++ new operator can be used, but the delete operator can 
-//! not be used (the application will not link if you use it). 
-//! Additionally RTOS objects like tasks, waitables, clocks, timers, semaphores, 
-//! etc can be allocated but not deallocated (not even on the stack). 
-//! You will get a run-time error if you try to do so.
+//! Additionally RTOS objects like tasks, waitables, clocks, timers, 
+//! semaphores, etc can be allocated but not deallocated 
+//! (not even on the stack). 
+//! You will get a compile-time error if you try to do so,
+//! because the destructors are private.
 //!
-//! \par Files
-//! - pRTOS.h
-//! - pRTOS.cpp
-//! - mkt.py
-//!
-//
 //***************************************************************************
-
-#ifndef __RTOS
-#define __RTOS
-
-#define RTOS_VERSION "V3.02 (2011-05-24)"
-
-//***************************************************************************
-//
 //!
-//! \page configuration Compile-time configuration
-//!
-//! The RTOS can be configured by changing some \#define's in pRTOS.h
-//!
-//! \par global_logging
-//!
-//! All RTOS debug logging can be switched off by defining 
-//! \b global_logging as 0
-//! It is advised to make all application debug logging likewise
-//! dependent on this macro. Check pRTOS.cpp for examples
-//!
-//! \par RTOS_STATISTICS_ENABLED
-//!
-//! By default \b RTOS_STATISTICS_ENABLED is defined as 1,
-//! which enables printing statistics for all objects.
-//! It can be defined as 0 to reduce code and data size.
-//! NOTE: doing so will disable deadlock detection!
-//!
-//! \par RTOS_DEFAULT_STACK_SIZE
-//! 
-//! The default stack size is 2K. 
-//! You can choose another value by changing the initialization of
-//! \b RTOS_DEFAULT_STACK_SIZE.
-//!
-//! \par RTOS_MAX_PRIORITY
-//! 
-//! The maximum priority value (= the lowest priority) you can 
-//! assign to a task is defined by \b RTOS_MAX_PRIORITY, which is by
-//! default set to 10000. 
-//
-//***************************************************************************
-
-#define global_logging 1
-
-#define RTOS_STATISTICS_ENABLED 1
-
-const unsigned int RTOS_DEFAULT_STACK_SIZE = 2048;
-
-const unsigned int RTOS_MAX_PRIORITY = 10000;
-
-
-//***************************************************************************
-//
-//! \page debug Debug logging support
-//!
-//! The mkt.py application builder supports the std::cout output stream, 
-//! with most of the standard operations. 
-//! The standard download procedure logs on screen what is received 
-//! over the serial channel, so cout can be used as debug output.
-//!
-//! The RTOS defines the trace macro, which can be used like cout, 
-//! but prefixes each output with the current source file name and 
-//! the current source line number. Hence (after the appropriate 
-//! preparations) the statement
-//!
-//! \code
-//! trace << "n=" << n << "\n";
-//! \endcode
-//!
-//! can create the output line
-//!
-//! \code
-//! main.c:20 n=15
-//! \endcode
-//!
-//! This provides an easy way to check if and when a certain line of code 
-//! is executed, and optionally print some debugging information.
-//!
-//! Note that at the default baudrate (38k4) each character will 
-//! take ~ 250 us, so the above line (15 characters) would take ~ 4 ms. 
-//! The suggested initialization does not implement buffering, so using 
-//! cout or trace can change the timing of a 
-//! task that does printing considerably.
-//!
-//! All objects (RTOS, task, event, all waitables, mutex, pool, mailbox, 
-//! channel) can be printed to an ostream using the << operator. 
-//! Printing the RTOS will print all RTOS objects.
-//
-//***************************************************************************
-
-   // The macro HERE transates to a newline, the file-name, ":", and
-   // the line-number of the place where the HERE macro appears.
-   // This can be used for debug logging. used by the trace macro.
-#define HERE_STR( X ) #X
-#define HERE2( F, L ) ( "\n" F ":" HERE_STR( L ))
-#define HERE HERE2( __FILE__, __LINE__ )
-
-   // Printing to trace (instead of cout) prepends HERE and a space,
-   // or trace can be used standalone like 'trace;'
-#define trace ( std::cout << HERE << " " )
-
-   // allocate memory for the string and copy the content
-const char * string_allocate( const char *name );
-
-// the macro RTOS_STATISTICS is used to prefix a single line
-// that will be commented out when statistics is disabled
-#if RTOS_STATISTICS_ENABLED
-   #define RTOS_STATISTICS( x ) x
-#else
-   #define RTOS_STATISTICS( x )
-#endif
-
-const char * string_allocate( const char *name );
-
-
-//***************************************************************************
-//
-//! \page units Unit macro's
-//!
-//! These macro's make it easier to specify (interval) times:
-//!
-//! \code
-//! #define  S * ( 1000 * 1000 )
-//! #define MS * 1000
-//! #define US * 1
-//! \endcode
-//!
-//! Time in the RTOS is expressed in microseconds. 
-//! Using these marco's avoids knowledge of this detail.
-//
-//***************************************************************************
-
-#define  S * ( 1000 * 1000 )
-#define MS * 1000
-#define US * 1
-
-
-//***************************************************************************
-//
-//!
-//! \page non-preemptive Non-preemptive task switching
+//! \par Non-preemptive task switching
 //!
 //! The RTOS uses non-preemptive task switching. 
 //! This means that the CPU can be switched to another task only 
@@ -242,14 +73,10 @@ const char * string_allocate( const char *name );
 //! from suspended to blocked-and-suspended. 
 //!
 //! TBW diagram
-//
-//***************************************************************************
-
-
-//***************************************************************************
-//
 //!
-//! \page latency Latency
+//***************************************************************************
+//!
+//! \par latency Latency
 //!
 //! When a task is activated by a timeout (either by a timer or clock, 
 //! or because it is a periodic task) at a certain moment in time it will 
@@ -282,8 +109,63 @@ const char * string_allocate( const char *name );
 //! only the first source of delay (higher priority tasks that are 
 //! runnable) is applicable, because inside such calls the RTOS will 
 //! immediatley switch to the highest priority runnable task.
+//!
+//***************************************************************************
+//!
+//! \par Debug support
+//!
+//! All objects (RTOS, task, event, all waitables, mutex, pool, mailbox, 
+//! channel) can be printed to an ostream using the << operator. 
+//! Printing the RTOS will print all RTOS objects.
+//!
+//! \par Compile-time configuration
+//!
+//! The RTOS can be configured by changing some \#define's in bmptk_rtos.h
+//! For most users the defaults should be OK.
+//!
+//! \par global_logging
+//!
+//! All RTOS debug logging can be switched off by defining 
+//! \b global_logging as 0
+//! It is advised to make all application debug logging likewise
+//! dependent on this macro. Check bmptk_rtos.cpp for examples
+//!
+//! \par BMPTK_RTOS_STATISTICS_ENABLED
+//!
+//! By default \b BMPTK_RTOS_STATISTICS_ENABLED is defined as 1,
+//! which enables printing statistics for all objects.
+//! It can be defined as 0 to reduce code and data size.
+//! NOTE: doing so will disable deadlock detection!
+//!
+//! \par BMPTK_RTOS_DEFAULT_STACK_SIZE
+//! 
+//! The default stack size is 2K. 
+//! You can choose another value by changing the initialization of
+//! \b BMPTK_RTOS_DEFAULT_STACK_SIZE.
+//!
+//! \par BMPTK_RTOS_MAX_PRIORITY
+//! 
+//! The maximum priority value (= the lowest priority) you can 
+//! assign to a task is defined by \b BMPTK_RTOS_MAX_PRIORITY, which is by
+//! default set to 10000. 
 //
 //***************************************************************************
+
+#define global_logging 1
+
+#define BMPTK_RTOS_STATISTICS_ENABLED 1
+
+const unsigned int BMPTK_RTOS_DEFAULT_STACK_SIZE = 2048;
+
+const unsigned int BMPTK_RTOS_MAX_PRIORITY = 10000;
+
+// the macro BMPTK_RTOS_STATISTICS is used to prefix a single line
+// that will be commented out when statistics is disabled
+#if BMPTK_RTOS_STATISTICS_ENABLED
+   #define BMPTK_RTOS_STATISTICS( x ) x
+#else
+   #define BMPTK_RTOS_STATISTICS( x )
+#endif
 
 
 //***************************************************************************
@@ -300,6 +182,7 @@ const char * string_allocate( const char *name );
 
 class RTOS {
 public:
+   //! \cond forwards_are_not_to_be_documented
    class task;
    class event;
    class waitable;
@@ -313,6 +196,7 @@ public:
    class mailbox_base;
    class channel_base;
    class pool_base;
+   //! \endcond
 
 private:
    class waitable_set;
@@ -351,7 +235,7 @@ private:
       //! the timer interrupt, updates runTime and ElapsedTime
    friend void  timerISR (void);
 
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    static flag *flags;
    static timer *timers;
    static clock *clocks;
@@ -510,7 +394,7 @@ public:
       //! set the waitable
       void set ( void ){ t->waitables.set( *this ); }
 
-      RTOS_STATISTICS( const char *waitable_name; )
+      BMPTK_RTOS_STATISTICS( const char *waitable_name; )
 
       friend class waitable_set;
    };
@@ -575,9 +459,9 @@ public:
    private:
       
         // this information is needed for statistics only
-      RTOS_STATISTICS( flag *next_flag; )
-      RTOS_STATISTICS( unsigned int n_sets; )
-      RTOS_STATISTICS( unsigned int n_gets; )
+      BMPTK_RTOS_STATISTICS( flag *next_flag; )
+      BMPTK_RTOS_STATISTICS( unsigned int n_sets; )
+      BMPTK_RTOS_STATISTICS( unsigned int n_gets; )
       
       friend class RTOS;
    };
@@ -638,19 +522,19 @@ private:
    //! another task, or even in the RTOS. 
    //!    
    //! Each task is created with a fixed priority, which can be any 
-   //! unsigend integer value below RTOS_MAX_PRIORITY (by default 10_000). 
+   //! unsigend integer value below BMPTK_RTOS_MAX_PRIORITY (by default 10_000). 
    //! After creation the priority can not be changed.
    //! The value 0 indicates the highest task priority, a higher number 
    //! indicates a lower priority. 
    //! Each task must have a unqiue priority, it is an error to create 
    //! a task with same priority as an existing task. 
    //! You can omit the priority, in which case the RTOS will 
-   //! select an unused priority starting at RTOS_MAX_PRIORITY 
+   //! select an unused priority starting at BMPTK_RTOS_MAX_PRIORITY 
    //! (in other words, it will choose a low priority for your task).
    //! 
    //! Each task has its own stack. 
    //! You can specify the size of the stack at task creation. 
-   //! If you omit the stack size, RTOS_DEFAULT_STACK_SIZE will be used 
+   //! If you omit the stack size, BMPTK_RTOS_DEFAULT_STACK_SIZE will be used 
    //! (default: 2 Kb). 
    //! This will be enough for most tasks, if you take care not to 
    //! allocate big things on the stack, and avoid very deep nesting 
@@ -825,7 +709,7 @@ public:
       bool task_is_suspended;
 
          // task name, only for statistics
-      RTOS_STATISTICS( const char *task_name; )
+      BMPTK_RTOS_STATISTICS( const char *task_name; )
 
          // a lower number means a higher priority, 0 is highest
       unsigned int task_priority;
@@ -870,20 +754,20 @@ public:
 
       //! constructor, specify priority, name and stacksize
       //
-      //! Priorities are reasonably-valued (below RTOS_DEFAULT_RIORITY)
+      //! Priorities are reasonably-valued (below BMPTK_RTOS_DEFAULT_RIORITY)
       //! unsigned integers. 0 is te highest priority. 
       //! Priorities must be unqiue. 
       //! The default causes the constructor to choose a free priority 
-      //! starting at RTOS_DEFAULT_PRIORITY (default: 10000). 
+      //! starting at BMPTK_RTOS_DEFAULT_PRIORITY (default: 10000). 
       //!
       //! The name is used for debugging and statistics. 
       //!
       //! A stack of stack_size bytes is allocated for the task. 
       //! The default is 2 kB.
       task(
-         unsigned int priority  = RTOS_MAX_PRIORITY,
+         unsigned int priority  = BMPTK_RTOS_MAX_PRIORITY,
          const char * tname     = "",
-         unsigned int stacksize = RTOS_DEFAULT_STACK_SIZE
+         unsigned int stacksize = BMPTK_RTOS_DEFAULT_STACK_SIZE
       );
 
       //! throws an error, beacuse tasks should never be destroyed
@@ -1063,7 +947,7 @@ private:
       // abort a started timer
       virtual void cancel( void ){ time_to_wait = 0; }
 
-      RTOS_STATISTICS( const char * object_name; )
+      BMPTK_RTOS_STATISTICS( const char * object_name; )
 
          // the number of microseconds until the next time_up
       long long int time_to_wait;
@@ -1135,9 +1019,9 @@ public:
 
    private:
       void time_up( void ){ waitable::set(); }
-      RTOS_STATISTICS( timer *next_timer; )
-      RTOS_STATISTICS( unsigned int n_sets; )
-      RTOS_STATISTICS( unsigned int n_cancels; )
+      BMPTK_RTOS_STATISTICS( timer *next_timer; )
+      BMPTK_RTOS_STATISTICS( unsigned int n_sets; )
+      BMPTK_RTOS_STATISTICS( unsigned int n_cancels; )
       friend class RTOS;
    };
 
@@ -1193,8 +1077,8 @@ public:
    private:
       void time_up( void );
       unsigned int _interval;
-      RTOS_STATISTICS( clock *next_clock; )
-      RTOS_STATISTICS( unsigned int ticks; )
+      BMPTK_RTOS_STATISTICS( clock *next_clock; )
+      BMPTK_RTOS_STATISTICS( unsigned int ticks; )
 
       friend class RTOS;
    };
@@ -1217,7 +1101,7 @@ public:
       }
       void print( std::ostream & s, bool header = true ) const;
 
-   #if RTOS_STATISTICS_ENABLED
+   #if BMPTK_RTOS_STATISTICS_ENABLED
       unsigned int reads;
       unsigned int writes;
       pool_base * next_pool;
@@ -1288,7 +1172,7 @@ public:
 
       //! atomic write operation on a pool
       //
-      //! A read opeartion returns the most recently written data.
+      //! A read operation returns the most recently written data.
       //!
       //! In the context of co-operative multitasking a read of write
       //! operation on anything is always atomic, unless the implementation
@@ -1296,7 +1180,7 @@ public:
       //! But for clearness it is a good idea to implement such task-global
       //! data as pools.        
       void write (T item) {
-         RTOS_STATISTICS( reads++; )
+         BMPTK_RTOS_STATISTICS( reads++; )
          data = item;
       }
 
@@ -1304,7 +1188,7 @@ public:
       //
       //! @copydetails  write
       T read (void) {
-         RTOS_STATISTICS( writes++; )
+         BMPTK_RTOS_STATISTICS( writes++; )
          return data;
       }
 
@@ -1392,7 +1276,7 @@ public:
    private:
       task * owner;             // current owner of the mutex
       task * waiters;           // head of the waiting tasks queue
-   #if RTOS_STATISTICS_ENABLED
+   #if BMPTK_RTOS_STATISTICS_ENABLED
       const char * mutex_name;  // for logging
       mutex *next_mutex;        // queue of all mutexes, for logging
       int wait_count;           // counts # wait calls;
@@ -1421,7 +1305,7 @@ public:
       void print( std::ostream & s, bool header = true ) const;
 
       task * client;
-   #if RTOS_STATISTICS_ENABLED
+   #if BMPTK_RTOS_STATISTICS_ENABLED
       const char * mailbox_name;
       unsigned int writes;
       mailbox_base *next_mailbox;
@@ -1468,7 +1352,7 @@ public:
    template <class T> class mailbox : mailbox_base {
    public:
       
-        //! construtor, specify mutex name
+        //! constructor, specify mutex name
         //
         //! Create a mutex. The mutex is initially set. 
         // The name is used for debugging and statistics.
@@ -1487,15 +1371,15 @@ public:
       //! The signal() calls will release the tasks in 
       //! the order of their wait() calls.
       void write( const T item ) {
-         RTOS_STATISTICS( writes++; )
+         BMPTK_RTOS_STATISTICS( writes++; )
          data = item;
          if ( client != 0 ) {
-            // someone is waiting to read, unblock it
-            client->unblock();
+               // someone is waiting to read, unblock it
+               client->unblock();
             } else {
                 // block until the reader gets the data
                 client = RTOS::current_task();
-             client->block();
+                client->block();
             }
       }
       
@@ -1516,10 +1400,12 @@ public:
          }
          else {
             // unblock the writer
-            client->unblock();
-              client = 0;
+			// but first make sure the client is 0 
+			task *temp = client;
+            client = 0;
+            temp->unblock();
          }
-           return data;
+         return data;
       }
 
    private:
@@ -1528,12 +1414,15 @@ public:
 
    //************************************************************************
    //
+   //! \cond base_classes are undocumented
+   //
    // class channel_base
    //
    //! RTOS private implementation class
    //
    //************************************************************************
 
+   
 public:
    class channel_base : public waitable{
    public:
@@ -1546,7 +1435,7 @@ public:
    protected:
       channel_base( task * t, const char *name );
 
-   #if RTOS_STATISTICS_ENABLED
+   #if BMPTK_RTOS_STATISTICS_ENABLED
       const char *channel_name;
       channel_base *next_channel;
       int writes;
@@ -1557,6 +1446,7 @@ public:
       int tail;
       friend class RTOS;
    };
+   //! \endcond
 
    //************************************************************************
    //
@@ -1633,7 +1523,7 @@ public:
       //! write an item to the queue
       void write( T item ) {
          if( qSize < SIZE ) {
-            RTOS_STATISTICS( writes++; )
+            BMPTK_RTOS_STATISTICS( writes++; )
             queue[head] = item;
             if( ++head == SIZE ) {
                head = 0;
@@ -1641,7 +1531,7 @@ public:
             qSize += 1;
             waitable::set();
          } else {
-            RTOS_STATISTICS( ignores++; )
+            BMPTK_RTOS_STATISTICS( ignores++; )
          }
       }
 

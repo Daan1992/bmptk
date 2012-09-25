@@ -185,7 +185,7 @@ int main( void ){
    
    frame_tee a0( a01, a02_buffered, a03_nice );
    frame_tee a1_raw( a11, a12_negative, a13_fat, a14_shadow );
-   frame_buffer a1( a1_raw );
+   //frame_buffer a1( a1_raw );
    
    text( "normal" ).draw( a11t );
    text( "negative" ).draw( a12t );
@@ -195,7 +195,7 @@ int main( void ){
    for(;;){
       unsigned long long int t = time_since_startup();
       draw_analog_clock( a0, t );
-      draw_analog_clock( a1, t );
+      draw_analog_clock( a1_raw, t );
       
       draw_digital_clock( d,t );
 	  wait( 1000 * ms );

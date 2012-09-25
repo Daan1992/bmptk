@@ -60,6 +60,20 @@
 //! (windows XP).
 //!
 //! PSPad will save all changed files before it runs an external command.
+//!
+//! By default PSPad will use tab characters to create indendation, which
+//! IMHO is very bad because no two programs agree on how much indendation 
+//! each tab creates. Use Settings => Program Settings => Editor Settings 
+//! to correct this. I prefer 3 spaces per indentadion level.
+//!
+//! \image html pspad-editor-settings.gif
+//!
+//! When freshly started with a project directory copied from another
+//! PC PSPad will sometimes produce this error:
+//! \image html pspad-error1.gif
+//! I am not sure what causes this problem but it can be fixed by
+//! quitting PSPad and restarting it. Apparently it rewrites the .ppr
+//! file and in the process removes some problem, maybe with line endings.
 //! 
 //! Some tips:
 //! - view => Line Numbers : toggle showing line numbers 
@@ -74,6 +88,10 @@
 //! - By default PSPad replaces TABs with spaces. This is OK, except when
 //!   editng makefiles. You can insert a TAB in a makefile by cut-n-pasting
 //!   an existing TAB.
+//! - You can use the run command (ALT-F9) to build and run your 
+//!   application, but remember that unlike the build command (CTRL-F9)
+//!   it won't save your changes first! This is PSPad behaviour, I don't 
+//!   know how to change it.
 //
 // ==========================================================================
 

@@ -49,12 +49,27 @@
       //! use instead of cout; prepends source file name and line number
       //
       //! Printing to trace (instead of cout) prepends BMPTK_HERE and a
-      //! space, which makes it easy to locate the line in your sources.
-      //! The output is also flushed, which can be usefull when the
+      //! space.
+      //! This provides an easy way to check if and when a certain line 
+	  //! of code is executed, and optionally print some debugging 
+	  //! information.	      
+	  //! The output is also flushed, which can be usefull when the
       //! program will shortly crash, which might leave the output buffer
       //! not written. 
-      //! Trace can simply be used standalone as a statement, just 'trace;'.
+      //! Trace can simply be used standalone as a statement, j
+	  //! ust 'trace;'.
       //! Note that trace is a macro, not an object.
+	  //!
+      //! \code
+      //! trace << "n=" << n << "\n";
+      //! \endcode
+      //!
+      //! could for instance print the output line
+      //!
+      //! \code
+      //! main.c:20 n=15
+      //! \endcode
+      //!
    #define trace ( std::cout << BMPTK_HERE << " " << std::flush )
 
 
@@ -79,7 +94,7 @@
         //!    500 * bmptk::ms
         //!
         //! Please do not make your code depend on the exact values, 
-        //! they! might change in future versions!
+        //! they might change in future versions!
       enum time_units { 
          s  = 1000ULL * 1000ULL, 
          ms = 1000ULL,
@@ -147,7 +162,7 @@
       void wait_busy( unsigned long long int t );      
       
       //! wait an amount of time
-	  //!
+	  //
  	  //! This function waits at leas the requested amount of time 
 	  //! (in \ref time_units) before returning. 
 	  //!
@@ -160,13 +175,25 @@
 	  //! When the extra delay that might be caused by task switching
 	  //! is not acceptable \ref wait_busy should be used instead.
       void wait( unsigned long long int t );      
+	  
+	  //! handle a fatal error
+	  //
+	  //! This function is to be called when a fatal condition has
+	  //! been detected. What it does is target-dependent, but 
+	  //! it will make a attempt to alert the user and 
+	  //! to show the msg.
+	  //! It will never return.
+	  void fatal_error_detected( const char *msg );
       
    };  
            
-   // include the graphics part only if requested to do so              
+   // include a library only if requested to do so              
    #ifdef BMPTK_GRAPHICS
       #include "bmptk_graphics.h"
       #include "bmptk_font_default.h"
+   #endif
+   #ifdef BMPTK_RTOS
+      #include "bmptk_rtos.h"
    #endif
    
    // include the target-specific header files

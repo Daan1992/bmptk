@@ -32,20 +32,12 @@ Project
 [Open project files]
 0=Makefile
 1=generate.cpp
-2=..\..\graphics\bmptk_graphics.cpp
-3=..\..\graphics\bmptk_graphics.h
 [Selected Project Files]
 Main=
 Selected=generate.cpp
 [Makefile]
 TopLine=1
-Caret=23,31
+Caret=1,32
 [generate.cpp]
 TopLine=1
-Caret=4,36
-[..\..\graphics\bmptk_graphics.cpp]
-TopLine=638
-Caret=6,662
-[..\..\graphics\bmptk_graphics.h]
-TopLine=1188
-Caret=7,1217
+Caret=23,42

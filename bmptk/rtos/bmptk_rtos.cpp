@@ -7,11 +7,14 @@ date      2011-03-23
 
 \***************************************************************************/
 
-#include "pRTOS.h"
+#include "bmptk.h"
 #include "string.h"
 
 using namespace std;
+using namespace bmptk;
 
+   // allocate memory for the string and copy the content
+const char * string_allocate( const char *name );
 
 /***************************************************************************\
 
@@ -92,7 +95,7 @@ RTOS::task::task(
    waitables( this ),
    logging( task_logging )
 {
-   RTOS_STATISTICS( task_name = string_allocate( tname ); )
+   BMPTK_RTOS_STATISTICS( task_name = string_allocate( tname ); )
 
    sleep_timer = 0;
    coroutine = new mkt_coroutine_class( task_trampoline, stacksize );
@@ -170,7 +173,7 @@ void RTOS::task::sleep( unsigned int time ){
 }
 
 void RTOS::task :: print( std::ostream & stream, bool header ) const {
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    if( header ){
       stream
          << endl << endl << dec
@@ -247,7 +250,7 @@ void RTOS::event::print( std::ostream & s ) const {
 RTOS::waitable :: waitable( task *t, const char *arg_name ) :
    event( t, 0 )
 {
-   RTOS_STATISTICS( waitable_name = string_allocate( arg_name ); )
+   BMPTK_RTOS_STATISTICS( waitable_name = string_allocate( arg_name ); )
    mask = t->waitables.waitable_allocate();
 }
 
@@ -259,21 +262,21 @@ RTOS::waitable :: waitable( task *t, const char *arg_name ) :
 
 RTOS::flag::flag( task *t, const char *name ):
    waitable( t, name )
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    ,n_sets( 0 ),
    n_gets( 0 )
 #endif
 {
-   RTOS_STATISTICS( RTOS::add( this ); )
+   BMPTK_RTOS_STATISTICS( RTOS::add( this ); )
 }
 
 void RTOS::flag::set( void ){
-   RTOS_STATISTICS( n_sets++; )
+   BMPTK_RTOS_STATISTICS( n_sets++; )
    waitable::set();
 }
 
 void RTOS::flag::print( std::ostream & stream, bool header ) const {
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    if( header ){
       stream << setw( 18 ) << left  << "flag name";
       stream << setw( 18 ) << left  << "client";
@@ -301,27 +304,27 @@ void RTOS::flag::print( std::ostream & stream, bool header ) const {
 RTOS::timer::timer( task * t, const char *name ):
    waitable( t, name ),
    callback( name )
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    ,n_sets( 0 )
    ,n_cancels( 0 )
 #endif
 {
-   RTOS_STATISTICS( RTOS::add( this ); )
+   BMPTK_RTOS_STATISTICS( RTOS::add( this ); )
 }
 
 void RTOS::timer::set( unsigned long long int time ){
-   RTOS_STATISTICS( n_sets++; )
+   BMPTK_RTOS_STATISTICS( n_sets++; )
    RTOS::callback::start( time );
 }
 
 void RTOS::timer::cancel( void ){
-   RTOS_STATISTICS( n_cancels++; )
+   BMPTK_RTOS_STATISTICS( n_cancels++; )
    RTOS::callback::cancel();
    RTOS::waitable::clear();
 }
 
 void RTOS::timer::print( std::ostream & stream, bool header ) const {
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    if( header ){
       stream << setw( 18 ) << left  << "timer name";
       stream << setw( 18 ) << left  << "client";
@@ -354,22 +357,22 @@ RTOS::clock::clock(
    waitable( t, name ),
    callback( name ),
    _interval( interval )
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    ,ticks( 0 )
 #endif
 {
    callback::start( _interval );
-   RTOS_STATISTICS( RTOS::add( this ); )
+   BMPTK_RTOS_STATISTICS( RTOS::add( this ); )
 }
 
 void RTOS::clock::time_up( void ){
-   RTOS_STATISTICS( ticks++; )
+   BMPTK_RTOS_STATISTICS( ticks++; )
    callback::restart( _interval );
    waitable::set();
 }
 
 void RTOS::clock::print( std::ostream & stream, bool header ) const {
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    if( header ){
       stream << setw( 18 ) << left  << "clock name";
       stream << setw( 18 ) << left  << "client";
@@ -427,7 +430,7 @@ RTOS::event RTOS::waitable_set::wait ( unsigned int mask ) {
             // clear the waitable
             current_waitables &= ~(1U << i);
 
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
 				// update statistics
    			for( flag * f = flags; f != 0; f = f->next_flag ){
       			if (f->t == client && f->mask == (1U << i)) {
@@ -458,15 +461,15 @@ mutex
 RTOS::mutex::mutex( const char *name ):
    owner( 0 ),
    waiters( 0 )
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    ,wait_count( 0 )
 #endif
 {
-   RTOS_STATISTICS( mutex_name = string_allocate( name ); )
+   BMPTK_RTOS_STATISTICS( mutex_name = string_allocate( name ); )
 }
 
 void RTOS::mutex::wait (void) {
-   RTOS_STATISTICS( wait_count++; )
+   BMPTK_RTOS_STATISTICS( wait_count++; )
    if( owner == 0 ){
       owner = RTOS::current_task();
    }
@@ -508,7 +511,7 @@ void RTOS::mutex::signal (void) {
 }
 
 void RTOS::mutex::print( std::ostream & stream, bool header ) const {
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    if( header ){
       stream << setw( 18 ) << left  << "mutex name";
       stream << setw( 18 ) << left  << "owner";
@@ -545,7 +548,7 @@ callback
 RTOS::callback::callback( const char *name ) :
     time_to_wait (0)
 {
-   RTOS_STATISTICS( object_name = string_allocate( name ); )
+   BMPTK_RTOS_STATISTICS( object_name = string_allocate( name ); )
    RTOS::add( this );
 }
 
@@ -558,7 +561,7 @@ RTOS::callback::callback( const char *name ) :
 
 RTOS::channel_base::channel_base( task *t, const char *name ):
    waitable( t, name ),
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    writes( 0 ),
    ignores( 0 ),
 #endif
@@ -566,14 +569,14 @@ RTOS::channel_base::channel_base( task *t, const char *name ):
    head( 0 ),
    tail ( 0 )
 {
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    channel_name = string_allocate( name );
    RTOS::add( this );
 #endif
 }
 
 void RTOS::channel_base::print( std::ostream & stream, bool header ) const {
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    if( header ){
       stream << setw( 18 ) << left  << "channel name";
       stream << setw( 18 ) << left  << "owner";
@@ -601,17 +604,17 @@ void RTOS::channel_base::print( std::ostream & stream, bool header ) const {
 //***************************************************************************
 
 RTOS::pool_base::pool_base( const char *name )
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    : reads( 0 ),
    writes( 0 )
 #endif
 {
-   RTOS_STATISTICS( pool_name = string_allocate( name ); )
-   RTOS_STATISTICS( RTOS::add( this ); )
+   BMPTK_RTOS_STATISTICS( pool_name = string_allocate( name ); )
+   BMPTK_RTOS_STATISTICS( RTOS::add( this ); )
 }
 
 void RTOS::pool_base::print( std::ostream & stream, bool header ) const {
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    if( header ){
       stream << setw( 18 ) << left  << "pool name";
       stream << setw(  8 ) << right << "writes";
@@ -633,17 +636,17 @@ void RTOS::pool_base::print( std::ostream & stream, bool header ) const {
 //***************************************************************************
 
 RTOS::mailbox_base::mailbox_base( const char *name )
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    : client( 0 ),
    writes( 0 )
 #endif
 {
-   RTOS_STATISTICS( mailbox_name = string_allocate( name ); )
-   RTOS_STATISTICS( RTOS::add( this ); )
+   BMPTK_RTOS_STATISTICS( mailbox_name = string_allocate( name ); )
+   BMPTK_RTOS_STATISTICS( RTOS::add( this ); )
 }
 
 void RTOS::mailbox_base::print( std::ostream & stream, bool header ) const {
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    if( header ){
       stream << setw( 18 ) << left  << "mailbox name";
       stream << setw( 18 ) << left  << "client";
@@ -745,7 +748,7 @@ bool RTOS::must_clear = false;
 bool RTOS::scheduler_running = false;
 
 const char * RTOS::task::name( void ) const {
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    return task_name;
 #else
    return "";
@@ -753,7 +756,7 @@ const char * RTOS::task::name( void ) const {
 }
 
 // adding various objects to the RTOS lists
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
 
 RTOS::flag * RTOS::flags = 0;
 RTOS::timer * RTOS::timers = 0;
@@ -805,10 +808,10 @@ void RTOS::print( ostream & stream ){
    // global info
    stream << "\n\n";
    stream << "mkt version  : " << mkt_version << "\n";
-   stream << "RTOS version : " << RTOS_VERSION << "\n";
+   stream << "RTOS version : " << BMPTK_RTOS_VERSION << "\n";
    stream << "RAM free     : " << dec << mkt_memory_free() << "\n";
 
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
    bool header;
 
    if( rtos_current_task != 0 ){
@@ -923,7 +926,7 @@ void RTOS::beat (void) {
       ){
          if(0){
             trace
-               RTOS_STATISTICS( << t->object_name )
+               BMPTK_RTOS_STATISTICS( << t->object_name )
                << "@" << std::hex << (int)t
                << " ttw=" << (int) t->time_to_wait;
          }
@@ -980,7 +983,7 @@ void RTOS::beat (void) {
       }
    }
 
-#if RTOS_STATISTICS_ENABLED
+#if BMPTK_RTOS_STATISTICS_ENABLED
 
    // no runnable task has been found, nothing to do right now
    // we might as well do deadlock detection
@@ -1050,7 +1053,7 @@ void RTOS::add( task * new_task ){
       trace << "register task " << new_task->name();
    }
 
-   if( new_task->task_priority > RTOS_MAX_PRIORITY ){
+   if( new_task->task_priority > BMPTK_RTOS_MAX_PRIORITY ){
       mkt_fatal (#UNIQUE_ERROR); // illegal task priority
    }
 
@@ -1066,7 +1069,7 @@ void RTOS::add( task * new_task ){
    }
    while( ( *t != 0 ) && ( (*t)->task_priority <= new_task->task_priority ) ) {
       if( (*t)->task_priority == new_task->task_priority ){
-         if( new_task->task_priority >= RTOS_MAX_PRIORITY ){
+         if( new_task->task_priority >= BMPTK_RTOS_MAX_PRIORITY ){
             new_task->task_priority++;
          } else {
             mkt_fatal (#UNIQUE_ERROR); // duplicate task priority

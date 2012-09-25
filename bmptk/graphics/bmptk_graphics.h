@@ -619,8 +619,7 @@ protected:
    color bg;
    
    //! width of (for instance) lines
-   unsigned int width;  
-   
+   unsigned int width;
    
    //! draw one pixel on f, at position
    //
@@ -1335,6 +1334,13 @@ std::ostream & operator<<( std::ostream &s, const relief &r );
 //
 
 class rectangle : public drawable {
+private:
+   //! private copy constructor: prevent copying
+   rectangle( const rectangle & );
+   
+   //! private assignment: prevent assignment
+   void operator=( const rectangle & rhs );
+   
 public:
 
    //! bright border color; can be read or written; intitally fg

@@ -43,11 +43,13 @@ SOURCES   += $(PROJECT).cpp
 VPATH     += $(BMPTK)
 VPATH     += $(BMPTK)/targets
 VPATH     += $(BMPTK)/graphics
+VPATH     += $(BMPTK)/rtos
 
 INCLUDES  += -I.
 INCLUDES  += -I$(BMPTK)
 INCLUDES  += -I$(BMPTK)/targets
 INCLUDES  += -I$(BMPTK)/graphics
+INCLUDES  += -I$(BMPTK)/rtos
 
 bmptk_graphics.h:
 	# You specified an absolute path ($(BMPTK)) for the bmptk location.
@@ -69,9 +71,9 @@ bmptk_graphics.h:
 # 
 #============================================================================
 
-PORT      := COM4
-BAUDRATE  := 115200
-XTAL      := 12000
+SERIAL_PORT := COM4
+BAUDRATE    := 115200
+XTAL        := 12000
 
 
 #============================================================================
@@ -146,7 +148,8 @@ ifeq ($(CHIP),lpc2478)
    XTAL        := 12000000
    PREFIX      := $(ARMTOOLS)/bin/arm-none-eabi-
    # PREFIX      := $(ARMDEVENV)/bin/arm-thumb-elf-
-   CORE-FLAGS  := -mcpu=arm7tdmi -mtune=arm7tdmi -nostartfiles -fno-exceptions -fno-threadsafe-statics -fno-use-cxa-get-exception-ptr
+   CORE-FLAGS  := -mcpu=arm7tdmi -mtune=arm7tdmi -nostartfiles -fno-exceptions 
+   CORE-FLAGS  += -fno-threadsafe-statics -fno-use-cxa-get-exception-ptr
    LDFLAGS	   += -T$(BMPTK)/targets/$(CHIP).ld -nostartfiles
    SOURCES     += $(CHIP).cpp $(CHIP)-startup.s
    HEADERS     += $(CHIP).h
@@ -184,6 +187,11 @@ endif
 
 bmptk_font_default.cpp bmptk_font_default.h: $(FONT-DEFAULT) $(FFTTOCPP-TOOL)
 		$(FFTTOCPP) $(FONT-DEFAULT) bmptk_font_default font_default 8 "" bmptk
+
+ifeq (bmptk_rtos,$(filter bmptk_rtos,$(LIBS)))
+   LIBS          += bmptk_coroutines
+   DEFINES       += -DBMPTK_RTOS
+endif
 
       
 #============================================================================

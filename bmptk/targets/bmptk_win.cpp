@@ -14,12 +14,13 @@
    #define SCALE 1
 #endif   
 
-void xxwait( unsigned long long int t ){
-   Sleep( 1 + t / bmptk::ms );
-}
-
 unsigned long long int bmptk::time_since_startup(){
    return GetTickCount() * 1000ULL;
+}
+
+void bmptk::fatal_error_detected( const char *msg  ){
+   std::cout << "fatal error : " << msg << "\n" << std::flush;
+   for(;;);
 }
 
 bmptk::target_screen::target_screen( void ):
