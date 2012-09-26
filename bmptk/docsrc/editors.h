@@ -91,7 +91,12 @@
 //! - You can use the run command (ALT-F9) to build and run your 
 //!   application, but remember that unlike the build command (CTRL-F9)
 //!   it won't save your changes first! This is PSPad behaviour, I don't 
-//!   know how to change it.
+//!   know how to change it.  
+//! - When you run the application a (great) number of times from
+//!   PSPad some resource seem to get depleted and further runs
+//!   (other make calls: build and clean) will fail. Restarting PSPad
+//!   will solve this, but it is rather annoying when you don't know
+//!   why everything fails.
 //
 // ==========================================================================
 

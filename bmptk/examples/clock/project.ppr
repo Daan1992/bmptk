@@ -39,11 +39,11 @@ Project
 Main=
 Selected=clock.cpp
 [clock.cpp]
-TopLine=57
-Caret=5,78
+TopLine=62
+Caret=1,62
 [..\..\graphics\bmptk_graphics.h]
 TopLine=875
-Caret=25,898
+Caret=3,898
 [..\..\graphics\bmptk_graphics.cpp]
 TopLine=166
 Caret=36,189
@@ -51,5 +51,5 @@ Caret=36,189
 TopLine=1
 Caret=18,13
 [..\..\targets\bmptk_win.cpp]
-TopLine=14
+TopLine=5
 Caret=4,37
