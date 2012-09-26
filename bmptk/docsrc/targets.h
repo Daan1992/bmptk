@@ -57,6 +57,11 @@
 //! - http://libnds.devkitpro.org/
 //! - http://osdl.sourceforge.net/main/documentation/misc/nintendo-DS/homebrew-guide/HomebrewForDS.html
 //!
+//! DesMuMe seems to be the most used emulator, but there are others 
+//! that you could try, check this
+//! <A HREF="http://www.emulator-zone.com/doc.php/nds/">
+//! list of emulators</A>
+//!
 //
 // ==========================================================================
 
