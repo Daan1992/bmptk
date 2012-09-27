@@ -997,6 +997,7 @@ public:
 //! writes to the (2..4) underlying frames
 //
 //! A frame_tee is a frame that forwards writes to the underlying frames. 
+//! The constructor supports 2..4 underlying frames.
 
 class frame_tee : public frame {
 private:
