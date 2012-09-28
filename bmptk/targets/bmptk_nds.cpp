@@ -46,6 +46,14 @@ unsigned long long int bmptk::time_since_startup(){
    return (( low | high ) / 67 ) * 2;
 }
 
+#ifndef BMPTK_GRAPHICS
+
+void bmptk::fatal_error_detected( const char *msg  ){
+   for(;;);
+}
+
+#else
+
 void bmptk::fatal_error_detected( const char *msg  ){
    bmptk::target_screen lcd;
    lcd.clear( color::blue());
@@ -85,3 +93,5 @@ void bmptk::target_top_screen::checked_write(
 ){
    BG_GFX_SUB[ v.x_get() + ( v.y_get() * 256 ) ] = 0x8000 | c.rgb15_get();
 }
+
+#endif

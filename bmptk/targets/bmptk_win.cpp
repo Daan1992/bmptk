@@ -3,6 +3,8 @@
 // not user level include files, hence not included by bmptk.h
 #include "bmptk_win_graphics.hx"
 #include "windows.h"
+#include <iostream>
+#include <iomanip>
 
 #ifndef XSIZE
    #define XSIZE 256
@@ -23,6 +25,8 @@ void bmptk::fatal_error_detected( const char *msg  ){
    for(;;);
 }
 
+#ifdef BMPTK_GRAPHICS
+
 bmptk::target_screen::target_screen( void ):
    frame( vector( XSIZE, YSIZE ))
 {
@@ -42,3 +46,5 @@ void bmptk::target_screen::checked_write(
       }
    }      
 }
+
+#endif

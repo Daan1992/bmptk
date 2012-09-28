@@ -23,7 +23,7 @@
 //! Bmptk tries to make your application portable across various targets,
 //! rather than trying to make optimal use of a specific target. Hence
 //! the features of the target are used trough an abstraction. 
-//! An LCD screen for instance is a \ref frame instance, which has 
+//! An LCD screen for instance is a \ref bmptk::frame instance, which has 
 //! (except for its size) the same properties on all targets that have 
 //! an LCD screen (or more than one).
 //!

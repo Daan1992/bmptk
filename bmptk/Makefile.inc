@@ -244,8 +244,15 @@ ASFLAGS     := $(CORE-FLAGS) $(INCLUDES) $(DEFINES) -I$(BMPTK)
 ASFLAGS     += -x assembler-with-cpp
 
 # default LDFLAGS
-LDFLAGS     +=  -Wl,-Map,$(MAP)              
+LDFLAGS     +=  -Wl,-Map,$(MAP)
 
+# sections : eliminate unused code and data
+#CPPFLAGS    += -ffunction-sections -fdata-sections 
+# LDFLAGS     += -Wl,--gc-sections -Wl,--strip-all
+# LDFLAGS     +=  --gc-sections
+
+# notyet :(
+# CPPFLAGS    += -fdiagnostics-show-option
 
 #============================================================================
 #

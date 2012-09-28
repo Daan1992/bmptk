@@ -9,6 +9,8 @@
 
 namespace bmptk { 
 
+#ifdef BMPTK_GRAPHICS
+
 //! the main screen of the target hardware
 class target_screen : public frame {
 public:
@@ -22,6 +24,8 @@ public:
    target_top_screen( void );
    void checked_write( const vector v, const color c );
 };
+
+#endif
 
 }
 

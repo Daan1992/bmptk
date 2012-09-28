@@ -90,6 +90,11 @@ pending work list:
    - devkitpro make has the problem (devkitpro\msys\bin\make.exe)
    - meer private CC en op=
    - http://www.microchip.com/stellent/idcplg?IdcService=SS_GET_PAGE&nodeId=1406&dDocName=en531543&page=wwwRTOS
+   - http://www.linuxtopia.org/online_books/programming_books/c++_practical_programming/c++_practical_programming_093.html
+   - http://www.teamfdi.com/development-tools-kits/uez.php
+   - nds and win targets seem to keep unused code ?
+   - http://www.angelikalanger.com/Articles/Topics.html#CPP
+   - http://www.ethernut.de/api/index.html
    
 notes, references, links, put in a reference sections?
    - http://www.google.com/webfonts

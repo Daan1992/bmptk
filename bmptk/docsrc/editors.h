@@ -79,7 +79,9 @@
 //! - view => Line Numbers : toggle showing line numbers 
 //! - view => Special Chars : toggle showing tabs, newlines, etc
 //! - Tools => EyeDropper : get the 16-bit color value of a 
-//!    pixel on our screen
+//!   pixel on our screen
+//! - Setings => Program Settings => Editor - behaviour : uncheck
+//!   "completion of chars ({[<"'"
 //! - Opening a second copy of PSPad by clicking on a .ppr file
 //!   will give you a number of very
 //!   weird error messages. Eventually the new project will be opened.

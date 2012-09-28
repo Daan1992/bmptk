@@ -33,10 +33,9 @@ Project
 0=lines.cpp
 1=..\text\Makefile
 2=Makefile
-3=..\..\Makefile.inc
 [Selected Project Files]
 Main=
-Selected=..\..\Makefile.inc
+Selected=lines.cpp
 [lines.cpp]
 TopLine=1
 Caret=30,8
@@ -46,6 +45,3 @@ Caret=44,15
 [Makefile]
 TopLine=1
 Caret=18,13
-[..\..\Makefile.inc]
-TopLine=1
-Caret=27,3
