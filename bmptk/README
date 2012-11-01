@@ -90,6 +90,19 @@ pending work list:
    - devkitpro make has the problem (devkitpro\msys\bin\make.exe)
    - meer private CC en op=
    - http://www.microchip.com/stellent/idcplg?IdcService=SS_GET_PAGE&nodeId=1406&dDocName=en531543&page=wwwRTOS
+   - http://www.linuxtopia.org/online_books/programming_books/c++_practical_programming/c++_practical_programming_093.html
+   - http://www.teamfdi.com/development-tools-kits/uez.php
+   - nds and win targets seem to keep unused code ?
+   - http://www.angelikalanger.com/Articles/Topics.html#CPP
+   - http://www.ethernut.de/api/index.html
+   - sizes summary shows only the user's files ...
+   - I get it right 98% of the time, and don't care about the other 3%.
+   - must override overflow?? http://stackoverflow.com/questions/243696/correctly-over-loading-a-stringbuf-to-replace-cout-in-a-matlab-mex-file
+   - add image magic to tools
+   - subframe => frame_subframe?
+   - frame_mirror_h _v _df _db
+   - frame_rot_r _1 _2
+   - frame_overlay (cursor, sprite)
    
 notes, references, links, put in a reference sections?
    - http://www.google.com/webfonts
@@ -108,6 +121,60 @@ notes, references, links, put in a reference sections?
    - http:-homepage.smc.edu/kennedy_john/bcircle.pdf
    - http://www.dafont.com/new.php?page=2
    - http://forum.gbadev.org/viewtopic.php?t=14396&highlight read NDS stylus pressure
+   - http://www.kernel.org/doc/Documentation/CodingStyle
    
 A global object must never depend on another global object
 Better: do not use global objects! => function that returns an object
+
+Pipe Dreams:
+   - Cortex two-wire-debug 
+   - debug in Flash
+   - run on Linux in a window
+   - run on Android
+   - asm & C
+   - Olimex LCD 4.2, RaPi
+   
+Naming conventions
+   - underscores_without_capitals
+   - big::smaller->yetsmaller.smallest_action_variants
+   - convert: y_from_x, or use y_constructor
+   - bases classes have private assignment, default & copy constructor
+   - ADTs have visible assignment, default & copy constructor
+   - avoid memory deallocation
+   - no exceptions, fatals call bmptk::fatal_error_detected
+   - 
+   
+"C is quirky, flawed, and an enormous success." - Dennis Ritchie   
+   
+Design principles
+   -    
+   
+Code Conventions:
+   - 1TBF
+   - 3 spaces per level, no tabs (except in Makefiles!)
+   
+Makefile conventions
+   - targets clean, build (=default), run
+   
+Doxygen conventions:   
+   - Doxygen must run without warnings
+   short description
+   - is not a scentence
+   - does not repeat the item name or kind (constructor etc)
+   - 'reports' for pure functions
+   - 'reports whether' for predicates
+   - 'constructs an X from an Y' for constructors
+   long description (if needed)
+   - contains full scentences
+   
+terms:
+   - scar tissue
+   
+http://www.youtube.com/watch?v=IJH4OhumN_U&feature=related
+http://www.lfd.uci.edu/~gohlke/pythonlibs/
+http://ytai-mer.blogspot.nl/2011/04/meet-ioio-io-for-android.html   
+http://code.google.com/p/doxygen2gwiki/wiki/Doxygen
+http://web.njit.edu/all_topics/Prog_Lang_Docs/html/qt/emb-framebuffer-howto.html
+http://infocenter.arm.com/help/topic/com.arm.doc.ihi0043c/IHI0043C_rtabi.pdf
+http://www.raspberrypi.org/phpBB3/viewtopic.php?f=72&t=16662&sid=9e2491552efc4e6f962e00fb6865ac5e
+   

@@ -691,6 +691,36 @@ void text::draw(
    }               
 }
 
+// ==========================================================================
+//
+// frame_console
+//
+
+void frame_console_stringbuf::print( char c ){ 
+   char_photo fc( fm.f, c, fm.fg, fm.bg );
+   fc.draw( fr, cursor );
+   if( c == '\n' ){
+      cursor = ( cursor + fc.size_get() + fm.spacing ).y_projection();
+   } else if( c == '\v' ){
+      fr.clear();
+      cursor = vector( 0, 0 );
+   } else if( c == '\r' ){
+      cursor = cursor.y_projection();
+   } else {
+      cursor += vector( fc.size_get().x_get() + fm.spacing.x_get(), 0 ); 
+   }
+}
+   
+std::streamsize frame_console_stringbuf::xsputn ( 
+   const char * s, std::streamsize n 
+){
+   for( std::streamsize i = 0; i < n; i++){ 
+      print( *s++ ); 
+   }
+   return n;
+}
+
+
 #ifdef notyet
          
 // ==========================================================================

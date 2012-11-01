@@ -30,7 +30,7 @@ namespace bmptk {
 //! When a vector is used to identify a pixel on a screen (0,0)
 //! is the top-left pixel.
 //!
-//! \image html lcd-pixel-coordinates.gif 
+//! \image html lcd_pixel_coordinates.gif 
 //!
 //! Two vectors can be added or subtracted to yield a new vector. 
 //! A vector can be multiplied or divided by an integer to yield a new vector. 
@@ -203,8 +203,12 @@ public:
 //!      max( a.y_get(), b.y_get() )
 //!   );
 //! \endcode
-vector max( vector a, vector b );
-vector max( vector a, vector b, vector c, vector d = vector::origin() );
+vector max( 
+   vector a, 
+   vector b, 
+   vector c = vector::origin(), 
+   vector d = vector::origin() 
+);
 
 //! multiplies a vector by an integer by multiplying the coordinates
 vector operator * ( int n, const vector v ); 
@@ -997,6 +1001,7 @@ public:
 //! writes to the (2..4) underlying frames
 //
 //! A frame_tee is a frame that forwards writes to the underlying frames. 
+//! The constructor supports 2..4 underlying frames.
 
 class frame_tee : public frame {
 private:
@@ -1989,6 +1994,66 @@ public:
    //! current string (whatever the \ref s attribute points to).
    void draw( frame &f, const vector position = vector::origin() ) const; 
 };   
+
+
+//! \cond document_internals
+class frame_console_stringbuf : public std::streambuf {
+private:
+   frame &fr;
+   vector cursor;
+   format fm;
+   
+   void print( char c );
+   std::streamsize xsputn ( const char * s, std::streamsize n );
+   
+public:
+
+   frame_console_stringbuf( frame &fr, format fm ): 
+      fr( fr ), 
+      cursor(0,0),
+      fm( fm )
+   {}
+   
+};
+//! \endcond
+
+// ==========================================================================
+//
+// class frame_console
+//
+//! frame that is an ostream subclass (so you can << to it)
+//
+//! A frame_console is a subclass of std:;ostream, so you can use it 
+//! with all the << operations that are supported by for instance std::cout.
+//
+
+class frame_console : public std::ostream {
+private:
+   frame_console_stringbuf buf;
+public:
+   //! create a frame_console
+   //
+   //! Create a frame_console.
+   //! Specify the underlying frame and 
+   //! optionally the character format to be used.
+   //! The alignment specified in the format is ignored.
+   //!
+   //! The following characters have a special meaning: 
+   //! - '\\n' : puts the write cursor at the start of the next line.
+   //! - '\\r' : puts the write cursor at the start of the current line 
+   //!   (without clearing the current line!).
+   //! - '\\v' : clears the frame and puts the cursor at the 
+   //!   top-left position.   
+   //!
+   //! Note that a frame_console does NOT scroll.
+   //
+   frame_console( frame &f, format fo = format() ): 
+      std::ios(0),
+      std::ostream(&buf),
+      buf( f, fo )
+    {}
+};
+
 
 // ==========================================================================
 //

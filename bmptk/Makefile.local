@@ -15,8 +15,8 @@
 PF32      := C:/Program Files
 PF64      := C:/Program Files (x86)
 
-ARMTOOLS  := $(PF32)/CodeSourcery/Sourcery_CodeBench_Lite_for_ARM_EABI
-ARMDEVENV := $(PF32)/ARMDevEnv
+ARMTOOLS  := $(PF64)/CodeSourcery/Sourcery G++ Lite
+ARMDEVENV := $(PF64)/ARMDevEnv
 DEVKITPRO := C:/devkitPro
 DEVCPP    := C:/Dev-Cpp
 PYTHON    := C:/PYTHON27/PYTHON
