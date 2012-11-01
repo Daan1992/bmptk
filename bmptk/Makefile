@@ -26,7 +26,7 @@ build: examples
 REDIRECT := <META HTTP-EQUIV='refresh' CONTENT='0;URL=./docs/index.html'>
 
 doc: 
-		cd docsrc/generate && make picturesma
+		cd docsrc/generate && make pictures
 		Doxygen docsrc/Doxyfile
 		echo "$(REDIRECT)" >index.html
 		

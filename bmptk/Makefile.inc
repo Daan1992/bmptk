@@ -244,7 +244,11 @@ ASFLAGS     := $(CORE-FLAGS) $(INCLUDES) $(DEFINES) -I$(BMPTK)
 ASFLAGS     += -x assembler-with-cpp
 
 # default LDFLAGS
-LDFLAGS     +=  -Wl,-Map,$(MAP)              
+LDFLAGS     +=  -Wl,-Map,$(MAP)             
+
+# sections
+# CPPFLAGS    += -data_sections
+# LDFLAGS     += -data_scetions 
 
 
 #============================================================================

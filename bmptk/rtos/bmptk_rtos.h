@@ -771,8 +771,8 @@ public:
       );
 
       //! throws an error, beacuse tasks should never be destroyed
-      ~task ( void ) {
-         mkt_fatal (#UNIQUE_ERROR); // task destructor called
+      virtual ~task ( void ) {
+         fatal_error_detected( "task destructor called" ); 
       }
 
       //! suspend a task (prevent execution until a resume)
@@ -904,7 +904,7 @@ public:
       task * next_mutex_waiter;
 
       //! the coroutine that holds the task body and stack
-      mkt_coroutine_class *coroutine;
+      bmptk::coroutine *coroutine;
 
       friend class periodic_task;
       friend class waitable_set;
@@ -928,8 +928,8 @@ private:
       callback( const char *name = "" );
 
       // a timer should never be destroyed
-      ~callback( void ) {
-         mkt_fatal (#UNIQUE_ERROR); // callback_timer destructor called
+      virtual ~callback( void ) {
+         fatal_error_detected( "callback destructor called" );
       }
 
       // a timer's time_up function must be provided by a derived class
@@ -1097,7 +1097,7 @@ public:
    public:
       pool_base( const char * name );
       ~pool_base( void ) {
-         mkt_fatal (#UNIQUE_ERROR); // pool destructor called
+         fatal_error_detected( "pool destructor called" );
       }
       void print( std::ostream & s, bool header = true ) const;
 
@@ -1299,7 +1299,7 @@ public:
       mailbox_base( const char *name );
 
       ~mailbox_base( void ) {
-         mkt_fatal (#UNIQUE_ERROR); // mailbox destructor called
+         fatal_error_detected( "mailbox destructor called" );
       }
 
       void print( std::ostream & s, bool header = true ) const;
@@ -1426,8 +1426,8 @@ public:
 public:
    class channel_base : public waitable{
    public:
-      ~channel_base( void ) {
-         mkt_fatal (#UNIQUE_ERROR); // channel destructor called
+      virtual ~channel_base( void ) {
+         fatal_error_detected( "channel destructor called" );
       }
 
       void print( std::ostream & s, bool header = true ) const;
@@ -1542,7 +1542,7 @@ public:
          }
 
          if( qSize == 0 ) {
-            mkt_fatal (#UNIQUE_ERROR); // channel should not be empty now
+            fatal_error_detected( "channel should not be empty now");
          }
          T buf = queue[ tail ];
          if( ++tail == SIZE ) {

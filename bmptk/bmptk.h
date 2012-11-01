@@ -193,6 +193,7 @@
       #include "bmptk_font_default.h"
    #endif
    #ifdef BMPTK_RTOS
+      #include "bmptk_coroutines.h"
       #include "bmptk_rtos.h"
    #endif
    
