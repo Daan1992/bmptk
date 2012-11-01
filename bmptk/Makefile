@@ -8,7 +8,7 @@
 #    clean                     : total cleanup 
 #    doc, docs, documentation  : create documentation (docs subdir)
 #    build, examples           : build all examples
-#    push                      : clean and git push
+#    push                      : clean and git push (does not work??)
 #    zip                       : create bmptk.zip, includes documentation
 #    www                       : create webpages (www subdir, includes zip)
 #    ftp                       : create webpages and ftp to website

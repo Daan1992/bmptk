@@ -204,7 +204,7 @@
       #include "bmptk_win.h"
    #endif              
    #ifdef BMPTK_CHIP_lpc2478
-      #include "lpc2478.h"
+      #include "bmptk_lpc2478.h"
    #endif              
 
 #endif // #ifndef BMPTK_H

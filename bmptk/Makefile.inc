@@ -9,7 +9,7 @@
 #############################################################################
 
 
-VERSION := "V01.02 ( work-in-progress @ 2012-09-21)"
+VERSION := "V01.03 ( work-in-progress @ 2012-09-28)"
 
 
 #============================================================================
@@ -109,6 +109,13 @@ TXTTOCPP  := $(PYTHON) $(TXTTOCPP-TOOL)
 # will remain empty when no valid target is specified
 PREFIX     := 
 
+ifeq ($(TARGET),)
+   TARGET = $(CHIP)
+endif
+ifeq ($(CHIP),)
+   CHIP = $(TARGET)
+endif
+
 ifeq ($(TARGET),nds)
    CHIP        := ARMv7
    PREFIX      := $(DEVKITPRO)/devkitARM/bin/arm-none-eabi-
@@ -142,6 +149,18 @@ endif
 ifeq ($(TARGET),olimex-mod-lcd43)
    XTAL        := 12000000
    CHIP        := lpc2478
+endif
+
+ifeq ($(CHIP),lpc2148)
+   XTAL        := 12000000
+   # PREFIX      := $(ARMTOOLS)/bin/arm-none-eabi-
+   PREFIX      := $(ARMDEVENV)/bin/arm-thumb-elf-
+   CORE-FLAGS  := -mcpu=arm7tdmi -mtune=arm7tdmi -nostartfiles -fno-exceptions 
+   CORE-FLAGS  += -fno-threadsafe-statics -fno-use-cxa-get-exception-ptr
+   LDFLAGS	   += -T$(BMPTK)/targets/bmptk_$(CHIP).ld -nostartfiles
+   SOURCES     += bmptk_$(CHIP).cpp bmptk_$(CHIP)_startup.s
+   HEADERS     += bmptk_$(CHIP).h
+   RESULTS     = $(ELF) $(BIN) $(MAP) $(HEX) $(DMP) $(LSS)
 endif
 
 ifeq ($(CHIP),lpc2478)
@@ -245,10 +264,11 @@ ASFLAGS     += -x assembler-with-cpp
 
 # default LDFLAGS
 LDFLAGS     +=  -Wl,-Map,$(MAP)
+LDFLAGS     += -Wl,-cref
 
 # sections : eliminate unused code and data
-#CPPFLAGS    += -ffunction-sections -fdata-sections 
-# LDFLAGS     += -Wl,--gc-sections -Wl,--strip-all
+CPPFLAGS    += -ffunction-sections -fdata-sections 
+LDFLAGS     += -Wl,-gc-sections
 # LDFLAGS     +=  --gc-sections
 
 # notyet :(
