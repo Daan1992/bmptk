@@ -1,6 +1,7 @@
 #include "bmptk.h"
 
 using namespace bmptk;
+using namespace bmptk::graphics;
 
 void border( frame &f ){
    rectangle( 

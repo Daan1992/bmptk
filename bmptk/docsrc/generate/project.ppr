@@ -30,14 +30,10 @@ Project
 		+others
 			Makefile
 [Open project files]
-0=Makefile
-1=generate.cpp
+0=generate.cpp
 [Selected Project Files]
 Main=
 Selected=generate.cpp
-[Makefile]
-TopLine=1
-Caret=1,32
 [generate.cpp]
 TopLine=1
-Caret=23,42
+Caret=1,1

@@ -10,14 +10,14 @@
 PROJECT    := generate
 
 # Specify target chip or board or system
-TARGET     := win
+TARGET     := windows
 
 # Specify the location of the bmptk library
 BMPTK      := ../..
 
 # Specify project files (other than $(PROJECT).cpp) (if any)
 HEADERS    := 
-LIBS       := bmptk_graphics
+LIBS       := 
 
 # specify (extra) results you want to get (if any)
 PICTURES   += lcd_pixel_coordinates

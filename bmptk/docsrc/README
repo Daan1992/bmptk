@@ -9,13 +9,12 @@ This directory contains :
 
    files
       - Doxyfile           : settings file for documentation generation
- 	  - editors.h          : using editors and IDEs with bmptk
       - README             : this file
-      - start.h            : getting statrted
-	  - targets.h          : using the different bmptk targts
-	  - graphics.h         : describes the graphics library
+      - nnnn-a*.h          : sources for the documentation
 	  
    directories
+      - generate           : code for generating more pictures
       - pics               : pictures used in the documentation
+      - www                : html files
 
 
