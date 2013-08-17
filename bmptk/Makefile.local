@@ -9,15 +9,23 @@
 # COPY THIS FILE TO Makefile.custom AND CHANGE THAT FILE.
 # This way you can overwrite the bmptk files without erasing
 # your changes.
+#
+# This file is in the public domain.
 # 
 #############################################################################
 
-PF32      := C:/Program Files
-PF64      := C:/Program Files (x86)
+ifeq ($(wildcard C:/Program\ Files\ (x86)/* ),)
+    WPF := C:/Program Files
+else
+    WPF := C:/Program Files (x86)
+endif
 
-ARMTOOLS  := $(PF64)/CodeSourcery/Sourcery G++ Lite
-ARMDEVENV := $(PF64)/ARMDevEnv
-DEVKITPRO := C:/devkitPro
-DEVCPP    := C:/Dev-Cpp
-PYTHON    := C:/PYTHON27/PYTHON
-
+ARMTOOLS    := $(WPF)/CodeSourcery/Sourcery_CodeBench_Lite_for_ARM_EABI
+GNUTOOLS    := $(WPF)/GNU Tools ARM Embedded/4.7 2012q4
+ARMDEVENV   := $(WPF)/ARMDevEnv
+DEVKITPRO   := C:/devkitPro
+DEVCPP      := $(WPF)/Dev-Cpp/MinGW32
+PYTHON      := C:/PYTHON27/PYTHON
+FLASHMAGIC  := "$(WPF)/Flash Magic/FM"
+LPC21ISP    := "$(BMPTK)/tools/lpc21"
+# LPC21ISP    := "\lpc21\lpc21"

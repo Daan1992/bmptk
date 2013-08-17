@@ -4,7 +4,7 @@ Bare Metal Programming Tool Kit main directory
 
 more information:
    - http://www.voti.nl/bmptk
-   - ./docs/html/index.html (might require running Doxygen)
+   - ./index.html (might require running 'make doc', which requires Doxygen)
 
 This directory contains :
 
@@ -24,11 +24,93 @@ This directory contains :
       - graphics           : stuff for pixel-accessible graphics
       - targets            : basic chip and board specific stuff
       - tools              : tools (executables and scripts)
+      
+=============================================================================      
 
-pending work list:
+Below are reminders, notes, bookmarks etc. for my use
+
+pending work list, issues, notes to myself, etc:
+- create bmptk_settings.h file for all #defines
+- TASK_STATISTICS, TASK_DEBUG_LOG
+- task statistics example with buffered cout
+- software uart
+- mailbox must be a waitable
+- taks example show statistics every once in a while
+- 115200 download works, but debug does not??
+- waitable_set requested_waitable = 0;
+- kan waitable_set er uit?
+- statistics moet een object worden
+- a mailbox should be a waitable
+- context.cpp depends a lot on stack direction
+- xwisp com4 dtr - rts - term 38400
+- trace << flush
+- code to draw a DIP or other chip and show its pins -> HC595, TPIC6C595, etc.
+- separate DOXYGEN target for 'with internals'
+- chaining hc595's
+- echt code size laten zien, huidige dump zegt nix
+- spi & hc595 opschonen
+- let op: inherit a static method is not re-interpreted!! direction_set(x) and other 'prepared implementations'
+- RFM73 moet spi_master gebruiken
+- port_*_from< another port >
+- tag 'command line', where is it? now still a separate page
+- A/D pins
+- LPC1114 uart get char
+- channel_buffer moet wel blocken!!
+- channel sink
+- channel overflow
+- document target db103/lpc1114
+- rewrite TH04 examples to use a common (but undisclosed) library
+- add some comments to all examples
+- license for documentation
+- all examples => main.cpp, _project.ppr (started in db103)
+- argorithm must create the appropriate pin, ala i2c_master
+- spi_master flavours (in, out, in out)?
+- large explanations => with the namespace (bmptk now twice??)
+- channels to seperate namespace
+- clib: memcpy and other things => target/*?
+- cout reduce ROM
+- A/D conversion for lpc1114
+- pull-ups for lpc1114
+- pull-ups for lpc810
+- mcp23017
+- mcp23S17
+- didactische aantekeningen
+- win get mouse
+- win timing
+- sheet in example graphics/text does not exist
+- clock example digital clock does not work on nds, does work on win?? maybe use own string class?
+- makefile.inc opschonen, geen -nodefault voor nds, wel voor lpc
+- -I $(SEARCH) moet loopen!
+- invert pin_in, pin_out, pin_in_out, port_in, etc
+- general way to get an object from a class (why not just instantiate - lifertime issue)
+- merge all RFM73 pages
+- rewrite graphics page
+- target 'win', adjustable x and y sizes (call to make a new window?)
+- distinguish 'hosted' from 'bare' (NDS is hosted??)
+- memory allocation
+- error handling
+- only cin/cout global objects
+- cin inplementation?
+- target lpc2148
+- RTOS voor LPC1114
+- RTOS voor nds, win
+- document 'install PIL'
+- pass the real version string to Doxygen
+- stack check
+- cannot << a format??
+- list real sizes instead of raw .o figures
+   - new devcpp requires adding to the system path
+   - frame_snapshot for hosted but not for embedded
+   - istream
+   - put istream/ostream in the startup code?? prevents it from being global!
+   - fatal error handling
+   - different clock speeds
+   - enable all warnings
+   - memory allocation
    - size=2 for win does not work with events
    - tty
    - get font from libnds?
+   - default 5x7 font, for instance from olimex demo
    - vertical text labels require 'flip' in subscreen
    - font: top & right side 'empty' line can be eliminated?
    - arithmetic with transparancy??
@@ -44,13 +126,12 @@ pending work list:
    - rectangle, circle: private attributes?
    - draw line width differently (circle brush?)
    - draw circle with differently too
-   - #pragma once
    - paint beter structureren: event in screen? => window
    - 2478 target?
    - graphics.h start text
    - License: check all files
    - reversi example
-   - std:cout replacement
+   - std:cin replacement
    - packer/grid/placer
    - mouse-style pointer needed for trackballs
    - subframe boundaries
@@ -96,43 +177,57 @@ pending work list:
    - http://www.angelikalanger.com/Articles/Topics.html#CPP
    - http://www.ethernut.de/api/index.html
    - sizes summary shows only the user's files ...
-   - I get it right 98% of the time, and don't care about the other 3%.
+
    - must override overflow?? http://stackoverflow.com/questions/243696/correctly-over-loading-a-stringbuf-to-replace-cout-in-a-matlab-mex-file
    - add image magic to tools
    - subframe => frame_subframe?
    - frame_mirror_h _v _df _db
    - frame_rot_r _1 _2
    - frame_overlay (cursor, sprite)
+   - isp as alternative to lpc21isp
    
-notes, references, links, put in a reference sections?
-   - http://www.google.com/webfonts
-   - http://en.wikipedia.org/wiki/Poka-yoke
-   - http:-dlib.net/api.html#gui_widgets
-   - http:-en.wikipedia.org/wiki/FLTK
-   - http:-en.wikipedia.org/wiki/FOX_toolkit
-   - http:-www.psa-software.com/zinc_widgets.html
-   - http:-www.webpagepublicity.com/free-fonts.html
-   - http:-www.alvit.de/blog/article/25-best-license-free-pixelfonts
-   - http:-www.lowing.org/fonts/
-   - http:-www.yolinux.com/TUTORIALS/LinuxTutorialC++CodingStyle.html
-   - http:-api.haiku-os.org/apidoc.html
-   - http:-www.qzx.com/pc-gpe/
-   - http:-escience.anu.edu.au/lecture/cg/Circle/printNotes.en.html
-   - http:-homepage.smc.edu/kennedy_john/bcircle.pdf
-   - http://www.dafont.com/new.php?page=2
-   - http://forum.gbadev.org/viewtopic.php?t=14396&highlight read NDS stylus pressure
-   - http://www.kernel.org/doc/Documentation/CodingStyle
+   pin/port decorators:
+   and, nand, nor, or, xnor, xor, not
+   count, latch, register (all work on both pin and port)
    
-A global object must never depend on another global object
-Better: do not use global objects! => function that returns an object
+   
+// ==========================================================================
+//
+// ToDo list and other notes - pins
+//
+// - create other ports
+// - open-collector-ness : gewoon negeren??
+// - omconfigureren
+// - pull-ups
+// - werk db103 verder uit
+// - AD
+// - uart(s)
+// - tee a port into a single pin, or a port has a write-to-all member
+// - combine read pins OR and AND wise
+// - invert read pins (IO pins??)
+// - an 'internal' pin, also for output only (sink)
+// - a snoop that tells what is done (for pins & ports, input & output)
+//    == spy, log, snoop
+// - create a pin from a register??
+// - HC595
+// - PCF8594
+// - MCP - both tastes
+// - strip the source file to a .h file for faster processing
+// - functions (kitt, blink, beep) are not documented
+// - clean moet ook doxydocs verwijderen!
+//
+// ==========================================================================
 
-Pipe Dreams:
+Pipe Dreams
    - Cortex two-wire-debug 
    - debug in Flash
    - run on Linux in a window
    - run on Android
    - asm & C
    - Olimex LCD 4.2, RaPi
+   - IZArc command line?
+   - USB
+   - Ehernet / TCP-IP etc
    
 Naming conventions
    - underscores_without_capitals
@@ -142,39 +237,113 @@ Naming conventions
    - ADTs have visible assignment, default & copy constructor
    - avoid memory deallocation
    - no exceptions, fatals call bmptk::fatal_error_detected
-   - 
-   
-"C is quirky, flawed, and an enormous success." - Dennis Ritchie   
+ 
+Meta principles
+   decorators
+   - tee : write to one to write to all
+   - sink : write to no effect
+   - switch : writing effect can be switched on or off
    
 Design principles
-   -    
+   - no C++ exception handling: an error is fatal
+   - memory alloaction is OK, deallocation is not
+   - template-based flexibility for low-level (performnace-sensitive) parts
+   - class-based flexibility for higher-level functionality
+   - keep the target 'interface' small, even at the expense of some performance
+   - rtos: no preemption or interrupts
+   - initialized global objects are evil (initialization ordering problem)
+   - osteream/istream style I/O for embedded targets, source compatible with PC target
+   - Doxygen for all documentation
+   - in order: size, performance, functionality, compatibility   
+   - can use 'hosted' for debug and development 
    
 Code Conventions:
    - 1TBF
-   - 3 spaces per level, no tabs (except in Makefiles!)
+   - 3 spaces per level, no tabs (except of course in Makefiles!)
+   - http://www.youtube.com/watch?v=aAb7hSCtvGw
+   - 77 positions at most, 78 is free
    
 Makefile conventions
-   - targets clean, build (=default), run
+   - targets clean, build (=default), run, doc
    
 Doxygen conventions:   
-   - Doxygen must run without warnings
+   Doxygen must run without warnings
    short description
    - is not a scentence
-   - does not repeat the item name or kind (constructor etc)
+   - does not repeat the item name or kind (not 'constructor for' but 'constructs' or 'creates')
    - 'reports' for pure functions
    - 'reports whether' for predicates
    - 'constructs an X from an Y' for constructors
    long description (if needed)
-   - contains full scentences
+   - contains only full scentences
+   hide what is not part of the interface (but must be in the header)
    
-terms:
-   - scar tissue
+terms:   
+   I get it right 98% of the time, and don't care about the other 3%.
+   scar tissue
+   "C is quirky, flawed, and an enormous success." - Dennis Ritchie   
    
-http://www.youtube.com/watch?v=IJH4OhumN_U&feature=related
-http://www.lfd.uci.edu/~gohlke/pythonlibs/
-http://ytai-mer.blogspot.nl/2011/04/meet-ioio-io-for-android.html   
-http://code.google.com/p/doxygen2gwiki/wiki/Doxygen
-http://web.njit.edu/all_topics/Prog_Lang_Docs/html/qt/emb-framebuffer-howto.html
-http://infocenter.arm.com/help/topic/com.arm.doc.ihi0043c/IHI0043C_rtabi.pdf
-http://www.raspberrypi.org/phpBB3/viewtopic.php?f=72&t=16662&sid=9e2491552efc4e6f962e00fb6865ac5e
+RTOS alternatives
+   http://www.freertos.org/
+   http://www.cocoos.net/ - has stack checking??
+   http://www.ohloh.net/p/irtos
+   TinyOS
+
+graphics alternatives
+   http://www.lpcware.com/content/project/emwin-graphics-library   
    
+targets
+   http://hackaday.com/2013/08/07/a-5-arm-development-board/   
+   
+android IO
+   http://ytai-mer.blogspot.nl/2011/04/meet-ioio-io-for-android.html    
+
+rapi lcd & IO
+   http://web.njit.edu/all_topics/Prog_Lang_Docs/html/qt/emb-framebuffer-howto.html
+   http://www.susa.net/wordpress/2012/06/raspberry-pi-relay-using-gpio/
+
+cmsis source
+   http://ics.nxp.com/support/lpcxpresso/  
+   
+LEGO MINDSORMS
+   http://www.generationrobots.com/analysing-i2c-communication-with-saleae-logic-analyser,us,8,83.cfm  
+   
+interesting   
+   http://www.sump.org/projects/analyzer/protocol/
+   http://dangerousprototypes.com/docs/Open_Bench_Logic_Sniffer#Logic_Analyzer_Software
+   http://www.lxtreme.nl/ols/#FAQ
+   http://www.easysw.com/~mike/serial/serial.html   
+   http://www.youtube.com/watch?v=IJH4OhumN_U&feature=related
+   http://www.lfd.uci.edu/~gohlke/pythonlibs/
+   http://code.google.com/p/doxygen2gwiki/wiki/Doxygen
+   http://infocenter.arm.com/help/topic/com.arm.doc.ihi0043c/IHI0043C_rtabi.pdf
+   http://www.raspberrypi.org/phpBB3/viewtopic.php?f=72&t=16662&sid=9e2491552efc4e6f962e00fb6865ac5e
+   http://www.easysw.com/~mike/serial/serial.html
+   http://gcc.1065356.n5.nabble.com/Bare-metal-ARM-Cross-compiler-aeabi-auto-generated-functions-for-cortex-m0-use-wrong-instruction-set-td893895.html
+   http://gcc.gnu.org/onlinedocs/libstdc++/latest-doxygen/index.html
+   http://gcc.gnu.org/viewcvs/trunk/libstdc%2B%2B-v3/libsupc%2B%2B/
+   http://www.segger.com/emwin.html
+   https://launchpad.net/gcc-arm-embedded => test
+   http://www.google.com/webfonts
+   http://en.wikipedia.org/wiki/Poka-yoke
+   http:-dlib.net/api.html#gui_widgets
+   http:-en.wikipedia.org/wiki/FLTK
+   http:-en.wikipedia.org/wiki/FOX_toolkit
+   http:-www.psa-software.com/zinc_widgets.html
+   http:-www.webpagepublicity.com/free-fonts.html
+   http:-www.alvit.de/blog/article/25-best-license-free-pixelfonts
+   http:-www.lowing.org/fonts/
+   http:-www.yolinux.com/TUTORIALS/LinuxTutorialC++CodingStyle.html
+   http:-api.haiku-os.org/apidoc.html
+   http:-www.qzx.com/pc-gpe/
+   http:-escience.anu.edu.au/lecture/cg/Circle/printNotes.en.html
+   http:-homepage.smc.edu/kennedy_john/bcircle.pdf
+   http://www.dafont.com/new.php?page=2
+   http://forum.gbadev.org/viewtopic.php?t=14396&highlight read NDS stylus pressure
+   http://www.kernel.org/doc/Documentation/CodingStyle
+   www.pdfsam.rg
+   www.google.com/webfonts
+   http://www.code-time.com/cortexm0.html (small RTOS)
+   http://www.rowleydownload.co.uk/arm/documentation/index.htm?http://www.rowleydownload.co.uk/arm/documentation/ctl_implementation_cm3.htm
+   http://www.code-time.com/cortexm0.html
+   http://code.google.com/p/tiny-kernel-microcontroller/downloads/list   
