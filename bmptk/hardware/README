@@ -1,0 +1,15 @@
+file: bmptk/hardware/README
+
+Bare Metal Programming Tool Kit hardware interfacing directory
+
+This directory contains :
+
+   files
+      - demos.h            : demo's like blink, beep, kitt
+      - ic2.h              : I2C interafce
+	   - Makefile           : dummy makefile
+      - pins.h             : pin abstractions
+      - ports.h            : port abstractions
+      - README             : this file
+      - spi.h              : SPI intertface
+
