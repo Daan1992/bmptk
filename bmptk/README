@@ -18,12 +18,16 @@ This directory contains :
       - README             : this file
 
    subdirectories
-      - doc                : documentation (run 'make doc', requires Doxygen)
+      - chips              : interfacing to peripheral chips
+      - 
       - docsrc             : input for Doxygen documentation generation
       - examples           : example directories
       - graphics           : stuff for pixel-accessible graphics
       - targets            : basic chip and board specific stuff
       - tools              : tools (executables and scripts)
+      
+   generated subdireectories      
+      - doc                : documentation (run 'make doc', requires Doxygen)
       
 =============================================================================      
 
