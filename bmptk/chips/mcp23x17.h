@@ -1,6 +1,6 @@
 //***************************************************************************
 //
-// file : bmptk/hardware/mcp23x17.h
+// file : bmptk/chips/mcp23x17.h
 //
 // LICENSE (MIT expat license, copy of license.txt)
 //

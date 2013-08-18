@@ -1,6 +1,6 @@
 //***************************************************************************
 //
-// file : bmptk/hardware/sr04.h
+// file : bmptk/chips/sr04.h
 //
 // LICENSE (MIT expat license, copy of license.txt)
 //

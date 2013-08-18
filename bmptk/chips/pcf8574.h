@@ -1,6 +1,6 @@
 //***************************************************************************
 //
-// file : bmptk/hardware/pcf8574.h
+// file : bmptk/chips/pcf8574.h
 //
 // LICENSE (MIT expat license, copy of license.txt)
 //
