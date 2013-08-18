@@ -15,7 +15,7 @@ build: error
 run: error
 
 MSG  = You are trying to build in a library directory.
-MSG += Make one of the project source files your current editor file.
+MSG += You must make one of the project source files your current editor file.
 
 error:
 	$(error $(MSG) )

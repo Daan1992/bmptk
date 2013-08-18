@@ -34,6 +34,7 @@ This directory contains :
 Below are reminders, notes, bookmarks etc. for my use
 
 pending work list, issues, notes to myself, etc:
+- nrf24/rfm73
 - create bmptk_settings.h file for all #defines
 - TASK_STATISTICS, TASK_DEBUG_LOG
 - task statistics example with buffered cout
