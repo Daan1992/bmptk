@@ -4,6 +4,7 @@
 #include "bmptk.h"
 
 namespace bmptk {
+namespace graphics {
 
 #ifdef BMPTK_GRAPHICS
 
@@ -15,6 +16,7 @@ public:
 
 #endif
 
-}
+} // namespace graphics
+} // namespace bmptk
 
 #endif // #ifdef _BMPTK_WIN_H_ 

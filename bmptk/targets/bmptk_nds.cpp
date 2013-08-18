@@ -17,7 +17,7 @@ unsigned int read_cascaded_timers(){
    return low + ( high << 16 );
 }
 
-unsigned long long int bmptk::time_since_startup(){
+bmptk::time bmptk::time_since_startup(){
    static unsigned long long int last_low = 0;
    static unsigned long long int high = 0;
    
@@ -55,13 +55,13 @@ void bmptk::fatal_error_detected( const char *msg  ){
 #else
 
 void bmptk::fatal_error_detected( const char *msg  ){
-   bmptk::target_screen lcd;
-   lcd.clear( color::blue());
-   bmptk::text( msg ).draw( lcd );
+   bmptk::graphics::target_screen lcd;
+   lcd.clear( bmptk::graphics::color::blue());
+   bmptk::graphics::text( msg ).draw( lcd );
    for(;;);
 }
 
-bmptk::target_screen::target_screen( void ):
+bmptk::graphics::target_screen::target_screen( void ):
    frame( vector( 256, 192 ))
 {
    videoSetMode(MODE_5_2D);
@@ -70,7 +70,7 @@ bmptk::target_screen::target_screen( void ):
    lcdMainOnBottom();
 }
 
-void bmptk::target_screen::checked_write( 
+void bmptk::graphics::target_screen::checked_write( 
    const vector v,
    const color c 
 ){
@@ -78,7 +78,7 @@ void bmptk::target_screen::checked_write(
    BG_GFX[ v.x_get() + ( v.y_get() * 256 ) ] = 0x8000 | c.rgb15_get();
 }
 
-bmptk::target_top_screen::target_top_screen( void ):
+bmptk::graphics::target_top_screen::target_top_screen( void ):
    frame( vector( 256, 192 ))
 {    
    videoSetModeSub(MODE_5_2D);
@@ -87,7 +87,7 @@ bmptk::target_top_screen::target_top_screen( void ):
    lcdMainOnBottom();
 }
 
-void bmptk::target_top_screen::checked_write( 
+void bmptk::graphics::target_top_screen::checked_write( 
    const vector v,
    const color c 
 ){
