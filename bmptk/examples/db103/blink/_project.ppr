@@ -1,0 +1,59 @@
+[Config]
+Relative path=1
+Compilator.FileName=build.bat
+Compilator.PSPar=
+Compilator.Log=
+Compilator.Run=
+Compilator.DefaultDir=
+Compilator.SaveAll=1
+Compilator.Capture=1
+Compilator.ParsLog=%F:%L:*
+Compilator.HideOutput=1
+Prog1=Clean,cmd /C "make clean "
+Prog2=Run,cmd /C "make run "
+Prog3=
+Prog4=
+Prog5=
+DefaultDir=
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+FileFormat=0
+DocumentRoot=
+HTServer=
+[Project tree]
+Project
+	+Files
+		-includes
+		+compile
+			main.cpp
+		+others
+			Makefile
+[Open project files]
+0=main.cpp
+1=..\..\..\core\basics.h
+2=..\..\..\hardware\pins.h
+3=..\..\..\hardware\demos.h
+4=..\..\..\hardware\ports.h
+5=..\..\..\chips\pcf8574.h
+[Selected Project Files]
+Main=
+Selected=main.cpp
+[main.cpp]
+TopLine=1
+Caret=1,12
+[..\..\..\core\basics.h]
+TopLine=35
+Caret=25,46
+[..\..\..\hardware\pins.h]
+TopLine=454
+Caret=1,482
+[..\..\..\hardware\demos.h]
+TopLine=37
+Caret=5,54
+[..\..\..\hardware\ports.h]
+TopLine=572
+Caret=56,605
+[..\..\..\chips\pcf8574.h]
+TopLine=41
+Caret=3,81
