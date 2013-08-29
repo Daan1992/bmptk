@@ -327,11 +327,22 @@ define Cortex-M0
    OBJ         += cortex_m0_resume.o
 endef
 
-ifeq ($(CHIP),lpc1114fn28)
+define LPC1114
    $(eval $(Cortex-M0))
+   INCLUDES    += -I$(BMPTK)/targets/cmsis/11xx/inc
+   SOURCES     += lpc1114.cpp   
+endef
+
+define LPC1227
+   $(eval $(Cortex-M0))
+   INCLUDES    += -I$(BMPTK)/targets/cmsis/12xx/inc
+   SOURCES     += lpc1227.cpp   
+endef
+
+ifeq ($(CHIP),lpc1114fn28)
+   $(eval $(LPC1114))
    FNAME       = LPC1114/102
    LD_CONFIG   = -DROM_START=0 -DROM_SIZE=32k -DRAM_START=0x10000000 -DRAM_SIZE=4k -DSTACK_SIZE=1k
-   INCLUDES    += -I$(BMPTK)/targets/cmsis/11xx/inc
 endif
 
 ifeq ($(CHIP),lpc810m021)
@@ -342,10 +353,9 @@ ifeq ($(CHIP),lpc810m021)
 endif
 
 ifeq ($(CHIP),lpc1227fbd301)
-   $(eval $(Cortex-M0))
+   $(eval $(LPC1227))
    FNAME       = LPC1227/301
    LD_CONFIG   = -DROM_START=0 -DROM_SIZE=96k -DRAM_START=0x10000000 -DRAM_SIZE=8k -DSTACK_SIZE=2k
-   INCLUDES    += -I$(BMPTK)/targets/cmsis/12xx/inc
 endif
 
 ifeq ($(PREFIX),)
