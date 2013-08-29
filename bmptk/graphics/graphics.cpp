@@ -1,41 +1,33 @@
 // ==========================================================================
 //
-// file: bmptk/graphics/graphics.cpp
+// refer to graphics.h for all information
 //
-// LICENSE (MIT expat license, copy of bmptk/license.txt)
-//
-// Copyright (c) 2013 Wouter van Ooijen (wouter@voti.nl)
-// 
-// Permission is hereby granted, free of charge, to any person obtaining
-// a copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to
-// permit persons to whom the Software is furnished to do so, subject to
-// the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-// CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE..
-//
-//***************************************************************************
+// ==========================================================================
+
+#include "bmptk.h"
 
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
-#include <algorithm>
 #include <fstream>
 
-#include "bmptk.h"
+// avoid these because <algorithm> imports iostream stuff
+template <class T> void swap( T& a, T& b ){
+  T c(a); a=b; b=c;
+}
+template <class T> T max( T a, T b ){
+  return a > b ? a : b;
+}
+template <class T> T abs( T a ){
+  return a > 0 ? a : -a;
+}
  
-namespace bmptk {  
+int abs( int a ){
+  return a > 0 ? a : -a;
+}
+ 
+namespace bmptk {
+namespace graphics {  
 
 // ==========================================================================
 //
@@ -141,9 +133,14 @@ void frame::clear( const color c ){
 // frame_snapshot
 //
 
+#ifdef BMPTK_HAS_FILESYSTEM
+
 typedef unsigned short int WORD;
 typedef unsigned int DWORD;
 typedef int LONG;
+
+// note: For GCC 4.7.0 and higher __packed__ requires 
+// -mno-ms-bitfields on the command line.
 
 typedef struct __attribute__ ((__packed__)) {
    WORD    bfType;        // must be 'BM' 
@@ -175,12 +172,12 @@ void frame_snapshot::write_to_bmp_file( const char *file_name ){
 
 	BITMAPFILEHEADER bmfh;	
 	bmfh.bfType = 0x4d42;       // 0x4d42 = 'BM'
-	bmfh.bfReserved1 = 0;
-	bmfh.bfReserved2 = 0;
 	bmfh.bfSize = 
 	   sizeof(BITMAPFILEHEADER) 
 	   + sizeof(BITMAPINFOHEADER) 
 	   + padded_size;
+	bmfh.bfReserved1 = 0;
+	bmfh.bfReserved2 = 0;
 	bmfh.bfOffBits = 0x36;	
     bmp.write( (char*)& bmfh, sizeof(BITMAPFILEHEADER) );
 	
@@ -214,7 +211,8 @@ void frame_snapshot::write_to_bmp_file( const char *file_name ){
 	
 	bmp.close();
 }
-			
+
+#endif
 
 
 // ==========================================================================
@@ -261,8 +259,8 @@ void line::draw() const {
    int steep = (abs(Dy) >= abs(Dx));
    vector offset( 0, 1);
    if( steep ){
-      std::swap(x0, y0);
-      std::swap(x1, y1);
+      swap(x0, y0);
+      swap(x1, y1);
       // recompute Dx, Dy after swap
       Dx = x1 - x0;
       Dy = y1 - y0;
@@ -541,10 +539,10 @@ std::ostream & operator<<( std::ostream &s, const font_alignment &a ){
 }
 
 std::ostream & operator<<( std::ostream &s, const format &f ){
-   s << "{ f@" << std::hex << (unsigned long) &f.f;
-   s << " h=" << f.h << " v=" << f.v;
-   s << " w=" << f.wrap << " sc=" << f.scale;
-   s << " sp=" << f.spacing;
+//   s << "{ f@" << std::hex << (unsigned long) &f.f;
+//   s << " h=" << f.h << " v=" << f.v;
+//   s << " w=" << f.wrap << " sc=" << f.scale;
+//   s << " sp=" << f.spacing;
    s << " tlm=" << f.top_left_margin;
    s << " brm=" << f.top_left_margin;
    s << " fg=" << f.fg << " bg=" << f.bg;
@@ -659,7 +657,7 @@ void draw_text_line(
    for( ; (**s != '\n') && (**s != '\0') ; (*s)++ ){           
       if( ( fm.h == align_fill ) && ( n++ > 0 ) ){    
          missing += extra; 
-         int adjust = missing / std::max( spaces, 1 );
+         int adjust = missing / max( spaces, 1 );
          p += vector( adjust, 0 );
          missing -= adjust * spaces;
       }
@@ -686,7 +684,7 @@ void text::draw(
 
    vector p( 0, 0 );
    int lines = line_count( s, fr.size_get(), f ); 
-   int extra = std::max( 
+   int extra = max( 
       0, 
       fr.size_get().y_get() - lines * f.f.font_char_size.y_get() );
    int missing = 0;
@@ -771,3 +769,4 @@ void wtoplevel :: run( void ){
 
 
 } // namespace bmptk
+} // namespace graphics

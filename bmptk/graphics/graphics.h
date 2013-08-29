@@ -1,32 +1,8 @@
-//***************************************************************************
+// ==========================================================================
 //
-// file: bmptk/graphics/graphics.h
+// file: bmptk/graphics/bmptk-graphics.h
 //
-// LICENSE (MIT expat license, copy of bmptk/license.txt)
-//
-// Copyright (c) 2013 Wouter van Ooijen (wouter@voti.nl)
-// 
-// Permission is hereby granted, free of charge, to any person obtaining
-// a copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to
-// permit persons to whom the Software is furnished to do so, subject to
-// the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-// CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE..
-//
-//***************************************************************************
-
+// ==========================================================================
 
 #ifndef BMPTK_GRAPHICS_H
 #define BMPTK_GRAPHICS_H
@@ -35,6 +11,9 @@
 #include <limits>
 
 namespace bmptk { 
+
+//! graphic elements
+namespace graphics {
 
 // ==========================================================================
 //
@@ -54,7 +33,7 @@ namespace bmptk {
 //! When a vector is used to identify a pixel on a screen (0,0)
 //! is the top-left pixel.
 //!
-//! \image html lcd_pixel_coordinates.gif 
+//! \image html lcd_pixel_coordinates.bmp
 //!
 //! Two vectors can be added or subtracted to yield a new vector. 
 //! A vector can be multiplied or divided by an integer to yield a new vector. 
@@ -280,7 +259,7 @@ class color {
 private:    
               
    static int clip( int x ){
-      return ( x < 0 ) ? 0 : std::min( x, 0xFF ); }        
+      return ( x < 0 ) ? 0 : ( x > 0xFF ? 0xFF : x ); }        
 
    bool transp;
    unsigned char r; 
@@ -435,7 +414,7 @@ public:
    //! These static member functions return some common colors.
    //! These are not plain constants to avoid the static
    //! initialisation order problem: inline_font objects
-   //! would have a problem with the balck and white parameters
+   //! would have a problem with the black and white parameters
    //! for their drawable subpart.
 
    // these 'constants' are delibreately NOT Doxygen-documented     
@@ -2047,7 +2026,7 @@ public:
 //
 //! frame that is an ostream subclass (so you can << to it)
 //
-//! A frame_console is a subclass of std:;ostream, so you can use it 
+//! A frame_console is a subclass of std::ostream, so you can use it 
 //! with all the << operations that are supported by for instance std::cout.
 //
 
@@ -2072,7 +2051,7 @@ public:
    //! Note that a frame_console does NOT scroll.
    //
    frame_console( frame &f, format fo = format() ): 
-      std::ios(0),
+      // std::ios(0),
       std::ostream(&buf),
       buf( f, fo )
     {}
@@ -2275,6 +2254,7 @@ public:
 };
 #endif
 
+} // namespace graphics
 } // namespace bmptk
 
 #endif // #ifdef BMPTK_GRAPHICS_H

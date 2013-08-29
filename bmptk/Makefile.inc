@@ -288,7 +288,7 @@ endif
 define Embedded
    ifeq ($(LANGUAGE),C++)
       OBJ         += iostream.o cxa_pure_virtual.o new.o
-      SOURCES     += bmptk_$(CHIP).cpp    
+      #SOURCES     += $(CHIP).cpp    
    endif	  
    CORE_FLAGS  += -nostartfiles -fno-exceptions 
    CORE_CPP_FLAGS  += -fno-threadsafe-statics -fno-use-cxa-get-exception-ptr
@@ -296,13 +296,13 @@ define Embedded
    INCLUDES    += -I$(BMPTK)/stdlib
    OBJ         += memcpy.o delete.o
    PREFIX      := $(ARMTOOLS)/bin/arm-none-eabi-
-   HEADERS     += bmptk_$(CHIP).h   
+   #HEADERS     += $(CHIP).h   
    DEFINES     += -DBMPTK_EMBEDDED_HEAP
 endef
 
 define Cortex
    $(eval $(Embedded))
-   INCLUDES    += -I$(BMPTK)/targets/cmsis
+   INCLUDES    += -I$(BMPTK)/targets/cortex/cmsis
    XTAL        := 12000000
    SOURCES     += cortex_startup.c
    RESULTS     += $(ELF) $(BIN) $(MAP) $(HEX) $(DMP) $(LSS) $(NMDUMP)
@@ -321,26 +321,29 @@ endef
 
 define Cortex-M0
    $(eval $(Cortex))
-   VPATH       += $(BMPTK)/targets/libaeabi-cortexm0
+   VPATH       += $(BMPTK)/targets/cortex/libaeabi-cortexm0
    CORE_FLAGS  += -mcpu=cortex-m0 -mthumb 
+   VPATH       += $(BMPTK)/targets/cortex
+   INCLUDES    += -I$(BMPTK)/targets/cortex
    LIBA        += libaeabi-cortexm0.a
    OBJ         += cortex_m0_resume.o
 endef
 
 define LPC1114
    $(eval $(Cortex-M0))
-   INCLUDES    += -I$(BMPTK)/targets/cmsis/11xx/inc
+   INCLUDES    += -I$(BMPTK)/targets/cortex/cmsis/11xx/inc
    SOURCES     += lpc1114.cpp   
 endef
 
 define LPC1227
    $(eval $(Cortex-M0))
-   INCLUDES    += -I$(BMPTK)/targets/cmsis/12xx/inc
+   INCLUDES    += -I$(BMPTK)/targets/cortex/cmsis/12xx/inc
    SOURCES     += lpc1227.cpp   
 endef
 
 ifeq ($(CHIP),lpc1114fn28)
    $(eval $(LPC1114))
+   HEADERS     += lpc1114fn28.h
    FNAME       = LPC1114/102
    LD_CONFIG   = -DROM_START=0 -DROM_SIZE=32k -DRAM_START=0x10000000 -DRAM_SIZE=4k -DSTACK_SIZE=1k
 endif
@@ -385,15 +388,15 @@ endif
 # 
 #============================================================================
 
-FONT-DEFAULT  := $(BMPTK)/graphics/04B_03__.TTF
+FONT-DEFAULT  := $(BMPTK)/graphics/fonts/04B_03__.TTF
 
 #ifeq (bmptk_graphics,$(filter bmptk_graphics,$(LIBS)))
-   LIBS          += bmptk_font_default bmptk_graphics
+   LIBS          += font_default graphics
    DEFINES       += -DBMPTK_GRAPHICS
 #endif
 
-bmptk_font_default.cpp bmptk_font_default.h: $(FONT-DEFAULT) $(FFTTOCPP-TOOL)
-		$(FFTTOCPP) $(FONT-DEFAULT) bmptk_font_default font_default 8 "" bmptk::graphics
+font_default.cpp font_default.h: $(FONT-DEFAULT) $(FFTTOCPP-TOOL)
+		$(FFTTOCPP) $(FONT-DEFAULT) font_default font_default 8 "" bmptk::graphics
 
 ifeq (bmptk_rtos,$(filter bmptk_rtos,$(LIBS)))
    LIBS          += bmptk_coroutines
@@ -523,9 +526,9 @@ libaeabi-cortexm0.a: $(LIBEABI-FILES)
 	$(CPP) $(CPPFLAGS) -c -S -o $@ $<
 
 # make the linkerscipt   
-linkerscript.ld: $(BMPTK)/targets/linkerscript.c
+linkerscript.ld: $(BMPTK)/targets/cortex/linkerscript.c
 	@echo 'creating the linkerscript'
-	$(CC) $(LD_CONFIG) -E -P -C $(BMPTK)/targets/linkerscript.c -o $@ 
+	$(CC) $(LD_CONFIG) -E -P -C $(BMPTK)/targets/cortex/linkerscript.c -o $@ 
 	@echo ' '
    
 # make .elf by linking all objects

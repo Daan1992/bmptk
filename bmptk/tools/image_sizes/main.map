@@ -1,0 +1,738 @@
+Archive member included because of file (symbol)
+
+libaeabi-cortexm0.a(idiv.o)   iostream.o (__aeabi_idiv)
+libaeabi-cortexm0.a(idivmod.o)
+                              iostream.o (__aeabi_idivmod)
+libaeabi-cortexm0.a(ldivmod.o)
+                              iostream.o (__aeabi_ldivmod)
+libaeabi-cortexm0.a(uidivmod.o)
+                              bmptk_graphics.o (__aeabi_uidiv)
+libaeabi-cortexm0.a(uldivmod.o)
+                              libaeabi-cortexm0.a(ldivmod.o) (__aeabi_uldivmod)
+libaeabi-cortexm0.a(crt.o)    libaeabi-cortexm0.a(uidivmod.o) (__aeabi_idiv0)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 memcpy.o
+ .data          0x00000000        0x0 memcpy.o
+ .bss           0x00000000        0x0 memcpy.o
+ .text.memcpy   0x00000000       0x12 memcpy.o
+ .group         0x00000000        0x8 iostream.o
+ .group         0x00000000        0x8 iostream.o
+ .group         0x00000000        0x8 iostream.o
+ .group         0x00000000        0x8 iostream.o
+ .group         0x00000000        0x8 iostream.o
+ .text          0x00000000        0x0 iostream.o
+ .data          0x00000000        0x0 iostream.o
+ .bss           0x00000000        0x0 iostream.o
+ .text._ZNSt7ostream5flushEv
+                0x00000000        0x2 iostream.o
+ .text._ZNSt18bmptk_ostream_putc4putcEc
+                0x00000000       0x12 iostream.o
+ .text._ZNSt26mkt_ostream_reverse_stringILi70EE4putcEc
+                0x00000000       0x12 iostream.o
+ .text._ZNSt7ostream5digitEc
+                0x00000000       0x1c iostream.o
+ .text._ZNSt7ostream6fillerEi
+                0x00000000       0x1a iostream.o
+ .text._ZStlsRSt7ostreamRKSt4setw
+                0x00000000        0x6 iostream.o
+ .text._ZStlsRSt7ostreamRKSt7setbase
+                0x00000000        0x6 iostream.o
+ .text._ZStlsRSt7ostreamRKSt8_showpos
+                0x00000000        0x6 iostream.o
+ .text._ZStlsRSt7ostreamRKSt9_showbase
+                0x00000000        0x6 iostream.o
+ .text._ZStlsRSt7ostreamRKSt10_boolalpha
+                0x00000000        0x6 iostream.o
+ .text._ZStlsRSt7ostreamSt7setfill
+                0x00000000        0x4 iostream.o
+ .text._ZStlsRSt7ostreamSt6_right
+                0x00000000        0x6 iostream.o
+ .text._ZStlsRSt7ostreamSt5_left
+                0x00000000        0x6 iostream.o
+ .text._ZStlsRSt7ostreamSt6_flush
+                0x00000000        0xe iostream.o
+ .text._ZSt6strlenPKc
+                0x00000000       0x14 iostream.o
+ .text._ZStlsRSt7ostreamPKc
+                0x00000000       0x4e iostream.o
+ .text._ZStlsRSt7ostreamb
+                0x00000000       0x38 iostream.o
+ .text._ZNSt7ostream6prefixEv
+                0x00000000       0x2c iostream.o
+ .text._ZStlsRSt7ostreami
+                0x00000000       0xa0 iostream.o
+ .text._ZStlsRSt7ostreaml
+                0x00000000        0x8 iostream.o
+ .text._ZStlsRSt7ostreamx
+                0x00000000       0xc8 iostream.o
+ .text._ZStlsRSt7ostreamj
+                0x00000000        0xc iostream.o
+ .text._ZStlsRSt7ostreamm
+                0x00000000        0xc iostream.o
+ .text._ZStlsRSt7ostreamy
+                0x00000000        0x8 iostream.o
+ .text._ZStlsRSt7ostreama
+                0x00000000       0x10 iostream.o
+ .text._ZStlsRSt7ostreamh
+                0x00000000        0xe iostream.o
+ .rodata._ZTVSt26mkt_ostream_reverse_stringILi70EE
+                0x00000000       0x10 iostream.o
+ .rodata._ZTVSt18bmptk_ostream_putc
+                0x00000000       0x10 iostream.o
+ .rodata._ZSt9boolalpha
+                0x00000000        0x1 iostream.o
+ .rodata._ZSt5flush
+                0x00000000        0x1 iostream.o
+ .rodata._ZSt7showpos
+                0x00000000        0x1 iostream.o
+ .rodata._ZSt4endl
+                0x00000000        0x1 iostream.o
+ .rodata._ZSt5right
+                0x00000000        0x1 iostream.o
+ .rodata._ZSt3bin
+                0x00000000        0x4 iostream.o
+ .rodata._ZSt10noshowbase
+                0x00000000        0x1 iostream.o
+ .rodata._ZSt4ends
+                0x00000000        0x1 iostream.o
+ .rodata.str1.1
+                0x00000000       0x1c iostream.o
+ .data._ZSt4cout
+                0x00000000       0x18 iostream.o
+ .rodata._ZSt8showbase
+                0x00000000        0x1 iostream.o
+ .rodata._ZSt11noboolalpha
+                0x00000000        0x1 iostream.o
+ .rodata._ZSt9noshowpos
+                0x00000000        0x1 iostream.o
+ .rodata._ZSt3oct
+                0x00000000        0x4 iostream.o
+ .rodata._ZSt4left
+                0x00000000        0x1 iostream.o
+ .bss._ZSt2ch   0x00000000        0x4 iostream.o
+ .rodata._ZSt3hex
+                0x00000000        0x4 iostream.o
+ .rodata.CSWTCH.144
+                0x00000000       0x3c iostream.o
+ .rodata._ZSt3dec
+                0x00000000        0x4 iostream.o
+ .text          0x00000000        0x0 cxa_pure_virtual.o
+ .data          0x00000000        0x0 cxa_pure_virtual.o
+ .bss           0x00000000        0x0 cxa_pure_virtual.o
+ .text.__cxa_pure_virtual
+                0x00000000        0x4 cxa_pure_virtual.o
+ .text          0x00000000        0x0 bmptk.o
+ .data          0x00000000        0x0 bmptk.o
+ .bss           0x00000000        0x0 bmptk.o
+ .text._ZN5bmptk10wait_untilENS_4timeE
+                0x00000000        0x8 bmptk.o
+ .text._ZN5bmptk9wait_busyENS_4timeE
+                0x00000000       0x1e bmptk.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .text          0x00000000        0x0 main.o
+ .data          0x00000000        0x0 main.o
+ .bss           0x00000000        0x0 main.o
+ .text          0x00000000        0x0 bmptk_lpc1114fn28.o
+ .data          0x00000000        0x0 bmptk_lpc1114fn28.o
+ .bss           0x00000000        0x0 bmptk_lpc1114fn28.o
+ .text          0x00000000        0x0 bmptk_lpc1114fn28_startup.o
+ .data          0x00000000        0x0 bmptk_lpc1114fn28_startup.o
+ .bss           0x00000000        0x0 bmptk_lpc1114fn28_startup.o
+ .group         0x00000000        0x8 bmptk_font_default.o
+ .group         0x00000000        0x8 bmptk_font_default.o
+ .group         0x00000000        0x8 bmptk_font_default.o
+ .group         0x00000000        0x8 bmptk_font_default.o
+ .group         0x00000000        0x8 bmptk_font_default.o
+ .text          0x00000000        0x0 bmptk_font_default.o
+ .data          0x00000000        0x0 bmptk_font_default.o
+ .bss           0x00000000        0x0 bmptk_font_default.o
+ .text._ZNK5bmptk8graphics15inline_bw_photo12checked_readENS0_6vectorE
+                0x00000000       0x36 bmptk_font_default.o
+ .text._ZN5bmptk8graphics15inline_bw_photoC2ENS0_6vectorEPKh
+                0x00000000       0x28 bmptk_font_default.o
+ .text._ZN5bmptk8graphics12font_defaultEv
+                0x00000000       0x5c bmptk_font_default.o
+ .rodata._ZTVN5bmptk8graphics4fontE
+                0x00000000       0x18 bmptk_font_default.o
+ .rodata._ZTVN5bmptk8graphics5imageE
+                0x00000000       0x10 bmptk_font_default.o
+ .rodata._ZTVN5bmptk8graphics15inline_bw_photoE
+                0x00000000       0x10 bmptk_font_default.o
+ .rodata._ZN5bmptk8graphics17font_default_dataE
+                0x00000000      0x1aa bmptk_font_default.o
+ .rodata._ZN5bmptk8graphics18font_default_startE
+                0x00000000      0x184 bmptk_font_default.o
+ .bss._ZZN5bmptk8graphics12font_defaultEvE3fnt
+                0x00000000       0x24 bmptk_font_default.o
+ .bss._ZGVZN5bmptk8graphics12font_defaultEvE3fnt
+                0x00000000        0x4 bmptk_font_default.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .group         0x00000000        0x8 bmptk_graphics.o
+ .text          0x00000000        0x0 bmptk_graphics.o
+ .data          0x00000000        0x0 bmptk_graphics.o
+ .bss           0x00000000        0x0 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics5frame17translate_outfromENS0_6vectorE
+                0x00000000        0x8 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics5frame14translate_intoENS0_6vectorE
+                0x00000000        0x8 bmptk_graphics.o
+ .text._ZN5bmptk8graphics5frame5flushEv
+                0x00000000        0x2 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics8subframe17translate_outfromENS0_6vectorE
+                0x00000000       0x46 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics8subframe14translate_intoENS0_6vectorE
+                0x00000000       0x4a bmptk_graphics.o
+ .text._ZNK5bmptk8graphics10char_photo12checked_readENS0_6vectorE
+                0x00000000       0x3e bmptk_graphics.o
+ .text._ZNK5bmptk8graphics11inline_font3hasEc
+                0x00000000       0x1a bmptk_graphics.o
+ .text._ZNK5bmptk8graphics11inline_font9char_sizeEc
+                0x00000000       0x50 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics16inline_rgb_photo12checked_readENS0_6vectorE
+                0x00000000       0x32 bmptk_graphics.o
+ .text._ZN5bmptk8graphics6vector9is_withinEss
+                0x00000000       0x20 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics6vectorplES1_
+                0x00000000       0x1c bmptk_graphics.o
+ .text._ZN5bmptk8graphics6vectorpLES1_
+                0x00000000       0x1c bmptk_graphics.o
+ .text._ZNK5bmptk8graphics6vector9directionEv
+                0x00000000       0x28 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics6vector9is_withinES1_
+                0x00000000       0x28 bmptk_graphics.o
+ .text._ZN5bmptk8graphics5frame5writeENS0_6vectorENS0_5colorE
+                0x00000000       0x2a bmptk_graphics.o
+ .text._ZN5bmptk8graphics5frame5clearENS0_5colorE
+                0x00000000       0x5e bmptk_graphics.o
+ .text._ZN5bmptk8graphics8subframe13checked_writeENS0_6vectorENS0_5colorE
+                0x00000000       0x54 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics12image_pixels4drawERNS0_5frameENS0_6vectorE
+                0x00000000       0xb2 bmptk_graphics.o
+ .text._ZN5bmptk8graphics8subframeC2ERNS0_5frameENS0_6vectorES4_b
+                0x00000000       0x84 bmptk_graphics.o
+ .text._ZN5bmptk8graphics4lineC2ERNS0_5frameENS0_6vectorES4_NS0_5colorEi
+                0x00000000       0x3c bmptk_graphics.o
+ .text._ZN5bmptk8graphics10char_photoC2ERKNS0_4fontEcNS0_5colorES5_
+                0x00000000       0x50 bmptk_graphics.o
+ .text.abs      0x00000000        0x8 bmptk_graphics.o
+ .text._ZN5bmptk8graphicsmlEiNS0_6vectorE
+                0x00000000       0x16 bmptk_graphics.o
+ .text._ZN5bmptk8graphics3maxEjj
+                0x00000000        0xc bmptk_graphics.o
+ .text._ZN5bmptk8graphics3maxEjjjj
+                0x00000000       0x18 bmptk_graphics.o
+ .text._ZN5bmptk8graphics3maxENS0_6vectorES1_
+                0x00000000       0x28 bmptk_graphics.o
+ .text._ZN5bmptk8graphics3maxENS0_6vectorES1_S1_S1_
+                0x00000000       0x62 bmptk_graphics.o
+ .text._ZN5bmptk8graphicslsERSt7ostreamNS0_6vectorE
+                0x00000000       0x44 bmptk_graphics.o
+ .text._ZN5bmptk8graphicslsERSt7ostreamNS0_5colorE
+                0x00000000       0x8c bmptk_graphics.o
+ .text._ZN5bmptk8graphics15event_type_nameENS0_10event_typeE
+                0x00000000       0x1c bmptk_graphics.o
+ .text._ZN5bmptk8graphicslsERSt7ostreamRKNS0_10event_typeE
+                0x00000000       0x28 bmptk_graphics.o
+ .text._ZN5bmptk8graphicslsERSt7ostreamRKNS0_5eventE
+                0x00000000       0x34 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics8drawable19drawable_draw_pixelENS0_6vectorENS0_5colorE
+                0x00000000       0x26 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics4line4drawEv
+                0x00000000      0x140 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics9rectangle4drawEv.part.8
+                0x00000000      0x24e bmptk_graphics.o
+ .text._ZNK5bmptk8graphics9rectangle4drawEv
+                0x00000000       0x1c bmptk_graphics.o
+ .text._ZN5bmptk8graphics4flipENS0_6reliefE
+                0x00000000       0x16 bmptk_graphics.o
+ .text._ZN5bmptk8graphicslsERSt7ostreamRKNS0_6reliefE
+                0x00000000       0x24 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics6circle17circle_draw_pixelENS0_6vectorENS0_5colorE
+                0x00000000       0x60 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics6circle11circle_drawENS0_5colorEb
+                0x00000000      0x2fe bmptk_graphics.o
+ .text._ZNK5bmptk8graphics6circle4drawEv
+                0x00000000       0x18 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics15inline_bw_photo9bool_readENS0_6vectorE
+                0x00000000       0x26 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics11inline_font4readEcNS0_6vectorE
+                0x00000000       0x36 bmptk_graphics.o
+ .text._ZNK5bmptk8graphics15inline_bw_photo12checked_readENS0_6vectorE
+                0x00000000       0x36 bmptk_graphics.o
+ .text._ZN5bmptk8graphicslsERSt7ostreamRKNS0_14font_alignmentE
+                0x00000000       0x24 bmptk_graphics.o
+ .text._ZN5bmptk8graphicslsERSt7ostreamRKNS0_6formatE
+                0x00000000       0x5c bmptk_graphics.o
+ .text._ZN5bmptk8graphics10line_countEPKcNS0_6vectorERKNS0_6formatE
+                0x00000000       0x60 bmptk_graphics.o
+ .text._ZN5bmptk8graphics10line_widthEPKcNS0_6vectorERKNS0_6formatE
+                0x00000000       0x4c bmptk_graphics.o
+ .text._ZN5bmptk8graphics10line_charsEPKcNS0_6vectorERKNS0_6formatE
+                0x00000000       0x52 bmptk_graphics.o
+ .text._ZN5bmptk8graphics14draw_text_lineERNS0_5frameERNS0_6vectorERKNS0_6formatEPPKc
+                0x00000000      0x14a bmptk_graphics.o
+ .text._ZNK5bmptk8graphics4text4drawERNS0_5frameENS0_6vectorE
+                0x00000000      0x192 bmptk_graphics.o
+ .text._ZN5bmptk8graphics23frame_console_stringbuf5printEc
+                0x00000000       0xc0 bmptk_graphics.o
+ .text._ZN5bmptk8graphics23frame_console_stringbuf6xsputnEPKci
+                0x00000000       0x20 bmptk_graphics.o
+ .rodata._ZTVN5bmptk8graphics8subframeE
+                0x00000000       0x20 bmptk_graphics.o
+ .rodata._ZTVN5bmptk8graphics8drawableE
+                0x00000000       0x10 bmptk_graphics.o
+ .rodata._ZTVN5bmptk8graphics5imageE
+                0x00000000       0x10 bmptk_graphics.o
+ .rodata._ZTVN5bmptk8graphics10char_photoE
+                0x00000000       0x10 bmptk_graphics.o
+ .rodata._ZTVN5bmptk8graphics12image_pixelsE
+                0x00000000       0x10 bmptk_graphics.o
+ .rodata._ZTVN5bmptk8graphics4lineE
+                0x00000000       0x10 bmptk_graphics.o
+ .rodata._ZTVN5bmptk8graphics5frameE
+                0x00000000       0x20 bmptk_graphics.o
+ .rodata._ZTVN5bmptk8graphics16inline_rgb_photoE
+                0x00000000       0x10 bmptk_graphics.o
+ .rodata._ZTVN5bmptk8graphics9rectangleE
+                0x00000000       0x10 bmptk_graphics.o
+ .rodata.str1.1
+                0x00000000       0x81 bmptk_graphics.o
+ .rodata._ZN5bmptk8graphicsL10event_nameE
+                0x00000000       0x18 bmptk_graphics.o
+ .rodata._ZTVN5bmptk8graphics4textE
+                0x00000000       0x10 bmptk_graphics.o
+ .rodata._ZN5bmptk8graphicsL17shape_relief_nameE
+                0x00000000        0xc bmptk_graphics.o
+ .rodata._ZN5bmptk8graphicsL19font_alignment_nameE
+                0x00000000       0x10 bmptk_graphics.o
+ .rodata._ZTVN5bmptk8graphics11inline_fontE
+                0x00000000       0x28 bmptk_graphics.o
+ .rodata._ZTVN5bmptk8graphics6circleE
+                0x00000000       0x10 bmptk_graphics.o
+ .text          0x00000000       0x1e libaeabi-cortexm0.a(idiv.o)
+ .data          0x00000000        0x0 libaeabi-cortexm0.a(idiv.o)
+ .bss           0x00000000        0x0 libaeabi-cortexm0.a(idiv.o)
+ .text          0x00000000       0x32 libaeabi-cortexm0.a(idivmod.o)
+ .data          0x00000000        0x0 libaeabi-cortexm0.a(idivmod.o)
+ .bss           0x00000000        0x0 libaeabi-cortexm0.a(idivmod.o)
+ .text          0x00000000       0x5a libaeabi-cortexm0.a(ldivmod.o)
+ .data          0x00000000        0x0 libaeabi-cortexm0.a(ldivmod.o)
+ .bss           0x00000000        0x0 libaeabi-cortexm0.a(ldivmod.o)
+ .text          0x00000000       0x30 libaeabi-cortexm0.a(uidivmod.o)
+ .data          0x00000000        0x0 libaeabi-cortexm0.a(uidivmod.o)
+ .bss           0x00000000        0x0 libaeabi-cortexm0.a(uidivmod.o)
+ .text          0x00000000       0x92 libaeabi-cortexm0.a(uldivmod.o)
+ .data          0x00000000        0x0 libaeabi-cortexm0.a(uldivmod.o)
+ .bss           0x00000000        0x0 libaeabi-cortexm0.a(uldivmod.o)
+ .text          0x00000000        0xa libaeabi-cortexm0.a(crt.o)
+ .data          0x00000000        0x0 libaeabi-cortexm0.a(crt.o)
+ .bss           0x00000000        0x0 libaeabi-cortexm0.a(crt.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00008000         xr
+ram              0x10000000         0x00001000         xrw
+nul              0x20000000         0x00000000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD memcpy.o
+LOAD iostream.o
+LOAD cxa_pure_virtual.o
+LOAD bmptk.o
+LOAD main.o
+LOAD bmptk_lpc1114fn28.o
+LOAD bmptk_lpc1114fn28_startup.o
+LOAD bmptk_font_default.o
+LOAD bmptk_graphics.o
+LOAD libaeabi-cortexm0.a
+LOAD c:/program files (x86)/codesourcery/sourcery_codebench_lite_for_arm_eabi/bin/../lib/gcc/arm-none-eabi/4.7.2/../../../../arm-none-eabi/lib\libstdc++.a
+LOAD c:/program files (x86)/codesourcery/sourcery_codebench_lite_for_arm_eabi/bin/../lib/gcc/arm-none-eabi/4.7.2/../../../../arm-none-eabi/lib\libm.a
+START GROUP
+LOAD c:/program files (x86)/codesourcery/sourcery_codebench_lite_for_arm_eabi/bin/../lib/gcc/arm-none-eabi/4.7.2\libgcc.a
+LOAD c:/program files (x86)/codesourcery/sourcery_codebench_lite_for_arm_eabi/bin/../lib/gcc/arm-none-eabi/4.7.2/../../../../arm-none-eabi/lib\libc.a
+END GROUP
+                0x00000400                __main_stack_size = 0x400
+                0x00000000                __process_stack_size = 0x0
+                [0x00000400]                PROVIDE (__main_stack_size, __main_stack_size)
+                [0x00000000]                PROVIDE (__process_stack_size, __process_stack_size)
+                0x00000000                __rom_start = ORIGIN (rom)
+                0x00008000                __rom_size = 0x8000
+                0x00008000                __rom_end = (__rom_start + __rom_size)
+                0x10000000                __ram_start = ORIGIN (ram)
+                0x00001000                __ram_size = 0x1000
+                0x10001000                __ram_end = (__ram_start + __ram_size)
+                [0x00000000]                PROVIDE (__rom_start, __rom_start)
+                [0x00008000]                PROVIDE (__rom_size, __rom_size)
+                [0x00008000]                PROVIDE (__rom_end, __rom_end)
+                [0x10000000]                PROVIDE (__ram_start, __ram_start)
+                [0x00001000]                PROVIDE (__ram_size, __ram_size)
+                [0x10001000]                PROVIDE (__ram_end, __ram_end)
+
+.text           0x00000000      0x500
+                0x00000000                . = ALIGN (0x4)
+                0x00000000                __text_start = .
+                [0x00000000]                PROVIDE (__text_start, __text_start)
+                0x00000000                . = ALIGN (0x4)
+ *(.vectors)
+ .vectors       0x00000000       0x40 bmptk_lpc1114fn28_startup.o
+                0x00000000                __vectors
+                0x00000040                . = ALIGN (0x4)
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text._ZN5bmptk15wait_busy_untilENS_4timeE
+                0x00000040       0x1c bmptk.o
+                0x00000040                bmptk::wait_busy_until(bmptk::time)
+ .text._ZN5bmptk4waitENS_4timeE
+                0x0000005c       0x1e bmptk.o
+                0x0000005c                bmptk::wait(bmptk::time)
+ *fill*         0x0000007a        0x2 
+ .text._ZN5bmptk8hardware12pin_out_fromINS_6target17pin_in_out_pullupILi0ELi6EEELi4EE4initEv
+                0x0000007c       0x30 main.o
+                0x0000007c                bmptk::hardware::pin_out_from<bmptk::target::pin_in_out_pullup<0, 6>, 4>::init()
+ .text._ZN5bmptk6target17configure_as_gpioILi0ELi5EEEvv
+                0x000000ac       0x20 main.o
+                0x000000ac                void bmptk::target::configure_as_gpio<0, 5>()
+ .text._ZN5bmptk8hardware12pin_out_fromINS_6target20pin_in_out_ad_pullupILi1ELi1ELi2EEELi4EE4initEv
+                0x000000cc       0x34 main.o
+                0x000000cc                bmptk::hardware::pin_out_from<bmptk::target::pin_in_out_ad_pullup<1, 1, 2>, 4>::init()
+ .text._ZN5bmptk6target17configure_as_gpioILi1ELi0EEEvv
+                0x00000100       0x24 main.o
+                0x00000100                void bmptk::target::configure_as_gpio<1, 0>()
+ .text._ZN5bmptk6target17configure_as_gpioILi1ELi2EEEvv
+                0x00000124       0x24 main.o
+                0x00000124                void bmptk::target::configure_as_gpio<1, 2>()
+ .text._ZN5bmptk8hardware12pin_out_fromINS_6target20pin_in_out_ad_pullupILi1ELi4ELi5EEELi4EE4initEv
+                0x00000148       0x34 main.o
+                0x00000148                bmptk::hardware::pin_out_from<bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, 4>::init()
+ .text._ZN5bmptk8hardware18port_out_from_pinsIINS_6target17pin_in_out_pullupILi1ELi5EEENS3_ILi1ELi8EEENS3_ILi1ELi9EEEEE3setEj
+                0x0000017c       0x30 main.o
+                0x0000017c                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::set(unsigned int)
+                0x0000017c                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::set(unsigned int)
+ .text._ZN5bmptk8hardware18port_out_from_pinsIINS_6target20pin_in_out_ad_pullupILi1ELi3ELi4EEENS3_ILi1ELi4ELi5EEENS2_17pin_in_out_pullupILi1ELi5EEENS6_ILi1ELi8EEENS6_ILi1ELi9EEEEE3setEj
+                0x000001ac       0x28 main.o
+                0x000001ac                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::set(unsigned int)
+                0x000001ac                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::set(unsigned int)
+ .text._ZN5bmptk8hardware18port_out_from_pinsIINS_6target20pin_in_out_ad_pullupILi1ELi0ELi1EEENS3_ILi1ELi1ELi2EEENS3_ILi1ELi2ELi3EEENS3_ILi1ELi3ELi4EEENS3_ILi1ELi4ELi5EEENS2_17pin_in_out_pullupILi1ELi5EEENS9_ILi1ELi8EEENS9_ILi1ELi9EEEEE3setEj
+                0x000001d4       0x38 main.o
+                0x000001d4                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_ad_pullup<1, 0, 1>, bmptk::target::pin_in_out_ad_pullup<1, 1, 2>, bmptk::target::pin_in_out_ad_pullup<1, 2, 3>, bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::set(unsigned int)
+                0x000001d4                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_ad_pullup<1, 0, 1>, bmptk::target::pin_in_out_ad_pullup<1, 1, 2>, bmptk::target::pin_in_out_ad_pullup<1, 2, 3>, bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::set(unsigned int)
+ .text._ZN5bmptk8hardware18port_out_from_pinsIINS_6target17pin_in_out_pullupILi0ELi6EEENS3_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS6_ILi1ELi1ELi2EEENS6_ILi1ELi2ELi3EEENS6_ILi1ELi3ELi4EEENS6_ILi1ELi4ELi5EEENS3_ILi1ELi5EEENS3_ILi1ELi8EEENS3_ILi1ELi9EEEEE3setEj
+                0x0000020c       0x28 main.o
+                0x0000020c                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_pullup<0, 6>, bmptk::target::pin_in_out_pullup<0, 7>, bmptk::target::pin_in_out_ad_pullup<1, 0, 1>, bmptk::target::pin_in_out_ad_pullup<1, 1, 2>, bmptk::target::pin_in_out_ad_pullup<1, 2, 3>, bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::set(unsigned int)
+                0x0000020c                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_pullup<0, 6>, bmptk::target::pin_in_out_pullup<0, 7>, bmptk::target::pin_in_out_ad_pullup<1, 0, 1>, bmptk::target::pin_in_out_ad_pullup<1, 1, 2>, bmptk::target::pin_in_out_ad_pullup<1, 2, 3>, bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::set(unsigned int)
+ .text._ZN5bmptk8hardware18port_out_from_pinsIINS_6target6pin_ocILi0ELi4EEENS3_ILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS6_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS9_ILi1ELi1ELi2EEENS9_ILi1ELi2ELi3EEENS9_ILi1ELi3ELi4EEENS9_ILi1ELi4ELi5EEENS6_ILi1ELi5EEENS6_ILi1ELi8EEENS6_ILi1ELi9EEEEE3setEj
+                0x00000234       0x50 main.o
+                0x00000234                bmptk::hardware::port_out_from_pins<bmptk::target::pin_oc<0, 4>, bmptk::target::pin_oc<0, 5>, bmptk::target::pin_in_out_pullup<0, 6>, bmptk::target::pin_in_out_pullup<0, 7>, bmptk::target::pin_in_out_ad_pullup<1, 0, 1>, bmptk::target::pin_in_out_ad_pullup<1, 1, 2>, bmptk::target::pin_in_out_ad_pullup<1, 2, 3>, bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::set(unsigned int)
+                0x00000234                bmptk::hardware::port_out_from_pins<bmptk::target::pin_oc<0, 4>, bmptk::target::pin_oc<0, 5>, bmptk::target::pin_in_out_pullup<0, 6>, bmptk::target::pin_in_out_pullup<0, 7>, bmptk::target::pin_in_out_ad_pullup<1, 0, 1>, bmptk::target::pin_in_out_ad_pullup<1, 1, 2>, bmptk::target::pin_in_out_ad_pullup<1, 2, 3>, bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::set(unsigned int)
+ .text._ZN5bmptk6target17configure_as_gpioILi1ELi3EEEvv
+                0x00000284       0x24 main.o
+                0x00000284                void bmptk::target::configure_as_gpio<1, 3>()
+ .text._ZN5bmptk6target17configure_as_gpioILi1ELi8EEEvv
+                0x000002a8       0x20 main.o
+                0x000002a8                void bmptk::target::configure_as_gpio<1, 8>()
+ .text._ZN5bmptk6target17configure_as_gpioILi1ELi9EEEvv
+                0x000002c8       0x20 main.o
+                0x000002c8                void bmptk::target::configure_as_gpio<1, 9>()
+ .text._ZN5bmptk8hardware18port_out_from_pinsIINS_6target17pin_in_out_pullupILi1ELi5EEENS3_ILi1ELi8EEENS3_ILi1ELi9EEEEE4initEv
+                0x000002e8       0x4c main.o
+                0x000002e8                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::init()
+                0x000002e8                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::init()
+ .text._ZN5bmptk8hardware18port_out_from_pinsIINS_6target20pin_in_out_ad_pullupILi1ELi2ELi3EEENS3_ILi1ELi3ELi4EEENS3_ILi1ELi4ELi5EEENS2_17pin_in_out_pullupILi1ELi5EEENS7_ILi1ELi8EEENS7_ILi1ELi9EEEEE4initEv
+                0x00000334       0x2c main.o
+                0x00000334                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_ad_pullup<1, 2, 3>, bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::init()
+                0x00000334                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_ad_pullup<1, 2, 3>, bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::init()
+ .text._ZN5bmptk8hardware18port_out_from_pinsIINS_6target17pin_in_out_pullupILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS5_ILi1ELi1ELi2EEENS5_ILi1ELi2ELi3EEENS5_ILi1ELi3ELi4EEENS5_ILi1ELi4ELi5EEENS3_ILi1ELi5EEENS3_ILi1ELi8EEENS3_ILi1ELi9EEEEE4initEv
+                0x00000360       0x4c main.o
+                0x00000360                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_pullup<0, 7>, bmptk::target::pin_in_out_ad_pullup<1, 0, 1>, bmptk::target::pin_in_out_ad_pullup<1, 1, 2>, bmptk::target::pin_in_out_ad_pullup<1, 2, 3>, bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::init()
+                0x00000360                bmptk::hardware::port_out_from_pins<bmptk::target::pin_in_out_pullup<0, 7>, bmptk::target::pin_in_out_ad_pullup<1, 0, 1>, bmptk::target::pin_in_out_ad_pullup<1, 1, 2>, bmptk::target::pin_in_out_ad_pullup<1, 2, 3>, bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >::init()
+ .text._ZN5bmptk8hardware4kittINS0_18port_out_from_pinsIINS_6target6pin_ocILi0ELi4EEENS4_ILi0ELi5EEENS3_17pin_in_out_pullupILi0ELi6EEENS7_ILi0ELi7EEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENSA_ILi1ELi1ELi2EEENSA_ILi1ELi2ELi3EEENSA_ILi1ELi3ELi4EEENSA_ILi1ELi4ELi5EEENS7_ILi1ELi5EEENS7_ILi1ELi8EEENS7_ILi1ELi9EEEEEELi7EEEvNS_4timeE
+                0x000003ac       0x7c main.o
+                0x000003ac                void bmptk::hardware::kitt<bmptk::hardware::port_out_from_pins<bmptk::target::pin_oc<0, 4>, bmptk::target::pin_oc<0, 5>, bmptk::target::pin_in_out_pullup<0, 6>, bmptk::target::pin_in_out_pullup<0, 7>, bmptk::target::pin_in_out_ad_pullup<1, 0, 1>, bmptk::target::pin_in_out_ad_pullup<1, 1, 2>, bmptk::target::pin_in_out_ad_pullup<1, 2, 3>, bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >, 7>(bmptk::time)
+                0x000003ac                void bmptk::hardware::kitt<bmptk::hardware::port_out_from_pins<bmptk::target::pin_oc<0, 4>, bmptk::target::pin_oc<0, 5>, bmptk::target::pin_in_out_pullup<0, 6>, bmptk::target::pin_in_out_pullup<0, 7>, bmptk::target::pin_in_out_ad_pullup<1, 0, 1>, bmptk::target::pin_in_out_ad_pullup<1, 1, 2>, bmptk::target::pin_in_out_ad_pullup<1, 2, 3>, bmptk::target::pin_in_out_ad_pullup<1, 3, 4>, bmptk::target::pin_in_out_ad_pullup<1, 4, 5>, bmptk::target::pin_in_out_pullup<1, 5>, bmptk::target::pin_in_out_pullup<1, 8>, bmptk::target::pin_in_out_pullup<1, 9> >, 7>(bmptk::time)
+ .text.startup.main
+                0x00000428       0x18 main.o
+                0x00000428                main
+ .text._ZN5bmptk12current_timeEv
+                0x00000440       0x70 bmptk_lpc1114fn28.o
+                0x00000440                bmptk::current_time()
+ .text.__startup
+                0x000004b0       0x50 bmptk_lpc1114fn28_startup.o
+                0x000004b0                __startup
+                0x00000500                . = ALIGN (0x4)
+ *(.glue_7t .glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ .glue_7t       0x00000000        0x0 linker stubs
+                0x00000500                . = ALIGN (0x4)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+                0x00000500                . = ALIGN (0x4)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x00000500                . = ALIGN (0x4)
+ *(.gcc_except_table)
+                0x00000500                . = ALIGN (0x4)
+ *(.eh_frame_hdr)
+                0x00000500                . = ALIGN (0x4)
+ *(.eh_frame)
+                0x00000500                . = ALIGN (0x4)
+ *(.init)
+                0x00000500                . = ALIGN (0x4)
+                0x00000500                __preinit_array_start = .
+ *(.preinit_array)
+                0x00000500                . = ALIGN (0x4)
+                0x00000500                __preinit_array_end = .
+                0x00000500                __init_array_start = .
+ *(SORT(.init_array.*))
+                0x00000500                . = ALIGN (0x4)
+ *(.init_array)
+                0x00000500                . = ALIGN (0x4)
+                0x00000500                __init_array_end = .
+                0x00000500                . = ALIGN (0x4)
+                0x00000500                __text_end = .
+                [0x00000500]                PROVIDE (__text_end, __text_end)
+
+.vfp11_veneer   0x00000500        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x00000500        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x00000500        0x0
+ .iplt          0x00000000        0x0 iostream.o
+
+.rel.dyn        0x00000500        0x0
+ .rel.iplt      0x00000000        0x0 iostream.o
+
+.IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
+ *(.init)
+ *(.preinit_array)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x00000500                . = ALIGN (0x4)
+                0x00000500                __exidx_start = .
+                [0x00000500]                PROVIDE (__exidx_start, __exidx_start)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00000500                . = ALIGN (0x4)
+                0x00000500                __exidx_end = .
+                [0x00000500]                PROVIDE (__exidx_end, __exidx_end)
+
+.data           0x10000000        0x0 load address 0x00000500
+                0x10000000                . = ALIGN (0x4)
+                0x00000500                __data_init_start = LOADADDR (.data)
+                [0x00000500]                PROVIDE (__data_init_start, __data_init_start)
+                0x10000000                __data_start = .
+                [0x10000000]                PROVIDE (__data_start, __data_start)
+                0x10000000                . = ALIGN (0x4)
+ *(.data .data.* .gnu.linkonce.d.*)
+                0x10000000                . = ALIGN (0x4)
+                0x10000000                __data_end = .
+                [0x10000000]                PROVIDE (__data_end, __data_end)
+
+.igot.plt       0x10000000        0x0 load address 0x00000500
+ .igot.plt      0x00000000        0x0 iostream.o
+
+.bss            0x10000000       0x14
+                0x10000000                . = ALIGN (0x4)
+                0x10000000                __bss_start = .
+                [0x10000000]                PROVIDE (__bss_start, __bss_start)
+                0x10000000                . = ALIGN (0x4)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss._ZZN5bmptk12current_timeEvE8last_low
+                0x10000000        0x4 bmptk_lpc1114fn28.o
+ *fill*         0x10000004        0x4 
+ .bss._ZZN5bmptk12current_timeEvE4high
+                0x10000008        0x8 bmptk_lpc1114fn28.o
+ .bss._ZZN5bmptk12current_timeEvE9init_done
+                0x10000010        0x1 bmptk_lpc1114fn28.o
+                0x10000014                . = ALIGN (0x4)
+ *fill*         0x10000011        0x3 
+ *(COMMON)
+                0x10000014                . = ALIGN (0x4)
+                0x10000014                __bss_end = .
+                [0x10000014]                PROVIDE (__bss_end, __bss_end)
+
+.stack          0x10000014      0x404
+                0x10000018                . = ALIGN (0x8)
+ *fill*         0x10000014        0x4 
+                0x10000018                __stack_start = .
+                [0x10000018]                PROVIDE (__stack_start, __stack_start)
+                0x10000018                . = ALIGN (0x8)
+                0x10000018                __main_stack_start = .
+                [0x10000018]                PROVIDE (__main_stack_start, __main_stack_start)
+                0x10000418                . = (. + __main_stack_size)
+ *fill*         0x10000018      0x400 
+                0x10000418                . = ALIGN (0x8)
+                0x10000418                __main_stack_end = .
+                [0x10000418]                PROVIDE (__main_stack_end, __main_stack_end)
+                0x10000418                . = ALIGN (0x8)
+                0x10000418                __process_stack_start = .
+                [0x10000418]                PROVIDE (__process_stack_start, __process_stack_start)
+                0x10000418                . = (. + __process_stack_size)
+                0x10000418                . = ALIGN (0x8)
+                0x10000418                __process_stack_end = .
+                [0x10000418]                PROVIDE (__process_stack_end, __process_stack_end)
+                0x10000418                . = ALIGN (0x8)
+                0x10000418                __stack_end = .
+                [0x10000418]                PROVIDE (__stack_end, __stack_end)
+                0x10000418                . = ALIGN (0x4)
+                0x10000418                __heap_start = .
+                [0x10000418]                PROVIDE (__heap_start, __heap_start)
+                0x10000418                . = ALIGN (0x4)
+                0x10001000                __heap_end = __ram_end
+                [0x10001000]                PROVIDE (__heap_end, __heap_end)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+.ARM.attributes
+                0x00000000       0x2f
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x31 memcpy.o
+ .ARM.attributes
+                0x00000031       0x31 iostream.o
+ .ARM.attributes
+                0x00000062       0x31 cxa_pure_virtual.o
+ .ARM.attributes
+                0x00000093       0x31 bmptk.o
+ .ARM.attributes
+                0x000000c4       0x31 main.o
+ .ARM.attributes
+                0x000000f5       0x31 bmptk_lpc1114fn28.o
+ .ARM.attributes
+                0x00000126       0x31 bmptk_lpc1114fn28_startup.o
+ .ARM.attributes
+                0x00000157       0x31 bmptk_font_default.o
+ .ARM.attributes
+                0x00000188       0x31 bmptk_graphics.o
+ .ARM.attributes
+                0x000001b9       0x21 libaeabi-cortexm0.a(idiv.o)
+ .ARM.attributes
+                0x000001da       0x21 libaeabi-cortexm0.a(idivmod.o)
+ .ARM.attributes
+                0x000001fb       0x21 libaeabi-cortexm0.a(ldivmod.o)
+ .ARM.attributes
+                0x0000021c       0x21 libaeabi-cortexm0.a(uidivmod.o)
+ .ARM.attributes
+                0x0000023d       0x21 libaeabi-cortexm0.a(uldivmod.o)
+ .ARM.attributes
+                0x0000025e       0x21 libaeabi-cortexm0.a(crt.o)
+
+/DISCARD/
+ *(.note.GNU-stack)
+                0x00000500                PROVIDE (__text_size, (__text_end - __text_start))
+                0x00000000                PROVIDE (__exidx_size, (__exidx_end - __exidx_start))
+                0x00000000                PROVIDE (__data_size, (__data_end - __data_start))
+                0x00000014                PROVIDE (__bss_size, (__bss_end - __bss_start))
+                0x00000400                PROVIDE (__stack_size, (__stack_end - __stack_start))
+                0x00000be8                PROVIDE (__heap_size, (__heap_end - __heap_start))
+OUTPUT(main.elf elf32-littlearm)
+
+.comment        0x00000000       0x30
+ .comment       0x00000000       0x30 memcpy.o
+                                 0x31 (size before relaxing)
+ .comment       0x00000000       0x31 iostream.o
+ .comment       0x00000000       0x31 cxa_pure_virtual.o
+ .comment       0x00000000       0x31 bmptk.o
+ .comment       0x00000000       0x31 main.o
+ .comment       0x00000000       0x31 bmptk_lpc1114fn28.o
+ .comment       0x00000000       0x31 bmptk_lpc1114fn28_startup.o
+ .comment       0x00000000       0x31 bmptk_font_default.o
+ .comment       0x00000000       0x31 bmptk_graphics.o

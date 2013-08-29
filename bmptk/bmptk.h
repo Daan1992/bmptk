@@ -53,22 +53,22 @@
             
 // include the target-specific header file
 #ifdef BMPTK_TARGET_nds
-   #include "bmptk_nds.h"
+   #include "targets/nds/nds.h"
 #endif              
 #ifdef BMPTK_TARGET_win
-   #include "bmptk_win.h"
+   #include "targets/win/win.h"
 #endif              
 #ifdef BMPTK_CHIP_lpc810m021
-   #include "bmptk_lpc810m021.h"
+   #include "targets/cortex/lpc810m021.h"
 #endif              
 #ifdef BMPTK_CHIP_lpc1114fn28
-   #include "bmptk_lpc1114fn28.h"
+   #include "targets/cortex/lpc1114fn28.h"
 #endif              
 #ifdef BMPTK_CHIP_lpc1227fbd301
-   #include "bmptk_lpc1227fbd301.h"
+   #include "targets/cortex/lpc1227fbd301.h"
 #endif              
 #ifdef BMPTK_CHIP_lpc2478
-   #include "bmptk_lpc2478.h"
+   #include "targets/armv7/lpc2478.h"
 #endif              
       
 #endif // #ifndef _BMPTK_H
