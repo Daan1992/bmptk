@@ -140,12 +140,13 @@ def Ttf_To_Img( Img_File_Name, Code_File_Name, Name, Size, List = None, Namespac
    Cpp.write( '#include "%s"\n' % Hpp_File_Name )
 
    Cpp.write( 'using namespace bmptk; \n' )
+   Cpp.write( 'using namespace graphics; \n' )
    if Namespace != None:
-      Cpp.write( 'namespace %s {\n' % Namespace )
+      Cpp.write( Namespace[ 0 ] + "\n" );
    Cpp.write( 'extern const int %s_start[];\n' % Name )
    Cpp.write( 'extern const unsigned char %s_data[];\n' % Name )
    Cpp.write( 'const inline_font & %s(){ \n' % Name )
-   Cpp.write( '   static inline_font fnt(\n' )
+   Cpp.write( '   static bmptk::graphics::inline_font fnt(\n' )
    Cpp.write( '      %d,\n' % Fixed )
    Cpp.write( '      vector( %d, %d ),\n' % ( Char_X, Char_Y ))
    Cpp.write( '      %s_start,\n' % Name )
@@ -156,15 +157,15 @@ def Ttf_To_Img( Img_File_Name, Code_File_Name, Name, Size, List = None, Namespac
    Cpp.write( Data )  
    Cpp.write( '\n' )
    if Namespace != None:
-      Cpp.write( '}\n' ) 
+      Cpp.write( Namespace[ 1 ] + "\n" ) 
    Cpp.close()
    
    Hpp.write( '#include "bmptk.h"\n' )
    if Namespace != None:
-      Hpp.write( 'namespace %s {\n' % Namespace )
-   Hpp.write( 'const bmptk::inline_font & %s();\n' % Name )
+      Hpp.write( Namespace[ 0 ] + "\n" );
+   Hpp.write( 'const bmptk::graphics::inline_font & %s();\n' % Name )
    if Namespace != None:
-      Hpp.write( '}\n' ) 
+      Hpp.write( Namespace[ 1 ] + "\n" ) 
    Hpp.close()
       
 def Run():
@@ -187,6 +188,12 @@ if __name__ == '__main__':
       
    try:
       Namespace = sys.argv[ 6 ]
+      Open = ""
+      Close = ""
+      for Part in Namespace.split( "::" ):
+         Open += "namespace %s { " % Part;
+         Close += "}; "
+      Namespace = ( Open, Close )		 
    except:
       Namespace = None    
       

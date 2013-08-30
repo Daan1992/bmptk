@@ -19,14 +19,13 @@ This directory contains :
 
    subdirectories
       - chips              : interfacing to peripheral chips
-      - 
       - docsrc             : input for Doxygen documentation generation
       - examples           : example directories
       - graphics           : stuff for pixel-accessible graphics
       - targets            : basic chip and board specific stuff
       - tools              : tools (executables and scripts)
       
-   generated subdireectories      
+   generated subdirectories      
       - doc                : documentation (run 'make doc', requires Doxygen)
       
 =============================================================================      
@@ -34,6 +33,7 @@ This directory contains :
 Below are reminders, notes, bookmarks etc. for my use
 
 pending work list, issues, notes to myself, etc:
+- win can not easily be stopped!
 - volatile int n = 5; bmptk::graphics::color y( n, n+1, n+2 );  std::cout << y << y << "\n"; 
 - create font_default.* only when needed (not on timestamp)?
 - problem with switch() case:

@@ -1,0 +1,24 @@
+file: bmptk/examples/graphics/README
+
+Bare Metal Programming Tool Kit eaxmples/graphics directory
+
+This directory contains exaples that use the bmptk graphics library.
+Most examples can be used with any target that supports a
+graphics screen, like win, nds, or a microcontroller with an LCD deisplay.
+
+This directory contains :
+   Makefile : supports 'clean' and 'build' targets
+   RTEADME  : this file
+
+subdirectories
+   lines         : draws random lines
+   clocks        : draws clocks, demonstrating various frame decorators
+   draw          : draw text, lines, boxes, circles, pictures, etc.
+   
+
+
+
+
+
+
+

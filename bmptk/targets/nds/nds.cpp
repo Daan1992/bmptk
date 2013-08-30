@@ -8,7 +8,7 @@ unsigned int read_cascaded_timers(){
    unsigned int low = TIMER_DATA( LOW_TIMER );
    
    if( high != TIMER_DATA( HIGH_TIMER )){
-      // The high timer incremented while we tried to read the low timer.
+     // The high timer incremented while we tried to read the low timer.
 	  // Read the timers again, no overflow will happen again anytime soon
 	  high = TIMER_DATA( HIGH_TIMER );
 	  low = TIMER_DATA( LOW_TIMER );
@@ -17,7 +17,7 @@ unsigned int read_cascaded_timers(){
    return low + ( high << 16 );
 }
 
-bmptk::time bmptk::time_since_startup(){
+bmptk::time bmptk::current_time(){
    static unsigned long long int last_low = 0;
    static unsigned long long int high = 0;
    
@@ -41,25 +41,19 @@ bmptk::time bmptk::time_since_startup(){
    }
    last_low = low;
    
-   // the timer ticks at 33.514 MHz, divide by 33.5 
-   // to get a reasonable approximation of 1 Mhz
-   return (( low | high ) / 67 ) * 2;
+   // the timer ticks at 33.514 MHz, multiply by 2 to get 67 ticks per us
+   return time( ( low | high ) * 2 );
 }
 
-#ifndef BMPTK_GRAPHICS
 
-void bmptk::fatal_error_detected( const char *msg  ){
-   for(;;);
-}
-
-#else
-
+/*
 void bmptk::fatal_error_detected( const char *msg  ){
    bmptk::graphics::target_screen lcd;
    lcd.clear( bmptk::graphics::color::blue());
    bmptk::graphics::text( msg ).draw( lcd );
    for(;;);
 }
+*/
 
 bmptk::graphics::target_screen::target_screen( void ):
    frame( vector( 256, 192 ))
@@ -94,4 +88,3 @@ void bmptk::graphics::target_top_screen::checked_write(
    BG_GFX_SUB[ v.x_get() + ( v.y_get() * 256 ) ] = 0x8000 | c.rgb15_get();
 }
 
-#endif

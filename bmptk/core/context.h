@@ -27,7 +27,11 @@
 //
 //***************************************************************************
 
-namespace std { class ostream; };
+#ifdef BMPTK_TARGET_win
+    #include <iostream>
+#else
+    namespace std { class ostream; };
+#endif
 
 namespace bmptk {
 

@@ -1,12 +1,12 @@
 #############################################################################
 # 
-# Makefile for bmptk examples 
+# Makefile for bmptk examples/db103 
 #
 # (c) Wouter van Ooijen (www.voti.nl) 2012, 2013
 # 
 #############################################################################
 
-SUBDIRS += db103 graphics
+SUBDIRS += lines clocks draw
 
 BUILDDIRS = $(SUBDIRS:%=build-%)
 CLEANDIRS = $(SUBDIRS:%=clean-%)
@@ -20,4 +20,3 @@ $(BUILDDIRS):
 clean: $(CLEANDIRS)
 $(CLEANDIRS):
 		make -C $(@:clean-%=%) clean
-

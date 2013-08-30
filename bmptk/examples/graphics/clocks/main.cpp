@@ -1,5 +1,5 @@
-// #include <stdlib.h>
 #include "bmptk.h"
+#include <stdlib.h>
 #include <string>
 #include <iostream> 
 #include <sstream> 
@@ -7,6 +7,7 @@
 #include <math.h>
 
 using namespace bmptk;
+using namespace graphics;
 using namespace std;
 
 vector radial( int n, int len ){
@@ -16,8 +17,8 @@ vector radial( int n, int len ){
    );   
 }
 
-void draw_analog_clock( frame &f, unsigned long long int t ){
-   t = t / bmptk::s;
+void draw_analog_clock( frame &f, bmptk::time tt ){
+   unsigned long long int t = tt / bmptk::s;
    int s = t % 60;
    t = t / 60;
    int m = t % 60;
@@ -36,8 +37,8 @@ void draw_analog_clock( frame &f, unsigned long long int t ){
    f.flush();
 }
 
-void draw_digital_clock( frame &f, unsigned long long int t ){
-   t = t / bmptk::s; 
+void draw_digital_clock( frame &f, bmptk::time bt ){
+   unsigned long long int t = bt / bmptk::s; 
    int s = t % 60;
    t = t / 60;
    int m = t % 60;
@@ -141,10 +142,22 @@ void shadower( frame &f, vector p, color c, color bg ){
    f.write( p + vector( 2, 2 ), c.mixed_with( bg ) );
 }
 
+void border( frame &f, color c = color::red() ){
+   for( int x = 0; x < f.size_get().x_get(); x++ ){
+      f.write( vector( x, 0 ), c );
+      f.write( vector( x, f.size_get().y_get() - 1 ), c );
+   }
+   for( int y = 0; y < f.size_get().y_get(); y++ ){
+      f.write( vector( 0, y ), c );
+      f.write( vector( f.size_get().x_get() - 1, y ), c );
+   }
+}
+
 int main( void ){
 
    target_screen lcd;
    lcd.clear( color:: gray() );
+   border( lcd );
    
    subframe d( lcd, vector( 11, 4 ), vector( 38, 11 ) );
    
@@ -193,7 +206,7 @@ int main( void ){
    text( "shadow" ).draw( a14t );
     
    for(;;){
-      unsigned long long int t = time_since_startup();
+      bmptk::time t = bmptk::current_time();
       draw_analog_clock( a0, t );
       draw_analog_clock( a1_raw, t );
       

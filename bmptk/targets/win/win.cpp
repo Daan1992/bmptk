@@ -1,7 +1,7 @@
 #include "bmptk.h"
 
 // not user level include files, hence not included by bmptk.h
-#include "bmptk_win_graphics.hx"
+// #include "bmptk_win_graphics.hx"
 #include "windows.h"
 #include <iostream>
 #include <iomanip>
@@ -24,10 +24,12 @@ bmptk::time bmptk::current_time(){
    return bmptk::time( GetTickCount() * 1000ULL );
 }
 
+/*
 void bmptk::fatal_error_detected( const char *msg  ){
    std::cout << "fatal error : " << msg << "\n" << std::flush;
    for(;;);
 }
+*/
 
 #ifdef BMPTK_GRAPHICS
 

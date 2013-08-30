@@ -26,22 +26,26 @@ Project
 	+Files
 		-includes
 		+compile
-			lines.cpp
+			main.cpp
 		+others
 			Makefile
 [Open project files]
-0=lines.cpp
-1=..\text\Makefile
-2=Makefile
+0=main.cpp
+1=Makefile
+2=..\..\..\core\context.h
+3=..\..\..\targets\win\win.cpp
 [Selected Project Files]
 Main=
-Selected=lines.cpp
-[lines.cpp]
+Selected=main.cpp
+[main.cpp]
 TopLine=1
-Caret=30,8
-[..\text\Makefile]
-TopLine=1
-Caret=44,15
+Caret=1,18
 [Makefile]
 TopLine=1
-Caret=18,13
+Caret=57,12
+[..\..\..\core\context.h]
+TopLine=18
+Caret=24,31
+[..\..\..\targets\win\win.cpp]
+TopLine=1
+Caret=14,15

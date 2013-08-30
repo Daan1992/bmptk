@@ -26,30 +26,18 @@ Project
 	+Files
 		-includes
 		+compile
-			clock.cpp
+			main.cpp
 		+others
 			Makefile
 [Open project files]
-0=clock.cpp
-1=..\..\graphics\bmptk_graphics.h
-2=..\..\graphics\bmptk_graphics.cpp
-3=Makefile
-4=..\..\targets\bmptk_win.cpp
+0=main.cpp
+1=Makefile
 [Selected Project Files]
 Main=
-Selected=clock.cpp
-[clock.cpp]
-TopLine=62
-Caret=1,62
-[..\..\graphics\bmptk_graphics.h]
-TopLine=875
-Caret=3,898
-[..\..\graphics\bmptk_graphics.cpp]
-TopLine=166
-Caret=36,189
+Selected=main.cpp
+[main.cpp]
+TopLine=148
+Caret=32,201
 [Makefile]
 TopLine=1
-Caret=18,13
-[..\..\targets\bmptk_win.cpp]
-TopLine=5
-Caret=4,37
+Caret=57,12

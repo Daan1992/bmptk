@@ -2,22 +2,26 @@
 #
 # Project Makefile
 #
-# (c) Wouter van Ooijen (www.voti.nl) 2012
+# (c) Wouter van Ooijen (www.voti.nl) 2013
 # 
 #############################################################################
 
-# Specify the project name, this is also the main .cpp file to compile
-PROJECT    := draw
-
-# Specify target chip or board or system
-TARGET     := win
-
 # Specify the location of the bmptk library
-BMPTK      := ../..
+BMPTK      := ../../..
 
-# Specify project files (other than $(PROJECT).cpp) (if any)
+# Specify target chip or board or system, default is nds
+TARGET     := nds
+
+# Specify the project name, the default is main (.cpp, .c, or .asm)
+# this is also the main .cpp file to compile
+# the default is main.cpp (or main.c, or main.asm)
+PROJECT    := 
+
+# Specify project-specific files (other than the main, if any)
+OBJECTS    := 
+SOURCES    := 
 HEADERS    := 
-LIBS       := bmptk_graphics
+LIBS       := 
 
 # specify (extra) results you want to get (if any)
 RESULTS    := 

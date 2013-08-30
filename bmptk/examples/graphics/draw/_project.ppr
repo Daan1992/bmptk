@@ -26,34 +26,14 @@ Project
 	+Files
 		-includes
 		+compile
-			draw.cpp
+			main.cpp
 		+others
 			Makefile
 [Open project files]
-0=draw.cpp
-1=..\..\graphics\bmptk_graphics.h
-2=..\..\graphics\bmptk_graphics.cpp
-3=Makefile
-4=..\..\bmptk.h
-5=..\..\targets\bmptk_win.cpp
+0=main.cpp
 [Selected Project Files]
 Main=
-Selected=draw.cpp
-[draw.cpp]
-TopLine=40
-Caret=12,53
-[..\..\graphics\bmptk_graphics.h]
-TopLine=1299
-Caret=16,1328
-[..\..\graphics\bmptk_graphics.cpp]
-TopLine=544
-Caret=7,547
-[Makefile]
+Selected=main.cpp
+[main.cpp]
 TopLine=1
-Caret=18,50
-[..\..\bmptk.h]
-TopLine=180
-Caret=23,186
-[..\..\targets\bmptk_win.cpp]
-TopLine=9
-Caret=33,21
+Caret=1,1

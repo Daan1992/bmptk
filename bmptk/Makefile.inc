@@ -32,8 +32,9 @@
 #############################################################################
 
 
-# must not contain spaces!!
-VERSION := V02.00-work-in-progress-2013-08-17
+# This string must not contain spaces, bacuse that does
+# (for some unclear reason) not work on Windows8
+VERSION := V02.00-work-in-progress-2013-08-30
 
 
 #============================================================================
@@ -184,7 +185,8 @@ EXE       := $(PROJECT).exe
 NMDUMP    := $(PROJECT).nmdump
 OBJ       += $(OBJECTS)
 ifeq ($(LANGUAGE),C++)
-   OBJ       += bmptk.o memory.o context.o rtos.o
+   OBJ       += bmptk.o
+   # OBJ       += memory.o context.o rtos.o  # does not yet work for nds and win
 endif   
 OBJ       += $(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(patsubst %.s,%.o,$(SOURCES))))
 OBJ       += $(patsubst %,%.o,$(LIBS))
@@ -227,18 +229,19 @@ ifeq ($(TARGET),nds)
    PREFIX      := $(DEVKITPRO)/devkitARM/bin/arm-none-eabi-
    CORE_FLAGS  := -march=armv5te -mtune=arm946e-s -fomit-frame-pointer 
    CORE_FLAGS  += -ffast-math -mthumb -mthumb-interwork -DARM9
-   INCLUDES    += -I$(DEVKITPRO)/libnds/include 
+   INCLUDES    += -I$(DEVKITPRO)/ -I$(DEVKITPRO)/libnds/include 
    LIBRARIES   += -L$(DEVKITPRO)/libnds/lib -lnds9
    LDFLAGS	   += -g -mthumb -mthumb-interwork -specs=ds_arm9.specs
    RESULTS     = $(ELF) $(NDS) $(NMDUMP)
    RUN         = "$(DEVKITPRO)/emulators/desmume/DeSmuME" $(NDS)
-   LIBS        += bmptk_nds
-   VPATH       += $(BMPTK)/stdlib
-   INCLUDES    += -I$(BMPTK)/stdlib
-   TICKS_PER_US = 1
+   LIBS        += nds
+   VPATH       += $(BMPTK)/stdlib $(BMPTK)/targets/nds
+   INCLUDES    += -I$(BMPTK)/stdlib -I$(BMPTK)/targets/nds
+   TICKS_PER_US = 67
+   LINKERSCRIPT =
 endif
 
-ifeq ($(TARGET),windows)
+ifeq ($(TARGET),win)
    CHIP        := Intel
    PREFIX      := $(DEVCPP)/bin/
    CORE_FLAGS  := -mno-ms-bitfields   
@@ -248,13 +251,15 @@ ifeq ($(TARGET),windows)
    INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2"
    INCLUDES    += -I"$(DEVCPP)/include"
    LIBRARIES   += -L"$(DEVCPP)/lib" 
-   LDFLAGS     += $(BMPTK)/targets/bmptk_win_libbgi.a 
    LDFLAGS     += -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
    RESULTS     = $(EXE)
    RUN         = ./$(EXE)
-   LIBS        += bmptk_win
+   LIBS        += win
+   VPATH       += $(BMPTK)/targets/win
+   INCLUDES    += -I$(BMPTK)/targets/win
    TICKS_PER_US = 1
    HAS_FILESYSTEM = 1
+   LINKERSCRIPT =
 endif
 
 ifeq ($(TARGET),olimex-mod-lcd43)
@@ -298,6 +303,7 @@ define Embedded
    PREFIX      := $(ARMTOOLS)/bin/arm-none-eabi-
    #HEADERS     += $(CHIP).h   
    DEFINES     += -DBMPTK_EMBEDDED_HEAP
+   RESULTS     += $(NMDUMP) sizes 
 endef
 
 define Cortex
@@ -314,8 +320,9 @@ define Cortex
    RUN         = $(LPC21ISP) -control -verify -term $(HEX) $(SERIAL_PORT) $(BAUDRATE) 12000
    # TERMINAL    = lpc21isp -termonly x $(SERIAL_PORT) 19200 y
    # RUN         = $(FLASHMAGIC) '$(FMCMD)'
-   LDFLAGS	   += -Tlinkerscript.ld -nostartfiles
-   RESULTS     += linkerscript.ld
+   LINKERSCRIPT = linkerscript.ld
+   LDFLAGS	   += -T$(LINKERSCRIPT) -nostartfiles -nodefaultlibs
+   RESULTS     += $#(LINKERSCRIPT)
    TICKS_PER_US = 6
 endef
 
@@ -440,8 +447,8 @@ CPPFLAGS    += -fno-builtin  -Werror
 
 CPPFLAGS    += -fno-rtti -fno-exceptions 
 
-CPPFLAGS    += -nostartfiles -nodefaultlibs
-CFLAGS    += -nostartfiles -nodefaultlibs 
+#CPPFLAGS    += -nostartfiles -nodefaultlibs
+#CFLAGS    += -nostartfiles -nodefaultlibs 
 # not for devcpp
 # CPPFLAGS    += -mstructure-size-boundary=32 
 CPPFLAGS    += -std=c++11 -Wall 
@@ -458,7 +465,7 @@ ASFLAGS     += -x assembler-with-cpp
 # default LDFLAGS
 LDFLAGS     +=  -Wl,-Map,$(MAP)      
 LDFLAGS     += -Wl,--gc-sections       
-LDFLAGS     += -nostartfiles -nodefaultlibs
+#LDFLAGS     += -nostartfiles -nodefaultlibs
 // LDFLAGS     += -lstdc++
 
 # sections
@@ -532,7 +539,7 @@ linkerscript.ld: $(BMPTK)/targets/cortex/linkerscript.c
 	@echo ' '
    
 # make .elf by linking all objects
-$(ELF): $(OBJ) $(LIBA) $(LNK) linkerscript.ld
+$(ELF): $(OBJ) $(LIBA) $(LNK) $(LINKERSCRIPT)
 	@echo 'Linking target: $(ELF)'
 	$(LINKER) -o $@ $(OBJ) $(LIBA) $(LDFLAGS) $(LIBRARIES)
 	@echo ' '	
@@ -552,15 +559,15 @@ $(BIN): $(ELF)
 	$(OBJCOPY) -O binary $< $@
 
 # make .hex from .elf
-$(HEX):	$(ELF)
+$(HEX): $(ELF)
 	$(OBJCOPY) --output-target ihex $< $@
 	
 # make .dmp from elf
-$(DMP):	$(ELF)
+$(DMP): $(ELF)
 	$(OBJDUMP) -x --syms $< > $@
 
 # make .lss from elf
-$(LSS):	$(ELF)
+$(LSS): $(ELF)
 	$(OBJDUMP) -S $< > $@
 
 # make .nds from .elf
@@ -568,7 +575,7 @@ $(NDS): $(ELF)
 	$(NDSTOOL) -c $@ -9 $< -b $(DEVKITPRO)/libnds/icon.bmp "$(PROJECT)"		
 
 # show object sizes
-.PHONY: psizes
+.PHONY: sizes
 sizes: $(OBJ)
 	$(SIZES) -B -t $(OBJ)
 	"$(BMPTK)/tools/image_sizes/image_sizes.exe" $(MAP)
@@ -585,7 +592,7 @@ sizes: $(OBJ)
 .DEFAULT_GOAL := build
 
 # Build the project
-$(PROJECT): $(RESULTS) $(NMDUMP) sizes 
+$(PROJECT): $(RESULTS)
 
 # aliases for build the project
 all: $(PROJECT)
