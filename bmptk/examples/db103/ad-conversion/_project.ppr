@@ -36,4 +36,4 @@ Main=
 Selected=main.cpp
 [main.cpp]
 TopLine=1
-Caret=2,8
+Caret=1,1

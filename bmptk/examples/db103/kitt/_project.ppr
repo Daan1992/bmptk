@@ -31,9 +31,17 @@ Project
 			Makefile
 [Open project files]
 0=main.cpp
+1=..\..\..\core\memory.h
+2=..\..\..\core\bmptk.cpp
 [Selected Project Files]
 Main=
 Selected=main.cpp
 [main.cpp]
 TopLine=1
-Caret=2,8
+Caret=28,8
+[..\..\..\core\memory.h]
+TopLine=4
+Caret=1,57
+[..\..\..\core\bmptk.cpp]
+TopLine=1
+Caret=1,41

@@ -31,9 +31,25 @@ Project
 			Makefile
 [Open project files]
 0=main.cpp
+1=..\..\..\core\basics.h
+2=..\..\..\hardware\pins.h
+3=..\..\..\hardware\ports.h
+4=..\..\..\hardware\demos.h
 [Selected Project Files]
 Main=
 Selected=main.cpp
 [main.cpp]
-TopLine=1
-Caret=2,8
+TopLine=21
+Caret=4,45
+[..\..\..\core\basics.h]
+TopLine=129
+Caret=1,153
+[..\..\..\hardware\pins.h]
+TopLine=760
+Caret=1,760
+[..\..\..\hardware\ports.h]
+TopLine=421
+Caret=24,432
+[..\..\..\hardware\demos.h]
+TopLine=43
+Caret=9,57

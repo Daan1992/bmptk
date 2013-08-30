@@ -34,15 +34,21 @@ namespace chips {
 
 //! create a frame controlled by a pcd8544 LCD controller 
 template<
-   typename sce,
-   typename res,
-   typename dc,
-   typename sdin,
-   typename sclk,
+   typename arg_sce,
+   typename arg_res,
+   typename arg_dc,
+   typename arg_sdin,
+   typename arg_sclk,
    int x_size,
    int y_size
 > class pcd8544 : public bmptk::graphics::frame {
 private:
+
+   typedef bmptk::hardware::pin_out_from< arg_sce >  sce;
+   typedef bmptk::hardware::pin_out_from< arg_res >  res;
+   typedef bmptk::hardware::pin_out_from< arg_dc >   dc;
+   typedef bmptk::hardware::pin_out_from< arg_sdin > sdin;
+   typedef bmptk::hardware::pin_out_from< arg_sclk > sclk;
 	
    static unsigned char buf[ (( x_size * y_size ) + 7 ) / 8 ];
 	
@@ -91,19 +97,19 @@ public:
       bmptk::graphics::frame( bmptk::graphics::vector( x_size, y_size ))
    { 
       sce::init();
-   	  res::init();
-	  dc::init();
-	  sdin::init();
-	  sclk::init();
+   	res::init();
+	   dc::init();
+	   sdin::init();
+	   sclk::init();
 
-  	  sclk::set( 0 );
-   	  bmptk::wait( 1 * bmptk::us );
-   	  sce::set( 1 );
-   	  bmptk::wait( 1 * bmptk::us );
-	  res::set( 0 );
-   	  bmptk::wait( 1 * bmptk::us );
-	  res::set( 1 ); 
- 	  bmptk::wait( 1 * bmptk::us );
+  	   sclk::set( 0 );
+   	bmptk::wait( 1 * bmptk::us );
+   	sce::set( 1 );
+   	bmptk::wait( 1 * bmptk::us );
+	   res::set( 0 );
+   	bmptk::wait( 1 * bmptk::us );
+	   res::set( 1 ); 
+ 	   bmptk::wait( 1 * bmptk::us );
 	   
       // initialization is not done here
    }	
@@ -196,7 +202,7 @@ public:
 	   
       command( 0x21 );  // select exteded instructions
       command( 0xC8 );  // Vop = 110000b
-      command( 0x04 );  // TCx = 00b
+      command( 0x06 );  // TCx = 00b
       command( 0x12 );  // BSx = 100b, LCD bias mode 1:48.
      
       command( 0x04 | 1 );  // mystery command, set temp S6 for start line?

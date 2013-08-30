@@ -31,9 +31,13 @@ Project
 			Makefile
 [Open project files]
 0=main.cpp
+1=..\..\..\hardware\spi.h
 [Selected Project Files]
 Main=
 Selected=main.cpp
 [main.cpp]
 TopLine=1
-Caret=2,8
+Caret=1,1
+[..\..\..\hardware\spi.h]
+TopLine=177
+Caret=5,199

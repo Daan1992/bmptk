@@ -31,9 +31,25 @@ Project
 			Makefile
 [Open project files]
 0=main.cpp
+1=..\..\..\hardware\demos.h
+2=..\..\..\hardware\i2c.h
+3=..\..\..\chips\pcf8574.h
+4=..\..\..\hardware\pins.h
 [Selected Project Files]
 Main=
 Selected=main.cpp
 [main.cpp]
 TopLine=1
-Caret=2,8
+Caret=2,12
+[..\..\..\hardware\demos.h]
+TopLine=39
+Caret=2,50
+[..\..\..\hardware\i2c.h]
+TopLine=101
+Caret=44,116
+[..\..\..\chips\pcf8574.h]
+TopLine=30
+Caret=4,72
+[..\..\..\hardware\pins.h]
+TopLine=434
+Caret=1,445

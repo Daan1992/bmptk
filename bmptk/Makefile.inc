@@ -395,8 +395,8 @@ FONT-DEFAULT  := $(BMPTK)/graphics/fonts/04B_03__.TTF
    DEFINES       += -DBMPTK_GRAPHICS
 #endif
 
-font_default.cpp font_default.h: $(FONT-DEFAULT) $(FFTTOCPP-TOOL)
-		$(FFTTOCPP) $(FONT-DEFAULT) font_default font_default 8 "" bmptk::graphics
+#font_default.cpp font_default.h: $(FONT-DEFAULT) $(FFTTOCPP-TOOL)
+#		$(FFTTOCPP) $(FONT-DEFAULT) font_default font_default 8 "" bmptk::graphics
 
 ifeq (bmptk_rtos,$(filter bmptk_rtos,$(LIBS)))
    LIBS          += bmptk_coroutines
