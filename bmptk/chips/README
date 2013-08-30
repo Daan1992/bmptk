@@ -2,16 +2,16 @@ file: bmptk/chips/README
 
 Bare Metal Programming Tool Kit chips directory
 
-This directory contains interfaces for :
+This directory contains interfaces for peripheral chips.
 
-   files
-      - hc595.h            : 74HC(T)595 serial-in parallel-out shift register
-	   - Makefile           : dummy makefile
-      - mcp23x17.h         : MCP23017 and MCP23S17 16-bit I/O extenders
-      - nrf24l01.h         : MRF2401 2.4 Ghz transceivers
-      - pcd8544.h          : PCD8544 LCD controller
-      - pcf8574.h          : PCF8574(A) I2C 8-bit I/O extenders
-      - README             : this file
-      - rfm73.h            : RFM73 2.4 GHz transceivers
-      - sr04.h             : SR04 Utra Sonic range finders
+files
+   hc595.h            : 74HC(T)595 serial-in parallel-out shift register
+   Makefile           : dummy makefile
+   mcp23x17.h         : MCP23017 and MCP23S17 16-bit I/O extenders
+   nrf24l01.h         : MRF2401 2.4 Ghz transceivers
+   pcd8544.h          : PCD8544 LCD controller
+   pcf8574.h          : PCF8574(A) I2C 8-bit I/O extenders
+   README             : this file
+   rfm73.h            : RFM73 2.4 GHz transceivers
+   sr04.h             : SR04 Utra Sonic range finders
 

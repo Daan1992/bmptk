@@ -33,6 +33,9 @@ This directory contains :
 Below are reminders, notes, bookmarks etc. for my use
 
 pending work list, issues, notes to myself, etc:
+- compiling on windows sometimes generates weird files like D6868778.cpp
+- re-make still does some work, why?
+- main_context is a problem on non-embedded targets :(
 - win can not easily be stopped!
 - volatile int n = 5; bmptk::graphics::color y( n, n+1, n+2 );  std::cout << y << y << "\n"; 
 - create font_default.* only when needed (not on timestamp)?

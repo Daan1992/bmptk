@@ -2,6 +2,7 @@
 #include "mariner.h"
 
 using namespace bmptk;
+using namespace bmptk::graphics;
 
 int main( void ){
    target_screen lcd;

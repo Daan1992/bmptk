@@ -26,26 +26,18 @@ Project
 	+Files
 		-includes
 		+compile
-			export.cpp
+			main.cpp
 		+others
 			Makefile
 [Open project files]
-0=..\..\graphics\bmptk_graphics.cpp
+0=main.cpp
 1=Makefile
-2=..\..\targets\bmptk_win.cpp
-3=export.cpp
 [Selected Project Files]
 Main=
-Selected=export.cpp
-[..\..\graphics\bmptk_graphics.cpp]
-TopLine=139
-Caret=36,189
+Selected=main.cpp
+[main.cpp]
+TopLine=1
+Caret=13,20
 [Makefile]
 TopLine=1
-Caret=21,10
-[..\..\targets\bmptk_win.cpp]
-TopLine=1
-Caret=4,37
-[export.cpp]
-TopLine=12
-Caret=60,48
+Caret=20,31

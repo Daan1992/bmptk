@@ -7,6 +7,7 @@
 #include <math.h>
 
 using namespace bmptk;
+using namespace bmptk::graphics;
 using namespace std;
 
 vector radial( int n, int len ){
@@ -16,8 +17,8 @@ vector radial( int n, int len ){
    );   
 }
 
-void draw_analog_clock( frame &f, unsigned long long int t ){
-   t = t / bmptk::s;
+void draw_analog_clock( frame &f, bmptk::time tx ){
+   int t = tx / bmptk::s;
    int s = t % 60;
    t = t / 60;
    int m = t % 60;
@@ -40,14 +41,14 @@ int main( void ){
    target_screen lcd;
    lcd.clear( color:: gray() );
    subframe sub( lcd, vector( 10, 10 ), vector( 100, 100 ) ); 
-   frame_buffer buf( sub );
+   frame_snapshot buf( sub );
    draw_analog_clock( 
       buf,  
       bmptk::s * ( 5 + ( 60ULL ) * 10 + ( 60 * 60ULL ) * 15 )
    );
    buf.write_to_bmp_file( "clock.bmp" );
    buf.flush();
-   wait( 3 * s );
+   wait( 2 * s );
    return 0;
 }
 

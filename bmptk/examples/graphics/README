@@ -8,13 +8,15 @@ graphics screen, like win, nds, or a microcontroller with an LCD deisplay.
 
 This directory contains :
    Makefile : supports 'clean' and 'build' targets
-   RTEADME  : this file
+   README   : this file
 
 subdirectories
-   lines         : draws random lines
+   align         : shows the effect of various text alignments
    clocks        : draws clocks, demonstrating various frame decorators
    draw          : draw text, lines, boxes, circles, pictures, etc.
-   
+   export        : draw a still clock and export it to a bmp file (win only)
+   lines         : draws random lines
+  
 
 
 

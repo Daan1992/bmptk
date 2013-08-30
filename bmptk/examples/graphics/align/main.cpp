@@ -2,7 +2,7 @@
 // #include <iostream>
 
 using namespace bmptk;
-
+using namespace bmptk::graphics;
 
 void test_format_write( 
    frame &fr, 

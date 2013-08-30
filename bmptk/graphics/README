@@ -2,15 +2,15 @@ file: bmptk/graphics/README
 
 Bare Metal Programming Tool Kit graphics directory
 
-This directory contains :
+This directory contains the bmptk graphics library.
 
-   directories
-      fonts                : contains font files
+directories
+   fonts                : contains font files
 
-   files
-      graphics.h           : bmptk graphics library
-      graphics.cpp
-      font_default.h       : default graphics font, from fonts/04B_03__.TTF
-      font-default.cpp
-      Makefile             : dummy makefile
-      README               : this file
+files
+   graphics.h           : bmptk graphics library
+   graphics.cpp
+   font_default.h       : default graphics font, from fonts/04B_03__.TTF
+   font-default.cpp
+   Makefile             : dummy makefile
+   README               : this file

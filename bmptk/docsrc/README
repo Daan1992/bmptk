@@ -5,16 +5,14 @@ Bare Metal Programming Tool Kit documentation sources directory
 This directory contains .h files and pictures that are input
 to the Doxygen documentation generation.
 
-This directory contains :
-
-   files
-      - Doxyfile           : settings file for documentation generation
-      - README             : this file
-      - nnnn-a*.h          : sources for the documentation
+files
+   Doxyfile           : settings file for documentation generation
+   README             : this file
+   nnnn-a*.h          : sources for the documentation
 	  
-   directories
-      - generate           : code for generating more pictures
-      - pics               : pictures used in the documentation
-      - www                : html files
+directories
+   generate           : code for generating more pictures
+   pics               : pictures used in the documentation
+   www                : html files
 
 

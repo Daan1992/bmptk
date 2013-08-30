@@ -15,7 +15,7 @@ int main( void ){
    
    bmptk::wait( 500 * bmptk::ms );
      
-   std::cout << "\ncontext (stack) info: " << bmptk::main_context << "\n";
+   // std::cout << "\ncontext (stack) info: " << bmptk::main_context << "\n";
    
    // do not terminate
    for(;;);

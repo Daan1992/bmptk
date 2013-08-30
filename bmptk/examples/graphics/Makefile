@@ -6,7 +6,7 @@
 # 
 #############################################################################
 
-SUBDIRS += lines clocks draw
+SUBDIRS += align clock draw export lines 
 
 BUILDDIRS = $(SUBDIRS:%=build-%)
 CLEANDIRS = $(SUBDIRS:%=clean-%)

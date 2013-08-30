@@ -321,8 +321,8 @@ define Cortex
    # TERMINAL    = lpc21isp -termonly x $(SERIAL_PORT) 19200 y
    # RUN         = $(FLASHMAGIC) '$(FMCMD)'
    LINKERSCRIPT = linkerscript.ld
-   LDFLAGS	   += -T$(LINKERSCRIPT) -nostartfiles -nodefaultlibs
-   RESULTS     += $#(LINKERSCRIPT)
+   LDFLAGS	   += -T linkerscript.ld -nostartfiles -nodefaultlibs
+   RESULTS     += linkerscript.ld
    TICKS_PER_US = 6
 endef
 

@@ -26,26 +26,18 @@ Project
 	+Files
 		-includes
 		+compile
-			align.cpp
+			main.cpp
 		+others
 			Makefile
 [Open project files]
-0=..\..\graphics\bmptk_graphics.cpp
-1=align.cpp
-2=Makefile
-3=..\..\graphics\bmptk_graphics.h
+0=main.cpp
+1=Makefile
 [Selected Project Files]
 Main=
-Selected=align.cpp
-[..\..\graphics\bmptk_graphics.cpp]
-TopLine=588
-Caret=7,623
-[align.cpp]
-TopLine=67
-Caret=23,72
+Selected=main.cpp
+[main.cpp]
+TopLine=1
+Caret=32,5
 [Makefile]
 TopLine=1
-Caret=30,26
-[..\..\graphics\bmptk_graphics.h]
-TopLine=946
-Caret=27,958
+Caret=18,13

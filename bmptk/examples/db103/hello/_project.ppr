@@ -37,7 +37,7 @@ Main=
 Selected=main.cpp
 [main.cpp]
 TopLine=1
-Caret=75,18
+Caret=7,18
 [..\..\..\core\bmptk.cpp]
 TopLine=1
 Caret=19,41

@@ -2,19 +2,19 @@ file: bmptk/core/README
 
 Bare Metal Programming Tool Kit core functionality directory
 
-This directory contains :
+This directory contains the target-independent basic functionality of bmptk.
 
-   files
-      - basics.h           : basic declarations (time, types)
-      - bmptk.cpp          : implementations of some basic functions
-      - channels.h         : data channels
-      - context.cpp        : context (stack) switching
-      - context.h
-	   - Makefile           : dummy makefile
-      - memory.cpp         : memory allocation
-      - memory.h
-      - README             : this file
-      - rtos.cpp           : simple RTOS
-      - rtos.h
-      - time.h             : time ADT
+files
+   basics.h           : basic declarations (time, types)
+   bmptk.cpp          : implementations of some basic functions
+   channels.h         : data channels
+   context.cpp        : context (stack) switching
+   context.h
+   Makefile           : dummy makefile
+   memory.cpp         : memory allocation
+   memory.h
+   README             : this file
+   rtos.cpp           : simple RTOS
+   rtos.h
+   time.h             : time ADT
 

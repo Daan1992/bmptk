@@ -26,22 +26,22 @@ Project
 	+Files
 		-includes
 		+compile
-			text.cpp
+			main.cpp
 		+others
 			Makefile
 [Open project files]
-0=Makefile
-1=..\..\targets\bmptk_win.cpp
-2=text.cpp
+0=main.cpp
+1=..\..\..\core\time.h
+2=Makefile
 [Selected Project Files]
 Main=
-Selected=text.cpp
+Selected=main.cpp
+[main.cpp]
+TopLine=31
+Caret=11,51
+[..\..\..\core\time.h]
+TopLine=42
+Caret=13,60
 [Makefile]
-TopLine=1
-Caret=1,1
-[..\..\targets\bmptk_win.cpp]
-TopLine=1
-Caret=10,15
-[text.cpp]
-TopLine=1
-Caret=1,2
+TopLine=11
+Caret=15,27
