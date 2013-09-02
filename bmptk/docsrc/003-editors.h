@@ -222,7 +222,7 @@ http://sourceforge.net/apps/mediawiki/notepad-plus/index.php?title=Compiling_Sou
 
 Programmer's Notepad (<A HREF="http://www.pnotepad.org/">www.pnotepad.org</A>) 
 is a free lightweight text editor, designed for editing source code.
-With a tille customization PN can call do the basic chores of an IDE:
+With a little customization PN can call do the basic chores of an IDE:
 call an external tool, capture the output, and jump to the source line
 that corresponds to an error message.
 

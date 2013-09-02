@@ -1,23 +1,22 @@
 #############################################################################
 # 
-# dummy Makefile for bmptk library directories
+# Makefile for bmptk examples/db103 
 #
 # (c) Wouter van Ooijen (www.voti.nl) 2012, 2013
-#
-# This file is in the public domain.
 # 
 #############################################################################
 
-.PHONY: clean build run error
+SUBDIRS += align clocks draw export lines 
 
-clean: error
-build: error
-run: error
+BUILDDIRS = $(SUBDIRS:%=build-%)
+CLEANDIRS = $(SUBDIRS:%=clean-%)
 
-MSG  = You are trying to build in a library directory.
-MSG += You must make one of the project source files your current editor file.
+.phony: clean build $(BUILDDIRS) $(CLEANDIRS)
 
-error:
-	$(error $(MSG) )
-		
-		
+build: $(BUILDDIRS)
+$(BUILDDIRS):
+		make -C $(@:build-%=%) build
+
+clean: $(CLEANDIRS)
+$(CLEANDIRS):
+		make -C $(@:clean-%=%) clean

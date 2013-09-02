@@ -14,18 +14,20 @@
 
 Bmptk is a C++ library and build tool for bare-metal use on 32-bit 
 embedded systems. 
-Bare-metal refers to the situation that there is only the application. 
+Bare-metal refers to the situation that there is only the application
+running.
 This application has full control of the hardware, and is running 
 without the support of a separate operating system. 
 Operating system functionality can still be present, but must be in the 
-form of libraries, which are statically linked into the application.
+form of libraries, statically linked into the application.
 
 Bmptk tries to make your application portable across various targets,
 rather than trying to make optimal use of a specific target. 
 Hence the features of the target are used trough abstractions. 
 An LCD screen for instance is a \ref bmptk::graphics::frame instance, 
 which has (except for its size and color depth) the same properties on all 
-targets that have a screen (or more than one).
+targets that have a screen (or even more than one, like the 
+\ref target-nds "NintendoDS" has).
 Similarly, static classes are used to represet I/O pins and ports
 in a uniform but fast way.
 
@@ -37,12 +39,14 @@ match small targets:
 - no heap memory deallocation (but allocation and self-managed pools are OK)
 - no global objects that require initialization
 - no libraries that use these features 
-- no interrupts (the \ref rtos "RTOS" provides non-preemptive multitasking)
+- no interrupts (but the bmptk \ref rtos "RTOS" provides 
+non-preemptive multitasking)
 .
 
 Bmptk does not include a toolchain (compiler, linker etc.). 
 Instead it relies on an external GCC toolchain that is invoked
 by the bmptk makefile. 
+Different targets rquire different verious of the GCC toolchain.
 
 The bmptk makefile can be used from the \ref command-line "command line", 
 or it can be called from an \ref editors "editor or IDE". 
@@ -70,7 +74,7 @@ or you can read it
 <A HREF="http://www.voti.nl/bmptk/docs/index.html" 
 target="_blank">online</A>.
 (The documentation is not in the repository, only the
-Doxygen sources to it.)
+Doxygen sources to it are.)
 
 Bmptk is used in a number of courses I give 
 at the <A target=_blank href="http://www.hu.nl">Hogeschool Utrecht</A>.

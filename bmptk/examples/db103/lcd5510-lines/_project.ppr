@@ -35,5 +35,5 @@ Project
 Main=
 Selected=main.cpp
 [main.cpp]
-TopLine=20
+TopLine=13
 Caret=64,41

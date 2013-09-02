@@ -10,7 +10,7 @@
 PROJECT    := generate
 
 # Specify target chip or board or system
-TARGET     := windows
+TARGET     := win
 
 # Specify the location of the bmptk library
 BMPTK      := ../..

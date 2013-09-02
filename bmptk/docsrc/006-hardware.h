@@ -4,7 +4,7 @@
 
 Bmptk abstracts pins, ports and most chips as static classes.
 There are no objects of these classes, 
-innstead the name of the class representing the abstraction is 
+instead the name of the class representing the abstraction is 
 passed as a template parameter to other abstractions.
 
 For example, to interface to a PCF8574A I2C I/O extender, the pins
