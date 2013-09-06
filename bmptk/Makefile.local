@@ -25,7 +25,7 @@ ARMTOOLS    := $(WPF)/CodeSourcery/Sourcery_CodeBench_Lite_for_ARM_EABI
 ARMDEVENV   := $(WPF)/ARMDevEnv
 DEVKITPRO   := C:/devkitPro
 DEVCPP      := $(WPF)/Dev-Cpp/MinGW32
-PYTHON      := C:/PYTHON27/PYTHON
+PYTHON      := C:/PYTHON33/PYTHON
 FLASHMAGIC  := "$(WPF)/Flash Magic/FM"
 LPC21ISP    := "$(BMPTK)/tools/lpc21"
 

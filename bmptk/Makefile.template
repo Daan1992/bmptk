@@ -4,25 +4,34 @@
 #
 # (c) Wouter van Ooijen (www.voti.nl) 2012, 2013
 #
-# This file is in the public domain.
+# This file is in the public domain, so you can copy and adapt it and
+# put it under your own copyright notice.
 # 
 #############################################################################
 
-# Specify the project name, this is also the main .cpp file to compile
-PROJECT   := 
+# Specify the location of the bmptk library
+BMPTK      := ../../..
 
-# Specify target chip or board or system
+# Specify target chip or board or system: win, nds, db103, or lpc1114fn28
 TARGET    := 
 
-# Specify the location of the bmptk library
-BMPTK     := 
+# Specify the project main source file name, without extension.
+# the default is 'main'. It should be a .cpp, .c, or .asm file.
+PROJECT    := 
 
-# Specify project files (other than $(PROJECT).cpp) (if any)
-SOURCES   := 
-HEADERS   := 
+# Specify project-specific files (other than the main, if any)
+SOURCES    := 
+HEADERS    := 
 
-# specify (extra) results you want to get (if any)
+# directories, other than the current, that contain your sources
+SEARCH     := 
+
+
+OBJECTS    := 
+LIBS       := 
+
+# specify (extra) results you want to get 
 RESULTS   := 
 
-# The Makefile.inc does all the work
+# The bmptk/Makefile.inc does all the work
 include $(BMPTK)/Makefile.inc

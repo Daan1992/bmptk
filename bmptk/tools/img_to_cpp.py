@@ -37,12 +37,21 @@ def Lines_From_Image( Image, Name, Invert = 0 ):
       for x in range( x_size ):
          pixel = Image.getpixel((x,y))
          try:
+            # no palette: pixel is a triplet
             red, green, blue = pixel
          except:
             P = Image.palette
-            red = ord( P.palette[ 3 * pixel ] )
-            green = ord( P.palette[ 3 * pixel + 1 ] )
-            blue = ord( P.palette[ 3 * pixel +2 ] )      
+            try:			
+               # python2 format: palette is list of chars, three per entry		
+               red = ord( P.palette[ 3 * pixel ] )
+               green = ord( P.palette[ 3 * pixel + 1 ] )
+               blue = ord( P.palette[ 3 * pixel +2 ] )   
+            except: 		
+               # Python3 format: palette is a list of integers, one per entry			
+               v = P.palette[ pixel ]
+               red = v % 0x100
+               green = ( v / 0x100 ) % 0x100
+               blue = ( v / 0x1000000 ) % 0x100		   
          S += "%s 0x%02X, 0x%02X, 0x%02X" % ( comma, red, green, blue )
          comma = ","
          if len( S ) > 70:

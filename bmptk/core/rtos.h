@@ -38,7 +38,7 @@ namespace rtos {
 
 #define global_logging 0
 
-// #define BMPTK_RTOS_STATISTICS_ENABLED 1
+#define BMPTK_RTOS_STATISTICS_ENABLED 1
 
 //! the default task stack size
 const unsigned int BMPTK_RTOS_DEFAULT_STACK_SIZE = 2048;

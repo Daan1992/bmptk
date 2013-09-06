@@ -1,0 +1,63 @@
+[Config]
+Relative path=1
+Compilator.FileName=build.bat
+Compilator.PSPar=
+Compilator.Log=
+Compilator.Run=
+Compilator.DefaultDir=
+Compilator.SaveAll=1
+Compilator.Capture=1
+Compilator.ParsLog=%F:%L:*
+Compilator.HideOutput=1
+Prog1=Clean,cmd /C "make clean "
+Prog2=Run,cmd /C "make run "
+Prog3=
+Prog4=
+Prog5=
+DefaultDir=
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+FileFormat=0
+DocumentRoot=
+HTServer=
+[Project tree]
+Project
+	+Files
+		-includes
+		+compile
+			hello.cpp
+		+others
+			Makefile
+[Open project files]
+0=hello.cpp
+1=..\..\..\stdlib\iostream
+2=..\..\..\stdlib\iostream.cpp
+3=Makefile
+4=..\..\..\hardware\pins.h
+5=..\..\..\hardware\ports.h
+6=..\..\..\core\basics.h
+[Selected Project Files]
+Main=
+Selected=hello.cpp
+[hello.cpp]
+TopLine=20
+Caret=28,36
+[..\..\..\stdlib\iostream]
+TopLine=11
+Caret=7,22
+[..\..\..\stdlib\iostream.cpp]
+TopLine=24
+Caret=4,35
+[Makefile]
+TopLine=1
+Caret=27,22
+[..\..\..\hardware\pins.h]
+TopLine=370
+Caret=1,389
+[..\..\..\hardware\ports.h]
+TopLine=363
+Caret=18,371
+[..\..\..\core\basics.h]
+TopLine=115
+Caret=1,127

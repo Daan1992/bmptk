@@ -65,15 +65,23 @@ ifeq ($(PROJECT),)
    PROJECT = main
 endif   
 
-ifeq ($(wildcard $(PROJECT).c),)
+ifeq ($(wildcard $(PROJECT)),)
    ifeq ($(wildcard $(PROJECT).cpp),)
-      $(error PROJECT ($(PROJECT)) is not a .cpp, .c or .asm file)
-   else	  
+      ifeq ($(wildcard $(PROJECT).c),)
+         ifeq ($(wildcard $(PROJECT).asm),)
+            $(error PROJECT ($(PROJECT)) is not a .cpp, .c or .asm file)
+         else	  
+            SOURCES += $(PROJECT).asm
+         endif	  
+      else	  
+         SOURCES += $(PROJECT).c
+      endif	  
+   else	     
       SOURCES += $(PROJECT).cpp
-   endif	  
-else	     
-   SOURCES += $(PROJECT).c
-endif   
+   endif   
+else
+   SOURCES += $(PROJECT)
+endif
 
 
 #============================================================================
@@ -111,11 +119,11 @@ INCLUDES  += -I$(BMPTK)/targets
 INCLUDES  += -I$(BMPTK)/graphics
 INCLUDES  += -I$(BMPTK)/rtos
 INCLUDES  += -I$(BMPTK)/chips
-# INCLUDES  += -I$(SEARCH)
+INCLUDES  += $(foreach x, $(SEARCH), -I$(x))
 
 bmptk_graphics.h:
 	# You specified an absolute path ($(BMPTK)) for the bmptk location.
-	# The make you use has a bug in handling absolute paths that
+	# The 'make' tool you use has a bug in handling absolute paths that
 	# prevents the bmptk makefile from finding some source files.
 	# Two solutions are: 
 	# 1) Use a make that does not have this bug.
@@ -124,7 +132,7 @@ bmptk_graphics.h:
 	#    CodesSourcery distribution. 
 	# 2) Use a relative path to specify the bmptk location. 
 	#    This almost forces you to locate your project inside the bmptk 
-	#    tree,(a subdirectory of) the examples directory is a 
+	#    tree, (a subdirectory of) the examples directory is a 
 	#    reasonable choice.
 
 #============================================================================
@@ -165,7 +173,11 @@ TXTTOCPP-TOOL  := $(BMPTK)/tools/txt_to_cpp.py
 IMGTOCPP       := $(PYTHON) $(IMGTOCPP-TOOL)
 FFTTOCPP       := $(PYTHON) $(FFTTOCPP-TOOL)
 TXTTOCPP       := $(PYTHON) $(TXTTOCPP-TOOL)
-RM             := cmd /c del 
+#RM             := CMD.EXE /C del 
+RM             := "$(BMPTK)/tools/cs-rm" -f 
+
+#needed for DevCpp
+export PATH:=$(PATH);/bin;$(DEVCPP)/bin
 
 
 #============================================================================
@@ -524,8 +536,8 @@ CLEAN += $(LIBEABI-FILES:%.S=%.o) libaeabi-cortexm0.a
 libaeabi-cortexm0.a: $(LIBEABI-FILES)
 	@echo 'Creating library libeabi-cortexm0.a: $<'
 	make $(patsubst %.S,%.o,$(LIBEABI-FILES))
-	arm-none-eabi-ar rcs libaeabi-cortexm0.a $(LIBEABI-FILES:%.S=%.o)
-	$(RM) $(LIBEABI-FILES:%.S=%.o)
+	"$(PREFIX)ar" rcs libaeabi-cortexm0.a $(LIBEABI-FILES:%.S=%.o)
+	$(RM) '$(LIBEABI-FILES:%.S=%.o)'
 	@echo ' '		
 
 # How to make a listing from a cpp file
@@ -613,5 +625,5 @@ CLEAN += $(OBJ)
 CLEAN += $(MAP)
 CLEAN += $(LST)
 clean:
-	-$(RM) $(CLEAN)
+	$(RM) $(CLEAN)
 

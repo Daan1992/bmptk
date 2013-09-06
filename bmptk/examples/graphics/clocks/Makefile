@@ -9,18 +9,19 @@
 # Specify the location of the bmptk library
 BMPTK      := ../../..
 
-# Specify target chip or board or system, default is nds
+# Specify target chip or board or system
 TARGET     := win
 
-# Specify the project name, the default is main (.cpp, .c, or .asm)
+# Specify the project main source name, without extension.
+the default is main (.cpp, .c, or .asm)
 # this is also the main .cpp file to compile
-# the default is main.cpp (or main.c, or main.asm)
+# the default is main
 PROJECT    := 
 
 # Specify project-specific files (other than the main, if any)
-OBJECTS    := 
 SOURCES    := 
 HEADERS    := 
+OBJECTS    := 
 LIBS       := 
 
 # specify (extra) results you want to get (if any)

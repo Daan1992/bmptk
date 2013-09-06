@@ -1,0 +1,55 @@
+[Config]
+Relative path=1
+Compilator.FileName=build.bat
+Compilator.PSPar=
+Compilator.Log=
+Compilator.Run=
+Compilator.DefaultDir=
+Compilator.SaveAll=1
+Compilator.Capture=1
+Compilator.ParsLog=%F:%L:*
+Compilator.HideOutput=1
+Prog1=Clean,cmd /C "make clean "
+Prog2=Run,cmd /C "make run "
+Prog3=
+Prog4=
+Prog5=
+DefaultDir=
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+FileFormat=0
+DocumentRoot=
+HTServer=
+[Project tree]
+Project
+	+Files
+		-includes
+		+compile
+			dht11.cpp
+		+others
+			Makefile
+[Open project files]
+0=..\..\..\targets\bmptk_lpc1114fn28.h
+1=..\..\..\targets\bmptk_lpc1114fn28.cpp
+2=..\..\..\chips\bmptk_chips.cpp
+3=..\..\..\core\pins.h
+4=dht11.cpp
+[Selected Project Files]
+Main=
+Selected=dht11.cpp
+[..\..\..\targets\bmptk_lpc1114fn28.h]
+TopLine=179
+Caret=42,210
+[..\..\..\targets\bmptk_lpc1114fn28.cpp]
+TopLine=129
+Caret=1,168
+[..\..\..\chips\bmptk_chips.cpp]
+TopLine=6
+Caret=3,45
+[..\..\..\core\pins.h]
+TopLine=586
+Caret=1,612
+[dht11.cpp]
+TopLine=28
+Caret=7,24

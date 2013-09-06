@@ -31,18 +31,20 @@ or get it as a git repository:
 
 The bmptk font and image conversion tools can be used 
 to convert images, fonts, or text, to code.
-These tools are Python scripts, and use PIL (Python Imaging Library).
+These tools are Python scripts, and use the Pillow library
+(a Python Imaging Library fork).
 
-Hence to use these tools you must install both Python and (a matching) PIL.
-Note that not for all Python versions are ready-made PIL 
+Hence to use these tools you must install both Python and (a matching) Pillow,
+Note that not for all Python versions are ready-made Pillow 
 version can be found.
-The PIL for Python 3.2 seems to have a bug.
-I use Python 2.7 with the matching PIL. 
-Note that PIL must be installed!
+I use Python 3.3.2
+(<A HREF="http://www.python.org/ftp/python/3.3.2/python-3.3.2.msi">direct link</A>)
+with the matching Pillow from <A HREF=""></A>
+(<A HREF="http://www.lfd.uci.edu/~gohlke/pythonlibs/w9rir8do/Pillow-2.1.0.win32-py3.3.exe">direct link</A>).
 
 Multiple Python versions can coexits on your machine.
-When your Python is not 2.7 or is not installed in it default directory 
-(C:\\Python27) the Makefile.local must be copied to Makefile.custom
+When your Python is not 3.3 or is not installed in it default directory 
+(C:\\Python33) the Makefile.local must be copied to Makefile.custom
 and edited to reflect the directory python is installed in.
 
 
@@ -67,7 +69,7 @@ are interested in. The supported targets are:
 
 To create and run applications for Windows you must install 
 the <A HREF="http://orwelldevcpp.blogspot.nl/">Orwell DevCpp</A> IDE.
-Take the MinGW32 vesrion, I used 4.7.2
+Take the MinGW32 version, I used 4.7.2
 (<A HREF="http://sourceforge.net/projects/orwelldevcpp/files/Setup%20Releases/Dev-Cpp%205.4.2%20MinGW%204.7.2%20Setup.exe/download">direct link</A>).
 
 Bmptk uses only the toolchain (compiler, linker, libraries) of this
@@ -75,6 +77,11 @@ IDE, not the editor.
 
 This target is not meant to be used to develop full-featured 
 windows applications, but to test-run your code on a Windows platform.
+
+The win target support a graphic screen (bmptk::graphics::target_screen) 
+and a character output (std::cout). Don't expect real-time
+performance from the win target: your PC will do other things beside
+running the application.
 
 \anchor install-nds
 ### for Nintendo DS
@@ -134,16 +141,18 @@ The Makefile.local file will take care of this.
 You can use bmptk from the \ref cmd "command line", but it is probably
 easier to use an editor, if only to jump to the source line where
 the compiler found an error. A \ref editors "number of editors" are supported,
-choose your favourite and install it.
-
+choose your favourite and install it. 
+I prefer \ref pspad "PSPad", not because it is the world's best editor, but
+because the integration with bmptk is simple and reliable.
 
 -----------------------------------------------------------------------------
 \anchor install-test
-## A test 
+## A first test 
 
 For a first test you can go to one of the examples, for instance
    - bmptk\\examples\\db103\\blink (LPC1114 target)
-   - bmptk\\examples\\graphics\\lines (win or nds target)
+   - bmptk\\examples\\graphics\\draw (nds target)
+   - bmptk\\examples\\graphics\\lines (win target)
    
 You can start the PSPad editor (assuming you have installed it) 
 by double-clicking on the _project.ppr file.   
@@ -157,18 +166,66 @@ and select run to run the application.
 For the win target this will run the application. 
 For the nds target it will start the DesMuME emulator to run the
 application.
-For a mcicrontroller target this will start the download tool
+For a microntroller target this will start the download tool
 to download the application to the microcontroller and run it.
+
+If things don't work as expected, the window in which the action takes
+place often closes before you can read what has happened.
+In this case, try the \ref install-command-line command line.
+
    
  -----------------------------------------------------------------------------
 \anchor install-start-a-project
-## Start your own project
-   
+## Start your own project: adapt the Makefile
    
 To start a new bmptk project you can either copy an example,
-or copy the Makefile.template to your_directory/Makefile.
-In both cases you will have to edit your new Makefile
-to reflect your project. 
+or copy the bmptk/Makefile.template to your_directory.
+
+The Makefile contains the instructions for the make tool to build
+your project. The Makefile in your project directory contains
+only the project-specific aspects. As its last line it includes
+the bmptk/Makfile.inc, which does the real work.
+
+The makefile must know where to find the bmptk files.
+The example directories are three directories deep in the bmptk tree,
+so the Mafiles in the examples have the line
+
+\code
+BMPTK      := ../../..
+\endcode
+
+If you place your new project somewhere within the bmptk tree you 
+might have to change the number of ../'s.
+If you place a bmptk project outside the bmptk tree you should
+probably specify an absolute path, like
+
+\code
+BMPTK      := C:/bmptk
+\endcode
+
+By default the Makefile assumes that main.cpp (or main.c, or main.asm) 
+is the one and only source file to be compiled.
+If you main file has a different name, you must mention it in the Makefile:
+
+\code
+PROJECT    := alarmclock.cpp
+\endcode
+
+If your project has more source files than just the main file, 
+you must add them in the makefile. You can specify
+the files explicty:
+
+\code
+# Specify project-specific files (other than the main, if any)
+SOURCES    := display.cpp timer.cpp
+HEADERS    := display.h timer.h
+\endcode
+
+The sources are the files that will be compiled.
+When any of the headers are changed, the makefile will re-compile
+all your source files. This is a bit conservative, but at least
+it is on the safe side.
+ 
   
   
 -----------------------------------------------------------------------------

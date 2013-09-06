@@ -29,8 +29,17 @@ constexpr context::context(
    unsigned char *size 
 ): bottom( bottom ),sp( 0 ), stack_size( (unsigned int) size ){}
    
-// construct the main context from the facts
-context main_context( &__stack_start, &__stack_size );   
+#ifdef BMPTK_EMBEDDED_HEAP   
+   
+   // construct the main context from the facts
+   context main_context( &__stack_start, &__stack_size );   
+   
+#else
+
+   // create a null main context
+   context main_context( nullptr, nullptr );    
+   
+#endif   
 
 // create a new context
 context::context( void f(), unsigned int size ) : 

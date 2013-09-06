@@ -2,7 +2,7 @@ import sys, os
 
 try:
    import PIL
-   import ImageFont
+   #import ImageFont
    from PIL import ImageFont
 except:
       Errors.Raise( "Error: the python PIL module is not installed." )  
@@ -109,10 +109,10 @@ def Ttf_To_Img( Img_File_Name, Code_File_Name, Name, Size, List = None, Namespac
       for x in range ( 0x00, 0x7F ):
          List += chr( x )
          
-   try:   
-      Font = ImageFont.truetype( Img_File_Name, int( Size ))
-   except:
-      Raise( "Error: source file %s could not be opened" % Img_File_Name )    
+   #try:   
+   Font = ImageFont.truetype( Img_File_Name, int( Size ))
+   #except:
+   #   Raise( "Error: source file %s could not be opened" % Img_File_Name )    
       
    Fixed, ( Char_X, Char_Y ), ( Pic_X, Pic_Y ), Data = \
       Lines_From_Font( Font, Name, List )

@@ -21,6 +21,11 @@
 #define Y_MARGIN 42
 
 bmptk::time bmptk::current_time(){
+	MSG Msg; /* A temporary location for all messages */
+	while( PeekMessage(&Msg, NULL, 0, 0, PM_REMOVE ) > 0) { 
+		TranslateMessage(&Msg); /* Translate key codes to chars if present */
+		DispatchMessage(&Msg); /* Send it to WndProc */
+	}
    return bmptk::time( GetTickCount() * 1000ULL );
 }
 

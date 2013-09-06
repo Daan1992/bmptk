@@ -1,0 +1,47 @@
+[Config]
+Relative path=1
+Compilator.FileName=build.bat
+Compilator.PSPar=
+Compilator.Log=
+Compilator.Run=
+Compilator.DefaultDir=
+Compilator.SaveAll=1
+Compilator.Capture=1
+Compilator.ParsLog=%F:%L:*
+Compilator.HideOutput=1
+Prog1=Clean,cmd /C "make clean "
+Prog2=Run,cmd /C "make run "
+Prog3=
+Prog4=
+Prog5=
+DefaultDir=
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+FileFormat=0
+DocumentRoot=
+HTServer=
+[Project tree]
+Project
+	+Files
+		-includes
+		+compile
+			morse.cpp
+		+others
+			Makefile
+[Open project files]
+0=morse.cpp
+1=..\..\..\bmptk.h
+2=..\..\..\stdlib\iostream
+[Selected Project Files]
+Main=
+Selected=morse.cpp
+[morse.cpp]
+TopLine=65
+Caret=52,67
+[..\..\..\bmptk.h]
+TopLine=24
+Caret=1,73
+[..\..\..\stdlib\iostream]
+TopLine=146
+Caret=6,163

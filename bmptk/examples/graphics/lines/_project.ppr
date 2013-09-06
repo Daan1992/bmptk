@@ -39,7 +39,7 @@ Main=
 Selected=main.cpp
 [main.cpp]
 TopLine=1
-Caret=1,18
+Caret=40,27
 [Makefile]
 TopLine=1
 Caret=57,12

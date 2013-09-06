@@ -46,24 +46,34 @@ namespace rtos {
 //***************************************************************************
 
 /*
-const bool task_logging            = (global_logging && 0);
-const bool debug_task_logging      = (global_logging && 0);
 
-char task_state( const task * t ){
-   if( t->is_blocked() ){
-      return 'B';
-   } else {
-      return 'R';
-   }      
-}
 
-const char * task_name( const task * t ){
-   if( t ){
-      return t->name();
-   } else {
-      return "-";
-   }      
-}
+
+
+*/
+
+#if BMPTK_RTOS_STATISTICS_ENABLED
+
+   const bool task_logging            = (global_logging && 0);
+   const bool debug_task_logging      = (global_logging && 0);
+
+   char task_state( const task * t ){
+      if( t->is_blocked() ){
+         return 'B';
+      } else {
+         return 'R';
+      }      
+   }
+
+   const char * task_name( const task * t ){
+      if( t ){
+         return t->name();
+      } else {
+         return "-";
+      }      
+   }     
+    
+#endif
 
 #define task_trace \
    if (task_logging) \
@@ -78,8 +88,7 @@ const char * task_name( const task * t ){
          <<  name() \
          << "     " << task_state( this ) \
          << " "
-*/
-         
+
 int nr_from_mask( unsigned int mask ){
    for( int i = 0; i < 32; i++ ){
       if( mask & ( 1 << i )){
@@ -719,11 +728,11 @@ task::task(
 ) :
    task_is_blocked( false ),
    task_priority( priority ),
-   waitables( this )
    #ifdef BMPTK_RTOS_STATISTICS_ENABLED
-      ,logging( task_logging )
-      ,task_name( string_clone( tname ))
+      //logging( task_logging ),
+      task_name( string_clone( tname )),
    #endif
+   waitables( this )
 {
 
    // no sleep timer allocated yet
@@ -998,7 +1007,7 @@ void sleep_until( time t ){
       if( current_task()->sleep_timer == 0 ){
      
          current_task()->sleep_timer = 
-            new timer( current_task(), "sleep timer" );
+            new timer( current_task(), "<sleep timer>" );
       }
      
       // sleep
