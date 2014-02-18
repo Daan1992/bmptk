@@ -36,17 +36,21 @@ REDIRECT := <META HTTP-EQUIV='refresh' CONTENT='0;URL=./docs/index.html'>
 doc: 
 		Doxygen docsrc/Doxyfile
 		echo "$(REDIRECT)" >index.html
+		@echo "**** documentation build completed succesfully"
 		
 examples:
 		cd examples && make build
+		@echo "**** examples build completed succesfully"
 
 zip: clean doc		
 		rm -rf index.html 
 		pkzip25 -add -path=relative -recurse bmptk.zip 
+		@echo "**** zip build completed succesfully"
 		
 clean:
 		rm -rf index.html docsrc/docs bmptk.zip th04.zip transfer
 		cd examples && make clean	
+		@echo "**** cleanup completed succesfully"
 		
 push:
 		make clean
@@ -60,12 +64,14 @@ ftp: zip
 		cp -R docs transfer/docs
 		python \ftpbmptk.py
 		cp transfer/_ftp_crc_s ..
-		
+		@echo "**** ftp transfer completed succesfully"
+      
 TH04LIST += license.txt license_1_0.txt
 TH04LIST += Makefile Makefile.inc Makefile.local
 TH04LIST += bmptk.h
 TH04LIST += targets/bmptk_lpc1114* targets/cmsis/11xx/*/* 
 TH04LIST += tools/* tools/image_sizes/*
+TH04LIST += index.html docs/* docs/search/*
 TH04LIST += examples/v1th04/*
 TH04LIST += examples/v1th04/blink/* 
 TH04LIST += examples/v1th04/switch/* 
@@ -78,7 +84,7 @@ TH04LIST += examples/v1th04/ds1990/*
 TH04LIST += examples/v1th04/i2c/*
 TH04LIST += examples/v1th04/lcd5510/*
 
-th04: clean
+th04: clean doc
 		pkzip25 -add -path=current th04.zip $(TH04LIST)
 		
 		

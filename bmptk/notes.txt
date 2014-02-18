@@ -1,21 +1,17 @@
 file: bmptk/notes.txt
 
-This file contians reminders, notes, bookmarks etc. for my use
+This file contains reminders, notes, bookmarks etc. for my use
 
-- edit Makefile.inc
-- cleanup these notes
+- check comments & license for all targets
 - choose name for the hwlib: hwcpp
 - add malloc to cortex_startup.c => new name? (or put in common?)
-- stack size parameter
+- stack size parameter => document
 - ROM and RAM size parameters
-- th04: use cpp pin-access :)
-
-
+- document LPC810,812,1114,1227 targets
 
 - use gcc for windows => latest version
 - xwisp com4 dtr - rts - term 38400
 - document target db103/lpc1114
-- rewrite TH04 examples to use a common (but undisclosed) library
 - add some comments to all examples
 - pass the real version string to Doxygen
 - other file to check for includes problem
@@ -26,11 +22,9 @@ This file contians reminders, notes, bookmarks etc. for my use
 - volatile int n = 5; bmptk::graphics::color y( n, n+1, n+2 );  std::cout << y << y << "\n"; 
 - create font_default.* only when needed (not on timestamp)?
 - nrf24/rfm73
-- create bmptk_settings.h file for all #defines
 - TASK_STATISTICS, TASK_DEBUG_LOG
 - task statistics example with buffered cout
 - software uart
-- mailbox must be a waitable
 - taks example show statistics every once in a while
 - 115200 download works, but debug does not??
 - waitable_set requested_waitable = 0;
@@ -38,7 +32,6 @@ This file contians reminders, notes, bookmarks etc. for my use
 - statistics moet een object worden
 - a mailbox should be a waitable
 - context.cpp depends a lot on stack direction
-- trace << flush
 - code to draw a DIP or other chip and show its pins -> HC595, TPIC6C595, etc.
 - chaining hc595's
 - echt code size laten zien, huidige dump zegt nix
@@ -49,10 +42,8 @@ This file contians reminders, notes, bookmarks etc. for my use
 - channel_buffer moet wel blocken!!
 - channel sink
 - channel overflow
-- all examples => main.cpp, _project.ppr (started in db103)
 - spi_master flavours (in, out, in out)?
 - cout reduce ROM
-- A/D conversion for lpc1114
 - pull-ups for lpc1114
 - pull-ups for lpc810
 - mcp23017
@@ -62,8 +53,6 @@ This file contians reminders, notes, bookmarks etc. for my use
 - sheet in example graphics/text does not exist
 - clock example digital clock does not work on nds, does work on win?? maybe use own string class?
 - makefile.inc opschonen, geen -nodefault voor nds, wel voor lpc
-- -I $(SEARCH) moet loopen!
-- invert pin_in, pin_out, pin_in_out, port_in, etc
 - general way to get an object from a class (why not just instantiate - lifertime issue)
 - merge all RFM73 pages
 - rewrite graphics page
@@ -79,114 +68,95 @@ This file contians reminders, notes, bookmarks etc. for my use
 - document 'install PIL'
 - stack check
 - cannot << a format??
-- list real sizes instead of raw .o figures
-   - new devcpp requires adding to the system path
-   - frame_snapshot for hosted but not for embedded
-   - istream
-   - put istream/ostream in the startup code?? prevents it from being global!
-   - fatal error handling
-   - different clock speeds
-   - enable all warnings
-   - memory allocation
-   - size=2 for win does not work with events
-   - tty
-   - get font from libnds?
-   - default 5x7 font, for instance from olimex demo
-   - vertical text labels require 'flip' in subscreen
-   - font: top & right side 'empty' line can be eliminated?
-   - arithmetic with transparancy??
-   - scale=2 for text does not work very intuitively, maybe scale different?
-   - run from UltraEdit
-   - gif translate does not work, 33 -> 32 wel! (goed by veelvouden van 8?)
-   - gif transparency
-   - translate utilities should not write same header again
-   - font does not depend on makefile??
-   - letters lijken iets verschoven naar beneden
-   - beperkte charsets
-   - font bij ontbrekende: andere case proberen, dan ? proberen.
-   - rectangle, circle: private attributes?
-   - draw line width differently (circle brush?)
-   - draw circle with differently too
-   - paint beter structureren: event in screen? => window
-   - 2478 target?
-   - graphics.h start text
-   - License: check all files
-   - reversi example
-   - std:cin replacement
-   - packer/grid/placer
-   - mouse-style pointer needed for trackballs
-   - subframe boundaries
-   - ignore repeated mouse @ same place?
-   - compressed color = 1 byte per pixel
-   - arithmetic for text format
-   - standard font(s)
-   - draw rounded rectangle
-   - STL-style iterator for position
-   - text::draw scale, twice?
-   - drawable::draw_pixel moet beter
-   - rotate operator on a vector! (multiply)
-   - doxygen the TRACE macro's, can't be done??
-   - rectangle, line: size or boundaries??
-   - add chapter 'design notes'
-   - wit lijntje in de button corners is best leuk!
-   - canvas, is a drawable, and can be written to a .tiff (or gif?) ppm! - frame_buffer is dit al??
-   - http://www.imagemagick.org/
-   - use other (free) zip instead of pkzip25 (and add to tools)
-   - git push uses credentials, make push does not??
-   - create release notes
-   - rewrite docsrc/graphics.h (and why is it not Doxygenned?)
-   - ftp: .zip is always transferred
-   - win use http://forums.codeguru.com/showthread.php?379581-Visual-C-Debugging-How-do-I-evaluate-the-time-difference-between-two-events
-   - target_screen is 2 x in doxygen, inherts 2 x from frame
-   - frame_buffer should have separate bool array for pixels-to-be-written?
-   - clock wijzers kloppen niet? (export)
-   - document the inline.py tools - refs in bmptk_graphics.h
-   - larger font for inline pictures in documentation
-   - make docs always re-generates the pictures??
-   - integrate RTOS
-   - RTOS examples must show best practice
-   - document the base classes
-   - LIBRARY in makefile auto-add bmptk_
-   - nds::fatal will not work without the GRAPHICS library...
-   - PRECIOUS 
-   - devkitpro make has the problem (devkitpro\msys\bin\make.exe)
-   - meer private CC en op=
-   - http://www.microchip.com/stellent/idcplg?IdcService=SS_GET_PAGE&nodeId=1406&dDocName=en531543&page=wwwRTOS
-   - http://www.linuxtopia.org/online_books/programming_books/c++_practical_programming/c++_practical_programming_093.html
-   - http://www.teamfdi.com/development-tools-kits/uez.php
-   - nds and win targets seem to keep unused code ?
-   - http://www.angelikalanger.com/Articles/Topics.html#CPP
-   - http://www.ethernut.de/api/index.html
-   - sizes summary shows only the user's files ...
+- frame_snapshot for hosted but not for embedded
+- istream
+- size=2 for win does not work with events
+- tty
+- get font from libnds?
+- default 5x7 font, for instance from olimex demo
+- vertical text labels require 'flip' in subscreen
+- font: top & right side 'empty' line can be eliminated?
+- arithmetic with transparancy??
+- scale=2 for text does not work very intuitively, maybe scale different?
+- run from UltraEdit
+- gif translate does not work, 33 -> 32 wel! (goed by veelvouden van 8?)
+- gif transparency
+- translate utilities should not write same header again
+- font does not depend on makefile??
+- letters lijken iets verschoven naar beneden
+- beperkte charsets
+- font bij ontbrekende: andere case proberen, dan ? proberen.
+- rectangle, circle: private attributes?
+- draw line width differently (circle brush?)
+- draw circle with differently too
+- paint beter structureren: event in screen? => window
+- 2478 target?
+- graphics.h start text
+- License: check all files
+- reversi example
+- std:cin replacement
+- packer/grid/placer
+- mouse-style pointer needed for trackballs
+- subframe boundaries
+- ignore repeated mouse @ same place?
+- compressed color = 1 byte per pixel
+- arithmetic for text format
+- standard font(s)
+- draw rounded rectangle
+- STL-style iterator for position
+- text::draw scale, twice?
+- drawable::draw_pixel moet beter
+- rotate operator on a vector! (multiply)
+- doxygen the TRACE macro's, can't be done??
+- rectangle, line: size or boundaries??
+- add chapter 'design notes'
+- wit lijntje in de button corners is best leuk!
+- canvas, is a drawable, and can be written to a .tiff (or gif?) ppm! - frame_buffer is dit al??
+- http://www.imagemagick.org/
+- use other (free) zip instead of pkzip25 (and add to tools)
+- git push uses credentials, make push does not??
+- create release notes
+- rewrite docsrc/graphics.h (and why is it not Doxygenned?)
+- ftp: .zip is always transferred
+- win use http://forums.codeguru.com/showthread.php?379581-Visual-C-Debugging-How-do-I-evaluate-the-time-difference-between-two-events
+- target_screen is 2 x in doxygen, inherts 2 x from frame
+- frame_buffer should have separate bool array for pixels-to-be-written?
+- clock wijzers kloppen niet? (export)
+- document the inline.py tools - refs in bmptk_graphics.h
+- larger font for inline pictures in documentation
+- make docs always re-generates the pictures??
+- integrate RTOS
+- RTOS examples must show best practice
+- document the base classes
+- LIBRARY in makefile auto-add bmptk_
+- nds::fatal will not work without the GRAPHICS library...
+- PRECIOUS 
+- devkitpro make has the problem (devkitpro\msys\bin\make.exe)
+- meer private CC en op=
+- nds and win targets seem to keep unused code ?
 
-   - must override overflow?? http://stackoverflow.com/questions/243696/correctly-over-loading-a-stringbuf-to-replace-cout-in-a-matlab-mex-file
-   - add image magic to tools
-   - subframe => frame_subframe?
-   - frame_mirror_h _v _df _db
-   - frame_rot_r _1 _2
-   - frame_overlay (cursor, sprite)
-   - isp as alternative to lpc21isp
+- sizes summary shows only the user's files ...
+
+- add image magic to tools
+- subframe => frame_subframe?
+- frame_mirror_h _v _df _db
+- frame_rot_r _1 _2
+- frame_overlay (cursor, sprite)
+- isp as alternative to lpc21isp
    
-   pin/port decorators:
-   and, nand, nor, or, xnor, xor, not
-   count, latch, register (all work on both pin and port)
+-   pin/port decorators:
+-   and, nand, nor, or, xnor, xor, not
+-   count, latch, register (all work on both pin and port)
    
    
 // ==========================================================================
 //
 // ToDo list and other notes - pins
 //
-// - create other ports
-// - open-collector-ness : gewoon negeren??
-// - omconfigureren
-// - pull-ups
 // - werk db103 verder uit
-// - AD
 // - uart(s)
 // - tee a port into a single pin, or a port has a write-to-all member
 // - combine read pins OR and AND wise
-// - invert read pins (IO pins??)
-// - an 'internal' pin, also for output only (sink)
 // - a snoop that tells what is done (for pins & ports, input & output)
 //    == spy, log, snoop
 // - create a pin from a register??
@@ -195,7 +165,6 @@ This file contians reminders, notes, bookmarks etc. for my use
 // - MCP - both tastes
 // - strip the source file to a .h file for faster processing
 // - functions (kitt, blink, beep) are not documented
-// - clean moet ook doxydocs verwijderen!
 //
 // ==========================================================================
 
@@ -216,14 +185,15 @@ Naming conventions
    - convert: y_from_x, or use y_constructor
    - bases classes have private assignment, default & copy constructor
    - ADTs have visible assignment, default & copy constructor
-   - avoid memory deallocation
-   - no exceptions, fatals call bmptk::fatal_error_detected
+   - no exceptions, fatal call bmptk::fatal_error_detected
  
 Meta principles
    decorators
    - all : write to one to write to all
    - sink : write to no effect
    - switch : writing effect can be switched on or off
+   - invert : read and write effect is inverted
+   - xxx_from : create an xxx from another pin/port
    
 Design principles
    - no C++ exception handling: an error is fatal
@@ -231,10 +201,9 @@ Design principles
    - template-based flexibility for low-level (performnace-sensitive) parts
    - class-based flexibility for higher-level functionality
    - keep the target 'interface' small, even at the expense of some performance
-   - rtos: no preemption or interrupts
    - initialized global objects are evil (initialization ordering problem)
    - ostream/istream style I/O for embedded targets, source compatible with PC target
-   - Doxygen for all documentation
+   - Doxygen for all documentation, but only as text formatter
    - in order: size, performance, functionality, compatibility   
    - can use 'hosted' for debug and development 
    
@@ -259,7 +228,7 @@ Doxygen conventions:
    - contains only full scentences
    hide what is not part of the interface (but must be in the header)
    
-terms:   
+terms & quotes:   
    I get it right 98% of the time, and don't care about the other 3%.
    scar tissue
    "C is quirky, flawed, and an enormous success." - Dennis Ritchie   
@@ -322,11 +291,17 @@ interesting
    http://www.dafont.com/new.php?page=2
    http://forum.gbadev.org/viewtopic.php?t=14396&highlight read NDS stylus pressure
    http://www.kernel.org/doc/Documentation/CodingStyle
-   www.pdfsam.rg
-   www.google.com/webfonts
+   http://www.pdfsam.rg
+   http://www.google.com/webfonts
    http://www.code-time.com/cortexm0.html (small RTOS)
    http://www.rowleydownload.co.uk/arm/documentation/index.htm?http://www.rowleydownload.co.uk/arm/documentation/ctl_implementation_cm3.htm
    http://www.code-time.com/cortexm0.html
    http://code.google.com/p/tiny-kernel-microcontroller/downloads/list   
    http://bitsavers.informatik.uni-stuttgart.de/pdf/
    https://www.securecoding.cert.org/confluence/display/seccode/CERT+C+Coding+Standard   
+   http://www.microchip.com/stellent/idcplg?IdcService=SS_GET_PAGE&nodeId=1406&dDocName=en531543&page=wwwRTOS
+   http://www.linuxtopia.org/online_books/programming_books/c++_practical_programming/c++_practical_programming_093.html
+   http://www.teamfdi.com/development-tools-kits/uez.php
+   http://www.angelikalanger.com/Articles/Topics.html#CPP
+   http://www.ethernut.de/api/index.html
+   http://stackoverflow.com/questions/243696/correctly-over-loading-a-stringbuf-to-replace-cout-in-a-matlab-mex-file   

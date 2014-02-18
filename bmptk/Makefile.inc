@@ -269,39 +269,47 @@ define Cortex
    # RUN         = $(FLASHMAGIC) '$(FMCMD)'
    LINKERSCRIPT = linkerscript.ld
    LDFLAGS	   += -T linkerscript.ld -nostartfiles 
-   # -nodefaultlibs
    RESULTS     += linkerscript.ld
    OBJ         += cortex_startup.o
 endef
 
 define Cortex-M0
    $(eval $(Cortex))
-   # SEARCH       += $(BMPTK)/targets/cortex/libaeabi-cortexm0
    CORE_FLAGS  += -mcpu=cortex-m0 -mthumb -fomit-frame-pointer -march=armv6-m
-   SEARCH       += $(BMPTK)/targets/cortex
+   SEARCH      += $(BMPTK)/targets/cortex
    INCLUDES    += -I$(BMPTK)/targets/cortex
-   # LIBA        += libaeabi-cortexm0.a
    LD_CONFIG   = -DROM_START=0 -DRAM_START=0x10000000
 endef
 
-ifeq ($(CHIP),lpc810m021)
+define LPC81X
    $(eval $(Cortex-M0))
-   FNAME       = LPC810M021FN8
-   LD_CONFIG   += -DROM_SIZE=8k -DRAM_SIZE=1k -DSTACK_SIZE=256
    INCLUDES    += -I$(BMPTK)/targets/cmsis/lpc800/inc
+endef
+
+ifeq ($(CHIP),lpc810m021)
+   $(eval $(LPC81X))
+   FNAME       = LPC810M021FN8
+   STACKSIZE   ?= 256
+   LD_CONFIG   += -DROM_SIZE=8k -DRAM_SIZE=1k 
+endif
+
+ifeq ($(CHIP),lpc812m101)
+   $(eval $(LPC81X))
+   FNAME       = LPC810M021FN8
+   STACKSIZE   ?= 1k
+   LD_CONFIG   += -DROM_SIZE=16k -DRAM_SIZE=4k 
 endif
 
 define LPC1114
    $(eval $(Cortex-M0))
-   INCLUDES    += -I$(BMPTK)/targets/cortex/cmsis/11xx/inc
-   SOURCES     += lpc1114.cpp   
+   INCLUDES    += -I$(BMPTK)/targets/cortex/cmsis/11xx/inc 
 endef
 
 ifeq ($(CHIP),lpc1114fn28)
    $(eval $(LPC1114))
-   # dHEADERS     += lpc1114fn28.h
    FNAME       = LPC1114/102
-   LD_CONFIG   += -DROM_SIZE=32k -DRAM_SIZE=4k -DSTACK_SIZE=1k
+   STACKSIZE   ?= 1k
+   LD_CONFIG   += -DROM_SIZE=32k -DRAM_SIZE=4k
 endif
 
 define LPC1227
@@ -313,12 +321,15 @@ endef
 ifeq ($(CHIP),lpc1227fbd301)
    $(eval $(LPC1227))
    FNAME       = LPC1227/301
-   LD_CONFIG   += -DROM_SIZE=96k -DRAM_SIZE=8k -DSTACK_SIZE=2k
+   STACK_SIZE  ?= 2k
+   LD_CONFIG   += -DROM_SIZE=96k -DRAM_SIZE=8k
 endif
 
 ifeq ($(PREFIX),)
    $(error invalid or no target specified: "$(TARGET)")
 endif
+
+LD_CONFIG += -DSTACK_SIZE=$(STACKSIZE)
 
    
 #============================================================================
