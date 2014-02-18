@@ -310,6 +310,7 @@ ifeq ($(CHIP),lpc1114fn28)
    FNAME       = LPC1114/102
    STACKSIZE   ?= 1k
    LD_CONFIG   += -DROM_SIZE=32k -DRAM_SIZE=4k
+   HWCPP       += lpc1114.hpp lpc1114fn28.hpp cout.hpp
 endif
 
 define LPC1227
@@ -332,6 +333,33 @@ endif
 LD_CONFIG += -DSTACK_SIZE=$(STACKSIZE)
 
    
+#============================================================================
+#
+# hwcpp
+# 
+#============================================================================
+
+HWCPP      += hwcpp.hpp
+HWCPP      += basics.hpp timing.hpp
+HWCPP      += string.hpp graphics.hpp
+HWCPP      += numeric.hpp
+HWCPP      += pins.hpp channels.hpp
+HWCPP      += i2c.hpp spi.hpp one_wire.hpp
+HWCPP      += hc595.hpp pcf8574.hpp mcp23xxx.hpp pcf8591.hpp
+HWCPP      += hd44780.hpp
+HWCPP      += graphics.hpp
+HWCPP      += pcd8544.hpp lcd_19.hpp
+HWCPP      += ds18x20.hpp
+HWCPP      += ads7843.hpp
+
+ifeq ($(LANGUAGE),C++)
+   HWCPPDIRS  = hwcpp hwcpp/targets hwcpp/chips
+   INCLUDES  += $(foreach x, $(HWCPPDIRS), -I$(BMPTK)/$(x))
+   SEARCH    += $(foreach x, $(HWCPPDIRS), $(BMPTK)/$(x))
+   HEADERS   += $(HWCPP)
+endif
+
+
 #============================================================================
 #
 # Pass information to the code 

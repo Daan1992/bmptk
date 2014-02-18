@@ -49,7 +49,7 @@ Project
 8=uart-hw.c
 [Selected Project Files]
 Main=
-Selected=threads.c
+Selected=main.c
 [switch_to.asm]
 TopLine=1
 Caret=21,25

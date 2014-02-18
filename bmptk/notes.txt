@@ -2,6 +2,9 @@ file: bmptk/notes.txt
 
 This file contains reminders, notes, bookmarks etc. for my use
 
+- documentation
+- windows target
+- nds target + examples
 - check comments & license for all targets
 - choose name for the hwlib: hwcpp
 - add malloc to cortex_startup.c => new name? (or put in common?)
