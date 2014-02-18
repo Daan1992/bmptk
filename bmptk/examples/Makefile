@@ -6,7 +6,7 @@
 # 
 #############################################################################
 
-SUBDIRS += db103 graphics
+SUBDIRS += v1th04 v2cpse2
 
 BUILDDIRS = $(SUBDIRS:%=build-%)
 CLEANDIRS = $(SUBDIRS:%=clean-%)

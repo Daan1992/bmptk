@@ -191,6 +191,7 @@ The example directories are three directories deep in the bmptk tree,
 so the Mafiles in the examples have the line
 
 \code
+# specify where the bmptk files can be found
 BMPTK      := ../../..
 \endcode
 
@@ -204,45 +205,104 @@ BMPTK      := C:/bmptk
 \endcode
 
 By default the Makefile assumes that main.cpp (or main.c, or main.asm) 
-is the one and only source file to be compiled.
-If you main file has a different name, you must mention it in the Makefile:
+is the one and only source file to be compiled,
+and that this is to be the (base) name of the project files
+(executable, map file, etc) that are to be generated.
+If your project has a different name, you must mention it in the Makefile,
+(without extension):
 
 \code
-PROJECT    := alarmclock.cpp
+# specify the name of the project
+PROJECT    := alarmclock
 \endcode
 
 If your project has more source files than just the main file, 
 you must add them in the makefile. You can specify
-the files explicty:
+the files explicity:
 
 \code
 # Specify project-specific files (other than the main, if any)
-SOURCES    := display.cpp timer.cpp
-HEADERS    := display.h timer.h
+SOURCES    += display.c timer.cpp
+HEADERS    += display.h timer.hpp
 \endcode
 
 The sources are the files that will be compiled.
 When any of the headers are changed, the makefile will re-compile
 all your source files. This is a bit conservative, but at least
 it is on the safe side.
+
+Alternatively, you can specify the header files, and
+the system will assume that source files (.asm, .c, or .cpp) 
+with the same base name exist and must be compiled.
+
+\code
+# Specify header files that have a corresponding source file
+LIBRARIES  += display.h timer.hpp
+\endcode
+
+If you have object files that must be included in your
+application, you can specify those too. If any of these
+files do not exits, the system will attempt to make them,
+from an existing .asm, .c or .cpp file.
+
+\code
+# Specify object files that must be linked with the application
+OBJECTS  += blob.o
+\endcode
  
-  
+If some of the files are not in the current directory
+you must specify in which directories the system must look
+for missing files.
+
+\code
+# Specify locations weher the system must look for files
+SEARCH  += ../uart ../timer
+\endcode  
+
+When a serial port is needed to download the application to the
+target (and to communicate with the target) the system by default
+uses COM4 at 38400 baud. When this does not suit you
+you can specify the port and/or the baudrate.
+
+\code
+# Specify port and baudrate for serial downloading and communication
+SERIAL_PORT      := COM1
+SERIAL_BAUDRATE  := 115200
+\endcode  
+
+If you want to change settings globally (for all your projects) you
+can do so in the bmptk/Makefile.custom file. 
+Create it by copying bmptk/Makefile.local and add the declarations you
+want to have effect for all your projects.
+Note that this file is included after your local Makefile, 
+so assignments should be made with ?= so they do not overrule 
+assignments made in the project's Makefile.
+
+\code
+# in bmptk/Makefile.custom
+
+# The serial port I use on this PC
+SERIAL_PORT      ?= COM19
+\endcode 
   
 -----------------------------------------------------------------------------
 \anchor install-command-line 
 ## Command line use  
 
 Bmptk is 'driven' by its makefile(s).
-Each project has its own makefile, that specifies
-- the project name. Bmptk assumes that the project name, 
-  with a .cpp or .c extension, is a source file of the project.
-- the target. This must be one of the supported \ref targets
-- the location of the bmptk files. The examples are part of the
-  bmptk files, so they know the bmptk root is at ../..//.. 
-  Your own projects will probably be outside the bmptk tree, and
-  you might want to move hem around, so I suggest you specify the 
-  bmptk root as an absolute location like C:\\bmptk (assuming
-  you installed it there).
+In most cases you will invoke the Makefile through your GUI, 
+but sometimes it is handy to invoke it directly.
+The make commands that are recognized are shown in the next table.
+
+command      | effect                                           |
+-------------|--------------------------------------------------|
+make build   | Build the application (compile, link, etc.)      |
+-------------|--------------------------------------------------|
+make run     | Download the application (if needed) and run it. |
+             | (If necessary, build it first)                   |
+-------------|--------------------------------------------------|
+make clean   | Delete all files generated                       |
+             | by building the application                      |
   
 
 

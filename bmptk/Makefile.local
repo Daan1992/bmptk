@@ -20,12 +20,8 @@ else
     WPF := C:/Program Files (x86)
 endif
 
-ARMTOOLS    := $(WPF)/CodeSourcery/Sourcery_CodeBench_Lite_for_ARM_EABI
-#GNUTOOLS    := $(WPF)/GNU Tools ARM Embedded/4.7 2012q4
-ARMDEVENV   := $(WPF)/ARMDevEnv
+GNU-ARM     := $(WPF)/GNU Tools ARM Embedded/4.8 2013q4
 DEVKITPRO   := C:/devkitPro
-DEVCPP      := $(WPF)/Dev-Cpp/MinGW32
-PYTHON      := C:/PYTHON33/PYTHON
 FLASHMAGIC  := "$(WPF)/Flash Magic/FM"
 LPC21ISP    := "$(BMPTK)/tools/lpc21"
 

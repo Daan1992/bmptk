@@ -4,42 +4,24 @@
 #
 # Makefile for bare metal C++ projects
 #
-# (c) Wouter van Ooijen (www.voti.nl) 2013
-#
-# LICENSE (MIT expat license, copy of bmptk/license.txt)
-#
-# Copyright (c) 2012, 2013 Wouter van Ooijen (wouter@voti.nl)
+# Copyright (c) 2012 ... 2014 Wouter van Ooijen (wouter@voti.nl)
 # 
-# Permission is hereby granted, free of charge, to any person obtaining
-# a copy of this software and associated documentation files (the
-# "Software"), to deal in the Software without restriction, including
-# without limitation the rights to use, copy, modify, merge, publish,
-# distribute, sublicense, and/or sell copies of the Software, and to
-# permit persons to whom the Software is furnished to do so, subject to
-# the following conditions:
-# 
-# The above copyright notice and this permission notice shall be included
-# in all copies or substantial portions of the Software.
-# 
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-# CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-# SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+# Distributed under the Boost Software License, Version 1.0.
+# (See accompanying file LICENSE_1_0.txt or copy at 
+# http://www.boost.org/LICENSE_1_0.txt)
 # 
 #############################################################################
 
 
-# This string must not contain spaces, bacuse that does
+# This string must not contain spaces, that does
 # (for some unclear reason) not work on Windows8
-VERSION := V02.00-work-in-progress-2013-08-30
+VERSION := V03.00_work_in_progress_2014_02_18
 
 
 #============================================================================
 #
-# find the external tools
+# Invoke the Makefile.custom (if it exists) or else the Makefile.local,
+# to get the locations of the external toolsets
 # 
 #============================================================================
 
@@ -49,13 +31,14 @@ else
    include $(BMPTK)/Makefile.local
 endif
 
+# for debugging
 # $(error $(WPF) )
 
 
 #============================================================================
 #
-# the project source file is sure part of the project, but
-# it can either be a .c or a .cpp file
+# The main project source file is sure part of the project.
+# It is specified with extension: here we find the a .asm, .c or .cpp file
 #
 # the default project name is 'main'
 # 
@@ -65,28 +48,28 @@ ifeq ($(PROJECT),)
    PROJECT = main
 endif   
 
-ifeq ($(wildcard $(PROJECT)),)
-   ifeq ($(wildcard $(PROJECT).cpp),)
-      ifeq ($(wildcard $(PROJECT).c),)
-         ifeq ($(wildcard $(PROJECT).asm),)
-            $(error PROJECT ($(PROJECT)) is not a .cpp, .c or .asm file)
-         else	  
-            SOURCES += $(PROJECT).asm
-         endif	  
+ifeq ($(wildcard $(PROJECT).cpp),)
+   ifeq ($(wildcard $(PROJECT).c),)
+      ifeq ($(wildcard $(PROJECT).asm),)
+         $(error PROJECT ($(PROJECT)) is not a .cpp, .c or .asm file)
       else	  
-         SOURCES += $(PROJECT).c
+         SOURCES += $(PROJECT).asm
       endif	  
-   else	     
-      SOURCES += $(PROJECT).cpp
-   endif   
-else
-   SOURCES += $(PROJECT)
-endif
+   else	  
+      SOURCES += $(PROJECT).c
+   endif	  
+else	     
+   SOURCES += $(PROJECT).cpp
+endif   
 
 
 #============================================================================
 #
-# decide whether we have a C or C++ project
+# decide whether we have a C++ project or a C/Assembler project
+#
+# When a project uses at least one C++ file it is a C++ project, and
+# the C++ tools must be used for ALL files.
+# If not, the C tools are used.
 # 
 #============================================================================
 
@@ -101,27 +84,19 @@ endif
 
 #============================================================================
 #
-# find the library's files
+# find the files
 # 
 #============================================================================
 
-VPATH     += $(BMPTK)
-VPATH     += $(BMPTK)/core
-VPATH     += $(BMPTK)/targets
-VPATH     += $(BMPTK)/graphics
-VPATH     += $(BMPTK)/rtos
-VPATH     += $(BMPTK)/chips
-VPATH     += $(SEARCH)
+SEARCH    += $(BMPTK)
+SEARCH    += $(BMPTK)/targets
 
 INCLUDES  += -I.
 INCLUDES  += -I$(BMPTK)
 INCLUDES  += -I$(BMPTK)/targets
-INCLUDES  += -I$(BMPTK)/graphics
-INCLUDES  += -I$(BMPTK)/rtos
-INCLUDES  += -I$(BMPTK)/chips
 INCLUDES  += $(foreach x, $(SEARCH), -I$(x))
 
-bmptk_graphics.h:
+bmptk.h:
 	# You specified an absolute path ($(BMPTK)) for the bmptk location.
 	# The 'make' tool you use has a bug in handling absolute paths that
 	# prevents the bmptk makefile from finding some source files.
@@ -135,15 +110,16 @@ bmptk_graphics.h:
 	#    tree, (a subdirectory of) the examples directory is a 
 	#    reasonable choice.
 
+   
 #============================================================================
 #
 # default port, baudrate, xtal for download and debug log
 # 
 #============================================================================
 
-SERIAL_PORT := COM4
-BAUDRATE    := 38400
-XTAL        := 12000
+SERIAL_PORT      := COM4
+SERIAL_BAUDRATE  := 38400
+XTAL             := 12000
 
 
 #============================================================================
@@ -152,7 +128,6 @@ XTAL        := 12000
 # 
 #============================================================================
 
-
 CC        = "$(PREFIX)gcc"
 CPP       = "$(PREFIX)g++"
 AS        = "$(PREFIX)gcc"
@@ -160,24 +135,20 @@ OBJCOPY   = "$(PREFIX)objcopy"
 OBJDUMP   = "$(PREFIX)objdump"
 SIZES     = "$(PREFIX)size"
 NM        = "$(PREFIX)nm"
+
 ifeq ($(LANGUAGE),C)
    LINKER    = "$(PREFIX)gcc"
 else
    LINKER    = "$(PREFIX)g++"
 endif
 
-NDSTOOL        := "$(DEVKITPRO)/devkitARM/bin/ndstool"
-IMGTOCPP-TOOL  := $(BMPTK)/tools/img_to_cpp.py
-FFTTOCPP-TOOL  := $(BMPTK)/tools/ttf_to_cpp.py
-TXTTOCPP-TOOL  := $(BMPTK)/tools/txt_to_cpp.py
-IMGTOCPP       := $(PYTHON) $(IMGTOCPP-TOOL)
-FFTTOCPP       := $(PYTHON) $(FFTTOCPP-TOOL)
-TXTTOCPP       := $(PYTHON) $(TXTTOCPP-TOOL)
-#RM             := CMD.EXE /C del 
-RM             := "$(BMPTK)/tools/cs-rm" -f 
+NDSTOOL   := "$(DEVKITPRO)/devkitARM/bin/ndstool"
 
-#needed for DevCpp
-export PATH:=$(PATH);/bin;$(DEVCPP)/bin
+ifeq ($(OS),Windows_NT)
+   RM          := "$(BMPTK)/tools/cs-rm" -f
+else
+   RM          := /bin/rm -f
+endif
 
 
 #============================================================================
@@ -196,13 +167,9 @@ NDS       := $(PROJECT).nds
 EXE       := $(PROJECT).exe
 NMDUMP    := $(PROJECT).nmdump
 OBJ       += $(OBJECTS)
-ifeq ($(LANGUAGE),C++)
-   OBJ       += bmptk.o
-   # OBJ       += memory.o context.o rtos.o  # does not yet work for nds and win
-endif   
-OBJ       += $(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(patsubst %.s,%.o,$(SOURCES))))
-OBJ       += $(patsubst %,%.o,$(LIBS))
-OBJ       += $(patsubst %.jpg,%.o,$(IMAGES))
+SOURCESX  := $(patsubst %.asm,%.o,$(patsubst %.S,%.o,$(SOURCES)))
+OBJ       += $(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(SOURCESX)))
+OBJ       += $(patsubst %,%.o,$(LIBRARIES))
 LST       += $(patsubst %.o,%.lst,$(OBJ))
 
 
@@ -227,33 +194,40 @@ endif
 
 #============================================================================
 #
-# target-dependent parts
+# target-specific parts
 # 
 #============================================================================
 
 # will remain empty when no valid target is found
 PREFIX     := 
 
+define Hosted
+   HOSTED         = 1
+   HAS_FILESYSTEM = 1
+endef
+
 HAS_FILESYSTEM = 0
 
 ifeq ($(TARGET),nds)
+   $(eval $(Hosted))
    CHIP        := ARMv7
    PREFIX      := $(DEVKITPRO)/devkitARM/bin/arm-none-eabi-
    CORE_FLAGS  := -march=armv5te -mtune=arm946e-s -fomit-frame-pointer 
    CORE_FLAGS  += -ffast-math -mthumb -mthumb-interwork -DARM9
    INCLUDES    += -I$(DEVKITPRO)/ -I$(DEVKITPRO)/libnds/include 
-   LIBRARIES   += -L$(DEVKITPRO)/libnds/lib -lnds9
+   LIBS        += -L$(DEVKITPRO)/libnds/lib -lnds9
    LDFLAGS	   += -g -mthumb -mthumb-interwork -specs=ds_arm9.specs
    RESULTS     = $(ELF) $(NDS) $(NMDUMP)
    RUN         = "$(DEVKITPRO)/emulators/desmume/DeSmuME" $(NDS)
    LIBS        += nds
-   VPATH       += $(BMPTK)/stdlib $(BMPTK)/targets/nds
+   SEARCH       += $(BMPTK)/stdlib $(BMPTK)/targets/nds
    INCLUDES    += -I$(BMPTK)/stdlib -I$(BMPTK)/targets/nds
    TICKS_PER_US = 67
    LINKERSCRIPT =
 endif
 
 ifeq ($(TARGET),win)
+   $(eval $(Hosted))
    CHIP        := Intel
    PREFIX      := $(DEVCPP)/bin/
    CORE_FLAGS  := -mno-ms-bitfields   
@@ -262,59 +236,20 @@ ifeq ($(TARGET),win)
    INCLUDES    += -I"$(DEVCPP)/lib/gcc/mingw32"
    INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2"
    INCLUDES    += -I"$(DEVCPP)/include"
-   LIBRARIES   += -L"$(DEVCPP)/lib" 
+   LIBS   += -L"$(DEVCPP)/lib" 
    LDFLAGS     += -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
    RESULTS     = $(EXE)
    RUN         = ./$(EXE)
    LIBS        += win
-   VPATH       += $(BMPTK)/targets/win
+   SEARCH       += $(BMPTK)/targets/win
    INCLUDES    += -I$(BMPTK)/targets/win
-   TICKS_PER_US = 1
-   HAS_FILESYSTEM = 1
    LINKERSCRIPT =
 endif
 
-ifeq ($(TARGET),olimex-mod-lcd43)
-   XTAL        := 12000000
-   CHIP        := lpc2478
-endif
-
-ifeq ($(CHIP),lpc2148)
-   XTAL        := 12000000
-   PREFIX      := $(ARMDEVENV)/bin/arm-thumb-elf-
-   CORE_FLAGS  := -mcpu=arm7tdmi -mtune=arm7tdmi -nostartfiles -fno-exceptions 
-   CORE_FLAGS  += -fno-threadsafe-statics -fno-use-cxa-get-exception-ptr
-   LDFLAGS	   += -T$(BMPTK)/targets/bmptk_$(CHIP).ld -nostartfiles
-   SOURCES     += bmptk_$(CHIP).cpp bmptk_$(CHIP)_startup.s
-   HEADERS     += bmptk_$(CHIP).h
-   RESULTS     = $(ELF) $(BIN) $(MAP) $(HEX) $(DMP) $(LSS)
-endif
-
-ifeq ($(CHIP),lpc2478)
-   XTAL        := 12000000
-   PREFIX      := $(ARMTOOLS)/bin/arm-none-eabi-
-   # PREFIX      := $(ARMDEVENV)/bin/arm-thumb-elf-
-   CORE_FLAGS  := -mcpu=arm7tdmi -mtune=arm7tdmi -nostartfiles -fno-exceptions 
-   CORE_FLAGS  += -fno-threadsafe-statics -fno-use-cxa-get-exception-ptr
-   LDFLAGS	   += -T$(BMPTK)/targets/$(CHIP).ld -nostartfiles
-   SOURCES     += $(CHIP).cpp $(CHIP)_startup.s
-   HEADERS     += $(CHIP).h
-   RESULTS     = $(ELF) $(BIN) $(MAP) $(HEX) $(DMP) $(LSS)
-endif
-
-define Embedded
-   ifeq ($(LANGUAGE),C++)
-      OBJ         += iostream.o cxa_pure_virtual.o new.o
-      #SOURCES     += $(CHIP).cpp    
-   endif	  
-   CORE_FLAGS  += -nostartfiles -fno-exceptions 
-   CORE_CPP_FLAGS  += -fno-threadsafe-statics -fno-use-cxa-get-exception-ptr
-   VPATH       += $(BMPTK)/stdlib
-   INCLUDES    += -I$(BMPTK)/stdlib
-   OBJ         += memcpy.o delete.o
-   PREFIX      := $(ARMTOOLS)/bin/arm-none-eabi-
-   #HEADERS     += $(CHIP).h   
-   DEFINES     += -DBMPTK_EMBEDDED_HEAP
+define Embedded 
+   EMBEDDED    = 1
+   CORE_FLAGS  += -nostartfiles 
+   PREFIX      := $(GNU-ARM)/bin/arm-none-eabi-
    RESULTS     += $(NMDUMP) sizes 
 endef
 
@@ -324,29 +259,37 @@ define Cortex
    XTAL        := 12000000
    SOURCES     += cortex_startup.c
    RESULTS     += $(ELF) $(BIN) $(MAP) $(HEX) $(DMP) $(LSS) $(NMDUMP)
-   FMCMD       = COM($(patsubst COM%,%,$(SERIAL_PORT)),$(BAUDRATE)) 
+   FMCMD       = COM($(patsubst COM%,%,$(SERIAL_PORT)),$(SERIAL_BAUDRATE)) 
    FMCMD       += DEVICE($(FNAME), 12000000, 0)
    FMCMD       += HARDWARE(BOOTEXEC, 50, 100)
    FMCMD       += ERASE(DEVICE, PROTECTISP)
    FMCMD       += HEXFILE($(HEX), NOCHECKSUMS, NOFILL, PROTECTISP)
-   RUN         = $(LPC21ISP) -control -verify -term $(HEX) $(SERIAL_PORT) $(BAUDRATE) 12000
+   RUN         = $(LPC21ISP) -control -verify -term $(HEX) $(SERIAL_PORT) $(SERIAL_BAUDRATE) 12000
    # TERMINAL    = lpc21isp -termonly x $(SERIAL_PORT) 19200 y
    # RUN         = $(FLASHMAGIC) '$(FMCMD)'
    LINKERSCRIPT = linkerscript.ld
-   LDFLAGS	   += -T linkerscript.ld -nostartfiles -nodefaultlibs
+   LDFLAGS	   += -T linkerscript.ld -nostartfiles 
+   # -nodefaultlibs
    RESULTS     += linkerscript.ld
-   TICKS_PER_US = 6
+   OBJ         += cortex_startup.o
 endef
 
 define Cortex-M0
    $(eval $(Cortex))
-   VPATH       += $(BMPTK)/targets/cortex/libaeabi-cortexm0
-   CORE_FLAGS  += -mcpu=cortex-m0 -mthumb 
-   VPATH       += $(BMPTK)/targets/cortex
+   # SEARCH       += $(BMPTK)/targets/cortex/libaeabi-cortexm0
+   CORE_FLAGS  += -mcpu=cortex-m0 -mthumb -fomit-frame-pointer -march=armv6-m
+   SEARCH       += $(BMPTK)/targets/cortex
    INCLUDES    += -I$(BMPTK)/targets/cortex
-   LIBA        += libaeabi-cortexm0.a
-   OBJ         += cortex_m0_resume.o
+   # LIBA        += libaeabi-cortexm0.a
+   LD_CONFIG   = -DROM_START=0 -DRAM_START=0x10000000
 endef
+
+ifeq ($(CHIP),lpc810m021)
+   $(eval $(Cortex-M0))
+   FNAME       = LPC810M021FN8
+   LD_CONFIG   += -DROM_SIZE=8k -DRAM_SIZE=1k -DSTACK_SIZE=256
+   INCLUDES    += -I$(BMPTK)/targets/cmsis/lpc800/inc
+endif
 
 define LPC1114
    $(eval $(Cortex-M0))
@@ -354,73 +297,53 @@ define LPC1114
    SOURCES     += lpc1114.cpp   
 endef
 
+ifeq ($(CHIP),lpc1114fn28)
+   $(eval $(LPC1114))
+   # dHEADERS     += lpc1114fn28.h
+   FNAME       = LPC1114/102
+   LD_CONFIG   += -DROM_SIZE=32k -DRAM_SIZE=4k -DSTACK_SIZE=1k
+endif
+
 define LPC1227
    $(eval $(Cortex-M0))
    INCLUDES    += -I$(BMPTK)/targets/cortex/cmsis/12xx/inc
    SOURCES     += lpc1227.cpp   
 endef
 
-ifeq ($(CHIP),lpc1114fn28)
-   $(eval $(LPC1114))
-   HEADERS     += lpc1114fn28.h
-   FNAME       = LPC1114/102
-   LD_CONFIG   = -DROM_START=0 -DROM_SIZE=32k -DRAM_START=0x10000000 -DRAM_SIZE=4k -DSTACK_SIZE=1k
-endif
-
-ifeq ($(CHIP),lpc810m021)
-   $(eval $(Cortex-M0))
-   FNAME       = LPC810M021FN8
-   LD_CONFIG   = -DROM_START=0 -DROM_SIZE=8k -DRAM_START=0x10000000 -DRAM_SIZE=1k -DSTACK_SIZE=256
-   INCLUDES    += -I$(BMPTK)/targets/cmsis/lpc800/inc
-endif
-
 ifeq ($(CHIP),lpc1227fbd301)
    $(eval $(LPC1227))
    FNAME       = LPC1227/301
-   LD_CONFIG   = -DROM_START=0 -DROM_SIZE=96k -DRAM_START=0x10000000 -DRAM_SIZE=8k -DSTACK_SIZE=2k
+   LD_CONFIG   += -DROM_SIZE=96k -DRAM_SIZE=8k -DSTACK_SIZE=2k
 endif
 
 ifeq ($(PREFIX),)
    $(error invalid or no target specified: "$(TARGET)")
 endif
+
    
+#============================================================================
+#
+# Pass information to the code 
+# 
+#============================================================================
+
 DEFINES   += -DBMPTK_TARGET=$(TARGET)
 DEFINES   += -DBMPTK_TARGET_$(TARGET)
 DEFINES   += -DBMPTK_CHIP=$(CHIP)
 DEFINES   += -DBMPTK_CHIP_$(CHIP)
 DEFINES   += -DBMPTK_XTAL=$(XTAL)
-DEFINES   += -DBMPTK_BAUDRATE=$(BAUDRATE)
+DEFINES   += -DBMPTK_BAUDRATE=$(SERIAL_BAUDRATE)
 DEFINES   += -DBMPTK_VERSION=$(VERSION)
-DEFINES   += -DBMPTK_TICKS_PER_US=$(TICKS_PER_US)
 
+ifeq ($(HOSTED),1)
+   DEFINES   += -DBMPTK_HOSTED
+endif   
+ifeq ($(EMBEDDED),1)
+   DEFINES   += -DBMPTK_EMBEDDED
+endif   
 ifeq ($(HAS_FILESYSTEM),1)
    DEFINES   += -DBMPTK_HAS_FILESYSTEM
 endif   
-
-
-#============================================================================
-#
-# the default font, required by bmptk_graphics 
-#
-# The 04B_03__.ttf file (listed as freeware) was downloaded from
-# http://www.eaglefonts.com/04b03-ttf-131597.htm
-# 
-#============================================================================
-
-FONT-DEFAULT  := $(BMPTK)/graphics/fonts/04B_03__.TTF
-
-#ifeq (bmptk_graphics,$(filter bmptk_graphics,$(LIBS)))
-   LIBS          += font_default graphics
-   DEFINES       += -DBMPTK_GRAPHICS
-#endif
-
-#font_default.cpp font_default.h: $(FONT-DEFAULT) $(FFTTOCPP-TOOL)
-#		$(FFTTOCPP) $(FONT-DEFAULT) font_default font_default 8 "" bmptk::graphics
-
-ifeq (bmptk_rtos,$(filter bmptk_rtos,$(LIBS)))
-   LIBS          += bmptk_coroutines
-   DEFINES       += -DBMPTK_RTOS
-endif
 
 
 #============================================================================
@@ -429,15 +352,7 @@ endif
 # 
 #============================================================================
 
-HEADERS   += $(patsubst %,%.h,$(LIBS))
-
-HEADERS   += core/basics.h core/time.h core/memory.h 
-HEADERS   += core/context.h core/rtos.h
-HEADERS   += hardware/pins.h hardware/ports.h hardware/demos.h 
-HEADERS   += hardware/i2c.h hardware/spi.h
-HEADERS   += chips/pcf8574.h chips/pcd8544.h chips/hc595.h
-# HEADERS   += hardware/rfm73.h hardware/nrf24l01.h
-HEADERS   += chips/sr04.h
+HEADERS   += $(patsubst %,%.h,$(LIBRARIES))
 
 # Assume all sources depend on all headers, the linkerscript, and the Makefile
 DEPEND    := $(HEADERS) $(LNK) Makefile
@@ -450,44 +365,36 @@ $(OBJ): $(DEPEND)
 # 
 #============================================================================
 
-CPPFLAGS    += $(CORE_FLAGS) $(CORE_CPP_FLAGS) $(INCLUDES) $(DEFINES) -I$(BMPTK) 
-CFLAGS      += $(CORE_FLAGS) $(CORE_CC_FLAGS)  $(INCLUDES) $(DEFINES) -I$(BMPTK) 
+# show all warnings, treat most as errors
+CORE_FLAGS  += -Wall -Werror
+CORE_FLAGS  += -Wno-unused-local-typedefs
 
-# CPPFLAGS    += -g -O2 -pipe -Wall  -Wno-multichar 
-CPPFLAGS    += -fno-builtin  -Werror 
+# use sections to save space
+CORE_FLAGS  += -fdata-sections -ffunction-sections
 
+# optimize for space
+CORE_FLAGS  += -Os
 
-CPPFLAGS    += -fno-rtti -fno-exceptions 
+# cpp: don't use features that are too expensive
+CORE_CPP_FLAGS += -fno-rtti -fno-exceptions 
+CORE_CPP_FLAGS += -fno-threadsafe-statics -fno-use-cxa-get-exception-ptr
 
-#CPPFLAGS    += -nostartfiles -nodefaultlibs
-#CFLAGS    += -nostartfiles -nodefaultlibs 
-# not for devcpp
-# CPPFLAGS    += -mstructure-size-boundary=32 
-CPPFLAGS    += -std=c++11 -Wall 
+# cpp: use latest language standard
+CORE_CPP_FLAGS    += -std=c++11
 
-# CPPFLAGS  +=  -mapcs -mapcs-frame -mapcs-stack-check
-# CPPFLAGS  +=  -fstack-limit-symbol=_stack_start
-# CPPFLAGS  +=   -fstack-check=generic -fstack-limit-register=r6
-# -fstack-limit-symbol=current_stack_limit 
-# 
+# assembler: enable the preprocessor
+CORE_AS_FLAGS     += -x assembler-with-cpp
 
-ASFLAGS     := $(CORE_FLAGS) $(INCLUDES) $(DEFINES) -I$(BMPTK) 
-ASFLAGS     += -x assembler-with-cpp
-
-# default LDFLAGS
+# linker specific
 LDFLAGS     +=  -Wl,-Map,$(MAP)      
-LDFLAGS     += -Wl,--gc-sections       
-#LDFLAGS     += -nostartfiles -nodefaultlibs
-// LDFLAGS     += -lstdc++
+LDFLAGS     += -Wl,--gc-sections  
 
-# sections
-CPPFLAGS    += -fdata-sections -ffunction-sections
-CFLAGS      += -fdata-sections -ffunction-sections
-LDFLAGS     += -fdata-sections  -ffunction-sections
+COMMON      := $(CORE_FLAGS) $(INCLUDES) $(DEFINES)
+CPPFLAGS    += $(COMMON) $(CORE_CPP_FLAGS)
+CFLAGS      += $(COMMON) $(CORE_CC_FLAGS) 
+ASFLAGS     += $(COMMON) $(CORE_AS_FLAGS)
+LDFLAGS     += $(COMMON) $(CORE_LD_FLAGS)
 
-
-# notyet :(
-# CPPFLAGS    += -fdiagnostics-show-option
 
 #============================================================================
 #
@@ -495,17 +402,14 @@ LDFLAGS     += -fdata-sections  -ffunction-sections
 # 
 #============================================================================
 
-#OBJ := blink.o lpc1114.o
-#LDFLAGS	   := -Tlpc1114.ld -nostartfiles -Wl,-Map,$(MAP)  
-# CPPFLAGS    +=  -MD -MP -MF
-# CPPFLAGS    +=  -no-exceptions -fverbose-asm 
-# CPPFLAGS += -Wa,-ahlms=$(patsubst,%.cpp,%.lst,$<)
-CPPFLAGS   += -Os 
-
-# seems to have no effect
-# CPPFLAGS += -finline-functions
-
-CFLAGS += -Os
+# find non-local source files
+# VPATH is not used, beacause it would also 'find' .ld and .o files,
+# which should be created locally
+vpath %.h    $(SEARCH)
+vpath %.hpp  $(SEARCH)
+vpath %.c    $(SEARCH)
+vpath %.asm  $(SEARCH)
+vpath %.cpp  $(SEARCH)
 
 # use only the explcit rules below
 .SUFFIXES:
@@ -528,17 +432,10 @@ CFLAGS += -Os
 	$(AS)  $(ASFLAGS)  -c -o $@ $<
 	@echo ' '	
 
-# make the libeabi	
-LIBEABI-FILES  = crt.S divdi3.S idiv.S idivmod.S lasr.S ldivmod.S llsl.S llsr.S   
-LIBEABI-FILES += lmul.S moddi3.S modsi3.S uidivmod.S uldivmod.S umoddi3.S umodsi3.S
-CLEAN += $(LIBEABI-FILES:%.S=%.o) libaeabi-cortexm0.a
-# libaeabi-cortexm0.a: $(patsubst %.S,%.o,$(LIBEABI-FILES))
-libaeabi-cortexm0.a: $(LIBEABI-FILES)
-	@echo 'Creating library libeabi-cortexm0.a: $<'
-	make $(patsubst %.S,%.o,$(LIBEABI-FILES))
-	"$(PREFIX)ar" rcs libaeabi-cortexm0.a $(LIBEABI-FILES:%.S=%.o)
-	$(RM) '$(LIBEABI-FILES:%.S=%.o)'
-	@echo ' '		
+%.o: %.asm
+	@echo 'Assembling file: $<'
+	$(AS)  $(ASFLAGS)  -c -o $@ $<
+	@echo ' '	
 
 # How to make a listing from a cpp file
 %.list: %.cpp
@@ -546,20 +443,20 @@ libaeabi-cortexm0.a: $(LIBEABI-FILES)
 
 # make the linkerscipt   
 linkerscript.ld: $(BMPTK)/targets/cortex/linkerscript.c
-	@echo 'creating the linkerscript'
+	@echo 'Creating the linkerscript'
 	$(CC) $(LD_CONFIG) -E -P -C $(BMPTK)/targets/cortex/linkerscript.c -o $@ 
 	@echo ' '
    
 # make .elf by linking all objects
-$(ELF): $(OBJ) $(LIBA) $(LNK) $(LINKERSCRIPT)
+$(ELF): $(addprefix ./,$(OBJ)) $(LIBA) $(LNK) ./$(LINKERSCRIPT)
 	@echo 'Linking target: $(ELF)'
-	$(LINKER) -o $@ $(OBJ) $(LIBA) $(LDFLAGS) $(LIBRARIES)
+	$(LINKER) -Wl,-fatal-warnings -o $@ $(OBJ) $(LIBA) $(LDFLAGS) $(LIBS)
 	@echo ' '	
    
 # make .exe by linking all objects
 $(EXE): $(OBJ) $(LNK) 
 	@echo 'Linking target: $(EXE)'
-	$(LINKER) -o $@ $(OBJ) $(LDFLAGS) $(LIBRARIES) 
+	$(LINKER) -o $@ $(OBJ) $(LDFLAGS) $(LIBS) 
 	@echo ' '	
 	
 # make sizes listing from the elf file

@@ -2,7 +2,14 @@
 # 
 # Makefile for bmptk documentation, zip file, web pages, etc.
 #
-# (c) Wouter van Ooijen (www.voti.nl) 2012, 2013
+# Copyright (c) 2012 .. 2014 Wouter van Ooijen (www.voti.nl)
+#
+# Distributed under the Boost Software License, Version 1.0.
+# (See accompanying file LICENSE_1_0.txt or copy at 
+# http://www.boost.org/LICENSE_1_0.txt)
+#
+# This file makes some meta-stuff that is probably 
+# probably interesting only for a bmptk maintainer.
 #
 # targets:
 #    clean                     : total cleanup 
@@ -12,7 +19,7 @@
 #    zip                       : create bmptk.zip, includes documentation
 #    www                       : create webpages (www subdir, includes zip)
 #    ftp                       : create webpages and ftp to website
-#                                (won't work from your PC)
+#                                (won't work from your PC ;) )
 #    th04                      : create .zip for TH04 lessons
 # 
 #############################################################################
@@ -27,7 +34,6 @@ build: examples
 REDIRECT := <META HTTP-EQUIV='refresh' CONTENT='0;URL=./docs/index.html'>
 
 doc: 
-		cd docsrc/generate && make pictures
 		Doxygen docsrc/Doxyfile
 		echo "$(REDIRECT)" >index.html
 		
@@ -36,12 +42,10 @@ examples:
 
 zip: clean doc		
 		rm -rf index.html 
-		cd docsrc/generate && make clean
 		pkzip25 -add -path=relative -recurse bmptk.zip 
 		
 clean:
-		rm -rf index.html docs bmptk.zip th04.zip transfer
-		cd docsrc/generate && make clean
+		rm -rf index.html docsrc/docs bmptk.zip th04.zip transfer
 		cd examples && make clean	
 		
 push:
@@ -57,22 +61,22 @@ ftp: zip
 		python \ftpbmptk.py
 		cp transfer/_ftp_crc_s ..
 		
-TH04LIST += bmptk.h license.txt Makefile Makefile.inc Makefile.local
-TH04LIST += targets/bmptk_lpc1114* targets/libaeabi-cortexm0/*
-TH04LIST += targets/cmsis/11xx/*/* 
-TH04LIST += tools/lpc21isp.exe
-TH04LIST += examples/TH04/*
-TH04LIST += examples/TH04/blink/* 
-TH04LIST += examples/TH04/switch/* 
-TH04LIST += examples/TH04/beep/*
-TH04LIST += examples/TH04/440Hz/*
-TH04LIST += examples/TH04/timer/*
-TH04LIST += examples/TH04/uart/*
-TH04LIST += examples/TH04/servo/*
-TH04LIST += examples/TH04/ds1990/*
-TH04LIST += examples/TH04/i2c/*
-TH04LIST += examples/TH04/lcd5510/*
-TH04LIST += examples/TH04/rfm73/*
+TH04LIST += license.txt license_1_0.txt
+TH04LIST += Makefile Makefile.inc Makefile.local
+TH04LIST += bmptk.h
+TH04LIST += targets/bmptk_lpc1114* targets/cmsis/11xx/*/* 
+TH04LIST += tools/* tools/image_sizes/*
+TH04LIST += examples/v1th04/*
+TH04LIST += examples/v1th04/blink/* 
+TH04LIST += examples/v1th04/switch/* 
+TH04LIST += examples/v1th04/beep/*
+TH04LIST += examples/v1th04/440Hz/*
+TH04LIST += examples/v1th04/timer/*
+TH04LIST += examples/v1th04/sw-uart/*
+TH04LIST += examples/v1th04/servo/*
+TH04LIST += examples/v1th04/ds1990/*
+TH04LIST += examples/v1th04/i2c/*
+TH04LIST += examples/v1th04/lcd5510/*
 
 th04: clean
 		pkzip25 -add -path=current th04.zip $(TH04LIST)

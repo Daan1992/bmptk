@@ -8,11 +8,9 @@ directories
    image_sizes    : tool to show sizes of various sections in an executable
 
 files
-   img_to_cpp.py  : Python tool that converts an image to .h and .cpp files
    lpc21.exe      : serial bootloader for philips LPC chips, slightly adapted
    README         : this file
-   ttf_to_cpp.py  : Python tool that converts an font to .h and .cpp files
-   txt_to_cpp.py  : Python tool that converts a text file to .h and .cpp files
+
    
    
 

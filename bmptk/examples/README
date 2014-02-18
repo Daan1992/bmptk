@@ -7,8 +7,8 @@ This directory contains :
    README   : this file
 
 subdirectories
-   db103    : examples using the DV103 board (LPC1114 chip)
-   graphics : graphic examples
+   v1th04   : code for the V1TH04 course at Hogeschool Utrecht (C)
+   v2cpse2  : code for the V2CPSE2 course at Hogeschool Utrecht (asm & C)
 
 
 

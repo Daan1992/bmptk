@@ -2,56 +2,55 @@
 //
 // file : bmptk/bmptk.h
 //
-// LICENSE (MIT expat license, copy of bmptk/license.txt)
+// Copyright (c) 2012 ... 2014 Wouter van Ooijen (wouter@voti.nl)
+// 
+// Distributed under the Boost Software License, Version 1.0.
+// (See accompanying file LICENSE_1_0.txt or copy at 
+// http://www.boost.org/LICENSE_1_0.txt)
 //
-// Copyright (c) 2012, 2013 Wouter van Ooijen (wouter@voti.nl)
-// 
-// Permission is hereby granted, free of charge, to any person obtaining
-// a copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to
-// permit persons to whom the Software is furnished to do so, subject to
-// the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-// CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// This is the one header file a user should include to
+// use the bmptk core facilities.
 //
 //***************************************************************************
 
 #ifndef _BMPTK_H
 #define _BMPTK_H
 
-// include the target-independent bmptk header files
-#include "core/basics.h"	
-#include "core/time.h"	
-#include "core/memory.h"	
-#include "core/channels.h"
-#include "core/context.h"	
-#include "core/rtos.h"
-#include "graphics/graphics.h"
-#include "graphics/font_default.h"
-#include "hardware/pins.h"
-#include "hardware/ports.h"
-#include "hardware/demos.h"
-#include "hardware/i2c.h"
-#include "hardware/spi.h"
-#include "chips/pcf8574.h"
-#include "chips/pcd8544.h"
-#include "chips/hc595.h"
-//#include "hardware/rfm73.h"
-//#include "hardware/nrf24l01.h"
-#include "chips/sr04.h"
+// ==========================================================================
+// 
+// version
+//
+// ==========================================================================
+
+//! helper macro for the bmtkp version
+#define BMPTK_VERSION_STR( X ) #X
+
+//! bmtkp version, determined by Makefile.inc
+const char version[] = BMPTK_VERSION_STR( BMPTK_VERSION );	
+
+
+// ==========================================================================
+// 
+// debug macro's
+//
+// ==========================================================================
+
+//! file-name : line-number macro
+//
+//! The macro BMPTK_HERE transates to a newline, the file-name, ":",
+//! and the line-number of the place where the BMPTK_HERE macro
+//! appears. This is usefull for debug logging.
+#define BMPTK_HERE_STR( X ) #X
+#define BMPTK_HERE2( F, L ) ( "\n" F ":" BMPTK_HERE_STR( L ) " " )
+#define BMPTK_HERE BMPTK_HERE2( __FILE__, __LINE__ )
+
             
+// ==========================================================================
+// 
 // include the target-specific header file
+//
+// ==========================================================================
+            
 #ifdef BMPTK_TARGET_nds
    #include "targets/nds/nds.h"
 #endif              
@@ -62,7 +61,7 @@
    #include "targets/cortex/lpc810m021.h"
 #endif              
 #ifdef BMPTK_CHIP_lpc1114fn28
-   #include "targets/cortex/lpc1114fn28.h"
+   #include "LPC11xx.h"
 #endif              
 #ifdef BMPTK_CHIP_lpc1227fbd301
    #include "targets/cortex/lpc1227fbd301.h"

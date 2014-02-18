@@ -2,6 +2,14 @@ file: bmptk/notes.txt
 
 This file contians reminders, notes, bookmarks etc. for my use
 
+- edit Makefile.inc
+- cleanup these notes
+- choose name for the hwlib: hwcpp
+- add malloc to cortex_startup.c => new name? (or put in common?)
+- stack size parameter
+- ROM and RAM size parameters
+- th04: use cpp pin-access :)
+
 
 
 - use gcc for windows => latest version
@@ -10,6 +18,7 @@ This file contians reminders, notes, bookmarks etc. for my use
 - rewrite TH04 examples to use a common (but undisclosed) library
 - add some comments to all examples
 - pass the real version string to Doxygen
+- other file to check for includes problem
 
 - compiling on windows sometimes generates weird files like D6868778.cpp
 - re-make still does some work, why?
@@ -320,3 +329,4 @@ interesting
    http://www.code-time.com/cortexm0.html
    http://code.google.com/p/tiny-kernel-microcontroller/downloads/list   
    http://bitsavers.informatik.uni-stuttgart.de/pdf/
+   https://www.securecoding.cert.org/confluence/display/seccode/CERT+C+Coding+Standard   
