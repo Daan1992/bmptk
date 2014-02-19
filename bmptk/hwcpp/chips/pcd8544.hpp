@@ -1,4 +1,4 @@
-namespace hardware {
+namespace hwcpp {
 
 //! create a frame controlled by a pcd8544 LCD controller 
 template<
@@ -168,4 +168,4 @@ public:
    }	  
 };
 
-} // namespace hardware
+} // namespace hwcpp

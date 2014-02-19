@@ -1,7 +1,7 @@
 // ==========================================================================
 //
 // File      : basics.hpp
-// Part of   : hardware library (www.voti.nl/hwlib)
+// Part of   : hwcpp library (www.voti.nl/hwcpp)
 // Copyright : wouter@voti.nl 2014
 //
 // Distributed under the Boost Software License, Version 1.0.
@@ -12,7 +12,7 @@
 
 #include <climits>
 
-namespace hardware {
+namespace hwcpp {
 
    // =======================================================================
    //
@@ -20,7 +20,7 @@ namespace hardware {
    //
    // =======================================================================
    
-   const char version[] = "V0.1 2014-02-02 work-in-progress";
+   const char version[] = "V0.1 2014-02-19 work-in-progress";
 
 
    // =======================================================================
@@ -131,7 +131,7 @@ namespace hardware {
    #define HARDWARE_HERE2( F, L ) ( "\n" F ":" HARDWARE_HERE_STR( L ) " " )
    #define HARDWARE_HERE HARDWARE_HERE2( __FILE__, __LINE__ )
 
-   #define TRACE ( hardware::cout << HARDWARE_HERE << " " << std::flush )
+   #define TRACE ( std::cout << HARDWARE_HERE << " " << std::flush )
    
    
    // =======================================================================
@@ -181,4 +181,4 @@ namespace hardware {
    };    
       
       
-}; // namespace hardware
+}; // namespace hwcpp

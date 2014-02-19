@@ -1,7 +1,7 @@
 // ==========================================================================
 //
 // File      : lpc1114.hpp
-// Part of   : hardware library (www.voti.nl/hwlib)
+// Part of   : hwcpp library (www.voti.nl/hwcpp)
 // Copyright : wouter@voti.nl 2014
 //
 // Distributed under the Boost Software License, Version 1.0.
@@ -21,7 +21,7 @@
 //
 // ==========================================================================
 
-namespace hardware {
+namespace hwcpp {
 
 template< int ram_size, int rom_size, int clock_frequency >
 class lpc1114_base 
@@ -588,5 +588,5 @@ protected:
    
 };
 
-}; // namespace hardware
+}; // namespace hwcpp
 

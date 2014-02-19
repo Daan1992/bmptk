@@ -1,4 +1,4 @@
-namespace hardware {
+namespace hwcpp {
 
    // seems to work for XPT2046 too
 
@@ -33,5 +33,5 @@ namespace hardware {
       
    };
 
-};
+}; // namespace hwcpp
 

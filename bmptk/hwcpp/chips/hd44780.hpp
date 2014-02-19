@@ -1,4 +1,4 @@
-namespace hardware {   
+namespace hwcpp {   
    
 
 template< 
@@ -133,4 +133,4 @@ public:
    template< class _data, class _rs, class _e, int x, int y, class timing >
       int hd44780< _data, _rs, _e, x, y, timing >::y;
    
-} //namespace hardware;   
+} //namespace hwcpp;   

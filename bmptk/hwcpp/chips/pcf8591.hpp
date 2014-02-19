@@ -1,4 +1,4 @@
-namespace hardware {
+namespace hwcpp {
 
    template < 
       typename bus,
@@ -56,4 +56,4 @@ namespace hardware {
       
    };
    
-}; // namespace hardware
+}; // namespace hwcpp

@@ -1,7 +1,7 @@
 // ==========================================================================
 //
 // File      : channels.hpp
-// Part of   : hardware library (www.voti.nl/hwlib)
+// Part of   : hwcpp library (www.voti.nl/hwcpp)
 // Copyright : wouter@voti.nl 2014
 //
 // Distributed under the Boost Software License, Version 1.0.
@@ -10,7 +10,7 @@
 //
 // ==========================================================================
 
-namespace hardware {
+namespace hwcpp {
 
    struct channel_in_archetype {
       typedef void has_channel_in;
@@ -94,4 +94,4 @@ namespace hardware {
    
    };   
    
-};
+}; // namespace hwcpp

@@ -6,7 +6,7 @@
 //
 // ==========================================================================
 
-namespace hardware {
+namespace hwcpp {
 
 struct target : public lpc1114_base< 8 * Kib, 32 * Kib, 48 * MHz > {
        
@@ -64,4 +64,4 @@ struct target : public lpc1114_base< 8 * Kib, 32 * Kib, 48 * MHz > {
 typedef target lpc1114fbd48_301;
 //typedef target::timing timing;
 
-}; // namespace hardware
+}; // namespace hwcpp

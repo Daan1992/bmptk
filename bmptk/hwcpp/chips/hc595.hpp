@@ -1,7 +1,7 @@
 // ==========================================================================
 //
 // File      : hc595.hpp
-// Part of   : hardware library (www.voti.nl/hwlib)
+// Part of   : whcpp library (www.voti.nl/hwcpp)
 // Copyright : wouter@voti.nl 2014
 //
 // Distributed under the Boost Software License, Version 1.0.
@@ -10,7 +10,7 @@
 //
 // ==========================================================================
 
-namespace hardware {
+namespace hwcpp {
 
    template< typename channel >
    class hc595 : 
@@ -77,4 +77,4 @@ namespace hardware {
    template < typename channel >
    unsigned char hc595< channel >::buffer;
 
-}; // namespace hardware
+}; // namespace hwcpp

@@ -6,7 +6,7 @@
 //
 // ==========================================================================
 
-namespace hardware {
+namespace hwcpp {
 
 class target : public target_archetype< 1 * Kb, 4 * Kb, 12 * MHz > {
 private:
@@ -151,9 +151,4 @@ private:
    };
 
 
-};
-
-
-
-
-#endif // #ifdef _BMPTK_LPC1114FN28_H_ 
+}; // namespace hwcpp

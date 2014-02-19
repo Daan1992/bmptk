@@ -1,4 +1,4 @@
-namespace hardware {
+namespace hwcpp {
 
 template< class bus, class timing >
 struct ds18x20 {
@@ -64,4 +64,4 @@ struct ds18b20 : public ds18x20< bus, timing >{
    
 }; // class ds18b20
 
-}; // namespace hardware
+}; // namespace hwcpp

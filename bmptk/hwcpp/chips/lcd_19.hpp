@@ -1,4 +1,4 @@
-namespace hardware {
+namespace hwcpp {
 
    template< 
       class _cd, class _e,
@@ -131,4 +131,4 @@ namespace hardware {
       class _data, class timing
    > unsigned char lcd_19< _cd, _e, _cs1, _cs2, _data, timing >::buf[ 1024 ];
    
-};
+}; // namespace hwcpp

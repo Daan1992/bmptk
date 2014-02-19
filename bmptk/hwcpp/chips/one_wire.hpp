@@ -1,9 +1,9 @@
-namespace hardware {
+namespace hwcpp {
 
 template< class _pin, class timing >
 struct one_wire {
 
-   typedef hardware::pin_oc_from< _pin > pin;
+   typedef pin_oc_from< _pin > pin;
    
    static void init(){
       pin::init();
@@ -72,5 +72,5 @@ struct one_wire {
    
 }; // class one_wire
 
-}; //namespace hardware
+}; //namespace hwcpp
 

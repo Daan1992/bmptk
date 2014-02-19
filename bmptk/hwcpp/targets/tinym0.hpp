@@ -1,6 +1,6 @@
 #include "lpc11c14_301.hpp"
 
-namespace hardware {
+namespace hwcpp {
  
    const int ili93xx_cmds[] [ 2 ] = {
   	 	   { 0x00e5, 0x78F0 },     
@@ -239,4 +239,4 @@ static int LCD_Read_Reg( int reg ){
       hardware::target::timing
    > lcd; 
    
-};
+}; // namespace hwcpp

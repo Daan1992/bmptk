@@ -1,7 +1,7 @@
 // ==========================================================================
 //
 // File      : timing.hpp
-// Part of   : hardware library (www.voti.nl/hwlib)
+// Part of   : hwcpp library (www.voti.nl/hwcpp)
 // Copyright : wouter@voti.nl 2014
 //
 // Distributed under the Boost Software License, Version 1.0.
@@ -15,7 +15,7 @@
 // - it must loop when arg > representable....
 // - how to handle that duration when arg > representable??
 
-namespace hardware {
+namespace hwcpp {
 
    // =======================================================================
    //
@@ -760,4 +760,4 @@ namespace hardware {
    >  
    int callback_implementation< timing, callback_strategy >::lock_counter = 0;   
     
-}; // namespace hardware
+}; // namespace hwcpp

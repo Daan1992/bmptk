@@ -1,4 +1,4 @@
-namespace hardware {
+namespace hwcpp {
 
    template < 
       typename bus,
@@ -83,4 +83,4 @@ namespace hardware {
    template< typename bus, int address = 0 > 
    class pcf8574a : public pcf8574x< bus, 0x38, address >{}; 
 
-}; // namespace hardware
+}; // namespace hwcpp

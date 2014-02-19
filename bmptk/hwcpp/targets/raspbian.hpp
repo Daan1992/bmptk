@@ -1,6 +1,6 @@
 #include <ostream>
 
-#include "hardware.hpp"
+#include "hwcpp.hpp"
 
 #include <stdlib.h>
 #include <stdio.h>

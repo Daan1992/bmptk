@@ -6,10 +6,10 @@
 //
 // ==========================================================================
 
-namespace hardware {
+namespace hwcpp {
 
-template< int frequency = 48 * MHz >
-struct target_f : public lpc1114_base< 4 * Kib, 32 * Kib, frequency > {
+template< unsigned int frequency >
+struct lpc1114fn28 : public lpc1114_base< 4 * Kib, 32 * Kib, frequency > {
 
    typedef lpc1114_base< 4 * Kib, 32 * Kib, frequency > t;
        
@@ -60,8 +60,5 @@ struct target_f : public lpc1114_base< 4 * Kib, 32 * Kib, frequency > {
    class uart : public t::template uart< baudrate >{};
 };
 
-typedef target_f<> lpc1114fn28;
-typedef target_f<> target;
-
-}; // namespace hardware
+}; // namespace hwcpp
 

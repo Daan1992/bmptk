@@ -1,7 +1,7 @@
 // ==========================================================================
 //
 // File      : graphics.hpp
-// Part of   : hardware library (www.voti.nl/hwlib)
+// Part of   : wcpp library (www.voti.nl/hwcpp)
 // Copyright : wouter@voti.nl 2014
 //
 // Distributed under the Boost Software License, Version 1.0.
@@ -10,7 +10,7 @@
 //
 // ==========================================================================
 
-namespace hardware {
+namespace hwcpp {
 
    // =======================================================================
    //
@@ -816,4 +816,4 @@ void circle_draw (
 
 }; // class circle
       
-} // namepsace hardware
+} // namepsace hwcpp

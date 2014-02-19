@@ -1,7 +1,7 @@
 // ==========================================================================
 //
 // File      : cout.hpp
-// Part of   : hardware library (www.voti.nl/hwlib)
+// Part of   : hwcpp library (www.voti.nl/hwcpp)
 // Copyright : wouter@voti.nl 2014
 //
 // Distributed under the Boost Software License, Version 1.0.

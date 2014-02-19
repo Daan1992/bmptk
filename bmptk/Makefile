@@ -48,7 +48,7 @@ zip: clean doc
 		@echo "**** zip build completed succesfully"
 		
 clean:
-		rm -rf index.html docsrc/docs bmptk.zip th04.zip transfer
+		rm -rf index.html docs bmptk.zip th04.zip transfer
 		cd examples && make clean	
 		@echo "**** cleanup completed succesfully"
 		

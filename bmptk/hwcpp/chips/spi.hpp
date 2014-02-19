@@ -1,7 +1,7 @@
 // ==========================================================================
 //
 // File      : spi.hpp
-// Part of   : hardware library (www.voti.nl/hwlib)
+// Part of   : hwcpp library (www.voti.nl/hwcpp)
 // Copyright : wouter@voti.nl 2014
 //
 // Distributed under the Boost Software License, Version 1.0.
@@ -10,7 +10,7 @@
 //
 // ==========================================================================
 
-namespace hardware {
+namespace hwcpp {
 
    enum class spi_mode {
    
@@ -204,7 +204,7 @@ namespace hardware {
 
       // convert the ss pin to output
       // (and assert that this possible!)
-      typedef hardware::pin_out_from< arg_ss > ss;   
+      typedef pin_out_from< arg_ss > ss;   
       
       typedef typename bus::timing::template mutex< spi_channel_bb > bus_access;
       
@@ -260,4 +260,4 @@ namespace hardware {
       
    };   
 
-};
+}; // namespace hwcpp
