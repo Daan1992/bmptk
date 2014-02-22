@@ -59,6 +59,7 @@ namespace hwcpp {
       static constexpr unsigned char seven_segments_default[ _n ] = {};
    };
    
+   template< class dummy = void >
    struct seven_segments_table_default :
       public seven_segments_table_archetype< 16 >
    {   
@@ -82,9 +83,10 @@ namespace hwcpp {
       };   
    };   
    
-   constexpr unsigned char seven_segments_table_default::translate[ 16 ];
+   template< class dummy > constexpr unsigned char 
+      seven_segments_table_default< dummy >::translate[ 16 ];
    
-   template< class _p, class table = seven_segments_table_default >
+   template< class _p, class table = seven_segments_table_default<> >
    struct seven_segment_digit :
       public seven_segment_digit_archetype
    {
@@ -115,7 +117,7 @@ namespace hwcpp {
       class timing,
       class _segments, 
       class _digits, 
-      class table = seven_segments_table_default 
+      class table = seven_segments_table_default<> 
    >
    struct seven_segment_display :
       public seven_segment_display_archetype< _segments::n_pins >
@@ -132,41 +134,11 @@ namespace hwcpp {
       static unsigned char segment_values[ _segments::n_pins ];
       static unsigned int current_digit;
       
-      static void init(){
-         //timing::init();
-         digits::init();
-         segments::init();
-         current_digit = 0;
-         
-      }
-      
-      static void set_decimal_value( 
-         unsigned int n, 
-         unsigned char points = 0 
-      ){
-         for( int i = 0; i < n_digits; i++ ){
-            segment_values[ i ] = digit::segments( n % 10 );
-            n = n / 10;
-         }      
-      }      
-      
-      static void mux(){
-            return;
-            if( ++current_digit >= n_digits ){
-               current_digit = 0;
-            }
-            digits::set( 0 );
-            digit::set_segments( segment_values[ current_digit ] );
-            digits::set( 1 << current_digit );
-            //digits::set( 1 );
-      }
+      typedef typename timing::template ms< 10 > interval;
       
       struct multiplexing : 
-         public timing::template clock<>
+         public timing::template clock< interval >
       {
-         multiplexing(): 
-            timing::template clock<>( timing::duration::ms( 1 ) ){}
-         
          void function() override {
             if( ++current_digit >= n_digits ){
                current_digit = 0;
@@ -175,9 +147,41 @@ namespace hwcpp {
             digit::set_segments( segment_values[ current_digit ] );
             digits::set( 1 << current_digit );
          }
-      };
+      };      
       
-      static multiplexing instance;
+      static void init(){
+         timing::init();
+         digits::init();
+         segments::init();
+         current_digit = 0;
+         static multiplexing instance;  
+         instance.function();
+      }
+      
+      static void set_decimal_value( 
+         unsigned int n, 
+         unsigned char points = 0 
+      ){
+         for( int i = 0; i < n_digits; i++ ){
+            segment_values[ i ] = digit::segments( n % 10 );
+            if( points & 0x01 ){
+               segment_values[ i ] |= 0x80;
+            }
+            points = points >> 1;
+            n = n / 10;
+         }      
+      }      
+      
+      static void mux(){
+            //return;
+            if( ++current_digit >= n_digits ){
+               current_digit = 0;
+            }
+            digits::set( 0 );
+            digit::set_segments( segment_values[ current_digit ] );
+            digits::set( 1 << current_digit );
+            //digits::set( 1 );
+      }
       
    };   
    
@@ -189,9 +193,10 @@ namespace hwcpp {
       unsigned int seven_segment_display< ti, se, di, ta >
          ::current_digit;
    
+/*   
    template< class ti, class se, class di, class ta  >
       typename seven_segment_display< ti, se, di, ta >::multiplexing 
          seven_segment_display< ti, se, di, ta >::instance;
-   
+*/   
 
 }; // namespace hwcpp

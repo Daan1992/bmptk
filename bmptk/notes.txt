@@ -209,6 +209,7 @@ Design principles
    - Doxygen for all documentation, but only as text formatter
    - in order: size, performance, functionality, compatibility   
    - can use 'hosted' for debug and development 
+   - no virtual destructors => lib calls delete :(
    
 Code Conventions:
    - 1TBF

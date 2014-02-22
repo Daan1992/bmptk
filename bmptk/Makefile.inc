@@ -357,7 +357,7 @@ HWCPP      += ds18x20.hpp
 HWCPP      += ads7843.hpp
 
 ifeq ($(LANGUAGE),C++)
-   HWCPPDIRS  = hwcpp hwcpp/targets hwcpp/chips
+   HWCPPDIRS  = hwcpp hwcpp/core hwcpp/targets hwcpp/chips
    INCLUDES  += $(foreach x, $(HWCPPDIRS), -I$(BMPTK)/$(x))
    SEARCH    += $(foreach x, $(HWCPPDIRS), $(BMPTK)/$(x))
    HEADERS   += $(HWCPP)

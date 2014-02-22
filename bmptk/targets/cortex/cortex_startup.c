@@ -58,3 +58,7 @@ void __startup( void ){
    while(1){}	
 }
 
+// junk that is not needed in an embedded conetxt, but
+// is still required to satisfy the C++ compiler
+void * __dso_handle;
+

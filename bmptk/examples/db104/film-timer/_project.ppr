@@ -1,0 +1,59 @@
+[Config]
+Relative path=1
+Compilator.FileName=build.bat
+Compilator.PSPar=
+Compilator.Log=
+Compilator.Run=
+Compilator.DefaultDir=
+Compilator.SaveAll=1
+Compilator.Capture=1
+Compilator.ParsLog=%F:%L:*
+Compilator.HideOutput=1
+Prog1=Clean,cmd /C "make clean "
+Prog2=Run,cmd /C "make run "
+Prog3=
+Prog4=
+Prog5=
+DefaultDir=
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+FileFormat=0
+DocumentRoot=
+HTServer=
+[Project tree]
+Project
+	+Files
+		-includes
+		+compile
+			main.cpp
+		+others
+			Makefile
+[Open project files]
+0=main.cpp
+1=..\..\..\hwcpp\core\numeric.hpp
+2=..\..\..\targets\cortex\cortex_startup.c
+3=..\..\..\hwcpp\targets\lpc1114fn28.hpp
+4=..\..\..\hwcpp\targets\db104.hpp
+5=..\..\..\hwcpp\core\timing.hpp
+[Selected Project Files]
+Main=
+Selected=main.cpp
+[main.cpp]
+TopLine=37
+Caret=36,55
+[..\..\..\hwcpp\core\numeric.hpp]
+TopLine=130
+Caret=41,157
+[..\..\..\targets\cortex\cortex_startup.c]
+TopLine=14
+Caret=41,62
+[..\..\..\hwcpp\targets\lpc1114fn28.hpp]
+TopLine=1
+Caret=1,11
+[..\..\..\hwcpp\targets\db104.hpp]
+TopLine=6
+Caret=10,48
+[..\..\..\hwcpp\core\timing.hpp]
+TopLine=176
+Caret=29,194

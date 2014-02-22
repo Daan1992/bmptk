@@ -581,8 +581,9 @@ namespace hwcpp {
          protected _node 
       {       
          void cancel(){ _node::cancel(); }
-         virtual ~node(){ _node::cancel(); };
-         virtual void function() = 0;       
+         // virtual 
+         ~node(){ _node::cancel(); }
+         virtual void function(){}       
       };
       
       template< class d = void, class dummy = void >

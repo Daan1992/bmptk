@@ -346,7 +346,6 @@ protected:
    //
    //=====================================================================
    
-   template< int frequency >
    static void initialize_clock(){
       static_assert( 
          ( clock_frequency == 12 * MHz ) || ( clock_frequency == 48 * MHz ), 
@@ -357,25 +356,34 @@ protected:
       
          // nothing required, this is the default
          
-      } else if( clock_frequency == 48 * MHz ){
+      } else {
       
-	      //USE EXTERNAL CRYSTAL TO GENERATE INTERNAL SYSTEM CLOCK
-	      //LPC_SYSCON->SYSAHBCLKDIV             = 0x1;       //set clock divider for core to 1
-    	   //LPC_SYSCON->MAINCLKSEL               &= ~(0x03);  //set “main clock” to IRC oscillator, if not system will lock up when PLL turns off!(sec. 3.5.11)
-	      //LPC_SYSCON->MAINCLKUEN               &= ~(1);     //write a zero to the MAINCLKUEN register (sec. 3.5.12), necessary for MAINCLKSEL to update
-	      //LPC_SYSCON->MAINCLKUEN               |= 1;        //write a one to the MAINCLKUEN register (sec. 3.5.12), necessary for MAINCLKSEL to update
-	      //LPC_SYSCON->SYSPLLCLKSEL             = 0x01;      //connect system oscillator to SYSTEM PLL (sec. 3.5.9)
-	      //LPC_SYSCON->SYSPLLCLKUEN             &= ~(1);     //write a zero to SYSPLLUEN register (sec. 3.5.10), necessary for SYSPLLCLKSEL to update
-	      //LPC_SYSCON->SYSPLLCLKUEN             |= 1;        //write a one to SYSPLLUEN register (sec. 3.5.10), necessary for SYSPLLCLKSEL to update	
-   	   LPC_SYSCON->PDRUNCFG                 |= (1<<7);   //power down the PLL before changing divider values
-	      LPC_SYSCON->SYSPLLCTRL               = 0x23;      //set MSEL = 0x00011 and PSEL = 0x01 (table 46 of sec. 3.11.4.1)
-	      LPC_SYSCON->PDRUNCFG                 &= ~(1<<7);  //power up PLL after divider values changed as per sec. 3.11.4
-   	   while((LPC_SYSCON->SYSPLLSTAT & 1) == 0);         //wait for PLL to lock
-	      LPC_SYSCON->MAINCLKSEL               = 0x03;      //set system oscillator to the output of the PLL (sec. 3.5.11)
-	      LPC_SYSCON->MAINCLKUEN               &= ~(1);     //write a zero to the MAINCLKUEN register (sec. 3.5.12), necessary for MAINCLKSEL to update
-	      LPC_SYSCON->MAINCLKUEN               |= 1;        //write a one to the MAINCLKUEN register (sec. 3.5.12)
+         static bool done = false;
+         if( done ) return;
+         done = true;
+      
+         if( clock_frequency == 48 * MHz ){
+      
+            // as is, this can be done only once, 
+            // otherwise the CPU will lock up
+      
+   	      //LPC_SYSCON->SYSAHBCLKDIV             = 0x1;       //set clock divider for core to 1
+       	   //LPC_SYSCON->MAINCLKSEL               &= ~(0x03);  //set “main clock” to IRC oscillator, if not system will lock up when PLL turns off!(sec. 3.5.11)
+	         //LPC_SYSCON->MAINCLKUEN               &= ~(1);     //write a zero to the MAINCLKUEN register (sec. 3.5.12), necessary for MAINCLKSEL to update
+	         //LPC_SYSCON->MAINCLKUEN               |= 1;        //write a one to the MAINCLKUEN register (sec. 3.5.12), necessary for MAINCLKSEL to update
+   	      //LPC_SYSCON->SYSPLLCLKSEL             = 0x01;      //connect system oscillator to SYSTEM PLL (sec. 3.5.9)
+	         //LPC_SYSCON->SYSPLLCLKUEN             &= ~(1);     //write a zero to SYSPLLUEN register (sec. 3.5.10), necessary for SYSPLLCLKSEL to update
+	         //LPC_SYSCON->SYSPLLCLKUEN             |= 1;        //write a one to SYSPLLUEN register (sec. 3.5.10), necessary for SYSPLLCLKSEL to update	
+      	   LPC_SYSCON->PDRUNCFG                 |= (1<<7);   //power down the PLL before changing divider values
+	         LPC_SYSCON->SYSPLLCTRL               = 0x23;      //set MSEL = 0x00011 and PSEL = 0x01 (table 46 of sec. 3.11.4.1)
+	         LPC_SYSCON->PDRUNCFG                 &= ~(1<<7);  //power up PLL after divider values changed as per sec. 3.11.4
+   	      while((LPC_SYSCON->SYSPLLSTAT & 1) == 0);         //wait for PLL to lock
+   	      LPC_SYSCON->MAINCLKSEL               = 0x03;      //set system oscillator to the output of the PLL (sec. 3.5.11)
+	         LPC_SYSCON->MAINCLKUEN               &= ~(1);     //write a zero to the MAINCLKUEN register (sec. 3.5.12), necessary for MAINCLKSEL to update
+	         LPC_SYSCON->MAINCLKUEN               |= 1;        //write a one to the MAINCLKUEN register (sec. 3.5.12)
 	      
-      }
+         }
+      }   
    }
    
 
@@ -414,12 +422,7 @@ protected:
       //! initialize the uart
       static void init(){
       
-         if( clock_frequency != 12 * MHz ){
-            static bool done = false;
-            if( done ) return;
-            initialize_clock< clock_frequency >();
-            done = true;
-         }         
+         initialize_clock();        
        
          // Not using interrupts
          NVIC_DisableIRQ(UART_IRQn);
@@ -489,18 +492,20 @@ protected:
    //
    //=====================================================================
    
+   // uses the 24-bit SysTick, extended to 64 bits, gives ample range:
+   // 2^63 Hz / 24 MHz => 12186 years
    struct timer_64 : 
-      public timing_support< long long int, 24 > 
+      public timing_support< 
+         long long int, 
+         ( clock_frequency ) / ( 2 * MHz )          
+      > 
    {
+   
+      typedef long long int base;   
    
       static void init(){
       
-         if( clock_frequency != 12 * MHz ){
-            static bool done = false;
-            if( done ) return;
-            initialize_clock< clock_frequency >();
-            done = true;
-         }   
+         initialize_clock(); 
       
          SysTick->CTRL  = 0;         // stop the timer
          SysTick->LOAD  = 0xFFFFFF;  // use its as a 24-bit timer
@@ -528,18 +533,21 @@ protected:
       } 
    };   
    
+   // for test/demo only
+   // 24 bits without extension is far too short to be practical:
+   // 2^24 Hz / 6 MHz => 2.8 s !
    struct timer_24 : 
-      public timing_support< int, 24 > 
+      public timing_support< 
+         int, 
+         ( clock_frequency ) / ( 2 * MHz )  
+      > 
    {
+   
+      typedef int base;   
    
       static void init(){
 
-         if( clock_frequency != 12 * MHz ){
-            static bool done = false;
-            if( done ) return;
-            initialize_clock< clock_frequency >();
-            done = true;
-         }   
+         initialize_clock();
 
          SysTick->CTRL  = 0;         // stop the timer
          SysTick->LOAD  = 0xFFFFFF;  // use its as a 24-bit timer
@@ -561,16 +569,10 @@ protected:
         >
    {
       
-      //typedef typename archetypes::waiter< int, 1 >:: base base;
       typedef unsigned int base;
    
       static void init(){
-         if( clock_frequency != 12 * MHz ){
-            static bool done = false;
-            if( done ) return;
-            initialize_clock< clock_frequency >();
-            done = true;
-         }       
+         initialize_clock();      
       }
       
       static void wait( const base x ){
