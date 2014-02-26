@@ -54,6 +54,7 @@ zip: clean doc
 clean:
 		rm -rf index.html docs bmptk.zip th04.zip transfer
 		cd examples && make clean	
+		cd tests && make clean	
 		@echo "**** cleanup completed succesfully"
 		
 push:
