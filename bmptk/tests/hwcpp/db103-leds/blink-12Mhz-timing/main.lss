@@ -1,0 +1,418 @@
+
+main.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <__text_start>:
+   0:	10000410 	.word	0x10000410
+   4:	00000351 	.word	0x00000351
+	...
+
+00000020 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv>:
+  20:	4b0f      	ldr	r3, [pc, #60]	; (60 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv+0x40>)
+  22:	b5f0      	push	{r4, r5, r6, r7, lr}
+  24:	689c      	ldr	r4, [r3, #8]
+  26:	4b0f      	ldr	r3, [pc, #60]	; (64 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv+0x44>)
+  28:	43e4      	mvns	r4, r4
+  2a:	681a      	ldr	r2, [r3, #0]
+  2c:	0224      	lsls	r4, r4, #8
+  2e:	0a24      	lsrs	r4, r4, #8
+  30:	1c1d      	adds	r5, r3, #0
+  32:	490d      	ldr	r1, [pc, #52]	; (68 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv+0x48>)
+  34:	4294      	cmp	r4, r2
+  36:	d207      	bcs.n	48 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv+0x28>
+  38:	680e      	ldr	r6, [r1, #0]
+  3a:	684f      	ldr	r7, [r1, #4]
+  3c:	4b07      	ldr	r3, [pc, #28]	; (5c <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv+0x3c>)
+  3e:	4a06      	ldr	r2, [pc, #24]	; (58 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv+0x38>)
+  40:	1992      	adds	r2, r2, r6
+  42:	417b      	adcs	r3, r7
+  44:	600a      	str	r2, [r1, #0]
+  46:	604b      	str	r3, [r1, #4]
+  48:	680f      	ldr	r7, [r1, #0]
+  4a:	6849      	ldr	r1, [r1, #4]
+  4c:	602c      	str	r4, [r5, #0]
+  4e:	433c      	orrs	r4, r7
+  50:	6004      	str	r4, [r0, #0]
+  52:	6041      	str	r1, [r0, #4]
+  54:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  56:	46c0      	nop			; (mov r8, r8)
+  58:	01000000 	.word	0x01000000
+  5c:	00000000 	.word	0x00000000
+  60:	e000e010 	.word	0xe000e010
+  64:	10000008 	.word	0x10000008
+  68:	10000000 	.word	0x10000000
+  6c:	46c0      	nop			; (mov r8, r8)
+  6e:	46c0      	nop			; (mov r8, r8)
+
+00000070 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE4waitENS_15moment_durationIxLx6EE8durationE>:
+  70:	b537      	push	{r0, r1, r2, r4, r5, lr}
+  72:	1c04      	adds	r4, r0, #0
+  74:	1c0d      	adds	r5, r1, #0
+  76:	4668      	mov	r0, sp
+  78:	f7ff ffd2 	bl	20 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv>
+  7c:	9a00      	ldr	r2, [sp, #0]
+  7e:	9b01      	ldr	r3, [sp, #4]
+  80:	18a4      	adds	r4, r4, r2
+  82:	415d      	adcs	r5, r3
+  84:	4668      	mov	r0, sp
+  86:	f7ff ffcb 	bl	20 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv>
+  8a:	9b01      	ldr	r3, [sp, #4]
+  8c:	9a00      	ldr	r2, [sp, #0]
+  8e:	429d      	cmp	r5, r3
+  90:	dcf8      	bgt.n	84 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE4waitENS_15moment_durationIxLx6EE8durationE+0x14>
+  92:	d101      	bne.n	98 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE4waitENS_15moment_durationIxLx6EE8durationE+0x28>
+  94:	4294      	cmp	r4, r2
+  96:	d8f5      	bhi.n	84 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE4waitENS_15moment_durationIxLx6EE8durationE+0x14>
+  98:	bd37      	pop	{r0, r1, r2, r4, r5, pc}
+	...
+
+0000009c <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb>:
+  9c:	4b13      	ldr	r3, [pc, #76]	; (ec <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x50>)
+  9e:	2220      	movs	r2, #32
+  a0:	6819      	ldr	r1, [r3, #0]
+  a2:	2800      	cmp	r0, #0
+  a4:	d004      	beq.n	b0 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x14>
+  a6:	4391      	bics	r1, r2
+  a8:	6019      	str	r1, [r3, #0]
+  aa:	2301      	movs	r3, #1
+  ac:	425b      	negs	r3, r3
+  ae:	e004      	b.n	ba <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x1e>
+  b0:	430a      	orrs	r2, r1
+  b2:	601a      	str	r2, [r3, #0]
+  b4:	4b0e      	ldr	r3, [pc, #56]	; (f0 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x54>)
+  b6:	6018      	str	r0, [r3, #0]
+  b8:	1c03      	adds	r3, r0, #0
+  ba:	4a0e      	ldr	r2, [pc, #56]	; (f4 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x58>)
+  bc:	6013      	str	r3, [r2, #0]
+  be:	4a0e      	ldr	r2, [pc, #56]	; (f8 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x5c>)
+  c0:	4243      	negs	r3, r0
+  c2:	6013      	str	r3, [r2, #0]
+  c4:	4a0d      	ldr	r2, [pc, #52]	; (fc <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x60>)
+  c6:	6013      	str	r3, [r2, #0]
+  c8:	4a0d      	ldr	r2, [pc, #52]	; (100 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x64>)
+  ca:	6013      	str	r3, [r2, #0]
+  cc:	2301      	movs	r3, #1
+  ce:	4058      	eors	r0, r3
+  d0:	4b0c      	ldr	r3, [pc, #48]	; (104 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x68>)
+  d2:	4240      	negs	r0, r0
+  d4:	6018      	str	r0, [r3, #0]
+  d6:	4b0c      	ldr	r3, [pc, #48]	; (108 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x6c>)
+  d8:	6018      	str	r0, [r3, #0]
+  da:	4b0c      	ldr	r3, [pc, #48]	; (10c <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x70>)
+  dc:	6018      	str	r0, [r3, #0]
+  de:	4b0c      	ldr	r3, [pc, #48]	; (110 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x74>)
+  e0:	6018      	str	r0, [r3, #0]
+  e2:	4b0c      	ldr	r3, [pc, #48]	; (114 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x78>)
+  e4:	6018      	str	r0, [r3, #0]
+  e6:	4b0c      	ldr	r3, [pc, #48]	; (118 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb+0x7c>)
+  e8:	6018      	str	r0, [r3, #0]
+  ea:	4770      	bx	lr
+  ec:	50008000 	.word	0x50008000
+  f0:	50000080 	.word	0x50000080
+  f4:	50000100 	.word	0x50000100
+  f8:	50000200 	.word	0x50000200
+  fc:	50010004 	.word	0x50010004
+ 100:	50010008 	.word	0x50010008
+ 104:	50010010 	.word	0x50010010
+ 108:	50010020 	.word	0x50010020
+ 10c:	50010040 	.word	0x50010040
+ 110:	50010080 	.word	0x50010080
+ 114:	50010400 	.word	0x50010400
+ 118:	50010800 	.word	0x50010800
+
+0000011c <_ZN5hwcpp3allIINS_6invertINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi3ELi4EEEvEENS1_INS4_ILi1ELi4ELi5EEEvEENS1_INS3_17pin_in_out_pullupILi1ELi5EEEvEENS1_INS9_ILi1ELi8EEEvEENS1_INS9_ILi1ELi9EEEvEEEE4initEv>:
+ 11c:	4a20      	ldr	r2, [pc, #128]	; (1a0 <_ZN5hwcpp3allIINS_6invertINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi3ELi4EEEvEENS1_INS4_ILi1ELi4ELi5EEEvEENS1_INS3_17pin_in_out_pullupILi1ELi5EEEvEENS1_INS9_ILi1ELi8EEEvEENS1_INS9_ILi1ELi9EEEvEEEE4initEv+0x84>)
+ 11e:	2080      	movs	r0, #128	; 0x80
+ 120:	6fd3      	ldr	r3, [r2, #124]	; 0x7c
+ 122:	0240      	lsls	r0, r0, #9
+ 124:	4303      	orrs	r3, r0
+ 126:	b570      	push	{r4, r5, r6, lr}
+ 128:	67d3      	str	r3, [r2, #124]	; 0x7c
+ 12a:	4b1e      	ldr	r3, [pc, #120]	; (1a4 <_ZN5hwcpp3allIINS_6invertINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi3ELi4EEEvEENS1_INS4_ILi1ELi4ELi5EEEvEENS1_INS3_17pin_in_out_pullupILi1ELi5EEEvEENS1_INS9_ILi1ELi8EEEvEENS1_INS9_ILi1ELi9EEEvEEEE4initEv+0x88>)
+ 12c:	2107      	movs	r1, #7
+ 12e:	681c      	ldr	r4, [r3, #0]
+ 130:	2581      	movs	r5, #129	; 0x81
+ 132:	438c      	bics	r4, r1
+ 134:	432c      	orrs	r4, r5
+ 136:	601c      	str	r4, [r3, #0]
+ 138:	4b1b      	ldr	r3, [pc, #108]	; (1a8 <_ZN5hwcpp3allIINS_6invertINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi3ELi4EEEvEENS1_INS4_ILi1ELi4ELi5EEEvEENS1_INS3_17pin_in_out_pullupILi1ELi5EEEvEENS1_INS9_ILi1ELi8EEEvEENS1_INS9_ILi1ELi9EEEvEEEE4initEv+0x8c>)
+ 13a:	2508      	movs	r5, #8
+ 13c:	681c      	ldr	r4, [r3, #0]
+ 13e:	2680      	movs	r6, #128	; 0x80
+ 140:	432c      	orrs	r4, r5
+ 142:	601c      	str	r4, [r3, #0]
+ 144:	6fd4      	ldr	r4, [r2, #124]	; 0x7c
+ 146:	4304      	orrs	r4, r0
+ 148:	67d4      	str	r4, [r2, #124]	; 0x7c
+ 14a:	4c18      	ldr	r4, [pc, #96]	; (1ac <_ZN5hwcpp3allIINS_6invertINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi3ELi4EEEvEENS1_INS4_ILi1ELi4ELi5EEEvEENS1_INS3_17pin_in_out_pullupILi1ELi5EEEvEENS1_INS9_ILi1ELi8EEEvEENS1_INS9_ILi1ELi9EEEvEEEE4initEv+0x90>)
+ 14c:	6825      	ldr	r5, [r4, #0]
+ 14e:	438d      	bics	r5, r1
+ 150:	4335      	orrs	r5, r6
+ 152:	6025      	str	r5, [r4, #0]
+ 154:	681c      	ldr	r4, [r3, #0]
+ 156:	2510      	movs	r5, #16
+ 158:	432c      	orrs	r4, r5
+ 15a:	601c      	str	r4, [r3, #0]
+ 15c:	6fd4      	ldr	r4, [r2, #124]	; 0x7c
+ 15e:	4304      	orrs	r4, r0
+ 160:	67d4      	str	r4, [r2, #124]	; 0x7c
+ 162:	4c13      	ldr	r4, [pc, #76]	; (1b0 <_ZN5hwcpp3allIINS_6invertINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi3ELi4EEEvEENS1_INS4_ILi1ELi4ELi5EEEvEENS1_INS3_17pin_in_out_pullupILi1ELi5EEEvEENS1_INS9_ILi1ELi8EEEvEENS1_INS9_ILi1ELi9EEEvEEEE4initEv+0x94>)
+ 164:	6825      	ldr	r5, [r4, #0]
+ 166:	438d      	bics	r5, r1
+ 168:	6025      	str	r5, [r4, #0]
+ 16a:	681c      	ldr	r4, [r3, #0]
+ 16c:	2520      	movs	r5, #32
+ 16e:	432c      	orrs	r4, r5
+ 170:	601c      	str	r4, [r3, #0]
+ 172:	6fd4      	ldr	r4, [r2, #124]	; 0x7c
+ 174:	4304      	orrs	r4, r0
+ 176:	67d4      	str	r4, [r2, #124]	; 0x7c
+ 178:	4c0e      	ldr	r4, [pc, #56]	; (1b4 <_ZN5hwcpp3allIINS_6invertINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi3ELi4EEEvEENS1_INS4_ILi1ELi4ELi5EEEvEENS1_INS3_17pin_in_out_pullupILi1ELi5EEEvEENS1_INS9_ILi1ELi8EEEvEENS1_INS9_ILi1ELi9EEEvEEEE4initEv+0x98>)
+ 17a:	6825      	ldr	r5, [r4, #0]
+ 17c:	438d      	bics	r5, r1
+ 17e:	6025      	str	r5, [r4, #0]
+ 180:	681d      	ldr	r5, [r3, #0]
+ 182:	0074      	lsls	r4, r6, #1
+ 184:	432c      	orrs	r4, r5
+ 186:	601c      	str	r4, [r3, #0]
+ 188:	6fd4      	ldr	r4, [r2, #124]	; 0x7c
+ 18a:	4320      	orrs	r0, r4
+ 18c:	67d0      	str	r0, [r2, #124]	; 0x7c
+ 18e:	4a0a      	ldr	r2, [pc, #40]	; (1b8 <_ZN5hwcpp3allIINS_6invertINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi3ELi4EEEvEENS1_INS4_ILi1ELi4ELi5EEEvEENS1_INS3_17pin_in_out_pullupILi1ELi5EEEvEENS1_INS9_ILi1ELi8EEEvEENS1_INS9_ILi1ELi9EEEvEEEE4initEv+0x9c>)
+ 190:	6810      	ldr	r0, [r2, #0]
+ 192:	4388      	bics	r0, r1
+ 194:	6010      	str	r0, [r2, #0]
+ 196:	6819      	ldr	r1, [r3, #0]
+ 198:	00b2      	lsls	r2, r6, #2
+ 19a:	430a      	orrs	r2, r1
+ 19c:	601a      	str	r2, [r3, #0]
+ 19e:	bd70      	pop	{r4, r5, r6, pc}
+ 1a0:	40048004 	.word	0x40048004
+ 1a4:	40044090 	.word	0x40044090
+ 1a8:	50018000 	.word	0x50018000
+ 1ac:	40044094 	.word	0x40044094
+ 1b0:	400440a0 	.word	0x400440a0
+ 1b4:	40044014 	.word	0x40044014
+ 1b8:	40044038 	.word	0x40044038
+
+000001bc <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi1ELi2EEENS_6invertINS3_ILi1ELi2ELi3EEEvEENS5_INS3_ILi1ELi3ELi4EEEvEENS5_INS3_ILi1ELi4ELi5EEEvEENS5_INS2_17pin_in_out_pullupILi1ELi5EEEvEENS5_INSC_ILi1ELi8EEEvEENS5_INSC_ILi1ELi9EEEvEEEE4initEv>:
+ 1bc:	4a10      	ldr	r2, [pc, #64]	; (200 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi1ELi2EEENS_6invertINS3_ILi1ELi2ELi3EEEvEENS5_INS3_ILi1ELi3ELi4EEEvEENS5_INS3_ILi1ELi4ELi5EEEvEENS5_INS2_17pin_in_out_pullupILi1ELi5EEEvEENS5_INSC_ILi1ELi8EEEvEENS5_INSC_ILi1ELi9EEEvEEEE4initEv+0x44>)
+ 1be:	b570      	push	{r4, r5, r6, lr}
+ 1c0:	6fd3      	ldr	r3, [r2, #124]	; 0x7c
+ 1c2:	2480      	movs	r4, #128	; 0x80
+ 1c4:	0264      	lsls	r4, r4, #9
+ 1c6:	4323      	orrs	r3, r4
+ 1c8:	67d3      	str	r3, [r2, #124]	; 0x7c
+ 1ca:	4b0e      	ldr	r3, [pc, #56]	; (204 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi1ELi2EEENS_6invertINS3_ILi1ELi2ELi3EEEvEENS5_INS3_ILi1ELi3ELi4EEEvEENS5_INS3_ILi1ELi4ELi5EEEvEENS5_INS2_17pin_in_out_pullupILi1ELi5EEEvEENS5_INSC_ILi1ELi8EEEvEENS5_INSC_ILi1ELi9EEEvEEEE4initEv+0x48>)
+ 1cc:	2007      	movs	r0, #7
+ 1ce:	681d      	ldr	r5, [r3, #0]
+ 1d0:	2181      	movs	r1, #129	; 0x81
+ 1d2:	4385      	bics	r5, r0
+ 1d4:	430d      	orrs	r5, r1
+ 1d6:	601d      	str	r5, [r3, #0]
+ 1d8:	4b0b      	ldr	r3, [pc, #44]	; (208 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi1ELi2EEENS_6invertINS3_ILi1ELi2ELi3EEEvEENS5_INS3_ILi1ELi3ELi4EEEvEENS5_INS3_ILi1ELi4ELi5EEEvEENS5_INS2_17pin_in_out_pullupILi1ELi5EEEvEENS5_INSC_ILi1ELi8EEEvEENS5_INSC_ILi1ELi9EEEvEEEE4initEv+0x4c>)
+ 1da:	2602      	movs	r6, #2
+ 1dc:	681d      	ldr	r5, [r3, #0]
+ 1de:	4335      	orrs	r5, r6
+ 1e0:	601d      	str	r5, [r3, #0]
+ 1e2:	6fd5      	ldr	r5, [r2, #124]	; 0x7c
+ 1e4:	432c      	orrs	r4, r5
+ 1e6:	67d4      	str	r4, [r2, #124]	; 0x7c
+ 1e8:	4a08      	ldr	r2, [pc, #32]	; (20c <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi1ELi2EEENS_6invertINS3_ILi1ELi2ELi3EEEvEENS5_INS3_ILi1ELi3ELi4EEEvEENS5_INS3_ILi1ELi4ELi5EEEvEENS5_INS2_17pin_in_out_pullupILi1ELi5EEEvEENS5_INSC_ILi1ELi8EEEvEENS5_INSC_ILi1ELi9EEEvEEEE4initEv+0x50>)
+ 1ea:	6814      	ldr	r4, [r2, #0]
+ 1ec:	4384      	bics	r4, r0
+ 1ee:	4321      	orrs	r1, r4
+ 1f0:	6011      	str	r1, [r2, #0]
+ 1f2:	681a      	ldr	r2, [r3, #0]
+ 1f4:	2104      	movs	r1, #4
+ 1f6:	430a      	orrs	r2, r1
+ 1f8:	601a      	str	r2, [r3, #0]
+ 1fa:	f7ff ff8f 	bl	11c <_ZN5hwcpp3allIINS_6invertINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi3ELi4EEEvEENS1_INS4_ILi1ELi4ELi5EEEvEENS1_INS3_17pin_in_out_pullupILi1ELi5EEEvEENS1_INS9_ILi1ELi8EEEvEENS1_INS9_ILi1ELi9EEEvEEEE4initEv>
+ 1fe:	bd70      	pop	{r4, r5, r6, pc}
+ 200:	40048004 	.word	0x40048004
+ 204:	4004407c 	.word	0x4004407c
+ 208:	50018000 	.word	0x50018000
+ 20c:	40044080 	.word	0x40044080
+
+00000210 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi0ELi6EEENS3_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS6_ILi1ELi1ELi2EEENS_6invertINS6_ILi1ELi2ELi3EEEvEENS9_INS6_ILi1ELi3ELi4EEEvEENS9_INS6_ILi1ELi4ELi5EEEvEENS9_INS3_ILi1ELi5EEEvEENS9_INS3_ILi1ELi8EEEvEENS9_INS3_ILi1ELi9EEEvEEEE4initEv>:
+ 210:	b538      	push	{r3, r4, r5, lr}
+ 212:	4b16      	ldr	r3, [pc, #88]	; (26c <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi0ELi6EEENS3_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS6_ILi1ELi1ELi2EEENS_6invertINS6_ILi1ELi2ELi3EEEvEENS9_INS6_ILi1ELi3ELi4EEEvEENS9_INS6_ILi1ELi4ELi5EEEvEENS9_INS3_ILi1ELi5EEEvEENS9_INS3_ILi1ELi8EEEvEENS9_INS3_ILi1ELi9EEEvEEEE4initEv+0x5c>)
+ 214:	2080      	movs	r0, #128	; 0x80
+ 216:	6fda      	ldr	r2, [r3, #124]	; 0x7c
+ 218:	0240      	lsls	r0, r0, #9
+ 21a:	4302      	orrs	r2, r0
+ 21c:	67da      	str	r2, [r3, #124]	; 0x7c
+ 21e:	4a14      	ldr	r2, [pc, #80]	; (270 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi0ELi6EEENS3_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS6_ILi1ELi1ELi2EEENS_6invertINS6_ILi1ELi2ELi3EEEvEENS9_INS6_ILi1ELi3ELi4EEEvEENS9_INS6_ILi1ELi4ELi5EEEvEENS9_INS3_ILi1ELi5EEEvEENS9_INS3_ILi1ELi8EEEvEENS9_INS3_ILi1ELi9EEEvEEEE4initEv+0x60>)
+ 220:	2107      	movs	r1, #7
+ 222:	6814      	ldr	r4, [r2, #0]
+ 224:	2540      	movs	r5, #64	; 0x40
+ 226:	438c      	bics	r4, r1
+ 228:	6014      	str	r4, [r2, #0]
+ 22a:	4a12      	ldr	r2, [pc, #72]	; (274 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi0ELi6EEENS3_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS6_ILi1ELi1ELi2EEENS_6invertINS6_ILi1ELi2ELi3EEEvEENS9_INS6_ILi1ELi3ELi4EEEvEENS9_INS6_ILi1ELi4ELi5EEEvEENS9_INS3_ILi1ELi5EEEvEENS9_INS3_ILi1ELi8EEEvEENS9_INS3_ILi1ELi9EEEvEEEE4initEv+0x64>)
+ 22c:	6814      	ldr	r4, [r2, #0]
+ 22e:	432c      	orrs	r4, r5
+ 230:	6014      	str	r4, [r2, #0]
+ 232:	6fdc      	ldr	r4, [r3, #124]	; 0x7c
+ 234:	4304      	orrs	r4, r0
+ 236:	67dc      	str	r4, [r3, #124]	; 0x7c
+ 238:	4c0f      	ldr	r4, [pc, #60]	; (278 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi0ELi6EEENS3_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS6_ILi1ELi1ELi2EEENS_6invertINS6_ILi1ELi2ELi3EEEvEENS9_INS6_ILi1ELi3ELi4EEEvEENS9_INS6_ILi1ELi4ELi5EEEvEENS9_INS3_ILi1ELi5EEEvEENS9_INS3_ILi1ELi8EEEvEENS9_INS3_ILi1ELi9EEEvEEEE4initEv+0x68>)
+ 23a:	6825      	ldr	r5, [r4, #0]
+ 23c:	438d      	bics	r5, r1
+ 23e:	6025      	str	r5, [r4, #0]
+ 240:	6814      	ldr	r4, [r2, #0]
+ 242:	2580      	movs	r5, #128	; 0x80
+ 244:	432c      	orrs	r4, r5
+ 246:	6014      	str	r4, [r2, #0]
+ 248:	6fda      	ldr	r2, [r3, #124]	; 0x7c
+ 24a:	4310      	orrs	r0, r2
+ 24c:	67d8      	str	r0, [r3, #124]	; 0x7c
+ 24e:	4b0b      	ldr	r3, [pc, #44]	; (27c <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi0ELi6EEENS3_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS6_ILi1ELi1ELi2EEENS_6invertINS6_ILi1ELi2ELi3EEEvEENS9_INS6_ILi1ELi3ELi4EEEvEENS9_INS6_ILi1ELi4ELi5EEEvEENS9_INS3_ILi1ELi5EEEvEENS9_INS3_ILi1ELi8EEEvEENS9_INS3_ILi1ELi9EEEvEEEE4initEv+0x6c>)
+ 250:	681a      	ldr	r2, [r3, #0]
+ 252:	438a      	bics	r2, r1
+ 254:	2181      	movs	r1, #129	; 0x81
+ 256:	430a      	orrs	r2, r1
+ 258:	601a      	str	r2, [r3, #0]
+ 25a:	4b09      	ldr	r3, [pc, #36]	; (280 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi0ELi6EEENS3_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS6_ILi1ELi1ELi2EEENS_6invertINS6_ILi1ELi2ELi3EEEvEENS9_INS6_ILi1ELi3ELi4EEEvEENS9_INS6_ILi1ELi4ELi5EEEvEENS9_INS3_ILi1ELi5EEEvEENS9_INS3_ILi1ELi8EEEvEENS9_INS3_ILi1ELi9EEEvEEEE4initEv+0x70>)
+ 25c:	2101      	movs	r1, #1
+ 25e:	681a      	ldr	r2, [r3, #0]
+ 260:	430a      	orrs	r2, r1
+ 262:	601a      	str	r2, [r3, #0]
+ 264:	f7ff ffaa 	bl	1bc <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi1ELi2EEENS_6invertINS3_ILi1ELi2ELi3EEEvEENS5_INS3_ILi1ELi3ELi4EEEvEENS5_INS3_ILi1ELi4ELi5EEEvEENS5_INS2_17pin_in_out_pullupILi1ELi5EEEvEENS5_INSC_ILi1ELi8EEEvEENS5_INSC_ILi1ELi9EEEvEEEE4initEv>
+ 268:	bd38      	pop	{r3, r4, r5, pc}
+ 26a:	46c0      	nop			; (mov r8, r8)
+ 26c:	40048004 	.word	0x40048004
+ 270:	4004404c 	.word	0x4004404c
+ 274:	50008000 	.word	0x50008000
+ 278:	40044050 	.word	0x40044050
+ 27c:	40044078 	.word	0x40044078
+ 280:	50018000 	.word	0x50018000
+
+00000284 <_ZN5hwcpp8blinkingINS_3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi4EEENS4_ILi0ELi5EEENS3_17pin_in_out_pullupILi0ELi6EEENS7_ILi0ELi7EEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENSA_ILi1ELi1ELi2EEENS_6invertINSA_ILi1ELi2ELi3EEEvEENSD_INSA_ILi1ELi3ELi4EEEvEENSD_INSA_ILi1ELi4ELi5EEEvEENSD_INS7_ILi1ELi5EEEvEENSD_INS7_ILi1ELi8EEEvEENSD_INS7_ILi1ELi9EEEvEEEEENS_21timing_implementationINS3_8timer_64EEEE5blinkENS_15moment_durationIxLx6EE8durationE>:
+ 284:	b5f7      	push	{r0, r1, r2, r4, r5, r6, r7, lr}
+ 286:	4b24      	ldr	r3, [pc, #144]	; (318 <_ZN5hwcpp8blinkingINS_3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi4EEENS4_ILi0ELi5EEENS3_17pin_in_out_pullupILi0ELi6EEENS7_ILi0ELi7EEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENSA_ILi1ELi1ELi2EEENS_6invertINSA_ILi1ELi2ELi3EEEvEENSD_INSA_ILi1ELi3ELi4EEEvEENSD_INSA_ILi1ELi4ELi5EEEvEENSD_INS7_ILi1ELi5EEEvEENSD_INS7_ILi1ELi8EEEvEENSD_INS7_ILi1ELi9EEEvEEEEENS_21timing_implementationINS3_8timer_64EEEE5blinkENS_15moment_durationIxLx6EE8durationE+0x94>)
+ 288:	4a24      	ldr	r2, [pc, #144]	; (31c <_ZN5hwcpp8blinkingINS_3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi4EEENS4_ILi0ELi5EEENS3_17pin_in_out_pullupILi0ELi6EEENS7_ILi0ELi7EEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENSA_ILi1ELi1ELi2EEENS_6invertINSA_ILi1ELi2ELi3EEEvEENSD_INSA_ILi1ELi3ELi4EEEvEENSD_INSA_ILi1ELi4ELi5EEEvEENSD_INS7_ILi1ELi5EEEvEENSD_INS7_ILi1ELi8EEEvEENSD_INS7_ILi1ELi9EEEvEEEEENS_21timing_implementationINS3_8timer_64EEEE5blinkENS_15moment_durationIxLx6EE8durationE+0x98>)
+ 28a:	2500      	movs	r5, #0
+ 28c:	601d      	str	r5, [r3, #0]
+ 28e:	605a      	str	r2, [r3, #4]
+ 290:	2201      	movs	r2, #1
+ 292:	609d      	str	r5, [r3, #8]
+ 294:	601a      	str	r2, [r3, #0]
+ 296:	4b22      	ldr	r3, [pc, #136]	; (320 <_ZN5hwcpp8blinkingINS_3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi4EEENS4_ILi0ELi5EEENS3_17pin_in_out_pullupILi0ELi6EEENS7_ILi0ELi7EEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENSA_ILi1ELi1ELi2EEENS_6invertINSA_ILi1ELi2ELi3EEEvEENSD_INSA_ILi1ELi3ELi4EEEvEENSD_INSA_ILi1ELi4ELi5EEEvEENSD_INS7_ILi1ELi5EEEvEENSD_INS7_ILi1ELi8EEEvEENSD_INS7_ILi1ELi9EEEvEEEEENS_21timing_implementationINS3_8timer_64EEEE5blinkENS_15moment_durationIxLx6EE8durationE+0x9c>)
+ 298:	1c0f      	adds	r7, r1, #0
+ 29a:	6fda      	ldr	r2, [r3, #124]	; 0x7c
+ 29c:	2180      	movs	r1, #128	; 0x80
+ 29e:	0249      	lsls	r1, r1, #9
+ 2a0:	1c06      	adds	r6, r0, #0
+ 2a2:	430a      	orrs	r2, r1
+ 2a4:	481f      	ldr	r0, [pc, #124]	; (324 <_ZN5hwcpp8blinkingINS_3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi4EEENS4_ILi0ELi5EEENS3_17pin_in_out_pullupILi0ELi6EEENS7_ILi0ELi7EEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENSA_ILi1ELi1ELi2EEENS_6invertINSA_ILi1ELi2ELi3EEEvEENSD_INSA_ILi1ELi3ELi4EEEvEENSD_INSA_ILi1ELi4ELi5EEEvEENSD_INS7_ILi1ELi5EEEvEENSD_INS7_ILi1ELi8EEEvEENSD_INS7_ILi1ELi9EEEvEEEEENS_21timing_implementationINS3_8timer_64EEEE5blinkENS_15moment_durationIxLx6EE8durationE+0xa0>)
+ 2a6:	67da      	str	r2, [r3, #124]	; 0x7c
+ 2a8:	6804      	ldr	r4, [r0, #0]
+ 2aa:	2207      	movs	r2, #7
+ 2ac:	4394      	bics	r4, r2
+ 2ae:	6004      	str	r4, [r0, #0]
+ 2b0:	4c1d      	ldr	r4, [pc, #116]	; (328 <_ZN5hwcpp8blinkingINS_3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi4EEENS4_ILi0ELi5EEENS3_17pin_in_out_pullupILi0ELi6EEENS7_ILi0ELi7EEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENSA_ILi1ELi1ELi2EEENS_6invertINSA_ILi1ELi2ELi3EEEvEENSD_INSA_ILi1ELi3ELi4EEEvEENSD_INSA_ILi1ELi4ELi5EEEvEENSD_INS7_ILi1ELi5EEEvEENSD_INS7_ILi1ELi8EEEvEENSD_INS7_ILi1ELi9EEEvEEEEENS_21timing_implementationINS3_8timer_64EEEE5blinkENS_15moment_durationIxLx6EE8durationE+0xa4>)
+ 2b2:	2210      	movs	r2, #16
+ 2b4:	6820      	ldr	r0, [r4, #0]
+ 2b6:	4310      	orrs	r0, r2
+ 2b8:	6020      	str	r0, [r4, #0]
+ 2ba:	6fd8      	ldr	r0, [r3, #124]	; 0x7c
+ 2bc:	4301      	orrs	r1, r0
+ 2be:	67d9      	str	r1, [r3, #124]	; 0x7c
+ 2c0:	4b1a      	ldr	r3, [pc, #104]	; (32c <_ZN5hwcpp8blinkingINS_3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi4EEENS4_ILi0ELi5EEENS3_17pin_in_out_pullupILi0ELi6EEENS7_ILi0ELi7EEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENSA_ILi1ELi1ELi2EEENS_6invertINSA_ILi1ELi2ELi3EEEvEENSD_INSA_ILi1ELi3ELi4EEEvEENSD_INSA_ILi1ELi4ELi5EEEvEENSD_INS7_ILi1ELi5EEEvEENSD_INS7_ILi1ELi8EEEvEENSD_INS7_ILi1ELi9EEEvEEEEENS_21timing_implementationINS3_8timer_64EEEE5blinkENS_15moment_durationIxLx6EE8durationE+0xa8>)
+ 2c2:	2007      	movs	r0, #7
+ 2c4:	6819      	ldr	r1, [r3, #0]
+ 2c6:	1c0a      	adds	r2, r1, #0
+ 2c8:	4382      	bics	r2, r0
+ 2ca:	601a      	str	r2, [r3, #0]
+ 2cc:	6823      	ldr	r3, [r4, #0]
+ 2ce:	2220      	movs	r2, #32
+ 2d0:	4313      	orrs	r3, r2
+ 2d2:	6023      	str	r3, [r4, #0]
+ 2d4:	f7ff ff9c 	bl	210 <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi0ELi6EEENS3_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS6_ILi1ELi1ELi2EEENS_6invertINS6_ILi1ELi2ELi3EEEvEENS9_INS6_ILi1ELi3ELi4EEEvEENS9_INS6_ILi1ELi4ELi5EEEvEENS9_INS3_ILi1ELi5EEEvEENS9_INS3_ILi1ELi8EEEvEENS9_INS3_ILi1ELi9EEEvEEEE4initEv>
+ 2d8:	1c2b      	adds	r3, r5, #0
+ 2da:	0ffa      	lsrs	r2, r7, #31
+ 2dc:	1992      	adds	r2, r2, r6
+ 2de:	417b      	adcs	r3, r7
+ 2e0:	07d9      	lsls	r1, r3, #31
+ 2e2:	0855      	lsrs	r5, r2, #1
+ 2e4:	430d      	orrs	r5, r1
+ 2e6:	105e      	asrs	r6, r3, #1
+ 2e8:	6823      	ldr	r3, [r4, #0]
+ 2ea:	2710      	movs	r7, #16
+ 2ec:	43bb      	bics	r3, r7
+ 2ee:	6023      	str	r3, [r4, #0]
+ 2f0:	2001      	movs	r0, #1
+ 2f2:	f7ff fed3 	bl	9c <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb>
+ 2f6:	1c31      	adds	r1, r6, #0
+ 2f8:	1c28      	adds	r0, r5, #0
+ 2fa:	f7ff feb9 	bl	70 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE4waitENS_15moment_durationIxLx6EE8durationE>
+ 2fe:	6823      	ldr	r3, [r4, #0]
+ 300:	2000      	movs	r0, #0
+ 302:	431f      	orrs	r7, r3
+ 304:	4b0a      	ldr	r3, [pc, #40]	; (330 <_ZN5hwcpp8blinkingINS_3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi4EEENS4_ILi0ELi5EEENS3_17pin_in_out_pullupILi0ELi6EEENS7_ILi0ELi7EEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENSA_ILi1ELi1ELi2EEENS_6invertINSA_ILi1ELi2ELi3EEEvEENSD_INSA_ILi1ELi3ELi4EEEvEENSD_INSA_ILi1ELi4ELi5EEEvEENSD_INS7_ILi1ELi5EEEvEENSD_INS7_ILi1ELi8EEEvEENSD_INS7_ILi1ELi9EEEvEEEEENS_21timing_implementationINS3_8timer_64EEEE5blinkENS_15moment_durationIxLx6EE8durationE+0xac>)
+ 306:	6027      	str	r7, [r4, #0]
+ 308:	6018      	str	r0, [r3, #0]
+ 30a:	f7ff fec7 	bl	9c <_ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi5EEENS2_17pin_in_out_pullupILi0ELi6EEENS5_ILi0ELi7EEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS8_ILi1ELi1ELi2EEENS_6invertINS8_ILi1ELi2ELi3EEEvEENSB_INS8_ILi1ELi3ELi4EEEvEENSB_INS8_ILi1ELi4ELi5EEEvEENSB_INS5_ILi1ELi5EEEvEENSB_INS5_ILi1ELi8EEEvEENSB_INS5_ILi1ELi9EEEvEEEE3setEb>
+ 30e:	1c28      	adds	r0, r5, #0
+ 310:	1c31      	adds	r1, r6, #0
+ 312:	f7ff fead 	bl	70 <_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE4waitENS_15moment_durationIxLx6EE8durationE>
+ 316:	e7e7      	b.n	2e8 <_ZN5hwcpp8blinkingINS_3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi4EEENS4_ILi0ELi5EEENS3_17pin_in_out_pullupILi0ELi6EEENS7_ILi0ELi7EEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENSA_ILi1ELi1ELi2EEENS_6invertINSA_ILi1ELi2ELi3EEEvEENSD_INSA_ILi1ELi3ELi4EEEvEENSD_INSA_ILi1ELi4ELi5EEEvEENSD_INS7_ILi1ELi5EEEvEENSD_INS7_ILi1ELi8EEEvEENSD_INS7_ILi1ELi9EEEvEEEEENS_21timing_implementationINS3_8timer_64EEEE5blinkENS_15moment_durationIxLx6EE8durationE+0x64>
+ 318:	e000e010 	.word	0xe000e010
+ 31c:	00ffffff 	.word	0x00ffffff
+ 320:	40048004 	.word	0x40048004
+ 324:	40044030 	.word	0x40044030
+ 328:	50008000 	.word	0x50008000
+ 32c:	40044034 	.word	0x40044034
+ 330:	50000040 	.word	0x50000040
+ 334:	00000000 	.word	0x00000000
+
+00000338 <main>:
+ 338:	b508      	push	{r3, lr}
+ 33a:	4904      	ldr	r1, [pc, #16]	; (34c <main+0x14>)
+ 33c:	4802      	ldr	r0, [pc, #8]	; (348 <main+0x10>)
+ 33e:	f7ff ffa1 	bl	284 <_ZN5hwcpp8blinkingINS_3allIINS_12lpc1114_baseILi4096ELi32768ELi12000000EE6pin_ocILi0ELi4EEENS4_ILi0ELi5EEENS3_17pin_in_out_pullupILi0ELi6EEENS7_ILi0ELi7EEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENSA_ILi1ELi1ELi2EEENS_6invertINSA_ILi1ELi2ELi3EEEvEENSD_INSA_ILi1ELi3ELi4EEEvEENSD_INSA_ILi1ELi4ELi5EEEvEENSD_INS7_ILi1ELi5EEEvEENSD_INS7_ILi1ELi8EEEvEENSD_INS7_ILi1ELi9EEEvEEEEENS_21timing_implementationINS3_8timer_64EEEE5blinkENS_15moment_durationIxLx6EE8durationE>
+ 342:	46c0      	nop			; (mov r8, r8)
+ 344:	46c0      	nop			; (mov r8, r8)
+ 346:	46c0      	nop			; (mov r8, r8)
+ 348:	002dc6c0 	.word	0x002dc6c0
+ 34c:	00000000 	.word	0x00000000
+
+00000350 <__startup>:
+ 350:	b510      	push	{r4, lr}
+ 352:	4b0f      	ldr	r3, [pc, #60]	; (390 <__startup+0x40>)
+ 354:	4a0f      	ldr	r2, [pc, #60]	; (394 <__startup+0x44>)
+ 356:	1d19      	adds	r1, r3, #4
+ 358:	3b04      	subs	r3, #4
+ 35a:	4293      	cmp	r3, r2
+ 35c:	d003      	beq.n	366 <__startup+0x16>
+ 35e:	2200      	movs	r2, #0
+ 360:	601a      	str	r2, [r3, #0]
+ 362:	1c0b      	adds	r3, r1, #0
+ 364:	e7f6      	b.n	354 <__startup+0x4>
+ 366:	4a0c      	ldr	r2, [pc, #48]	; (398 <__startup+0x48>)
+ 368:	490c      	ldr	r1, [pc, #48]	; (39c <__startup+0x4c>)
+ 36a:	2300      	movs	r3, #0
+ 36c:	1a89      	subs	r1, r1, r2
+ 36e:	0889      	lsrs	r1, r1, #2
+ 370:	3101      	adds	r1, #1
+ 372:	0089      	lsls	r1, r1, #2
+ 374:	3304      	adds	r3, #4
+ 376:	428b      	cmp	r3, r1
+ 378:	d007      	beq.n	38a <__startup+0x3a>
+ 37a:	4c09      	ldr	r4, [pc, #36]	; (3a0 <__startup+0x50>)
+ 37c:	18d0      	adds	r0, r2, r3
+ 37e:	191c      	adds	r4, r3, r4
+ 380:	3c04      	subs	r4, #4
+ 382:	6824      	ldr	r4, [r4, #0]
+ 384:	3804      	subs	r0, #4
+ 386:	6004      	str	r4, [r0, #0]
+ 388:	e7f4      	b.n	374 <__startup+0x24>
+ 38a:	f7ff ffd5 	bl	338 <main>
+ 38e:	e7fe      	b.n	38e <__startup+0x3e>
+ 390:	10000004 	.word	0x10000004
+ 394:	1000000c 	.word	0x1000000c
+ 398:	10000000 	.word	0x10000000
+ 39c:	10000000 	.word	0x10000000
+ 3a0:	000003a4 	.word	0x000003a4

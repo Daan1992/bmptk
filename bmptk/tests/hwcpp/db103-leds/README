@@ -1,0 +1,16 @@
+file: bmptk/tests/hwcpp/README
+
+Bare Metal Programming Tool Kit tests/hwcpp/leds directory
+
+These tests can be run with a DB013 board with 12 LEDs
+
+This directory contains :
+   Makefile : supports 'clean' and 'build' targets
+   README   : this file
+
+subdirectories
+   check the Makefile
+
+
+
+

@@ -1,0 +1,630 @@
+	.cpu cortex-m0
+	.fpu softvfp
+	.eabi_attribute 20, 1
+	.eabi_attribute 21, 1
+	.eabi_attribute 23, 3
+	.eabi_attribute 24, 1
+	.eabi_attribute 25, 1
+	.eabi_attribute 26, 1
+	.eabi_attribute 30, 4
+	.eabi_attribute 34, 0
+	.eabi_attribute 18, 4
+	.code	16
+	.file	"main.cpp"
+	.section	.text._ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE3putEc,"axG",%progbits,_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE3putEc,comdat
+	.align	1
+	.weak	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE3putEc
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE3putEc, %function
+_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE3putEc:
+.L3:
+	ldr	r3, .L5
+	ldr	r2, [r3, #20]
+	lsl	r1, r2, #25
+	bpl	.L3
+	str	r0, [r3]
+	@ sp needed
+	bx	lr
+.L6:
+	.align	2
+.L5:
+	.word	1073774592
+	.size	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE3putEc, .-_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE3putEc
+	.section	.text._ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEv.part.5,"ax",%progbits
+	.align	1
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEv.part.5, %function
+_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEv.part.5:
+	ldr	r3, .L10
+	mov	r2, #1
+	strb	r2, [r3]
+	ldr	r3, .L10+4
+	mov	r2, #142
+	lsl	r2, r2, #2
+	ldr	r0, [r3, r2]
+	mov	r1, #128
+	orr	r0, r1
+	str	r0, [r3, r2]
+	mov	r0, #35
+	str	r0, [r3, #8]
+	ldr	r0, [r3, r2]
+	bic	r0, r1
+	str	r0, [r3, r2]
+.L9:
+	ldr	r0, [r3, #12]
+	mov	r1, #1
+	ldr	r2, .L10+4
+	tst	r0, r1
+	beq	.L9
+	mov	r3, #3
+	str	r3, [r2, #112]
+	ldr	r3, [r2, #116]
+	@ sp needed
+	bic	r3, r1
+	str	r3, [r2, #116]
+	ldr	r3, [r2, #116]
+	orr	r1, r3
+	str	r1, [r2, #116]
+	bx	lr
+.L11:
+	.align	2
+.L10:
+	.word	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEvE4done
+	.word	1074036736
+	.size	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEv.part.5, .-_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEv.part.5
+	.section	.text._ZNSt7ostream6fillerEi,"axG",%progbits,_ZNSt7ostream6fillerEi,comdat
+	.align	1
+	.weak	_ZNSt7ostream6fillerEi
+	.code	16
+	.thumb_func
+	.type	_ZNSt7ostream6fillerEi, %function
+_ZNSt7ostream6fillerEi:
+	push	{r3, r4, r5, lr}
+	mov	r5, r0
+	mov	r4, r1
+.L13:
+	cmp	r4, #0
+	ble	.L19
+	ldr	r3, [r5, #16]
+	ldrb	r0, [r5, #8]
+	cmp	r3, #0
+	beq	.L14
+	blx	r3
+.L14:
+	sub	r4, r4, #1
+	b	.L13
+.L19:
+	@ sp needed
+	pop	{r3, r4, r5, pc}
+	.size	_ZNSt7ostream6fillerEi, .-_ZNSt7ostream6fillerEi
+	.global	__aeabi_uidiv
+	.section	.text._ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE4initEv,"axG",%progbits,_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE4initEv,comdat
+	.align	1
+	.weak	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE4initEv
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE4initEv, %function
+_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE4initEv:
+	push	{r3, r4, r5, lr}
+	ldr	r3, .L27
+	ldrb	r3, [r3]
+	cmp	r3, #0
+	bne	.L21
+	bl	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEv.part.5
+.L21:
+	ldr	r3, .L27+4
+	mov	r2, #128
+	lsl	r2, r2, #14
+	str	r2, [r3, #124]
+	ldr	r3, .L27+8
+	mov	r2, #128
+	ldr	r1, [r3, #124]
+	lsl	r2, r2, #9
+	orr	r2, r1
+	str	r2, [r3, #124]
+	ldr	r2, [r3, #124]
+	mov	r0, #128
+	lsl	r0, r0, #5
+	orr	r2, r0
+	str	r2, [r3, #124]
+	ldr	r2, .L27+12
+	mov	r5, #7
+	ldr	r1, [r2]
+	bic	r1, r5
+	str	r1, [r2]
+	ldr	r4, [r2]
+	mov	r1, #1
+	orr	r4, r1
+	str	r4, [r2]
+	ldr	r2, .L27+16
+	ldr	r4, [r2]
+	bic	r4, r5
+	str	r4, [r2]
+	ldr	r4, [r2]
+	orr	r4, r1
+	str	r4, [r2]
+	ldr	r2, [r3, #124]
+	ldr	r4, .L27+20
+	orr	r0, r2
+	str	r0, [r3, #124]
+	mov	r3, #131
+	str	r3, [r4, #12]
+	ldr	r3, .L27+24
+	ldr	r0, .L27+28
+	str	r1, [r3]
+	ldr	r3, .L27+32
+	mov	r1, #150
+	ldr	r3, [r3, #120]
+	lsl	r1, r1, #12
+	mul	r1, r3
+	bl	__aeabi_uidiv
+	lsr	r3, r0, #8
+	str	r3, [r4, #4]
+	uxtb	r0, r0
+	mov	r3, #3
+	str	r0, [r4]
+	str	r3, [r4, #12]
+	str	r5, [r4, #8]
+	ldr	r3, [r4, #20]
+.L24:
+	ldr	r2, [r4, #20]
+	mov	r3, #96
+	and	r3, r2
+	cmp	r3, #96
+	bne	.L24
+.L23:
+	ldr	r3, [r4, #20]
+	lsl	r2, r3, #31
+	bpl	.L26
+	ldr	r3, .L27+20
+	ldr	r3, [r3]
+	b	.L23
+.L26:
+	@ sp needed
+	pop	{r3, r4, r5, pc}
+.L28:
+	.align	2
+.L27:
+	.word	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEvE4done
+	.word	-536813308
+	.word	1074036740
+	.word	1074020516
+	.word	1074020520
+	.word	1073774592
+	.word	1074036888
+	.word	48000000
+	.word	1074036736
+	.size	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE4initEv, .-_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE4initEv
+	.section	.text._ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_644initEv,"axG",%progbits,_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_644initEv,comdat
+	.align	1
+	.weak	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_644initEv
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_644initEv, %function
+_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_644initEv:
+	push	{r3, lr}
+	ldr	r3, .L31
+	ldrb	r3, [r3]
+	cmp	r3, #0
+	bne	.L30
+	bl	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEv.part.5
+.L30:
+	ldr	r3, .L31+4
+	ldr	r1, .L31+8
+	mov	r2, #0
+	str	r2, [r3]
+	str	r1, [r3, #4]
+	str	r2, [r3, #8]
+	mov	r2, #1
+	str	r2, [r3]
+	@ sp needed
+	pop	{r3, pc}
+.L32:
+	.align	2
+.L31:
+	.word	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEvE4done
+	.word	-536813552
+	.word	16777215
+	.size	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_644initEv, .-_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_644initEv
+	.section	.text._ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE3nowEv,"axG",%progbits,_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE3nowEv,comdat
+	.align	1
+	.weak	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE3nowEv
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE3nowEv, %function
+_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE3nowEv:
+	ldr	r3, .L35+8
+	push	{r4, r5, r6, r7, lr}
+	ldr	r4, [r3, #8]
+	ldr	r3, .L35+12
+	mvn	r4, r4
+	ldr	r2, [r3]
+	lsl	r4, r4, #8
+	lsr	r4, r4, #8
+	mov	r5, r3
+	ldr	r1, .L35+16
+	cmp	r4, r2
+	bcs	.L34
+	ldr	r6, [r1]
+	ldr	r7, [r1, #4]
+	ldr	r3, .L35+4
+	ldr	r2, .L35
+	add	r2, r2, r6
+	adc	r3, r3, r7
+	str	r2, [r1]
+	str	r3, [r1, #4]
+.L34:
+	ldr	r7, [r1]
+	ldr	r1, [r1, #4]
+	str	r4, [r5]
+	orr	r4, r7
+	str	r4, [r0]
+	str	r1, [r0, #4]
+	@ sp needed
+	pop	{r4, r5, r6, r7, pc}
+.L36:
+	.align	3
+.L35:
+	.word	16777216
+	.word	0
+	.word	-536813552
+	.word	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE8last_low
+	.word	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE4high
+	.size	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE3nowEv, .-_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE3nowEv
+	.section	.text._ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE4waitENS_15moment_durationIxLx24EE8durationE,"axG",%progbits,_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE4waitENS_15moment_durationIxLx24EE8durationE,comdat
+	.align	1
+	.weak	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE4waitENS_15moment_durationIxLx24EE8durationE
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE4waitENS_15moment_durationIxLx24EE8durationE, %function
+_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE4waitENS_15moment_durationIxLx24EE8durationE:
+	push	{r0, r1, r2, r4, r5, lr}
+	mov	r4, r0
+	mov	r5, r1
+	mov	r0, sp
+	bl	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE3nowEv
+	ldr	r2, [sp]
+	ldr	r3, [sp, #4]
+	add	r4, r4, r2
+	adc	r5, r5, r3
+.L40:
+	mov	r0, sp
+	bl	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE3nowEv
+	ldr	r3, [sp, #4]
+	ldr	r2, [sp]
+	cmp	r5, r3
+	bgt	.L40
+	bne	.L37
+	cmp	r4, r2
+	bhi	.L40
+.L37:
+	@ sp needed
+	pop	{r0, r1, r2, r4, r5, pc}
+	.size	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE4waitENS_15moment_durationIxLx24EE8durationE, .-_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE4waitENS_15moment_durationIxLx24EE8durationE
+	.section	.text._ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE4initEv,"axG",%progbits,_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE4initEv,comdat
+	.align	1
+	.weak	_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE4initEv
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE4initEv, %function
+_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE4initEv:
+	push	{r4, r5, r6, lr}
+	bl	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_644initEv
+	ldr	r2, .L43
+	mov	r4, #128
+	ldr	r3, [r2, #124]
+	lsl	r4, r4, #9
+	orr	r3, r4
+	str	r3, [r2, #124]
+	ldr	r3, .L43+4
+	mov	r0, #7
+	ldr	r5, [r3]
+	mov	r1, #129
+	bic	r5, r0
+	orr	r5, r1
+	str	r5, [r3]
+	ldr	r3, .L43+8
+	mov	r6, #4
+	ldr	r5, [r3]
+	@ sp needed
+	orr	r5, r6
+	str	r5, [r3]
+	ldr	r5, .L43+12
+	mov	r6, #0
+	str	r6, [r5]
+	ldr	r5, [r2, #124]
+	orr	r5, r4
+	str	r5, [r2, #124]
+	ldr	r5, .L43+16
+	ldr	r6, [r5]
+	bic	r6, r0
+	orr	r6, r1
+	str	r6, [r5]
+	ldr	r5, [r3]
+	mov	r6, #1
+	orr	r5, r6
+	str	r5, [r3]
+	ldr	r5, [r2, #124]
+	orr	r4, r5
+	str	r4, [r2, #124]
+	ldr	r2, .L43+20
+	ldr	r4, [r2]
+	bic	r4, r0
+	orr	r1, r4
+	str	r1, [r2]
+	ldr	r2, [r3]
+	mov	r1, #2
+	orr	r2, r1
+	str	r2, [r3]
+	ldr	r3, .L43+24
+	neg	r2, r6
+	str	r2, [r3]
+	pop	{r4, r5, r6, pc}
+.L44:
+	.align	2
+.L43:
+	.word	1074036740
+	.word	1074020480
+	.word	1342275584
+	.word	1342242832
+	.word	1074020472
+	.word	1074020476
+	.word	1342242824
+	.size	_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE4initEv, .-_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE4initEv
+	.section	.text._ZN5hwcpp20add_timing_templatesINS_13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE2nsILy500ELy9223372036854775807EE4waitEv,"axG",%progbits,_ZN5hwcpp20add_timing_templatesINS_13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE2nsILy500ELy9223372036854775807EE4waitEv,comdat
+	.align	1
+	.weak	_ZN5hwcpp20add_timing_templatesINS_13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE2nsILy500ELy9223372036854775807EE4waitEv
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp20add_timing_templatesINS_13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE2nsILy500ELy9223372036854775807EE4waitEv, %function
+_ZN5hwcpp20add_timing_templatesINS_13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE2nsILy500ELy9223372036854775807EE4waitEv:
+	push	{r3, lr}
+	mov	r0, #24
+	mov	r1, #0
+	bl	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE4waitENS_15moment_durationIxLx24EE8durationE
+	@ sp needed
+	pop	{r3, pc}
+	.size	_ZN5hwcpp20add_timing_templatesINS_13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE2nsILy500ELy9223372036854775807EE4waitEv, .-_ZN5hwcpp20add_timing_templatesINS_13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE2nsILy500ELy9223372036854775807EE4waitEv
+	.section	.text._ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE20transaction_out_in_nEPKhPhi,"axG",%progbits,_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE20transaction_out_in_nEPKhPhi,comdat
+	.align	1
+	.weak	_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE20transaction_out_in_nEPKhPhi
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE20transaction_out_in_nEPKhPhi, %function
+_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE20transaction_out_in_nEPKhPhi:
+	push	{r0, r1, r2, r4, r5, r6, r7, lr}
+	ldr	r3, .L58
+	str	r1, [sp]
+	mov	r1, #0
+	str	r1, [r3]
+	mov	r4, r0
+	str	r2, [sp, #4]
+.L47:
+	ldr	r2, [sp, #4]
+	cmp	r2, #0
+	beq	.L57
+	cmp	r4, #0
+	beq	.L53
+	ldrb	r6, [r4]
+	add	r4, r4, #1
+	b	.L48
+.L53:
+	mov	r6, r4
+.L48:
+	ldr	r7, .L58+4
+	mov	r3, #0
+	str	r3, [r7]
+	bl	_ZN5hwcpp20add_timing_templatesINS_13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE2nsILy500ELy9223372036854775807EE4waitEv
+	mov	r5, #8
+.L50:
+	ldr	r3, .L58+8
+	sxtb	r2, r6
+	asr	r2, r2, #31
+	str	r2, [r3]
+	bl	_ZN5hwcpp20add_timing_templatesINS_13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE2nsILy500ELy9223372036854775807EE4waitEv
+	mov	r3, #1
+	neg	r3, r3
+	str	r3, [r7]
+	bl	_ZN5hwcpp20add_timing_templatesINS_13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE2nsILy500ELy9223372036854775807EE4waitEv
+	lsl	r6, r6, #1
+	mov	r3, #0
+	sub	r5, r5, #1
+	str	r3, [r7]
+	uxtb	r6, r6
+	cmp	r5, r3
+	bne	.L50
+	ldr	r2, [sp]
+	cmp	r2, r3
+	beq	.L51
+	strb	r5, [r2]
+	add	r2, r2, #1
+	str	r2, [sp]
+.L51:
+	ldr	r3, [sp, #4]
+	sub	r3, r3, #1
+	str	r3, [sp, #4]
+	b	.L47
+.L57:
+	ldr	r2, .L58
+	mov	r3, #1
+	neg	r3, r3
+	str	r3, [r2]
+	@ sp needed
+	pop	{r0, r1, r2, r4, r5, r6, r7, pc}
+.L59:
+	.align	2
+.L58:
+	.word	1342242824
+	.word	1342242832
+	.word	1342242820
+	.size	_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE20transaction_out_in_nEPKhPhi, .-_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE20transaction_out_in_nEPKhPhi
+	.section	.text._ZN5hwcpp4kittINS_5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS6_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS5_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS6_ILi1ELi1ELi2EEEvEEEEEENS_21timing_implementationISC_EEEEvNT0_8durationE,"axG",%progbits,_ZN5hwcpp4kittINS_5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS6_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS5_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS6_ILi1ELi1ELi2EEEvEEEEEENS_21timing_implementationISC_EEEEvNT0_8durationE,comdat
+	.align	1
+	.weak	_ZN5hwcpp4kittINS_5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS6_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS5_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS6_ILi1ELi1ELi2EEEvEEEEEENS_21timing_implementationISC_EEEEvNT0_8durationE
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp4kittINS_5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS6_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS5_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS6_ILi1ELi1ELi2EEEvEEEEEENS_21timing_implementationISC_EEEEvNT0_8durationE, %function
+_ZN5hwcpp4kittINS_5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS6_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS5_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS6_ILi1ELi1ELi2EEEvEEEEEENS_21timing_implementationISC_EEEEvNT0_8durationE:
+	push	{r3, r4, r5, r6, r7, lr}
+	mov	r4, r0
+	mov	r5, r1
+	bl	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_644initEv
+	bl	_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE4initEv
+	mov	r6, #0
+.L61:
+	ldr	r7, .L67
+	cmp	r6, #7
+	bgt	.L66
+	mov	r2, #1
+	mov	r3, r2
+	lsl	r3, r3, r6
+	mov	r0, r7
+	mov	r1, #0
+	strb	r3, [r7]
+	bl	_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE20transaction_out_in_nEPKhPhi
+	mov	r0, r4
+	mov	r1, r5
+	bl	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE4waitENS_15moment_durationIxLx24EE8durationE
+	add	r6, r6, #1
+	b	.L61
+.L66:
+	mov	r6, #6
+.L64:
+	mov	r2, #1
+	mov	r3, r2
+	lsl	r3, r3, r6
+	mov	r0, r7
+	mov	r1, #0
+	strb	r3, [r7]
+	sub	r6, r6, #1
+	bl	_ZN5hwcpp14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS4_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS3_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS4_ILi1ELi1ELi2EEEvEEE20transaction_out_in_nEPKhPhi
+	mov	r0, r4
+	mov	r1, r5
+	bl	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE4waitENS_15moment_durationIxLx24EE8durationE
+	cmp	r6, #0
+	bne	.L64
+	b	.L61
+.L68:
+	.align	2
+.L67:
+	.word	_ZN5hwcpp5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS5_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS4_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS5_ILi1ELi1ELi2EEEvEEEEE6bufferE
+	.size	_ZN5hwcpp4kittINS_5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS6_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS5_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS6_ILi1ELi1ELi2EEEvEEEEEENS_21timing_implementationISC_EEEEvNT0_8durationE, .-_ZN5hwcpp4kittINS_5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS6_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS5_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS6_ILi1ELi1ELi2EEEvEEEEEENS_21timing_implementationISC_EEEEvNT0_8durationE
+	.section	.text.startup.main,"ax",%progbits
+	.align	1
+	.global	main
+	.code	16
+	.thumb_func
+	.type	main, %function
+main:
+	push	{r4, r5, r6, lr}
+	bl	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE4initEv
+	ldr	r4, .L88+8
+	ldr	r3, .L88+12
+	ldr	r5, .L88+16
+	str	r3, [r4, #16]
+	ldrb	r3, [r4, #10]
+	cmp	r3, #0
+	beq	.L70
+	ldr	r1, [r4]
+	mov	r3, #0
+.L71:
+	ldrb	r2, [r5, r3]
+	cmp	r2, #0
+	beq	.L85
+	add	r3, r3, #1
+	b	.L71
+.L85:
+	sub	r1, r1, r3
+	mov	r0, r4
+	bl	_ZNSt7ostream6fillerEi
+.L70:
+	mov	r6, r5
+.L73:
+	ldrb	r0, [r6]
+	cmp	r0, #0
+	beq	.L86
+	ldr	r3, [r4, #16]
+	cmp	r3, #0
+	beq	.L74
+	blx	r3
+.L74:
+	add	r6, r6, #1
+	b	.L73
+.L86:
+	ldrb	r3, [r4, #10]
+	cmp	r3, #0
+	bne	.L76
+	ldr	r1, [r4]
+.L77:
+	ldrb	r2, [r5, r3]
+	cmp	r2, #0
+	beq	.L87
+	add	r3, r3, #1
+	b	.L77
+.L87:
+	sub	r1, r1, r3
+	mov	r0, r4
+	bl	_ZNSt7ostream6fillerEi
+.L76:
+	ldr	r1, .L88+4
+	ldr	r0, .L88
+	mov	r3, #0
+	str	r3, [r4]
+	bl	_ZN5hwcpp4kittINS_5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS6_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS5_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS6_ILi1ELi1ELi2EEEvEEEEEENS_21timing_implementationISC_EEEEvNT0_8durationE
+.L89:
+	.align	3
+.L88:
+	.word	2400000
+	.word	0
+	.word	_ZSt4cout
+	.word	_ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE4uartILj38400EE3putEc
+	.word	.LC9
+	.size	main, .-main
+	.weak	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE4high
+	.section	.bss._ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE4high,"awG",%nobits,_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE4high,comdat
+	.align	3
+	.type	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE4high, %object
+	.size	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE4high, 8
+_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE4high:
+	.space	8
+	.weak	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE8last_low
+	.section	.bss._ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE8last_low,"awG",%nobits,_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE8last_low,comdat
+	.align	2
+	.type	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE8last_low, %object
+	.size	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE8last_low, 4
+_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE8last_low:
+	.space	4
+	.weak	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEvE4done
+	.section	.bss._ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEvE4done,"awG",%nobits,_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEvE4done,comdat
+	.type	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEvE4done, %object
+	.size	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEvE4done, 1
+_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEvE4done:
+	.space	1
+	.weak	_ZN5hwcpp5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS5_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS4_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS5_ILi1ELi1ELi2EEEvEEEEE6bufferE
+	.section	.bss._ZN5hwcpp5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS5_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS4_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS5_ILi1ELi1ELi2EEEvEEEEE6bufferE,"awG",%nobits,_ZN5hwcpp5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS5_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS4_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS5_ILi1ELi1ELi2EEEvEEEEE6bufferE,comdat
+	.type	_ZN5hwcpp5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS5_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS4_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS5_ILi1ELi1ELi2EEEvEEEEE6bufferE, %object
+	.size	_ZN5hwcpp5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS5_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS4_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS5_ILi1ELi1ELi2EEEvEEEEE6bufferE, 1
+_ZN5hwcpp5hc595INS_14spi_channel_bbINS_25spi_bus_sclk_mosi_miso_bbINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi2ELi3EEENS5_ILi1ELi0ELi1EEENS_16pin_in_out_dummyENS_20add_timing_templatesINS_13timing_waiterINS4_8timer_64EEEE3MHzILy1EEELNS_8spi_modeE0EEENS_6invertINS5_ILi1ELi1ELi2EEEvEEEEE6bufferE:
+	.space	1
+	.weak	_ZSt4cout
+	.section	.rodata.str1.1,"aMS",%progbits,1
+.LC9:
+	.ascii	"kitt on 8 LEDs on an HC595\012\000"
+	.section	.data._ZSt4cout,"aw",%progbits
+	.align	2
+	.type	_ZSt4cout, %object
+	.size	_ZSt4cout, 20
+_ZSt4cout:
+	.word	0
+	.word	10
+	.byte	32
+	.byte	65
+	.byte	1
+	.byte	0
+	.byte	0
+	.byte	0
+	.space	2
+	.word	0
+	.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.3 20131129 (release) [ARM/embedded-4_8-branch revision 205641]"

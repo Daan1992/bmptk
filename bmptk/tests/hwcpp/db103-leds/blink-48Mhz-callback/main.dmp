@@ -1,0 +1,91 @@
+
+main.elf:     file format elf32-littlearm
+main.elf
+architecture: arm, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000441
+
+Program Header:
+    LOAD off    0x00008000 vaddr 0x00000000 paddr 0x00000000 align 2**15
+         filesz 0x000004a8 memsz 0x000004a8 flags r-x
+    LOAD off    0x00010000 vaddr 0x10000000 paddr 0x10000000 align 2**15
+         filesz 0x00000000 memsz 0x00000430 flags rw-
+private flags = 5000002: [Version5 EABI] [has entry point]
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000004a8  00000000  00000000  00008000  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000030  10000000  10000000  00010000  2**3
+                  ALLOC
+  2 .stack        00000400  10000030  10000030  00010000  2**0
+                  ALLOC
+  3 .ARM.attributes 00000031  00000000  00000000  000084a8  2**0
+                  CONTENTS, READONLY
+  4 .comment      00000070  00000000  00000000  000084d9  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00000000 l    d  .text	00000000 .text
+10000000 l    d  .bss	00000000 .bss
+10000030 l    d  .stack	00000000 .stack
+00000000 l    d  .ARM.attributes	00000000 .ARM.attributes
+00000000 l    d  .comment	00000000 .comment
+00000000 l    df *ABS*	00000000 cortex_startup.c
+00000000 l    df *ABS*	00000000 main.cpp
+00000000 l    df *ABS*	00000000 
+10000000 l       .text	00000000 __ram_start
+10001000 l       *ABS*	00000000 __ram_end
+000004a8 l       .bss	00000000 __exidx_end
+000004a8 l       .bss	00000000 __exidx_start
+00008000 l       *ABS*	00000000 __rom_end
+00000000 l       *ABS*	00000000 __process_stack_size
+00008000 l       *ABS*	00000000 __rom_size
+10001000 l       *ABS*	00000000 __heap_end
+00001000 l       *ABS*	00000000 __ram_size
+10000430 l       .stack	00000000 __heap_start
+00000000 l       .text	00000000 __rom_start
+00000400 l       *ABS*	00000000 __main_stack_size
+000001bc  w    F .text	0000002c _ZN5hwcpp3allIINS_6invertINS_12lpc1114_baseILi4096ELi32768ELi48000000EE6pin_ocILi0ELi5EEEvEENS3_17pin_in_out_pullupILi0ELi6EEENS1_INS7_ILi0ELi7EEEvEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS1_INSB_ILi1ELi1ELi2EEEvEENSB_ILi1ELi2ELi3EEENS1_INSB_ILi1ELi3ELi4EEEvEENSB_ILi1ELi4ELi5EEENS1_INS7_ILi1ELi5EEEvEENS7_ILi1ELi8EEENS1_INS7_ILi1ELi9EEEvEEEE3setEb
+000002a8  w    F .text	00000054 _ZN5hwcpp3allIJNS_6invertINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi1ELi2EEEvEENS4_ILi1ELi2ELi3EEENS1_INS4_ILi1ELi3ELi4EEEvEENS4_ILi1ELi4ELi5EEENS1_INS3_17pin_in_out_pullupILi1ELi5EEEvEENSB_ILi1ELi8EEENS1_INSB_ILi1ELi9EEEvEEEE4initEv
+000002fc  w    F .text	00000074 _ZN5hwcpp3allIJNS_12lpc1114_baseILi4096ELi32768ELi48000000EE17pin_in_out_pullupILi0ELi6EEENS_6invertINS3_ILi0ELi7EEEvEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS5_INS8_ILi1ELi1ELi2EEEvEENS8_ILi1ELi2ELi3EEENS5_INS8_ILi1ELi3ELi4EEEvEENS8_ILi1ELi4ELi5EEENS5_INS3_ILi1ELi5EEEvEENS3_ILi1ELi8EEENS5_INS3_ILi1ELi9EEEvEEEE4initEv
+10000018  w    O .bss	00000008 _ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE4high
+10000000  w    O .bss	00000018 _ZZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE5_node8root_getEvE5_root
+00000000 g       .text	00000000 __text_start
+10000430 g       .stack	00000000 __process_stack_end
+10000024  w    O .bss	00000001 _ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEvE4done
+00000498  w    O .text	0000000c _ZTVN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE5_nodeE
+00000028  w    F .text	0000004c _ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EE3nowEv
+10000430 g       .stack	00000000 __process_stack_start
+00000250  w    F .text	00000058 _ZN5hwcpp3allIJNS_6invertINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi3ELi4EEEvEENS4_ILi1ELi4ELi5EEENS1_INS3_17pin_in_out_pullupILi1ELi5EEEvEENS8_ILi1ELi8EEENS1_INS8_ILi1ELi9EEEvEEEE4initEv
+000004a8 g       *ABS*	00000000 __data_init_start
+00000370  w    F .text	000000b4 _ZN5hwcpp8blinkingINS_3allIJNS_12lpc1114_baseILi4096ELi32768ELi48000000EE6pin_ocILi0ELi4EEENS_6invertINS4_ILi0ELi5EEEvEENS3_17pin_in_out_pullupILi0ELi6EEENS6_INS9_ILi0ELi7EEEvEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS6_INSD_ILi1ELi1ELi2EEEvEENSD_ILi1ELi2ELi3EEENS6_INSD_ILi1ELi3ELi4EEEvEENSD_ILi1ELi4ELi5EEENS6_INS9_ILi1ELi5EEEvEENS9_ILi1ELi8EEENS6_INS9_ILi1ELi9EEEvEEEEENS_23callback_implementationINS3_8timer_64ENS_37callback_administration_double_linkedEEEE5blinkENS_15moment_durationIxLx24EE8durationE
+00000020  w    F .text	00000002 _ZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE5_node5visitENS_15moment_durationIxLx24EE6momentE
+10000430 g       .stack	00000000 __main_stack_end
+10000030 g       .bss	00000000 __bss_end
+00000160  w    F .text	0000005c _ZN5hwcpp3allIJNS_12lpc1114_baseILi4096ELi32768ELi48000000EE17pin_in_out_pullupILi0ELi6EEENS_6invertINS3_ILi0ELi7EEEvEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS5_INS8_ILi1ELi1ELi2EEEvEENS8_ILi1ELi2ELi3EEENS5_INS8_ILi1ELi3ELi4EEEvEENS8_ILi1ELi4ELi5EEENS5_INS3_ILi1ELi5EEEvEENS3_ILi1ELi8EEENS5_INS3_ILi1ELi9EEEvEEEE3setEb
+000001bc  w    F .text	0000002c _ZN5hwcpp3allIJNS_6invertINS_12lpc1114_baseILi4096ELi32768ELi48000000EE6pin_ocILi0ELi5EEEvEENS3_17pin_in_out_pullupILi0ELi6EEENS1_INS7_ILi0ELi7EEEvEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS1_INSB_ILi1ELi1ELi2EEEvEENSB_ILi1ELi2ELi3EEENS1_INSB_ILi1ELi3ELi4EEEvEENSB_ILi1ELi4ELi5EEENS1_INS7_ILi1ELi5EEEvEENS7_ILi1ELi8EEENS1_INS7_ILi1ELi9EEEvEEEE3setEb
+10000028  w    O .bss	00000004 _ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64ENS_37callback_administration_double_linkedEE12lock_counterE
+10000030 g       .stack	00000000 __stack_start
+00000078  w    F .text	00000084 _ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx24EE6momentE
+1000002c  w    O .bss	00000004 _ZGVZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64EEEE5_node8root_getEvE5_root
+10000020  w    O .bss	00000004 _ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_643nowEvE8last_low
+00000000 g     O .text	00000020 __vectors
+10000000 g       .text	00000000 __data_end
+00000440 g     F .text	00000054 __startup
+00000118  w    F .text	00000048 _ZN5hwcpp12lpc1114_baseILi4096ELi32768ELi48000000EE16initialize_clockEv
+10000430 g       .stack	00000000 __stack_end
+000004a8 g       .text	00000000 __text_end
+10000000 g       .bss	00000000 __bss_start
+00000428 g     F .text	00000018 main
+10000030 g       .stack	00000000 __main_stack_start
+000001e8  w    F .text	00000068 _ZN5hwcpp3allIJNS_6invertINS_12lpc1114_baseILi4096ELi32768ELi48000000EE17pin_in_out_pullupILi1ELi5EEEvEENS4_ILi1ELi8EEENS1_INS4_ILi1ELi9EEEvEEEE4initEv
+000002fc  w    F .text	00000074 _ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi48000000EE17pin_in_out_pullupILi0ELi6EEENS_6invertINS3_ILi0ELi7EEEvEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS5_INS8_ILi1ELi1ELi2EEEvEENS8_ILi1ELi2ELi3EEENS5_INS8_ILi1ELi3ELi4EEEvEENS8_ILi1ELi4ELi5EEENS5_INS3_ILi1ELi5EEEvEENS3_ILi1ELi8EEENS5_INS3_ILi1ELi9EEEvEEEE4initEv
+00000160  w    F .text	0000005c _ZN5hwcpp3allIINS_12lpc1114_baseILi4096ELi32768ELi48000000EE17pin_in_out_pullupILi0ELi6EEENS_6invertINS3_ILi0ELi7EEEvEENS2_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS5_INS8_ILi1ELi1ELi2EEEvEENS8_ILi1ELi2ELi3EEENS5_INS8_ILi1ELi3ELi4EEEvEENS8_ILi1ELi4ELi5EEENS5_INS3_ILi1ELi5EEEvEENS3_ILi1ELi8EEENS5_INS3_ILi1ELi9EEEvEEEE3setEb
+000001e8  w    F .text	00000068 _ZN5hwcpp3allIINS_6invertINS_12lpc1114_baseILi4096ELi32768ELi48000000EE17pin_in_out_pullupILi1ELi5EEEvEENS4_ILi1ELi8EEENS1_INS4_ILi1ELi9EEEvEEEE4initEv
+00000370  w    F .text	000000b4 _ZN5hwcpp8blinkingINS_3allIINS_12lpc1114_baseILi4096ELi32768ELi48000000EE6pin_ocILi0ELi4EEENS_6invertINS4_ILi0ELi5EEEvEENS3_17pin_in_out_pullupILi0ELi6EEENS6_INS9_ILi0ELi7EEEvEENS3_20pin_in_out_ad_pullupILi1ELi0ELi1EEENS6_INSD_ILi1ELi1ELi2EEEvEENSD_ILi1ELi2ELi3EEENS6_INSD_ILi1ELi3ELi4EEEvEENSD_ILi1ELi4ELi5EEENS6_INS9_ILi1ELi5EEEvEENS9_ILi1ELi8EEENS6_INS9_ILi1ELi9EEEvEEEEENS_23callback_implementationINS3_8timer_64ENS_37callback_administration_double_linkedEEEE5blinkENS_15moment_durationIxLx24EE8durationE
+000000fc  w    F .text	0000001a _ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi48000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx24EE8durationE
+00000250  w    F .text	00000058 _ZN5hwcpp3allIINS_6invertINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi3ELi4EEEvEENS4_ILi1ELi4ELi5EEENS1_INS3_17pin_in_out_pullupILi1ELi5EEEvEENS8_ILi1ELi8EEENS1_INS8_ILi1ELi9EEEvEEEE4initEv
+10000000 g       .text	00000000 __data_start
+000002a8  w    F .text	00000054 _ZN5hwcpp3allIINS_6invertINS_12lpc1114_baseILi4096ELi32768ELi48000000EE20pin_in_out_ad_pullupILi1ELi1ELi2EEEvEENS4_ILi1ELi2ELi3EEENS1_INS4_ILi1ELi3ELi4EEEvEENS4_ILi1ELi4ELi5EEENS1_INS3_17pin_in_out_pullupILi1ELi5EEEvEENSB_ILi1ELi8EEENS1_INSB_ILi1ELi9EEEvEEEE4initEv
+
+

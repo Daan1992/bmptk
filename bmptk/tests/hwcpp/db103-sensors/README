@@ -1,0 +1,14 @@
+file: bmptk/tests/hwcpp/README
+
+Bare Metal Programming Tool Kit hwcpp test directory
+
+This directory contains :
+   Makefile : supports 'clean' and 'build' targets
+   README   : this file
+
+subdirectories
+   check the Makefile
+
+
+
+

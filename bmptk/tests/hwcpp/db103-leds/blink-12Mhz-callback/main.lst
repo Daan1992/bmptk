@@ -1,0 +1,288 @@
+	.cpu cortex-m0
+	.fpu softvfp
+	.eabi_attribute 20, 1
+	.eabi_attribute 21, 1
+	.eabi_attribute 23, 3
+	.eabi_attribute 24, 1
+	.eabi_attribute 25, 1
+	.eabi_attribute 26, 1
+	.eabi_attribute 30, 4
+	.eabi_attribute 34, 0
+	.eabi_attribute 18, 4
+	.code	16
+	.file	"main.cpp"
+	.section	.text._ZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node5visitENS_15moment_durationIxLx6EE6momentE,"axG",%progbits,_ZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node5visitENS_15moment_durationIxLx6EE6momentE,comdat
+	.align	1
+	.weak	_ZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node5visitENS_15moment_durationIxLx6EE6momentE
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node5visitENS_15moment_durationIxLx6EE6momentE, %function
+_ZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node5visitENS_15moment_durationIxLx6EE6momentE:
+	@ sp needed
+	bx	lr
+	.size	_ZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node5visitENS_15moment_durationIxLx6EE6momentE, .-_ZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node5visitENS_15moment_durationIxLx6EE6momentE
+	.section	.text._ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv,"axG",%progbits,_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv,comdat
+	.align	1
+	.weak	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv, %function
+_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv:
+	ldr	r3, .L5+8
+	push	{r4, r5, r6, r7, lr}
+	ldr	r4, [r3, #8]
+	ldr	r3, .L5+12
+	mvn	r4, r4
+	ldr	r2, [r3]
+	lsl	r4, r4, #8
+	lsr	r4, r4, #8
+	mov	r5, r3
+	ldr	r1, .L5+16
+	cmp	r4, r2
+	bcs	.L3
+	ldr	r6, [r1]
+	ldr	r7, [r1, #4]
+	ldr	r3, .L5+4
+	ldr	r2, .L5
+	add	r2, r2, r6
+	adc	r3, r3, r7
+	str	r2, [r1]
+	str	r3, [r1, #4]
+.L3:
+	ldr	r7, [r1]
+	ldr	r1, [r1, #4]
+	str	r4, [r5]
+	orr	r4, r7
+	str	r4, [r0]
+	str	r1, [r0, #4]
+	@ sp needed
+	pop	{r4, r5, r6, r7, pc}
+.L6:
+	.align	3
+.L5:
+	.word	16777216
+	.word	0
+	.word	-536813552
+	.word	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low
+	.word	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high
+	.size	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv, .-_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv
+	.section	.text._ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE6momentE,"axG",%progbits,_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE6momentE,comdat
+	.align	1
+	.weak	_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE6momentE
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE6momentE, %function
+_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE6momentE:
+	push	{r4, r5, r6, r7, lr}
+	sub	sp, sp, #28
+	str	r0, [sp, #12]
+	str	r1, [sp, #8]
+.L17:
+	add	r0, sp, #16
+	bl	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv
+	ldr	r2, [sp, #16]
+	ldr	r3, [sp, #20]
+	ldr	r6, [sp, #8]
+	str	r2, [sp, #4]
+	mov	r5, r3
+	cmp	r6, r3
+	bgt	.L18
+	bne	.L7
+	ldr	r7, [sp, #12]
+	cmp	r7, r2
+	bls	.L7
+.L18:
+	ldr	r4, .L20
+	ldr	r0, [r4]
+	cmp	r0, #0
+	bne	.L17
+	ldr	r7, .L20+4
+	mov	r0, #1
+	ldr	r6, [r7]
+	str	r0, [r4]
+	ldr	r1, .L20+8
+	tst	r6, r0
+	bne	.L11
+	ldr	r6, .L20+12
+	str	r1, [r1, #4]
+	str	r6, [r1]
+	str	r1, [r1, #8]
+	str	r0, [r7]
+.L11:
+	ldr	r0, [r1, #4]
+.L12:
+	cmp	r0, r1
+	beq	.L15
+	ldr	r7, [r0, #20]
+	cmp	r7, r5
+	blt	.L19
+	bne	.L13
+	ldr	r7, [r0, #16]
+	ldr	r6, [sp, #4]
+	cmp	r7, r6
+	bcs	.L13
+.L19:
+	ldr	r1, [r0]
+	ldr	r1, [r1]
+	blx	r1
+	b	.L15
+.L13:
+	ldr	r0, [r0, #4]
+	b	.L12
+.L15:
+	ldr	r3, [r4]
+	sub	r3, r3, #1
+	str	r3, [r4]
+	b	.L17
+.L7:
+	add	sp, sp, #28
+	@ sp needed
+	pop	{r4, r5, r6, r7, pc}
+.L21:
+	.align	2
+.L20:
+	.word	_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE12lock_counterE
+	.word	_ZGVZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root
+	.word	_ZZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root
+	.word	_ZTVN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_nodeE+8
+	.size	_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE6momentE, .-_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE6momentE
+	.section	.text._ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE8durationE,"axG",%progbits,_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE8durationE,comdat
+	.align	1
+	.weak	_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE8durationE
+	.code	16
+	.thumb_func
+	.type	_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE8durationE, %function
+_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE8durationE:
+	push	{r0, r1, r2, r4, r5, lr}
+	mov	r5, r1
+	mov	r4, r0
+	mov	r0, sp
+	bl	_ZN5hwcpp13timing_waiterINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EE3nowEv
+	ldr	r0, [sp]
+	ldr	r1, [sp, #4]
+	add	r0, r0, r4
+	adc	r1, r1, r5
+	bl	_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE6momentE
+	@ sp needed
+	pop	{r0, r1, r2, r4, r5, pc}
+	.size	_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE8durationE, .-_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE8durationE
+	.section	.text.startup.main,"ax",%progbits
+	.align	1
+	.global	main
+	.code	16
+	.thumb_func
+	.type	main, %function
+main:
+	ldr	r3, .L25+8
+	ldr	r1, .L25+12
+	mov	r2, #0
+	push	{r4, lr}
+	str	r2, [r3]
+	str	r1, [r3, #4]
+	str	r2, [r3, #8]
+	mov	r2, #1
+	str	r2, [r3]
+	ldr	r3, .L25+16
+	mov	r2, #128
+	ldr	r1, [r3, #124]
+	lsl	r2, r2, #9
+	orr	r2, r1
+	str	r2, [r3, #124]
+	ldr	r3, .L25+20
+	mov	r1, #7
+	ldr	r2, [r3]
+	bic	r2, r1
+	str	r2, [r3]
+	ldr	r3, .L25+24
+	mov	r2, #128
+	ldr	r1, [r3]
+	lsl	r2, r2, #2
+	orr	r2, r1
+	str	r2, [r3]
+.L24:
+	ldr	r4, .L25+28
+	mov	r3, #1
+	neg	r3, r3
+	str	r3, [r4]
+	ldr	r1, .L25+4
+	ldr	r0, .L25
+	bl	_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE8durationE
+	ldr	r1, .L25+4
+	ldr	r0, .L25
+	mov	r3, #0
+	str	r3, [r4]
+	bl	_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE4waitENS_15moment_durationIxLx6EE8durationE
+	b	.L24
+.L26:
+	.align	3
+.L25:
+	.word	1500000
+	.word	0
+	.word	-536813552
+	.word	16777215
+	.word	1074036740
+	.word	1074020408
+	.word	1342275584
+	.word	1342244864
+	.size	main, .-main
+	.weak	_ZZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root
+	.section	.bss._ZZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root,"awG",%nobits,_ZZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root,comdat
+	.align	3
+	.type	_ZZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root, %object
+	.size	_ZZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root, 24
+_ZZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root:
+	.space	24
+	.weak	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high
+	.section	.bss._ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high,"awG",%nobits,_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high,comdat
+	.align	3
+	.type	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high, %object
+	.size	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high, 8
+_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high:
+	.space	8
+	.weak	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low
+	.section	.bss._ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low,"awG",%nobits,_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low,comdat
+	.align	2
+	.type	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low, %object
+	.size	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low, 4
+_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low:
+	.space	4
+	.weak	_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE12lock_counterE
+	.section	.bss._ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE12lock_counterE,"awG",%nobits,_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE12lock_counterE,comdat
+	.align	2
+	.type	_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE12lock_counterE, %object
+	.size	_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE12lock_counterE, 4
+_ZN5hwcpp23callback_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64ENS_37callback_administration_double_linkedEE12lock_counterE:
+	.space	4
+	.weak	_ZTVN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_nodeE
+	.section	.rodata._ZTVN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_nodeE,"aG",%progbits,_ZTVN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_nodeE,comdat
+	.align	3
+	.type	_ZTVN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_nodeE, %object
+	.size	_ZTVN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_nodeE, 12
+_ZTVN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_nodeE:
+	.word	0
+	.word	0
+	.word	_ZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node5visitENS_15moment_durationIxLx6EE6momentE
+	.weak	_ZGVZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root
+	.section	.bss._ZGVZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root,"awG",%nobits,_ZGVZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root,comdat
+	.align	2
+	.type	_ZGVZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root, %object
+	.size	_ZGVZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root, 4
+_ZGVZN5hwcpp37callback_administration_double_linkedINS_21timing_implementationINS_12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_64EEEE5_node8root_getEvE5_root:
+	.space	4
+	.weak	_ZSt4cout
+	.section	.data._ZSt4cout,"aw",%progbits
+	.align	2
+	.type	_ZSt4cout, %object
+	.size	_ZSt4cout, 20
+_ZSt4cout:
+	.word	0
+	.word	10
+	.byte	32
+	.byte	65
+	.byte	1
+	.byte	0
+	.byte	0
+	.byte	0
+	.space	2
+	.word	0
+	.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.3 20131129 (release) [ARM/embedded-4_8-branch revision 205641]"
