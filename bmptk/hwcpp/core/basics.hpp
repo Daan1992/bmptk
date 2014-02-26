@@ -148,12 +148,12 @@ namespace hwcpp {
    // assert that type T has a type V in it
    // (which should imply that it provides the corresponding interface)      
    #define HARDWARE_REQUIRE_ARCHETYPE( T, V ) class _test_##T##V {  \
-      template< class t, class x = void > struct V                  \
+      template< class t, class x = void > struct _##V               \
          { static constexpr bool value = false; };                  \
-      template< class t > struct V< t, typename t::V >              \
+      template< class t > struct _##V< t, typename t::V >           \
          { static constexpr bool value = true; };                   \
       static_assert(                                                \
-         V< T >::value,                                             \
+         _##V< T >::value,                                          \
          "the " #T " template argument doesn't provide " #V         \
       );                                                            \
    };   
@@ -179,6 +179,21 @@ namespace hwcpp {
       static constexpr int rom_size = arg_rom_size;
       static constexpr int clock_frequency = arg_clock_frequency;
    };    
+   
+
+   // =======================================================================
+   //
+   // the default asynchronous baudrate
+   //
+   // =======================================================================
+   
+   #ifndef HWCPP_BAUDRATE
+      #ifdef BMPTK_BAUDRATE
+         #define HWCPP_BAUDRATE BMPTK_BAUDRATE
+      #else
+         #define HWCPP_BAUDRATE 19200
+      #endif   
+   #endif      
       
       
 }; // namespace hwcpp

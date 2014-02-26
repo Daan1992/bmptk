@@ -40,11 +40,11 @@ Project
 Main=
 Selected=main.cpp
 [main.cpp]
-TopLine=37
-Caret=36,55
+TopLine=1
+Caret=1,3
 [..\..\..\hwcpp\core\numeric.hpp]
-TopLine=130
-Caret=41,157
+TopLine=162
+Caret=29,174
 [..\..\..\targets\cortex\cortex_startup.c]
 TopLine=14
 Caret=41,62

@@ -400,5 +400,8 @@ namespace std {
       }
       
    }; // class ostream    
+   
+   // must be weak because it is in a header
+   ostream __attribute__((weak)) cout;   
       
 }; // namespace std

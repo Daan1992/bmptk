@@ -94,4 +94,52 @@ namespace hwcpp {
    
    };   
    
+   template< 
+      class _pin, 
+      class timing, 
+      unsigned int baudrate = HWCPP_BAUDRATE
+   >
+   struct uart_out :
+      public channel_out_archetype 
+   {
+   
+      HARDWARE_REQUIRE_ARCHETYPE( timing, has_timing );
+   
+      typedef pin_out_from< _pin > pin;
+      static constexpr typename timing::duration interval = 
+         timing::duration::us( MHz / baudrate );
+      static constexpr typename timing::duration margin = 
+         timing::duration::us( 1 );
+                
+      static void init(){
+         pin::init();
+         pin::set( 1 );
+         timing::init();
+      }
+      
+      static bool put_will_block(){
+         return false;
+      }
+      
+      static void send( typename timing::moment &t, bool b ){
+         pin::set( b );
+         t += interval;
+         timing::wait( t, margin );         
+      }
+      
+      static void put( char c ){
+         auto t = timing::now();
+         send( t, 0 );
+
+         for( int i = 0; i < 8; i++ ){
+            send( t, c & 0x01 );
+            c = c >> 1;
+         }
+         
+         send( t, 1 );
+         send( t, 1 );
+
+      }
+   };   
+   
 }; // namespace hwcpp

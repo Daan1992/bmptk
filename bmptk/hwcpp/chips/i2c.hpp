@@ -49,9 +49,15 @@ namespace hwcpp {
 	template< 
       class arg_scl, 
       class arg_sda,
-      void wait( void )
+      class frequency
    >
    class i2c_bus_master_bb_scl_sda : public i2c_bus_master_archetype { 
+   
+      HARDWARE_REQUIRE_ARCHETYPE( frequency, has_frequency );   
+      
+      // add 50ns to satisfy the minimum SCL T-high at 400kHz
+      typedef typename frequency::service::template ns< 
+         frequency::half_period::duration + 50 > half_period;
    
       // use the pins in an appropriate way
       // (and assert that they can be used as such)   
@@ -60,39 +66,39 @@ namespace hwcpp {
      
       static void write_bit( bool x ){
          scl::set( 0 );
-         wait();
+         half_period::wait();
          sda::set( x );
          scl::set( 1 );
-         wait();
+         half_period::wait();
       }
    
       static bool read_bit(){
          scl::set( 0 );
-         wait();  
+         half_period::wait();  
          sda::set( 1 );
          scl::set( 1 );
-         wait();
+         half_period::wait();
          bool result = sda::get();
-         wait();     
+         half_period::wait();    
          return result;
       }       
      
       static void write_start(){
          sda::set( 0 );
-         wait();  
+         half_period::wait();
          scl::set( 0 );
-         wait();  
+         half_period::wait(); 
       }
 
       static void write_stop(){
          scl::set( 0 );
-         wait();    
+         half_period::wait();   
          sda::set( 0 );
-         wait();    
+         half_period::wait();   
          scl::set( 1 );
-         wait();    
+         half_period::wait();   
          sda::set( 1 );
-         wait();    
+         half_period::wait();    
       }
        
       static bool read_ack(){
@@ -129,6 +135,7 @@ namespace hwcpp {
    public:     
      
       static void init(){
+         frequency::init();
          scl::init();
          scl::set( 1 );   		
          sda::init();

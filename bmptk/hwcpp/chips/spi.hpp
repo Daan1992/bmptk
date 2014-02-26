@@ -124,10 +124,10 @@ namespace hwcpp {
    
    public:   
    
-      //typedef _timing timing;
-      typedef typename frequency::waiting timing;
+      typedef typename frequency::service timing;
    
       static void init(){
+         frequency::init();
          sclk::init();
          sclk::set( ! spi_mode_active_clock( mode ));
          mosi::init();
@@ -158,7 +158,7 @@ namespace hwcpp {
             if( spi_mode_data_first( mode )){
         
                mosi::set( out & 0x80 );
-               frequency::half_period::wait();;
+               frequency::half_period::wait();
          
                sclk::set( spi_mode_active_clock( mode ));
                if( miso::get() ){

@@ -160,27 +160,41 @@ namespace hwcpp {
       
       static void set_decimal_value( 
          unsigned int n, 
-         unsigned char points = 0 
+         unsigned int points = 0,
+         bool suppress = true         
       ){
          for( int i = 0; i < n_digits; i++ ){
-            segment_values[ i ] = digit::segments( n % 10 );
+         
+            unsigned int digit_value = n % 10;
+            n = n / 10;
+            
+            if(
+               ( digit_value == 0 ) 
+               && ( n == 0 ) 
+               && ( i > 0 ) 
+               && ( points == 0 )
+            ){
+               segment_values[ i ] = 0;
+            } else {
+               segment_values[ i ] = digit::segments( digit_value );
+            }
+            
             if( points & 0x01 ){
                segment_values[ i ] |= 0x80;
             }
             points = points >> 1;
-            n = n / 10;
          }      
       }      
       
       static void mux(){
-            //return;
-            if( ++current_digit >= n_digits ){
-               current_digit = 0;
-            }
-            digits::set( 0 );
-            digit::set_segments( segment_values[ current_digit ] );
-            digits::set( 1 << current_digit );
-            //digits::set( 1 );
+         //return;
+         if( ++current_digit >= n_digits ){
+            current_digit = 0;
+         }
+         digits::set( 0 );
+         digit::set_segments( segment_values[ current_digit ] );
+         digits::set( 1 << current_digit );
+         //digits::set( 1 );
       }
       
    };   

@@ -52,11 +52,7 @@ struct lpc1114fn28 : public lpc1114_base< 4 * Kib, 32 * Kib, frequency > {
       typename t::timer_64 
    > callback;
    
-   #ifdef BMPTK_BAUDRATE
-      template< unsigned int baudrate = BMPTK_BAUDRATE >
-   #else
-      template< unsigned int baudrate >
-   #endif
+   template< unsigned int baudrate = HWCPP_BAUDRATE >
    class uart : public t::template uart< baudrate >{};
 };
 

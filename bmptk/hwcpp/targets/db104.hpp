@@ -33,12 +33,14 @@ namespace hwcpp {
          digits_port
       > display;   
    
-      typedef pin_in_from< typename chip::gpio_1_0 > pin_in1;
-      typedef pin_in_from< typename chip::gpio_1_1 > pin_in2;
-      typedef pin_in_from< typename chip::gpio_1_2 > pin_in3;
-      typedef pin_out_from< typename chip::gpio_0_10 > pin_out1;
-      typedef pin_out_from< typename chip::gpio_0_11 > pin_out2; 	
-      typedef pin_out_from< typename chip::gpio_1_3 > pin_out3; 	
+      // the DB104 hardware inverts the pins
+      // the pin_in1 etc. reflect the external level in these pins
+      typedef invert< pin_in_from< typename chip::gpio_1_0 >>   pin_in1;
+      typedef invert< pin_in_from< typename chip::gpio_1_1 >>   pin_in2;
+      typedef invert< pin_in_from< typename chip::gpio_1_2 >>   pin_in3;
+      typedef invert< pin_out_from< typename chip::gpio_0_10 >> pin_out1;
+      typedef invert< pin_out_from< typename chip::gpio_0_11 >> pin_out2; 	
+      typedef invert< pin_out_from< typename chip::gpio_1_3 >>  pin_out3; 	
       
       static void init(){
       

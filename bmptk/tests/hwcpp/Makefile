@@ -6,7 +6,9 @@
 # 
 #############################################################################
 
-SUBDIRS += v1th04 v2cpse2
+SUBDIRS += db103-chips
+SUBDIRS += db103-leds
+SUBDIRS += db103-sensors
 
 BUILDDIRS = $(SUBDIRS:%=build-%)
 CLEANDIRS = $(SUBDIRS:%=clean-%)

@@ -24,12 +24,12 @@
 # 
 #############################################################################
 
-.PHONY: clean doc docs documentation build all examples zip push
+.PHONY: clean doc docs documentation build all examples zip push tests
 
 docs : doc
 documentation: doc
-all: doc examples
-build: examples
+all: doc examples tests
+build: examples tests
 
 REDIRECT := <META HTTP-EQUIV='refresh' CONTENT='0;URL=./docs/index.html'>
 
@@ -41,6 +41,10 @@ doc:
 examples:
 		cd examples && make build
 		@echo "**** examples build completed succesfully"
+
+tests:
+		cd tests && make build
+		@echo "**** tests build completed succesfully"
 
 zip: clean doc		
 		rm -rf index.html 

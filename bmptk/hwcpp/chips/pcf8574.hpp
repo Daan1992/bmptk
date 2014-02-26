@@ -10,6 +10,8 @@ namespace hwcpp {
    {
    private:
    
+      HARDWARE_REQUIRE_ARCHETYPE( bus, has_i2c_bus );   
+   
       static unsigned char buffer;
       
       static void flush(){
@@ -77,10 +79,14 @@ namespace hwcpp {
    
   //! interface for a pcf8547 I2C 8 bit I/O extender
    template< typename bus, int address = 0 > 
-   class pcf8574 : public pcf8574x< bus, 0x20, address > {};
+   class pcf8574 : public pcf8574x< bus, 0x20, address > {
+      HARDWARE_REQUIRE_ARCHETYPE( bus, has_i2c_bus );         
+   };
  
    //! interface for a pcf8547a I2C 8 bit I/O extender
    template< typename bus, int address = 0 > 
-   class pcf8574a : public pcf8574x< bus, 0x38, address >{}; 
+   class pcf8574a : public pcf8574x< bus, 0x38, address >{
+      HARDWARE_REQUIRE_ARCHETYPE( bus, has_i2c_bus );      
+   }; 
 
 }; // namespace hwcpp

@@ -1,21 +1,17 @@
 // DB104 film timer firmware
 //
-// Counts on the seven-segment display.
+// This application counts from the initial value of 20.00 
+// (20 minutes, 0 seconds) down to 0.00 at a rate of 0.01 per second.
+// Counting starts when IN1 is made high.
+// When 0.00 is reached OUT1 is pulled low for 0.5 second
+// and the application resets to 20.00 (and the downcounting will
+// resume when IN1 is made high).
+// RST can be made high at any time to reset the application to 20.00 .
 //
 // External connections functions:
 //    RST  : reset
-//    IN1  : count
-//    IN2  : _up/down
-//    IN3  : _pulsed/continuous (10Hz)
-//    OUT1 : carry
-//    OUT2 : _zero
-//    OUT3 : not used
-//
-// With a suitable pull-up (1k will do) the carry output
-// can be cascaded to the next counter's count input.
-//
-// The external connections are buffered by an ULN2003A,
-// hence the corresponding LPC1114 pins are inverted!
+//    IN1  : make high to start counting down
+//    OUT1 : pulled low for 0.5 second when 0.00 is reached
 
 #include "db104.hpp"
 typedef hwcpp::db104<> target;
@@ -42,8 +38,8 @@ static void count( int &n, bool direction ){
    }  
 }  
 
-typedef hwcpp::invert< hwcpp::pin_in_from< target::pin_in1 >>  pin_start;
-typedef hwcpp::pin_out_from< target::pin_out1 >  pin_pulse;
+typedef hwcpp::pin_in_from< target::pin_in1 >  pin_start;
+typedef hwcpp::invert< hwcpp::pin_out_from< target::pin_out1 >> pin_pulse;
    
 int main( void ){	
    //std::cout.connect< target::uart<> >();

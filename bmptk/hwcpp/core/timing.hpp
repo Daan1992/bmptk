@@ -225,7 +225,7 @@ namespace hwcpp {
       typedef typename _service::moment moment;
       typedef typename _service::duration duration;
             
-      static constexpr ull infinite = ULLONG_MAX;
+      static constexpr ull infinite = LLONG_MAX;
 
       template< ull d, ull m = infinite >
       struct ns : public noninstantiable {
@@ -233,7 +233,8 @@ namespace hwcpp {
          typedef ull base;
          static constexpr base duration = d;
          static constexpr base margin = m;
-         typedef _service waiting;
+         typedef add_timing_templates< _service > service;
+         static void init(){ _service::init(); }
          static void wait(){  
             // should call an implementation-template!! 
             if( d == infinite ){
@@ -272,7 +273,8 @@ namespace hwcpp {
          typedef void has_frequency;
          typedef ull base;
          static constexpr ull frequency = f;
-         typedef _service waiting;
+         typedef add_timing_templates< _service > service;
+         static void init(){ _service::init(); }
          typedef ns< s< 1 >::duration / f > period;
          typedef ns< s< 1 >::duration / ( 2 * f ) > half_period;
       };

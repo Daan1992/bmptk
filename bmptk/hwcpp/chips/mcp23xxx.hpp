@@ -12,6 +12,8 @@ namespace hwcpp {
    > 
    struct mcp23_i2c {
    
+      HARDWARE_REQUIRE_ARCHETYPE( bus, has_i2c_bus );         
+   
       static void init(){
          bus::init();
       }   
@@ -32,6 +34,8 @@ namespace hwcpp {
       int chip_address
    > 
    struct mcp23_spi {
+   
+      HARDWARE_REQUIRE_ARCHETYPE( channel, has_spi_channel );         
       
       static void init(){
          channel::init();
@@ -68,10 +72,10 @@ namespace hwcpp {
       typename chip,
       int register_base
    > 
-   class mcp_gpio 
-      : public port_in_out_archetype< 8 >
+   class mcp_gpio :
+      public port_in_out_archetype< 8 >
    {
-   
+         
       static unsigned char port, direction, pullups;
       
       static void direction_flush(){
@@ -108,12 +112,12 @@ namespace hwcpp {
          }
          
          static void pullup_enable(){
-            direction |= ( 0x01 << n );
+            pullups |= ( 0x01 << n );
             pullups_flush();            
          }
          
          static void pullup_disable(){
-            direction &= ( 0x01 << n );
+            pullups &= ~( 0x01 << n );
             pullups_flush();            
          }
          
@@ -135,6 +139,8 @@ namespace hwcpp {
       };
       
    public:
+      typedef typename port_in_out_archetype< 16 >::value_type value_type;
+
       static void init(){
          chip::init();
       } 
@@ -159,13 +165,13 @@ namespace hwcpp {
          pullups_flush();
       }
       
-      static unsigned int get(){
+      static value_type get(){
          unsigned char x;
          chip::register_read( register_base + 0x09, x );
          return x;
       }
       
-      static void set( unsigned int x ){
+      static void set( value_type x ){
          port = x;
          port_flush();
       }
@@ -207,25 +213,69 @@ namespace hwcpp {
    // =======================================================================
    
    template < 
-      typename chip,
+      typename i2c,
       int address
    >
-   struct mcp_gpio_2 {
-   
+   struct mcp_gpio_2 :
+      public port_in_out_archetype< 16 >
+   {
+      
+      HARDWARE_REQUIRE_ARCHETYPE( i2c, has_i2c_bus );     
+
+      typedef typename port_in_out_archetype< 16 >::value_type value_type;
+
       typedef mcp_gpio< 
-         mcp23_i2c< chip, 0x20 + address >, 
+         mcp23_i2c< i2c, 0x20 + address >, 
          0x00 
       > porta;
       
       typedef mcp_gpio< 
-         mcp23_i2c< chip, 0x20 + address >, 
+         mcp23_i2c< i2c, 0x20 + address >, 
          0x10 
       > portb;
       
-      //init block-mode ipv interleaved mode
+      static void init(){
+         porta::init();
+         portb::init();
+      }
       
-      //typedef porta::gp0 gpa0;
+      static void direction_set_input(){
+         porta::direction_set_input();
+         portb::direction_set_input();
+      }
       
+      static void direction_set_output(){
+         porta::direction_set_output();
+         portb::direction_set_output();
+      }
+      
+      static void set( value_type x ){
+         porta::set( (typename porta::value_type) x );
+         portb::set( (typename portb::value_type) x >> 8 );
+      }
+      
+      static value_type get() {
+         return porta::get() | (((value_type) portb::get()) << 8 );
+      }
+           
+      typedef typename porta::gp0 gpa0;
+      typedef typename porta::gp1 gpa1;
+      typedef typename porta::gp2 gpa2;
+      typedef typename porta::gp3 gpa3;
+      typedef typename porta::gp4 gpa4;
+      typedef typename porta::gp5 gpa5;
+      typedef typename porta::gp6 gpa6;
+      typedef typename porta::gp7 gpa7;
+ 
+      typedef typename portb::gp0 gpb0;
+      typedef typename portb::gp1 gpb1;
+      typedef typename portb::gp2 gpb2;
+      typedef typename portb::gp3 gpb3;
+      typedef typename portb::gp4 gpb4;
+      typedef typename portb::gp5 gpb5;
+      typedef typename portb::gp6 gpb6;
+      typedef typename portb::gp7 gpb7;
+ 
    };
    
    // =======================================================================
@@ -241,15 +291,19 @@ namespace hwcpp {
    struct mcp23008 : public mcp_gpio< 
       mcp23_i2c< i2c, 0x20 + address >, 
       0x00
-   > {};
+   >{
+      HARDWARE_REQUIRE_ARCHETYPE( i2c, has_i2c_bus );         
+   };
 
    template< 
       class i2c, 
       int address 
    > 
    struct mcp23017 : public mcp_gpio_2< 
-      mcp23_i2c< i2c, 0x20 + address >, 
-      0x00
-   > {};
+      i2c,
+      address
+   >{
+      HARDWARE_REQUIRE_ARCHETYPE( i2c, has_i2c_bus );            
+   };
    
 }; // namespace hardware   

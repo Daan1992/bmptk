@@ -411,6 +411,7 @@ $(OBJ): $(DEPEND)
 # show all warnings, treat most as errors
 CORE_FLAGS  += -Wall -Werror
 CORE_FLAGS  += -Wno-unused-local-typedefs
+CORE_FLAGS  += -Wno-maybe-uninitialized
 
 # use sections to save space
 CORE_FLAGS  += -fdata-sections -ffunction-sections
