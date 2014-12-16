@@ -20,8 +20,9 @@ else
     WPF := C:/Program Files (x86)
 endif
 
-GNU-ARM     := $(WPF)/GNU Tools ARM Embedded/4.8 2013q4
+GNU-ARM     := $(WPF)/GNU Tools ARM Embedded/4.8 2014q1
+MINGW       := C:/mingw64
 DEVKITPRO   := C:/devkitPro
 FLASHMAGIC  := "$(WPF)/Flash Magic/FM"
-LPC21ISP    := "$(BMPTK)/tools/lpc21"
+LPC21ISP    := "$(BMPTK)/tools/lpc21-97hr"
 

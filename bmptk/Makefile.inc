@@ -15,7 +15,7 @@
 
 # This string must not contain spaces, that does
 # (for some unclear reason) not work on Windows8
-VERSION := V03.00_work_in_progress_2014_02_18
+VERSION := V03.00_work_in_progress_2014_10_28
 
 
 #============================================================================
@@ -44,6 +44,13 @@ endif
 # 
 #============================================================================
 
+ifeq ($(MAKECMDGOALS),clean)
+   NOPROJECT = 1
+endif
+ifeq ($(MAKECMDGOALS),doxygen)
+   NOPROJECT = 1
+endif
+
 ifeq ($(PROJECT),)
    PROJECT = main
 endif   
@@ -51,7 +58,9 @@ endif
 ifeq ($(wildcard $(PROJECT).cpp),)
    ifeq ($(wildcard $(PROJECT).c),)
       ifeq ($(wildcard $(PROJECT).asm),)
-         $(error PROJECT ($(PROJECT)) is not a .cpp, .c or .asm file)
+         ifneq ($(NOPROJECT),1)
+            $(error PROJECT ($(PROJECT)) is not a .cpp, .c or .asm file)
+         endif   
       else	  
          SOURCES += $(PROJECT).asm
       endif	  
@@ -89,11 +98,10 @@ endif
 #============================================================================
 
 SEARCH    += $(BMPTK)
+SEARCH    += $(BMPTK)/graphics
 SEARCH    += $(BMPTK)/targets
 
-INCLUDES  += -I.
-INCLUDES  += -I$(BMPTK)
-INCLUDES  += -I$(BMPTK)/targets
+# INCLUDES  += -I.
 INCLUDES  += $(foreach x, $(SEARCH), -I$(x))
 
 bmptk.h:
@@ -145,7 +153,7 @@ endif
 NDSTOOL   := "$(DEVKITPRO)/devkitARM/bin/ndstool"
 
 ifeq ($(OS),Windows_NT)
-   RM          := "$(BMPTK)/tools/cs-rm" -f
+   RM          := "$(BMPTK)/tools/cs-rm" -rf
 else
    RM          := /bin/rm -f
 endif
@@ -182,10 +190,11 @@ LST       += $(patsubst %.o,%.lst,$(OBJ))
 # the target can be either a chip, or a board
 ifeq ($(TARGET),)
    TARGET = $(CHIP)
-endif
-ifeq ($(CHIP),)
-   CHIP = $(TARGET)
-endif
+else
+   ifeq ($(CHIP),)
+      CHIP = $(TARGET)
+   endif
+endif   
 
 ifeq ($(TARGET),db103)
    CHIP        := lpc1114fn28
@@ -233,20 +242,24 @@ endif
 ifeq ($(TARGET),win)
    $(eval $(Hosted))
    CHIP        := Intel
-   PREFIX      := $(DEVCPP)/bin/
+   PREFIX      := $(MINGW)/bin/
+   export PATH := $PREFIX:$(PATH)
+#   CPP       = "$(PREFIX)c++"
    CORE_FLAGS  := -mno-ms-bitfields   
-   INCLUDES    += -I"$(DEVCPPLIB)/lib/gcc/mingw32/3.4.2/include"  
-   INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2/backward" 
-   INCLUDES    += -I"$(DEVCPP)/lib/gcc/mingw32"
-   INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2"
-   INCLUDES    += -I"$(DEVCPP)/include"
-   LIBS   += -L"$(DEVCPP)/lib" 
-   LDFLAGS     += -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
+#   INCLUDES    += -I"$(DEVCPPLIB)/lib/gcc/mingw32/3.4.2/include"  
+#   INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2/backward" 
+#   INCLUDES    += -I"$(DEVCPP)/lib/gcc/mingw32"
+#   INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2"
+#   INCLUDES    += -I"$(DEVCPP)/include"
+#   LIBS   += -L"$(DEVCPP)/lib" 
+#   LDFLAGS     += -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
+   LDFLAGS     += -lgdi32
    RESULTS     = $(EXE)
    RUN         = ./$(EXE)
-   LIBS        += win
+   LIBRARIES        += win
    SEARCH       += $(BMPTK)/targets/win
-   INCLUDES    += -I$(BMPTK)/targets/win
+#   INCLUDES     += -I$(BMPTK)/targets/win
+#   INCLUDES     += -I $(BMPTK)
    LINKERSCRIPT =
 endif
 
@@ -273,8 +286,9 @@ define Cortex
    # RUN         = $(FLASHMAGIC) '$(FMCMD)'
    LINKERSCRIPT = linkerscript.ld
    LDFLAGS	   += -T linkerscript.ld -nostartfiles 
+   DEFINES     += -DBMPTK_EMBEDDED -DBMPTK_EMBEDDED_HEAP -DBMPTK_EMBEDDED_IOSTREAM   
    RESULTS     += linkerscript.ld
-   OBJ         += cortex_startup.o
+   OBJ         += cortex_startup.o cortex.o
 endef
 
 define Cortex-M0
@@ -287,10 +301,10 @@ endef
 
 define LPC81X
    $(eval $(Cortex-M0))
-   INCLUDES    += -I$(BMPTK)/targets/cmsis/lpc800/inc
+   INCLUDES    += -I$(BMPTK)/targets/cortex/cmsis/lpc800/inc
 endef
 
-ifeq ($(CHIP),lpc810m021)
+ifeq ($(CHIP),lpc810m021fn8)
    $(eval $(LPC81X))
    FNAME       = LPC810M021FN8
    STACKSIZE   ?= 256
@@ -312,9 +326,9 @@ endef
 ifeq ($(CHIP),lpc1114fn28)
    $(eval $(LPC1114))
    FNAME       = LPC1114/102
-   STACKSIZE   ?= 1k
+   STACKSIZE   ?= 2k
    LD_CONFIG   += -DROM_SIZE=32k -DRAM_SIZE=4k
-   HWCPP       += lpc1114.hpp lpc1114fn28.hpp cout.hpp
+   HWCPP       += lpc1114.hpp lpc1114fn28.hpp
 endif
 
 define LPC1227
@@ -330,9 +344,11 @@ ifeq ($(CHIP),lpc1227fbd301)
    LD_CONFIG   += -DROM_SIZE=96k -DRAM_SIZE=8k
 endif
 
-ifeq ($(PREFIX),)
-   $(error invalid or no target specified: "$(TARGET)")
-endif
+ifneq ($(NOPROJECT),1)
+   ifeq ($(PREFIX),)
+      $(error invalid or no target specified: "$(TARGET)")
+   endif
+endif   
 
 LD_CONFIG += -DSTACK_SIZE=$(STACKSIZE)
 
@@ -345,20 +361,20 @@ LD_CONFIG += -DSTACK_SIZE=$(STACKSIZE)
 
 HWCPP      += hwcpp.hpp
 HWCPP      += basics.hpp timing.hpp
-HWCPP      += string.hpp graphics.hpp
+HWCPP      += string.hpp
 HWCPP      += numeric.hpp
 HWCPP      += pins.hpp channels.hpp
 HWCPP      += i2c.hpp spi.hpp one_wire.hpp
 HWCPP      += hc595.hpp pcf8574.hpp mcp23xxx.hpp pcf8591.hpp
 HWCPP      += hd44780.hpp
-HWCPP      += graphics.hpp
+# HWCPP      += graphics.hpp
 HWCPP      += pcd8544.hpp lcd_19.hpp
 HWCPP      += ds18x20.hpp
 HWCPP      += ads7843.hpp
 
 ifeq ($(LANGUAGE),C++)
    HWCPPDIRS  = hwcpp hwcpp/core hwcpp/targets hwcpp/chips
-   INCLUDES  += $(foreach x, $(HWCPPDIRS), -I$(BMPTK)/$(x))
+   #$INCLUDES  += $(foreach x, $(HWCPPDIRS), -I$(BMPTK)/$(x))
    SEARCH    += $(foreach x, $(HWCPPDIRS), $(BMPTK)/$(x))
    HEADERS   += $(HWCPP)
 endif
@@ -387,6 +403,21 @@ endif
 ifeq ($(HAS_FILESYSTEM),1)
    DEFINES   += -DBMPTK_HAS_FILESYSTEM
 endif   
+
+#============================================================================
+#
+# the default font, required by bmptk_graphics 
+#
+# The 04B_03__.ttf file (listed as freeware) was downloaded from
+# http://www.eaglefonts.com/04b03-ttf-131597.htm
+# 
+#============================================================================
+
+FONT-DEFAULT  := $(BMPTK)/graphics/fonts/04B_03__.TTF
+
+ifeq (bmptk_graphics,$(filter bmptk_graphics,$(LIBS)))
+   LIBRARIES     += font_default 
+endif
 
 
 #============================================================================
@@ -485,13 +516,15 @@ vpath %.cpp  $(SEARCH)
 %.list: %.cpp
 	$(CPP) $(CPPFLAGS) -c -S -o $@ $<
 
-# make the linkerscipt   
+# make the linkerscipt  
+
 linkerscript.ld: $(BMPTK)/targets/cortex/linkerscript.c
 	@echo 'Creating the linkerscript'
 	$(CC) $(LD_CONFIG) -E -P -C $(BMPTK)/targets/cortex/linkerscript.c -o $@ 
 	@echo ' '
    
 # make .elf by linking all objects
+# $(error $(addprefix ./,$(OBJ) ) )
 $(ELF): $(addprefix ./,$(OBJ)) $(LIBA) $(LNK) ./$(LINKERSCRIPT)
 	@echo 'Linking target: $(ELF)'
 	$(LINKER) -Wl,-fatal-warnings -o $@ $(OBJ) $(LIBA) $(LDFLAGS) $(LIBS)
@@ -540,7 +573,7 @@ sizes: $(OBJ)
 # 
 #============================================================================
 
-.PHONY: $(PROJECT) all build new fresh run clean
+.PHONY: $(PROJECT) all build new fresh run clean doxygen
 
 .DEFAULT_GOAL := build
 
@@ -559,12 +592,16 @@ fresh: clean build
 run: $(PROJECT)
 	$(RUN)
 	$(TERMINAL)
+    
+doxygen: doxyfile
+	Doxygen
    
 # Cleanup
 CLEAN += $(RESULTS)
 CLEAN += $(OBJ)
 CLEAN += $(MAP)
 CLEAN += $(LST)
+CLEAN += doxydocs
 clean:
 	$(RM) $(CLEAN)
 

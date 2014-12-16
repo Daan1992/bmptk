@@ -2,14 +2,14 @@
 # 
 # Makefile for bmptk documentation, zip file, web pages, etc.
 #
-# Copyright (c) 2012 .. 2014 Wouter van Ooijen (www.voti.nl)
+# Copyright (c) 2012 .. 2015 Wouter van Ooijen (www.voti.nl)
 #
 # Distributed under the Boost Software License, Version 1.0.
 # (See accompanying file LICENSE_1_0.txt or copy at 
 # http://www.boost.org/LICENSE_1_0.txt)
 #
 # This file makes some meta-stuff that is probably 
-# probably interesting only for a bmptk maintainer.
+# interesting only for me as bmptk maintainer.
 #
 # targets:
 #    clean                     : total cleanup 
@@ -20,11 +20,12 @@
 #    www                       : create webpages (www subdir, includes zip)
 #    ftp                       : create webpages and ftp to website
 #                                (won't work from your PC ;) )
-#    th04                      : create .zip for TH04 lessons
+#    th04, v2cpse1, v2cpse2    : creates .zip for a specific course
 # 
 #############################################################################
 
 .PHONY: clean doc docs documentation build all examples zip push tests
+.PHONY: th04 
 
 docs : doc
 documentation: doc
@@ -52,7 +53,7 @@ zip: clean doc
 		@echo "**** zip build completed succesfully"
 		
 clean:
-		rm -rf index.html docs bmptk.zip th04.zip transfer
+		rm -rf index.html docs bmptk.zip bmptk-th04.zip transfer
 		cd examples && make clean	
 		cd tests && make clean	
 		@echo "**** cleanup completed succesfully"
@@ -71,25 +72,18 @@ ftp: zip
 		cp transfer/_ftp_crc_s ..
 		@echo "**** ftp transfer completed succesfully"
       
+TH04LIST += bmptk.h README
 TH04LIST += license.txt license_1_0.txt
 TH04LIST += Makefile Makefile.inc Makefile.local
-TH04LIST += bmptk.h
-TH04LIST += targets/bmptk_lpc1114* targets/cmsis/11xx/*/* 
+TH04LIST += targets/cortex/* targets/cortex/cmsis/*/inc/* 
 TH04LIST += tools/* tools/image_sizes/*
+TH04LIST += hwcpp/* hwcpp/*/*
 TH04LIST += index.html docs/* docs/search/*
 TH04LIST += examples/v1th04/*
-TH04LIST += examples/v1th04/blink/* 
-TH04LIST += examples/v1th04/switch/* 
-TH04LIST += examples/v1th04/beep/*
-TH04LIST += examples/v1th04/440Hz/*
-TH04LIST += examples/v1th04/timer/*
-TH04LIST += examples/v1th04/sw-uart/*
-TH04LIST += examples/v1th04/servo/*
-TH04LIST += examples/v1th04/ds1990/*
-TH04LIST += examples/v1th04/i2c/*
-TH04LIST += examples/v1th04/lcd5510/*
+TH04LIST += examples/v1th04/*/*
 
 th04: clean doc
-		pkzip25 -add -path=current th04.zip $(TH04LIST)
+		pkzip25 -add -path=current bmptk-th04.zip $(TH04LIST)
 		
+
 		

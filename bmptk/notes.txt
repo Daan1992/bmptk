@@ -6,6 +6,11 @@
 //
 // ==========================================================================
 
+git use:
+   git status
+   git add ....
+   git commit -a -m "text"
+
 
 // ==========================================================================
 // general high priority
@@ -272,6 +277,7 @@ RTOS alternatives
    http://www.cocoos.net/ - has stack checking??
    http://www.ohloh.net/p/irtos
    TinyOS
+   http://www.chibios.org/dokuwiki/doku.php
 
 graphics alternatives
    http://www.lpcware.com/content/project/emwin-graphics-library   
