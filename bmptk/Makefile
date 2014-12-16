@@ -24,7 +24,7 @@
 # 
 #############################################################################
 
-.PHONY: clean doc docs documentation build all examples zip push tests
+.PHONY: clean doc docs documentation build all examples zip xpush tests
 .PHONY: th04 
 
 docs : doc
@@ -58,7 +58,7 @@ clean:
 	cd tests && make clean	
 	@echo "**** cleanup completed succesfully"
 		
-push:
+xpush: 
 	make clean
 	git commit -a -m 'work'
 	git push
