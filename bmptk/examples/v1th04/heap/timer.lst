@@ -1,0 +1,79 @@
+	.cpu cortex-m0
+	.fpu softvfp
+	.eabi_attribute 20, 1
+	.eabi_attribute 21, 1
+	.eabi_attribute 23, 3
+	.eabi_attribute 24, 1
+	.eabi_attribute 25, 1
+	.eabi_attribute 26, 1
+	.eabi_attribute 30, 4
+	.eabi_attribute 34, 0
+	.eabi_attribute 18, 4
+	.code	16
+	.file	"timer.c"
+	.section	.text.timer_init,"ax",%progbits
+	.align	1
+	.global	timer_init
+	.code	16
+	.thumb_func
+	.type	timer_init, %function
+timer_init:
+	mov	r1, #128
+	ldr	r2, .L2
+	lsl	r1, r1, #2
+	ldr	r3, [r2, #124]
+	@ sp needed
+	orr	r3, r1
+	str	r3, [r2, #124]
+	mov	r2, #0
+	ldr	r3, .L2+4
+	sub	r1, r1, #246
+	sub	r1, r1, #255
+	str	r2, [r3, #112]
+	str	r1, [r3, #12]
+	str	r2, [r3, #8]
+	add	r2, r2, #1
+	str	r2, [r3, #4]
+	bx	lr
+.L3:
+	.align	2
+.L2:
+	.word	1074036740
+	.word	1073823744
+	.size	timer_init, .-timer_init
+	.section	.text.now,"ax",%progbits
+	.align	1
+	.global	now
+	.code	16
+	.thumb_func
+	.type	now, %function
+now:
+	ldr	r3, .L5
+	@ sp needed
+	ldr	r0, [r3, #8]
+	bx	lr
+.L6:
+	.align	2
+.L5:
+	.word	1073823744
+	.size	now, .-now
+	.section	.text.await,"ax",%progbits
+	.align	1
+	.global	await
+	.code	16
+	.thumb_func
+	.type	await, %function
+await:
+.L8:
+	ldr	r3, .L10
+	ldr	r3, [r3, #8]
+	cmp	r0, r3
+	bhi	.L8
+	@ sp needed
+	bx	lr
+.L11:
+	.align	2
+.L10:
+	.word	1073823744
+	.size	await, .-await
+	.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
