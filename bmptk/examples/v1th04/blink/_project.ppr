@@ -23,9 +23,13 @@ Project
 			Makefile
 [Open project files]
 0=main.c
+1=Makefile
 [Selected Project Files]
 Main=
 Selected=main.c
 [main.c]
-TopLine=35
+TopLine=25
 Caret=38,25
+[Makefile]
+TopLine=1
+Caret=71,9

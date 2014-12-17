@@ -21,7 +21,8 @@ else
     WPF := C:/Program Files (x86)
 endif
 
-GNU-ARM     := $(WPF)/GNU Tools ARM Embedded/4.9 2014q4
-MINGW       := C:/mingw32
-LPC21ISP    := "$(BMPTK)/tools/lpc21-97hr"
+GNU-ARM     ?= $(WPF)/GNU Tools ARM Embedded/4.9 2014q4
+MINGW       ?= C:/mingw32
+
+
 

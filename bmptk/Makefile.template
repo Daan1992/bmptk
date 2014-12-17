@@ -2,36 +2,42 @@
 #
 # Project Makefile
 #
-# (c) Wouter van Ooijen (www.voti.nl) 2012, 2013
+# (c) Wouter van Ooijen (www.voti.nl) 2012 ... 2015
 #
-# This file is in the public domain, so you can copy and adapt it and
-# put it under your own copyright notice.
+# This file is in the public domain.
+# You can copy and adapt it and put it under the copyright notice
+# for your project.
 # 
 #############################################################################
 
 # Specify the location of the bmptk library
 BMPTK      := ../../..
 
-# Specify target chip or board or system: win, nds, db103, or lpc1114fn28
+# Specify target chip or board or system: win, db103, or lpc1114fn28
 TARGET    := 
 
 # Specify the project main source file name, without extension.
 # the default is 'main'. It should be a .cpp, .c, or .asm file.
-PROJECT    := 
+# PROJECT    := 
 
 # Specify project-specific files (other than the main, if any)
-SOURCES    := 
-HEADERS    := 
+# SOURCES    := 
+# HEADERS    := 
+# OBJECTS    := 
 
 # directories, other than the current, that contain your sources
-SEARCH     := 
-
-
-OBJECTS    := 
-LIBS       := 
+# SEARCH     := 
 
 # specify (extra) results you want to get 
-RESULTS   := 
+# RESULTS   := 
+
+# specify the stack size (default depends on the target)
+# STACK_SIZE  := 
+
+# specify the toolchain to use (C or C++)
+# The default is C++ when the project contains one or more .cpp sources,
+# othewise it is C.
+# STACK_SIZE  := 
 
 # The bmptk/Makefile.inc does all the work
 include $(BMPTK)/Makefile.inc

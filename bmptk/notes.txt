@@ -11,11 +11,12 @@ git use:
    git add ....
    git commit -a -m "text"
    
-   
+- document bmptk-make
+- mingw export PATH nodig??
+- bmptk graphics: weg ermee?   
 - pass -DBMPTK so hwcpp knows
 - include bmptk.h OR include hwcpp target
-- bmptk: startup, malloc, fatal   
-- use gnuarmembedded 4.9
+- document bmptk levert malloc
 - document MinGW use (32 bit)   
 - compileer C, C++, asm
 - build all
@@ -29,9 +30,12 @@ git use:
 - lpc21isp - with license and source!
 - all README -> README.txt
 
-config stack size
 config extra c/c++ parameters
 optional asm listing   
+
+stack *onderaan* de RAM?
+cleanup tools compilation
+hwcpp knowledge (file list) => hwcpp
 
 
 // ==========================================================================
@@ -42,11 +46,7 @@ optional asm listing
 - windows target
 - nds target + examples
 - check comments & license for all targets
-- choose name for the hwlib: hwcpp
-- add malloc to cortex_startup.c => new name? (or put in common?)
 - stack size parameter => document
-- ROM and RAM size parameters
-- document LPC810,812,1114,1227 targets
 - use gcc for windows => latest version
 - xwisp com4 dtr - rts - term 38400
 - document target db103/lpc1114

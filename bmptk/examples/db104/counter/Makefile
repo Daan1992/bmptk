@@ -26,7 +26,7 @@ LIBS       :=
 # specify (extra) results you want to get (if any)
 RESULTS    := 
 
-SERIAL_PORT := COM1
+SERIAL_PORT := COM4
 
 # The Makefile.inc does all the work
 include $(BMPTK)/Makefile.inc

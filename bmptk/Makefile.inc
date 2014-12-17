@@ -37,6 +37,25 @@ endif
 
 #============================================================================
 #
+# These windows executables are distributed with bmptk.
+# For another platform you will have to compile them.
+# 
+#============================================================================
+
+ifeq ($(OS),Windows_NT)
+   MAKE         ?= "bmptk-make.exe"
+   REMOVE       ?= "bmptk-rm.exe" -f
+   IMAGE_SIZES  ?= "$(BMPTK)/tools/image_sizes/image_sizes.exe"
+   CHECK_PORT   ?= "$(BMPTK)/tools/check_serial_port/check_serial_port.exe"
+   LPC21ISP     ?= "$(BMPTK)/tools/lpc21isp_197/lpc21isp_hr.exe"
+else
+   $(error "you must build and define the executables" )
+   REMOVE       ?= /bin/rm -f
+endif
+
+
+#============================================================================
+#
 # The main project source file is sure part of the project.
 # By default it is the name of the project, but we must find out what
 # the extension is: .asm, .c or .cpp
@@ -52,9 +71,7 @@ ifeq ($(MAKECMDGOALS),doxygen)
    NOPROJECT = 1
 endif
 
-ifeq ($(PROJECT),)
-   PROJECT = main
-endif   
+PROJECT ?= main
 
 ifeq ($(wildcard $(PROJECT).cpp),)
    ifeq ($(wildcard $(PROJECT).c),)
@@ -85,9 +102,9 @@ endif
 
 SOURCES := $(strip $(SOURCES))
 ifeq ($(patsubst %.cpp,,$(SOURCES)),$(SOURCES))
-   LANGUAGE := C
+   LANGUAGE ?= C
 else
-   LANGUAGE := C++
+   LANGUAGE ?= C++
 endif
 # $(error $(LANGUAGE) '$(SOURCES)' '$(patsubst %.cpp,,$(SOURCES))' )
 
@@ -99,25 +116,8 @@ endif
 #============================================================================
 
 SEARCH    += $(BMPTK)
-SEARCH    += $(BMPTK)/graphics
 SEARCH    += $(BMPTK)/targets
-
-# INCLUDES  += -I.
 INCLUDES  += $(foreach x, $(SEARCH), -I$(x))
-
-bmptk.h:
-	# You specified an absolute path ($(BMPTK)) for the bmptk location.
-	# The 'make' tool you use has a bug in handling absolute paths that
-	# prevents the bmptk makefile from finding some source files.
-	# Two solutions are: 
-	# 1) Use a make that does not have this bug.
-	#    The gnu make available from www.gnu.org/software/make/ does
-	#    not have this bug, nor does the cs-make that is part of the 
-	#    CodesSourcery distribution. 
-	# 2) Use a relative path to specify the bmptk location. 
-	#    This almost forces you to locate your project inside the bmptk 
-	#    tree, (a subdirectory of) the examples directory is a 
-	#    reasonable choice.
 
    
 #============================================================================
@@ -126,9 +126,9 @@ bmptk.h:
 # 
 #============================================================================
 
-SERIAL_PORT      := COM4
-SERIAL_BAUDRATE  := 38400
-XTAL             := 12000
+SERIAL_PORT      ?= COM4
+SERIAL_BAUDRATE  ?= 38400
+XTAL             ?= 12000
 
 
 #============================================================================
@@ -151,14 +151,6 @@ else
    LINKER    = "$(PREFIX)g++"
 endif
 
-NDSTOOL   := "$(DEVKITPRO)/devkitARM/bin/ndstool"
-
-ifeq ($(OS),Windows_NT)
-   RM          := "$(BMPTK)/tools/cs-rm" -rf
-else
-   RM          := /bin/rm -f
-endif
-
 
 #============================================================================
 #
@@ -178,7 +170,6 @@ NMDUMP    := $(PROJECT).nmdump
 OBJ       += $(OBJECTS)
 SOURCESX  := $(patsubst %.asm,%.o,$(patsubst %.S,%.o,$(SOURCES)))
 OBJ       += $(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(SOURCESX)))
-OBJ       += $(patsubst %,%.o,$(LIBRARIES))
 LST       += $(patsubst %.o,%.lst,$(OBJ))
 
 
@@ -220,129 +211,81 @@ define Hosted
    HAS_FILESYSTEM = 1
 endef
 
-HAS_FILESYSTEM = 0
-
-ifeq ($(TARGET),nds)
-   $(eval $(Hosted))
-   CHIP        := ARMv7
-   PREFIX      := $(DEVKITPRO)/devkitARM/bin/arm-none-eabi-
-   CORE_FLAGS  := -march=armv5te -mtune=arm946e-s -fomit-frame-pointer 
-   CORE_FLAGS  += -ffast-math -mthumb -mthumb-interwork -DARM9
-   INCLUDES    += -I$(DEVKITPRO)/ -I$(DEVKITPRO)/libnds/include 
-   LIBS        += -L$(DEVKITPRO)/libnds/lib -lnds9
-   LDFLAGS	   += -g -mthumb -mthumb-interwork -specs=ds_arm9.specs
-   RESULTS     = $(ELF) $(NDS) $(NMDUMP)
-   RUN         = "$(DEVKITPRO)/emulators/desmume/DeSmuME" $(NDS)
-   LIBS        += nds
-   SEARCH       += $(BMPTK)/stdlib $(BMPTK)/targets/nds
-   INCLUDES    += -I$(BMPTK)/stdlib -I$(BMPTK)/targets/nds
-   TICKS_PER_US = 67
-   LINKERSCRIPT =
-endif
-
 ifeq ($(TARGET),win)
    $(eval $(Hosted))
-   CHIP        := Intel
-   PREFIX      := $(MINGW)/bin/
-   export PATH := $PREFIX:$(PATH)
+   CHIP           := Intel
+   PREFIX         := $(MINGW)/bin/
+   export PATH    := $PREFIX:$(PATH)
 #   CPP       = "$(PREFIX)c++"
-   CORE_FLAGS  := -mno-ms-bitfields   
-#   INCLUDES    += -I"$(DEVCPPLIB)/lib/gcc/mingw32/3.4.2/include"  
-#   INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2/backward" 
-#   INCLUDES    += -I"$(DEVCPP)/lib/gcc/mingw32"
-#   INCLUDES    += -I"$(DEVCPP)/include/c++/3.4.2"
-#   INCLUDES    += -I"$(DEVCPP)/include"
-#   LIBS   += -L"$(DEVCPP)/lib" 
-#   LDFLAGS     += -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32
-   LDFLAGS     += -lgdi32
-   RESULTS     = $(EXE)
-   RUN         = ./$(EXE)
-   LIBRARIES        += win
-   SEARCH       += $(BMPTK)/targets/win
-#   INCLUDES     += -I$(BMPTK)/targets/win
-#   INCLUDES     += -I $(BMPTK)
-   LINKERSCRIPT =
+   CORE_FLAGS     := -mno-ms-bitfields   
+   LDFLAGS        += -lgdi32
+   RESULTS        = $(EXE)
+   RUN            = ./$(EXE)
+   LIBRARIES      += win
+   SEARCH         += $(BMPTK)/targets/win
+   LINKERSCRIPT   =
 endif
 
 define Embedded 
-   EMBEDDED    = 1
-   CORE_FLAGS  += -nostartfiles 
-   PREFIX      := $(GNU-ARM)/bin/arm-none-eabi-
-   RESULTS     += $(NMDUMP) sizes 
+   EMBEDDED        = 1
+   HOSTED          = 0
+   HAS_FILESYSTEM  =  0
+   CORE_FLAGS      += -nostartfiles 
+   PREFIX          := $(GNU-ARM)/bin/arm-none-eabi-
+   LINKERSCRIPT    = linkerscript.ld
 endef
 
 define Cortex
    $(eval $(Embedded))
-   INCLUDES    += -I$(BMPTK)/targets/cortex/cmsis
-   XTAL        := 12000000
-   SOURCES     += bmptk_cortex.c
-   RESULTS     += $(ELF) $(BIN) $(MAP) $(HEX) $(DMP) $(LSS) $(NMDUMP)
-   FMCMD       = COM($(patsubst COM%,%,$(SERIAL_PORT)),$(SERIAL_BAUDRATE)) 
-   FMCMD       += DEVICE($(FNAME), 12000000, 0)
-   FMCMD       += HARDWARE(BOOTEXEC, 50, 100)
-   FMCMD       += ERASE(DEVICE, PROTECTISP)
-   FMCMD       += HEXFILE($(HEX), NOCHECKSUMS, NOFILL, PROTECTISP)
-   RUN         = $(LPC21ISP) -control -verify -term $(HEX) $(SERIAL_PORT) $(SERIAL_BAUDRATE) 12000
-   # TERMINAL    = lpc21isp -termonly x $(SERIAL_PORT) 19200 y
-   # RUN         = $(FLASHMAGIC) '$(FMCMD)'
-   LINKERSCRIPT = linkerscript.ld
-   LDFLAGS	   += -T linkerscript.ld -nostartfiles 
-   DEFINES     += -DBMPTK_EMBEDDED -DBMPTK_EMBEDDED_HEAP -DBMPTK_EMBEDDED_IOSTREAM   
-   RESULTS     += linkerscript.ld
-   OBJ         += bmptk_cortex.o
+   INCLUDES       += -I$(BMPTK)/targets/cortex/cmsis
+   SOURCES        += bmptk_cortex.c
+   RESULTS        += $(ELF) $(BIN) $(HEX) 
+   RUN            = $(LPC21ISP) -control -verify -term $(HEX) $(SERIAL_PORT) $(SERIAL_BAUDRATE) 12000
+   PORT_CHECK     = $(CHECK_PORT) $(SERIAL_PORT)
+   LDFLAGS	      += -T linkerscript.ld -nostartfiles 
+   DEFINES        += -DBMPTK_EMBEDDED -DBMPTK_EMBEDDED_HEAP -DBMPTK_EMBEDDED_IOSTREAM   
+   RESULTS        += linkerscript.ld
+   OBJ            += bmptk_cortex.o
 endef
 
 define Cortex-M0
    $(eval $(Cortex))
-   CORE_FLAGS  += -mcpu=cortex-m0 -mthumb -fomit-frame-pointer -march=armv6-m
-   SEARCH      += $(BMPTK)/targets/cortex
-   INCLUDES    += -I$(BMPTK)/targets/cortex
-   LD_CONFIG   = -DROM_START=0 -DRAM_START=0x10000000
+   CORE_FLAGS     += -mcpu=cortex-m0 -mthumb -fomit-frame-pointer -march=armv6-m
+   SEARCH         += $(BMPTK)/targets/cortex
+   INCLUDES       += -I$(BMPTK)/targets/cortex
+   LD_CONFIG      = -DROM_START=0 -DRAM_START=0x10000000
 endef
 
 define LPC81X
    $(eval $(Cortex-M0))
-   INCLUDES    += -I$(BMPTK)/targets/cortex/cmsis/lpc800/inc
+   INCLUDES       += -I$(BMPTK)/targets/cortex/cmsis/lpc800/inc
 endef
 
 ifeq ($(CHIP),lpc810m021fn8)
    $(eval $(LPC81X))
-   FNAME       = LPC810M021FN8
-   STACKSIZE   ?= 256
-   LD_CONFIG   += -DROM_SIZE=8k -DRAM_SIZE=1k 
+   FNAME          = LPC810M021FN8
+   STACK_SIZE     ?= 256
+   LD_CONFIG      += -DROM_SIZE=8k -DRAM_SIZE=1k 
 endif
 
 ifeq ($(CHIP),lpc812m101)
    $(eval $(LPC81X))
-   FNAME       = LPC810M021FN8
-   STACKSIZE   ?= 1k
-   LD_CONFIG   += -DROM_SIZE=16k -DRAM_SIZE=4k 
+   FNAME          = LPC810M021FN8
+   STACK_SIZE     ?= 1k
+   LD_CONFIG      += -DROM_SIZE=16k -DRAM_SIZE=4k 
 endif
 
 define LPC1114
    $(eval $(Cortex-M0))
-   INCLUDES    += -I$(BMPTK)/targets/cortex/cmsis/11xx/inc 
+   INCLUDES       += -I$(BMPTK)/targets/cortex/cmsis/11xx/inc 
 endef
 
 ifeq ($(CHIP),lpc1114fn28)
    $(eval $(LPC1114))
-   FNAME       = LPC1114/102
-   STACKSIZE   ?= 2k
-   LD_CONFIG   += -DROM_SIZE=32k -DRAM_SIZE=4k
-   HWCPP       += lpc1114.hpp lpc1114fn28.hpp
-endif
-
-define LPC1227
-   $(eval $(Cortex-M0))
-   INCLUDES    += -I$(BMPTK)/targets/cortex/cmsis/12xx/inc
-   SOURCES     += lpc1227.cpp   
-endef
-
-ifeq ($(CHIP),lpc1227fbd301)
-   $(eval $(LPC1227))
-   FNAME       = LPC1227/301
-   STACK_SIZE  ?= 2k
-   LD_CONFIG   += -DROM_SIZE=96k -DRAM_SIZE=8k
+   FNAME          = LPC1114/102
+   STACK_SIZE     ?= 2k
+   LD_CONFIG      += -DROM_SIZE=32k -DRAM_SIZE=4k
+   HWCPP_HEADERS  += lpc1114.hpp lpc1114fn28.hpp
 endif
 
 ifneq ($(NOPROJECT),1)
@@ -351,8 +294,6 @@ ifneq ($(NOPROJECT),1)
    endif
 endif   
 
-LD_CONFIG += -DSTACK_SIZE=$(STACKSIZE)
-
    
 #============================================================================
 #
@@ -360,24 +301,10 @@ LD_CONFIG += -DSTACK_SIZE=$(STACKSIZE)
 # 
 #============================================================================
 
-HWCPP      += hwcpp.hpp
-HWCPP      += basics.hpp timing.hpp
-HWCPP      += string.hpp
-HWCPP      += numeric.hpp
-HWCPP      += pins.hpp channels.hpp
-HWCPP      += i2c.hpp spi.hpp one_wire.hpp
-HWCPP      += hc595.hpp pcf8574.hpp mcp23xxx.hpp pcf8591.hpp
-HWCPP      += hd44780.hpp
-# HWCPP      += graphics.hpp
-HWCPP      += pcd8544.hpp lcd_19.hpp
-HWCPP      += ds18x20.hpp
-HWCPP      += ads7843.hpp
-
 ifeq ($(LANGUAGE),C++)
-   HWCPPDIRS  = hwcpp hwcpp/core hwcpp/targets hwcpp/chips
-   #$INCLUDES  += $(foreach x, $(HWCPPDIRS), -I$(BMPTK)/$(x))
-   SEARCH    += $(foreach x, $(HWCPPDIRS), $(BMPTK)/$(x))
-   HEADERS   += $(HWCPP)
+   include $(BMPTK)/hwcpp/Makefile.inc
+   SEARCH    += $(foreach x, $(HWCPP_DIRECTORIES), $(BMPTK)/$(x))
+   HEADERS   += $(HWCPP_HEADERS)
 endif
 
 
@@ -404,21 +331,6 @@ endif
 ifeq ($(HAS_FILESYSTEM),1)
    DEFINES   += -DBMPTK_HAS_FILESYSTEM
 endif   
-
-#============================================================================
-#
-# the default font, required by bmptk_graphics 
-#
-# The 04B_03__.ttf file (listed as freeware) was downloaded from
-# http://www.eaglefonts.com/04b03-ttf-131597.htm
-# 
-#============================================================================
-
-FONT-DEFAULT  := $(BMPTK)/graphics/fonts/04B_03__.TTF
-
-ifeq (bmptk_graphics,$(filter bmptk_graphics,$(LIBS)))
-   LIBRARIES     += font_default 
-endif
 
 
 #============================================================================
@@ -474,6 +386,16 @@ LDFLAGS     += $(COMMON) $(CORE_LD_FLAGS)
 
 #============================================================================
 #
+# what to make
+# 
+#============================================================================
+
+RESULTS += $(DMP) $(LSS) $(NMDUMP) $(MAP)
+# RESULTS += $(LST)
+
+
+#============================================================================
+#
 # how to make things
 # 
 #============================================================================
@@ -490,17 +412,25 @@ vpath %.cpp  $(SEARCH)
 # use only the explcit rules below
 .SUFFIXES:
 
+# How to make assembler listings
+%.lst: %.c
+	@echo 'Compiling C file to asm listing: $<'
+	$(CC) $(CFLAGS) -c -S -o $(patsubst %.o,%.lst,$@) $<
+	@echo ' ' 
+%.lst: %.cpp
+	@echo 'Compiling CPP file to asm listing: $<'
+	$(CPP) $(CPPFLAGS) -c -S -o $(patsubst %.o,%.lst,$@) $<
+	@echo '    
+
 # How to make object files?
 %.o: %.cpp
 	@echo 'Compiling C++ file: $<'
 	$(CPP) $(CPPFLAGS) -c -o $@ $< 
-	$(CPP) $(CPPFLAGS) -c -S -o $(patsubst %.o,%.lst,$@) $<
 	@echo ' '	
 	
 %.o: %.c
 	@echo 'Compiling C file: $<'
 	$(CC) $(CFLAGS) -c -o $@ $< 
-	$(CC) $(CFLAGS) -c -S -o $(patsubst %.o,%.lst,$@) $<
 	@echo ' '	
 	
 %.o: %.S
@@ -513,12 +443,8 @@ vpath %.cpp  $(SEARCH)
 	$(AS)  $(ASFLAGS)  -c -o $@ $<
 	@echo ' '	
 
-# How to make a listing from a cpp file
-%.list: %.cpp
-	$(CPP) $(CPPFLAGS) -c -S -o $@ $<
-
 # make the linkerscipt  
-
+LD_CONFIG += -DSTACK_SIZE=$(STACK_SIZE)
 linkerscript.ld: $(BMPTK)/targets/cortex/linkerscript.c
 	@echo 'Creating the linkerscript'
 	$(CC) $(LD_CONFIG) -E -P -C $(BMPTK)/targets/cortex/linkerscript.c -o $@ 
@@ -540,6 +466,8 @@ $(EXE): $(OBJ) $(LNK)
 # make sizes listing from the elf file
 $(NMDUMP): $(ELF)
 	$(NM) -S --size-sort --radix=d $(ELF) >$(NMDUMP)
+	$(SIZES) -B -t $(OBJ)
+	$(IMAGE_SIZES) $(MAP)
 
 # make .bin from .elf
 $(BIN): $(ELF)
@@ -555,17 +483,7 @@ $(DMP): $(ELF)
 
 # make .lss from elf
 $(LSS): $(ELF)
-	$(OBJDUMP) -S $< > $@
-
-# make .nds from .elf
-$(NDS): $(ELF)
-	$(NDSTOOL) -c $@ -9 $< -b $(DEVKITPRO)/libnds/icon.bmp "$(PROJECT)"		
-
-# show object sizes
-.PHONY: sizes
-sizes: $(OBJ)
-	$(SIZES) -B -t $(OBJ)
-	"$(BMPTK)/tools/image_sizes/image_sizes.exe" $(MAP)
+	$(OBJDUMP) -S $< > $@	
 
 
 #============================================================================
@@ -591,6 +509,7 @@ fresh: clean build
 
 # Run (= download and start) the project
 run: $(PROJECT)
+	$(PORT_CHECK)
 	$(RUN)
 	$(TERMINAL)
     
@@ -604,5 +523,5 @@ CLEAN += $(MAP)
 CLEAN += $(LST)
 CLEAN += doxydocs
 clean:
-	$(RM) $(CLEAN)
+	$(REMOVE) $(CLEAN)
 

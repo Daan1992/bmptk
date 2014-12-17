@@ -1,1 +1,1 @@
-make build
+bmptk-make build

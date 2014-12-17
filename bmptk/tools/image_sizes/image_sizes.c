@@ -21,7 +21,7 @@ void find( const char *s, const char *p, int *n ){
    //printf( "===>[%s]\n", b );   	
    if( 0 == strcmp( p, b )){
    	  sscanf( a, "%Xd", n );
-      printf( " found [%s] = 0x%0X\n", p, *n );
+      // printf( " found [%s] = 0x%0X\n", p, *n );
    }
 }
 

@@ -17,9 +17,9 @@ CLEANDIRS = $(SUBDIRS:%=clean-%)
 
 build: $(BUILDDIRS)
 $(BUILDDIRS):
-		make -C $(@:build-%=%) build
+		bmptk-make -C $(@:build-%=%) build
 
 clean: $(CLEANDIRS)
 $(CLEANDIRS):
-		make -C $(@:clean-%=%) clean
+		bmptk-make -C $(@:clean-%=%) clean
 

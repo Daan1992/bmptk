@@ -6,9 +6,6 @@
 # 
 #############################################################################
 
-# Specify the project name, this is also the main .cpp file to compile
-PROJECT    := 
-
 # Specify target chip or board or system
 TARGET     := lpc1114fn28
 
@@ -16,13 +13,8 @@ TARGET     := lpc1114fn28
 BMPTK      := ../../..
 
 # Specify project files (other than $(PROJECT).cpp) (if any)
-OBJECTS    := 
-SOURCES    :=
-HEADERS    := 
-LIBRARIES  := timer
-
-# specify (extra) results you want to get (if any)
-RESULTS    := 
+SOURCES    := timer.c
+HEADERS    := timer.h
 
 # The Makefile.inc does all the work
 include $(BMPTK)/Makefile.inc

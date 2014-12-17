@@ -58,6 +58,21 @@ void __startup( void ){
    while(1){}	
 }
 
+extern char __heap_start;
+extern char __heap_end;
+
+char * heap_free = &__heap_start;
+
+// simple malloc() implementation. note: no free()!
+void * malloc( int n ){
+   void * result = heap_free;
+   heap_free += 4 * (( n + 3 ) / 4 );
+   if( heap_free > &__heap_end ){
+      return 0;
+   }
+   return result;
+}
+
 // junk that is not needed in an embedded context, but
 // is still required to satisfy the C++ compiler
 void * __dso_handle;
