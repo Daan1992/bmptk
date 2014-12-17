@@ -1,14 +1,15 @@
 #############################################################################
 # 
-# Makefile for bmptk v1th04 examples 
+# Makefile for bmptk examples (sub) directory
 #
-# (c) Wouter van Ooijen (www.voti.nl) 2012, 2013
+# (c) Wouter van Ooijen (www.voti.nl) 2012 ... 2013
 # 
 #############################################################################
 
-SUBDIRS += blink switch beep
-SUBDIRS += 440hz timer sw-uart ds1990
-SUBDIRS += lcd5510
+SUBDIRS += 440hz beep blink ds1990 heap
+SUBDIRS += lcd5510 servo switch sw-uart timer
+
+# i2c is a library directory, not a project
 
 BUILDDIRS = $(SUBDIRS:%=build-%)
 CLEANDIRS = $(SUBDIRS:%=clean-%)

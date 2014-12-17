@@ -33,8 +33,7 @@ Project
 0=Makefile
 1=main.cpp
 2=..\..\..\hwcpp\core\numeric.hpp
-3=..\..\..\targets\cortex\cortex_startup.c
-4=..\..\..\hwcpp\targets\lpc1114fn28.hpp
+3=..\..\..\hwcpp\targets\lpc1114fn28.hpp
 [Selected Project Files]
 Main=
 Selected=main.cpp
@@ -42,14 +41,11 @@ Selected=main.cpp
 TopLine=1
 Caret=23,10
 [main.cpp]
-TopLine=107
-Caret=7,124
+TopLine=9
+Caret=1,24
 [..\..\..\hwcpp\core\numeric.hpp]
 TopLine=130
 Caret=41,157
-[..\..\..\targets\cortex\cortex_startup.c]
-TopLine=21
-Caret=41,62
 [..\..\..\hwcpp\targets\lpc1114fn28.hpp]
 TopLine=1
 Caret=1,11

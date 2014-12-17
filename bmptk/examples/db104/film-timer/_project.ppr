@@ -31,29 +31,21 @@ Project
 			Makefile
 [Open project files]
 0=main.cpp
-1=..\..\..\hwcpp\core\numeric.hpp
-2=..\..\..\targets\cortex\cortex_startup.c
-3=..\..\..\hwcpp\targets\lpc1114fn28.hpp
-4=..\..\..\hwcpp\targets\db104.hpp
-5=..\..\..\hwcpp\core\timing.hpp
+1=..\..\..\hwcpp\targets\db104.hpp
+2=..\..\..\hwcpp\core\timing.hpp
+3=Makefile
 [Selected Project Files]
 Main=
 Selected=main.cpp
 [main.cpp]
-TopLine=1
+TopLine=53
 Caret=1,3
-[..\..\..\hwcpp\core\numeric.hpp]
-TopLine=162
-Caret=29,174
-[..\..\..\targets\cortex\cortex_startup.c]
-TopLine=14
-Caret=41,62
-[..\..\..\hwcpp\targets\lpc1114fn28.hpp]
-TopLine=1
-Caret=1,11
 [..\..\..\hwcpp\targets\db104.hpp]
 TopLine=6
 Caret=10,48
 [..\..\..\hwcpp\core\timing.hpp]
 TopLine=176
 Caret=29,194
+[Makefile]
+TopLine=1
+Caret=1,15
