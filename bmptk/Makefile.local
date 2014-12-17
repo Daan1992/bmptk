@@ -14,6 +14,7 @@
 # 
 #############################################################################
 
+# WPF is the windows prefix for 32-bit applicationsd
 ifeq ($(wildcard C:/Program\ Files\ (x86)/* ),)
     WPF := C:/Program Files
 else
@@ -21,8 +22,6 @@ else
 endif
 
 GNU-ARM     := $(WPF)/GNU Tools ARM Embedded/4.8 2014q1
-MINGW       := C:/mingw64
-DEVKITPRO   := C:/devkitPro
-FLASHMAGIC  := "$(WPF)/Flash Magic/FM"
+MINGW       := C:/mingw32
 LPC21ISP    := "$(BMPTK)/tools/lpc21-97hr"
 

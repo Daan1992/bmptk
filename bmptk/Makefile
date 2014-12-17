@@ -15,7 +15,7 @@
 #    clean                     : total cleanup 
 #    doc, docs, documentation  : create documentation (docs subdir)
 #    build, examples           : build all examples
-#    push                      : clean, git commit -a, git push 
+#    commit                    : clean, git commit -a, git push 
 #    zip                       : create bmptk.zip, includes documentation
 #    www                       : create webpages (www subdir, includes zip)
 #    ftp                       : create webpages and ftp to website
@@ -24,7 +24,7 @@
 # 
 #############################################################################
 
-.PHONY: clean doc docs documentation build all examples zip xpush tests
+.PHONY: clean doc docs documentation build all examples zip commit tests
 .PHONY: th04 
 
 docs : doc
@@ -58,7 +58,7 @@ clean:
 	cd tests && make clean	
 	@echo "**** cleanup completed succesfully"
 		
-xpush: 
+commit: 
 	make clean
 	git commit -a -m 'work'
 	git push
