@@ -1,26 +1,18 @@
 [Config]
-Relative path=1
 Compilator.FileName=build.bat
-Compilator.PSPar=
-Compilator.Log=
-Compilator.Run=
-Compilator.DefaultDir=
 Compilator.SaveAll=1
 Compilator.Capture=1
 Compilator.ParsLog=%F:%L:*
 Compilator.HideOutput=1
+Compilator.LogType=0
 Prog1=Clean,cmd /C "make clean "
 Prog2=Run,cmd /C "make run "
-Prog3=
-Prog4=
-Prog5=
-DefaultDir=
 DefaultCPIndex=0
 LogtoEnd=1
 DontOpen=0
+AbsolutePath=0
 FileFormat=0
-DocumentRoot=
-HTServer=
+ProjectFilesOnly=0
 [Project tree]
 Project
 	+Files
@@ -35,5 +27,5 @@ Project
 Main=
 Selected=main.c
 [main.c]
-TopLine=1
-Caret=67,15
+TopLine=35
+Caret=38,25

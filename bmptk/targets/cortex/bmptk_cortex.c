@@ -2,7 +2,7 @@
 //
 // file : bmptk/bmptk.h
 //
-// Copyright (c) 2012 ... 2014 Wouter van Ooijen (wouter@voti.nl)
+// Copyright (c) 2012 ... 2015 Wouter van Ooijen (wouter@voti.nl)
 // 
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE_1_0.txt or copy at 
@@ -58,7 +58,7 @@ void __startup( void ){
    while(1){}	
 }
 
-// junk that is not needed in an embedded conetxt, but
+// junk that is not needed in an embedded context, but
 // is still required to satisfy the C++ compiler
 void * __dso_handle;
 

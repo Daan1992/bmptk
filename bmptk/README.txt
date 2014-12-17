@@ -31,6 +31,7 @@ This directory contains :
       - README             : this file
 
    subdirectories
+      - attic              : resting place for old stuff
       - docsrc             : input for Doxygen documentation generation
       - examples           : example directories
       - targets            : basic chip and board specific stuff

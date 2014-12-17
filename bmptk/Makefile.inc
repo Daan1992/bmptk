@@ -2,9 +2,9 @@
 #
 # file: bmptk/Makefile.inc
 #
-# Makefile for bare metal C++ projects
+# Makefile for bare metal C /C++ / assembler projects using GCC
 #
-# Copyright (c) 2012 ... 2014 Wouter van Ooijen (wouter@voti.nl)
+# Copyright (c) 2012 ... 2015 Wouter van Ooijen (wouter@voti.nl)
 # 
 # Distributed under the Boost Software License, Version 1.0.
 # (See accompanying file LICENSE_1_0.txt or copy at 
@@ -15,7 +15,7 @@
 
 # This string must not contain spaces, that does
 # (for some unclear reason) not work on Windows8
-VERSION := V03.00_work_in_progress_2014_10_28
+VERSION := V03.00_work_in_progress_2014_12_17
 
 
 #============================================================================
@@ -38,7 +38,8 @@ endif
 #============================================================================
 #
 # The main project source file is sure part of the project.
-# It is specified with extension: here we find the a .asm, .c or .cpp file
+# By default it is the name of the project, but we must find out what
+# the extension is: .asm, .c or .cpp
 #
 # the default project name is 'main'
 # 
@@ -77,7 +78,7 @@ endif
 # decide whether we have a C++ project or a C/Assembler project
 #
 # When a project uses at least one C++ file it is a C++ project, and
-# the C++ tools must be used for ALL files.
+# the C++ tools are used for ALL files.
 # If not, the C tools are used.
 # 
 #============================================================================
@@ -274,7 +275,7 @@ define Cortex
    $(eval $(Embedded))
    INCLUDES    += -I$(BMPTK)/targets/cortex/cmsis
    XTAL        := 12000000
-   SOURCES     += cortex_startup.c
+   SOURCES     += bmptk_cortex.c
    RESULTS     += $(ELF) $(BIN) $(MAP) $(HEX) $(DMP) $(LSS) $(NMDUMP)
    FMCMD       = COM($(patsubst COM%,%,$(SERIAL_PORT)),$(SERIAL_BAUDRATE)) 
    FMCMD       += DEVICE($(FNAME), 12000000, 0)
@@ -288,7 +289,7 @@ define Cortex
    LDFLAGS	   += -T linkerscript.ld -nostartfiles 
    DEFINES     += -DBMPTK_EMBEDDED -DBMPTK_EMBEDDED_HEAP -DBMPTK_EMBEDDED_IOSTREAM   
    RESULTS     += linkerscript.ld
-   OBJ         += cortex_startup.o cortex.o
+   OBJ         += bmptk_cortex.o
 endef
 
 define Cortex-M0
