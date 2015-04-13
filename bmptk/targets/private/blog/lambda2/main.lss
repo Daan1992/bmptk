@@ -1,0 +1,54 @@
+
+main.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <__text_start>:
+   0:	10000800 	.word	0x10000800
+   4:	00000025 	.word	0x00000025
+	...
+
+00000020 <main>:
+  20:	2000      	movs	r0, #0
+  22:	4770      	bx	lr
+
+00000024 <__startup>:
+  24:	2200      	movs	r2, #0
+  26:	4910      	ldr	r1, [pc, #64]	; (68 <__startup+0x44>)
+  28:	4b10      	ldr	r3, [pc, #64]	; (6c <__startup+0x48>)
+  2a:	b510      	push	{r4, lr}
+  2c:	1a5b      	subs	r3, r3, r1
+  2e:	089b      	lsrs	r3, r3, #2
+  30:	3301      	adds	r3, #1
+  32:	009b      	lsls	r3, r3, #2
+  34:	1d10      	adds	r0, r2, #4
+  36:	4298      	cmp	r0, r3
+  38:	d004      	beq.n	44 <__startup+0x20>
+  3a:	2400      	movs	r4, #0
+  3c:	188a      	adds	r2, r1, r2
+  3e:	6014      	str	r4, [r2, #0]
+  40:	1c02      	adds	r2, r0, #0
+  42:	e7f7      	b.n	34 <__startup+0x10>
+  44:	2200      	movs	r2, #0
+  46:	490a      	ldr	r1, [pc, #40]	; (70 <__startup+0x4c>)
+  48:	4b0a      	ldr	r3, [pc, #40]	; (74 <__startup+0x50>)
+  4a:	1a5b      	subs	r3, r3, r1
+  4c:	089b      	lsrs	r3, r3, #2
+  4e:	3301      	adds	r3, #1
+  50:	009b      	lsls	r3, r3, #2
+  52:	1d10      	adds	r0, r2, #4
+  54:	4298      	cmp	r0, r3
+  56:	d004      	beq.n	62 <__startup+0x3e>
+  58:	4c07      	ldr	r4, [pc, #28]	; (78 <__startup+0x54>)
+  5a:	58a4      	ldr	r4, [r4, r2]
+  5c:	508c      	str	r4, [r1, r2]
+  5e:	1c02      	adds	r2, r0, #0
+  60:	e7f7      	b.n	52 <__startup+0x2e>
+  62:	f7ff ffdd 	bl	20 <main>
+  66:	e7fe      	b.n	66 <__startup+0x42>
+  68:	10000000 	.word	0x10000000
+  6c:	10000000 	.word	0x10000000
+  70:	10000000 	.word	0x10000000
+  74:	10000000 	.word	0x10000000
+  78:	0000007c 	.word	0x0000007c

@@ -1,0 +1,66 @@
+	.cpu cortex-m0
+	.fpu softvfp
+	.eabi_attribute 20, 1
+	.eabi_attribute 21, 1
+	.eabi_attribute 23, 3
+	.eabi_attribute 24, 1
+	.eabi_attribute 25, 1
+	.eabi_attribute 26, 1
+	.eabi_attribute 30, 4
+	.eabi_attribute 34, 0
+	.eabi_attribute 18, 4
+	.code	16
+	.file	"main.cpp"
+	.section	.text.startup.main,"ax",%progbits
+	.align	1
+	.global	main
+	.code	16
+	.thumb_func
+	.type	main, %function
+main:
+	.fnstart
+.LFB1581:
+	push	{r3, lr}
+	.save {r3, lr}
+	mov	r0, #1
+	bl	__cxa_allocate_exception
+	ldr	r1, .L2
+	mov	r2, #0
+	bl	__cxa_throw
+.L3:
+	.align	2
+.L2:
+	.word	_ZTI11MyException
+	.fnend
+	.size	main, .-main
+	.weak	_ZTI11MyException
+	.section	.rodata._ZTI11MyException,"aG",%progbits,_ZTI11MyException,comdat
+	.align	2
+	.type	_ZTI11MyException, %object
+	.size	_ZTI11MyException, 8
+_ZTI11MyException:
+	.word	_ZTVN10__cxxabiv117__class_type_infoE+8
+	.word	_ZTS11MyException
+	.weak	_ZTS11MyException
+	.section	.rodata._ZTS11MyException,"aG",%progbits,_ZTS11MyException,comdat
+	.type	_ZTS11MyException, %object
+	.size	_ZTS11MyException, 14
+_ZTS11MyException:
+	.ascii	"11MyException\000"
+	.weak	_ZN5hwcpp2io4coutE
+	.section	.data._ZN5hwcpp2io4coutE,"aw",%progbits
+	.align	2
+	.type	_ZN5hwcpp2io4coutE, %object
+	.size	_ZN5hwcpp2io4coutE, 20
+_ZN5hwcpp2io4coutE:
+	.word	0
+	.word	10
+	.byte	32
+	.byte	65
+	.byte	1
+	.byte	0
+	.byte	0
+	.byte	0
+	.space	2
+	.word	0
+	.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"

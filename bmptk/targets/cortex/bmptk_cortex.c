@@ -2,7 +2,7 @@
 //
 // file : bmptk/bmptk.h
 //
-// Copyright (c) 2012 ... 2015 Wouter van Ooijen (wouter@voti.nl)
+// Copyright (c) 2012 ... 2014 Wouter van Ooijen (wouter@voti.nl)
 // 
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE_1_0.txt or copy at 
@@ -58,22 +58,15 @@ void __startup( void ){
    while(1){}	
 }
 
-extern char __heap_start;
-extern char __heap_end;
-
-char * heap_free = &__heap_start;
-
-// simple malloc() implementation. note: no free()!
-void * malloc( int n ){
-   void * result = heap_free;
-   heap_free += 4 * (( n + 3 ) / 4 );
-   if( heap_free > &__heap_end ){
-      return 0;
-   }
-   return result;
-}
-
 // junk that is not needed in an embedded context, but
 // is still required to satisfy the C++ compiler
 void * __dso_handle;
+
+// handle a divide-by-zero error
+// the standard library invokes abort
+int __aeabi_idiv0(){ return 0; }
+
+// called when a vft entry is not yet filled in
+void __cxa_pure_virtual(){}
+
 

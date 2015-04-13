@@ -2,7 +2,7 @@
 # 
 # dummy Makefile for bmptk library directories
 #
-# (c) Wouter van Ooijen (www.voti.nl) 2012 ... 2015
+# (c) Wouter van Ooijen (www.voti.nl) 2012, 2013
 # 
 #############################################################################
 

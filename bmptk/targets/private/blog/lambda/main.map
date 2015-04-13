@@ -1,0 +1,1383 @@
+Archive member included because of file (symbol)
+
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003192.o)
+                              (__imp___ZSt4cout)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d002931.o)
+                              main.o (std::ios_base::Init::~Init())
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004017.o)
+                              main.o (operator new(unsigned int))
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004013.o)
+                              main.o (operator delete(void*))
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003184.o)
+                              main.o (std::__throw_bad_function_call())
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d001263.o)
+                              main.o (std::ostream::operator<<(int))
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003267.o)
+                              main.o (std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*))
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d002929.o)
+                              main.o (std::ios_base::Init::Init())
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d000000.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003192.o) (_head_libstdc___6_dll)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004066.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d000000.o) (libstdc___6_dll_iname)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (mingw_initltssuo_force)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-charmax.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (mingw_initcharmax)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-mingw_helpers.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_encode_pointer)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-xtxtmode.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_fmode)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o)
+                              main.o (atexit)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-_newmode.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_newmode)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-wildcard.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_dowildcard)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-natstart.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (__native_startup_lock)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-crt_handler.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_gnu_exception_handler@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-cinitexe.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (__xc_z)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-dllargv.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_setargv)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-merr.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (__mingw_setusermatherr)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_pei386_runtime_relocator)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-CRT_fp10.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_fpreset)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gccmain.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (__main)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (__security_init_cookie)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsmcrt.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o) (_CRT_MT)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsthrd.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o) (__mingw_TLScallback)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc-list.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o) (__RUNTIME_PSEUDO_RELOC_LIST__)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pesect.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o) (__mingw_GetSectionForAddress)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000037.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o (__deregister_frame_info)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000106.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o (__register_frame_info)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000000.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000037.o) (_head_libgcc_s_dw2_1_dll)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000122.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000000.o) (libgcc_s_dw2_1_dll_iname)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_chkstk_ms.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (__chkstk_ms)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gccmain.o) (__DTOR_LIST__)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingwex.a(lib32_libmingwex_a-mingw_matherr.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_MINGW_INSTALL_DEBUG_MATHERR)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00274.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_imp___fmode)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00123.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_imp___acmdln)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00060.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_imp____initenv)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00105.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (__set_app_type)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00059.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (__getmainargs)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(lib32_libmsvcrt_a-invalid_parameter_handler.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_set_invalid_parameter_handler)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01159.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (malloc)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01213.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (strlen)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01168.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (memcpy)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00162.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_cexit)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00145.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_amsg_exit)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00349.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_initterm)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01078.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (exit)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00069.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-charmax.o) (_imp____lconv_init)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00624.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o) (_imp___onexit)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00458.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o) (_lock)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00056.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o) (__dllonexit)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00839.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o) (_unlock)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01195.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-crt_handler.o) (signal)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00353.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-merr.o) (_imp___iob)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00108.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-merr.o) (__setusermatherr)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01094.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-merr.o) (fprintf)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01112.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o) (fwrite)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01249.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o) (vfprintf)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01052.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o) (abort)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01067.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsthrd.o) (calloc)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01101.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsthrd.o) (free)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01216.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pesect.o) (strncmp)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbh.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00274.o) (_head_lib32_libmsvcrt_a)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbt.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbh.o) (_lib32_libmsvcrt_a_iname)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01140.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_imp__Sleep@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01127.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_imp__SetUnhandledExceptionFilter@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00612.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o (_imp__GetStartupInfoA@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00533.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o (_imp__GetModuleHandleA@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00809.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o (_imp__LoadLibraryA@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00581.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o (_imp__GetProcAddress@8)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00356.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o (_imp__FreeLibrary@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01209.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o) (_imp__VirtualQuery@12)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01206.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o) (_imp__VirtualProtect@16)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00515.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o) (_imp__GetLastError@0)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00635.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o) (_imp__GetSystemTimeAsFileTime@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00453.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o) (_imp__GetCurrentProcessId@0)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00457.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o) (_imp__GetCurrentThreadId@0)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00663.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o) (_imp__GetTickCount@0)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00915.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o) (_imp__QueryPerformanceCounter@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01174.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o) (_imp__UnhandledExceptionFilter@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00452.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o) (_imp__GetCurrentProcess@0)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01154.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o) (_imp__TerminateProcess@8)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00239.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsthrd.o) (_imp__EnterCriticalSection@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01161.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsthrd.o) (_imp__TlsGetValue@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00806.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsthrd.o) (_imp__LeaveCriticalSection@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00212.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsthrd.o) (_imp__DeleteCriticalSection@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00747.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsthrd.o) (_imp__InitializeCriticalSection@4)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffh.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01140.o) (_head_lib32_libkernel32_a)
+c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkfft.o)
+                              c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffh.o) (_lib32_libkernel32_a_iname)
+
+Allocating common symbols
+Common symbol       size              file
+
+__DTOR_LIST__       0x8               c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+__native_startup_lock
+                    0x4               c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-natstart.o)
+hmod_libgcc         0x4               c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o
+__onexitend         0x4               c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o)
+__native_startup_state
+                    0x4               c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-natstart.o)
+__onexitbegin       0x4               c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o)
+__mingw_winmain_lpCmdLine
+                    0x4               c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o
+__CTOR_LIST__       0x8               c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+__mingw_winmain_hInstance
+                    0x4               c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o
+
+Discarded input sections
+
+ .drectve       0x00000000       0x54 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o
+ .drectve       0x00000000       0x1c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o
+ .drectve       0x00000000       0x3c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o)
+ .drectve       0x00000000       0x50 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-natstart.o)
+ .drectve       0x00000000       0x3c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00069.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01140.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01127.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00612.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00533.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00809.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00581.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00356.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01209.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01206.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00515.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00635.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00453.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00457.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00663.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00915.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01174.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00452.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01154.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00239.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01161.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00806.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00212.o)
+ .text          0x00000000        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00747.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00400000                __image_base__ = 0x400000
+                0x00000000                __dll__ = 0x0
+                0x00400000                ___ImageBase = 0x400000
+                0x00001000                __section_alignment__ = 0x1000
+                0x00000200                __file_alignment__ = 0x200
+                0x00000004                __major_os_version__ = 0x4
+                0x00000000                __minor_os_version__ = 0x0
+                0x00000001                __major_image_version__ = 0x1
+                0x00000000                __minor_image_version__ = 0x0
+                0x00000004                __major_subsystem_version__ = 0x4
+                0x00000000                __minor_subsystem_version__ = 0x0
+                0x00000003                __subsystem__ = 0x3
+                0x00200000                __size_of_stack_reserve__ = 0x200000
+                0x00001000                __size_of_stack_commit__ = 0x1000
+                0x00100000                __size_of_heap_reserve__ = 0x100000
+                0x00001000                __size_of_heap_commit__ = 0x1000
+                0x00000000                __loader_flags__ = 0x0
+                0x00000000                __dll_characteristics__ = 0x0
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o
+LOAD main.o
+LOAD bmptk_win.o
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgdi32.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmoldname.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingwex.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libpthread.dll.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libadvapi32.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libshell32.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libuser32.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libiconv.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmoldname.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingwex.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a
+LOAD c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtend.o
+                0x00000380                . = SIZEOF_HEADERS
+                0x00001000                . = ALIGN (__section_alignment__)
+
+.text           0x00401000     0x1a00
+ *(.init)
+ *(.text)
+ .text          0x00401000      0x500 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o
+                0x004014c0                WinMainCRTStartup
+                0x004014e0                mainCRTStartup
+ .text          0x00401500      0x110 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o
+                0x00401500                __gcc_register_frame
+                0x004015b0                __gcc_deregister_frame
+ .text          0x00401610        0x0 main.o
+ .text          0x00401610        0x0 bmptk_win.o
+ .text          0x00401610        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003192.o)
+ .text          0x00401610        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d002931.o)
+                0x00401610                std::ios_base::Init::~Init()
+ .text          0x00401618        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004017.o)
+                0x00401618                operator new(unsigned int)
+ .text          0x00401620        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004013.o)
+                0x00401620                operator delete(void*)
+ .text          0x00401628        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003184.o)
+                0x00401628                std::__throw_bad_function_call()
+ .text          0x00401630        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d001263.o)
+                0x00401630                std::ostream::operator<<(int)
+ .text          0x00401638        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003267.o)
+                0x00401638                std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+ .text          0x00401640        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d002929.o)
+                0x00401640                std::ios_base::Init::Init()
+ *fill*         0x00401648        0x8 
+ .text          0x00401650       0xe0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+                0x004016a0                __dyn_tls_init@12
+                0x00401720                __tlregdtor
+ .text          0x00401730       0x10 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-charmax.o)
+ .text          0x00401740       0x20 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-mingw_helpers.o)
+                0x00401740                _decode_pointer
+                0x00401750                _encode_pointer
+ .text          0x00401760        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-xtxtmode.o)
+ .text          0x00401760       0xe0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o)
+                0x00401760                mingw_onexit
+                0x00401820                atexit
+ .text          0x00401840        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-_newmode.o)
+ .text          0x00401840        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-wildcard.o)
+ .text          0x00401840        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-natstart.o)
+ .text          0x00401840      0x150 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-crt_handler.o)
+                0x00401840                _gnu_exception_handler@4
+ .text          0x00401990        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-cinitexe.o)
+ .text          0x00401990       0x10 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-dllargv.o)
+                0x00401990                _setargv
+ .text          0x004019a0       0xc0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-merr.o)
+                0x004019a0                __mingw_raise_matherr
+                0x004019f0                __mingw_setusermatherr
+                0x00401a00                _matherr
+ .text          0x00401a60      0x440 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o)
+                0x00401c00                _pei386_runtime_relocator
+ .text          0x00401ea0       0x10 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-CRT_fp10.o)
+                0x00401ea0                fpreset
+                0x00401ea0                _fpreset
+ .text          0x00401eb0       0xa0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gccmain.o)
+                0x00401eb0                __do_global_dtors
+                0x00401ee0                __do_global_ctors
+                0x00401f30                __main
+ .text          0x00401f50      0x140 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o)
+                0x00401f50                __security_init_cookie
+                0x00402000                __report_gsfailure
+ .text          0x00402090        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsmcrt.o)
+ .text          0x00402090      0x250 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsthrd.o)
+                0x00402110                ___w64_mingwthr_add_key_dtor
+                0x004021a0                ___w64_mingwthr_remove_key_dtor
+                0x00402240                __mingw_TLScallback
+ .text          0x004022e0        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc-list.o)
+ .text          0x004022e0      0x340 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pesect.o)
+                0x00402300                _ValidateImageBase
+                0x00402320                _FindPESection
+                0x00402360                _FindPESectionByName
+                0x00402400                __mingw_GetSectionForAddress
+                0x00402450                __mingw_GetSectionCount
+                0x00402480                _FindPESectionExec
+                0x004024f0                _GetPEImageBase
+                0x00402520                _IsNonwritableInCurrentImage
+                0x00402580                __mingw_enum_import_library_names
+ .text          0x00402620        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000037.o)
+                0x00402620                __deregister_frame_info
+ .text          0x00402628        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000106.o)
+                0x00402628                __register_frame_info
+ .text          0x00402630       0x2c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_chkstk_ms.o)
+                0x00402630                __chkstk_ms
+ .text          0x0040265c        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+ .text          0x0040265c        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingwex.a(lib32_libmingwex_a-mingw_matherr.o)
+ .text          0x0040265c        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00274.o)
+ .text          0x0040265c        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00123.o)
+ .text          0x0040265c        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00060.o)
+ .text          0x0040265c        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00105.o)
+                0x0040265c                __set_app_type
+ .text          0x00402664        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00059.o)
+                0x00402664                __getmainargs
+ *fill*         0x0040266c        0x4 
+ .text          0x00402670       0x20 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(lib32_libmsvcrt_a-invalid_parameter_handler.o)
+                0x00402670                _get_invalid_parameter_handler
+                0x00402680                _set_invalid_parameter_handler
+ .text          0x00402690        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01159.o)
+                0x00402690                malloc
+ .text          0x00402698        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01213.o)
+                0x00402698                strlen
+ .text          0x004026a0        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01168.o)
+                0x004026a0                memcpy
+ .text          0x004026a8        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00162.o)
+                0x004026a8                _cexit
+ .text          0x004026b0        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00145.o)
+                0x004026b0                _amsg_exit
+ .text          0x004026b8        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00349.o)
+                0x004026b8                _initterm
+ .text          0x004026c0        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01078.o)
+                0x004026c0                exit
+ .text          0x004026c8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00624.o)
+ .text          0x004026c8        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00458.o)
+                0x004026c8                _lock
+ .text          0x004026d0        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00056.o)
+                0x004026d0                __dllonexit
+ .text          0x004026d8        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00839.o)
+                0x004026d8                _unlock
+ .text          0x004026e0        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01195.o)
+                0x004026e0                signal
+ .text          0x004026e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00353.o)
+ .text          0x004026e8        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00108.o)
+                0x004026e8                __setusermatherr
+ .text          0x004026f0        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01094.o)
+                0x004026f0                fprintf
+ .text          0x004026f8        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01112.o)
+                0x004026f8                fwrite
+ .text          0x00402700        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01249.o)
+                0x00402700                vfprintf
+ .text          0x00402708        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01052.o)
+                0x00402708                abort
+ .text          0x00402710        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01067.o)
+                0x00402710                calloc
+ .text          0x00402718        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01101.o)
+                0x00402718                free
+ .text          0x00402720        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01216.o)
+                0x00402720                strncmp
+ .text          0x00402728        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbh.o)
+ .text          0x00402728        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbt.o)
+ .text          0x00402728        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffh.o)
+ .text          0x00402728        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkfft.o)
+ .text          0x00402728        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtend.o
+ *(SORT(.text$*))
+ .text$_Z1fi    0x00402728        0xc main.o
+                0x00402728                f(int)
+ .text$_Z2ggv   0x00402734       0x90 main.o
+                0x00402734                gg()
+                0x0040275f                _fu0___ZSt4cout
+ .text$_Z3fooiRi
+                0x004027c4       0x70 main.o
+                0x004027c4                foo(int, int&)
+ .text$_Z4fivev
+                0x00402834        0xc main.o
+                0x00402834                five()
+ .text$_Z5applyPFiiE
+                0x00402840       0x10 main.o
+                0x00402840                apply(int (*)(int))
+ .text$_Z5twicei
+                0x00402850        0xc main.o
+                0x00402850                twice(int)
+ .text$_Z6apply1IiEvPT_S1_PFS0_S0_E
+                0x0040285c       0x28 main.o
+                0x0040285c                void apply1<int>(int*, int*, int (*)(int))
+ .text$_Z6apply3PiS_PFiiE
+                0x00402884       0x28 main.o
+                0x00402884                apply3(int*, int*, int (*)(int))
+ .text$_Z6apply4PiS_RKSt8functionIFiiEE
+                0x004028ac       0x3c main.o
+                0x004028ac                apply4(int*, int*, std::function<int (int)> const&)
+ .text$_ZNSt14_Function_base13_Base_managerIZ3fooiRiEUliE_E10_M_managerERSt9_Any_dataRKS4_St18_Manager_operation
+                0x004028e8       0x54 main.o
+ .text$_ZNSt17_Function_handlerIFiiEZ3fooiRiEUliE_E9_M_invokeERKSt9_Any_datai
+                0x0040293c       0x14 main.o
+ .text$_ZZ2ggvENUliE0_4_FUNEi
+                0x00402950        0xc main.o
+ .text$_ZZ2ggvENUliE_4_FUNEi
+                0x0040295c        0xc main.o
+ .text$__tcf_0  0x00402968       0x10 main.o
+ *(.text.*)
+ .text.unlikely
+                0x00402978        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o
+ .text.unlikely._Z4fivev
+                0x00402978        0x0 main.o
+ .text.unlikely._ZZ2ggvENUliE_4_FUNEi
+                0x00402978        0x0 main.o
+ .text.unlikely._ZZ2ggvENUliE0_4_FUNEi
+                0x00402978        0x0 main.o
+ .text.unlikely._ZNSt17_Function_handlerIFiiEZ3fooiRiEUliE_E9_M_invokeERKSt9_Any_datai
+                0x00402978        0x0 main.o
+ .text.unlikely.__tcf_0
+                0x00402978        0x0 main.o
+ .text.unlikely._ZNSt14_Function_base13_Base_managerIZ3fooiRiEUliE_E10_M_managerERSt9_Any_dataRKS4_St18_Manager_operation
+                0x00402978        0x0 main.o
+ .text.unlikely._Z5twicei
+                0x00402978        0x0 main.o
+ .text.unlikely._Z6apply3PiS_PFiiE
+                0x00402978        0x0 main.o
+ .text.unlikely._Z6apply4PiS_RKSt8functionIFiiEE
+                0x00402978        0x0 main.o
+ .text.unlikely._Z3fooiRi
+                0x00402978        0x0 main.o
+ .text.unlikely._Z5applyPFiiE
+                0x00402978        0x0 main.o
+ .text.unlikely._Z1fi
+                0x00402978        0x0 main.o
+ .text.unlikely._Z2ggv
+                0x00402978        0x0 main.o
+ .text.unlikely.main
+                0x00402978        0x0 main.o
+ .text.startup.main
+                0x00402978       0x24 main.o
+                0x00402978                main
+ .text.unlikely._GLOBAL__sub_I__Z5twicei
+                0x0040299c        0x0 main.o
+ .text.startup._GLOBAL__sub_I__Z5twicei
+                0x0040299c       0x20 main.o
+ .text.unlikely
+                0x004029bc        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtend.o
+ *fill*         0x004029bc        0x4 
+ .text.startup  0x004029c0       0x20 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtend.o
+ *(.gnu.linkonce.t.*)
+ *(.glue_7t)
+ *(.glue_7)
+                0x004029e0                ___CTOR_LIST__ = .
+                0x004029e0                __CTOR_LIST__ = .
+                0x004029e0        0x4 LONG 0xffffffff
+ *(.ctors)
+ .ctors         0x004029e4        0x4 main.o
+ *(.ctor)
+ *(SORT(.ctors.*))
+ .ctors.65535   0x004029e8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtend.o
+                0x004029ec        0x4 LONG 0x0
+                0x004029f0                ___DTOR_LIST__ = .
+                0x004029f0                __DTOR_LIST__ = .
+                0x004029f0        0x4 LONG 0xffffffff
+ *(.dtors)
+ *(.dtor)
+ *(SORT(.dtors.*))
+                0x004029f4        0x4 LONG 0x0
+ *(.fini)
+ *(.gcc_exc)
+                0x004029f8                PROVIDE (etext, .)
+                0x004029f8                PROVIDE (_etext, .)
+ *(.gcc_except_table)
+
+.data           0x00403000      0x200
+                0x00403000                __data_start__ = .
+ *(.data)
+ .data          0x00403000        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o
+                0x00403000                __mingw_winmain_nShowCmd
+ .data          0x00403004        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o
+ .data          0x00403004        0x0 main.o
+ .data          0x00403004        0x0 bmptk_win.o
+ .data          0x00403004        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+ .data          0x00403004        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-charmax.o)
+                0x00403004                _charmax
+ .data          0x00403008        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-mingw_helpers.o)
+ .data          0x00403008        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-xtxtmode.o)
+ .data          0x00403008        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o)
+ .data          0x00403008        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-_newmode.o)
+ .data          0x00403008        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-wildcard.o)
+                0x00403008                _dowildcard
+ .data          0x0040300c        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-natstart.o)
+                0x0040300c                __native_vcclrit_reason
+                0x00403010                __native_dllmain_reason
+ .data          0x00403014        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-crt_handler.o)
+ .data          0x00403014        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-cinitexe.o)
+ .data          0x00403014        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-dllargv.o)
+ .data          0x00403014        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-merr.o)
+ .data          0x00403014        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o)
+ .data          0x00403014        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-CRT_fp10.o)
+ .data          0x00403014        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gccmain.o)
+ .data          0x00403018        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o)
+ .data          0x00403018        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsmcrt.o)
+                0x00403018                _CRT_MT
+ .data          0x0040301c        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsthrd.o)
+ .data          0x0040301c        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc-list.o)
+ .data          0x0040301c        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pesect.o)
+ .data          0x0040301c        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_chkstk_ms.o)
+ .data          0x0040301c        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+ .data          0x0040301c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingwex.a(lib32_libmingwex_a-mingw_matherr.o)
+                0x0040301c                _MINGW_INSTALL_DEBUG_MATHERR
+ .data          0x00403020        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00274.o)
+ .data          0x00403020        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00123.o)
+ .data          0x00403020        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00060.o)
+ .data          0x00403020        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00105.o)
+ .data          0x00403020        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00059.o)
+ .data          0x00403020        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(lib32_libmsvcrt_a-invalid_parameter_handler.o)
+                0x00403020                _imp___get_invalid_parameter_handler
+                0x00403024                _imp___set_invalid_parameter_handler
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01159.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01213.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01168.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00162.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00145.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00349.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01078.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00069.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00624.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00458.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00056.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00839.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01195.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00353.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00108.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01094.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01112.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01249.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01052.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01067.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01101.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01216.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbh.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbt.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01140.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01127.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00612.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00533.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00809.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00581.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00356.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01209.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01206.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00515.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00635.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00453.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00457.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00663.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00915.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01174.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00452.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01154.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00239.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01161.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00806.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00212.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00747.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffh.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkfft.o)
+ .data          0x00403028        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtend.o
+ *(.data2)
+ *(SORT(.data$*))
+ .data$_ZStL8__ioinit
+                0x00403028        0x4 main.o
+ .data$__security_cookie
+                0x0040302c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o)
+                0x0040302c                __security_cookie
+ .data$__security_cookie_complement
+                0x00403030        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o)
+                0x00403030                __security_cookie_complement
+ .data$a        0x00403034       0x14 main.o
+                0x00403034                a
+ *(.jcr)
+ .jcr           0x00403048        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o
+ .jcr           0x00403048        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtend.o
+                0x0040304c                __data_end__ = .
+ *(.data_cygwin_nocopy)
+
+.rdata          0x00404000      0xa00
+ *(.rdata)
+ .rdata         0x00404000       0x64 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o
+ .rdata         0x00404064        0x4 main.o
+ .rdata         0x00404068        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+                0x00404068                __dyn_tls_init_callback
+ .rdata         0x0040406c      0x134 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-merr.o)
+ .rdata         0x004041a0       0xf8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o)
+ .rdata         0x00404298        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o)
+ .rdata         0x004042a0        0x4 ertr000001.o
+ *(SORT(.rdata$*))
+ .rdata$zzz     0x004042a4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o
+ .rdata$zzz     0x004042e4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o
+ .rdata$zzz     0x00404324       0x40 main.o
+ .rdata$zzz     0x00404364       0x40 bmptk_win.o
+ .rdata$zzz     0x004043a4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+ .rdata$zzz     0x004043e4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-charmax.o)
+ .rdata$zzz     0x00404424       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-mingw_helpers.o)
+ .rdata$zzz     0x00404464       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-xtxtmode.o)
+ .rdata$zzz     0x004044a4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o)
+ .rdata$zzz     0x004044e4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-_newmode.o)
+ .rdata$zzz     0x00404524       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-wildcard.o)
+ .rdata$zzz     0x00404564       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-natstart.o)
+ .rdata$zzz     0x004045a4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-crt_handler.o)
+ .rdata$zzz     0x004045e4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-cinitexe.o)
+ .rdata$zzz     0x00404624       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-dllargv.o)
+ .rdata$zzz     0x00404664       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-merr.o)
+ .rdata$zzz     0x004046a4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o)
+ .rdata$zzz     0x004046e4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-CRT_fp10.o)
+ .rdata$zzz     0x00404724       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gccmain.o)
+ .rdata$zzz     0x00404764       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o)
+ .rdata$zzz     0x004047a4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsmcrt.o)
+ .rdata$zzz     0x004047e4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsthrd.o)
+ .rdata$zzz     0x00404824       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc-list.o)
+ .rdata$zzz     0x00404864       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pesect.o)
+ .rdata$zzz     0x004048a4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+ .rdata$zzz     0x004048e4       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingwex.a(lib32_libmingwex_a-mingw_matherr.o)
+ .rdata$zzz     0x00404924       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(lib32_libmsvcrt_a-invalid_parameter_handler.o)
+ .rdata$zzz     0x00404964       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtend.o
+                0x004049a4                __rt_psrelocs_start = .
+ *(.rdata_runtime_pseudo_reloc)
+ .rdata_runtime_pseudo_reloc
+                0x004049a4       0x18 rtr000000.o
+                0x004049bc                __rt_psrelocs_end = .
+                0x00000018                __rt_psrelocs_size = (__rt_psrelocs_end - __rt_psrelocs_start)
+                0x004049bc                ___RUNTIME_PSEUDO_RELOC_LIST_END__ = .
+                0x004049bc                __RUNTIME_PSEUDO_RELOC_LIST_END__ = .
+                0x004049a4                ___RUNTIME_PSEUDO_RELOC_LIST__ = (. - __rt_psrelocs_size)
+                0x004049a4                __RUNTIME_PSEUDO_RELOC_LIST__ = (. - __rt_psrelocs_size)
+
+.eh_frame       0x00405000      0xc00
+ *(.eh_frame*)
+ .eh_frame      0x00405000       0xc8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o
+ .eh_frame      0x004050c8       0x60 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o
+ .eh_frame      0x00405128      0x214 main.o
+ .eh_frame$_Z6apply1IiEvPT_S1_PFS0_S0_E
+                0x0040533c       0x3c main.o
+ .eh_frame      0x00405378       0x7c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+ .eh_frame      0x004053f4       0x2c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-charmax.o)
+ .eh_frame      0x00405420       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-mingw_helpers.o)
+ .eh_frame      0x00405460       0x5c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o)
+ .eh_frame      0x004054bc       0x54 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-crt_handler.o)
+ .eh_frame      0x00405510       0x2c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-dllargv.o)
+ .eh_frame      0x0040553c       0x5c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-merr.o)
+ .eh_frame      0x00405598       0x94 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o)
+ .eh_frame      0x0040562c       0x2c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-CRT_fp10.o)
+ .eh_frame      0x00405658       0x68 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gccmain.o)
+ .eh_frame      0x004056c0       0x74 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o)
+ .eh_frame      0x00405734       0xd8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsthrd.o)
+ .eh_frame      0x0040580c      0x1f0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pesect.o)
+ .eh_frame      0x004059fc       0x40 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(lib32_libmsvcrt_a-invalid_parameter_handler.o)
+ .eh_frame      0x00405a3c       0x3c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtend.o
+
+.pdata
+ *(.pdata)
+
+.bss            0x00406000      0x414
+                0x00406000                __bss_start__ = .
+ *(.bss)
+ .bss           0x00406000       0x20 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o
+ .bss           0x00406020       0x18 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o
+ .bss           0x00406038        0x0 main.o
+ .bss           0x00406038        0x0 bmptk_win.o
+ .bss           0x00406038       0x10 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+                0x00406038                mingw_initltssuo_force
+                0x0040603c                mingw_initltsdyn_force
+                0x00406040                mingw_initltsdrot_force
+                0x00406044                _tls_index
+ .bss           0x00406048        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-charmax.o)
+                0x00406048                mingw_initcharmax
+ .bss           0x0040604c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-mingw_helpers.o)
+                0x0040604c                mingw_app_type
+ .bss           0x00406050        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-xtxtmode.o)
+                0x00406050                _fmode
+ .bss           0x00406054        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o)
+ .bss           0x00406054        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-_newmode.o)
+                0x00406054                _newmode
+ .bss           0x00406058        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-wildcard.o)
+ .bss           0x00406058        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-natstart.o)
+ .bss           0x00406058        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-crt_handler.o)
+                0x00406058                __mingw_oldexcpt_handler
+ .bss           0x0040605c        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-cinitexe.o)
+ .bss           0x0040605c        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-dllargv.o)
+ .bss           0x0040605c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-merr.o)
+ .bss           0x00406060        0xc c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc.o)
+ .bss           0x0040606c        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-CRT_fp10.o)
+ .bss           0x0040606c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gccmain.o)
+ *fill*         0x00406070       0x10 
+ .bss           0x00406080      0x340 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-gs_support.o)
+ .bss           0x004063c0        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsmcrt.o)
+ .bss           0x004063c0       0x20 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlsthrd.o)
+ .bss           0x004063e0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pseudo-reloc-list.o)
+ .bss           0x004063e4        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-pesect.o)
+ .bss           0x004063e4        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_chkstk_ms.o)
+ .bss           0x004063e4        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+ .bss           0x004063e4        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingwex.a(lib32_libmingwex_a-mingw_matherr.o)
+ .bss           0x004063e4        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00274.o)
+ .bss           0x004063e4        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00123.o)
+ .bss           0x004063e4        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00060.o)
+ .bss           0x004063e4        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00105.o)
+ .bss           0x004063e4        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00059.o)
+ .bss           0x004063e4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(lib32_libmsvcrt_a-invalid_parameter_handler.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01159.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01213.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01168.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00162.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00145.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00349.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01078.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00069.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00624.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00458.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00056.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00839.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01195.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00353.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00108.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01094.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01112.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01249.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01052.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01067.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01101.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01216.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbh.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbt.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01140.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01127.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00612.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00533.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00809.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00581.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00356.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01209.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01206.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00515.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00635.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00453.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00457.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00663.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00915.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01174.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00452.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01154.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00239.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01161.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00806.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00212.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00747.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffh.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkfft.o)
+ .bss           0x004063e8        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtend.o
+ *(COMMON)
+ COMMON         0x004063e8        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o
+                0x004063e8                __mingw_winmain_lpCmdLine
+                0x004063ec                __mingw_winmain_hInstance
+ COMMON         0x004063f0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/crtbegin.o
+                0x004063f0                hmod_libgcc
+ COMMON         0x004063f4        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-atonexit.o)
+                0x004063f4                __onexitend
+                0x004063f8                __onexitbegin
+ COMMON         0x004063fc        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-natstart.o)
+                0x004063fc                __native_startup_lock
+                0x00406400                __native_startup_state
+ COMMON         0x00406404       0x10 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+                0x00406414                __bss_end__ = .
+
+.edata
+ *(.edata)
+
+/DISCARD/
+ *(.debug$S)
+ *(.debug$T)
+ *(.debug$F)
+ *(.drectve)
+ *(.note.GNU-stack)
+ *(.gnu.lto_*)
+
+.idata          0x00407000      0x800
+ SORT(*)(.idata$2)
+ .idata$2       0x00407000       0x14 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000000.o)
+                0x00407000                _head_libgcc_s_dw2_1_dll
+ .idata$2       0x00407014       0x14 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffh.o)
+                0x00407014                _head_lib32_libkernel32_a
+ .idata$2       0x00407028       0x14 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbh.o)
+                0x00407028                _head_lib32_libmsvcrt_a
+ .idata$2       0x0040703c       0x14 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d000000.o)
+                0x0040703c                _head_libstdc___6_dll
+ SORT(*)(.idata$3)
+                0x00407050        0x4 LONG 0x0
+                0x00407054        0x4 LONG 0x0
+                0x00407058        0x4 LONG 0x0
+                0x0040705c        0x4 LONG 0x0
+                0x00407060        0x4 LONG 0x0
+ SORT(*)(.idata$4)
+ .idata$4       0x00407064        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000000.o)
+ .idata$4       0x00407064        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000037.o)
+ .idata$4       0x00407068        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000106.o)
+ .idata$4       0x0040706c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000122.o)
+ .idata$4       0x00407070        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffh.o)
+ .idata$4       0x00407070        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00212.o)
+ .idata$4       0x00407074        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00239.o)
+ .idata$4       0x00407078        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00356.o)
+ .idata$4       0x0040707c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00452.o)
+ .idata$4       0x00407080        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00453.o)
+ .idata$4       0x00407084        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00457.o)
+ .idata$4       0x00407088        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00515.o)
+ .idata$4       0x0040708c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00533.o)
+ .idata$4       0x00407090        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00581.o)
+ .idata$4       0x00407094        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00612.o)
+ .idata$4       0x00407098        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00635.o)
+ .idata$4       0x0040709c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00663.o)
+ .idata$4       0x004070a0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00747.o)
+ .idata$4       0x004070a4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00806.o)
+ .idata$4       0x004070a8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00809.o)
+ .idata$4       0x004070ac        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00915.o)
+ .idata$4       0x004070b0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01127.o)
+ .idata$4       0x004070b4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01140.o)
+ .idata$4       0x004070b8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01154.o)
+ .idata$4       0x004070bc        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01161.o)
+ .idata$4       0x004070c0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01174.o)
+ .idata$4       0x004070c4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01206.o)
+ .idata$4       0x004070c8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01209.o)
+ .idata$4       0x004070cc        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkfft.o)
+ .idata$4       0x004070d0        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbh.o)
+ .idata$4       0x004070d0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00056.o)
+ .idata$4       0x004070d4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00059.o)
+ .idata$4       0x004070d8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00060.o)
+ .idata$4       0x004070dc        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00069.o)
+ .idata$4       0x004070e0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00105.o)
+ .idata$4       0x004070e4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00108.o)
+ .idata$4       0x004070e8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00123.o)
+ .idata$4       0x004070ec        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00145.o)
+ .idata$4       0x004070f0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00162.o)
+ .idata$4       0x004070f4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00274.o)
+ .idata$4       0x004070f8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00349.o)
+ .idata$4       0x004070fc        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00353.o)
+ .idata$4       0x00407100        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00458.o)
+ .idata$4       0x00407104        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00624.o)
+ .idata$4       0x00407108        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00839.o)
+ .idata$4       0x0040710c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01052.o)
+ .idata$4       0x00407110        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01067.o)
+ .idata$4       0x00407114        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01078.o)
+ .idata$4       0x00407118        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01094.o)
+ .idata$4       0x0040711c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01101.o)
+ .idata$4       0x00407120        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01112.o)
+ .idata$4       0x00407124        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01159.o)
+ .idata$4       0x00407128        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01168.o)
+ .idata$4       0x0040712c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01195.o)
+ .idata$4       0x00407130        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01213.o)
+ .idata$4       0x00407134        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01216.o)
+ .idata$4       0x00407138        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01249.o)
+ .idata$4       0x0040713c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbt.o)
+ .idata$4       0x00407140        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d000000.o)
+ .idata$4       0x00407140        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d001263.o)
+ .idata$4       0x00407144        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d002929.o)
+ .idata$4       0x00407148        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d002931.o)
+ .idata$4       0x0040714c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003184.o)
+ .idata$4       0x00407150        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003192.o)
+ .idata$4       0x00407154        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003267.o)
+ .idata$4       0x00407158        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004013.o)
+ .idata$4       0x0040715c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004017.o)
+ .idata$4       0x00407160        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004066.o)
+                0x00407164                __IAT_start__ = .
+ SORT(*)(.idata$5)
+ .idata$5       0x00407164        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000000.o)
+ .idata$5       0x00407164        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000037.o)
+                0x00407164                _imp____deregister_frame_info
+ .idata$5       0x00407168        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000106.o)
+                0x00407168                _imp____register_frame_info
+ .idata$5       0x0040716c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000122.o)
+ .idata$5       0x00407170        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffh.o)
+ .idata$5       0x00407170        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00212.o)
+                0x00407170                _imp__DeleteCriticalSection@4
+ .idata$5       0x00407174        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00239.o)
+                0x00407174                _imp__EnterCriticalSection@4
+ .idata$5       0x00407178        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00356.o)
+                0x00407178                _imp__FreeLibrary@4
+ .idata$5       0x0040717c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00452.o)
+                0x0040717c                _imp__GetCurrentProcess@0
+ .idata$5       0x00407180        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00453.o)
+                0x00407180                _imp__GetCurrentProcessId@0
+ .idata$5       0x00407184        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00457.o)
+                0x00407184                _imp__GetCurrentThreadId@0
+ .idata$5       0x00407188        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00515.o)
+                0x00407188                _imp__GetLastError@0
+ .idata$5       0x0040718c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00533.o)
+                0x0040718c                _imp__GetModuleHandleA@4
+ .idata$5       0x00407190        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00581.o)
+                0x00407190                _imp__GetProcAddress@8
+ .idata$5       0x00407194        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00612.o)
+                0x00407194                _imp__GetStartupInfoA@4
+ .idata$5       0x00407198        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00635.o)
+                0x00407198                _imp__GetSystemTimeAsFileTime@4
+ .idata$5       0x0040719c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00663.o)
+                0x0040719c                _imp__GetTickCount@0
+ .idata$5       0x004071a0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00747.o)
+                0x004071a0                _imp__InitializeCriticalSection@4
+ .idata$5       0x004071a4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00806.o)
+                0x004071a4                _imp__LeaveCriticalSection@4
+ .idata$5       0x004071a8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00809.o)
+                0x004071a8                _imp__LoadLibraryA@4
+ .idata$5       0x004071ac        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00915.o)
+                0x004071ac                _imp__QueryPerformanceCounter@4
+ .idata$5       0x004071b0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01127.o)
+                0x004071b0                _imp__SetUnhandledExceptionFilter@4
+ .idata$5       0x004071b4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01140.o)
+                0x004071b4                _imp__Sleep@4
+ .idata$5       0x004071b8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01154.o)
+                0x004071b8                _imp__TerminateProcess@8
+ .idata$5       0x004071bc        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01161.o)
+                0x004071bc                _imp__TlsGetValue@4
+ .idata$5       0x004071c0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01174.o)
+                0x004071c0                _imp__UnhandledExceptionFilter@4
+ .idata$5       0x004071c4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01206.o)
+                0x004071c4                _imp__VirtualProtect@16
+ .idata$5       0x004071c8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01209.o)
+                0x004071c8                _imp__VirtualQuery@12
+ .idata$5       0x004071cc        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkfft.o)
+ .idata$5       0x004071d0        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbh.o)
+ .idata$5       0x004071d0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00056.o)
+                0x004071d0                _imp____dllonexit
+ .idata$5       0x004071d4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00059.o)
+                0x004071d4                _imp____getmainargs
+ .idata$5       0x004071d8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00060.o)
+                0x004071d8                _imp____initenv
+ .idata$5       0x004071dc        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00069.o)
+                0x004071dc                _imp____lconv_init
+ .idata$5       0x004071e0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00105.o)
+                0x004071e0                _imp____set_app_type
+ .idata$5       0x004071e4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00108.o)
+                0x004071e4                _imp____setusermatherr
+ .idata$5       0x004071e8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00123.o)
+                0x004071e8                _imp___acmdln
+ .idata$5       0x004071ec        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00145.o)
+                0x004071ec                _imp___amsg_exit
+ .idata$5       0x004071f0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00162.o)
+                0x004071f0                _imp___cexit
+ .idata$5       0x004071f4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00274.o)
+                0x004071f4                _imp___fmode
+ .idata$5       0x004071f8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00349.o)
+                0x004071f8                _imp___initterm
+ .idata$5       0x004071fc        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00353.o)
+                0x004071fc                _imp___iob
+ .idata$5       0x00407200        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00458.o)
+                0x00407200                _imp___lock
+ .idata$5       0x00407204        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00624.o)
+                0x00407204                _imp___onexit
+ .idata$5       0x00407208        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00839.o)
+                0x00407208                _imp___unlock
+ .idata$5       0x0040720c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01052.o)
+                0x0040720c                _imp__abort
+ .idata$5       0x00407210        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01067.o)
+                0x00407210                _imp__calloc
+ .idata$5       0x00407214        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01078.o)
+                0x00407214                _imp__exit
+ .idata$5       0x00407218        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01094.o)
+                0x00407218                _imp__fprintf
+ .idata$5       0x0040721c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01101.o)
+                0x0040721c                _imp__free
+ .idata$5       0x00407220        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01112.o)
+                0x00407220                _imp__fwrite
+ .idata$5       0x00407224        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01159.o)
+                0x00407224                _imp__malloc
+ .idata$5       0x00407228        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01168.o)
+                0x00407228                _imp__memcpy
+ .idata$5       0x0040722c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01195.o)
+                0x0040722c                _imp__signal
+ .idata$5       0x00407230        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01213.o)
+                0x00407230                _imp__strlen
+ .idata$5       0x00407234        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01216.o)
+                0x00407234                _imp__strncmp
+ .idata$5       0x00407238        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01249.o)
+                0x00407238                _imp__vfprintf
+ .idata$5       0x0040723c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbt.o)
+ .idata$5       0x00407240        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d000000.o)
+ .idata$5       0x00407240        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d001263.o)
+                0x00407240                _imp___ZNSolsEi
+ .idata$5       0x00407244        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d002929.o)
+                0x00407244                _imp___ZNSt8ios_base4InitC1Ev
+ .idata$5       0x00407248        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d002931.o)
+                0x00407248                _imp___ZNSt8ios_base4InitD1Ev
+ .idata$5       0x0040724c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003184.o)
+                0x0040724c                _imp___ZSt25__throw_bad_function_callv
+ .idata$5       0x00407250        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003192.o)
+                0x00407250                _imp___ZSt4cout
+                0x00407250                _imp___ZSt4cout
+ .idata$5       0x00407254        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003267.o)
+                0x00407254                _imp___ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ .idata$5       0x00407258        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004013.o)
+                0x00407258                _imp___ZdlPv
+ .idata$5       0x0040725c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004017.o)
+                0x0040725c                _imp___Znwj
+ .idata$5       0x00407260        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004066.o)
+                0x00407264                __IAT_end__ = .
+ SORT(*)(.idata$6)
+ .idata$6       0x00407264       0x1c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000037.o)
+ .idata$6       0x00407280       0x18 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000106.o)
+ .idata$6       0x00407298       0x18 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00212.o)
+ .idata$6       0x004072b0       0x18 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00239.o)
+ .idata$6       0x004072c8        0xe c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00356.o)
+ .idata$6       0x004072d6       0x14 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00452.o)
+ .idata$6       0x004072ea       0x16 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00453.o)
+ .idata$6       0x00407300       0x16 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00457.o)
+ .idata$6       0x00407316       0x10 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00515.o)
+ .idata$6       0x00407326       0x14 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00533.o)
+ .idata$6       0x0040733a       0x12 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00581.o)
+ .idata$6       0x0040734c       0x12 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00612.o)
+ .idata$6       0x0040735e       0x1a c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00635.o)
+ .idata$6       0x00407378       0x10 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00663.o)
+ .idata$6       0x00407388       0x1c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00747.o)
+ .idata$6       0x004073a4       0x18 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00806.o)
+ .idata$6       0x004073bc       0x10 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00809.o)
+ .idata$6       0x004073cc       0x1a c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00915.o)
+ .idata$6       0x004073e6       0x1e c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01127.o)
+ .idata$6       0x00407404        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01140.o)
+ .idata$6       0x0040740c       0x14 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01154.o)
+ .idata$6       0x00407420        0xe c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01161.o)
+ .idata$6       0x0040742e       0x1c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01174.o)
+ .idata$6       0x0040744a       0x12 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01206.o)
+ .idata$6       0x0040745c       0x10 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01209.o)
+ .idata$6       0x0040746c        0xe c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00056.o)
+ .idata$6       0x0040747a       0x10 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00059.o)
+ .idata$6       0x0040748a        0xc c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00060.o)
+ .idata$6       0x00407496       0x10 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00069.o)
+ .idata$6       0x004074a6       0x12 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00105.o)
+ .idata$6       0x004074b8       0x14 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00108.o)
+ .idata$6       0x004074cc        0xa c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00123.o)
+ .idata$6       0x004074d6        0xe c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00145.o)
+ .idata$6       0x004074e4        0xa c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00162.o)
+ .idata$6       0x004074ee        0xa c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00274.o)
+ .idata$6       0x004074f8        0xc c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00349.o)
+ .idata$6       0x00407504        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00353.o)
+ .idata$6       0x0040750c        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00458.o)
+ .idata$6       0x00407514        0xa c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00624.o)
+ .idata$6       0x0040751e        0xa c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00839.o)
+ .idata$6       0x00407528        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01052.o)
+ .idata$6       0x00407530        0xa c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01067.o)
+ .idata$6       0x0040753a        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01078.o)
+ .idata$6       0x00407542        0xa c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01094.o)
+ .idata$6       0x0040754c        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01101.o)
+ .idata$6       0x00407554        0xa c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01112.o)
+ .idata$6       0x0040755e        0xa c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01159.o)
+ .idata$6       0x00407568        0xa c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01168.o)
+ .idata$6       0x00407572        0xa c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01195.o)
+ .idata$6       0x0040757c        0xa c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01213.o)
+ .idata$6       0x00407586        0xa c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01216.o)
+ .idata$6       0x00407590        0xc c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01249.o)
+ .idata$6       0x0040759c        0xc c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d001263.o)
+ .idata$6       0x004075a8       0x1c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d002929.o)
+ .idata$6       0x004075c4       0x1c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d002931.o)
+ .idata$6       0x004075e0       0x24 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003184.o)
+ .idata$6       0x00407604        0xc c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003192.o)
+                0x00407604                _nm___ZSt4cout
+ .idata$6       0x00407610       0x3c c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003267.o)
+ .idata$6       0x0040764c        0xc c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004013.o)
+ .idata$6       0x00407658        0x8 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004017.o)
+ SORT(*)(.idata$7)
+ .idata$7       0x00407660        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000037.o)
+ .idata$7       0x00407664        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000106.o)
+ .idata$7       0x00407668       0x14 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libgcc_s.a(d000122.o)
+                0x00407668                libgcc_s_dw2_1_dll_iname
+ .idata$7       0x0040767c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00212.o)
+ .idata$7       0x00407680        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00239.o)
+ .idata$7       0x00407684        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00356.o)
+ .idata$7       0x00407688        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00452.o)
+ .idata$7       0x0040768c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00453.o)
+ .idata$7       0x00407690        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00457.o)
+ .idata$7       0x00407694        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00515.o)
+ .idata$7       0x00407698        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00533.o)
+ .idata$7       0x0040769c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00581.o)
+ .idata$7       0x004076a0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00612.o)
+ .idata$7       0x004076a4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00635.o)
+ .idata$7       0x004076a8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00663.o)
+ .idata$7       0x004076ac        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00747.o)
+ .idata$7       0x004076b0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00806.o)
+ .idata$7       0x004076b4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00809.o)
+ .idata$7       0x004076b8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs00915.o)
+ .idata$7       0x004076bc        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01127.o)
+ .idata$7       0x004076c0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01140.o)
+ .idata$7       0x004076c4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01154.o)
+ .idata$7       0x004076c8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01161.o)
+ .idata$7       0x004076cc        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01174.o)
+ .idata$7       0x004076d0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01206.o)
+ .idata$7       0x004076d4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkffs01209.o)
+ .idata$7       0x004076d8       0x10 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libkernel32.a(dkfft.o)
+                0x004076d8                _lib32_libkernel32_a_iname
+ .idata$7       0x004076e8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00056.o)
+ .idata$7       0x004076ec        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00059.o)
+ .idata$7       0x004076f0        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00060.o)
+ .idata$7       0x004076f4        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00069.o)
+ .idata$7       0x004076f8        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00105.o)
+ .idata$7       0x004076fc        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00108.o)
+ .idata$7       0x00407700        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00123.o)
+ .idata$7       0x00407704        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00145.o)
+ .idata$7       0x00407708        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00162.o)
+ .idata$7       0x0040770c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00274.o)
+ .idata$7       0x00407710        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00349.o)
+ .idata$7       0x00407714        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00353.o)
+ .idata$7       0x00407718        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00458.o)
+ .idata$7       0x0040771c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00624.o)
+ .idata$7       0x00407720        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs00839.o)
+ .idata$7       0x00407724        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01052.o)
+ .idata$7       0x00407728        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01067.o)
+ .idata$7       0x0040772c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01078.o)
+ .idata$7       0x00407730        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01094.o)
+ .idata$7       0x00407734        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01101.o)
+ .idata$7       0x00407738        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01112.o)
+ .idata$7       0x0040773c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01159.o)
+ .idata$7       0x00407740        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01168.o)
+ .idata$7       0x00407744        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01195.o)
+ .idata$7       0x00407748        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01213.o)
+ .idata$7       0x0040774c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01216.o)
+ .idata$7       0x00407750        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbs01249.o)
+ .idata$7       0x00407754        0xc c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmsvcrt.a(dwfrbt.o)
+                0x00407754                _lib32_libmsvcrt_a_iname
+ .idata$7       0x00407760        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d001263.o)
+ .idata$7       0x00407764        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d002929.o)
+ .idata$7       0x00407768        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d002931.o)
+ .idata$7       0x0040776c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003184.o)
+ .idata$7       0x00407770        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003192.o)
+ .idata$7       0x00407774        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d003267.o)
+ .idata$7       0x00407778        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004013.o)
+ .idata$7       0x0040777c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004017.o)
+ .idata$7       0x00407780       0x10 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libstdc++.dll.a(d004066.o)
+                0x00407780                libstdc___6_dll_iname
+
+.CRT            0x00408000      0x200
+                0x00408000                ___crt_xc_start__ = .
+ *(SORT(.CRT$XC*))
+ .CRT$XCA       0x00408000        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-cinitexe.o)
+                0x00408000                __xc_a
+ .CRT$XCAA      0x00408004        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o
+                0x00408004                mingw_pcppinit
+ .CRT$XCZ       0x00408008        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-cinitexe.o)
+                0x00408008                __xc_z
+                0x0040800c                ___crt_xc_end__ = .
+                0x0040800c                ___crt_xi_start__ = .
+ *(SORT(.CRT$XI*))
+ .CRT$XIA       0x0040800c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-cinitexe.o)
+                0x0040800c                __xi_a
+ .CRT$XIAA      0x00408010        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/crt2.o
+                0x00408010                mingw_pcinit
+ .CRT$XIC       0x00408014        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-charmax.o)
+                0x00408014                __mingw_pinit
+ .CRT$XIZ       0x00408018        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-cinitexe.o)
+                0x00408018                __xi_z
+                0x0040801c                ___crt_xi_end__ = .
+                0x0040801c                ___crt_xl_start__ = .
+ *(SORT(.CRT$XL*))
+ .CRT$XLA       0x0040801c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+                0x0040801c                __xl_a
+ .CRT$XLC       0x00408020        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+                0x00408020                __xl_c
+ .CRT$XLD       0x00408024        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+                0x00408024                __xl_d
+ .CRT$XLZ       0x00408028        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+                0x00408028                __xl_z
+                0x0040802c                ___crt_xp_start__ = .
+ *(SORT(.CRT$XP*))
+                0x0040802c                ___crt_xp_end__ = .
+                0x0040802c                ___crt_xt_start__ = .
+ *(SORT(.CRT$XT*))
+                0x0040802c                ___crt_xt_end__ = .
+ .CRT$XDA       0x0040802c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+ .CRT$XDZ       0x00408030        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+
+.tls            0x00409000      0x200
+                0x00409000                ___tls_start__ = .
+ *(.tls$AAA)
+ .tls$AAA       0x00409000        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+                0x00409000                _tls_start
+ *(.tls)
+ .tls           0x00409004       0x18 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+                0x00409004                _tls_used
+ *(.tls$)
+ *(SORT(.tls$*))
+ .tls$ZZZ       0x0040901c        0x4 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/../../../../i686-w64-mingw32/lib/../lib/libmingw32.a(lib32_libmingw32_a-tlssup.o)
+                0x0040901c                _tls_end
+ *(.tls$ZZZ)
+                0x00409020                ___tls_end__ = .
+
+.endjunk        0x0040a000        0x0
+                0x0040a000                PROVIDE (end, .)
+                0x0040a000                PROVIDE (_end, .)
+                0x0040a000                __end__ = .
+
+.rsrc
+ *(.rsrc)
+ *(SORT(.rsrc$*))
+
+.reloc
+ *(.reloc)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug_aranges  0x0040a000      0x200
+ *(.debug_aranges)
+ .debug_aranges
+                0x0040a000       0x20 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_chkstk_ms.o)
+ .debug_aranges
+                0x0040a020       0x18 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+
+.zdebug_aranges
+ *(.zdebug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.zdebug_pubnames
+ *(.zdebug_pubnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.zdebug_pubtypes
+ *(.zdebug_pubtypes)
+
+.debug_info     0x0040b000      0xe00
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0040b000       0xb3 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_chkstk_ms.o)
+ .debug_info    0x0040b0b3      0xce3 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+
+.zdebug_info
+ *(.zdebug_info .zdebug.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x0040c000      0x200
+ *(.debug_abbrev)
+ .debug_abbrev  0x0040c000       0x14 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_chkstk_ms.o)
+ .debug_abbrev  0x0040c014       0x73 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+
+.zdebug_abbrev
+ *(.zdebug_abbrev)
+
+.debug_line     0x0040d000      0x200
+ *(.debug_line)
+ .debug_line    0x0040d000       0x77 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_chkstk_ms.o)
+ .debug_line    0x0040d077       0x9e c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+
+.zdebug_line
+ *(.zdebug_line)
+
+.debug_frame    0x0040e000      0x200
+ *(.debug_frame*)
+ .debug_frame   0x0040e000       0x38 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_chkstk_ms.o)
+
+.zdebug_frame
+ *(.zdebug_frame*)
+
+.debug_str      0x0040f000        0x0
+ *(.debug_str)
+ .debug_str     0x0040f000        0x0 c:/Program Files (x86)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.2/libgcc.a(_ctors.o)
+
+.zdebug_str
+ *(.zdebug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.zdebug_loc
+ *(.zdebug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.zdebug_macinfo
+ *(.zdebug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.zdebug_weaknames
+ *(.zdebug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.zdebug_funcnames
+ *(.zdebug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.zdebug_typenames
+ *(.zdebug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.zdebug_varnames
+ *(.zdebug_varnames)
+
+.debug_macro
+ *(.debug_macro)
+
+.zdebug_macro
+ *(.zdebug_macro)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.zdebug_ranges
+ *(.zdebug_ranges)
+
+.debug_types
+ *(.debug_types .gnu.linkonce.wt.*)
+
+.zdebug_types
+ *(.zdebug_types .gnu.linkonce.wt.*)
+OUTPUT(main.exe pei-i386)
+LOAD rtr000000.o
+LOAD ertr000001.o

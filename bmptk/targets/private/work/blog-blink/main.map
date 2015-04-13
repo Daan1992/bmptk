@@ -1,0 +1,286 @@
+
+Discarded input sections
+
+ .text          0x00000000       0x24 switch_from_to.o
+ .data          0x00000000        0x0 switch_from_to.o
+ .bss           0x00000000        0x0 switch_from_to.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .text          0x00000000        0x0 main.o
+ .data          0x00000000        0x0 main.o
+ .bss           0x00000000        0x0 main.o
+ .text._Znwj    0x00000000        0x8 main.o
+ .data._ZN5hwcpp2io4coutE
+                0x00000000       0x14 main.o
+ .text          0x00000000        0x0 bmptk_cortex.o
+ .data          0x00000000        0x0 bmptk_cortex.o
+ .bss           0x00000000        0x0 bmptk_cortex.o
+ .text.malloc   0x00000000       0x28 bmptk_cortex.o
+ .text.__cxa_pure_virtual
+                0x00000000        0x2 bmptk_cortex.o
+ .data.heap_free
+                0x00000000        0x4 bmptk_cortex.o
+ .bss.__dso_handle
+                0x00000000        0x4 bmptk_cortex.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00008000         xr
+ram              0x10000000         0x00001000         xrw
+nul              0x20000000         0x00000000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD switch_from_to.o
+LOAD main.o
+LOAD bmptk_cortex.o
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2014q4/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libstdc++.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2014q4/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libm.a
+START GROUP
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2014q4/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2014q4/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libc.a
+END GROUP
+                0x00000800                __main_stack_size = 0x800
+                0x00000000                __process_stack_size = 0x0
+                [0x00000800]                PROVIDE (__main_stack_size, __main_stack_size)
+                [0x00000000]                PROVIDE (__process_stack_size, __process_stack_size)
+                0x00000000                __rom_start = ORIGIN (rom)
+                0x00008000                __rom_size = 0x8000
+                0x00008000                __rom_end = (__rom_start + __rom_size)
+                0x10000000                __ram_start = ORIGIN (ram)
+                0x00001000                __ram_size = 0x1000
+                0x10001000                __ram_end = (__ram_start + __ram_size)
+                [0x00000000]                PROVIDE (__rom_start, __rom_start)
+                [0x00008000]                PROVIDE (__rom_size, __rom_size)
+                [0x00008000]                PROVIDE (__rom_end, __rom_end)
+                [0x10000000]                PROVIDE (__ram_start, __ram_start)
+                [0x00001000]                PROVIDE (__ram_size, __ram_size)
+                [0x10001000]                PROVIDE (__ram_end, __ram_end)
+
+.text           0x00000000      0x148
+                0x00000000                . = ALIGN (0x4)
+                0x00000000                __text_start = .
+                [0x00000000]                PROVIDE (__text_start, __text_start)
+                0x00000000                . = ALIGN (0x4)
+ *(.vectors)
+ .vectors       0x00000000       0x20 bmptk_cortex.o
+                0x00000020                . = ALIGN (0x4)
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text._Z3nowv  0x00000020       0x40 main.o
+                0x00000020                now()
+ .text._Z4waitx
+                0x00000060       0x1e main.o
+                0x00000060                wait(long long)
+ *fill*         0x0000007e        0x2 
+ .text.startup.main
+                0x00000080       0x70 main.o
+                0x00000080                main
+ .text.__startup
+                0x000000f0       0x58 bmptk_cortex.o
+                0x000000f0                __startup
+                0x00000148                . = ALIGN (0x4)
+ *(.glue_7t .glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ .glue_7t       0x00000000        0x0 linker stubs
+                0x00000148                . = ALIGN (0x4)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+                0x00000148                . = ALIGN (0x4)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x00000148                . = ALIGN (0x4)
+ *(.gcc_except_table)
+                0x00000148                . = ALIGN (0x4)
+ *(.eh_frame_hdr)
+                0x00000148                . = ALIGN (0x4)
+ *(.eh_frame)
+                0x00000148                . = ALIGN (0x4)
+                0x00000148                __text_end = .
+                [0x00000148]                PROVIDE (__text_end, __text_end)
+
+.vfp11_veneer   0x00000148        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x00000148        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x00000148        0x0
+ .iplt          0x00000000        0x0 main.o
+
+.rel.dyn        0x00000148        0x0
+ .rel.iplt      0x00000000        0x0 main.o
+
+.IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
+ *(.init)
+ *(.preinit_array)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x00000148                . = ALIGN (0x4)
+                0x00000148                __exidx_start = .
+                [0x00000148]                PROVIDE (__exidx_start, __exidx_start)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00000148                . = ALIGN (0x4)
+                0x00000148                __exidx_end = .
+                [0x00000148]                PROVIDE (__exidx_end, __exidx_end)
+
+.data           0x10000000        0x0 load address 0x00000148
+                0x10000000                . = ALIGN (0x4)
+                0x00000148                __data_init_start = LOADADDR (.data)
+                [0x00000148]                PROVIDE (__data_init_start, __data_init_start)
+                0x10000000                __data_start = .
+                [0x10000000]                PROVIDE (__data_start, __data_start)
+                0x10000000                . = ALIGN (0x4)
+ *(.data .data.* .gnu.linkonce.d.*)
+                0x10000000                . = ALIGN (0x4)
+                0x10000000                __data_end = .
+                [0x10000000]                PROVIDE (__data_end, __data_end)
+
+.igot.plt       0x10000000        0x0 load address 0x00000148
+ .igot.plt      0x00000000        0x0 main.o
+                0x10000000                . = ALIGN (0x4)
+                0x10000000                __data_end = .
+                [0x10000000]                PROVIDE (__data_end, __data_end)
+                0x00000000                __data_size = (__data_end - __data_start)
+                [0x00000000]                PROVIDE (__data_size, __data_size)
+                0x00000148                PROVIDE (__data_init_end, (__data_init_start + __data_size))
+                0x00000000                __data_init_size = __data_size
+                0x00000000                PROVIDE (__data_init_size, __data_size)
+
+.bss            0x10000000        0xc
+                0x10000000                . = ALIGN (0x4)
+                0x10000000                __bss_start = .
+                [0x10000000]                PROVIDE (__bss_start, __bss_start)
+                0x10000000                . = ALIGN (0x4)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss._ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high
+                0x10000000        0x8 main.o
+                0x10000000                hwcpp::lpc1114_base<4096, 32768, 12000000>::timer_64::now()::high
+ .bss._ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low
+                0x10000008        0x4 main.o
+                0x10000008                hwcpp::lpc1114_base<4096, 32768, 12000000>::timer_64::now()::last_low
+                0x1000000c                . = ALIGN (0x4)
+ *(COMMON)
+                0x1000000c                . = ALIGN (0x4)
+                0x1000000c                __bss_end = .
+                [0x1000000c]                PROVIDE (__bss_end, __bss_end)
+                0x1000000c                . = ALIGN (0x4)
+                0x1000000c                __bss_end = .
+                [0x1000000c]                PROVIDE (__bss_end, __bss_end)
+                0x0000000c                PROVIDE (__bss_size, (__bss_end - __bss_start))
+
+.stack          0x1000000c      0x804
+                0x10000010                . = ALIGN (0x8)
+ *fill*         0x1000000c        0x4 
+                0x10000010                __stack_start = .
+                [0x10000010]                PROVIDE (__stack_start, __stack_start)
+                0x10000010                . = ALIGN (0x8)
+                0x10000010                __main_stack_start = .
+                [0x10000010]                PROVIDE (__main_stack_start, __main_stack_start)
+                0x10000810                . = (. + __main_stack_size)
+ *fill*         0x10000010      0x800 
+                0x10000810                . = ALIGN (0x8)
+                0x10000810                __main_stack_end = .
+                [0x10000810]                PROVIDE (__main_stack_end, __main_stack_end)
+                0x10000810                . = ALIGN (0x8)
+                0x10000810                __process_stack_start = .
+                [0x10000810]                PROVIDE (__process_stack_start, __process_stack_start)
+                0x10000810                . = (. + __process_stack_size)
+                0x10000810                . = ALIGN (0x8)
+                0x10000810                __process_stack_end = .
+                [0x10000810]                PROVIDE (__process_stack_end, __process_stack_end)
+                0x10000810                . = ALIGN (0x8)
+                0x10000810                __stack_end = .
+                [0x10000810]                PROVIDE (__stack_end, __stack_end)
+                0x10000810                . = ALIGN (0x4)
+                0x10000810                __heap_start = .
+                [0x10000810]                PROVIDE (__heap_start, __heap_start)
+                0x10000810                . = ALIGN (0x4)
+                0x10001000                __heap_end = __ram_end
+                [0x10001000]                PROVIDE (__heap_end, __heap_end)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+.ARM.attributes
+                0x00000000       0x2d
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x21 switch_from_to.o
+ .ARM.attributes
+                0x00000021       0x31 main.o
+ .ARM.attributes
+                0x00000052       0x31 bmptk_cortex.o
+
+/DISCARD/
+ *(.note.GNU-stack)
+                0x00000148                PROVIDE (__text_size, (__text_end - __text_start))
+                0x00000000                PROVIDE (__exidx_size, (__exidx_end - __exidx_start))
+                0x00000000                PROVIDE (__data_size, (__data_end - __data_start))
+                0x0000000c                PROVIDE (__bss_size, (__bss_end - __bss_start))
+                0x00000800                PROVIDE (__stack_size, (__stack_end - __stack_start))
+                0x000007f0                PROVIDE (__heap_size, (__heap_end - __heap_start))
+OUTPUT(main.elf elf32-littlearm)
+
+.comment        0x00000000       0x70
+ .comment       0x00000000       0x70 main.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 bmptk_cortex.o

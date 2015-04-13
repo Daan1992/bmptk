@@ -1,0 +1,377 @@
+	.cpu cortex-m0
+	.fpu softvfp
+	.eabi_attribute 20, 1
+	.eabi_attribute 21, 1
+	.eabi_attribute 23, 3
+	.eabi_attribute 24, 1
+	.eabi_attribute 25, 1
+	.eabi_attribute 26, 1
+	.eabi_attribute 30, 4
+	.eabi_attribute 34, 0
+	.eabi_attribute 18, 4
+	.code	16
+	.file	"main.cpp"
+	.section	.text._Z10trampolinev,"ax",%progbits
+	.align	1
+	.global	_Z10trampolinev
+	.code	16
+	.thumb_func
+	.type	_Z10trampolinev, %function
+_Z10trampolinev:
+	push	{r3, lr}
+	ldr	r3, .L2
+	@ sp needed
+	ldr	r0, [r3]
+	ldr	r3, [r0]
+	ldr	r3, [r3]
+	blx	r3
+	pop	{r3, pc}
+.L3:
+	.align	2
+.L2:
+	.word	.LANCHOR0
+	.size	_Z10trampolinev, .-_Z10trampolinev
+	.section	.text._Z3nowv,"ax",%progbits
+	.align	1
+	.global	_Z3nowv
+	.code	16
+	.thumb_func
+	.type	_Z3nowv, %function
+_Z3nowv:
+	ldr	r3, .L7
+	push	{r4, r5, r6, r7, lr}
+	ldr	r0, [r3, #8]
+	ldr	r3, .L7+4
+	mvn	r0, r0
+	ldr	r1, [r3]
+	lsl	r0, r0, #8
+	mov	r2, r3
+	lsr	r0, r0, #8
+	ldr	r3, .L7+8
+	cmp	r0, r1
+	bcs	.L5
+	ldr	r6, [r3]
+	ldr	r7, [r3, #4]
+	mov	r4, #128
+	mov	r5, #0
+	lsl	r4, r4, #17
+	add	r4, r4, r6
+	adc	r5, r5, r7
+	str	r4, [r3]
+	str	r5, [r3, #4]
+.L5:
+	str	r0, [r2]
+	ldr	r2, [r3]
+	ldr	r1, [r3, #4]
+	orr	r0, r2
+	@ sp needed
+	pop	{r4, r5, r6, r7, pc}
+.L8:
+	.align	2
+.L7:
+	.word	-536813552
+	.word	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low
+	.word	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high
+	.size	_Z3nowv, .-_Z3nowv
+	.section	.text._ZN4task4waitEx,"axG",%progbits,_ZN4task4waitEx,comdat
+	.align	1
+	.weak	_ZN4task4waitEx
+	.code	16
+	.thumb_func
+	.type	_ZN4task4waitEx, %function
+_ZN4task4waitEx:
+	push	{r4, r6, r7, lr}
+	mov	r4, r0
+	mov	r6, r2
+	mov	r7, r3
+	bl	_Z3nowv
+	add	r6, r6, r0
+	adc	r7, r7, r1
+	mov	r0, r4
+	ldr	r3, .L10
+	str	r6, [r4, #16]
+	str	r7, [r4, #20]
+	add	r0, r0, #12
+	ldr	r1, [r3]
+	bl	switch_from_to
+	@ sp needed
+	pop	{r4, r6, r7, pc}
+.L11:
+	.align	2
+.L10:
+	.word	.LANCHOR1
+	.size	_ZN4task4waitEx, .-_ZN4task4waitEx
+	.section	.text.startup._ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE4mainEv,"axG",%progbits,_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE4mainEv,comdat
+	.align	1
+	.weak	_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE4mainEv
+	.code	16
+	.thumb_func
+	.type	_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE4mainEv, %function
+_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE4mainEv:
+	mov	r1, #128
+	ldr	r2, .L14
+	push	{r3, r4, r5, lr}
+	ldr	r3, [r2, #124]
+	lsl	r1, r1, #9
+	orr	r3, r1
+	mov	r1, #7
+	mov	r4, r0
+	str	r3, [r2, #124]
+	ldr	r2, .L14+4
+	ldr	r3, [r2]
+	bic	r3, r1
+	str	r3, [r2]
+	ldr	r2, .L14+8
+	add	r1, r1, #25
+	ldr	r3, [r2]
+	orr	r3, r1
+	str	r3, [r2]
+.L13:
+	mov	r3, #1
+	ldr	r5, .L14+12
+	neg	r3, r3
+	str	r3, [r5]
+	mov	r0, r4
+	ldr	r2, .L14+16
+	mov	r3, #0
+	bl	_ZN4task4waitEx
+	mov	r3, #0
+	mov	r0, r4
+	str	r3, [r5]
+	ldr	r2, .L14+16
+	mov	r3, #0
+	bl	_ZN4task4waitEx
+	b	.L13
+.L15:
+	.align	2
+.L14:
+	.word	1074036740
+	.word	1074020512
+	.word	1342275584
+	.word	1342242944
+	.word	1800000
+	.size	_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE4mainEv, .-_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE4mainEv
+	.section	.text.startup._ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE4mainEv,"axG",%progbits,_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE4mainEv,comdat
+	.align	1
+	.weak	_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE4mainEv
+	.code	16
+	.thumb_func
+	.type	_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE4mainEv, %function
+_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE4mainEv:
+	mov	r1, #128
+	ldr	r2, .L18
+	push	{r3, r4, r5, lr}
+	ldr	r3, [r2, #124]
+	lsl	r1, r1, #9
+	orr	r3, r1
+	mov	r1, #7
+	mov	r4, r0
+	str	r3, [r2, #124]
+	ldr	r2, .L18+4
+	ldr	r3, [r2]
+	bic	r3, r1
+	add	r1, r1, #121
+	orr	r3, r1
+	str	r3, [r2]
+	ldr	r2, .L18+8
+	sub	r1, r1, #112
+	ldr	r3, [r2]
+	orr	r3, r1
+	str	r3, [r2]
+.L17:
+	mov	r3, #1
+	ldr	r5, .L18+12
+	neg	r3, r3
+	str	r3, [r5]
+	mov	r0, r4
+	ldr	r2, .L18+16
+	mov	r3, #0
+	bl	_ZN4task4waitEx
+	mov	r3, #0
+	mov	r0, r4
+	str	r3, [r5]
+	ldr	r2, .L18+16
+	mov	r3, #0
+	bl	_ZN4task4waitEx
+	b	.L17
+.L19:
+	.align	2
+.L18:
+	.word	1074036740
+	.word	1074020500
+	.word	1342275584
+	.word	1342242880
+	.word	1200000
+	.size	_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE4mainEv, .-_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE4mainEv
+	.section	.text._Z8scheduleSt16initializer_listIP4taskE,"ax",%progbits
+	.align	1
+	.global	_Z8scheduleSt16initializer_listIP4taskE
+	.code	16
+	.thumb_func
+	.type	_Z8scheduleSt16initializer_listIP4taskE, %function
+_Z8scheduleSt16initializer_listIP4taskE:
+	push	{r0, r1, r2, r4, r5, r6, r7, lr}
+	mov	r5, r0
+	str	r0, [sp]
+	str	r1, [sp, #4]
+.L25:
+	mov	r7, r5
+	ldr	r3, [sp, #4]
+	lsl	r4, r3, #2
+	add	r4, r5, r4
+.L21:
+	cmp	r7, r4
+	beq	.L25
+	ldmia	r7!, {r6}
+	bl	_Z3nowv
+	ldr	r3, [r6, #20]
+	cmp	r3, r1
+	bgt	.L21
+	bne	.L26
+	ldr	r3, [r6, #16]
+	cmp	r3, r0
+	bhi	.L21
+.L26:
+	ldr	r3, .L27
+	ldr	r0, .L27+4
+	ldr	r1, [r6, #12]
+	str	r6, [r3]
+	bl	switch_from_to
+	b	.L25
+.L28:
+	.align	2
+.L27:
+	.word	.LANCHOR0
+	.word	.LANCHOR1
+	.size	_Z8scheduleSt16initializer_listIP4taskE, .-_Z8scheduleSt16initializer_listIP4taskE
+	.section	.text.startup.main,"ax",%progbits
+	.align	1
+	.global	main
+	.code	16
+	.thumb_func
+	.type	main, %function
+main:
+	mov	r3, #20
+	push	{r4, r5, r6, r7, lr}
+	sub	sp, sp, #84
+	str	r3, [sp, #20]
+	mov	r6, #0
+	mov	r3, #0
+	mov	r7, #0
+	mov	r0, #80
+	str	r3, [sp, #40]
+	str	r6, [sp, #32]
+	str	r7, [sp, #36]
+	bl	malloc
+	ldr	r3, .L30
+	add	r5, sp, #16
+	str	r3, [r0, #76]
+	ldr	r3, .L30+4
+	str	r0, [r5, #8]
+	str	r3, [sp, #16]
+	mov	r3, #20
+	str	r3, [sp, #52]
+	mov	r3, #0
+	add	r0, r0, #40
+	str	r0, [r5, #12]
+	mov	r0, #80
+	str	r3, [sp, #72]
+	str	r6, [sp, #64]
+	str	r7, [sp, #68]
+	bl	malloc
+	mov	r2, #0
+	ldr	r3, .L30
+	add	r4, sp, #48
+	str	r3, [r0, #76]
+	ldr	r3, .L30+8
+	str	r0, [r4, #8]
+	str	r3, [sp, #48]
+	ldr	r3, .L30+12
+	add	r0, r0, #40
+	str	r0, [r4, #12]
+	str	r2, [r3]
+	ldr	r2, .L30+16
+	mov	r0, sp
+	str	r2, [r3, #4]
+	mov	r2, #0
+	str	r2, [r3, #8]
+	add	r2, r2, #1
+	str	r2, [r3]
+	mov	r1, #2
+	str	r5, [sp]
+	str	r4, [sp, #4]
+	bl	_Z8scheduleSt16initializer_listIP4taskE
+.L31:
+	.align	2
+.L30:
+	.word	_Z10trampolinev
+	.word	_ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE+8
+	.word	_ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE+8
+	.word	-536813552
+	.word	16777215
+	.size	main, .-main
+	.weak	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high
+	.section	.bss._ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high,"awG",%nobits,_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high,comdat
+	.align	3
+	.type	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high, %object
+	.size	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high, 8
+_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE4high:
+	.space	8
+	.weak	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low
+	.section	.bss._ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low,"awG",%nobits,_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low,comdat
+	.align	2
+	.type	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low, %object
+	.size	_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low, 4
+_ZZN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE8timer_643nowEvE8last_low:
+	.space	4
+	.weak	_ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE
+	.section	.rodata._ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE,"aG",%progbits,_ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE,comdat
+	.align	3
+	.type	_ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE, %object
+	.size	_ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE, 12
+_ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE:
+	.word	0
+	.word	0
+	.word	_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE20pin_in_out_ad_pullupILi1ELi4ELi5EEELx1200000EE4mainEv
+	.weak	_ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE
+	.section	.rodata._ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE,"aG",%progbits,_ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE,comdat
+	.align	3
+	.type	_ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE, %object
+	.size	_ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE, 12
+_ZTV5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE:
+	.word	0
+	.word	0
+	.word	_ZN5blinkIN5hwcpp12lpc1114_baseILi4096ELi32768ELi12000000EE17pin_in_out_pullupILi1ELi5EEELx1800000EE4mainEv
+	.global	trampoline_target_task
+	.global	_ZN4task7main_spE
+	.weak	_ZN5hwcpp2io4coutE
+	.section	.data._ZN5hwcpp2io4coutE,"aw",%progbits
+	.align	2
+	.type	_ZN5hwcpp2io4coutE, %object
+	.size	_ZN5hwcpp2io4coutE, 20
+_ZN5hwcpp2io4coutE:
+	.word	0
+	.word	10
+	.byte	32
+	.byte	65
+	.byte	1
+	.byte	0
+	.byte	0
+	.byte	0
+	.space	2
+	.word	0
+	.section	.bss.trampoline_target_task,"aw",%nobits
+	.align	2
+	.set	.LANCHOR0,. + 0
+	.type	trampoline_target_task, %object
+	.size	trampoline_target_task, 4
+trampoline_target_task:
+	.space	4
+	.section	.bss._ZN4task7main_spE,"aw",%nobits
+	.align	2
+	.set	.LANCHOR1,. + 0
+	.type	_ZN4task7main_spE, %object
+	.size	_ZN4task7main_spE, 4
+_ZN4task7main_spE:
+	.space	4
+	.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"

@@ -8,4 +8,7 @@ directories
    cortex      : ARM Cortex microcontrollers
    nds         : NintendoDS game console 
    win         : windows native
+   
+msp430/include/iomacros.h   
+   __interrupt(vec) commented out because it conflicts with the msp430-gee on fedora
 

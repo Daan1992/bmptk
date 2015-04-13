@@ -8,21 +8,57 @@
 # the situation on your PC:
 # COPY THIS FILE TO Makefile.custom AND CHANGE THAT FILE.
 # This way you can overwrite the bmptk files without erasing
-# your changes.
+# your changes when you download a new bmptk over the old tree.
 #
 # This file is in the public domain.
 # 
 #############################################################################
+                                                                 
+ifeq ($(OS),Windows_NT)
+ 
+   # WPF is the windows directory for 32-bit applications
+   
+   # 7za command line
+   7za             ?= "C:\Program Files\7-Zip\7za"
 
-# WPF is the windows prefix for 32-bit applicationsd
-ifeq ($(wildcard C:/Program\ Files\ (x86)/* ),)
-    WPF := C:/Program Files
+   # select the windows toolchain: SysProgs (=default) or Nuwen
+   GCC-WIN         ?= C:/SysGCC/MinGW64
+   #GCC-WIN         ?= C:/MinGW
+
+   # select the AVR toolchain: Atmel (=default) or Arduino
+   GCC-AVR         ?= $(WPF)/Arduino/hardware/tools/avr
+   #GCC-AVR         ?= $(WPF)/Atmel/Atmel Toolchain/AVR8 GCC/Native/3.4.1061/avr8-gnu-toolchain/bin
+
+   # select the ARM toolchain: launchpad (=default), SysProgs, or Chopin
+   GCC-ARM         ?= $(WPF)/GNU Tools ARM Embedded/4.9 2014q4
+   #GCC-ARM         ?= C:/SysGCC/arm-eabi
+   #GCC-ARM         ?= C:/gcc-arm-none-eabi-4_9-141220
+
+   # no alternatives to choose, but maybe a different directory
+   GCC-MSP430      ?= c:/ti/ccsv6/tools/compiler/gcc_msp430_4.3.3
+   STM32LU         ?= $(WPF)/STMicroelectronics/STM32 ST-LINK Utility
+   MSP430FLASHER   ?= C:/ti/MSP430Flasher_1.3.3/MSP430Flasher
+   
+   # esp8266 stuff
+   ESPRESSIF       ?= C:/Espressif
+   ESP-SDK         ?= $(ESPRESSIF)/ESP8266_SDK
+   GCC-XTENSA      ?= $(ESPRESSIF)/xtensa-lx106-elf
+   ESP-TOOL        ?= $(GCC-XTENSA)/bin/esptool
+   ESP-LOADER      ?= $(ESPRESSIF)/utils/esptool.exe
+   
+   # serial port
+   SERIAL_PORT      ?= COM4
+   SERIAL_BAUDRATE  ?= 38400 
+   
 else
-    WPF := C:/Program Files (x86)
+
+   # on Linux the path can in most cases be omitted
+   GCC-ARM         ?= 
+   GCC-AVR         ?=
+   GCC-MSP430      ?= 
+   
+   # serial port
+   SERIAL_PORT      ?= /dev/ttyUSB0
+   SERIAL_BAUDRATE  ?= 38400
+
 endif
-
-GNU-ARM     ?= $(WPF)/GNU Tools ARM Embedded/4.9 2014q4
-MINGW       ?= C:/mingw32
-
-
-

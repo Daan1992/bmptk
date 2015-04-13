@@ -2,7 +2,7 @@
 // 
 // file: bmptk/notes.txt
 //
-// This file contains reminders, notes, bookmarks etc. for my use
+// This file contains reminders, notes, bookmarks etc. for my own use
 //
 // ==========================================================================
 
@@ -11,51 +11,73 @@ git use:
    git add ....
    git commit -a -m "text"
    
-- document bmptk-make
-- mingw export PATH nodig??
-- bmptk graphics: weg ermee?   
-- pass -DBMPTK so hwcpp knows
-- include bmptk.h OR include hwcpp target
-- document bmptk levert malloc
-- document MinGW use (32 bit)   
-- compileer C, C++, asm
+-Wlarger-than=len 
+-Wframe-larger-than=len
+
+-Wstack-usage=len
+http://www.adacore.com/uploads/technical-papers/Stack_Analysis.pdf
+gnat only?
+   
+linux:
+   build image_sizes
+   build lpc21isp   
+   
+files re-visit:
+   bmptk.docx (generate pdf?)
+   makefile (generate webpage?)
+   Makefile.template
+   Makefile   
+         
+- try gedit, gnunano         
+- pause equivalent op linux?         
+- tee werkt nog niet op linux (graphics)        
+- make versions : show the versions of all tools
+- avrdude -cConfig eruit??
+- avrdude does not close the serial port properly??
+- tests zouden ook c++ moeten testen...         
+- msp430: windows: use external gcc toolchain (alternative?)
+- combine msp430 linkerscripts, check licenses
+- linkescript.ld for cortex should be $(LINKERSCRIPT) !!
+- git ignore makefile.local         
+- copyright on linkerscript.c         
+- wouter@voto or www.voti?         
+- http://sourceforge.net/projects/bleeding-edge/postdownload?source=dlp is gedownload         
+- 4.9.3 maakt meer code dan 4.9.2??         
+- msp430                
+- v2cpse2 make has a translate.py         
+- Tiny-11C14         
+- lpc800-max via db100 - werkt niet??       
+- loop dor V1TH04 sheets
+- loop door V2CPSE2 sheets (no subframe?)
+- let op private stuff in V2CPSE1      
+- test voor non-project makefile targets should be other way round (only build,run,clean)    
+- add file-open checks to copy_to_drive     
+- waarom ook al weer dat gekke teken in cpse2 thread   ?
+- try http://www.freddiechopin.info/en/articles/35/87
+- subdir for objects-no-thanks?
+- real assembler listing?
+- cleanup tools/lpc21isp etc.   
+- how to handle private files??   
+- mingw export PATH nodig?? 
+- document bmptk levert malloc  
 - build all
-- examples alle vakken
-- opties toevoegen in lokale Makefile
-- eigen make.exe
 - merge in all other branches...
-- documentation
-- make zip voor v2cspse1, 2
-- make.exe - with license!
-- lpc21isp - with license and source!
-- all README -> README.txt
+- check make zip voor v2cspse1, 2
+- find the "C++ for embedded and Real Time Systems" mailing list - mentioned in N4234 gutson
+- http://www.emprog.com/emprog/thunderbench-arm-compiler-debugger.html
+- http://electronics.stackexchange.com/questions/152315/printf-style-debugging-via-swd
+
+#GCC-WIN         ?= $(WPF)/mingw-w64/i686-4.9.2-posix-dwarf-rt_v3-rev0/mingw32
 
 config extra c/c++ parameters
-optional asm listing   
-
+ 
 stack *onderaan* de RAM?
-cleanup tools compilation
-hwcpp knowledge (file list) => hwcpp
 
+- http://www.joelonsoftware.com/articles/GuerrillaInterviewing3.html
 
 // ==========================================================================
 // general high priority
 // ==========================================================================
-
-- documentation
-- windows target
-- nds target + examples
-- check comments & license for all targets
-- stack size parameter => document
-- use gcc for windows => latest version
-- xwisp com4 dtr - rts - term 38400
-- document target db103/lpc1114
-- add some comments to all examples
-- pass the real version string to Doxygen
-- re-make still does some work, why?
-- no re-build on a make run?
-- I2C different parameter, maybe just delay
-- make term target?
 
 
 // ==========================================================================
@@ -72,203 +94,20 @@ hwcpp knowledge (file list) => hwcpp
 // general lower priority
 // ==========================================================================
 
-- 
 - compiling on windows sometimes generates weird files like D6868778.cpp
-- nrf24/rfm73
-- 115200 download works, but debug does not??
-- chaining hc595's
 - echt code size laten zien, huidige dump zegt nix
-- spi & hc595 opschonen
-- RFM73 moet spi_master gebruiken
-- port_*_from< another port >
-- LPC1114 uart get char
-- channel_buffer moet wel blocken!!
-- channel sink
-- channel overflow
-- spi_master flavours (in, out, in out)?
-- cout reduce ROM
-- pull-ups for lpc1114
-- pull-ups for lpc810
-- mcp23017
-- mcp23S17
-- only cin/cout global objects
-- cin inplementation?
-- makefile.inc opschonen, geen -nodefault voor nds, wel voor lpc
-- general way to get an object from a class (why not just instantiate - lifertime issue)
-- merge all RFM73 pages
-- distinguish 'hosted' from 'bare' (NDS is hosted??)
-- memory allocation
-- error handling
-- target lpc2148
-- RTOS voor LPC1114
-- RTOS voor nds, win
-- document 'install PIL'
-- run from UltraEdit
-- tty
-- 2478 target?
-- License: check all files
-- create release notes
 - use other (free) zip instead of pkzip25 (and add to tools)
 - git push uses credentials, make push does not??
 - ftp: .zip is always transferred
 - add chapter 'design notes'
 - isp as alternative to lpc21isp?
--  pin/port decorators:
--  and, nand, nor, or, xnor, xor, not
--  count, latch, register (all work on both pin and port)
+- 115200 download works, but debug does not??
 
-
-// ==========================================================================
-// tasking
-// ==========================================================================
-
-- main_context is a problem on non-embedded targets :(
-- TASK_STATISTICS, TASK_DEBUG_LOG
-- task statistics example with buffered cout
-- tasks example show statistics every once in a while
-- waitable_set requested_waitable = 0;
-- kan waitable_set er uit?
-- statistics moet een object worden
-- a mailbox should be a waitable
-- context.cpp depends a lot on stack direction
-- stack check
-- integrate RTOS
-- RTOS examples must show best practice
-
-
-// ==========================================================================
-// graphics
-// ==========================================================================
-
-- volatile int n = 5; bmptk::graphics::color y( n, n+1, n+2 );  std::cout << y << y << "\n"; 
-- create font_default.* only when needed (not on timestamp)?
-- code to draw a DIP or other chip and show its pins -> HC595, TPIC6C595, etc.
-- win get mouse
-- win timing
-- clock example digital clock does not work on nds, does work on win?? maybe use own string class?
-- rewrite graphics page
-- target 'win', adjustable x and y sizes (call to make a new window?)
-- cannot << a format??
-- size=2 for win does not work with events
-- frame_snapshot for hosted but not for embedded
-- get font from libnds?
-- default 5x7 font, for instance from olimex demo
-- vertical text labels require 'flip' in subscreen
-- font: top & right side 'empty' line can be eliminated?
-- arithmetic with transparancy??
-- scale=2 for text does not work very intuitively, maybe scale different?
-- gif translate does not work, 33 -> 32 wel! (goed by veelvouden van 8?)
-- gif transparency
-- translate utilities should not write same header again
-- font does not depend on makefile??
-- letters lijken iets verschoven naar beneden
-- beperkte charsets
-- font bij ontbrekende: andere case proberen, dan ? proberen.
-- rectangle, circle: private attributes?
-- draw line width differently (circle brush?)
-- draw circle with differently too
-- paint beter structureren: event in screen? => window
-- graphics.h start text
-- reversi example
-- packer/grid/placer
-- mouse-style pointer needed for trackballs
-- subframe boundaries
-- ignore repeated mouse @ same place?
-- compressed color = 1 byte per pixel
-- arithmetic for text format
-- standard font(s)
-- draw rounded rectangle
-- STL-style iterator for position
-- text::draw scale, twice?
-- rectangle, line: size or boundaries??
-- wit lijntje in de button corners is best leuk!
-- canvas, is a drawable, and can be written to a .tiff (or gif?) ppm! - frame_buffer is dit al??
-- drawable::draw_pixel moet beter
-- rotate operator on a vector! (multiply)
-- target_screen is 2 x in doxygen, inherts 2 x from frame
-- frame_buffer should have separate bool array for pixels-to-be-written?
-- clock wijzers kloppen niet? (export)
-- document the inline.py tools - refs in bmptk_graphics.h
-- larger font for inline pictures in documentation
-- make docs always re-generates the pictures??
-- http://www.imagemagick.org/
-- add image magic to tools
-- subframe => frame_subframe?
-- frame_mirror_h _v _df _db
-- frame_rot_r _1 _2
-- frame_overlay (cursor, sprite)
-- nds::fatal will not work without the GRAPHICS library...
-- devkitpro make has the problem (devkitpro\msys\bin\make.exe)
-- win use http://forums.codeguru.com/showthread.php?379581-Visual-C-Debugging-How-do-I-evaluate-the-time-difference-between-two-events
-
-
-// ==========================================================================
-// Pipe Dreams
-// ==========================================================================
-- Cortex two-wire-debug 
-- debug in Flash
-- run on Linux in a window
-- run on Android
-- Olimex LCD 4.2, RaPi
-- IZArc command line?
-- USB
-- Ehernet / TCP-IP etc
-
-   
-// ==========================================================================
-// Naming conventions
-// ==========================================================================
- 
-- underscores_without_capitals
-- big::smaller->yetsmaller.smallest_action_variants
-- convert: y_from_x, or use y_constructor
-- bases classes have private assignment, default & copy constructor
-- ADTs have visible assignment, default & copy constructor
-- no exceptions, fatal call bmptk::fatal_error_detected
- 
-
-// ==========================================================================
-// Meta principles
-// ==========================================================================
-
-decorator naming
-- all : write to one to write to all
-- sink : write to no effect
-- switch : writing effect can be switched on or off
-- invert : read and write effect is inverted
-- xxx_from : create an xxx from another pin/port
-   
-   
-// ==========================================================================
-// Design principles
-// ==========================================================================   
-
-- no C++ exception handling: an error is fatal
-- memory alloaction is OK, deallocation is not
-- template-based flexibility for low-level (performnace-sensitive) parts
-- class-based flexibility for higher-level functionality
-- keep the target 'interface' small, even at the expense of some performance
-- initialized global objects are evil (initialization ordering problem)
-- ostream/istream style I/O for embedded targets, source compatible with PC target
-- Doxygen for all documentation, but only as text formatter
-- in order: size, performance, functionality, compatibility   
-- can use 'hosted' for debug and development 
-- no virtual destructors => lib calls delete :(
-   
-   
-// ==========================================================================
-// Code Conventions
-// ==========================================================================   
-- 1TBF
-- 3 spaces per level, no tabs (except of course in Makefiles!)
-- http://www.youtube.com/watch?v=aAb7hSCtvGw
-- 77 positions at most, 78 is free
-- Makefile targets: clean, build (=default), run, doc
-   
 
 // ==========================================================================
 // Doxygen conventions - no longer relevant
-// ==========================================================================        
+// ==========================================================================       
+ 
 - Doxygen must run without warnings
 - short description
    - is not a scentence
@@ -285,11 +124,9 @@ decorator naming
 // terms & quotes
 // ==========================================================================      
 - I get it right 98% of the time, and don't care about the other 3%.
-- scar tissue
 - "C is quirky, flawed, and an enormous success." - Dennis Ritchie   
    
  
-   
 // ==========================================================================
 // Bookmarks
 // ==========================================================================      
@@ -367,3 +204,5 @@ others
    http://www.angelikalanger.com/Articles/Topics.html#CPP
    http://www.ethernut.de/api/index.html
    http://stackoverflow.com/questions/243696/correctly-over-loading-a-stringbuf-to-replace-cout-in-a-matlab-mex-file   
+   http://www.quora.com/What-are-the-best-blogs-on-C++
+   https://sites.google.com/site/terminalbpp/   - nice serial terminal?

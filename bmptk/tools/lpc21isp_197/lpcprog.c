@@ -1639,6 +1639,9 @@ int NxpDownload(ISP_ENVIRONMENT *IspEnvironment)
                 return (FAILED_RUN + GetAndReportErrorNumber(Answer));
             }
         }
+        
+        // wovo added
+        ResetTarget(IspEnvironment, RUN_MODE);
 
         fflush(stdout);
     }

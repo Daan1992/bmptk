@@ -7,36 +7,37 @@
 # This file is in the public domain.
 # You can copy and adapt it and put it under the copyright notice
 # for your project.
+#
+# The BMPTK lopcation and the TARGET (chip or board) 
+# must always be specified. 
+# For simple (one-file) projects that is all that must be specified.
 # 
 #############################################################################
 
 # Specify the location of the bmptk library
-BMPTK      := ../../..
+BMPTK         := ../../..
 
-# Specify target chip or board or system: win, db103, or lpc1114fn28
-TARGET    := 
+# Specify target chip or board or system, for instance
+# native, db103, or lpc1114fn28
+TARGET        := 
 
 # Specify the project main source file name, without extension.
-# the default is 'main'. It should be a .cpp, .c, or .asm file.
-# PROJECT    := 
+# the default is 'main'. To use the default, do NOT assign to PROJECT.
+# The project file must be a .cpp, .c, or .asm file.
+# PROJECT     := 
 
 # Specify project-specific files (other than the main, if any)
-# SOURCES    := 
-# HEADERS    := 
-# OBJECTS    := 
+# SOURCES     := 
+# HEADERS     := 
 
-# directories, other than the current, that contain your sources
-# SEARCH     := 
+# Specify directories, other than the current, that contain sources
+# SEARCH      := 
 
-# specify (extra) results you want to get 
-# RESULTS   := 
+# specify (extra) results you want to get , for instance 
+# a specific .lst file, or main.lss
+# RESULTS     := 
 
 # specify the stack size (default depends on the target)
-# STACK_SIZE  := 
-
-# specify the toolchain to use (C or C++)
-# The default is C++ when the project contains one or more .cpp sources,
-# othewise it is C.
 # STACK_SIZE  := 
 
 # The bmptk/Makefile.inc does all the work

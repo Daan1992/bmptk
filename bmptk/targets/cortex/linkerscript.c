@@ -173,16 +173,11 @@ SECTIONS
 		. = ALIGN(4);
 		__data_end = .;
 		PROVIDE(__data_end = __data_end);
+      
+      __data_init_end = LOADADDR (.data);      
+      PROVIDE( __data_init_end = __data_init_end );
+      
 	} > ram AT > rom
-   
-	. = ALIGN(4);
-	__data_end = .;
-	PROVIDE( __data_end = __data_end );  
-   __data_size = __data_end - __data_start;
-	PROVIDE( __data_size = __data_size );   
-	PROVIDE( __data_init_end = __data_init_start + __data_size ); 
-   __data_init_size = __data_size;   
-	PROVIDE( __data_init_size = __data_size );   
 
 	.bss :
 	{
@@ -199,11 +194,6 @@ SECTIONS
 		__bss_end = .;
 		PROVIDE(__bss_end = __bss_end);
 	} > ram AT > ram
-   
-	. = ALIGN(4);
-	__bss_end = .;
-	PROVIDE( __bss_end = __bss_end );   
-	PROVIDE( __bss_size = __bss_end - __bss_start );   
 
 	.stack :
 	{
@@ -280,6 +270,7 @@ SECTIONS
 PROVIDE(__text_size = __text_end - __text_start);
 PROVIDE(__exidx_size = __exidx_end - __exidx_start);
 PROVIDE(__data_size = __data_end - __data_start);
+PROVIDE(__data_init_size = __data_init_end - __data_init_start);
 PROVIDE(__bss_size = __bss_end - __bss_start);
 PROVIDE(__stack_size = __stack_end - __stack_start);
 PROVIDE(__heap_size = __heap_end - __heap_start);

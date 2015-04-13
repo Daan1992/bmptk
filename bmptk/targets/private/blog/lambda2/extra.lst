@@ -1,0 +1,24 @@
+	.cpu cortex-m0
+	.fpu softvfp
+	.eabi_attribute 20, 1
+	.eabi_attribute 21, 1
+	.eabi_attribute 23, 3
+	.eabi_attribute 24, 1
+	.eabi_attribute 25, 1
+	.eabi_attribute 26, 1
+	.eabi_attribute 30, 4
+	.eabi_attribute 34, 0
+	.eabi_attribute 18, 4
+	.code	16
+	.file	"extra.cpp"
+	.section	.text._ZSt25__throw_bad_function_callv,"ax",%progbits
+	.align	1
+	.weak	_ZSt25__throw_bad_function_callv
+	.code	16
+	.thumb_func
+	.type	_ZSt25__throw_bad_function_callv, %function
+_ZSt25__throw_bad_function_callv:
+.L2:
+	b	.L2
+	.size	_ZSt25__throw_bad_function_callv, .-_ZSt25__throw_bad_function_callv
+	.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"

@@ -1,0 +1,596 @@
+	.file	"main.cpp"
+	.section	.text.unlikely._Z4fivev,"x"
+LCOLDB0:
+	.section	.text$_Z4fivev,"x"
+LHOTB0:
+	.globl	__Z4fivev
+	.def	__Z4fivev;	.scl	2;	.type	32;	.endef
+__Z4fivev:
+LFB5623:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	$5, %eax
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE5623:
+	.section	.text.unlikely._Z4fivev,"x"
+LCOLDE0:
+	.section	.text$_Z4fivev,"x"
+LHOTE0:
+	.section	.text.unlikely._ZZ2ggvENUliE_4_FUNEi,"x"
+	.align 2
+LCOLDB1:
+	.section	.text$_ZZ2ggvENUliE_4_FUNEi,"x"
+LHOTB1:
+	.align 2
+	.def	__ZZ2ggvENUliE_4_FUNEi;	.scl	3;	.type	32;	.endef
+__ZZ2ggvENUliE_4_FUNEi:
+LFB5626:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	movl	8(%ebp), %eax
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	addl	%eax, %eax
+	ret
+	.cfi_endproc
+LFE5626:
+	.section	.text.unlikely._ZZ2ggvENUliE_4_FUNEi,"x"
+LCOLDE1:
+	.section	.text$_ZZ2ggvENUliE_4_FUNEi,"x"
+LHOTE1:
+	.section	.text.unlikely._ZZ2ggvENUliE0_4_FUNEi,"x"
+	.align 2
+LCOLDB2:
+	.section	.text$_ZZ2ggvENUliE0_4_FUNEi,"x"
+LHOTB2:
+	.align 2
+	.def	__ZZ2ggvENUliE0_4_FUNEi;	.scl	3;	.type	32;	.endef
+__ZZ2ggvENUliE0_4_FUNEi:
+LFB5629:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	imull	$3, 8(%ebp), %eax
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE5629:
+	.section	.text.unlikely._ZZ2ggvENUliE0_4_FUNEi,"x"
+LCOLDE2:
+	.section	.text$_ZZ2ggvENUliE0_4_FUNEi,"x"
+LHOTE2:
+	.section	.text.unlikely._ZNSt17_Function_handlerIFiiEZ3fooiRiEUliE_E9_M_invokeERKSt9_Any_datai,"x"
+LCOLDB3:
+	.section	.text$_ZNSt17_Function_handlerIFiiEZ3fooiRiEUliE_E9_M_invokeERKSt9_Any_datai,"x"
+LHOTB3:
+	.def	__ZNSt17_Function_handlerIFiiEZ3fooiRiEUliE_E9_M_invokeERKSt9_Any_datai;	.scl	3;	.type	32;	.endef
+__ZNSt17_Function_handlerIFiiEZ3fooiRiEUliE_E9_M_invokeERKSt9_Any_datai:
+LFB5773:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	movl	8(%ebp), %eax
+	movl	(%eax), %edx
+	movl	(%edx), %eax
+	incl	(%eax)
+	movl	12(%ebp), %eax
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	addl	4(%edx), %eax
+	ret
+	.cfi_endproc
+LFE5773:
+	.section	.text.unlikely._ZNSt17_Function_handlerIFiiEZ3fooiRiEUliE_E9_M_invokeERKSt9_Any_datai,"x"
+LCOLDE3:
+	.section	.text$_ZNSt17_Function_handlerIFiiEZ3fooiRiEUliE_E9_M_invokeERKSt9_Any_datai,"x"
+LHOTE3:
+	.section	.text.unlikely.__tcf_0,"x"
+LCOLDB4:
+	.section	.text$__tcf_0,"x"
+LHOTB4:
+	.def	___tcf_0;	.scl	3;	.type	32;	.endef
+___tcf_0:
+LFB5857:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	$__ZStL8__ioinit, %ecx
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	jmp	__ZNSt8ios_base4InitD1Ev
+	.cfi_endproc
+LFE5857:
+	.section	.text.unlikely.__tcf_0,"x"
+LCOLDE4:
+	.section	.text$__tcf_0,"x"
+LHOTE4:
+	.section	.text.unlikely._ZNSt14_Function_base13_Base_managerIZ3fooiRiEUliE_E10_M_managerERSt9_Any_dataRKS4_St18_Manager_operation,"x"
+LCOLDB5:
+	.section	.text$_ZNSt14_Function_base13_Base_managerIZ3fooiRiEUliE_E10_M_managerERSt9_Any_dataRKS4_St18_Manager_operation,"x"
+LHOTB5:
+	.def	__ZNSt14_Function_base13_Base_managerIZ3fooiRiEUliE_E10_M_managerERSt9_Any_dataRKS4_St18_Manager_operation;	.scl	3;	.type	32;	.endef
+__ZNSt14_Function_base13_Base_managerIZ3fooiRiEUliE_E10_M_managerERSt9_Any_dataRKS4_St18_Manager_operation:
+LFB5774:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	pushl	%esi
+	pushl	%ebx
+	subl	$16, %esp
+	.cfi_offset 6, -12
+	.cfi_offset 3, -16
+	movl	16(%ebp), %eax
+	movl	8(%ebp), %ebx
+	movl	12(%ebp), %edx
+	cmpl	$2, %eax
+	je	L13
+	cmpl	$3, %eax
+	je	L14
+	decl	%eax
+	jne	L12
+	movl	(%edx), %eax
+	jmp	L17
+L13:
+	movl	(%edx), %esi
+	movl	$8, (%esp)
+	call	__Znwj
+	movl	(%esi), %edx
+	movl	4(%esi), %ecx
+	movl	%edx, (%eax)
+	movl	%ecx, 4(%eax)
+L17:
+	movl	%eax, (%ebx)
+	jmp	L12
+L14:
+	movl	(%ebx), %eax
+	movl	%eax, (%esp)
+	call	__ZdlPv
+L12:
+	addl	$16, %esp
+	xorl	%eax, %eax
+	popl	%ebx
+	.cfi_restore 3
+	popl	%esi
+	.cfi_restore 6
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE5774:
+	.section	.text.unlikely._ZNSt14_Function_base13_Base_managerIZ3fooiRiEUliE_E10_M_managerERSt9_Any_dataRKS4_St18_Manager_operation,"x"
+LCOLDE5:
+	.section	.text$_ZNSt14_Function_base13_Base_managerIZ3fooiRiEUliE_E10_M_managerERSt9_Any_dataRKS4_St18_Manager_operation,"x"
+LHOTE5:
+	.section	.text.unlikely._Z5twicei,"x"
+LCOLDB6:
+	.section	.text$_Z5twicei,"x"
+LHOTB6:
+	.globl	__Z5twicei
+	.def	__Z5twicei;	.scl	2;	.type	32;	.endef
+__Z5twicei:
+LFB5612:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	movl	8(%ebp), %eax
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	addl	%eax, %eax
+	ret
+	.cfi_endproc
+LFE5612:
+	.section	.text.unlikely._Z5twicei,"x"
+LCOLDE6:
+	.section	.text$_Z5twicei,"x"
+LHOTE6:
+	.section	.text.unlikely._Z6apply3PiS_PFiiE,"x"
+LCOLDB7:
+	.section	.text$_Z6apply3PiS_PFiiE,"x"
+LHOTB7:
+	.globl	__Z6apply3PiS_PFiiE
+	.def	__Z6apply3PiS_PFiiE;	.scl	2;	.type	32;	.endef
+__Z6apply3PiS_PFiiE:
+LFB5616:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	pushl	%ebx
+	subl	$20, %esp
+	.cfi_offset 3, -12
+	movl	8(%ebp), %ebx
+L22:
+	cmpl	12(%ebp), %ebx
+	je	L25
+	movl	(%ebx), %eax
+	addl	$4, %ebx
+	movl	%eax, (%esp)
+	call	*16(%ebp)
+	movl	%eax, -4(%ebx)
+	jmp	L22
+L25:
+	addl	$20, %esp
+	popl	%ebx
+	.cfi_restore 3
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE5616:
+	.section	.text.unlikely._Z6apply3PiS_PFiiE,"x"
+LCOLDE7:
+	.section	.text$_Z6apply3PiS_PFiiE,"x"
+LHOTE7:
+	.section	.text.unlikely._Z6apply4PiS_RKSt8functionIFiiEE,"x"
+LCOLDB8:
+	.section	.text$_Z6apply4PiS_RKSt8functionIFiiEE,"x"
+LHOTB8:
+	.globl	__Z6apply4PiS_RKSt8functionIFiiEE
+	.def	__Z6apply4PiS_RKSt8functionIFiiEE;	.scl	2;	.type	32;	.endef
+__Z6apply4PiS_RKSt8functionIFiiEE:
+LFB5617:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	pushl	%esi
+	pushl	%ebx
+	subl	$16, %esp
+	.cfi_offset 6, -12
+	.cfi_offset 3, -16
+	movl	8(%ebp), %ebx
+	movl	16(%ebp), %esi
+L27:
+	cmpl	12(%ebp), %ebx
+	je	L31
+	cmpl	$0, 8(%esi)
+	movl	(%ebx), %eax
+	jne	L28
+	call	__ZSt25__throw_bad_function_callv
+L28:
+	movl	%eax, 4(%esp)
+	movl	%esi, (%esp)
+	addl	$4, %ebx
+	call	*12(%esi)
+	movl	%eax, -4(%ebx)
+	jmp	L27
+L31:
+	addl	$16, %esp
+	popl	%ebx
+	.cfi_restore 3
+	popl	%esi
+	.cfi_restore 6
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE5617:
+	.section	.text.unlikely._Z6apply4PiS_RKSt8functionIFiiEE,"x"
+LCOLDE8:
+	.section	.text$_Z6apply4PiS_RKSt8functionIFiiEE,"x"
+LHOTE8:
+	.section	.text.unlikely._Z3fooiRi,"x"
+LCOLDB9:
+	.section	.text$_Z3fooiRi,"x"
+LHOTB9:
+	.globl	__Z3fooiRi
+	.def	__Z3fooiRi;	.scl	2;	.type	32;	.endef
+__Z3fooiRi:
+LFB5618:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	pushl	%ebx
+	.cfi_offset 3, -12
+	leal	-24(%ebp), %ebx
+	subl	$36, %esp
+	movl	$0, -16(%ebp)
+	movl	$8, (%esp)
+	call	__Znwj
+	movl	12(%ebp), %edx
+	movl	%edx, (%eax)
+	movl	8(%ebp), %edx
+	movl	%eax, -24(%ebp)
+	movl	%edx, 4(%eax)
+	movl	%ebx, 8(%esp)
+	movl	$_a+20, 4(%esp)
+	movl	$_a, (%esp)
+	movl	$__ZNSt17_Function_handlerIFiiEZ3fooiRiEUliE_E9_M_invokeERKSt9_Any_datai, -12(%ebp)
+	movl	$__ZNSt14_Function_base13_Base_managerIZ3fooiRiEUliE_E10_M_managerERSt9_Any_dataRKS4_St18_Manager_operation, -16(%ebp)
+	call	__Z6apply4PiS_RKSt8functionIFiiEE
+	movl	-16(%ebp), %eax
+	testl	%eax, %eax
+	je	L32
+	movl	$3, 8(%esp)
+	movl	%ebx, 4(%esp)
+	movl	%ebx, (%esp)
+	call	*%eax
+L32:
+	addl	$36, %esp
+	popl	%ebx
+	.cfi_restore 3
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE5618:
+	.section	.text.unlikely._Z3fooiRi,"x"
+LCOLDE9:
+	.section	.text$_Z3fooiRi,"x"
+LHOTE9:
+	.section	.text.unlikely._Z5applyPFiiE,"x"
+LCOLDB10:
+	.section	.text$_Z5applyPFiiE,"x"
+LHOTB10:
+	.globl	__Z5applyPFiiE
+	.def	__Z5applyPFiiE;	.scl	2;	.type	32;	.endef
+__Z5applyPFiiE:
+LFB5631:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	movl	8(%ebp), %eax
+	movl	$3, 8(%ebp)
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	jmp	*%eax
+	.cfi_endproc
+LFE5631:
+	.section	.text.unlikely._Z5applyPFiiE,"x"
+LCOLDE10:
+	.section	.text$_Z5applyPFiiE,"x"
+LHOTE10:
+	.section	.text.unlikely._Z1fi,"x"
+LCOLDB11:
+	.section	.text$_Z1fi,"x"
+LHOTB11:
+	.globl	__Z1fi
+	.def	__Z1fi;	.scl	2;	.type	32;	.endef
+__Z1fi:
+LFB5632:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	imull	$3, 8(%ebp), %eax
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE5632:
+	.section	.text.unlikely._Z1fi,"x"
+LCOLDE11:
+	.section	.text$_Z1fi,"x"
+LHOTE11:
+	.section	.text$_Z6apply1IiEvPT_S1_PFS0_S0_E,"x"
+	.linkonce discard
+LCOLDB12:
+LHOTB12:
+	.globl	__Z6apply1IiEvPT_S1_PFS0_S0_E
+	.def	__Z6apply1IiEvPT_S1_PFS0_S0_E;	.scl	2;	.type	32;	.endef
+__Z6apply1IiEvPT_S1_PFS0_S0_E:
+LFB5775:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	pushl	%ebx
+	subl	$20, %esp
+	.cfi_offset 3, -12
+	movl	8(%ebp), %ebx
+L43:
+	cmpl	12(%ebp), %ebx
+	je	L46
+	movl	(%ebx), %eax
+	addl	$4, %ebx
+	movl	%eax, (%esp)
+	call	*16(%ebp)
+	movl	%eax, -4(%ebx)
+	jmp	L43
+L46:
+	addl	$20, %esp
+	popl	%ebx
+	.cfi_restore 3
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE5775:
+LCOLDE12:
+LHOTE12:
+	.section .rdata,"dr"
+LC13:
+	.ascii "\12\0"
+	.section	.text.unlikely._Z2ggv,"x"
+LCOLDB14:
+	.section	.text$_Z2ggv,"x"
+LHOTB14:
+	.globl	__Z2ggv
+	.def	__Z2ggv;	.scl	2;	.type	32;	.endef
+__Z2ggv:
+LFB5624:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	pushl	%ebx
+	.cfi_offset 3, -12
+	movl	$_a, %ebx
+	subl	$20, %esp
+	movl	$__Z4fivev, 8(%esp)
+	movl	$_a+20, 4(%esp)
+	movl	$_a, (%esp)
+	call	__Z6apply1IiEvPT_S1_PFS0_S0_E
+L48:
+	movl	(%ebx), %eax
+	movl	$__ZSt4cout, %ecx
+	addl	$4, %ebx
+	movl	%eax, (%esp)
+	call	__ZNSolsEi
+	pushl	%edx
+	movl	$LC13, 4(%esp)
+	movl	%eax, (%esp)
+	call	__ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+	cmpl	$_a+20, %ebx
+	jne	L48
+	movl	$__ZZ2ggvENUliE_4_FUNEi, 8(%esp)
+	movl	$_a+20, 4(%esp)
+	movl	$_a, (%esp)
+	call	__Z6apply1IiEvPT_S1_PFS0_S0_E
+	movl	$__ZZ2ggvENUliE0_4_FUNEi, 8(%esp)
+	movl	$_a+20, 4(%esp)
+	movl	$_a, (%esp)
+	call	__Z6apply1IiEvPT_S1_PFS0_S0_E
+	movl	-4(%ebp), %ebx
+	leave
+	.cfi_restore 5
+	.cfi_restore 3
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE5624:
+	.section	.text.unlikely._Z2ggv,"x"
+LCOLDE14:
+	.section	.text$_Z2ggv,"x"
+LHOTE14:
+	.def	___main;	.scl	2;	.type	32;	.endef
+	.section	.text.unlikely.main,"x"
+LCOLDB15:
+	.section	.text.startup.main,"x"
+LHOTB15:
+	.globl	_main
+	.def	_main;	.scl	2;	.type	32;	.endef
+_main:
+LFB5633:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	andl	$-16, %esp
+	subl	$16, %esp
+	call	___main
+	call	__Z2ggv
+	movl	_a+8, %eax
+	movl	%eax, 12(%esp)
+	movl	12(%esp), %eax
+	xorl	%eax, %eax
+	leave
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE5633:
+	.section	.text.unlikely.main,"x"
+LCOLDE15:
+	.section	.text.startup.main,"x"
+LHOTE15:
+	.section	.text.unlikely._GLOBAL__sub_I__Z5twicei,"x"
+LCOLDB16:
+	.section	.text.startup._GLOBAL__sub_I__Z5twicei,"x"
+LHOTB16:
+	.def	__GLOBAL__sub_I__Z5twicei;	.scl	3;	.type	32;	.endef
+__GLOBAL__sub_I__Z5twicei:
+LFB5858:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	$__ZStL8__ioinit, %ecx
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	subl	$24, %esp
+	call	__ZNSt8ios_base4InitC1Ev
+	movl	$___tcf_0, (%esp)
+	call	_atexit
+	leave
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+LFE5858:
+	.section	.text.unlikely._GLOBAL__sub_I__Z5twicei,"x"
+LCOLDE16:
+	.section	.text.startup._GLOBAL__sub_I__Z5twicei,"x"
+LHOTE16:
+	.section	.ctors,"w"
+	.align 4
+	.long	__GLOBAL__sub_I__Z5twicei
+	.globl	_a
+	.section	.data$a,"w"
+	.align 4
+_a:
+	.long	1
+	.long	2
+	.long	3
+	.long	4
+	.long	5
+	.section	.data$_ZStL8__ioinit,"w"
+__ZStL8__ioinit:
+	.space 1
+	.ident	"GCC: (i686-posix-dwarf-rev0, Built by MinGW-W64 project) 4.9.2"
+	.def	__ZNSt8ios_base4InitD1Ev;	.scl	2;	.type	32;	.endef
+	.def	__Znwj;	.scl	2;	.type	32;	.endef
+	.def	__ZdlPv;	.scl	2;	.type	32;	.endef
+	.def	__ZSt25__throw_bad_function_callv;	.scl	2;	.type	32;	.endef
+	.def	__ZNSolsEi;	.scl	2;	.type	32;	.endef
+	.def	__ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc;	.scl	2;	.type	32;	.endef
+	.def	__ZNSt8ios_base4InitC1Ev;	.scl	2;	.type	32;	.endef
+	.def	_atexit;	.scl	2;	.type	32;	.endef

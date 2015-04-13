@@ -8,9 +8,7 @@
 // (See accompanying file LICENSE_1_0.txt or copy at 
 // http://www.boost.org/LICENSE_1_0.txt)
 //
-// This is the one header file a user should include to
-// use the bmptk core facilities (which are mainly supplied by the 
-// target-specific files).
+// This is the one header file a user should include to use bmptk.
 //
 //***************************************************************************
 
@@ -23,16 +21,21 @@
 //
 // ==========================================================================
 
-//! helper macro for the bmtkp version
-#define BMPTK_VERSION_STR( X ) #X
+//! helper macro 
+#define BMPTK_STRINGIFY( X ) #X
 
 //! the bmtkp version, which is passed on the command line by Makefile.inc
-const char version[] = BMPTK_VERSION_STR( BMPTK_VERSION );	
-
+const char 
+#ifndef __cplusplus
+   // somehow, the weak attribute is neither needed nor allowed in C++
+   __attribute__((weak))
+#endif 
+   bmptk_version[] = BMPTK_STRINGIFY( BMPTK_VERSION );	
+   
 
 // ==========================================================================
 // 
-// debug macro's
+// BMPTK_HERE debug macro
 //
 // ==========================================================================
 
@@ -41,28 +44,38 @@ const char version[] = BMPTK_VERSION_STR( BMPTK_VERSION );
 //! The macro BMPTK_HERE tranlsates to a newline, the file-name, ":",
 //! and the line-number of the place where the BMPTK_HERE macro
 //! appears. This can be usefull for debug logging.
-#define BMPTK_HERE_STR( X ) #X
-#define BMPTK_HERE2( F, L ) ( "\n" F ":" BMPTK_HERE_STR( L ) " " )
+#define BMPTK_STRINGYFY( X ) #X
+#define BMPTK_HERE2( F, L ) ( "\n" F ":" BMPTK_STRINGYFY( L ) " " )
 #define BMPTK_HERE BMPTK_HERE2( __FILE__, __LINE__ )
-
-#define BMPTK_TRACE ( hwcpp::io::cout << BMPTK_HERE )
 
           
 // ==========================================================================
 // 
 // include the target-specific header file(s)
 //
+// These macros are supplied by the makefile:
+// BMPTK_INCLUDE_CHIP  : the chip (register) definition files
+// BMPTK_INCLUDE_BMPTK : the bmptk functional implementation (as yet empty)
+//
 // ==========================================================================
-                        
-#ifdef BMPTK_TARGET_win
-   #include "targets/win/win.h"
-#endif              
-#ifdef BMPTK_CHIP_lpc810m021
-   #include "targets/cortex/cmsis/lpc800/inc/lpc810m021.h"
-#endif              
-#ifdef BMPTK_CHIP_lpc1114fn28
-   #include "targets/cortex/cmsis/11xx/inc/LPC11xx.h"
-   #include "targets/cortex/cortex.h"
-#endif                          
+
+#define BMPTK_QUOTE( X ) BMPTK_STRINGYFY( X )
+
+#ifdef BMPTK_INCLUDE_CHIP
+   #include BMPTK_QUOTE( BMPTK_INCLUDE_CHIP )
+#endif
+#ifdef BMPTK_INCLUDE_BMPTK
+   #include BMPTK_QUOTE( BMPTK_INCLUDE_BMPTK )
+#endif     
+
+
+// ==========================================================================
+// 
+// include the bmptk-specific services
+//
+// ==========================================================================
+
+#include "bmptk_interface.h"
+      
       
 #endif // #ifndef _BMPTK_H_

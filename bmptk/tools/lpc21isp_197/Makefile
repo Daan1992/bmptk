@@ -16,7 +16,7 @@ CFLAGS		+= -Wall
 ifneq ($(findstring Darwin,$(OSTYPE)),)
 CFLAGS+=-D__APPLE__
 else
-CFLAGS		+= -static
+# CFLAGS		+= -static
 endif
 
 adprog.o: adprog.c $(GLOBAL_DEP)
