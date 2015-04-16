@@ -19,7 +19,7 @@ ifeq ($(OS),Windows_NT)
    # WPF is the windows directory for 32-bit applications
    
    # 7za command line
-   7za             ?= "C:\Program Files\7-Zip\7za"
+   7za             ?= "$(WPF)/7-Zip/7za"
 
    # select the windows toolchain: SysProgs (=default) or Nuwen
    GCC-WIN         ?= C:/SysGCC/MinGW64
@@ -30,7 +30,7 @@ ifeq ($(OS),Windows_NT)
    #GCC-AVR         ?= $(WPF)/Atmel/Atmel Toolchain/AVR8 GCC/Native/3.4.1061/avr8-gnu-toolchain/bin
 
    # select the ARM toolchain: launchpad (=default), SysProgs, or Chopin
-   GCC-ARM         ?= $(WPF)/GNU Tools ARM Embedded/4.9 2014q4
+   GCC-ARM         ?= $(WPF)/GNU Tools ARM Embedded/4.9 2015q1
    #GCC-ARM         ?= C:/SysGCC/arm-eabi
    #GCC-ARM         ?= C:/gcc-arm-none-eabi-4_9-141220
 

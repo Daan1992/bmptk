@@ -26,13 +26,23 @@
 # 
 #############################################################################
 
+ifeq ($(OS),Windows_NT)
+   # WPF is the windows prefix for 32-bit applications
+   ifeq ($(wildcard C:/Program\ Files\ (x86)/* ),)
+      WPF := C:/Program Files
+   else
+      WPF := C:/Program Files (x86)
+   endif
+endif
+
 ifneq ($(wildcard Makefile.custom),)
    include Makefile.custom
 else   
    include Makefile.local
 endif
 
-.PHONY: clean doc docs documentation build all examples zip commit tests
+.PHONY: clean doc docs documentation build all examples 
+.PHONY: zip commit tests webpage
 .PHONY: v1th04 v2cpse2
 
 all: examples 
@@ -47,9 +57,18 @@ tests:
 	@echo "**** tests build completed succesfully"
 
 zip: clean	 
-	pkzip25 -add -path=relative -recurse bmptk.zip 
+	$(7za) a -tzip bmptk.zip .
 	@echo "**** zip build completed succesfully"
-		
+   
+webpage:
+	bmptk-rm -rf transfer
+	mkdir transfer
+	-cp ../_ftp_crc_s transfer
+	cp webpage/* transfer
+	python \ftpbmptk.py
+	cp transfer/_ftp_crc_s ..
+	@echo "**** ftp transfer completed succesfully"
+   
 clean:
 	bmptk-rm -rf index.html docs bmptk.zip bmptk-th04.zip transfer
 	cd examples && make clean		
@@ -59,8 +78,9 @@ commit:
 	make clean
 	git commit -a -m 'work'
 	git push
-		
+
 ftp: zip
+	bmptk-rm -rf transfer
 	mkdir transfer
 	-cp ../_ftp_crc_s transfer
 	cp bmptk.zip transfer
@@ -70,10 +90,9 @@ ftp: zip
       
 TH04LIST += bmptk.docx bmptk.h README.txt
 TH04LIST += license.txt license_1_0.txt
-TH04LIST += Makefile Makefile.inc Makefile.local Makefil.subdirs
+TH04LIST += Makefile Makefile.inc Makefile.local Makefile.subdirs
 TH04LIST += targets
 TH04LIST += tools
-TH04LIST += hwcpp
 TH04LIST += examples/courses/v1th04
 
 v1th04: clean doc

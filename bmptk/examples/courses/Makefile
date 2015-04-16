@@ -11,9 +11,6 @@
 # code for the V1TH04 course at Hogeschool Utrecht (C)
 SUBDIRS += v1th04
 
-# code for the V2CPSE2 course at Hogeschool Utrecht (Assembler & C++)
-SUBDIRS += v2cpse2
-
 # The Makefile.subdirs does the work
 include ../../Makefile.subdirs
 

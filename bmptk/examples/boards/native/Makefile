@@ -9,7 +9,7 @@
 #############################################################################
 
 # "hello world" examples in C and C++
-SUBDIRS += hello-c hello-c++
+SUBDIRS += hello-c 
 
 # The Makefile.subdirs does the work
 include ../../../Makefile.subdirs
