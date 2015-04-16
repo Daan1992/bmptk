@@ -70,7 +70,7 @@ webpage:
 	@echo "**** ftp transfer completed succesfully"
    
 clean:
-	bmptk-rm -rf index.html docs bmptk.zip bmptk-th04.zip transfer
+	bmptk-rm -rf index.html docs bmptk.zip bmptk-v1th04.zip transfer
 	cd examples && make clean		
 	@echo "**** cleanup completed succesfully"
 		
