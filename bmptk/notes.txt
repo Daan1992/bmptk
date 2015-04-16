@@ -10,6 +10,7 @@ git use:
    git status
    git add ....
    git commit -a -m "text"
+   git push
    
 -Wlarger-than=len 
 -Wframe-larger-than=len
