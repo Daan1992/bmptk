@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="lpc810" Database="">
+  <Project Name="lpc810" Path="_codelite.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="lpc810" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
