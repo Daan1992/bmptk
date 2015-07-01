@@ -17,7 +17,7 @@
 
 # This string must contain neither spaces (problems on windows8)
 # nor periods (problems on xtensa)
-VERSION := V03_00_work_in_progress_2015_02_11
+VERSION := V03_00_work_in_progress_2015_07_01
 
 
 #============================================================================
@@ -1031,7 +1031,8 @@ CLEAN += $(RESULTS)
 CLEAN += $(OBJ)
 CLEAN += $(MAP)
 CLEAN += $(LST)
-CLEAN += -rf doxygen_docs
 clean:
 	$(REMOVE) $(CLEAN)
+	$(REMOVE) -rf .clang
+	-$(REMOVE) .codelite  
 
