@@ -42,7 +42,8 @@ SUBDIRS += 440hz timer servo sw-uart ds1990
 
 # subdirectories - week 6 :
 #    lcd5510   : show random lines on an LCD5510 display
-SUBDIRS += lcd5510
+#    lpc810    : show simple use of the lpc810 chip
+SUBDIRS += lcd5510 lpc810
 
 # The Makefile.subdirs does the work
 include ../../../Makefile.subdirs
