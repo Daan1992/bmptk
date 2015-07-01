@@ -1034,5 +1034,5 @@ CLEAN += $(LST)
 clean:
 	$(REMOVE) $(CLEAN)
 	$(REMOVE) -rf .clang
-	-$(REMOVE) .codelite  
+	-$(REMOVE) -rf .codelite  
 

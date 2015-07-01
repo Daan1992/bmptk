@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="v1th04" Database="">
+  <Project Name="440hz" Path="440hz/_codelite.project" Active="No"/>
+  <Project Name="beep" Path="beep/_codelite.project" Active="No"/>
+  <Project Name="blink" Path="blink/_codelite.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="blink" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+  <Project Name="ds1990" Path="ds1990/_codelite.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="ds1990" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+  <Project Name="lcd5510" Path="lcd5510/_codelite.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="lcd5510" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+  <Project Name="lpc810" Path="lpc810/_codelite.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="lpc810" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+  <Project Name="servo" Path="servo/_codelite.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="servo" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+  <Project Name="switch" Path="switch/_codelite.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="switch" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+  <Project Name="sw-uart" Path="sw-uart/_codelite.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="sw-uart" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+  <Project Name="timer" Path="timer/_codelite.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="timer" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="440hz" ConfigName="Release"/>
+      <Project Name="beep" ConfigName="Release"/>
+      <Project Name="blink" ConfigName="Release"/>
+      <Project Name="ds1990" ConfigName="Release"/>
+      <Project Name="lcd5510" ConfigName="Release"/>
+      <Project Name="lpc810" ConfigName="Release"/>
+      <Project Name="servo" ConfigName="Release"/>
+      <Project Name="sw-uart" ConfigName="Release"/>
+      <Project Name="switch" ConfigName="Release"/>
+      <Project Name="timer" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="440hz" ConfigName="Debug"/>
+      <Project Name="beep" ConfigName="Release"/>
+      <Project Name="blink" ConfigName="Release"/>
+      <Project Name="ds1990" ConfigName="Debug"/>
+      <Project Name="lcd5510" ConfigName="Debug"/>
+      <Project Name="lpc810" ConfigName="Debug"/>
+      <Project Name="servo" ConfigName="Debug"/>
+      <Project Name="sw-uart" ConfigName="Debug"/>
+      <Project Name="switch" ConfigName="Debug"/>
+      <Project Name="timer" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
